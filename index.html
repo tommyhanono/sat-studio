@@ -44,6 +44,10 @@
   .set-badge.rw{background:#e7ecff;color:var(--blue-dark)}
   .set-badge.math{background:#e2f3e8;color:var(--green)}
   .set-badge.mixed{background:#fdeede;color:var(--amber)}
+  .lvl-badge{font-size:.7rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;border-radius:6px;padding:3px 9px;display:inline-block;margin-bottom:8px;margin-left:6px}
+  .lvl-badge.lvl-easy{background:#e2f3e8;color:var(--green)}
+  .lvl-badge.lvl-med{background:#fdeede;color:var(--amber)}
+  .lvl-badge.lvl-hard{background:#fdeaea;color:#c0392b}
   .set-card h3{font-size:1.08rem;margin-bottom:4px}
   .set-desc{color:var(--gray-mid);font-size:.88rem;margin-bottom:8px}
   .set-meta{font-size:.8rem;color:var(--gray-mid)}
@@ -500,6 +504,12 @@
 <!-- SETS: agrega aquí una línea por cada set nuevo que Claude te genere -->
 <script src="sets/rw-set1.js"></script>
 <script src="sets/rw-set2.js"></script>
+<script src="sets/rw-set3.js"></script>
+<script src="sets/rw-set4.js"></script>
+<script src="sets/rw-set5.js"></script>
+<script src="sets/rw-set6.js"></script>
+<script src="sets/rw-set7.js"></script>
+<script src="sets/rw-mock1.js"></script>
 <script src="sets/math-set1.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
@@ -733,6 +743,7 @@ function renderHome(){
   var list = '';
   SETS.forEach(function(s){
     var badge = s.section === 'rw' ? '<span class="set-badge rw">Reading &amp; Writing</span>' : '<span class="set-badge math">Math</span>';
+    if(s.level) badge += '<span class="lvl-badge lvl-' + ({'Fácil':'easy','Media':'med','Difícil':'hard'}[s.level] || 'med') + '">' + s.level + '</span>';
     list += '<div class="set-card">' +
       '<div class="set-info">' + badge +
       '<h3>' + s.title + '</h3>' +
