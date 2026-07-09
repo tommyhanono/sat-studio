@@ -269,14 +269,51 @@
     .bar-row .lbl{width:130px}
   }
   @media (prefers-reduced-motion: reduce){*{transition:none !important;animation:none !important}}
+  /* ============ AUTH ============ */
+  #view-auth{min-height:100vh;display:flex;align-items:center;justify-content:center;background:#f7f8fc;padding:28px 18px}
+  .auth-card{width:100%;max-width:400px;background:#fff;border:1px solid var(--gray-line);border-radius:16px;padding:30px 26px;box-shadow:0 10px 40px rgba(20,30,60,.08)}
+  .auth-card .brand{margin-bottom:6px}
+  .auth-sub{color:var(--gray-mid);font-size:.9rem;margin:0 0 18px}
+  .auth-lbl{display:block;font-size:.76rem;font-weight:700;color:var(--gray-mid);text-transform:uppercase;letter-spacing:.02em;margin:12px 0 5px}
+  .auth-inp{width:100%;border:1px solid var(--gray-line);border-radius:10px;padding:11px 13px;font-size:.95rem;box-sizing:border-box}
+  .auth-inp:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-soft)}
+  .auth-msg{margin:14px 0 0;padding:10px 12px;border-radius:9px;font-size:.86rem;background:var(--blue-soft);color:var(--blue-dark)}
+  .auth-msg.err{background:#fdeaea;color:#c0392b}
+  .auth-actions{display:flex;gap:10px;margin-top:18px}
+  .auth-actions button{flex:1;cursor:pointer}
+  .auth-foot{color:var(--gray-mid);font-size:.76rem;text-align:center;margin:16px 0 0}
+  .user-chip{display:inline-flex;align-items:center;gap:10px;margin-left:auto;font-size:.82rem}
+  .user-chip .uc-name{color:var(--gray-mid);font-weight:600}
+  .user-chip .uc-out{background:#fff;color:var(--blue);border:1px solid var(--gray-line);border-radius:999px;padding:5px 14px;font-size:.8rem;font-weight:600;cursor:pointer}
+  .user-chip .uc-out:hover{background:var(--blue-soft);border-color:var(--blue)}
 </style>
 </head>
 <body>
 
 <!-- ============ HOME ============ -->
-<div id="view-home">
+<!-- ============ AUTH ============ -->
+<div id="view-auth" class="hidden">
+  <div class="auth-card">
+    <div class="brand"><h1>SAT Studio</h1><span class="tag">Tu progreso, en la nube</span></div>
+    <p class="auth-sub">Inicia sesión o crea tu cuenta para guardar tu historial y verlo desde cualquier dispositivo.</p>
+    <label class="auth-lbl" for="auth-name">Nombre (opcional)</label>
+    <input id="auth-name" class="auth-inp" type="text" autocomplete="name" placeholder="Tu nombre">
+    <label class="auth-lbl" for="auth-email">Correo</label>
+    <input id="auth-email" class="auth-inp" type="email" autocomplete="email" placeholder="tucorreo@ejemplo.com">
+    <label class="auth-lbl" for="auth-pass">Contraseña</label>
+    <input id="auth-pass" class="auth-inp" type="password" autocomplete="current-password" placeholder="Mínimo 6 caracteres">
+    <div id="auth-msg" class="auth-msg hidden"></div>
+    <div class="auth-actions">
+      <button id="auth-login-btn" class="btn-primary">Iniciar sesión</button>
+      <button id="auth-signup-btn" class="btn-outline">Crear cuenta</button>
+    </div>
+    <p class="auth-foot">Tus datos son privados: solo tú ves tu historial.</p>
+  </div>
+</div>
+
+<div id="view-home" class="hidden">
   <div class="home-wrap">
-    <div class="brand"><h1>SAT Studio</h1><span class="tag">Bluebook-style practice · hecho con Claude</span></div>
+    <div class="brand"><h1>SAT Studio</h1><span class="tag">Bluebook-style practice · hecho con Claude</span><div id="user-chip" class="user-chip hidden"></div></div>
     <p class="home-sub">Elige un set y un modo. <strong>Exam</strong> = cronometrado, se califica al final. <strong>Drill</strong> = sin timer, con feedback y explicación inmediata en cada pregunta.</p>
 
     <div class="dash-cards" id="dash-cards"></div>
@@ -454,9 +491,17 @@
 <!-- SETS: agrega aquí una línea por cada set nuevo que Claude te genere -->
 <script src="sets/rw-set1.js"></script>
 <script src="sets/math-set1.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <script>
 'use strict';
+
+/* ================= SUPABASE (auth + cloud sync) ================= */
+var SUPABASE_URL = 'https://igsmhrwafhxlhmwcehiu.supabase.co';
+var SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imlnc21ocndhZmh4bGhtd2NlaGl1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODI3MTYyMTgsImV4cCI6MjA5ODI5MjIxOH0.YgABbnpPjbyEk9Pe0kP6Mx6Q8eBn5McxzZiAS5MJpYg';
+var SB = null;
+try { if (window.supabase && /^https?:\/\//.test(SUPABASE_URL)) SB = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY); } catch(e){}
+var currentUser = null;
 
 /* ================= STORAGE (safe wrapper: falls back to memory) ================= */
 var store = (function(){
@@ -487,8 +532,10 @@ var store = (function(){
     }
   };
 })();
-var HKEY = 'satapp_history_v1';
+var HKEY = 'satapp_history_v1'; // clave "invitado" (pre-login); se migra a la cuenta al iniciar sesión
 var PKEY = 'satapp_prefs_v1';
+function histKey(){ return currentUser ? 'satapp_history_v1__' + currentUser.id : HKEY; }
+function genSid(){ try { if(window.crypto && crypto.randomUUID) return crypto.randomUUID(); } catch(e){} return 'sid-' + Date.now() + '-' + Math.random().toString(16).slice(2); }
 
 /* ================= DATA ================= */
 window.SAT_SETS = window.SAT_SETS || [];
@@ -624,11 +671,14 @@ function estimateScore(results){
 }
 
 /* ================= HISTORY ================= */
-function getHistory(){ return store.get(HKEY, []); }
+function getHistory(){ return store.get(histKey(), []); }
 function saveSession(entry){
+  if(!entry.sid) entry.sid = genSid();
+  if(!entry.savedAt) entry.savedAt = new Date().toISOString();
   var h = getHistory();
   h.push(entry);
-  store.set(HKEY, h);
+  store.set(histKey(), h);
+  cloudUpsert(entry);
 }
 function latestResults(){ // qid -> {ok, ...} from most recent attempt
   var map = {};
@@ -657,7 +707,7 @@ function renderHome(){
   var last = h.length ? h[h.length-1] : null;
 
   $('#dash-cards').innerHTML =
-    '<div class="dash-card"><div class="k">Sesiones</div><div class="v">' + h.length + '</div><div class="s">' + (store.persistent ? 'historial guardado en este navegador' : '⚠ historial temporal (este entorno no guarda)') + '</div></div>' +
+    '<div class="dash-card"><div class="k">Sesiones</div><div class="v">' + h.length + '</div><div class="s">' + (currentUser ? '☁️ sincronizado en la nube' : (store.persistent ? 'guardado en este navegador' : '⚠ historial temporal (este entorno no guarda)')) + '</div></div>' +
     '<div class="dash-card"><div class="k">Accuracy global</div><div class="v">' + (totalQ ? Math.round(100*okQ/totalQ) + '%' : '—') + '</div><div class="s">' + okQ + '/' + totalQ + ' preguntas</div></div>' +
     '<div class="dash-card"><div class="k">Por repasar</div><div class="v">' + pool.length + '</div><div class="s">preguntas falladas pendientes</div></div>' +
     '<div class="dash-card"><div class="k">Última sesión</div><div class="v">' + (last ? last.score + '/' + last.total : '—') + '</div><div class="s">' + (last ? (last.setTitle + ' · ' + last.mode) : 'aún nada') + '</div></div>';
@@ -1466,6 +1516,176 @@ function wireAnnotations(){
 }
 
 /* ================= WIRING ================= */
+/* ================= AUTH + CLOUD SYNC ================= */
+function authAvailable(){ return !!SB; }
+
+function setAuthMsg(msg, isErr){
+  var el = $('#auth-msg'); if(!el) return;
+  el.textContent = msg || '';
+  el.className = 'auth-msg' + (isErr ? ' err' : '') + (msg ? '' : ' hidden');
+}
+function setAuthBusy(busy){
+  var l = $('#auth-login-btn'), s = $('#auth-signup-btn');
+  if(l) l.disabled = busy; if(s) s.disabled = busy;
+}
+
+function showAuthGate(){
+  $('#view-home').classList.add('hidden');
+  $('#view-app').classList.add('hidden');
+  $('#view-results').classList.add('hidden');
+  $('#view-auth').classList.remove('hidden');
+}
+function enterApp(){
+  $('#view-auth').classList.add('hidden');
+  $('#view-results').classList.add('hidden');
+  $('#view-app').classList.add('hidden');
+  $('#view-home').classList.remove('hidden');
+  setUserChip();
+  renderHome();
+}
+function setUserChip(){
+  var chip = $('#user-chip'); if(!chip) return;
+  if(currentUser){
+    var name = (currentUser.user_metadata && currentUser.user_metadata.name) || currentUser.email || 'Mi cuenta';
+    chip.innerHTML = '<span class="uc-name">☁️ ' + name + '</span><button class="uc-out" id="btn-logout">Salir</button>';
+    chip.classList.remove('hidden');
+    var b = $('#btn-logout'); if(b) b.addEventListener('click', doLogout);
+  } else {
+    chip.classList.add('hidden'); chip.innerHTML = '';
+  }
+}
+
+function authBoot(){
+  if(!authAvailable()){
+    // Sin backend configurado → modo local (funciona igual, guarda en este navegador)
+    $('#view-auth').classList.add('hidden');
+    $('#view-home').classList.remove('hidden');
+    renderHome();
+    return;
+  }
+  SB.auth.getSession().then(function(res){
+    var session = res && res.data ? res.data.session : null;
+    if(session && session.user){ if(!currentUser){ currentUser = session.user; afterLogin(); } }
+    else { if(!currentUser) showAuthGate(); }
+  }).catch(function(){ if(!currentUser) showAuthGate(); });
+  SB.auth.onAuthStateChange(function(_event, session){
+    var u = session && session.user ? session.user : null;
+    if(u && (!currentUser || currentUser.id !== u.id)){ currentUser = u; afterLogin(); }
+    else if(!u && currentUser){ currentUser = null; showAuthGate(); }
+  });
+}
+
+function afterLogin(){
+  return migrateLegacy().catch(function(){}).then(function(){
+    return cloudPull().catch(function(){});
+  }).then(function(){ enterApp(); });
+}
+
+function cloudPull(){
+  if(!authAvailable() || !currentUser) return Promise.resolve();
+  return SB.from('sat_sessions').select('sid,data,played_at').eq('user_id', currentUser.id).order('played_at', { ascending: true }).then(function(r){
+    if(r.error) throw r.error;
+    var cloud = (r.data || []).map(function(row){ var e = Object.assign({}, row.data || {}); e.sid = row.sid; return e; });
+    var seen = {}; cloud.forEach(function(e){ seen[e.sid] = 1; });
+    var local = getHistory();
+    var localOnly = local.filter(function(e){ return e.sid && !seen[e.sid]; });
+    // Sube al backend las sesiones locales de este usuario que aún no están en la nube (creadas offline)
+    localOnly.forEach(function(e){ cloudUpsert(e, true); });
+    var merged = cloud.concat(localOnly);
+    merged.sort(function(a,b){ return ((a.savedAt||a.date||'') < (b.savedAt||b.date||'')) ? -1 : 1; });
+    store.set(histKey(), merged);
+  });
+}
+
+function cloudUpsert(entry, silent){
+  if(!authAvailable() || !currentUser) return Promise.resolve();
+  if(!entry.sid) entry.sid = genSid();
+  var payload = {
+    user_id: currentUser.id, sid: entry.sid,
+    played_at: entry.savedAt || new Date().toISOString(),
+    mode: entry.mode, set_id: entry.setId, set_title: entry.setTitle,
+    score: entry.score, total: entry.total, time_used: entry.timeUsed,
+    data: entry
+  };
+  return SB.from('sat_sessions').upsert(payload, { onConflict: 'user_id,sid' }).then(function(r){
+    if(r.error && !silent) console.warn('cloudUpsert:', r.error.message);
+    return r;
+  }).catch(function(e){ if(!silent) console.warn('cloudUpsert:', e); });
+}
+
+function cloudDeleteAll(){
+  if(!authAvailable() || !currentUser) return Promise.resolve();
+  return SB.from('sat_sessions').delete().eq('user_id', currentUser.id).then(function(){}).catch(function(){});
+}
+
+function migrateLegacy(){
+  // Adopta el historial local "invitado" (pre-login) hacia la cuenta, una sola vez.
+  if(!currentUser) return Promise.resolve();
+  var legacy = store.get(HKEY, []);
+  if(!legacy || !legacy.length) return Promise.resolve();
+  var mine = store.get(histKey(), []);
+  var seen = {}; mine.forEach(function(e){ if(e.sid) seen[e.sid] = 1; });
+  legacy.forEach(function(e){
+    if(!e.sid) e.sid = genSid();
+    if(!seen[e.sid]){ mine.push(e); seen[e.sid] = 1; cloudUpsert(e, true); }
+  });
+  store.set(histKey(), mine);
+  store.remove(HKEY);
+  return Promise.resolve();
+}
+
+function doLogin(){
+  if(!authAvailable()) return;
+  var email = ($('#auth-email').value || '').trim();
+  var pass = $('#auth-pass').value || '';
+  if(!email || !pass){ setAuthMsg('Escribe tu correo y contraseña.', true); return; }
+  setAuthMsg('Entrando…'); setAuthBusy(true);
+  SB.auth.signInWithPassword({ email: email, password: pass }).then(function(r){
+    setAuthBusy(false);
+    if(r.error){ setAuthMsg(traducirAuthError(r.error.message), true); return; }
+    setAuthMsg(''); // onAuthStateChange entra a la app
+  }).catch(function(e){ setAuthBusy(false); setAuthMsg('No se pudo conectar. Revisa tu internet.', true); });
+}
+
+function doSignup(){
+  if(!authAvailable()) return;
+  var email = ($('#auth-email').value || '').trim();
+  var pass = $('#auth-pass').value || '';
+  var name = ($('#auth-name').value || '').trim();
+  if(!email || !pass){ setAuthMsg('Escribe tu correo y contraseña.', true); return; }
+  if(pass.length < 6){ setAuthMsg('La contraseña debe tener al menos 6 caracteres.', true); return; }
+  setAuthMsg('Creando cuenta…'); setAuthBusy(true);
+  SB.auth.signUp({ email: email, password: pass, options: { data: { name: name } } }).then(function(r){
+    setAuthBusy(false);
+    if(r.error){ setAuthMsg(traducirAuthError(r.error.message), true); return; }
+    if(r.data && r.data.session){ setAuthMsg(''); } // logueado directo (confirmación desactivada)
+    else { setAuthMsg('Cuenta creada. Revisa tu correo para confirmarla y luego inicia sesión.', false); }
+  }).catch(function(e){ setAuthBusy(false); setAuthMsg('No se pudo conectar. Revisa tu internet.', true); });
+}
+
+function doLogout(){
+  if(!authAvailable()){ return; }
+  SB.auth.signOut().then(function(){}).catch(function(){});
+  currentUser = null;
+  showAuthGate();
+}
+
+function traducirAuthError(m){
+  m = m || 'Error';
+  if(/invalid login|invalid credentials/i.test(m)) return 'Correo o contraseña incorrectos.';
+  if(/already registered|already been registered|user already/i.test(m)) return 'Ese correo ya tiene cuenta. Inicia sesión.';
+  if(/email not confirmed/i.test(m)) return 'Debes confirmar tu correo antes de entrar (revisa tu bandeja).';
+  if(/rate limit|too many/i.test(m)) return 'Demasiados intentos. Espera un momento e intenta de nuevo.';
+  if(/password/i.test(m) && /6/.test(m)) return 'La contraseña debe tener al menos 6 caracteres.';
+  return m;
+}
+
+function wireAuth(){
+  var lb = $('#auth-login-btn'); if(lb) lb.addEventListener('click', doLogin);
+  var sub = $('#auth-signup-btn'); if(sub) sub.addEventListener('click', doSignup);
+  var pass = $('#auth-pass'); if(pass) pass.addEventListener('keydown', function(e){ if(e.key === 'Enter') doLogin(); });
+}
+
 function init(){
   indexSets();
   applyZoom();
@@ -1537,7 +1757,8 @@ function init(){
   $('#btn-redo-exam').addEventListener('click', function(){ startSession('redo', 'exam'); });
   $('#btn-clear-history').addEventListener('click', function(){
     if(window.confirm('¿Borrar todo el historial de sesiones? Esto no se puede deshacer.')){
-      store.remove(HKEY);
+      store.remove(histKey());
+      cloudDeleteAll();
       renderHome();
     }
   });
@@ -1557,6 +1778,8 @@ function init(){
   window.addEventListener('resize', function(){
     if(!$('#line-reader').classList.contains('hidden')) layoutLineReader();
   });
+  wireAuth();
+  authBoot();
 }
 init();
 
