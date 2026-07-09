@@ -278,6 +278,36 @@
   .zbtn{min-width:34px;height:34px;border:1px solid var(--gray-line);background:#fff;border-radius:7px;font-weight:800;font-size:.92rem;color:var(--ink);cursor:pointer;line-height:1}
   .zbtn:hover{background:var(--blue-soft);border-color:var(--blue);color:var(--blue)}
 
+  /* ============ ADMIN PANEL ============ */
+  #view-admin{min-height:100vh;background:#f4f6fb;padding:26px 20px 70px}
+  .admin-wrap{max-width:1080px;margin:0 auto}
+  .admin-head{display:flex;justify-content:space-between;align-items:flex-end;gap:14px;flex-wrap:wrap;margin-bottom:20px}
+  .admin-head h1{font-size:1.6rem}
+  .admin-sub{color:var(--gray-mid);font-size:.9rem}
+  .admin-actions{display:flex;gap:10px}
+  .admin-actions button{cursor:pointer}
+  .admin-status{color:var(--gray-mid);font-size:.9rem;margin-bottom:10px;min-height:1em}
+  .akpi-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-bottom:16px}
+  .akpi{background:#fff;border:1px solid var(--gray-line);border-radius:12px;padding:16px 18px;box-shadow:0 1px 3px rgba(20,30,60,.05)}
+  .akpi-l{font-size:.74rem;color:var(--gray-mid);text-transform:uppercase;letter-spacing:.05em;margin-bottom:6px}
+  .akpi-v{font-size:1.9rem;font-weight:800;color:var(--ink);line-height:1}
+  .akpi-s{font-size:.78rem;color:var(--gray-mid);margin-top:5px}
+  .achart-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:14px;margin-bottom:16px}
+  .achart{background:#fff;border:1px solid var(--gray-line);border-radius:12px;padding:16px 18px;box-shadow:0 1px 3px rgba(20,30,60,.05)}
+  .achart h3{font-size:.95rem;margin-bottom:12px}
+  .achart-box{position:relative;height:240px}
+  .atable-wrap{background:#fff;border:1px solid var(--gray-line);border-radius:12px;padding:16px 18px;box-shadow:0 1px 3px rgba(20,30,60,.05);overflow-x:auto}
+  .atable-wrap h3{font-size:.95rem;margin-bottom:12px}
+  .atable{width:100%;border-collapse:collapse;font-size:.86rem}
+  .atable thead th{text-align:left;padding:9px 11px;border-bottom:2px solid var(--gray-line);color:var(--gray-mid);font-size:.72rem;text-transform:uppercase;letter-spacing:.04em;cursor:pointer;white-space:nowrap;user-select:none}
+  .atable thead th:hover{color:var(--ink)}
+  .atable tbody td{padding:9px 11px;border-bottom:1px solid #f0f0f0}
+  .atable tbody tr:hover{background:#f7f8fc}
+  .rtag{font-size:.68rem;font-weight:700;text-transform:uppercase;border-radius:5px;padding:2px 7px;background:#eef0f6;color:var(--gray-mid)}
+  .rtag.radm{background:var(--blue-soft);color:var(--blue-dark)}
+  .uc-admin{background:var(--blue-soft);color:var(--blue-dark);border:1px solid var(--blue);border-radius:999px;padding:5px 12px;font-size:.8rem;font-weight:700;cursor:pointer;margin-right:2px}
+  .uc-admin:hover{background:var(--blue);color:#fff}
+
   /* ============ AUTH ============ */
   #view-auth{min-height:100vh;display:flex;align-items:center;justify-content:center;background:#f7f8fc;padding:28px 18px}
   .auth-card{width:100%;max-width:400px;background:#fff;border:1px solid var(--gray-line);border-radius:16px;padding:30px 26px;box-shadow:0 10px 40px rgba(20,30,60,.08)}
@@ -355,6 +385,26 @@
     <div class="home-tools">
       <strong>Herramientas dentro del examen:</strong> timer (Hide), Mark for Review, eliminador ABC, menú de preguntas, Check Your Work, calculadora Desmos, Reference Sheet (Math), Layout split/vertical, Line Reader, Zoom, y <strong>Highlights &amp; Notes</strong>: selecciona texto del pasaje o la pregunta con el mouse para resaltarlo, subrayarlo o dejarte una nota. 💡 Al terminar, copia el resumen y pégaselo a Claude para actualizar tu error log.
     </div>
+  </div>
+</div>
+
+<!-- ============ ADMIN ============ -->
+<div id="view-admin" class="hidden">
+  <div class="admin-wrap">
+    <div class="admin-head">
+      <div><h1>Panel de Admin</h1><span class="admin-sub">SAT Studio · vista de administrador</span></div>
+      <div class="admin-actions">
+        <button class="btn-outline" id="btn-admin-refresh">↻ Actualizar</button>
+        <button class="btn-primary" id="btn-admin-back">← Volver</button>
+      </div>
+    </div>
+    <div id="admin-status" class="admin-status"></div>
+    <div class="akpi-row" id="admin-kpis"></div>
+    <div class="achart-row">
+      <div class="achart"><h3>Accuracy por dominio</h3><div class="achart-box"><canvas id="admin-chart-domain"></canvas></div></div>
+      <div class="achart"><h3>Sesiones por set</h3><div class="achart-box"><canvas id="admin-chart-set"></canvas></div></div>
+    </div>
+    <div class="atable-wrap"><h3>Estudiantes</h3><div id="admin-table"></div></div>
   </div>
 </div>
 
@@ -512,6 +562,7 @@
 <script src="sets/rw-mock1.js"></script>
 <script src="sets/math-set1.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1"></script>
 
 <script>
 'use strict';
@@ -1542,6 +1593,108 @@ function wireAnnotations(){
 }
 
 /* ================= WIRING ================= */
+/* ================= ADMIN PANEL ================= */
+var adminCharts = {};
+function openAdmin(){
+  if(!authAvailable() || !currentUser) return;
+  $('#view-home').classList.add('hidden');
+  $('#view-auth').classList.add('hidden');
+  $('#view-app').classList.add('hidden');
+  $('#view-results').classList.add('hidden');
+  $('#view-admin').classList.remove('hidden');
+  window.scrollTo(0,0);
+  loadAdmin();
+}
+function closeAdmin(){
+  $('#view-admin').classList.add('hidden');
+  $('#view-home').classList.remove('hidden');
+}
+function loadAdmin(){
+  var st = $('#admin-status'); if(st) st.textContent = 'Cargando…';
+  Promise.all([ SB.rpc('sat_admin_overview'), SB.rpc('sat_admin_students') ]).then(function(rs){
+    var e = rs[0].error || rs[1].error;
+    if(e){ if(st) st.textContent = 'No se pudo cargar: ' + (e.message || 'no autorizado') + '.'; return; }
+    if(st) st.textContent = '';
+    renderAdminKPIs(rs[0].data || {});
+    renderAdminCharts(rs[0].data || {});
+    renderAdminTable(rs[1].data || []);
+  }).catch(function(){ if(st) st.textContent = 'Error de conexión al cargar el panel.'; });
+}
+function renderAdminKPIs(ov){
+  var cards = [
+    ['Cuentas', ov.total_accounts || 0, 'estudiantes registrados'],
+    ['Activos', ov.active_students || 0, 'ya practicaron'],
+    ['Sesiones', ov.total_sessions || 0, (ov.sessions_7d || 0) + ' en 7 días'],
+    ['Accuracy global', (ov.global_accuracy != null ? ov.global_accuracy : 0) + '%', (ov.total_questions || 0) + ' preguntas']
+  ];
+  $('#admin-kpis').innerHTML = cards.map(function(c){
+    return '<div class="akpi"><div class="akpi-l">' + c[0] + '</div><div class="akpi-v">' + c[1] + '</div><div class="akpi-s">' + c[2] + '</div></div>';
+  }).join('');
+}
+var ADMIN_COLORS = ['#3b53d6','#55A868','#DD8452','#C44E52','#8172B3','#937860'];
+function drawAdminBar(id, labels, data, opts){
+  opts = opts || {};
+  if(!window.Chart){ return; }
+  var el = document.getElementById(id); if(!el) return;
+  if(adminCharts[id]){ adminCharts[id].destroy(); adminCharts[id] = null; }
+  if(!labels.length){ if(el.parentNode) el.parentNode.innerHTML = '<div class="empty-note" style="padding:34px 0;text-align:center">Aún no hay datos.</div>'; return; }
+  adminCharts[id] = new Chart(el.getContext('2d'), {
+    type: 'bar',
+    data: { labels: labels, datasets: [{ data: data,
+      backgroundColor: labels.map(function(_, i){ return ADMIN_COLORS[i % ADMIN_COLORS.length] + 'CC'; }),
+      borderColor: labels.map(function(_, i){ return ADMIN_COLORS[i % ADMIN_COLORS.length]; }),
+      borderWidth: 1, borderRadius: 5 }] },
+    options: { responsive: true, maintainAspectRatio: false,
+      plugins: { legend: { display: false }, tooltip: { callbacks: { label: function(c){ return c.parsed.y + (opts.pct ? '%' : ''); } } } },
+      scales: { y: { beginAtZero: true, max: opts.pct ? 100 : undefined, ticks: { callback: function(v){ return v + (opts.pct ? '%' : ''); } } },
+                x: { ticks: { autoSkip: false, maxRotation: 32, font: { size: 10 } } } } }
+  });
+}
+function renderAdminCharts(ov){
+  var dd = ov.by_domain || [];
+  drawAdminBar('admin-chart-domain', dd.map(function(d){ return d.domain; }), dd.map(function(d){ return d.total ? Math.round(100 * d.correct / d.total) : 0; }), { pct: true });
+  var ss = ov.by_set || [];
+  drawAdminBar('admin-chart-set', ss.map(function(s){ return s.label; }), ss.map(function(s){ return s.sessions; }), {});
+}
+function renderAdminTable(students){
+  var cols = [
+    {f:'name', l:'Nombre'}, {f:'email', l:'Email'}, {f:'role', l:'Rol'},
+    {f:'sessions', l:'Sesiones'}, {f:'accuracy', l:'Accuracy'},
+    {f:'questions', l:'Preguntas'}, {f:'last_active', l:'Última'}, {f:'joined', l:'Se unió'}
+  ];
+  var sortF = 'sessions', sortDir = 'desc';
+  function draw(){
+    var data = students.slice().sort(function(a, b){
+      var av = a[sortF], bv = b[sortF];
+      if(av == null) av = -Infinity; if(bv == null) bv = -Infinity;
+      var c = av < bv ? -1 : av > bv ? 1 : 0; return sortDir === 'asc' ? c : -c;
+    });
+    var h = '<table class="atable"><thead><tr>' + cols.map(function(c){
+      return '<th data-f="' + c.f + '">' + c.l + (sortF === c.f ? (sortDir === 'asc' ? ' ▲' : ' ▼') : '') + '</th>';
+    }).join('') + '</tr></thead><tbody>';
+    if(!data.length){ h += '<tr><td colspan="' + cols.length + '" class="empty-note" style="padding:22px">Aún no hay estudiantes con actividad. Aparecerán aquí cuando se registren y practiquen.</td></tr>'; }
+    data.forEach(function(r){
+      h += '<tr>' + cols.map(function(c){
+        var v = r[c.f];
+        if(c.f === 'accuracy') v = (v == null ? '—' : v + '%');
+        if(v == null || v === '') v = '—';
+        if(c.f === 'role') v = '<span class="rtag ' + (r.role === 'admin' ? 'radm' : '') + '">' + v + '</span>';
+        return '<td>' + v + '</td>';
+      }).join('') + '</tr>';
+    });
+    h += '</tbody></table>';
+    $('#admin-table').innerHTML = h;
+    Array.prototype.forEach.call($('#admin-table').querySelectorAll('th'), function(th){
+      th.addEventListener('click', function(){
+        var f = th.getAttribute('data-f');
+        if(sortF === f) sortDir = sortDir === 'asc' ? 'desc' : 'asc'; else { sortF = f; sortDir = 'desc'; }
+        draw();
+      });
+    });
+  }
+  draw();
+}
+
 /* ================= AUTH + CLOUD SYNC ================= */
 function authAvailable(){ return !!SB; }
 
@@ -1573,9 +1726,11 @@ function setUserChip(){
   var chip = $('#user-chip'); if(!chip) return;
   if(currentUser){
     var name = (currentUser.user_metadata && currentUser.user_metadata.name) || currentUser.email || 'Mi cuenta';
-    chip.innerHTML = '<span class="uc-name">☁️ ' + name + '</span><button class="uc-out" id="btn-logout">Salir</button>';
+    var adminBtn = (currentUser.app_metadata && currentUser.app_metadata.role === 'admin') ? '<button class="uc-admin" id="btn-admin">📊 Admin</button>' : '';
+    chip.innerHTML = '<span class="uc-name">☁️ ' + name + '</span>' + adminBtn + '<button class="uc-out" id="btn-logout">Salir</button>';
     chip.classList.remove('hidden');
     var b = $('#btn-logout'); if(b) b.addEventListener('click', doLogout);
+    var ab = $('#btn-admin'); if(ab) ab.addEventListener('click', openAdmin);
   } else {
     chip.classList.add('hidden'); chip.innerHTML = '';
   }
@@ -1680,7 +1835,7 @@ function doSignup(){
   if(!email || !pass){ setAuthMsg('Escribe tu correo y contraseña.', true); return; }
   if(pass.length < 6){ setAuthMsg('La contraseña debe tener al menos 6 caracteres.', true); return; }
   setAuthMsg('Creando cuenta…'); setAuthBusy(true);
-  SB.auth.signUp({ email: email, password: pass, options: { data: { name: name } } }).then(function(r){
+  SB.auth.signUp({ email: email, password: pass, options: { data: { name: name, app: 'sat-studio' } } }).then(function(r){
     setAuthBusy(false);
     if(r.error){ setAuthMsg(traducirAuthError(r.error.message), true); return; }
     if(r.data && r.data.session){ setAuthMsg(''); } // logueado directo (confirmación desactivada)
@@ -1806,6 +1961,8 @@ function init(){
     if(!$('#line-reader').classList.contains('hidden')) layoutLineReader();
   });
   wireAuth();
+  var abk = $('#btn-admin-back'); if(abk) abk.addEventListener('click', closeAdmin);
+  var abr = $('#btn-admin-refresh'); if(abr) abr.addEventListener('click', loadAdmin);
   authBoot();
 }
 init();

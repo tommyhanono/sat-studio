@@ -36,6 +36,11 @@ Descomprime la carpeta y abre `index.html` en Chrome/Edge/Safari. Listo. Todo fu
 - Cada estudiante entra con **correo + contraseña**. Cada quien ve **solo su** historial.
 - **Aislamiento:** los datos viven en un **schema `sat` propio** (separado de los otros proyectos que comparten el mismo Supabase); el acceso va únicamente por **funciones RPC** en `public` que filtran por el usuario autenticado. La info de SAT nunca se cruza con la de otros proyectos.
 - El esquema (schema `sat` + tabla + funciones RPC) está en [`supabase/schema.sql`](supabase/schema.sql).
+
+## Panel de admin
+
+- La cuenta con `app_metadata.role = 'admin'` ve un botón **📊 Admin** que abre un panel con: KPIs (cuentas, estudiantes activos, sesiones, accuracy global), gráficas (accuracy por dominio, sesiones por set) y la **tabla de estudiantes** (nombre, email, sesiones, accuracy, última actividad).
+- Los datos son **en vivo** vía RPC admin-gated (`sat_admin_overview`, `sat_admin_students`) que verifican el rol admin y **solo incluyen usuarios de SAT Studio** (con sesiones SAT o `user_metadata.app='sat-studio'`), nunca los de otros apps del mismo proyecto Supabase.
 - La config del backend (URL + anon key, ambas públicas) está en las constantes `SUPABASE_URL` / `SUPABASE_ANON_KEY` dentro de `index.html`. La anon key es pública por diseño; la seguridad la dan el login + RLS.
 
 ## Agregar sets nuevos (los genera Claude)
