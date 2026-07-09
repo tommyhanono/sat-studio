@@ -96,8 +96,9 @@
   .blank{letter-spacing:2px;font-weight:600}
   main.stacked{flex-direction:column}
   main.stacked .pane-left{flex:none;max-height:42vh;border-right:none;border-bottom:1px solid var(--gray-line);padding:24px 38px 22px}
-  main.stacked .passage{max-width:760px}
-  main.stacked .stem,main.stacked .choices{max-width:760px}
+  main.stacked .passage{max-width:760px;margin-left:auto;margin-right:auto}
+  main.stacked .stem,main.stacked .choices{max-width:760px;margin-left:auto;margin-right:auto}
+  main.stacked .q-strip{max-width:760px;margin-left:auto;margin-right:auto}
   main.centered .pane-left{display:none}
   main.centered #pane-question{max-width:820px;margin:0 auto}
   .figure-wrap{margin:0 0 18px;max-width:520px}
@@ -269,6 +270,10 @@
     .bar-row .lbl{width:130px}
   }
   @media (prefers-reduced-motion: reduce){*{transition:none !important;animation:none !important}}
+  .zoom-ctl{display:inline-flex;gap:4px;margin-right:6px}
+  .zbtn{min-width:34px;height:34px;border:1px solid var(--gray-line);background:#fff;border-radius:7px;font-weight:800;font-size:.92rem;color:var(--ink);cursor:pointer;line-height:1}
+  .zbtn:hover{background:var(--blue-soft);border-color:var(--blue);color:var(--blue)}
+
   /* ============ AUTH ============ */
   #view-auth{min-height:100vh;display:flex;align-items:center;justify-content:center;background:#f7f8fc;padding:28px 18px}
   .auth-card{width:100%;max-width:400px;background:#fff;border:1px solid var(--gray-line);border-radius:16px;padding:30px 26px;box-shadow:0 10px 40px rgba(20,30,60,.08)}
@@ -362,6 +367,10 @@
       <button class="timer-hide" id="btn-hide-timer">Hide</button>
     </div>
     <div class="hdr-right">
+      <div class="zoom-ctl" title="Escalar tamaño del texto (contexto, pregunta y opciones)">
+        <button class="zbtn" id="btn-zoom-out" aria-label="Reducir tamaño del texto">A−</button>
+        <button class="zbtn" id="btn-zoom-in" aria-label="Aumentar tamaño del texto">A+</button>
+      </div>
       <button class="tool-btn" id="btn-layout" aria-pressed="false" title="Vista lado a lado / apilada">
         <svg id="layout-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><line id="layout-line" x1="12" y1="4" x2="12" y2="20"/></svg>
         <span id="layout-label">Layout</span>
@@ -593,6 +602,11 @@ function safeScrollTop(){
 function applyZoom(){
   document.documentElement.style.setProperty('--zoom', prefs.zoom);
 }
+function zoomBy(delta){
+  prefs.zoom = Math.min(2, Math.max(0.8, Math.round((prefs.zoom + delta) * 10) / 10));
+  store.set(PKEY, prefs); applyZoom();
+}
+function zoomReset(){ prefs.zoom = 1; store.set(PKEY, prefs); applyZoom(); }
 
 /* ================= SPR PARSING & GRADING ================= */
 function parseRational(str){
@@ -814,7 +828,7 @@ function startSession(setId, mode){
     answers: {}, marked: {}, struck: {}, elim: {}, checked: {},
     annot: {}, secondsLeft: set.minutes * 60, elapsed: 0,
     timerId: null, timerHidden: false, expired: false, timeUsed: 0,
-    stacked: false, saved: false
+    stacked: false, saved: false, elimGlobal: false
   };
   $('#view-home').classList.add('hidden');
   $('#view-results').classList.add('hidden');
@@ -883,7 +897,7 @@ function renderQuestion(){
 
   // right pane
   var marked = !!S.marked[q.id];
-  var elimOn = !!S.elim[q.id];
+  var elimOn = !!S.elimGlobal;
   var struck = S.struck[q.id] || {};
   var sel = S.answers[q.id];
   var checked = !!S.checked[q.id];
@@ -966,7 +980,7 @@ function wireQuestion(q, kind){
   });
   var elimBtn = $('#btn-elim');
   if(elimBtn) elimBtn.addEventListener('click', function(){
-    S.elim[q.id] = !S.elim[q.id];
+    S.elimGlobal = !S.elimGlobal;
     renderQuestion();
   });
   if(q.type === 'spr'){
@@ -1583,7 +1597,7 @@ function afterLogin(){
 
 function cloudPull(){
   if(!authAvailable() || !currentUser) return Promise.resolve();
-  return SB.from('sat_sessions').select('sid,data,played_at').eq('user_id', currentUser.id).order('played_at', { ascending: true }).then(function(r){
+  return SB.rpc('sat_list_sessions').then(function(r){
     if(r.error) throw r.error;
     var cloud = (r.data || []).map(function(row){ var e = Object.assign({}, row.data || {}); e.sid = row.sid; return e; });
     var seen = {}; cloud.forEach(function(e){ seen[e.sid] = 1; });
@@ -1600,14 +1614,13 @@ function cloudPull(){
 function cloudUpsert(entry, silent){
   if(!authAvailable() || !currentUser) return Promise.resolve();
   if(!entry.sid) entry.sid = genSid();
-  var payload = {
-    user_id: currentUser.id, sid: entry.sid,
-    played_at: entry.savedAt || new Date().toISOString(),
-    mode: entry.mode, set_id: entry.setId, set_title: entry.setTitle,
-    score: entry.score, total: entry.total, time_used: entry.timeUsed,
-    data: entry
-  };
-  return SB.from('sat_sessions').upsert(payload, { onConflict: 'user_id,sid' }).then(function(r){
+  return SB.rpc('sat_upsert_session', {
+    p_sid: entry.sid,
+    p_played_at: entry.savedAt || new Date().toISOString(),
+    p_mode: entry.mode, p_set_id: entry.setId, p_set_title: entry.setTitle,
+    p_score: entry.score, p_total: entry.total, p_time_used: entry.timeUsed,
+    p_data: entry
+  }).then(function(r){
     if(r.error && !silent) console.warn('cloudUpsert:', r.error.message);
     return r;
   }).catch(function(e){ if(!silent) console.warn('cloudUpsert:', e); });
@@ -1615,7 +1628,7 @@ function cloudUpsert(entry, silent){
 
 function cloudDeleteAll(){
   if(!authAvailable() || !currentUser) return Promise.resolve();
-  return SB.from('sat_sessions').delete().eq('user_id', currentUser.id).then(function(){}).catch(function(){});
+  return SB.rpc('sat_delete_all_sessions').then(function(){}).catch(function(){});
 }
 
 function migrateLegacy(){
@@ -1714,9 +1727,11 @@ function init(){
 
   $('#btn-more').addEventListener('click', function(){ $('#more-menu').classList.toggle('hidden'); });
   $('#mm-linereader').addEventListener('click', function(){ toggleLineReader(); $('#more-menu').classList.add('hidden'); });
-  $('#mm-zoom-in').addEventListener('click', function(){ prefs.zoom = Math.min(1.5, Math.round((prefs.zoom + 0.1)*10)/10); store.set(PKEY, prefs); applyZoom(); });
-  $('#mm-zoom-out').addEventListener('click', function(){ prefs.zoom = Math.max(0.85, Math.round((prefs.zoom - 0.1)*10)/10); store.set(PKEY, prefs); applyZoom(); });
-  $('#mm-zoom-reset').addEventListener('click', function(){ prefs.zoom = 1; store.set(PKEY, prefs); applyZoom(); });
+  $('#mm-zoom-in').addEventListener('click', function(){ zoomBy(0.1); });
+  $('#mm-zoom-out').addEventListener('click', function(){ zoomBy(-0.1); });
+  $('#mm-zoom-reset').addEventListener('click', zoomReset);
+  $('#btn-zoom-in').addEventListener('click', function(){ zoomBy(0.1); });
+  $('#btn-zoom-out').addEventListener('click', function(){ zoomBy(-0.1); });
   $('#mm-exit').addEventListener('click', function(){
     $('#more-menu').classList.add('hidden');
     if(!S || window.confirm('¿Salir al menú? Esta sesión no se guardará.')) goHome();

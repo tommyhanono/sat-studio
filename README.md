@@ -33,8 +33,9 @@ Descomprime la carpeta y abre `index.html` en Chrome/Edge/Safari. Listo. Todo fu
 
 ## Cuentas y sincronización en la nube
 
-- Cada estudiante entra con **correo + contraseña**. Su historial vive en **Supabase** con seguridad por fila (RLS): cada quien ve **solo lo suyo**.
-- El esquema de la base de datos está en [`supabase/schema.sql`](supabase/schema.sql).
+- Cada estudiante entra con **correo + contraseña**. Cada quien ve **solo su** historial.
+- **Aislamiento:** los datos viven en un **schema `sat` propio** (separado de los otros proyectos que comparten el mismo Supabase); el acceso va únicamente por **funciones RPC** en `public` que filtran por el usuario autenticado. La info de SAT nunca se cruza con la de otros proyectos.
+- El esquema (schema `sat` + tabla + funciones RPC) está en [`supabase/schema.sql`](supabase/schema.sql).
 - La config del backend (URL + anon key, ambas públicas) está en las constantes `SUPABASE_URL` / `SUPABASE_ANON_KEY` dentro de `index.html`. La anon key es pública por diseño; la seguridad la dan el login + RLS.
 
 ## Agregar sets nuevos (los genera Claude)
