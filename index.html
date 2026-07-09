@@ -560,6 +560,8 @@
 <script src="sets/rw-set6.js"></script>
 <script src="sets/rw-set7.js"></script>
 <script src="sets/rw-mock1.js"></script>
+<script src="sets/rw-set8.js"></script>
+<script src="sets/rw-set9.js"></script>
 <script src="sets/math-set1.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1"></script>
@@ -938,12 +940,12 @@ function renderQuestion(){
   var kind = qKind(q);
   var main = $('#main-area');
   main.classList.remove('centered');
-  main.classList.toggle('stacked', S.stacked && kind !== 'math-mc');
-  $('#btn-layout').classList.toggle('hidden', kind === 'math-mc');
+  main.classList.toggle('stacked', S.stacked && kind !== 'math-mc' && !!(q.passage || q.figure));
+  $('#btn-layout').classList.toggle('hidden', kind === 'math-mc' || !(q.passage || q.figure));
 
   // left pane
   var left = $('#pane-passage');
-  if(kind === 'rw'){
+  if(kind === 'rw' && (q.passage || q.figure)){
     var lh = '';
     if(q.figure) lh += '<div class="figure-wrap">' + q.figure + '</div>';
     var savedP = S.annot[q.id + '::passage'];
