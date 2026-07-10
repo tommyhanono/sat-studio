@@ -643,6 +643,16 @@
 <script src="sets/math-adv.js"></script>
 <script src="sets/math-data.js"></script>
 <script src="sets/math-geo.js"></script>
+<script src="sets/rw-ideas2.js"></script>
+<script src="sets/rw-wic2.js"></script>
+<script src="sets/rw-trans2.js"></script>
+<script src="sets/rw-punct2.js"></script>
+<script src="sets/rw-evidence2.js"></script>
+<script src="sets/rw-synth2.js"></script>
+<script src="sets/math-alg2.js"></script>
+<script src="sets/math-adv2.js"></script>
+<script src="sets/math-data2.js"></script>
+<script src="sets/math-geo2.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1"></script>
 
@@ -941,6 +951,21 @@ function renderHome(){
     }).join('');
     sec += homeSection('Your Practice Tests', mockRows, mocks.length, true);
   }
+  // ===== Full Mocks category (numbered, stable full-length adaptive tests) =====
+  var N_MOCKS = 8;
+  var mockBest = {};
+  h.forEach(function(e){ if(e.mock && typeof e.mock.num === 'number'){ var n = e.mock.num; if(mockBest[n] == null || (e.mock.total||0) > mockBest[n]) mockBest[n] = e.mock.total; } });
+  var mockCards = '';
+  for(var mi = 1; mi <= N_MOCKS; mi++){
+    var best = mockBest[mi];
+    mockCards += '<div class="set-card"><div class="set-info"><span class="set-badge mixed">Full test</span>' +
+      '<h3>Practice Test ' + mi + '</h3>' +
+      '<div class="set-desc">Full-length &amp; adaptive: 2 Reading &amp; Writing modules + 2 Math modules → scaled score out of 1600.</div>' +
+      '<div class="set-meta">~98 questions · ~2h 14m' + (best != null ? ' · <b>best ' + best + '/1600</b>' : '') + '</div>' +
+      (best != null ? '<div class="set-done">✓ completed</div>' : '') +
+      '</div><div class="set-actions"><button class="btn-primary" data-start-fullmock="' + mi + '">' + (best != null ? 'Retake' : 'Start') + '</button></div></div>';
+  }
+  sec += homeSection('Full Mocks', mockCards, N_MOCKS, true);
   sec += homeSection('Math', mathSets.length ? mathSets.map(setCard).join('') : '<div class="empty-note">No Math sets pending — see Completed below.</div>', mathSets.length, true);
   sec += homeSection('Verbal', verbalSets.length ? verbalSets.map(setCard).join('') : '<div class="empty-note">No Verbal sets pending — see Completed below.</div>', verbalSets.length, true);
   sec += homeSection('Things To Work On', redoCard('redo-math', 'Math', 'math') + redoCard('redo-verbal', 'Verbal', 'rw'), totalMissed || null, true);
@@ -955,6 +980,9 @@ function renderHome(){
   });
   Array.prototype.forEach.call(document.querySelectorAll('#set-sections [data-review-mock]'), function(b){
     b.addEventListener('click', function(){ reviewMock(b.getAttribute('data-review-mock')); });
+  });
+  Array.prototype.forEach.call(document.querySelectorAll('#set-sections [data-start-fullmock]'), function(b){
+    b.addEventListener('click', function(){ startMock('full', parseInt(b.getAttribute('data-start-fullmock'), 10)); });
   });
 
   // domain bars
@@ -1947,12 +1975,13 @@ function mockPool(section){
   });
   return arr;
 }
-function _shuffle(a){ a = a.slice(); for(var i=a.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1)); var t=a[i];a[i]=a[j];a[j]=t; } return a; }
-function assembleModule(section, tier, count, used){
+function mulberry32(a){ return function(){ a|=0; a = a + 0x6D2B79F5 | 0; var t = Math.imul(a ^ a>>>15, 1 | a); t = t + Math.imul(t ^ t>>>7, 61 | t) ^ t; return ((t ^ t>>>14) >>> 0) / 4294967296; }; }
+function _shuffle(a, rnd){ rnd = rnd || Math.random; a = a.slice(); for(var i=a.length-1;i>0;i--){ var j=Math.floor(rnd()*(i+1)); var t=a[i];a[i]=a[j];a[j]=t; } return a; }
+function assembleModule(section, tier, count, used, rnd){
   var pool = mockPool(section).filter(function(q){ return !used[q.id]; });
-  var F = _shuffle(pool.filter(function(q){return q.difficulty==='Fácil';}));
-  var M = _shuffle(pool.filter(function(q){return q.difficulty==='Media';}));
-  var D = _shuffle(pool.filter(function(q){return q.difficulty==='Difícil';}));
+  var F = _shuffle(pool.filter(function(q){return q.difficulty==='Fácil';}), rnd);
+  var M = _shuffle(pool.filter(function(q){return q.difficulty==='Media';}), rnd);
+  var D = _shuffle(pool.filter(function(q){return q.difficulty==='Difícil';}), rnd);
   var order;
   if(tier==='easy') order = F.concat(M).concat(D);
   else if(tier==='hard') order = D.concat(M).concat(F);
@@ -1995,15 +2024,18 @@ function mockScreen(html){
   var v = ensureMockView(); v.innerHTML = html; v.classList.remove('hidden');
   try{ window.scrollTo(0,0); }catch(e){}
 }
-function startMock(kind){
+function mockRnd(code){ return (MOCK && MOCK.seed != null) ? mulberry32(MOCK.seed * 97 + code) : null; }
+function startMock(kind, num){
   kind = kind || 'full';
+  var seed = (typeof num === 'number') ? num : null;
   var used = {};
   var section = (kind === 'math') ? 'math' : 'rw';
   var count = section === 'math' ? MOCK_MATH : MOCK_RW;
   var firstKey = section === 'math' ? 'math1' : 'rw1';
-  var first = assembleModule(section, 'mixed', count, used);
+  var rnd = seed != null ? mulberry32(seed * 97 + (section === 'math' ? 3 : 1)) : null;
+  var first = assembleModule(section, 'mixed', count, used, rnd);
   if(first.length < 12){ alert('Not enough questions loaded yet for this test.'); return; }
-  MOCK = { active:true, kind:kind, stage:firstKey, used:used, results:{}, paths:{}, time:0, mods:{} };
+  MOCK = { active:true, kind:kind, num:seed, seed:seed, stage:firstKey, used:used, results:{}, paths:{}, time:0, mods:{} };
   MOCK.mods[firstKey] = makeModuleSet(section, first, 'Module 1');
   mockScreen(mockIntroHTML(kind, first.length));
   $('#mock-next').addEventListener('click', function(){ _beginSession(MOCK.mods[firstKey], 'exam'); });
@@ -2060,7 +2092,7 @@ function mockCapture(g){
   if(st === 'rw1'){
     var hard = weightedRatio(g.results) >= 0.60;
     MOCK.paths.rw = hard ? 'hard' : 'easy';
-    var rw2 = assembleModule('rw', hard?'hard':'easy', MOCK_RW, MOCK.used);
+    var rw2 = assembleModule('rw', hard?'hard':'easy', MOCK_RW, MOCK.used, mockRnd(2));
     MOCK.mods.rw2 = makeModuleSet('rw', rw2, 'Module 2');
     MOCK.stage = 'rw2';
     mockTransition('Reading &amp; Writing — Module 2', 'Second and final Reading &amp; Writing module. Keep going.', 32, rw2.length, function(){ _beginSession(MOCK.mods.rw2,'exam'); });
@@ -2068,14 +2100,14 @@ function mockCapture(g){
     if(MOCK.kind === 'rw'){ mockFinish(); return; }
     MOCK.stage = 'math1';
     mockBreak(function(){
-      var m1 = assembleModule('math','mixed',MOCK_MATH,MOCK.used);
+      var m1 = assembleModule('math','mixed',MOCK_MATH,MOCK.used, mockRnd(3));
       MOCK.mods.math1 = makeModuleSet('math', m1, 'Module 1');
       mockTransition('Math — Module 1', 'First Math module. The Reference Sheet and Desmos calculator are in the toolbar.', 35, m1.length, function(){ _beginSession(MOCK.mods.math1,'exam'); });
     });
   } else if(st === 'math1'){
     var hardM = weightedRatio(g.results) >= 0.55;
     MOCK.paths.math = hardM ? 'hard' : 'easy';
-    var m2 = assembleModule('math', hardM?'hard':'easy', MOCK_MATH, MOCK.used);
+    var m2 = assembleModule('math', hardM?'hard':'easy', MOCK_MATH, MOCK.used, mockRnd(4));
     MOCK.mods.math2 = makeModuleSet('math', m2, 'Module 2');
     MOCK.stage = 'math2';
     mockTransition('Math — Module 2', 'Second and final Math module. Last one!', 35, m2.length, function(){ _beginSession(MOCK.mods.math2,'exam'); });
@@ -2091,14 +2123,14 @@ function mockFinish(){
   var mathScore = mathAll.length ? sectionScaled(MOCK.results.math1, MOCK.results.math2, MOCK.paths.math==='hard') : null;
   var max = kind === 'full' ? 1600 : 800;
   var total = kind === 'full' ? (rwScore + mathScore) : (kind === 'rw' ? rwScore : mathScore);
-  var title = kind === 'full' ? 'Full Practice Test' : (kind === 'rw' ? 'Reading & Writing Test' : 'Math Test');
+  var title = kind === 'full' ? (MOCK.num != null ? 'Practice Test ' + MOCK.num : 'Full Practice Test') : (kind === 'rw' ? 'Reading & Writing Test' : 'Math Test');
   var allR = rwAll.concat(mathAll);
   var correct = allR.filter(function(r){ return r.ok; }).length;
   MOCK.active = false;
   saveSession({
     date: todayStr(), setId:'full-mock', setTitle:title, mode:'exam',
     score: correct, total: allR.length, timeUsed: MOCK.time||0, expired:false,
-    mock: { kind:kind, max:max, total:total, rwScore:rwScore, mathScore:mathScore, rwPath:MOCK.paths.rw||null, mathPath:MOCK.paths.math||null },
+    mock: { kind:kind, num:MOCK.num, max:max, total:total, rwScore:rwScore, mathScore:mathScore, rwPath:MOCK.paths.rw||null, mathPath:MOCK.paths.math||null },
     perQuestion: allR.map(function(r){ return { qid:r.q.id, setId:r.q._setId, domain:r.q.domain, skill:r.q.skill, difficulty:r.q.difficulty, ok:r.ok, user:r.user, correct: r.q.type==='spr'?r.q.answer:r.q.correct }; })
   });
   renderMockResults({ kind:kind, max:max, total:total, rwScore:rwScore, mathScore:mathScore, paths:MOCK.paths, rwAll:rwAll, mathAll:mathAll, meta:{ date:todayStr() } });
