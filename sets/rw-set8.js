@@ -1,10 +1,10 @@
 /* SAT Studio question set — Reading & Writing: Gramática (Concordancia y Coordinación) Set 8 (GRM-01 a GRM-12) */
 window.SAT_SETS.push({
   id: 'rw-set8',
-  title: 'Gramática: Concordancia y Coordinación — Difícil',
+  title: 'Grammar: Agreement & Coordination — Hard',
   section: 'rw',
   level: 'Difícil',
-  description: 'Standard English Conventions (Form, Structure & Sense): concordancia sujeto-verbo, formas verbales, coordinación de cláusulas, pronombres y posesivos.',
+  description: 'Standard English Conventions (Form, Structure & Sense): subject-verb agreement, verb forms, clause coordination, pronouns, and possessives.',
   minutes: 15,
   questions: [
     {

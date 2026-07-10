@@ -1,10 +1,10 @@
 /* SAT Studio question set — Reading & Writing MODULE mock (flagship "Difícil"): MK1-01 a MK1-27, real Digital SAT domain order */
 window.SAT_SETS.push({
   id: 'rw-mock1',
-  title: 'Simulacro R&W (Módulo) — Difícil',
+  title: 'R&W Module Mock — Hard',
   section: 'rw',
   level: 'Difícil',
-  description: 'Módulo completo estilo Bluebook (27 preguntas) en el orden real de dominios. Nivel difícil.',
+  description: 'Full Bluebook-style module (27 questions) in the real domain order. Hard level.',
   minutes: 32,
   questions: [
     /* ===== Q1–7 — CRAFT AND STRUCTURE ===== */

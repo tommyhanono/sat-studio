@@ -1,10 +1,10 @@
 /* SAT Studio question set — Reading & Writing: Rhetorical Synthesis (RHS-01 a RHS-10) */
 window.SAT_SETS.push({
   id: 'rw-set9',
-  title: 'Rhetorical Synthesis — Difícil',
+  title: 'Rhetorical Synthesis — Hard',
   section: 'rw',
   level: 'Difícil',
-  description: 'Expression of Ideas: usa las notas para cumplir un objetivo retórico específico (síntesis).',
+  description: 'Expression of Ideas: use the notes to accomplish a specific rhetorical goal (synthesis).',
   minutes: 14,
   questions: [
     {

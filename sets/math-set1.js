@@ -37,7 +37,7 @@
     id: 'math-set1',
     title: 'Math Mixed Practice — Set 1',
     section: 'math',
-    description: 'Álgebra, Advanced Math, Problem-Solving & Data Analysis y Geometría/Trig. Incluye 3 preguntas SPR (respuesta escrita) para practicar las reglas de entrada del examen real.',
+    description: 'Algebra, Advanced Math, Problem-Solving & Data Analysis, and Geometry/Trig. Includes 3 SPR (student-produced response) questions to practice the real exam entry rules.',
     minutes: 15,
     questions: [
       {

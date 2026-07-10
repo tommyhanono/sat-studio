@@ -1,10 +1,10 @@
 /* SAT Studio question set — Reading & Writing: Rhetorical Synthesis (RHF-01 a RHF-10) */
 window.SAT_SETS.push({
   id: 'rw-set10',
-  title: 'Rhetorical Synthesis — Fácil',
+  title: 'Rhetorical Synthesis — Easy',
   section: 'rw',
   level: 'Fácil',
-  description: 'Expression of Ideas: síntesis de notas para cumplir un objetivo — versión accesible para construir la base.',
+  description: 'Expression of Ideas: synthesize notes to meet a goal — an accessible version to build the basics.',
   minutes: 12,
   questions: [
     {

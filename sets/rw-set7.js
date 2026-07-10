@@ -1,10 +1,10 @@
-/* SAT Studio question set — Reading & Writing: Command of Evidence — Difícil (COE-01 a COE-10) */
+/* SAT Studio question set — Reading & Writing: Command of Evidence — Hard (COE-01 a COE-10) */
 window.SAT_SETS.push({
   id: 'rw-set7',
-  title: 'Command of Evidence — Difícil',
+  title: 'Command of Evidence — Hard',
   section: 'rw',
   level: 'Difícil',
-  description: 'Information and Ideas: elige el dato o la cita que MEJOR apoya (o debilita) la afirmación.',
+  description: 'Information and Ideas: choose the fact or quotation that BEST supports (or weakens) the claim.',
   minutes: 16,
   questions: [
     {

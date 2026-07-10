@@ -1,10 +1,10 @@
 /* SAT Studio question set — Reading & Writing: Rhetorical Synthesis (RHM-01 a RHM-10) */
 window.SAT_SETS.push({
   id: 'rw-set11',
-  title: 'Rhetorical Synthesis — Media',
+  title: 'Rhetorical Synthesis — Medium',
   section: 'rw',
   level: 'Media',
-  description: 'Expression of Ideas: síntesis de notas para cumplir un objetivo — nivel intermedio.',
+  description: 'Expression of Ideas: synthesize notes to meet a goal — intermediate level.',
   minutes: 13,
   questions: [
     {

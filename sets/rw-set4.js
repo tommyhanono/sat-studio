@@ -1,10 +1,10 @@
-/* SAT Studio question set — Reading & Writing: Words in Context — Difícil (WIC-H-01 a WIC-H-10) */
+/* SAT Studio question set — Reading & Writing: Words in Context — Hard (WIC-H-01 a WIC-H-10) */
 window.SAT_SETS.push({
   id: 'rw-set4',
-  title: 'Words in Context — Difícil',
+  title: 'Words in Context — Hard',
   section: 'rw',
   level: 'Difícil',
-  description: 'Craft and Structure: vocabulario denso y distinciones sutiles — pasajes más difíciles.',
+  description: 'Craft and Structure: dense vocabulary and subtle distinctions — harder passages.',
   minutes: 14,
   questions: [
     {

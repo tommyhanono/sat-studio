@@ -3,7 +3,7 @@ window.SAT_SETS.push({
   id: 'rw-set1',
   title: 'Punctuation Drill — Set 1',
   section: 'rw',
-  description: 'Standard English Conventions: comas, punto y coma, dos puntos, rayas, apóstrofos y límites de oración.',
+  description: 'Standard English Conventions: commas, semicolons, colons, dashes, apostrophes, and sentence boundaries.',
   minutes: 15,
   questions: [
     {

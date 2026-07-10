@@ -1,10 +1,10 @@
-/* SAT Studio question set — Reading & Writing: Ideas Centrales e Inferencias (RDG-01 a RDG-10) */
+/* SAT Studio question set — Reading & Writing: Central Ideas & Inferences (RDG-01 a RDG-10) */
 window.SAT_SETS.push({
   id: 'rw-set6',
-  title: 'Ideas Centrales e Inferencias — Media',
+  title: 'Central Ideas & Inferences — Medium',
   section: 'rw',
   level: 'Media',
-  description: 'Information and Ideas: identifica la idea central y saca inferencias lógicas del texto.',
+  description: 'Information and Ideas: identify the central idea and draw logical inferences from the text.',
   minutes: 15,
   questions: [
     {

@@ -1,10 +1,10 @@
 /* SAT Studio question set — Reading & Writing: Transitions Media (TRN-01 a TRN-10) */
 window.SAT_SETS.push({
   id: 'rw-set5',
-  title: 'Transitions — Media',
+  title: 'Transitions — Medium',
   section: 'rw',
   level: 'Media',
-  description: 'Expression of Ideas: elige la transición lógica que conecta las ideas.',
+  description: 'Expression of Ideas: choose the logical transition that connects the ideas.',
   minutes: 13,
   questions: [
     {

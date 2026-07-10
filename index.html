@@ -50,6 +50,15 @@
   .lvl-badge.lvl-hard{background:#fdeaea;color:#c0392b}
   .set-group{font-size:.8rem;color:var(--gray-mid);text-transform:uppercase;letter-spacing:.05em;font-weight:800;margin:24px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--gray-line)}
   .set-group:first-child{margin-top:2px}
+  .home-sec{border:1px solid var(--gray-line);border-radius:12px;background:#fff;margin-bottom:14px;overflow:hidden}
+  .home-sec>summary{list-style:none;cursor:pointer;padding:15px 20px;font-size:1.05rem;font-weight:800;display:flex;align-items:center;gap:10px;user-select:none}
+  .home-sec>summary::-webkit-details-marker{display:none}
+  .home-sec>summary::before{content:'▸';color:var(--gray-mid);font-size:.85rem;transition:transform .15s}
+  .home-sec[open]>summary::before{transform:rotate(90deg)}
+  .home-sec>summary:hover{background:#f7f8fc}
+  .sec-count{margin-left:auto;font-size:.76rem;font-weight:700;color:var(--gray-mid);background:#eef0f6;border-radius:999px;padding:2px 11px}
+  .home-sec-body{padding:2px 20px 18px}
+  .home-sec-body .set-card:last-child{margin-bottom:2px}
   .set-card h3{font-size:1.08rem;margin-bottom:4px}
   .set-desc{color:var(--gray-mid);font-size:.88rem;margin-bottom:8px}
   .set-meta{font-size:.8rem;color:var(--gray-mid)}
@@ -338,57 +347,47 @@
 <!-- ============ AUTH ============ -->
 <div id="view-auth" class="hidden">
   <div class="auth-card">
-    <div class="brand"><h1>SAT Studio</h1><span class="tag">Tu progreso, en la nube</span></div>
-    <p class="auth-sub">Inicia sesión o crea tu cuenta para guardar tu historial y verlo desde cualquier dispositivo.</p>
-    <label class="auth-lbl" for="auth-name">Nombre (opcional)</label>
-    <input id="auth-name" class="auth-inp" type="text" autocomplete="name" placeholder="Tu nombre">
-    <label class="auth-lbl" for="auth-email">Correo</label>
+    <div class="brand"><h1>SAT Studio</h1><span class="tag">Your progress, in the cloud</span></div>
+    <p class="auth-sub">Sign in or create your account to save your history and see it from any device.</p>
+    <label class="auth-lbl" for="auth-name">Name (optional)</label>
+    <input id="auth-name" class="auth-inp" type="text" autocomplete="name" placeholder="Your name">
+    <label class="auth-lbl" for="auth-email">Email</label>
     <input id="auth-email" class="auth-inp" type="email" autocomplete="email" placeholder="tucorreo@ejemplo.com">
-    <label class="auth-lbl" for="auth-pass">Contraseña</label>
-    <input id="auth-pass" class="auth-inp" type="password" autocomplete="current-password" placeholder="Mínimo 6 caracteres">
+    <label class="auth-lbl" for="auth-pass">Password</label>
+    <input id="auth-pass" class="auth-inp" type="password" autocomplete="current-password" placeholder="At least 6 characters">
     <div id="auth-msg" class="auth-msg hidden"></div>
     <div class="auth-actions">
-      <button id="auth-login-btn" class="btn-primary">Iniciar sesión</button>
-      <button id="auth-signup-btn" class="btn-outline">Crear cuenta</button>
+      <button id="auth-login-btn" class="btn-primary">Sign in</button>
+      <button id="auth-signup-btn" class="btn-outline">Create account</button>
     </div>
-    <p class="auth-foot">Tus datos son privados: solo tú ves tu historial.</p>
+    <p class="auth-foot">Your data is private: only you can see your history.</p>
   </div>
 </div>
 
 <div id="view-home" class="hidden">
   <div class="home-wrap">
-    <div class="brand"><h1>SAT Studio</h1><span class="tag">Bluebook-style practice · hecho con Claude</span><div id="user-chip" class="user-chip hidden"></div></div>
-    <p class="home-sub">Elige un set y un modo. <strong>Exam</strong> = cronometrado, se califica al final. <strong>Drill</strong> = sin timer, con feedback y explicación inmediata en cada pregunta.</p>
+    <div class="brand"><h1>SAT Studio</h1><span class="tag">Bluebook-style practice</span><div id="user-chip" class="user-chip hidden"></div></div>
+    <p class="home-sub">Pick a set and a mode. <strong>Exam</strong> = timed, graded at the end. <strong>Drill</strong> = no timer, with instant feedback and an explanation on every question.</p>
 
     <div class="dash-cards" id="dash-cards"></div>
 
-    <h2 class="sec-title">Sets de práctica</h2>
-    <div id="set-list"></div>
+    <div id="set-sections"></div>
 
-    <div class="set-card" id="redo-card">
-      <div class="set-info">
-        <span class="set-badge mixed">Repaso</span>
-        <h3>Redo my mistakes</h3>
-        <div class="set-desc">Rehace todas las preguntas que fallaste (según tu última respuesta a cada una).</div>
-        <div class="set-meta" id="redo-meta">—</div>
+    <details class="home-sec" open>
+      <summary>Your Progress</summary>
+      <div class="home-sec-body">
+        <div class="panel" id="domain-panel"><div class="empty-note">Complete your first set to see stats by domain.</div></div>
+        <div class="panel" id="skill-panel"><div class="empty-note">Your weakest skills will show up here.</div></div>
+        <div class="panel">
+          <h3 style="font-size:1rem;margin-bottom:8px">Session history</h3>
+          <div id="hist-list"><div class="empty-note">No sessions yet.</div></div>
+          <button class="danger-link" id="btn-clear-history">Clear history</button>
+        </div>
       </div>
-      <div class="set-actions">
-        <button class="btn-primary" id="btn-redo-drill" disabled>Drill</button>
-        <button class="btn-outline" id="btn-redo-exam" disabled>Exam</button>
-      </div>
-    </div>
-
-    <h2 class="sec-title">Tu progreso</h2>
-    <div class="panel" id="domain-panel"><div class="empty-note">Completa tu primer set para ver estadísticas por dominio.</div></div>
-    <div class="panel" id="skill-panel"><div class="empty-note">Aquí aparecerán tus skills más débiles.</div></div>
-    <div class="panel">
-      <h3 style="font-size:1rem;margin-bottom:8px">Historial de sesiones</h3>
-      <div id="hist-list"><div class="empty-note">Aún no hay sesiones registradas.</div></div>
-      <button class="danger-link" id="btn-clear-history">Borrar historial</button>
-    </div>
+    </details>
 
     <div class="home-tools">
-      <strong>Herramientas dentro del examen:</strong> timer (Hide), Mark for Review, eliminador ABC, menú de preguntas, Check Your Work, calculadora Desmos, Reference Sheet (Math), Layout split/vertical, Line Reader, Zoom, y <strong>Highlights &amp; Notes</strong>: selecciona texto del pasaje o la pregunta con el mouse para resaltarlo, subrayarlo o dejarte una nota. 💡 Al terminar, copia el resumen y pégaselo a Claude para actualizar tu error log.
+      <strong>In-exam tools:</strong> timer (Hide), Mark for Review, ABC eliminator, question menu, Check Your Work, Desmos calculator, Reference Sheet (Math), Layout split/stacked, Line Reader, Zoom, and <strong>Highlights &amp; Notes</strong>: select text in the passage or question with your mouse to highlight, underline, or leave a note.
     </div>
   </div>
 </div>
@@ -397,19 +396,19 @@
 <div id="view-admin" class="hidden">
   <div class="admin-wrap">
     <div class="admin-head">
-      <div><h1>Panel de Admin</h1><span class="admin-sub">SAT Studio · vista de administrador</span></div>
+      <div><h1>Admin Panel</h1><span class="admin-sub">SAT Studio · administrator view</span></div>
       <div class="admin-actions">
-        <button class="btn-outline" id="btn-admin-refresh">↻ Actualizar</button>
-        <button class="btn-primary" id="btn-admin-back">← Volver</button>
+        <button class="btn-outline" id="btn-admin-refresh">↻ Refresh</button>
+        <button class="btn-primary" id="btn-admin-back">← Back</button>
       </div>
     </div>
     <div id="admin-status" class="admin-status"></div>
     <div class="akpi-row" id="admin-kpis"></div>
     <div class="achart-row">
-      <div class="achart"><h3>Accuracy por dominio</h3><div class="achart-box"><canvas id="admin-chart-domain"></canvas></div></div>
-      <div class="achart"><h3>Sesiones por set</h3><div class="achart-box"><canvas id="admin-chart-set"></canvas></div></div>
+      <div class="achart"><h3>Accuracy by domain</h3><div class="achart-box"><canvas id="admin-chart-domain"></canvas></div></div>
+      <div class="achart"><h3>Sessions per set</h3><div class="achart-box"><canvas id="admin-chart-set"></canvas></div></div>
     </div>
-    <div class="atable-wrap"><h3>Estudiantes</h3><div id="admin-table"></div></div>
+    <div class="atable-wrap"><h3>Students</h3><div id="admin-table"></div></div>
   </div>
 </div>
 
@@ -426,15 +425,15 @@
       <button class="timer-hide" id="btn-hide-timer">Hide</button>
     </div>
     <div class="hdr-right">
-      <div class="zoom-ctl" title="Escalar tamaño del texto (contexto, pregunta y opciones)">
-        <button class="zbtn" id="btn-zoom-out" aria-label="Reducir tamaño del texto">A−</button>
-        <button class="zbtn" id="btn-zoom-in" aria-label="Aumentar tamaño del texto">A+</button>
+      <div class="zoom-ctl" title="Scale text size (passage, question, and choices)">
+        <button class="zbtn" id="btn-zoom-out" aria-label="Decrease text size">A−</button>
+        <button class="zbtn" id="btn-zoom-in" aria-label="Increase text size">A+</button>
       </div>
       <button class="tool-btn" id="btn-layout" aria-pressed="false" title="Vista lado a lado / apilada">
         <svg id="layout-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><line id="layout-line" x1="12" y1="4" x2="12" y2="20"/></svg>
         <span id="layout-label">Layout</span>
       </button>
-      <button class="tool-btn hidden" id="btn-ref" aria-pressed="false" title="Reference sheet (fórmulas)">
+      <button class="tool-btn hidden" id="btn-ref" aria-pressed="false" title="Reference sheet (formulas)">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V4H6.5A2.5 2.5 0 0 0 4 6.5v13z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"/></svg>
         Reference
       </button>
@@ -448,10 +447,10 @@
       </button>
       <div id="more-menu" class="hidden">
         <button id="mm-linereader">Line Reader</button>
-        <button id="mm-zoom-in">Zoom in (texto +)</button>
-        <button id="mm-zoom-out">Zoom out (texto −)</button>
+        <button id="mm-zoom-in">Zoom in (text +)</button>
+        <button id="mm-zoom-out">Zoom out (text −)</button>
         <button id="mm-zoom-reset">Reset zoom</button>
-        <button id="mm-exit">Salir al menú</button>
+        <button id="mm-exit">Exit to menu</button>
         <div class="mm-note">💡 Highlights &amp; Notes: selecciona texto del pasaje o del enunciado con el mouse para resaltar, subrayar o dejar una nota.</div>
       </div>
     </div>
@@ -463,7 +462,7 @@
     <div class="pane hidden" id="pane-review" style="flex:1">
       <div class="review-wrap">
         <h2>Check Your Work</h2>
-        <p>On test day, you won't be able to move on to the next module until time expires.<br>Haz clic en cualquier pregunta para volver a ella, o envía tu examen para calificarlo.</p>
+        <p>On test day, you won't be able to move on to the next module until time expires.<br>Click any question to go back to it, or submit your exam to grade it.</p>
         <div class="review-card">
           <h3 style="font-size:.95rem;margin-bottom:12px;text-align:center" id="review-title"></h3>
           <div class="legend">
@@ -506,7 +505,7 @@
       <button id="btn-calc-close" title="Close">✕</button>
     </div>
     <div class="float-body">
-      <div id="calc-status">Cargando la calculadora de Desmos…</div>
+      <div id="calc-status">Loading the Desmos calculator…</div>
       <div id="desmos-root"></div>
     </div>
   </div>
@@ -536,27 +535,27 @@
 <div id="view-results" class="hidden">
   <div class="res-wrap">
     <div class="res-hero">
-      <h2 id="res-title">Resultados</h2>
+      <h2 id="res-title">Results</h2>
       <div class="res-score"><span id="res-score-num">0</span><small id="res-score-den"> / 10</small></div>
       <div class="res-meta" id="res-meta"></div>
       <div class="res-est" id="res-est"></div>
-      <div class="res-expired hidden" id="res-expired">⏰ Se acabó el tiempo — el examen se envió automáticamente.</div>
+      <div class="res-expired hidden" id="res-expired">⏰ Time's up — your exam was submitted automatically.</div>
     </div>
     <div class="res-actions">
-      <button class="btn-primary" id="btn-home">Volver al menú</button>
+      <button class="btn-primary" id="btn-home">Back to menu</button>
     </div>
     <div class="summary-box">
-      <h3>Resumen para tu error log</h3>
-      <p>Copia este bloque y pégalo en el chat con Claude para registrar tus resultados y actualizar el error log.</p>
+      <h3>Summary for your error log</h3>
+      <p>Copy this block and paste it into a chat to log your results and update your error log.</p>
       <textarea id="summary-text" readonly></textarea>
-      <button class="copy-btn" id="btn-copy">Copiar resumen</button>
+      <button class="copy-btn" id="btn-copy">Copy summary</button>
     </div>
     <div id="res-list"></div>
   </div>
 </div>
 
 <script>window.SAT_SETS = [];</script>
-<!-- SETS: agrega aquí una línea por cada set nuevo que Claude te genere -->
+<!-- SETS: add one line here for each new question set -->
 <script src="sets/rw-set1.js"></script>
 <script src="sets/rw-set2.js"></script>
 <script src="sets/rw-set3.js"></script>
@@ -793,60 +792,78 @@ function renderHome(){
   var last = h.length ? h[h.length-1] : null;
 
   $('#dash-cards').innerHTML =
-    '<div class="dash-card"><div class="k">Sesiones</div><div class="v">' + h.length + '</div><div class="s">' + (currentUser ? '☁️ sincronizado en la nube' : (store.persistent ? 'guardado en este navegador' : '⚠ historial temporal (este entorno no guarda)')) + '</div></div>' +
-    '<div class="dash-card"><div class="k">Accuracy global</div><div class="v">' + (totalQ ? Math.round(100*okQ/totalQ) + '%' : '—') + '</div><div class="s">' + okQ + '/' + totalQ + ' preguntas</div></div>' +
-    '<div class="dash-card"><div class="k">Por repasar</div><div class="v">' + pool.length + '</div><div class="s">preguntas falladas pendientes</div></div>' +
-    '<div class="dash-card"><div class="k">Última sesión</div><div class="v">' + (last ? last.score + '/' + last.total : '—') + '</div><div class="s">' + (last ? (last.setTitle + ' · ' + last.mode) : 'aún nada') + '</div></div>';
+    '<div class="dash-card"><div class="k">Sessions</div><div class="v">' + h.length + '</div><div class="s">' + (currentUser ? '☁️ synced to the cloud' : (store.persistent ? 'saved in this browser' : '⚠ temporary history (this environment won\'t save)')) + '</div></div>' +
+    '<div class="dash-card"><div class="k">Overall accuracy</div><div class="v">' + (totalQ ? Math.round(100*okQ/totalQ) + '%' : '—') + '</div><div class="s">' + okQ + '/' + totalQ + ' questions</div></div>' +
+    '<div class="dash-card"><div class="k">To review</div><div class="v">' + pool.length + '</div><div class="s">pending missed questions</div></div>' +
+    '<div class="dash-card"><div class="k">Last session</div><div class="v">' + (last ? last.score + '/' + last.total : '—') + '</div><div class="s">' + (last ? (last.setTitle + ' · ' + last.mode) : 'nothing yet') + '</div></div>';
 
-  // set list — agrupado por sección + skill, ordenado por nivel (Fácil→Difícil)
+  // ===== 4 collapsible sections: Math · Verbal · Things To Work On · Completed =====
   var doneBySet = {};
   h.forEach(function(s){ doneBySet[s.setId] = (doneBySet[s.setId]||0) + 1; });
+  var LVLLABEL = { 'Fácil':'Easy', 'Media':'Medium', 'Difícil':'Hard' };
   var LVLORD = { 'Fácil':1, 'Media':2, 'Difícil':3 };
   function setCat(s){
-    return String(s.title).split(' — ')[0].replace(/ Drill$/,'').replace(/ \(Módulo\)/,'').replace(/:.*/,'').trim();
+    return String(s.title).split(' — ')[0].replace(/ Drill$/,'').replace(/ \((Módulo|Module)\)/,'').replace(/:.*/,'').trim();
+  }
+  function sortSets(items){
+    items.sort(function(a,b){
+      var ca = setCat(a), cb = setCat(b);
+      if(ca !== cb) return ca < cb ? -1 : 1;
+      return ((LVLORD[a.level]||0) - (LVLORD[b.level]||0)) || (a.id < b.id ? -1 : 1);
+    });
+    return items;
   }
   function setCard(s){
-    var badge = s.level ? '<span class="lvl-badge lvl-' + ({'Fácil':'easy','Media':'med','Difícil':'hard'}[s.level] || 'med') + '">' + s.level + '</span>' : '';
+    var badge = s.level ? '<span class="lvl-badge lvl-' + ({'Fácil':'easy','Media':'med','Difícil':'hard'}[s.level] || 'med') + '">' + (LVLLABEL[s.level] || s.level) + '</span>' : '';
     return '<div class="set-card">' +
       '<div class="set-info">' + badge +
       '<h3>' + s.title + '</h3>' +
       '<div class="set-desc">' + s.description + '</div>' +
-      '<div class="set-meta">' + s.questions.length + ' preguntas · Exam: ' + s.minutes + ' min · IDs ' + s.questions[0].id + '–' + s.questions[s.questions.length-1].id + '</div>' +
-      (doneBySet[s.id] ? '<div class="set-done">✓ completado ' + doneBySet[s.id] + ' vez/veces</div>' : '') +
+      '<div class="set-meta">' + s.questions.length + ' questions · Exam: ' + s.minutes + ' min · IDs ' + s.questions[0].id + '–' + s.questions[s.questions.length-1].id + '</div>' +
+      (doneBySet[s.id] ? '<div class="set-done">✓ completed ' + doneBySet[s.id] + '×</div>' : '') +
       '</div>' +
       '<div class="set-actions">' +
       '<button class="btn-primary" data-start-exam="' + s.id + '">Exam</button>' +
       '<button class="btn-outline" data-start-drill="' + s.id + '">Drill</button>' +
       '</div></div>';
   }
-  var groups = [
-    { name: 'Reading &amp; Writing', items: SETS.filter(function(s){ return s.section === 'rw' && s.id.indexOf('mock') < 0; }) },
-    { name: 'Simulacros completos', items: SETS.filter(function(s){ return s.id.indexOf('mock') >= 0; }) },
-    { name: 'Math', items: SETS.filter(function(s){ return s.section === 'math'; }) }
-  ];
-  var list = '';
-  groups.forEach(function(g){
-    if(!g.items.length) return;
-    g.items.sort(function(a,b){
-      var ca = setCat(a), cb = setCat(b);
-      if(ca !== cb) return ca < cb ? -1 : 1;
-      return ((LVLORD[a.level]||0) - (LVLORD[b.level]||0)) || (a.id < b.id ? -1 : 1);
-    });
-    list += '<h3 class="set-group">' + g.name + '</h3>';
-    g.items.forEach(function(s){ list += setCard(s); });
-  });
-  $('#set-list').innerHTML = list;
-  Array.prototype.forEach.call(document.querySelectorAll('[data-start-exam]'), function(b){
-    b.addEventListener('click', function(){ startSession(b.getAttribute('data-start-exam'), 'exam'); });
-  });
-  Array.prototype.forEach.call(document.querySelectorAll('[data-start-drill]'), function(b){
-    b.addEventListener('click', function(){ startSession(b.getAttribute('data-start-drill'), 'drill'); });
-  });
+  function redoCard(rid, label, sec){
+    var n = pool.filter(function(q){ return sec === 'math' ? q._section === 'math' : q._section !== 'math'; }).length;
+    var dis = n ? '' : ' disabled';
+    return '<div class="set-card">' +
+      '<div class="set-info"><span class="set-badge mixed">Review</span>' +
+      '<h3>Redo ' + label + ' Mistakes</h3>' +
+      '<div class="set-desc">Practice the ' + label.toLowerCase() + ' questions you\'ve gotten wrong (based on your latest answer to each).</div>' +
+      '<div class="set-meta">' + (n ? n + ' questions in your pool' : 'No pending mistakes. 🎉') + '</div>' +
+      '</div>' +
+      '<div class="set-actions">' +
+      '<button class="btn-primary" data-start-exam="' + rid + '"' + dis + '>Exam</button>' +
+      '<button class="btn-outline" data-start-drill="' + rid + '"' + dis + '>Drill</button>' +
+      '</div></div>';
+  }
+  function homeSection(title, bodyHTML, count, openByDefault){
+    return '<details class="home-sec"' + (openByDefault ? ' open' : '') + '><summary>' + title +
+      (count != null ? ' <span class="sec-count">' + count + '</span>' : '') + '</summary>' +
+      '<div class="home-sec-body">' + bodyHTML + '</div></details>';
+  }
+  var mathSets = sortSets(SETS.filter(function(s){ return s.section === 'math' && !doneBySet[s.id]; }));
+  var verbalSets = sortSets(SETS.filter(function(s){ return s.section === 'rw' && !doneBySet[s.id]; }));
+  var completedSets = sortSets(SETS.filter(function(s){ return doneBySet[s.id]; }));
+  var totalMissed = pool.length;
 
-  // redo card
-  $('#redo-meta').textContent = pool.length ? (pool.length + ' preguntas en el pool: ' + pool.map(function(q){return q.id;}).join(', ')) : 'No tienes preguntas falladas pendientes. 🎉';
-  $('#btn-redo-drill').disabled = pool.length === 0;
-  $('#btn-redo-exam').disabled = pool.length === 0;
+  var sec = '';
+  sec += homeSection('Math', mathSets.length ? mathSets.map(setCard).join('') : '<div class="empty-note">No Math sets pending — see Completed below.</div>', mathSets.length, true);
+  sec += homeSection('Verbal', verbalSets.length ? verbalSets.map(setCard).join('') : '<div class="empty-note">No Verbal sets pending — see Completed below.</div>', verbalSets.length, true);
+  sec += homeSection('Things To Work On', redoCard('redo-math', 'Math', 'math') + redoCard('redo-verbal', 'Verbal', 'rw'), totalMissed || null, true);
+  sec += homeSection('Completed', completedSets.length ? completedSets.map(setCard).join('') : '<div class="empty-note">Nothing completed yet.</div>', completedSets.length, false);
+  $('#set-sections').innerHTML = sec;
+
+  Array.prototype.forEach.call(document.querySelectorAll('#set-sections [data-start-exam]'), function(b){
+    b.addEventListener('click', function(){ if(!b.disabled) startSession(b.getAttribute('data-start-exam'), 'exam'); });
+  });
+  Array.prototype.forEach.call(document.querySelectorAll('#set-sections [data-start-drill]'), function(b){
+    b.addEventListener('click', function(){ if(!b.disabled) startSession(b.getAttribute('data-start-drill'), 'drill'); });
+  });
 
   // domain bars
   var byDomain = {};
@@ -857,7 +874,7 @@ function renderHome(){
   });
   var dkeys = Object.keys(byDomain);
   if(dkeys.length){
-    var dh = '<h3 style="font-size:1rem;margin-bottom:12px">Accuracy por dominio</h3>';
+    var dh = '<h3 style="font-size:1rem;margin-bottom:12px">Accuracy by domain</h3>';
     dkeys.forEach(function(k){
       var pct = Math.round(100*byDomain[k][0]/byDomain[k][1]);
       var cls = pct >= 80 ? '' : (pct >= 60 ? ' mid' : ' bad');
@@ -877,7 +894,7 @@ function renderHome(){
     return { skill: k, ok: bySkill[k][0], n: bySkill[k][1], pct: bySkill[k][0]/bySkill[k][1] };
   }).filter(function(x){ return x.pct < 1; }).sort(function(a,b){ return a.pct - b.pct; }).slice(0,5);
   if(allPQ.length){
-    var sh = '<h3 style="font-size:1rem;margin-bottom:12px">Skills a reforzar</h3>';
+    var sh = '<h3 style="font-size:1rem;margin-bottom:12px">Skills to improve</h3>';
     if(weak.length){
       weak.forEach(function(x){
         var pct = Math.round(100*x.pct);
@@ -885,7 +902,7 @@ function renderHome(){
         sh += '<div class="bar-row"><div class="lbl">' + x.skill + '</div><div class="bar-track"><div class="bar-fill' + cls + '" style="width:' + Math.max(pct,4) + '%"></div></div><div class="pct">' + pct + '% (' + x.ok + '/' + x.n + ')</div></div>';
       });
     } else {
-      sh += '<div class="empty-note">¡Sin errores registrados! Todo al 100%. 💪</div>';
+      sh += '<div class="empty-note">No mistakes recorded! 100% so far. 💪</div>';
     }
     $('#skill-panel').innerHTML = sh;
   }
@@ -898,21 +915,24 @@ function renderHome(){
     });
     $('#hist-list').innerHTML = hh;
   } else {
-    $('#hist-list').innerHTML = '<div class="empty-note">Aún no hay sesiones registradas.</div>';
+    $('#hist-list').innerHTML = '<div class="empty-note">No sessions yet.</div>';
   }
 }
 
 /* ================= SESSION ================= */
-function buildRedoSet(){
+function buildRedoSet(sec){
   var pool = missedPool();
+  if(sec === 'math') pool = pool.filter(function(q){ return q._section === 'math'; });
+  else if(sec === 'rw') pool = pool.filter(function(q){ return q._section !== 'math'; });
+  var label = sec === 'math' ? 'Math' : (sec === 'rw' ? 'Verbal' : 'my');
   return {
-    id: 'redo', title: 'Redo my mistakes', section: 'mixed',
-    description: 'Preguntas falladas', minutes: Math.max(5, Math.ceil(pool.length * 1.5)),
+    id: 'redo', title: 'Redo ' + label + ' Mistakes', section: sec === 'math' ? 'math' : 'mixed',
+    description: 'Missed questions', minutes: Math.max(5, Math.ceil(pool.length * 1.5)),
     questions: pool
   };
 }
 function startSession(setId, mode){
-  var set = setId === 'redo' ? buildRedoSet() : SETS.filter(function(s){ return s.id === setId; })[0];
+  var set = setId === 'redo-math' ? buildRedoSet('math') : setId === 'redo-verbal' ? buildRedoSet('rw') : setId === 'redo' ? buildRedoSet() : SETS.filter(function(s){ return s.id === setId; })[0];
   if(!set || !set.questions.length) return;
   S = {
     set: set, mode: mode, idx: 0, screen: 'test',
@@ -1047,14 +1067,14 @@ function drillCardHTML(q){
   var user = S.answers[q.id];
   var ok = isCorrect(q, user);
   var body = '<div class="drill-card' + (ok ? '' : ' bad') + '">' +
-    '<div class="verdict ' + (ok ? 'ok' : 'bad') + '">' + (ok ? '✓ ¡Correcta!' : '✗ Incorrecta') + '</div>' +
+    '<div class="verdict ' + (ok ? 'ok' : 'bad') + '">' + (ok ? '✓ Correct!' : '✗ Incorrecta') + '</div>' +
     '<div class="drill-tags"><span class="res-diff">' + q.difficulty + '</span><span class="res-skill">' + q.domain + ' · ' + q.skill + '</span></div>';
   if(q.type === 'spr'){
-    body += '<div class="res-answers">Tu respuesta: <b class="' + (ok?'ok':'bad') + '">' + (user || '(en blanco)') + '</b> · Respuesta correcta: <b class="ok">' + q.answer + '</b></div>';
+    body += '<div class="res-answers">Your answer: <b class="' + (ok?'ok':'bad') + '">' + (user || '(blank)') + '</b> · Correct answer: <b class="ok">' + q.answer + '</b></div>';
     body += '<h4>Explicación</h4><p>' + q.expCorrect + '</p>';
   } else {
-    body += '<div class="res-answers">Respuesta correcta: <b class="ok">' + q.correct + ') ' + q.choices[q.correct] + '</b></div>';
-    body += '<h4>Por qué ' + q.correct + ' es correcta</h4><p>' + q.expCorrect + '</p><h4>Por qué las demás no</h4>';
+    body += '<div class="res-answers">Correct answer: <b class="ok">' + q.correct + ') ' + q.choices[q.correct] + '</b></div>';
+    body += '<h4>Por qué ' + q.correct + ' es correcta</h4><p>' + q.expCorrect + '</p><h4>Why the others are wrong</h4>';
     ['A','B','C','D'].forEach(function(L){
       if(L === q.correct) return;
       body += '<p><strong>' + L + ')</strong> ' + q.expWrong[L] + '</p>';
@@ -1213,30 +1233,30 @@ function finishSession(expired){
 function buildSummary(g){
   var lines = [];
   lines.push('SAT Studio — ' + S.set.title + ' [' + S.mode.toUpperCase() + ']');
-  lines.push('Score: ' + g.correct + '/' + S.set.questions.length + ' | Tiempo: ' + fmt(S.timeUsed) + (S.mode === 'exam' ? ' de ' + fmt(S.set.minutes*60) : '') + (S.expired ? ' (se acabó el tiempo)' : ''));
+  lines.push('Score: ' + g.correct + '/' + S.set.questions.length + ' | Time: ' + fmt(S.timeUsed) + (S.mode === 'exam' ? ' of ' + fmt(S.set.minutes*60) : '') + (S.expired ? ' (time expired)' : ''));
   lines.push('---');
   g.results.forEach(function(r){
     var corr = r.q.type === 'spr' ? r.q.answer : r.q.correct;
     if(r.ok) lines.push(r.q.id + ': ' + r.user + ' ✓');
-    else if(r.user) lines.push(r.q.id + ': ' + r.user + ' ✗ (correcta: ' + corr + ') [' + r.q.skill + ']');
-    else lines.push(r.q.id + ': (en blanco) ✗ (correcta: ' + corr + ') [' + r.q.skill + ']');
+    else if(r.user) lines.push(r.q.id + ': ' + r.user + ' ✗ (correct: ' + corr + ') [' + r.q.skill + ']');
+    else lines.push(r.q.id + ': (blank) ✗ (correct: ' + corr + ') [' + r.q.skill + ']');
   });
   return lines.join('\n');
 }
 function renderResults(g){
   var n = S.set.questions.length;
-  $('#res-title').textContent = 'Resultados — ' + S.set.title + ' (' + (S.mode === 'exam' ? 'Exam' : 'Drill') + ')';
+  $('#res-title').textContent = 'Results — ' + S.set.title + ' (' + (S.mode === 'exam' ? 'Exam' : 'Drill') + ')';
   $('#res-score-num').textContent = g.correct;
   $('#res-score-den').textContent = ' / ' + n;
-  var meta = '<span class="chip">Tiempo: ' + fmt(S.timeUsed) + (S.mode === 'exam' ? ' / ' + fmt(S.set.minutes*60) : '') + '</span>';
+  var meta = '<span class="chip">Time: ' + fmt(S.timeUsed) + (S.mode === 'exam' ? ' / ' + fmt(S.set.minutes*60) : '') + '</span>';
   DIFFS.forEach(function(d){
-    if(g.byDiff[d][1]) meta += '<span class="chip">' + d + ': ' + g.byDiff[d][0] + '/' + g.byDiff[d][1] + '</span>';
+    if(g.byDiff[d][1]) meta += '<span class="chip">' + ({'Fácil':'Easy','Media':'Medium','Difícil':'Hard'}[d]||d) + ': ' + g.byDiff[d][0] + '/' + g.byDiff[d][1] + '</span>';
   });
   $('#res-meta').innerHTML = meta;
   var est = estimateScore(g.results);
   if(est !== null && S.set.section !== 'mixed'){
     var lo = Math.max(200, est - 40), hi = Math.min(800, est + 40);
-    $('#res-est').innerHTML = 'Score estimado de sección (' + (S.set.section === 'math' ? 'Math' : 'Reading & Writing') + '): <b>' + lo + '–' + hi + '</b> <span class="cav">· estimación aproximada basada en un set corto; los módulos completos dan una lectura más precisa</span>';
+    $('#res-est').innerHTML = 'Estimated section score (' + (S.set.section === 'math' ? 'Math' : 'Reading & Writing') + '): <b>' + lo + '–' + hi + '</b> <span class="cav">· rough estimate based on a short set; full modules give a more accurate read</span>';
   } else {
     $('#res-est').innerHTML = '';
   }
@@ -1246,18 +1266,18 @@ function renderResults(g){
   var list = '';
   g.results.forEach(function(r){
     var q = r.q;
-    var badge = r.ok ? '<span class="res-badge ok">Correcta ✓</span>' : '<span class="res-badge bad">' + (r.user ? 'Incorrecta ✗' : 'En blanco ✗') + '</span>';
+    var badge = r.ok ? '<span class="res-badge ok">Correct ✓</span>' : '<span class="res-badge bad">' + (r.user ? 'Incorrect ✗' : 'Blank ✗') + '</span>';
     var userTxt, corrTxt;
     if(q.type === 'spr'){
-      userTxt = r.user ? '<b class="' + (r.ok?'ok':'bad') + '">' + r.user + '</b>' : '<b class="bad">(en blanco)</b>';
+      userTxt = r.user ? '<b class="' + (r.ok?'ok':'bad') + '">' + r.user + '</b>' : '<b class="bad">(blank)</b>';
       corrTxt = '<b class="ok">' + q.answer + '</b>';
     } else {
-      userTxt = r.user ? '<b class="' + (r.ok?'ok':'bad') + '">' + r.user + ') ' + q.choices[r.user] + '</b>' : '<b class="bad">(en blanco)</b>';
+      userTxt = r.user ? '<b class="' + (r.ok?'ok':'bad') + '">' + r.user + ') ' + q.choices[r.user] + '</b>' : '<b class="bad">(blank)</b>';
       corrTxt = '<b class="ok">' + q.correct + ') ' + q.choices[q.correct] + '</b>';
     }
-    var exp = '<h4>Por qué es correcta</h4><p>' + q.expCorrect + '</p>';
+    var exp = '<h4>Why this is correct</h4><p>' + q.expCorrect + '</p>';
     if(q.type !== 'spr'){
-      exp += '<h4>Por qué las demás no</h4>';
+      exp += '<h4>Why the others are wrong</h4>';
       ['A','B','C','D'].forEach(function(L){
         if(L === q.correct) return;
         exp += '<p><strong>' + L + ')</strong> ' + q.expWrong[L] + '</p>';
@@ -1269,11 +1289,11 @@ function renderResults(g){
     ctx += '<div class="res-passage">' + renderContent(q.stem) + '</div>';
     list += '<details class="res-q' + (r.ok ? '' : ' wrong') + '"' + (r.ok ? '' : ' open') + '>' +
       '<summary><span class="res-id">' + q.id + '</span>' + badge +
-      '<span class="res-diff">' + q.difficulty + '</span>' +
+      '<span class="res-diff">' + ({'Fácil':'Easy','Media':'Medium','Difícil':'Hard'}[q.difficulty]||q.difficulty) + '</span>' +
       '<span class="res-skill">' + q.domain + ' · ' + q.skill + '</span>' +
-      '<span class="res-caret">Ver explicación ▾</span></summary>' +
+      '<span class="res-caret">See explanation ▾</span></summary>' +
       '<div class="res-body">' + ctx +
-      '<div class="res-answers">Tu respuesta: ' + userTxt + '<br>Respuesta correcta: ' + corrTxt + '</div>' +
+      '<div class="res-answers">Your answer: ' + userTxt + '<br>Correct answer: ' + corrTxt + '</div>' +
       '<div class="res-exp">' + exp + '</div>' +
       '<div class="res-tip">⚡ <strong>Shortcut:</strong> ' + q.tip + '</div>' +
       '</div></details>';
@@ -1381,7 +1401,7 @@ function closeCalc(){
 function calcStatus(html){ var el = $('#calc-status'); el.classList.remove('hidden'); el.innerHTML = html; }
 function loadDesmos(){
   desmosLoading = true;
-  calcStatus('Cargando la calculadora de Desmos…');
+  calcStatus('Loading the Desmos calculator…');
   var done = false;
   var timeout = setTimeout(function(){ if(!done){ done = true; desmosFail(); } }, 10000);
   var s = document.createElement('script');
@@ -1402,7 +1422,7 @@ function loadDesmos(){
 }
 function desmosFail(){
   desmosLoading = false;
-  calcStatus('No se pudo cargar Desmos.<br>La calculadora se descarga de desmos.com, así que necesita conexión a internet.<br><br><button class="btn-primary" id="btn-calc-retry">Reintentar</button>');
+  calcStatus('Could not load Desmos.<br>The calculator is downloaded from desmos.com, so it needs an internet connection.<br><br><button class="btn-primary" id="btn-calc-retry">Retry</button>');
   var b = $('#btn-calc-retry');
   if(b) b.addEventListener('click', loadDesmos);
 }
@@ -1638,22 +1658,22 @@ function closeAdmin(){
   $('#view-home').classList.remove('hidden');
 }
 function loadAdmin(){
-  var st = $('#admin-status'); if(st) st.textContent = 'Cargando…';
+  var st = $('#admin-status'); if(st) st.textContent = 'Loading…';
   Promise.all([ SB.rpc('sat_admin_overview'), SB.rpc('sat_admin_students') ]).then(function(rs){
     var e = rs[0].error || rs[1].error;
-    if(e){ if(st) st.textContent = 'No se pudo cargar: ' + (e.message || 'no autorizado') + '.'; return; }
+    if(e){ if(st) st.textContent = 'Could not load: ' + (e.message || 'not authorized') + '.'; return; }
     if(st) st.textContent = '';
     renderAdminKPIs(rs[0].data || {});
     renderAdminCharts(rs[0].data || {});
     renderAdminTable(rs[1].data || []);
-  }).catch(function(){ if(st) st.textContent = 'Error de conexión al cargar el panel.'; });
+  }).catch(function(){ if(st) st.textContent = 'Connection error loading the panel.'; });
 }
 function renderAdminKPIs(ov){
   var cards = [
-    ['Cuentas', ov.total_accounts || 0, 'estudiantes registrados'],
-    ['Activos', ov.active_students || 0, 'ya practicaron'],
-    ['Sesiones', ov.total_sessions || 0, (ov.sessions_7d || 0) + ' en 7 días'],
-    ['Accuracy global', (ov.global_accuracy != null ? ov.global_accuracy : 0) + '%', (ov.total_questions || 0) + ' preguntas']
+    ['Accounts', ov.total_accounts || 0, 'registered students'],
+    ['Active', ov.active_students || 0, 'have practiced'],
+    ['Sessions', ov.total_sessions || 0, (ov.sessions_7d || 0) + ' in 7 days'],
+    ['Overall accuracy', (ov.global_accuracy != null ? ov.global_accuracy : 0) + '%', (ov.total_questions || 0) + ' questions']
   ];
   $('#admin-kpis').innerHTML = cards.map(function(c){
     return '<div class="akpi"><div class="akpi-l">' + c[0] + '</div><div class="akpi-v">' + c[1] + '</div><div class="akpi-s">' + c[2] + '</div></div>';
@@ -1665,7 +1685,7 @@ function drawAdminBar(id, labels, data, opts){
   if(!window.Chart){ return; }
   var el = document.getElementById(id); if(!el) return;
   if(adminCharts[id]){ adminCharts[id].destroy(); adminCharts[id] = null; }
-  if(!labels.length){ if(el.parentNode) el.parentNode.innerHTML = '<div class="empty-note" style="padding:34px 0;text-align:center">Aún no hay datos.</div>'; return; }
+  if(!labels.length){ if(el.parentNode) el.parentNode.innerHTML = '<div class="empty-note" style="padding:34px 0;text-align:center">No data yet.</div>'; return; }
   adminCharts[id] = new Chart(el.getContext('2d'), {
     type: 'bar',
     data: { labels: labels, datasets: [{ data: data,
@@ -1686,9 +1706,9 @@ function renderAdminCharts(ov){
 }
 function renderAdminTable(students){
   var cols = [
-    {f:'name', l:'Nombre'}, {f:'email', l:'Email'}, {f:'role', l:'Rol'},
-    {f:'sessions', l:'Sesiones'}, {f:'accuracy', l:'Accuracy'},
-    {f:'questions', l:'Preguntas'}, {f:'last_active', l:'Última'}, {f:'joined', l:'Se unió'}
+    {f:'name', l:'Name'}, {f:'email', l:'Email'}, {f:'role', l:'Role'},
+    {f:'sessions', l:'Sessions'}, {f:'accuracy', l:'Accuracy'},
+    {f:'questions', l:'Questions'}, {f:'last_active', l:'Last active'}, {f:'joined', l:'Joined'}
   ];
   var sortF = 'sessions', sortDir = 'desc';
   function draw(){
@@ -1700,13 +1720,13 @@ function renderAdminTable(students){
     var h = '<table class="atable"><thead><tr>' + cols.map(function(c){
       return '<th data-f="' + c.f + '">' + c.l + (sortF === c.f ? (sortDir === 'asc' ? ' ▲' : ' ▼') : '') + '</th>';
     }).join('') + '</tr></thead><tbody>';
-    if(!data.length){ h += '<tr><td colspan="' + cols.length + '" class="empty-note" style="padding:22px">Aún no hay estudiantes con actividad. Aparecerán aquí cuando se registren y practiquen.</td></tr>'; }
+    if(!data.length){ h += '<tr><td colspan="' + cols.length + '" class="empty-note" style="padding:22px">No students with activity yet. They will appear here once they sign up and practice.</td></tr>'; }
     data.forEach(function(r){
       h += '<tr>' + cols.map(function(c){
         var v = r[c.f];
         if(c.f === 'accuracy') v = (v == null ? '—' : v + '%');
         if(v == null || v === '') v = '—';
-        if(c.f === 'role') v = '<span class="rtag ' + (r.role === 'admin' ? 'radm' : '') + '">' + v + '</span>';
+        if(c.f === 'role') v = '<span class="rtag ' + (r.role === 'admin' ? 'radm' : '') + '">' + (v === 'estudiante' ? 'student' : v) + '</span>';
         return '<td>' + v + '</td>';
       }).join('') + '</tr>';
     });
@@ -1755,7 +1775,7 @@ function setUserChip(){
   if(currentUser){
     var name = (currentUser.user_metadata && currentUser.user_metadata.name) || currentUser.email || 'Mi cuenta';
     var adminBtn = (currentUser.app_metadata && currentUser.app_metadata.role === 'admin') ? '<button class="uc-admin" id="btn-admin">📊 Admin</button>' : '';
-    chip.innerHTML = '<span class="uc-name">☁️ ' + name + '</span>' + adminBtn + '<button class="uc-out" id="btn-logout">Salir</button>';
+    chip.innerHTML = '<span class="uc-name">☁️ ' + name + '</span>' + adminBtn + '<button class="uc-out" id="btn-logout">Sign out</button>';
     chip.classList.remove('hidden');
     var b = $('#btn-logout'); if(b) b.addEventListener('click', doLogout);
     var ab = $('#btn-admin'); if(ab) ab.addEventListener('click', openAdmin);
@@ -1846,13 +1866,13 @@ function doLogin(){
   if(!authAvailable()) return;
   var email = ($('#auth-email').value || '').trim();
   var pass = $('#auth-pass').value || '';
-  if(!email || !pass){ setAuthMsg('Escribe tu correo y contraseña.', true); return; }
-  setAuthMsg('Entrando…'); setAuthBusy(true);
+  if(!email || !pass){ setAuthMsg('Enter your email and password.', true); return; }
+  setAuthMsg('Signing in…'); setAuthBusy(true);
   SB.auth.signInWithPassword({ email: email, password: pass }).then(function(r){
     setAuthBusy(false);
     if(r.error){ setAuthMsg(traducirAuthError(r.error.message), true); return; }
     setAuthMsg(''); // onAuthStateChange entra a la app
-  }).catch(function(e){ setAuthBusy(false); setAuthMsg('No se pudo conectar. Revisa tu internet.', true); });
+  }).catch(function(e){ setAuthBusy(false); setAuthMsg('Could not connect. Check your internet.', true); });
 }
 
 function doSignup(){
@@ -1860,15 +1880,15 @@ function doSignup(){
   var email = ($('#auth-email').value || '').trim();
   var pass = $('#auth-pass').value || '';
   var name = ($('#auth-name').value || '').trim();
-  if(!email || !pass){ setAuthMsg('Escribe tu correo y contraseña.', true); return; }
-  if(pass.length < 6){ setAuthMsg('La contraseña debe tener al menos 6 caracteres.', true); return; }
-  setAuthMsg('Creando cuenta…'); setAuthBusy(true);
+  if(!email || !pass){ setAuthMsg('Enter your email and password.', true); return; }
+  if(pass.length < 6){ setAuthMsg('Password must be at least 6 characters.', true); return; }
+  setAuthMsg('Creating account…'); setAuthBusy(true);
   SB.auth.signUp({ email: email, password: pass, options: { data: { name: name, app: 'sat-studio' } } }).then(function(r){
     setAuthBusy(false);
     if(r.error){ setAuthMsg(traducirAuthError(r.error.message), true); return; }
     if(r.data && r.data.session){ setAuthMsg(''); } // logueado directo (confirmación desactivada)
-    else { setAuthMsg('Cuenta creada. Revisa tu correo para confirmarla y luego inicia sesión.', false); }
-  }).catch(function(e){ setAuthBusy(false); setAuthMsg('No se pudo conectar. Revisa tu internet.', true); });
+    else { setAuthMsg('Account created. Check your email to confirm it, then sign in.', false); }
+  }).catch(function(e){ setAuthBusy(false); setAuthMsg('Could not connect. Check your internet.', true); });
 }
 
 function doLogout(){
@@ -1880,11 +1900,11 @@ function doLogout(){
 
 function traducirAuthError(m){
   m = m || 'Error';
-  if(/invalid login|invalid credentials/i.test(m)) return 'Correo o contraseña incorrectos.';
-  if(/already registered|already been registered|user already/i.test(m)) return 'Ese correo ya tiene cuenta. Inicia sesión.';
-  if(/email not confirmed/i.test(m)) return 'Debes confirmar tu correo antes de entrar (revisa tu bandeja).';
-  if(/rate limit|too many/i.test(m)) return 'Demasiados intentos. Espera un momento e intenta de nuevo.';
-  if(/password/i.test(m) && /6/.test(m)) return 'La contraseña debe tener al menos 6 caracteres.';
+  if(/invalid login|invalid credentials/i.test(m)) return 'Incorrect email or password.';
+  if(/already registered|already been registered|user already/i.test(m)) return 'That email already has an account. Sign in.';
+  if(/email not confirmed/i.test(m)) return 'You must confirm your email before signing in (check your inbox).';
+  if(/rate limit|too many/i.test(m)) return 'Too many attempts. Wait a moment and try again.';
+  if(/password/i.test(m) && /6/.test(m)) return 'Password must be at least 6 characters.';
   return m;
 }
 
@@ -1929,7 +1949,7 @@ function init(){
   $('#btn-zoom-out').addEventListener('click', function(){ zoomBy(-0.1); });
   $('#mm-exit').addEventListener('click', function(){
     $('#more-menu').classList.add('hidden');
-    if(!S || window.confirm('¿Salir al menú? Esta sesión no se guardará.')) goHome();
+    if(!S || window.confirm('Exit to menu? This session will not be saved.')) goHome();
   });
   wireLineReader();
   wireAnnotations();
@@ -1963,10 +1983,8 @@ function init(){
 
   $('#btn-copy').addEventListener('click', copySummary);
   $('#btn-home').addEventListener('click', goHome);
-  $('#btn-redo-drill').addEventListener('click', function(){ startSession('redo', 'drill'); });
-  $('#btn-redo-exam').addEventListener('click', function(){ startSession('redo', 'exam'); });
   $('#btn-clear-history').addEventListener('click', function(){
-    if(window.confirm('¿Borrar todo el historial de sesiones? Esto no se puede deshacer.')){
+    if(window.confirm('Clear all session history? This cannot be undone.')){
       store.remove(histKey());
       cloudDeleteAll();
       renderHome();

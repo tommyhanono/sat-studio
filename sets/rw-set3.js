@@ -1,10 +1,10 @@
-/* SAT Studio question set — Reading & Writing: Words in Context — Fácil (WIC-E-01 a WIC-E-10) */
+/* SAT Studio question set — Reading & Writing: Words in Context — Easy (WIC-E-01 a WIC-E-10) */
 window.SAT_SETS.push({
   id: 'rw-set3',
-  title: 'Words in Context — Fácil',
+  title: 'Words in Context — Easy',
   section: 'rw',
   level: 'Fácil',
-  description: 'Craft and Structure: elige la palabra más precisa según el contexto — vocabulario accesible.',
+  description: 'Craft and Structure: pick the most precise word for the context — accessible vocabulary.',
   minutes: 12,
   questions: [
     {

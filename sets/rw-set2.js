@@ -3,7 +3,7 @@ window.SAT_SETS.push({
   id: 'rw-set2',
   title: 'Punctuation Drill — Set 2',
   section: 'rw',
-  description: 'Más Standard English Conventions (Boundaries): punto y coma, dos puntos, comas de inciso, FANBOYS, cláusulas esenciales, apóstrofos y adverbios conjuntivos.',
+  description: 'More Standard English Conventions (Boundaries): semicolons, colons, nonessential commas, FANBOYS, essential clauses, apostrophes, and conjunctive adverbs.',
   minutes: 15,
   questions: [
     {
