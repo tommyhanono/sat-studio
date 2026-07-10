@@ -951,10 +951,26 @@ function renderHome(){
     }).join('');
     sec += homeSection('Your Practice Tests', mockRows, mocks.length, true);
   }
+  // ===== English Mocks category (Reading & Writing only, adaptive, /800) =====
+  var N_ENG = 6;
+  var engBest = {};
+  h.forEach(function(e){ if(e.mock && e.mock.kind === 'rw' && typeof e.mock.num === 'number'){ var n = e.mock.num; if(engBest[n] == null || (e.mock.total||0) > engBest[n]) engBest[n] = e.mock.total; } });
+  var engCards = '';
+  for(var ei = 1; ei <= N_ENG; ei++){
+    var eb = engBest[ei];
+    engCards += '<div class="set-card"><div class="set-info"><span class="set-badge mixed">English only</span>' +
+      '<h3>English Mock ' + ei + '</h3>' +
+      '<div class="set-desc">Reading &amp; Writing only — 2 adaptive modules → scaled score out of 800. Focused Verbal practice, no Math.</div>' +
+      '<div class="set-meta">~54 questions · ~1h 4m' + (eb != null ? ' · <b>best ' + eb + '/800</b>' : '') + '</div>' +
+      (eb != null ? '<div class="set-done">✓ completed</div>' : '') +
+      '</div><div class="set-actions"><button class="btn-primary" data-start-engmock="' + ei + '">' + (eb != null ? 'Retake' : 'Start') + '</button></div></div>';
+  }
+  sec += homeSection('English Mocks', engCards, N_ENG, true);
+
   // ===== Full Mocks category (numbered, stable full-length adaptive tests) =====
   var N_MOCKS = 8;
   var mockBest = {};
-  h.forEach(function(e){ if(e.mock && typeof e.mock.num === 'number'){ var n = e.mock.num; if(mockBest[n] == null || (e.mock.total||0) > mockBest[n]) mockBest[n] = e.mock.total; } });
+  h.forEach(function(e){ if(e.mock && e.mock.kind === 'full' && typeof e.mock.num === 'number'){ var n = e.mock.num; if(mockBest[n] == null || (e.mock.total||0) > mockBest[n]) mockBest[n] = e.mock.total; } });
   var mockCards = '';
   for(var mi = 1; mi <= N_MOCKS; mi++){
     var best = mockBest[mi];
@@ -983,6 +999,9 @@ function renderHome(){
   });
   Array.prototype.forEach.call(document.querySelectorAll('#set-sections [data-start-fullmock]'), function(b){
     b.addEventListener('click', function(){ startMock('full', parseInt(b.getAttribute('data-start-fullmock'), 10)); });
+  });
+  Array.prototype.forEach.call(document.querySelectorAll('#set-sections [data-start-engmock]'), function(b){
+    b.addEventListener('click', function(){ var n = parseInt(b.getAttribute('data-start-engmock'), 10); startMock('rw', n, 100 + n); });
   });
 
   // domain bars
@@ -2025,9 +2044,9 @@ function mockScreen(html){
   try{ window.scrollTo(0,0); }catch(e){}
 }
 function mockRnd(code){ return (MOCK && MOCK.seed != null) ? mulberry32(MOCK.seed * 97 + code) : null; }
-function startMock(kind, num){
+function startMock(kind, num, seedArg){
   kind = kind || 'full';
-  var seed = (typeof num === 'number') ? num : null;
+  var seed = (typeof seedArg === 'number') ? seedArg : ((typeof num === 'number') ? num : null);
   var used = {};
   var section = (kind === 'math') ? 'math' : 'rw';
   var count = section === 'math' ? MOCK_MATH : MOCK_RW;
@@ -2035,7 +2054,7 @@ function startMock(kind, num){
   var rnd = seed != null ? mulberry32(seed * 97 + (section === 'math' ? 3 : 1)) : null;
   var first = assembleModule(section, 'mixed', count, used, rnd);
   if(first.length < 12){ alert('Not enough questions loaded yet for this test.'); return; }
-  MOCK = { active:true, kind:kind, num:seed, seed:seed, stage:firstKey, used:used, results:{}, paths:{}, time:0, mods:{} };
+  MOCK = { active:true, kind:kind, num:(typeof num === 'number' ? num : null), seed:seed, stage:firstKey, used:used, results:{}, paths:{}, time:0, mods:{} };
   MOCK.mods[firstKey] = makeModuleSet(section, first, 'Module 1');
   mockScreen(mockIntroHTML(kind, first.length));
   $('#mock-next').addEventListener('click', function(){ _beginSession(MOCK.mods[firstKey], 'exam'); });
@@ -2123,7 +2142,9 @@ function mockFinish(){
   var mathScore = mathAll.length ? sectionScaled(MOCK.results.math1, MOCK.results.math2, MOCK.paths.math==='hard') : null;
   var max = kind === 'full' ? 1600 : 800;
   var total = kind === 'full' ? (rwScore + mathScore) : (kind === 'rw' ? rwScore : mathScore);
-  var title = kind === 'full' ? (MOCK.num != null ? 'Practice Test ' + MOCK.num : 'Full Practice Test') : (kind === 'rw' ? 'Reading & Writing Test' : 'Math Test');
+  var title = kind === 'full' ? (MOCK.num != null ? 'Practice Test ' + MOCK.num : 'Full Practice Test')
+            : kind === 'rw' ? (MOCK.num != null ? 'English Mock ' + MOCK.num : 'Reading & Writing Test')
+            : 'Math Test';
   var allR = rwAll.concat(mathAll);
   var correct = allR.filter(function(r){ return r.ok; }).length;
   MOCK.active = false;
