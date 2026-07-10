@@ -376,6 +376,12 @@
   .mres-table{width:100%;border-collapse:collapse;font-size:.88rem}
   .mres-table th,.mres-table td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--gray-line)}
   .mres-table th{color:var(--gray-mid);font-weight:600;font-size:.78rem;text-transform:uppercase;letter-spacing:.03em}
+  .mock-hist-row{display:flex;align-items:center;gap:14px;justify-content:space-between;flex-wrap:wrap;background:#fff;border:1px solid var(--gray-line);border-radius:12px;padding:14px 18px;margin-bottom:10px}
+  .mock-hist-row .mh-main{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+  .mock-hist-row .mh-score{font-size:1.5rem;font-weight:800;color:var(--blue)}
+  .mock-hist-row .mh-out{font-size:.85rem;color:var(--gray-mid)}
+  .mock-hist-row .mh-meta{font-size:.85rem;color:var(--gray-mid);margin-left:6px}
+  .mock-hist-row .btn-outline{white-space:nowrap}
 </style>
 </head>
 <body>
@@ -901,6 +907,17 @@ function renderHome(){
   var totalMissed = pool.length;
 
   var sec = '';
+  var mocks = pastMocks();
+  if(mocks.length){
+    var mockRows = mocks.slice().reverse().map(function(e){
+      return '<div class="mock-hist-row">' +
+        '<div class="mh-main"><span class="mh-score">' + e.mock.total + '</span><span class="mh-out">/1600</span>' +
+        '<span class="mh-meta">' + e.date + ' · R&amp;W ' + e.mock.rwScore + ' · Math ' + e.mock.mathScore + ' · ' + e.score + '/' + e.total + ' correct</span></div>' +
+        '<button class="btn-outline" data-review-mock="' + e.sid + '">Review answers</button>' +
+      '</div>';
+    }).join('');
+    sec += homeSection('Your Practice Tests', mockRows, mocks.length, true);
+  }
   sec += homeSection('Math', mathSets.length ? mathSets.map(setCard).join('') : '<div class="empty-note">No Math sets pending — see Completed below.</div>', mathSets.length, true);
   sec += homeSection('Verbal', verbalSets.length ? verbalSets.map(setCard).join('') : '<div class="empty-note">No Verbal sets pending — see Completed below.</div>', verbalSets.length, true);
   sec += homeSection('Things To Work On', redoCard('redo-math', 'Math', 'math') + redoCard('redo-verbal', 'Verbal', 'rw'), totalMissed || null, true);
@@ -912,6 +929,9 @@ function renderHome(){
   });
   Array.prototype.forEach.call(document.querySelectorAll('#set-sections [data-start-drill]'), function(b){
     b.addEventListener('click', function(){ if(!b.disabled) startSession(b.getAttribute('data-start-drill'), 'drill'); });
+  });
+  Array.prototype.forEach.call(document.querySelectorAll('#set-sections [data-review-mock]'), function(b){
+    b.addEventListener('click', function(){ reviewMock(b.getAttribute('data-review-mock')); });
   });
 
   // domain bars
@@ -1987,7 +2007,10 @@ function mockFinish(){
     mock: { rwScore:rwScore, mathScore:mathScore, total:total, rwPath:MOCK.paths.rw, mathPath:MOCK.paths.math },
     perQuestion: allR.map(function(r){ return { qid:r.q.id, setId:r.q._setId||r.q._setId, domain:r.q.domain, skill:r.q.skill, difficulty:r.q.difficulty, ok:r.ok, user:r.user, correct: r.q.type==='spr'?r.q.answer:r.q.correct }; })
   });
-  renderMockResults(rwScore, mathScore, total, rwAll, mathAll);
+  renderMockResults(rwScore, mathScore, total, rwAll, mathAll, MOCK.paths, { date: todayStr() });
+}
+function pastMocks(){
+  return getHistory().filter(function(e){ return e.setId === 'full-mock' && e.mock; });
 }
 function mockBreakdown(results, label){
   var by = {};
@@ -1998,27 +2021,44 @@ function mockBreakdown(results, label){
   }).join('');
   return '<h3 class="mres-h">'+label+'</h3><table class="mres-table"><thead><tr><th>Domain</th><th>Correct</th><th>Accuracy</th></tr></thead><tbody>'+rows+'</tbody></table>';
 }
-function renderMockResults(rwScore, mathScore, total, rwAll, mathAll){
+function renderMockResults(rwScore, mathScore, total, rwAll, mathAll, paths, meta){
+  meta = meta || {};
   var lo = Math.max(400, total-60), hi = Math.min(1600, total+60);
   var pathTxt = function(p){ return p==='hard' ? 'harder second module (higher scoring ceiling)' : 'standard second module'; };
+  var kicker = meta.review ? ('Full Practice Test · reviewing your attempt' + (meta.date ? ' from ' + meta.date : '')) : 'Full Practice Test · estimated score';
   var review = rwAll.concat(mathAll).map(function(r){ return renderResQ(r); }).join('');
+  var correct = rwAll.concat(mathAll).filter(function(r){ return r.ok; }).length;
+  var totalQ = rwAll.length + mathAll.length;
   var html = '<div class="mres-wrap">'+
-    '<div class="mres-head"><div class="mock-kicker">Full Practice Test · estimated score</div>'+
+    '<div class="mres-head"><div class="mock-kicker">'+kicker+'</div>'+
       '<div class="mres-total"><span class="mres-big">'+total+'</span><span class="mres-out">/ 1600</span></div>'+
-      '<div class="mres-range">Likely range <b>'+lo+'–'+hi+'</b> · this is a practice estimate, not an official score</div>'+
+      '<div class="mres-range">Likely range <b>'+lo+'–'+hi+'</b> · '+correct+'/'+totalQ+' correct · practice estimate, not an official score</div>'+
       '<div class="mres-sections">'+
-        '<div class="mres-sec"><div class="mres-sk">Reading &amp; Writing</div><div class="mres-sv">'+rwScore+'</div><div class="mres-sp">/ 800 · '+pathTxt(MOCK.paths.rw)+'</div></div>'+
-        '<div class="mres-sec"><div class="mres-sk">Math</div><div class="mres-sv">'+mathScore+'</div><div class="mres-sp">/ 800 · '+pathTxt(MOCK.paths.math)+'</div></div>'+
+        '<div class="mres-sec"><div class="mres-sk">Reading &amp; Writing</div><div class="mres-sv">'+rwScore+'</div><div class="mres-sp">/ 800 · '+pathTxt(paths.rw)+'</div></div>'+
+        '<div class="mres-sec"><div class="mres-sk">Math</div><div class="mres-sv">'+mathScore+'</div><div class="mres-sp">/ 800 · '+pathTxt(paths.math)+'</div></div>'+
       '</div>'+
-      '<div class="mock-btns"><button class="btn-primary" id="mres-home">← Back to Home</button><button class="btn-outline" id="mres-redo">Review my mistakes (Drill)</button></div>'+
+      '<div class="mock-btns"><button class="btn-primary" id="mres-home">← Back to Home</button><button class="btn-outline" id="mres-redo">Practice your mistakes (Drill)</button></div>'+
     '</div>'+
     '<div class="mres-break">'+ mockBreakdown(rwAll,'Reading & Writing — by domain') + mockBreakdown(mathAll,'Math — by domain') +'</div>'+
-    '<h3 class="mres-h">Every question with explanations</h3>'+
+    '<h3 class="mres-h">Every question with your answer &amp; explanation</h3>'+
     '<div id="mres-list">'+review+'</div>'+
   '</div>';
   mockScreen(html);
   $('#mres-home').addEventListener('click', function(){ MOCK=null; ensureMockView().classList.add('hidden'); $('#view-home').classList.remove('hidden'); renderHome(); });
   $('#mres-redo').addEventListener('click', function(){ MOCK=null; ensureMockView().classList.add('hidden'); startSession('redo','drill'); });
+}
+function reviewMock(sid){
+  var entry = getHistory().filter(function(e){ return e.sid === sid; })[0];
+  if(!entry || !entry.mock){ return; }
+  var rwAll = [], mathAll = [];
+  (entry.perQuestion || []).forEach(function(p){
+    var q = QINDEX[p.qid];
+    if(!q) return;
+    var r = { q: q, user: p.user, ok: p.ok };
+    if(q._section === 'math') mathAll.push(r); else rwAll.push(r);
+  });
+  var m = entry.mock;
+  renderMockResults(m.rwScore, m.mathScore, m.total, rwAll, mathAll, { rw: m.rwPath, math: m.mathPath }, { review: true, date: entry.date });
 }
 
 function authBoot(){
