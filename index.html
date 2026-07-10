@@ -74,6 +74,9 @@
   .panel{background:#fff;border:1px solid var(--gray-line);border-radius:14px;padding:20px 24px;margin-bottom:14px}
   .hist-row{display:flex;gap:14px;align-items:center;padding:10px 0;border-bottom:1px solid #eee;font-size:.88rem;flex-wrap:wrap}
   .hist-row:last-child{border-bottom:none}
+  .hist-review{margin-left:auto;background:var(--blue-soft);color:var(--blue);border:1px solid var(--blue);border-radius:999px;padding:5px 14px;font-size:.8rem;font-weight:700;cursor:pointer;white-space:nowrap}
+  .hist-review:hover{background:var(--blue);color:#fff}
+  .hist-hint{font-size:.85rem;color:var(--gray-mid);margin-bottom:12px;line-height:1.5}
   .hist-score{font-weight:800;min-width:56px}
   .hist-mode{font-size:.72rem;font-weight:700;border:1px solid var(--gray-line);border-radius:999px;padding:2px 9px;color:var(--gray-mid);text-transform:uppercase}
   .hist-date{color:var(--gray-mid);min-width:110px}
@@ -434,15 +437,21 @@
     <div id="set-sections"></div>
 
     <details class="home-sec" open>
-      <summary>Your Progress</summary>
+      <summary>Session History</summary>
       <div class="home-sec-body">
-        <div class="panel" id="domain-panel"><div class="empty-note">Complete your first set to see stats by domain.</div></div>
-        <div class="panel" id="skill-panel"><div class="empty-note">Your weakest skills will show up here.</div></div>
         <div class="panel">
-          <h3 style="font-size:1rem;margin-bottom:8px">Session history</h3>
+          <p class="hist-hint">Everything you've done — sets, drills, and tests. Tap <strong>Review →</strong> on any row to reopen it and see your answers (right / wrong) with explanations.</p>
           <div id="hist-list"><div class="empty-note">No sessions yet.</div></div>
           <button class="danger-link" id="btn-clear-history">Clear history</button>
         </div>
+      </div>
+    </details>
+
+    <details class="home-sec">
+      <summary>Your Stats</summary>
+      <div class="home-sec-body">
+        <div class="panel" id="domain-panel"><div class="empty-note">Complete your first set to see stats by domain.</div></div>
+        <div class="panel" id="skill-panel"><div class="empty-note">Your weakest skills will show up here.</div></div>
       </div>
     </details>
 
@@ -994,12 +1003,60 @@ function renderHome(){
   if(h.length){
     var hh = '';
     h.slice().reverse().forEach(function(s){
-      hh += '<div class="hist-row"><span class="hist-date">' + s.date + '</span><span class="hist-mode">' + s.mode + '</span><span style="flex:1;min-width:160px">' + s.setTitle + '</span><span class="hist-score">' + s.score + '/' + s.total + '</span><span style="color:var(--gray-mid)">' + fmt(s.timeUsed) + '</span></div>';
+      var canReview = !!(s.sid && s.perQuestion && s.perQuestion.length);
+      hh += '<div class="hist-row">' +
+        '<span class="hist-date">' + s.date + '</span>' +
+        '<span class="hist-mode">' + s.mode + '</span>' +
+        '<span style="flex:1;min-width:140px">' + s.setTitle + '</span>' +
+        '<span class="hist-score">' + s.score + '/' + s.total + '</span>' +
+        '<span style="color:var(--gray-mid)">' + fmt(s.timeUsed) + '</span>' +
+        (canReview ? '<button class="hist-review" data-review-session="' + s.sid + '">Review →</button>' : '') +
+        '</div>';
     });
     $('#hist-list').innerHTML = hh;
+    Array.prototype.forEach.call(document.querySelectorAll('#hist-list [data-review-session]'), function(b){
+      b.addEventListener('click', function(){ reviewSession(b.getAttribute('data-review-session')); });
+    });
   } else {
     $('#hist-list').innerHTML = '<div class="empty-note">No sessions yet.</div>';
   }
+}
+function reviewSession(sid){
+  var e = getHistory().filter(function(x){ return x.sid === sid; })[0];
+  if(!e) return;
+  if(e.mock){ reviewMock(sid); return; }
+  var results = (e.perQuestion || []).map(function(p){ var q = QINDEX[p.qid]; return q ? { q:q, user:p.user, ok:p.ok } : null; }).filter(Boolean);
+  renderSavedReview(e, results);
+}
+function renderSavedReview(e, results){
+  if(!results.length){
+    mockScreen('<div class="mock-card"><div class="mock-kicker">' + e.setTitle + '</div><h1>' + e.score + ' / ' + e.total + '</h1>' +
+      '<p>The question-by-question review isn\'t available for this older session.</p>' +
+      '<div class="mock-btns"><button class="btn-primary" id="mres-home">← Back to Home</button></div></div>');
+    $('#mres-home').addEventListener('click', function(){ ensureMockView().classList.add('hidden'); $('#view-home').classList.remove('hidden'); renderHome(); });
+    return;
+  }
+  var isMath = results.every(function(r){ return r.q._section === 'math'; });
+  var isRW = results.every(function(r){ return r.q._section !== 'math'; });
+  var section = isMath ? 'math' : (isRW ? 'rw' : 'mixed');
+  var est = estimateScore(results);
+  var correct = results.filter(function(r){ return r.ok; }).length;
+  var estLine = (est !== null && section !== 'mixed')
+    ? '<div class="mres-range">Estimated ' + (section === 'math' ? 'Math' : 'Reading & Writing') + ' score: <b>' + Math.max(200, est-40) + '–' + Math.min(800, est+40) + '</b> / 800 · rough estimate from a single set</div>'
+    : '';
+  var review = results.map(function(r){ return renderResQ(r); }).join('');
+  var html = '<div class="mres-wrap"><div class="mres-head">' +
+    '<div class="mock-kicker">Reviewing: ' + e.setTitle + (e.date ? ' · ' + e.date : '') + ' · ' + (e.mode === 'exam' ? 'Exam' : 'Drill') + '</div>' +
+    '<div class="mres-total"><span class="mres-big">' + correct + '</span><span class="mres-out">/ ' + e.total + ' correct</span></div>' +
+    estLine +
+    '<div class="mock-btns"><button class="btn-primary" id="mres-home">← Back to Home</button><button class="btn-outline" id="mres-redo">Practice your mistakes (Drill)</button></div>' +
+    '</div>' +
+    '<div class="mres-break">' + mockBreakdown(results, 'By domain') + '</div>' +
+    '<h3 class="mres-h">Every question with your answer &amp; explanation</h3>' +
+    '<div id="mres-list">' + review + '</div></div>';
+  mockScreen(html);
+  $('#mres-home').addEventListener('click', function(){ MOCK=null; ensureMockView().classList.add('hidden'); $('#view-home').classList.remove('hidden'); renderHome(); });
+  $('#mres-redo').addEventListener('click', function(){ MOCK=null; ensureMockView().classList.add('hidden'); startSession('redo','drill'); });
 }
 
 /* ================= SESSION ================= */
