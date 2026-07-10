@@ -4,7 +4,9 @@ Plataforma de práctica para el Digital SAT con interfaz estilo **Bluebook**, he
 
 ## 🔗 Link
 
-**App en vivo:** https://tommyhanono.github.io/sat-studio/
+**Live app (share this):** https://sat-studio.vercel.app
+
+_(also mirrored at https://tommyhanono.github.io/sat-studio/)_
 
 Cada estudiante crea su cuenta (correo + contraseña) y su historial se guarda en la nube — se ve desde cualquier dispositivo.
 
