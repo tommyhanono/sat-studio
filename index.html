@@ -346,6 +346,10 @@
   .mock-badge{font-size:.64rem;letter-spacing:.06em;text-transform:uppercase;background:rgba(255,255,255,.22);padding:3px 9px;border-radius:999px;font-weight:700}
   .mock-launch .btn-primary{background:#fff;color:var(--blue);border:0;white-space:nowrap;font-weight:700}
   .mock-launch .btn-primary:hover{background:#eef1ff}
+  .mock-mini{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:14px}
+  .mock-mini-lbl{font-size:.8rem;opacity:.9;font-weight:600}
+  .mini-btn{background:rgba(255,255,255,.16);color:#fff;border:1px solid rgba(255,255,255,.4);border-radius:999px;padding:7px 15px;font-size:.82rem;font-weight:600;cursor:pointer;white-space:nowrap}
+  .mini-btn:hover{background:rgba(255,255,255,.28)}
   #view-mock{max-width:860px;margin:0 auto;padding:26px 20px 60px}
   .mock-card{background:#fff;border:1px solid var(--gray-line);border-radius:16px;padding:34px 32px;box-shadow:0 6px 24px rgba(20,30,70,.08);text-align:center;margin-top:24px}
   .mock-kicker{font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;color:var(--blue);font-weight:800;margin-bottom:8px}
@@ -416,10 +420,15 @@
 
     <div class="mock-launch" id="mock-launch">
       <div class="mock-launch-txt">
-        <h3>📝 Full Practice Test <span class="mock-badge">Adaptive</span></h3>
-        <p>Just like the real Digital SAT: 2 Reading &amp; Writing modules + 2 Math modules, section-adaptive and timed. Get a scaled <strong>400–1600</strong> estimate at the end. Set aside ~2 hours.</p>
+        <h3>📝 Practice Test <span class="mock-badge">Adaptive</span></h3>
+        <p>Adaptive and timed like the real Digital SAT, with a scaled score at the end. Take the <strong>full test (/1600)</strong>, or just one <strong>section (/800)</strong> when you're short on time.</p>
+        <div class="mock-mini">
+          <span class="mock-mini-lbl">One section only:</span>
+          <button class="mini-btn" id="btn-mock-rw">Reading &amp; Writing · /800</button>
+          <button class="mini-btn" id="btn-mock-math">Math · /800</button>
+        </div>
       </div>
-      <button class="btn-primary" id="btn-start-mock">Start full test</button>
+      <button class="btn-primary" id="btn-start-mock">Start full test · /1600</button>
     </div>
 
     <div id="set-sections"></div>
@@ -910,9 +919,14 @@ function renderHome(){
   var mocks = pastMocks();
   if(mocks.length){
     var mockRows = mocks.slice().reverse().map(function(e){
+      var mx = e.mock.max || 1600;
+      var parts = [e.date];
+      if(e.mock.rwScore != null) parts.push('R&amp;W ' + e.mock.rwScore);
+      if(e.mock.mathScore != null) parts.push('Math ' + e.mock.mathScore);
+      parts.push(e.score + '/' + e.total + ' correct');
       return '<div class="mock-hist-row">' +
-        '<div class="mh-main"><span class="mh-score">' + e.mock.total + '</span><span class="mh-out">/1600</span>' +
-        '<span class="mh-meta">' + e.date + ' · R&amp;W ' + e.mock.rwScore + ' · Math ' + e.mock.mathScore + ' · ' + e.score + '/' + e.total + ' correct</span></div>' +
+        '<div class="mh-main"><span class="mh-score">' + e.mock.total + '</span><span class="mh-out">/' + mx + '</span>' +
+        '<span class="mh-meta">' + parts.join(' · ') + '</span></div>' +
         '<button class="btn-outline" data-review-mock="' + e.sid + '">Review answers</button>' +
       '</div>';
     }).join('');
@@ -1924,25 +1938,44 @@ function mockScreen(html){
   var v = ensureMockView(); v.innerHTML = html; v.classList.remove('hidden');
   try{ window.scrollTo(0,0); }catch(e){}
 }
-function startMock(){
+function startMock(kind){
+  kind = kind || 'full';
   var used = {};
-  var rw1 = assembleModule('rw','mixed',MOCK_RW,used);
-  var mathAvail = mockPool('math').length;
-  if(rw1.length < 12 || mathAvail < 20){ alert('Not enough questions loaded yet for a full mock.'); return; }
-  MOCK = { active:true, stage:'rw1', used:used, results:{}, paths:{}, time:0, mods:{} };
-  MOCK.mods.rw1 = makeModuleSet('rw', rw1, 'Module 1');
-  mockScreen('<div class="mock-card"><div class="mock-kicker">Full Practice Test</div>'+
-    '<h1>Digital SAT — Practice Test</h1>'+
-    '<p>This mirrors the real test: it adapts between modules and gives you a scaled <strong>400–1600</strong> estimate at the end.</p>'+
-    '<ol class="mock-steps">'+
-      '<li><strong>Reading &amp; Writing</strong> — Module 1 ('+rw1.length+' q · 32 min), then an adaptive Module 2.</li>'+
-      '<li>10-minute break.</li>'+
-      '<li><strong>Math</strong> — Module 1 ('+MOCK_MATH+' q · 35 min), then an adaptive Module 2. Reference sheet &amp; Desmos available.</li>'+
-    '</ol>'+
-    '<p class="mock-note">Each module is timed. When time runs out (or you submit), it moves on automatically — just like Bluebook. Do it in one sitting for a realistic read.</p>'+
-    '<div class="mock-btns"><button class="btn-ghost" id="mock-cancel">Cancel</button><button class="btn-primary" id="mock-next">Begin Reading &amp; Writing</button></div></div>');
-  $('#mock-next').addEventListener('click', function(){ _beginSession(MOCK.mods.rw1, 'exam'); });
+  var section = (kind === 'math') ? 'math' : 'rw';
+  var count = section === 'math' ? MOCK_MATH : MOCK_RW;
+  var firstKey = section === 'math' ? 'math1' : 'rw1';
+  var first = assembleModule(section, 'mixed', count, used);
+  if(first.length < 12){ alert('Not enough questions loaded yet for this test.'); return; }
+  MOCK = { active:true, kind:kind, stage:firstKey, used:used, results:{}, paths:{}, time:0, mods:{} };
+  MOCK.mods[firstKey] = makeModuleSet(section, first, 'Module 1');
+  mockScreen(mockIntroHTML(kind, first.length));
+  $('#mock-next').addEventListener('click', function(){ _beginSession(MOCK.mods[firstKey], 'exam'); });
   $('#mock-cancel').addEventListener('click', function(){ MOCK=null; ensureMockView().classList.add('hidden'); $('#view-home').classList.remove('hidden'); });
+}
+function mockIntroHTML(kind, n1){
+  if(kind === 'full'){
+    return '<div class="mock-card"><div class="mock-kicker">Full Practice Test · /1600</div>'+
+      '<h1>Digital SAT — Full Practice Test</h1>'+
+      '<p>Mirrors the real test: it adapts between modules and gives a scaled <strong>400–1600</strong> estimate at the end.</p>'+
+      '<ol class="mock-steps">'+
+        '<li><strong>Reading &amp; Writing</strong> — Module 1 ('+n1+' q · 32 min), then an adaptive Module 2.</li>'+
+        '<li>10-minute break.</li>'+
+        '<li><strong>Math</strong> — Module 1 ('+MOCK_MATH+' q · 35 min), then an adaptive Module 2.</li>'+
+      '</ol>'+
+      '<p class="mock-note">Each module is timed; when time runs out (or you submit) it moves on automatically. Do it in one sitting for a realistic read.</p>'+
+      '<div class="mock-btns"><button class="btn-ghost" id="mock-cancel">Cancel</button><button class="btn-primary" id="mock-next">Begin Reading &amp; Writing</button></div></div>';
+  }
+  var name = kind === 'math' ? 'Math' : 'Reading & Writing';
+  var mins = kind === 'math' ? 35 : 32;
+  return '<div class="mock-card"><div class="mock-kicker">'+name+' Section Test · /800</div>'+
+    '<h1>'+name+' — Adaptive Section Test</h1>'+
+    '<p>Just this one section, scored the way the real SAT does it: two adaptive modules → a scaled <strong>200–800</strong> estimate. Perfect when you don\'t have 2 hours.</p>'+
+    '<ol class="mock-steps">'+
+      '<li><strong>Module 1</strong> ('+n1+' q · '+mins+' min) — mixed difficulty.</li>'+
+      '<li><strong>Module 2</strong> — easier or harder depending on how Module 1 goes.</li>'+
+    '</ol>'+
+    '<p class="mock-note">Timed like Bluebook. '+(kind==='math'?'Reference Sheet &amp; Desmos are in the toolbar.':'')+'</p>'+
+    '<div class="mock-btns"><button class="btn-ghost" id="mock-cancel">Cancel</button><button class="btn-primary" id="mock-next">Begin '+name+'</button></div></div>';
 }
 function mockTransition(title, sub, minutes, n, next){
   mockScreen('<div class="mock-card"><div class="mock-kicker">Full Practice Test</div>'+
@@ -1975,6 +2008,7 @@ function mockCapture(g){
     MOCK.stage = 'rw2';
     mockTransition('Reading &amp; Writing — Module 2', 'Second and final Reading &amp; Writing module. Keep going.', 32, rw2.length, function(){ _beginSession(MOCK.mods.rw2,'exam'); });
   } else if(st === 'rw2'){
+    if(MOCK.kind === 'rw'){ mockFinish(); return; }
     MOCK.stage = 'math1';
     mockBreak(function(){
       var m1 = assembleModule('math','mixed',MOCK_MATH,MOCK.used);
@@ -1993,21 +2027,24 @@ function mockCapture(g){
   }
 }
 function mockFinish(){
+  var kind = MOCK.kind || 'full';
   var rwAll = (MOCK.results.rw1||[]).concat(MOCK.results.rw2||[]);
   var mathAll = (MOCK.results.math1||[]).concat(MOCK.results.math2||[]);
-  var rwScore = sectionScaled(MOCK.results.rw1, MOCK.results.rw2, MOCK.paths.rw==='hard');
-  var mathScore = sectionScaled(MOCK.results.math1, MOCK.results.math2, MOCK.paths.math==='hard');
-  var total = rwScore + mathScore;
+  var rwScore = rwAll.length ? sectionScaled(MOCK.results.rw1, MOCK.results.rw2, MOCK.paths.rw==='hard') : null;
+  var mathScore = mathAll.length ? sectionScaled(MOCK.results.math1, MOCK.results.math2, MOCK.paths.math==='hard') : null;
+  var max = kind === 'full' ? 1600 : 800;
+  var total = kind === 'full' ? (rwScore + mathScore) : (kind === 'rw' ? rwScore : mathScore);
+  var title = kind === 'full' ? 'Full Practice Test' : (kind === 'rw' ? 'Reading & Writing Test' : 'Math Test');
   var allR = rwAll.concat(mathAll);
   var correct = allR.filter(function(r){ return r.ok; }).length;
   MOCK.active = false;
   saveSession({
-    date: todayStr(), setId:'full-mock', setTitle:'Full Practice Test', mode:'exam',
+    date: todayStr(), setId:'full-mock', setTitle:title, mode:'exam',
     score: correct, total: allR.length, timeUsed: MOCK.time||0, expired:false,
-    mock: { rwScore:rwScore, mathScore:mathScore, total:total, rwPath:MOCK.paths.rw, mathPath:MOCK.paths.math },
-    perQuestion: allR.map(function(r){ return { qid:r.q.id, setId:r.q._setId||r.q._setId, domain:r.q.domain, skill:r.q.skill, difficulty:r.q.difficulty, ok:r.ok, user:r.user, correct: r.q.type==='spr'?r.q.answer:r.q.correct }; })
+    mock: { kind:kind, max:max, total:total, rwScore:rwScore, mathScore:mathScore, rwPath:MOCK.paths.rw||null, mathPath:MOCK.paths.math||null },
+    perQuestion: allR.map(function(r){ return { qid:r.q.id, setId:r.q._setId, domain:r.q.domain, skill:r.q.skill, difficulty:r.q.difficulty, ok:r.ok, user:r.user, correct: r.q.type==='spr'?r.q.answer:r.q.correct }; })
   });
-  renderMockResults(rwScore, mathScore, total, rwAll, mathAll, MOCK.paths, { date: todayStr() });
+  renderMockResults({ kind:kind, max:max, total:total, rwScore:rwScore, mathScore:mathScore, paths:MOCK.paths, rwAll:rwAll, mathAll:mathAll, meta:{ date:todayStr() } });
 }
 function pastMocks(){
   return getHistory().filter(function(e){ return e.setId === 'full-mock' && e.mock; });
@@ -2021,25 +2058,32 @@ function mockBreakdown(results, label){
   }).join('');
   return '<h3 class="mres-h">'+label+'</h3><table class="mres-table"><thead><tr><th>Domain</th><th>Correct</th><th>Accuracy</th></tr></thead><tbody>'+rows+'</tbody></table>';
 }
-function renderMockResults(rwScore, mathScore, total, rwAll, mathAll, paths, meta){
-  meta = meta || {};
-  var lo = Math.max(400, total-60), hi = Math.min(1600, total+60);
-  var pathTxt = function(p){ return p==='hard' ? 'harder second module (higher scoring ceiling)' : 'standard second module'; };
-  var kicker = meta.review ? ('Full Practice Test · reviewing your attempt' + (meta.date ? ' from ' + meta.date : '')) : 'Full Practice Test · estimated score';
+function renderMockResults(o){
+  var meta = o.meta || {}, kind = o.kind || 'full', max = o.max || 1600, total = o.total;
+  var paths = o.paths || {}, rwAll = o.rwAll || [], mathAll = o.mathAll || [];
+  var floorV = max === 1600 ? 400 : 200;
+  var lo = Math.max(floorV, total-60), hi = Math.min(max, total+60);
+  var pathTxt = function(p){ return p==='hard' ? 'harder second module (higher ceiling)' : 'standard second module'; };
+  var name = kind==='full' ? 'Full Practice Test' : (kind==='rw' ? 'Reading & Writing Section' : 'Math Section');
+  var kicker = meta.review ? (name + ' · reviewing your attempt' + (meta.date ? ' from ' + meta.date : '')) : (name + ' · estimated score');
   var review = rwAll.concat(mathAll).map(function(r){ return renderResQ(r); }).join('');
   var correct = rwAll.concat(mathAll).filter(function(r){ return r.ok; }).length;
   var totalQ = rwAll.length + mathAll.length;
+  var secCards = '';
+  if(rwAll.length) secCards += '<div class="mres-sec"><div class="mres-sk">Reading &amp; Writing</div><div class="mres-sv">'+o.rwScore+'</div><div class="mres-sp">/ 800 · '+pathTxt(paths.rw)+'</div></div>';
+  if(mathAll.length) secCards += '<div class="mres-sec"><div class="mres-sk">Math</div><div class="mres-sv">'+o.mathScore+'</div><div class="mres-sp">/ 800 · '+pathTxt(paths.math)+'</div></div>';
+  var breaks = '';
+  if(rwAll.length) breaks += mockBreakdown(rwAll,'Reading & Writing — by domain');
+  if(mathAll.length) breaks += mockBreakdown(mathAll,'Math — by domain');
+  var pathLine = kind!=='full' ? '<div class="mres-range">Second module served: <b>'+pathTxt(kind==='math'?paths.math:paths.rw)+'</b></div>' : '';
   var html = '<div class="mres-wrap">'+
     '<div class="mres-head"><div class="mock-kicker">'+kicker+'</div>'+
-      '<div class="mres-total"><span class="mres-big">'+total+'</span><span class="mres-out">/ 1600</span></div>'+
+      '<div class="mres-total"><span class="mres-big">'+total+'</span><span class="mres-out">/ '+max+'</span></div>'+
       '<div class="mres-range">Likely range <b>'+lo+'–'+hi+'</b> · '+correct+'/'+totalQ+' correct · practice estimate, not an official score</div>'+
-      '<div class="mres-sections">'+
-        '<div class="mres-sec"><div class="mres-sk">Reading &amp; Writing</div><div class="mres-sv">'+rwScore+'</div><div class="mres-sp">/ 800 · '+pathTxt(paths.rw)+'</div></div>'+
-        '<div class="mres-sec"><div class="mres-sk">Math</div><div class="mres-sv">'+mathScore+'</div><div class="mres-sp">/ 800 · '+pathTxt(paths.math)+'</div></div>'+
-      '</div>'+
+      (kind==='full' ? '<div class="mres-sections">'+secCards+'</div>' : pathLine)+
       '<div class="mock-btns"><button class="btn-primary" id="mres-home">← Back to Home</button><button class="btn-outline" id="mres-redo">Practice your mistakes (Drill)</button></div>'+
     '</div>'+
-    '<div class="mres-break">'+ mockBreakdown(rwAll,'Reading & Writing — by domain') + mockBreakdown(mathAll,'Math — by domain') +'</div>'+
+    '<div class="mres-break">'+ breaks +'</div>'+
     '<h3 class="mres-h">Every question with your answer &amp; explanation</h3>'+
     '<div id="mres-list">'+review+'</div>'+
   '</div>';
@@ -2058,7 +2102,7 @@ function reviewMock(sid){
     if(q._section === 'math') mathAll.push(r); else rwAll.push(r);
   });
   var m = entry.mock;
-  renderMockResults(m.rwScore, m.mathScore, m.total, rwAll, mathAll, { rw: m.rwPath, math: m.mathPath }, { review: true, date: entry.date });
+  renderMockResults({ kind: m.kind || 'full', max: m.max || 1600, total: m.total, rwScore: m.rwScore, mathScore: m.mathScore, paths: { rw: m.rwPath, math: m.mathPath }, rwAll: rwAll, mathAll: mathAll, meta: { review:true, date: entry.date } });
 }
 
 function authBoot(){
@@ -2197,7 +2241,9 @@ function init(){
   buildRefSheet();
   renderHome();
 
-  var _bm = $('#btn-start-mock'); if(_bm) _bm.addEventListener('click', startMock);
+  var _bm = $('#btn-start-mock'); if(_bm) _bm.addEventListener('click', function(){ startMock('full'); });
+  var _brw = $('#btn-mock-rw'); if(_brw) _brw.addEventListener('click', function(){ startMock('rw'); });
+  var _bma = $('#btn-mock-math'); if(_bma) _bma.addEventListener('click', function(){ startMock('math'); });
 
   $('#btn-hide-timer').addEventListener('click', function(){
     if(!S) return;
