@@ -339,6 +339,43 @@
   .user-chip .uc-name{color:var(--gray-mid);font-weight:600}
   .user-chip .uc-out{background:#fff;color:var(--blue);border:1px solid var(--gray-line);border-radius:999px;padding:5px 14px;font-size:.8rem;font-weight:600;cursor:pointer}
   .user-chip .uc-out:hover{background:var(--blue-soft);border-color:var(--blue)}
+  /* ===== Full mock ===== */
+  .mock-launch{display:flex;align-items:center;gap:18px;justify-content:space-between;flex-wrap:wrap;background:linear-gradient(135deg,var(--blue) 0%,#22357f 100%);color:#fff;border-radius:14px;padding:20px 24px;margin:6px 0 20px}
+  .mock-launch h3{font-size:1.12rem;margin:0 0 4px;display:flex;align-items:center;gap:10px}
+  .mock-launch p{margin:0;font-size:.9rem;opacity:.94;max-width:62ch;line-height:1.5}
+  .mock-badge{font-size:.64rem;letter-spacing:.06em;text-transform:uppercase;background:rgba(255,255,255,.22);padding:3px 9px;border-radius:999px;font-weight:700}
+  .mock-launch .btn-primary{background:#fff;color:var(--blue);border:0;white-space:nowrap;font-weight:700}
+  .mock-launch .btn-primary:hover{background:#eef1ff}
+  #view-mock{max-width:860px;margin:0 auto;padding:26px 20px 60px}
+  .mock-card{background:#fff;border:1px solid var(--gray-line);border-radius:16px;padding:34px 32px;box-shadow:0 6px 24px rgba(20,30,70,.08);text-align:center;margin-top:24px}
+  .mock-kicker{font-size:.72rem;letter-spacing:.09em;text-transform:uppercase;color:var(--blue);font-weight:800;margin-bottom:8px}
+  .mock-card h1{font-size:1.5rem;margin:0 0 10px}
+  .mock-card p{color:var(--gray-mid);line-height:1.6;max-width:60ch;margin:0 auto 12px}
+  .mock-steps{text-align:left;max-width:56ch;margin:16px auto;color:#333;line-height:1.7;padding-left:22px}
+  .mock-steps li{margin:7px 0}
+  .mock-note{font-size:.85rem;background:var(--blue-soft);border-radius:10px;padding:12px 16px;color:#33406b !important}
+  .mock-meta{font-weight:700;color:var(--ink,#1e1e1e);margin:14px 0 6px}
+  .mock-timer{font-size:2.6rem;font-weight:800;color:var(--blue);letter-spacing:.02em;margin:14px 0}
+  .mock-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:20px}
+  .btn-ghost{background:transparent;border:1px solid var(--gray-line);color:var(--gray-mid);border-radius:999px;padding:11px 22px;font-weight:600;cursor:pointer}
+  /* mock results */
+  .mres-wrap{margin-top:10px}
+  .mres-head{background:#fff;border:1px solid var(--gray-line);border-radius:16px;padding:28px;text-align:center;box-shadow:0 6px 24px rgba(20,30,70,.08)}
+  .mres-total{margin:6px 0}
+  .mres-big{font-size:4rem;font-weight:800;color:var(--blue);line-height:1}
+  .mres-out{font-size:1.3rem;color:var(--gray-mid);margin-left:6px}
+  .mres-range{font-size:.86rem;color:var(--gray-mid);margin-bottom:18px}
+  .mres-sections{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+  .mres-sec{background:var(--blue-soft);border-radius:12px;padding:16px 26px;min-width:190px}
+  .mres-sk{font-size:.8rem;color:#33406b;font-weight:700;text-transform:uppercase;letter-spacing:.04em}
+  .mres-sv{font-size:2.1rem;font-weight:800;color:var(--blue)}
+  .mres-sp{font-size:.76rem;color:var(--gray-mid)}
+  .mres-break{display:flex;gap:20px;flex-wrap:wrap;margin:24px 0}
+  .mres-break>div{flex:1;min-width:280px}
+  .mres-h{font-size:1.05rem;margin:20px 0 10px}
+  .mres-table{width:100%;border-collapse:collapse;font-size:.88rem}
+  .mres-table th,.mres-table td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--gray-line)}
+  .mres-table th{color:var(--gray-mid);font-weight:600;font-size:.78rem;text-transform:uppercase;letter-spacing:.03em}
 </style>
 </head>
 <body>
@@ -370,6 +407,14 @@
     <p class="home-sub">Pick a set and a mode. <strong>Exam</strong> = timed, graded at the end. <strong>Drill</strong> = no timer, with instant feedback and an explanation on every question.</p>
 
     <div class="dash-cards" id="dash-cards"></div>
+
+    <div class="mock-launch" id="mock-launch">
+      <div class="mock-launch-txt">
+        <h3>📝 Full Practice Test <span class="mock-badge">Adaptive</span></h3>
+        <p>Just like the real Digital SAT: 2 Reading &amp; Writing modules + 2 Math modules, section-adaptive and timed. Get a scaled <strong>400–1600</strong> estimate at the end. Set aside ~2 hours.</p>
+      </div>
+      <button class="btn-primary" id="btn-start-mock">Start full test</button>
+    </div>
 
     <div id="set-sections"></div>
 
@@ -570,6 +615,10 @@
 <script src="sets/rw-set11.js"></script>
 <script src="sets/rw-set12.js"></script>
 <script src="sets/math-set1.js"></script>
+<script src="sets/math-alg.js"></script>
+<script src="sets/math-adv.js"></script>
+<script src="sets/math-data.js"></script>
+<script src="sets/math-geo.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1"></script>
 
@@ -934,6 +983,9 @@ function buildRedoSet(sec){
 function startSession(setId, mode){
   var set = setId === 'redo-math' ? buildRedoSet('math') : setId === 'redo-verbal' ? buildRedoSet('rw') : setId === 'redo' ? buildRedoSet() : SETS.filter(function(s){ return s.id === setId; })[0];
   if(!set || !set.questions.length) return;
+  _beginSession(set, mode);
+}
+function _beginSession(set, mode){
   S = {
     set: set, mode: mode, idx: 0, screen: 'test',
     answers: {}, marked: {}, struck: {}, elim: {}, checked: {},
@@ -943,8 +995,9 @@ function startSession(setId, mode){
   };
   $('#view-home').classList.add('hidden');
   $('#view-results').classList.add('hidden');
+  var _vm = $('#view-mock'); if(_vm) _vm.classList.add('hidden');
   $('#view-app').classList.remove('hidden');
-  $('#hdr-title').textContent = set.title + (mode === 'drill' ? ' — Drill' : '');
+  $('#hdr-title').textContent = set.title + (mode === 'drill' ? ' — Drill' : '') + (MOCK && MOCK.active ? '' : '');
   $('#dir-panel').innerHTML = (set.section === 'math' ? DIR_MATH : DIR_RW) + '<br><button class="btn-primary" id="btn-dirs-close">Close</button>';
   $('#btn-dirs-close').addEventListener('click', function(){ $('#dir-panel').classList.add('hidden'); });
   $('#btn-ref').classList.toggle('hidden', set.section !== 'math' && set.section !== 'mixed');
@@ -1214,6 +1267,7 @@ function finishSession(expired){
   S.timeUsed = S.mode === 'exam' ? (S.set.minutes * 60 - S.secondsLeft) : S.elapsed;
   S.screen = 'results';
   var g = grade();
+  if(MOCK && MOCK.active){ return mockCapture(g); }
   if(!S.saved){
     S.saved = true;
     saveSession({
@@ -1264,7 +1318,10 @@ function renderResults(g){
   $('#summary-text').value = buildSummary(g);
 
   var list = '';
-  g.results.forEach(function(r){
+  g.results.forEach(function(r){ list += renderResQ(r); });
+  $('#res-list').innerHTML = list;
+}
+function renderResQ(r){
     var q = r.q;
     var badge = r.ok ? '<span class="res-badge ok">Correct ✓</span>' : '<span class="res-badge bad">' + (r.user ? 'Incorrect ✗' : 'Blank ✗') + '</span>';
     var userTxt, corrTxt;
@@ -1280,25 +1337,23 @@ function renderResults(g){
       exp += '<h4>Why the others are wrong</h4>';
       ['A','B','C','D'].forEach(function(L){
         if(L === q.correct) return;
-        exp += '<p><strong>' + L + ')</strong> ' + q.expWrong[L] + '</p>';
+        exp += '<p><strong>' + L + ')</strong> ' + (q.expWrong ? q.expWrong[L] : '') + '</p>';
       });
     }
     var ctx = '';
     if(q.figure) ctx += '<div class="figure-wrap">' + q.figure + '</div>';
     if(q.passage) ctx += '<div class="res-passage">' + renderContent(q.passage) + '</div>';
     ctx += '<div class="res-passage">' + renderContent(q.stem) + '</div>';
-    list += '<details class="res-q' + (r.ok ? '' : ' wrong') + '"' + (r.ok ? '' : ' open') + '>' +
+    return '<details class="res-q' + (r.ok ? '' : ' wrong') + '"' + (r.ok ? '' : ' open') + '>' +
       '<summary><span class="res-id">' + q.id + '</span>' + badge +
       '<span class="res-diff">' + ({'Fácil':'Easy','Media':'Medium','Difícil':'Hard'}[q.difficulty]||q.difficulty) + '</span>' +
-      '<span class="res-skill">' + q.domain + ' · ' + q.skill + '</span>' +
+      '<span class="res-skill">' + (q.domain||'') + ' · ' + (q.skill||'') + '</span>' +
       '<span class="res-caret">See explanation ▾</span></summary>' +
       '<div class="res-body">' + ctx +
       '<div class="res-answers">Your answer: ' + userTxt + '<br>Correct answer: ' + corrTxt + '</div>' +
       '<div class="res-exp">' + exp + '</div>' +
       '<div class="res-tip">⚡ <strong>Shortcut:</strong> ' + q.tip + '</div>' +
       '</div></details>';
-  });
-  $('#res-list').innerHTML = list;
 }
 function copySummary(){
   var ta = $('#summary-text');
@@ -1318,8 +1373,10 @@ function fallbackCopy(ta, done){
 function goHome(){
   if(S && S.timerId){ clearInterval(S.timerId); S.timerId = null; }
   S = null;
+  if(MOCK){ MOCK.active = false; MOCK = null; }
   $('#view-app').classList.add('hidden');
   $('#view-results').classList.add('hidden');
+  var _vm = $('#view-mock'); if(_vm) _vm.classList.add('hidden');
   $('#view-home').classList.remove('hidden');
   closeLineReader();
   renderHome();
@@ -1784,6 +1841,186 @@ function setUserChip(){
   }
 }
 
+/* ================= FULL ADAPTIVE MOCK ================= */
+var MOCK = null;
+var MOCK_RW = 27, MOCK_MATH = 22;
+
+function mockPool(section){
+  var seen = {}, arr = [];
+  SETS.forEach(function(s){
+    (s.questions || []).forEach(function(q){
+      var isMath = (q._section === 'math') || (s.section === 'math');
+      var want = section === 'math' ? isMath : !isMath;
+      if(want && q.difficulty && !seen[q.id]){ seen[q.id] = 1; arr.push(q); }
+    });
+  });
+  return arr;
+}
+function _shuffle(a){ a = a.slice(); for(var i=a.length-1;i>0;i--){ var j=Math.floor(Math.random()*(i+1)); var t=a[i];a[i]=a[j];a[j]=t; } return a; }
+function assembleModule(section, tier, count, used){
+  var pool = mockPool(section).filter(function(q){ return !used[q.id]; });
+  var F = _shuffle(pool.filter(function(q){return q.difficulty==='Fácil';}));
+  var M = _shuffle(pool.filter(function(q){return q.difficulty==='Media';}));
+  var D = _shuffle(pool.filter(function(q){return q.difficulty==='Difícil';}));
+  var order;
+  if(tier==='easy') order = F.concat(M).concat(D);
+  else if(tier==='hard') order = D.concat(M).concat(F);
+  else {
+    var nF=Math.round(count*0.33), nM=Math.round(count*0.45);
+    order = F.slice(0,nF).concat(M.slice(0,nM)).concat(D.slice(0,count))
+              .concat(F.slice(nF)).concat(M.slice(nM)).concat(D);
+  }
+  // de-dup preserving order, then trim
+  var pick = [], took = {};
+  for(var i=0;i<order.length && pick.length<count;i++){ if(!took[order[i].id]){ took[order[i].id]=1; pick.push(order[i]); } }
+  var rank = {'Fácil':0,'Media':1,'Difícil':2};
+  pick.sort(function(a,b){ return rank[a.difficulty]-rank[b.difficulty]; });
+  pick.forEach(function(q){ used[q.id]=1; });
+  return pick;
+}
+function makeModuleSet(section, questions, label){
+  return { id:'mock-'+section+'-'+label.replace(/\s/g,''), title:(section==='math'?'Math':'Reading & Writing')+' — '+label,
+    section: section, minutes: section==='math'?35:32, questions: questions };
+}
+function weightedRatio(results){
+  if(!results || !results.length) return 0;
+  var w=0, got=0;
+  results.forEach(function(r){ var k=weightOf(r.q.difficulty); w+=k; if(r.ok) got+=k; });
+  return w? got/w : 0;
+}
+function sectionScaled(m1, m2, hardPath){
+  var p = weightedRatio((m1||[]).concat(m2||[]));
+  var raw = hardPath ? (200 + 600*p) : Math.min(600, 200 + 400*p);
+  return Math.max(200, Math.min(800, Math.round(raw/10)*10));
+}
+function ensureMockView(){
+  var vm = $('#view-mock');
+  if(!vm){ vm = document.createElement('div'); vm.id='view-mock'; vm.className='hidden';
+    var anchor = $('#view-results'); anchor.parentNode.insertBefore(vm, anchor.nextSibling); }
+  return vm;
+}
+function mockScreen(html){
+  ['view-auth','view-home','view-admin','view-app','view-results'].forEach(function(id){ var el=$('#'+id); if(el) el.classList.add('hidden'); });
+  var v = ensureMockView(); v.innerHTML = html; v.classList.remove('hidden');
+  try{ window.scrollTo(0,0); }catch(e){}
+}
+function startMock(){
+  var used = {};
+  var rw1 = assembleModule('rw','mixed',MOCK_RW,used);
+  var mathAvail = mockPool('math').length;
+  if(rw1.length < 12 || mathAvail < 20){ alert('Not enough questions loaded yet for a full mock.'); return; }
+  MOCK = { active:true, stage:'rw1', used:used, results:{}, paths:{}, time:0, mods:{} };
+  MOCK.mods.rw1 = makeModuleSet('rw', rw1, 'Module 1');
+  mockScreen('<div class="mock-card"><div class="mock-kicker">Full Practice Test</div>'+
+    '<h1>Digital SAT — Practice Test</h1>'+
+    '<p>This mirrors the real test: it adapts between modules and gives you a scaled <strong>400–1600</strong> estimate at the end.</p>'+
+    '<ol class="mock-steps">'+
+      '<li><strong>Reading &amp; Writing</strong> — Module 1 ('+rw1.length+' q · 32 min), then an adaptive Module 2.</li>'+
+      '<li>10-minute break.</li>'+
+      '<li><strong>Math</strong> — Module 1 ('+MOCK_MATH+' q · 35 min), then an adaptive Module 2. Reference sheet &amp; Desmos available.</li>'+
+    '</ol>'+
+    '<p class="mock-note">Each module is timed. When time runs out (or you submit), it moves on automatically — just like Bluebook. Do it in one sitting for a realistic read.</p>'+
+    '<div class="mock-btns"><button class="btn-ghost" id="mock-cancel">Cancel</button><button class="btn-primary" id="mock-next">Begin Reading &amp; Writing</button></div></div>');
+  $('#mock-next').addEventListener('click', function(){ _beginSession(MOCK.mods.rw1, 'exam'); });
+  $('#mock-cancel').addEventListener('click', function(){ MOCK=null; ensureMockView().classList.add('hidden'); $('#view-home').classList.remove('hidden'); });
+}
+function mockTransition(title, sub, minutes, n, next){
+  mockScreen('<div class="mock-card"><div class="mock-kicker">Full Practice Test</div>'+
+    '<h1>'+title+'</h1><p>'+sub+'</p>'+
+    '<div class="mock-meta">'+n+' questions · '+minutes+' minutes</div>'+
+    '<div class="mock-btns"><button class="btn-primary" id="mock-next">Start '+title+'</button></div></div>');
+  $('#mock-next').addEventListener('click', next);
+}
+function mockBreak(next){
+  var secs = 600;
+  mockScreen('<div class="mock-card"><div class="mock-kicker">Break</div>'+
+    '<h1>Section break</h1>'+
+    '<p>Nice — you finished Reading &amp; Writing. Take up to <strong>10 minutes</strong>. Next: Math (2 modules).</p>'+
+    '<div class="mock-timer" id="mock-brk">10:00</div>'+
+    '<div class="mock-btns"><button class="btn-primary" id="mock-next">Resume now → Math</button></div></div>');
+  var el = $('#mock-brk');
+  var iv = setInterval(function(){ secs--; if(secs<0) secs=0; var m=Math.floor(secs/60), s=secs%60; if(el) el.textContent = m+':'+(s<10?'0':'')+s; if(secs<=0){ clearInterval(iv); } }, 1000);
+  $('#mock-next').addEventListener('click', function(){ clearInterval(iv); next(); });
+}
+function mockCapture(g){
+  MOCK.time += (S && S.timeUsed ? S.timeUsed : 0);
+  MOCK.results[MOCK.stage] = g.results;
+  $('#view-app').classList.add('hidden');
+  var st = MOCK.stage;
+  if(st === 'rw1'){
+    var hard = weightedRatio(g.results) >= 0.60;
+    MOCK.paths.rw = hard ? 'hard' : 'easy';
+    var rw2 = assembleModule('rw', hard?'hard':'easy', MOCK_RW, MOCK.used);
+    MOCK.mods.rw2 = makeModuleSet('rw', rw2, 'Module 2');
+    MOCK.stage = 'rw2';
+    mockTransition('Reading &amp; Writing — Module 2', 'Second and final Reading &amp; Writing module. Keep going.', 32, rw2.length, function(){ _beginSession(MOCK.mods.rw2,'exam'); });
+  } else if(st === 'rw2'){
+    MOCK.stage = 'math1';
+    mockBreak(function(){
+      var m1 = assembleModule('math','mixed',MOCK_MATH,MOCK.used);
+      MOCK.mods.math1 = makeModuleSet('math', m1, 'Module 1');
+      mockTransition('Math — Module 1', 'First Math module. The Reference Sheet and Desmos calculator are in the toolbar.', 35, m1.length, function(){ _beginSession(MOCK.mods.math1,'exam'); });
+    });
+  } else if(st === 'math1'){
+    var hardM = weightedRatio(g.results) >= 0.55;
+    MOCK.paths.math = hardM ? 'hard' : 'easy';
+    var m2 = assembleModule('math', hardM?'hard':'easy', MOCK_MATH, MOCK.used);
+    MOCK.mods.math2 = makeModuleSet('math', m2, 'Module 2');
+    MOCK.stage = 'math2';
+    mockTransition('Math — Module 2', 'Second and final Math module. Last one!', 35, m2.length, function(){ _beginSession(MOCK.mods.math2,'exam'); });
+  } else if(st === 'math2'){
+    mockFinish();
+  }
+}
+function mockFinish(){
+  var rwAll = (MOCK.results.rw1||[]).concat(MOCK.results.rw2||[]);
+  var mathAll = (MOCK.results.math1||[]).concat(MOCK.results.math2||[]);
+  var rwScore = sectionScaled(MOCK.results.rw1, MOCK.results.rw2, MOCK.paths.rw==='hard');
+  var mathScore = sectionScaled(MOCK.results.math1, MOCK.results.math2, MOCK.paths.math==='hard');
+  var total = rwScore + mathScore;
+  var allR = rwAll.concat(mathAll);
+  var correct = allR.filter(function(r){ return r.ok; }).length;
+  MOCK.active = false;
+  saveSession({
+    date: todayStr(), setId:'full-mock', setTitle:'Full Practice Test', mode:'exam',
+    score: correct, total: allR.length, timeUsed: MOCK.time||0, expired:false,
+    mock: { rwScore:rwScore, mathScore:mathScore, total:total, rwPath:MOCK.paths.rw, mathPath:MOCK.paths.math },
+    perQuestion: allR.map(function(r){ return { qid:r.q.id, setId:r.q._setId||r.q._setId, domain:r.q.domain, skill:r.q.skill, difficulty:r.q.difficulty, ok:r.ok, user:r.user, correct: r.q.type==='spr'?r.q.answer:r.q.correct }; })
+  });
+  renderMockResults(rwScore, mathScore, total, rwAll, mathAll);
+}
+function mockBreakdown(results, label){
+  var by = {};
+  results.forEach(function(r){ var d=r.q.domain||'Other'; if(!by[d]) by[d]=[0,0]; by[d][1]++; if(r.ok) by[d][0]++; });
+  var rows = Object.keys(by).sort().map(function(d){
+    var pct = Math.round(100*by[d][0]/by[d][1]);
+    return '<tr><td>'+d+'</td><td>'+by[d][0]+'/'+by[d][1]+'</td><td>'+pct+'%</td></tr>';
+  }).join('');
+  return '<h3 class="mres-h">'+label+'</h3><table class="mres-table"><thead><tr><th>Domain</th><th>Correct</th><th>Accuracy</th></tr></thead><tbody>'+rows+'</tbody></table>';
+}
+function renderMockResults(rwScore, mathScore, total, rwAll, mathAll){
+  var lo = Math.max(400, total-60), hi = Math.min(1600, total+60);
+  var pathTxt = function(p){ return p==='hard' ? 'harder second module (higher scoring ceiling)' : 'standard second module'; };
+  var review = rwAll.concat(mathAll).map(function(r){ return renderResQ(r); }).join('');
+  var html = '<div class="mres-wrap">'+
+    '<div class="mres-head"><div class="mock-kicker">Full Practice Test · estimated score</div>'+
+      '<div class="mres-total"><span class="mres-big">'+total+'</span><span class="mres-out">/ 1600</span></div>'+
+      '<div class="mres-range">Likely range <b>'+lo+'–'+hi+'</b> · this is a practice estimate, not an official score</div>'+
+      '<div class="mres-sections">'+
+        '<div class="mres-sec"><div class="mres-sk">Reading &amp; Writing</div><div class="mres-sv">'+rwScore+'</div><div class="mres-sp">/ 800 · '+pathTxt(MOCK.paths.rw)+'</div></div>'+
+        '<div class="mres-sec"><div class="mres-sk">Math</div><div class="mres-sv">'+mathScore+'</div><div class="mres-sp">/ 800 · '+pathTxt(MOCK.paths.math)+'</div></div>'+
+      '</div>'+
+      '<div class="mock-btns"><button class="btn-primary" id="mres-home">← Back to Home</button><button class="btn-outline" id="mres-redo">Review my mistakes (Drill)</button></div>'+
+    '</div>'+
+    '<div class="mres-break">'+ mockBreakdown(rwAll,'Reading & Writing — by domain') + mockBreakdown(mathAll,'Math — by domain') +'</div>'+
+    '<h3 class="mres-h">Every question with explanations</h3>'+
+    '<div id="mres-list">'+review+'</div>'+
+  '</div>';
+  mockScreen(html);
+  $('#mres-home').addEventListener('click', function(){ MOCK=null; ensureMockView().classList.add('hidden'); $('#view-home').classList.remove('hidden'); renderHome(); });
+  $('#mres-redo').addEventListener('click', function(){ MOCK=null; ensureMockView().classList.add('hidden'); startSession('redo','drill'); });
+}
+
 function authBoot(){
   if(!authAvailable()){
     // Sin backend configurado → modo local (funciona igual, guarda en este navegador)
@@ -1919,6 +2156,8 @@ function init(){
   applyZoom();
   buildRefSheet();
   renderHome();
+
+  var _bm = $('#btn-start-mock'); if(_bm) _bm.addEventListener('click', startMock);
 
   $('#btn-hide-timer').addEventListener('click', function(){
     if(!S) return;
