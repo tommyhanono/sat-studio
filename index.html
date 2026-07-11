@@ -280,6 +280,13 @@
   .res-exp p, .drill-card p{line-height:1.75;font-variant-numeric:tabular-nums}
   .exp-arrow{color:var(--blue);font-weight:700;margin-right:2px}
   .exp-check{display:block;margin-top:8px;padding:6px 0 2px 11px;border-left:2px solid var(--gray-line);color:var(--gray-mid);font-size:.92em;font-style:italic}
+  /* "In Desmos" help block */
+  .res-desmos{margin-top:11px;background:#edfaf1;border:1px solid #bfe6cb;border-radius:9px;padding:11px 13px;font-size:.9rem;line-height:1.6}
+  .res-desmos .desmos-lbl{font-weight:800;color:#0e7a41}
+  .res-desmos .desmos-code{margin:8px 0 4px;line-height:2.1}
+  .res-desmos code{background:#fff;border:1px solid #cfe6d7;border-radius:5px;padding:3px 9px;margin:0 5px 4px 0;font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.9em;color:#12351f;white-space:nowrap}
+  .btn-desmos{margin-top:6px;background:#12a150;color:#fff;border:0;border-radius:999px;padding:7px 16px;font-size:.82rem;font-weight:700;cursor:pointer}
+  .btn-desmos:hover{background:#0e8a44}
   .res-exp p:has(.exp-arrow), .drill-card p:has(.exp-arrow){padding-left:14px;text-indent:-14px}
   .res-actions{display:flex;gap:12px;margin:6px 0 22px;flex-wrap:wrap}
 
@@ -678,6 +685,13 @@
 <script src="sets/rw-hard-structure.js"></script>
 <script src="sets/rw-hard-grammar.js"></script>
 <script src="sets/rw-hard-evidence.js"></script>
+<!-- Desmos how-to hints per Math question (merged into questions at load) -->
+<script src="sets/desmos-a.js"></script>
+<script src="sets/desmos-b.js"></script>
+<script src="sets/desmos-c.js"></script>
+<script src="sets/desmos-d.js"></script>
+<script src="sets/desmos-e.js"></script>
+<script src="sets/desmos-f.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1"></script>
 
@@ -732,10 +746,13 @@ var SETS = [];
 
 function indexSets(){
   SETS = window.SAT_SETS.slice();
+  var hints = window.SAT_DESMOS || {};
   SETS.forEach(function(s){
     s.questions.forEach(function(q){
       q._setId = s.id;
       q._section = s.section;
+      var h = hints[q.id];
+      if(h){ if(h.note) q.desmos = h.note; if(h.latex && h.latex.length) q.desmosLatex = h.latex; }
       QINDEX[q.id] = q;
     });
   });
@@ -1330,6 +1347,7 @@ function drillCardHTML(q){
       body += '<p><strong>' + L + ')</strong> ' + fmtExp(q.expWrong[L], isMath) + '</p>';
     });
   }
+  body += desmosBlockHTML(q);
   body += '<div class="res-tip">⚡ <strong>Shortcut:</strong> ' + fmtExp(q.tip, isMath) + '</div></div>';
   return body;
 }
@@ -1550,6 +1568,7 @@ function renderResQ(r){
       '<div class="res-body">' + ctx +
       '<div class="res-answers">Your answer: ' + userTxt + '<br>Correct answer: ' + corrTxt + '</div>' +
       '<div class="res-exp">' + exp + '</div>' +
+      desmosBlockHTML(q) +
       '<div class="res-tip">⚡ <strong>Shortcut:</strong> ' + fmtExp(q.tip, isMath) + '</div>' +
       '</div></details>';
 }
@@ -1680,6 +1699,31 @@ function desmosFail(){
   calcStatus('Could not load Desmos.<br>The calculator is downloaded from desmos.com, so it needs an internet connection.<br><br><button class="btn-primary" id="btn-calc-retry">Retry</button>');
   var b = $('#btn-calc-retry');
   if(b) b.addEventListener('click', loadDesmos);
+}
+// Open the Desmos panel and preload a list of expressions (LaTeX strings) into it.
+function openDesmosWith(exprs){
+  openCalc();
+  var apply = function(tries){
+    if(desmosCalc){
+      try {
+        desmosCalc.setBlank();
+        (exprs || []).forEach(function(l, i){ if(l) desmosCalc.setExpression({ id: 'sat' + i, latex: l }); });
+        desmosCalc.resize();
+      } catch(e){}
+    } else if(tries > 0){ setTimeout(function(){ apply(tries - 1); }, 300); }
+  };
+  apply(25);
+}
+function escAttr(s){ return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+// "In Desmos" help block shown under a Math explanation (uses q.desmos text + optional q.desmosLatex[]).
+function desmosBlockHTML(q){
+  if(!q || !q.desmos) return '';
+  var html = '<div class="res-desmos"><span class="desmos-lbl">📈 In Desmos</span> ' + q.desmos;
+  if(q.desmosLatex && q.desmosLatex.length){
+    html += '<div class="desmos-code">' + q.desmosLatex.map(function(l){ return '<code>' + escAttr(l) + '</code>'; }).join('') + '</div>';
+    html += '<button class="btn-desmos" type="button" data-desmos="' + escAttr(q.desmosLatex.join('|||')) + '">Graph it in Desmos ▸</button>';
+  }
+  return html + '</div>';
 }
 
 /* ================= REFERENCE SHEET ================= */
@@ -2411,6 +2455,12 @@ function init(){
   applyZoom();
   buildRefSheet();
   renderHome();
+
+  document.addEventListener('click', function(e){
+    var b = (e.target && e.target.closest) ? e.target.closest('.btn-desmos') : null;
+    if(!b) return;
+    openDesmosWith((b.getAttribute('data-desmos') || '').split('|||'));
+  });
 
   var _bm = $('#btn-start-mock'); if(_bm) _bm.addEventListener('click', function(){ startMock('full'); });
   var _brw = $('#btn-mock-rw'); if(_brw) _brw.addEventListener('click', function(){ startMock('rw'); });

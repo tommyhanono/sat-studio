@@ -1,0 +1,27 @@
+/* SAT Studio — Desmos how-to hints for Advanced Math sets (math-adv + math-adv2) */
+window.SAT_DESMOS = Object.assign(window.SAT_DESMOS || {}, {
+  'ADV-01': { note:'Como las bases ya son iguales, iguala los exponentes: x+2=7. Si quieres comprobarlo en Desmos, grafica y=5^(x+2) y y=5^7 y mira que se cruzan en x=5.', latex:['y=5^(x+2)', 'y=5^7'] },
+  'ADV-02': { note:'Grafica y=x^2-x-12 y fíjate dónde cruza el eje x: en −3 y 4. La solución positiva que piden es 4.', latex:['y=x^2-x-12'] },
+  'ADV-03': { note:'Grafica y=x^2-6x+5; como abre hacia arriba, el punto más bajo (el vértice) está en (3,−4), así que el valor mínimo es −4.', latex:['y=x^2-6x+5'] },
+  'ADV-04': { note:'Grafica y=300*1.12^x y agrega el punto (1,336): cae justo en la curva (300 más 12%), lo que confirma el factor 1.12.', latex:['y=300*1.12^x', '(1,336)'] },
+  'ADV-05': { note:'Grafica y=(2x+3)(x-4) y y=2x^2-5x-12; si las dos curvas quedan una encima de la otra, son equivalentes.', latex:['y=(2x+3)(x-4)', 'y=2x^2-5x-12'] },
+  'ADV-06': { note:'Grafica y=(x+4)(x-2)(x-5) y cuenta los cruces con el eje x: son 3 (en −4, 2 y 5).', latex:['y=(x+4)(x-2)(x-5)'] },
+  'ADV-07': { note:'Grafica y=x^2 y y=x+6 y toca los dos cortes: (−2,4) y (3,9). Ojo: piden el mayor VALOR DE y, que es 9.', latex:['y=x^2', 'y=x+6'] },
+  'ADV-08': { note:'Grafica y=x^2+12x+c y deja que Desmos te ponga un deslizador para c; muévelo hasta que la parábola toque el eje x en un solo punto (tangente): ocurre en c=36.', latex:['y=x^2+12x+c'] },
+  'ADV-09': { note:'Grafica y=2x^2-16x+24 y localiza las raíces (2 y 6); súmalas para obtener 8. El eje de simetría x=4 es el punto medio, así que la suma es 2·4.', latex:['y=2x^2-16x+24'] },
+  'ADV-10': { note:'Grafica y=80*(1/2)^(x/6) y comprueba con los puntos (6,40) y (12,20): la masa se parte a la mitad cada 6 años.', latex:['y=80*(1/2)^(x/6)', '(6,40)', '(12,20)'] },
+  'ADV-11': { note:'Grafica y=(x-4)^2-9 y mira el punto más bajo: el vértice está en (4,−9).', latex:['y=(x-4)^2-9'] },
+  'ADV-12': { note:'Grafica y=9x^2+bx+4 con el deslizador de b; súbelo por el lado positivo hasta que la parábola toque el eje x una sola vez: pasa en b=12.', latex:['y=9x^2+bx+4'] },
+  'AV2-01': { note:'Como las bases ya son iguales, iguala los exponentes: 3x=12. Para comprobarlo, grafica y=2^(3x) y y=2^(12) y mira que se cruzan en x=4.', latex:['y=2^(3x)', 'y=2^(12)'] },
+  'AV2-02': { note:'Grafica y=x^2+2x-15 y fíjate en los cruces con el eje x: −5 y 3. La solución positiva es 3.', latex:['y=x^2+2x-15'] },
+  'AV2-03': { note:'Escribe f(x)=2x^2-3x+1 y en la línea de abajo teclea f(-2); Desmos te muestra 15 al instante.', latex:['f(x)=2x^2-3x+1', 'f(-2)'] },
+  'AV2-04': { note:'Grafica y=400*0.85^x para ver el decaimiento y agrega el punto (1,340): cae en la curva (400 menos 15%), lo que confirma el factor 0.85.', latex:['y=400*0.85^x', '(1,340)'] },
+  'AV2-05': { note:'Grafica y=x^2-8x+11; el punto más bajo (el vértice) está en (4,−5), así que el valor mínimo es −5.', latex:['y=x^2-8x+11'] },
+  'AV2-06': { note:'Grafica y=(x-1)(x+3)^2(x-6) y cuenta los valores DISTINTOS donde toca el eje x: son 3 (en −3 rebota, pero cuenta una sola vez).', latex:['y=(x-1)(x+3)^2(x-6)'] },
+  'AV2-07': { note:'Grafica y=x^2-14x+40 y halla las raíces (4 y 10); multiplícalas para obtener el producto 40.', latex:['y=x^2-14x+40'] },
+  'AV2-08': { note:'Grafica y=x^2+10x+c con el deslizador de c; muévelo hasta que la parábola toque el eje x en un solo punto: ocurre en c=25.', latex:['y=x^2+10x+c'] },
+  'AV2-09': { note:'Grafica y=3x^2-18x+15 y suma las raíces (1 y 5) para obtener 6. El eje de simetría x=3 es el punto medio.', latex:['y=3x^2-18x+15'] },
+  'AV2-10': { note:'Grafica y=(x+2)^2-7 y mira el punto más bajo: el vértice está en (−2,−7).', latex:['y=(x+2)^2-7'] },
+  'AV2-11': { note:'Grafica y=x^2-3 y y=2x+5 y toca los cortes: en x=−2 y x=4. Piden el mayor VALOR DE x, que es 4.', latex:['y=x^2-3', 'y=2x+5'] },
+  'AV2-12': { note:'Grafica y=4x^2+bx+25 con el deslizador de b; súbelo por el lado positivo hasta que la parábola toque el eje x una sola vez: pasa en b=20.', latex:['y=4x^2+bx+25'] }
+});
