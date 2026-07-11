@@ -1996,6 +1996,7 @@ function setUserChip(){
 /* ================= FULL ADAPTIVE MOCK ================= */
 var MOCK = null;
 var MOCK_RW = 27, MOCK_MATH = 22;
+var RW_HARD_MIN = 17, MATH_HARD_MIN = 16;   // correct answers in Module 1 needed to route to the HARD Module 2
 
 function mockPool(section){
   var seen = {}, arr = [];
@@ -2123,7 +2124,7 @@ function mockCapture(g){
   $('#view-app').classList.add('hidden');
   var st = MOCK.stage;
   if(st === 'rw1'){
-    var hard = weightedRatio(g.results) >= 0.60;
+    var hard = g.results.filter(function(r){ return r.ok; }).length >= RW_HARD_MIN;
     MOCK.paths.rw = hard ? 'hard' : 'easy';
     var rw2 = assembleModule('rw', hard?'hard':'easy', MOCK_RW, MOCK.used, mockRnd(2));
     MOCK.mods.rw2 = makeModuleSet('rw', rw2, 'Module 2');
@@ -2138,7 +2139,7 @@ function mockCapture(g){
       mockTransition('Math — Module 1', 'First Math module. The Reference Sheet and Desmos calculator are in the toolbar.', 35, m1.length, function(){ _beginSession(MOCK.mods.math1,'exam'); });
     });
   } else if(st === 'math1'){
-    var hardM = weightedRatio(g.results) >= 0.55;
+    var hardM = g.results.filter(function(r){ return r.ok; }).length >= MATH_HARD_MIN;
     MOCK.paths.math = hardM ? 'hard' : 'easy';
     var m2 = assembleModule('math', hardM?'hard':'easy', MOCK_MATH, MOCK.used, mockRnd(4));
     MOCK.mods.math2 = makeModuleSet('math', m2, 'Module 2');
