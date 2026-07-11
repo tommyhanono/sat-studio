@@ -276,6 +276,11 @@
   .res-answers b.bad{color:var(--red)}
   .res-exp h4{font-size:.84rem;margin:11px 0 4px}
   .res-exp p{margin-bottom:6px}
+  /* Explanation formatting (equation steps + verification note) */
+  .res-exp p, .drill-card p{line-height:1.75;font-variant-numeric:tabular-nums}
+  .exp-arrow{color:var(--blue);font-weight:700;margin-right:2px}
+  .exp-check{display:block;margin-top:8px;padding:6px 0 2px 11px;border-left:2px solid var(--gray-line);color:var(--gray-mid);font-size:.92em;font-style:italic}
+  .res-exp p:has(.exp-arrow), .drill-card p:has(.exp-arrow){padding-left:14px;text-indent:-14px}
   .res-actions{display:flex;gap:12px;margin:6px 0 22px;flex-wrap:wrap}
 
   @media (max-width:760px){
@@ -1293,24 +1298,39 @@ function renderQuestion(){
   renderFooter();
   safeScrollTop();
 }
+function fmtExp(t, isMath){
+  if(t == null) return '';
+  t = String(t);
+  // Pull a trailing verification note ("(Comprobación ...)", "(Check ...)") onto its own muted line.
+  var check = '';
+  var m = t.match(/\s*(\((?:Comprobaci[oó]n|Comprobando|Comprueba|Verificaci[oó]n|Chequeo)\b[\s\S]*)$/i);
+  if(m){ check = m[1].trim(); t = t.slice(0, m.index).trim(); }
+  // For MATH only: break multi-step equation chains ("A → B → C") so each step sits on its own
+  // line, like a worked solution. (In Verbal, "→" is prose meaning "leads to" — leave it inline.)
+  var main = isMath ? t.replace(/\s+(?:→|⟶|⇒|⟹)\s+/g, '<br><span class="exp-arrow">→</span> ') : t;
+  var html = main;
+  if(check) html += '<span class="exp-check">' + check + '</span>';
+  return html;
+}
 function drillCardHTML(q){
   var user = S.answers[q.id];
   var ok = isCorrect(q, user);
+  var isMath = q._section === 'math';
   var body = '<div class="drill-card' + (ok ? '' : ' bad') + '">' +
     '<div class="verdict ' + (ok ? 'ok' : 'bad') + '">' + (ok ? '✓ Correct!' : '✗ Incorrecta') + '</div>' +
     '<div class="drill-tags"><span class="res-diff">' + q.difficulty + '</span><span class="res-skill">' + q.domain + ' · ' + q.skill + '</span></div>';
   if(q.type === 'spr'){
     body += '<div class="res-answers">Your answer: <b class="' + (ok?'ok':'bad') + '">' + (user || '(blank)') + '</b> · Correct answer: <b class="ok">' + q.answer + '</b></div>';
-    body += '<h4>Explicación</h4><p>' + q.expCorrect + '</p>';
+    body += '<h4>Explicación</h4><p>' + fmtExp(q.expCorrect, isMath) + '</p>';
   } else {
     body += '<div class="res-answers">Correct answer: <b class="ok">' + q.correct + ') ' + q.choices[q.correct] + '</b></div>';
-    body += '<h4>Por qué ' + q.correct + ' es correcta</h4><p>' + q.expCorrect + '</p><h4>Why the others are wrong</h4>';
+    body += '<h4>Por qué ' + q.correct + ' es correcta</h4><p>' + fmtExp(q.expCorrect, isMath) + '</p><h4>Why the others are wrong</h4>';
     ['A','B','C','D'].forEach(function(L){
       if(L === q.correct) return;
-      body += '<p><strong>' + L + ')</strong> ' + q.expWrong[L] + '</p>';
+      body += '<p><strong>' + L + ')</strong> ' + fmtExp(q.expWrong[L], isMath) + '</p>';
     });
   }
-  body += '<div class="res-tip">⚡ <strong>Shortcut:</strong> ' + q.tip + '</div></div>';
+  body += '<div class="res-tip">⚡ <strong>Shortcut:</strong> ' + fmtExp(q.tip, isMath) + '</div></div>';
   return body;
 }
 function wireQuestion(q, kind){
@@ -1500,6 +1520,7 @@ function renderResults(g){
 }
 function renderResQ(r){
     var q = r.q;
+    var isMath = q._section === 'math';
     var badge = r.ok ? '<span class="res-badge ok">Correct ✓</span>' : '<span class="res-badge bad">' + (r.user ? 'Incorrect ✗' : 'Blank ✗') + '</span>';
     var userTxt, corrTxt;
     if(q.type === 'spr'){
@@ -1509,12 +1530,12 @@ function renderResQ(r){
       userTxt = r.user ? '<b class="' + (r.ok?'ok':'bad') + '">' + r.user + ') ' + q.choices[r.user] + '</b>' : '<b class="bad">(blank)</b>';
       corrTxt = '<b class="ok">' + q.correct + ') ' + q.choices[q.correct] + '</b>';
     }
-    var exp = '<h4>Why this is correct</h4><p>' + q.expCorrect + '</p>';
+    var exp = '<h4>Why this is correct</h4><p>' + fmtExp(q.expCorrect, isMath) + '</p>';
     if(q.type !== 'spr'){
       exp += '<h4>Why the others are wrong</h4>';
       ['A','B','C','D'].forEach(function(L){
         if(L === q.correct) return;
-        exp += '<p><strong>' + L + ')</strong> ' + (q.expWrong ? q.expWrong[L] : '') + '</p>';
+        exp += '<p><strong>' + L + ')</strong> ' + fmtExp(q.expWrong ? q.expWrong[L] : '', isMath) + '</p>';
       });
     }
     var ctx = '';
@@ -1529,7 +1550,7 @@ function renderResQ(r){
       '<div class="res-body">' + ctx +
       '<div class="res-answers">Your answer: ' + userTxt + '<br>Correct answer: ' + corrTxt + '</div>' +
       '<div class="res-exp">' + exp + '</div>' +
-      '<div class="res-tip">⚡ <strong>Shortcut:</strong> ' + q.tip + '</div>' +
+      '<div class="res-tip">⚡ <strong>Shortcut:</strong> ' + fmtExp(q.tip, isMath) + '</div>' +
       '</div></details>';
 }
 function copySummary(){
