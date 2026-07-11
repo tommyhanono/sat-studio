@@ -212,6 +212,11 @@
   .float-bar button:hover{background:rgba(255,255,255,.18)}
   .float-body{flex:1;position:relative;min-height:0;overflow:auto}
   #desmos-root{position:absolute;inset:0}
+  #desmos-sci-root{position:absolute;inset:0}
+  .calc-modes{display:inline-flex;gap:4px}
+  .float-bar .calc-mode{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.32);color:#fff;font-size:.72rem;font-weight:700;padding:3px 10px;border-radius:999px;cursor:pointer;line-height:1.35}
+  .float-bar .calc-mode:hover{background:rgba(255,255,255,.26)}
+  .float-bar .calc-mode.active{background:#fff;color:var(--ink)}
   #calc-status{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:#fff;z-index:2;font-size:.9rem;color:var(--gray-mid);text-align:center;padding:20px;line-height:1.55}
   #calc-status.hidden{display:none}
   #ref-panel{left:auto;right:36px;width:560px;height:520px}
@@ -468,7 +473,7 @@
     </details>
 
     <div class="home-tools">
-      <strong>In-exam tools:</strong> timer (Hide), Mark for Review, ABC eliminator, question menu, Check Your Work, Desmos calculator, Reference Sheet (Math), Layout split/stacked, Line Reader, Zoom, and <strong>Highlights &amp; Notes</strong>: select text in the passage or question with your mouse to highlight, underline, or leave a note.
+      <strong>In-exam tools:</strong> timer (Hide), Mark for Review, ABC eliminator, question menu, Check Your Work, Desmos calculator (SAT graphing + scientific), Reference Sheet (Math), Layout split/stacked, Line Reader, Zoom, and <strong>Highlights &amp; Notes</strong>: select text in the passage or question with your mouse to highlight, underline, or leave a note.
     </div>
   </div>
 </div>
@@ -578,16 +583,22 @@
     </div>
   </footer>
 
-  <!-- Desmos -->
-  <div id="calc-panel" class="float-panel hidden" role="dialog" aria-label="Desmos graphing calculator">
+  <!-- Desmos (SAT / Bluebook calculator) -->
+  <div id="calc-panel" class="float-panel hidden" role="dialog" aria-label="Calculator">
     <div class="float-bar" id="calc-drag">
-      <span>Desmos — Graphing Calculator</span><span class="spacer"></span>
+      <span>Calculator</span>
+      <div class="calc-modes">
+        <button class="calc-mode active" id="calc-mode-graph" type="button" title="Graphing calculator (same as the SAT/Bluebook)">📈 Graphing</button>
+        <button class="calc-mode" id="calc-mode-sci" type="button" title="Scientific calculator">🔢 Scientific</button>
+      </div>
+      <span class="spacer"></span>
       <button id="btn-calc-max" title="Expand / restore">⤢</button>
       <button id="btn-calc-close" title="Close">✕</button>
     </div>
     <div class="float-body">
       <div id="calc-status">Loading the Desmos calculator…</div>
       <div id="desmos-root"></div>
+      <div id="desmos-sci-root" class="hidden"></div>
     </div>
   </div>
 
@@ -1703,6 +1714,7 @@ function desmosFail(){
 // Open the Desmos panel and preload a list of expressions (LaTeX strings) into it.
 function openDesmosWith(exprs){
   openCalc();
+  setCalcMode('graph');
   var apply = function(tries){
     if(desmosCalc){
       try {
@@ -1713,6 +1725,27 @@ function openDesmosWith(exprs){
     } else if(tries > 0){ setTimeout(function(){ apply(tries - 1); }, 300); }
   };
   apply(25);
+}
+var sciCalc = null, calcMode = 'graph';
+// Switch the calculator panel between the SAT/Bluebook graphing calculator and a scientific one
+// (both from the same Desmos API bundle).
+function setCalcMode(mode){
+  calcMode = mode;
+  var bg = $('#calc-mode-graph'), bs = $('#calc-mode-sci');
+  if(bg) bg.classList.toggle('active', mode === 'graph');
+  if(bs) bs.classList.toggle('active', mode === 'sci');
+  $('#desmos-root').classList.toggle('hidden', mode !== 'graph');
+  $('#desmos-sci-root').classList.toggle('hidden', mode !== 'sci');
+  if(mode === 'sci'){
+    var mk = function(tries){
+      if(window.Desmos && !sciCalc){
+        try { sciCalc = window.Desmos.ScientificCalculator($('#desmos-sci-root'), { keypad: true }); } catch(e){}
+      }
+      if(sciCalc){ try { sciCalc.resize(); } catch(e){} }
+      else if(tries > 0){ setTimeout(function(){ mk(tries - 1); }, 300); }
+    };
+    mk(25);
+  } else if(desmosCalc){ try { desmosCalc.resize(); } catch(e){} }
 }
 function escAttr(s){ return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 // "In Desmos" help block shown under a Math explanation (uses q.desmos text + optional q.desmosLatex[]).
@@ -2461,6 +2494,8 @@ function init(){
     if(!b) return;
     openDesmosWith((b.getAttribute('data-desmos') || '').split('|||'));
   });
+  var _cg = $('#calc-mode-graph'); if(_cg) _cg.addEventListener('click', function(){ setCalcMode('graph'); });
+  var _cs = $('#calc-mode-sci'); if(_cs) _cs.addEventListener('click', function(){ openCalc(); setCalcMode('sci'); });
 
   var _bm = $('#btn-start-mock'); if(_bm) _bm.addEventListener('click', function(){ startMock('full'); });
   var _brw = $('#btn-mock-rw'); if(_brw) _brw.addEventListener('click', function(){ startMock('rw'); });
