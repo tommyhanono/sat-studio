@@ -415,6 +415,20 @@
   .set-card.mastered{border-color:#bfe6cb;background:#fbfefc}
   .study-final.locked{opacity:.62}
   .study-final.locked .btn-primary{cursor:not-allowed}
+  /* Punctuation cheat sheet */
+  #cheat-panel{left:auto;right:36px;width:480px;height:520px}
+  #cheat-body{padding:14px 16px}
+  .cheat-intro{font-size:.8rem;color:var(--gray-mid);margin-bottom:10px;line-height:1.5}
+  .cheat-rule{border:1px solid var(--gray-line);border-radius:10px;padding:11px 13px;margin-bottom:9px;transition:border-color .15s, background .15s}
+  .cheat-rule h4{font-size:.88rem;margin:0 0 5px}
+  .cheat-rule p{font-size:.84rem;line-height:1.55;color:#333;margin:0 0 8px}
+  .cheat-ex{font-size:.82rem;border-radius:6px;padding:6px 9px;margin-top:4px;font-family:Georgia,serif}
+  .cheat-ex.ok{background:#effaf2;color:#0e6b39}
+  .cheat-ex.bad{background:#fdf0f0;color:#a33}
+  .cheat-rule.active{border-color:var(--blue);background:var(--blue-soft);box-shadow:0 0 0 2px var(--blue-soft)}
+  .cheat-rule.active h4{color:var(--blue)}
+  .cheat-rule.active h4::after{content:" · this question";font-size:.7rem;text-transform:uppercase;letter-spacing:.04em}
+  @media (max-width:760px){ #cheat-panel{right:auto} }
 </style>
 </head>
 <body>
@@ -532,6 +546,10 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20V4H6.5A2.5 2.5 0 0 0 4 6.5v13z"/><path d="M4 19.5A2.5 2.5 0 0 0 6.5 22H20v-5"/></svg>
         Reference
       </button>
+      <button class="tool-btn hidden" id="btn-cheat" aria-pressed="false" title="Punctuation cheat sheet (adapts to each question)">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 11l3 3 8-8"/><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h9"/></svg>
+        Rules
+      </button>
       <button class="tool-btn" id="btn-calc" aria-pressed="false" title="Desmos graphing calculator">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="4" y="2" width="16" height="20" rx="2"/><rect x="7" y="5" width="10" height="4" rx="1"/><path d="M8 13h.01M12 13h.01M16 13h.01M8 17h.01M12 17h.01M16 17h.01"/></svg>
         Calculator
@@ -609,6 +627,16 @@
       <div id="desmos-root"></div>
       <div id="desmos-sci-root" class="hidden"></div>
     </div>
+  </div>
+
+  <!-- Punctuation cheat sheet (adaptive) -->
+  <div id="cheat-panel" class="float-panel hidden" role="dialog" aria-label="Punctuation cheat sheet">
+    <div class="float-bar" id="cheat-drag">
+      <span>📖 Grammar &amp; Punctuation Rules</span><span class="spacer"></span>
+      <button id="btn-cheat-max" title="Expand / restore">⤢</button>
+      <button id="btn-cheat-close" title="Close">✕</button>
+    </div>
+    <div class="float-body"><div id="cheat-body"></div></div>
   </div>
 
   <!-- Reference sheet -->
@@ -707,6 +735,7 @@
 <script src="sets/rw-hard-evidence.js"></script>
 <script src="sets/rw-mock1review.js"></script>
 <script src="sets/math-mock1review.js"></script>
+<script src="sets/rw-punct-checkup.js"></script>
 <!-- Desmos how-to hints per Math question (merged into questions at load) -->
 <script src="sets/desmos-a.js"></script>
 <script src="sets/desmos-b.js"></script>
@@ -775,6 +804,7 @@ function indexSets(){
       q._section = s.section;
       var h = hints[q.id];
       if(h){ if(h.note) q.desmos = h.note; if(h.latex && h.latex.length) q.desmosLatex = h.latex; }
+      if(!q.cheat){ var ck = cheatKeyFor(q); if(ck) q.cheat = ck; }
       QINDEX[q.id] = q;
     });
   });
@@ -1466,6 +1496,7 @@ function renderQuestion(){
   $('#pane-question').innerHTML = html;
   wireQuestion(q, kind);
   renderFooter();
+  updateCheatFor(q);
   safeScrollTop();
 }
 function fmtExp(t, isMath){
@@ -1955,6 +1986,86 @@ function toggleRef(){
   p.classList.toggle('hidden', !show);
   $('#btn-ref').setAttribute('aria-pressed', String(show));
   $('#btn-ref').classList.toggle('active', show);
+}
+
+/* ================= PUNCTUATION CHEAT SHEET (adaptive) ================= */
+var CHEAT_RULES = {
+  'comma-intro':        { t:'Coma tras elemento introductorio', r:'Cuando la oración abre con una frase o cláusula introductoria, va una coma antes de la oración principal.', ok:'After the experiment ended, the team analyzed the data.', bad:'After the experiment ended the team analyzed the data.' },
+  'comma-nonessential': { t:'Elemento no esencial → comas EN PAREJA', r:'Si puedes quitar el pedazo y la oración sigue completa y con sentido, va entre DOS comas (una antes y una después).', ok:'The bridge, built in 1902, still carries traffic.', bad:'The bridge, built in 1902 still carries traffic.' },
+  'comma-fanboys':      { t:'Coma + FANBOYS', r:'Dos oraciones completas se unen con coma + conjunción coordinante (for, and, nor, but, or, yet, so). La coma va ANTES de la conjunción.', ok:'The data was incomplete, so the team repeated the trial.', bad:'The data was incomplete, the team repeated the trial.' },
+  'comma-unnecessary':  { t:'SIN coma (coma innecesaria)', r:'Nunca separes con una sola coma el sujeto de su verbo, ni el verbo de su complemento. Si nada exige puntuación, la respuesta correcta es SIN puntuación.', ok:'The results of the study suggest a new pathway.', bad:'The results of the study, suggest a new pathway.' },
+  'semicolon':          { t:'Punto y coma = 2 oraciones completas', r:'El punto y coma une dos oraciones INDEPENDIENTES relacionadas, sin conjunción. Prueba: cada lado debe poder ser su propia oración.', ok:'The first trial failed; the second one succeeded.', bad:'The first trial failed; because of the heavy rain.' },
+  'semicolon-adverb':   { t:'; however, (adverbio conjuntivo)', r:'however, therefore, moreover, meanwhile… entre dos oraciones completas piden PUNTO Y COMA antes y coma después. Coma sola = comma splice.', ok:'The plan seemed solid; however, the costs doubled.', bad:'The plan seemed solid, however, the costs doubled.' },
+  'colon':              { t:'Dos puntos: presentan algo', r:'Los dos puntos van SOLO después de una oración completa, para introducir una lista, explicación o cita. Lo de antes debe poder terminar en punto.', ok:'She packed three tools: a map, a rope, and a lamp.', bad:'She packed: a map, a rope, and a lamp.' },
+  'dash':               { t:'Rayas en pareja', r:'Las rayas encierran un elemento no esencial igual que las comas — pero NO se mezclan: si abres con raya, cierras con raya.', ok:'The reef — once nearly dead — is recovering fast.', bad:'The reef — once nearly dead, is recovering fast.' },
+  'boundaries':         { t:'Comma splice / run-on', r:'Dos oraciones completas NO se unen con solo una coma (ni pegadas sin nada). Arreglos válidos: punto · punto y coma · coma + FANBOYS · subordinar una.', ok:'The tide rose, so the crew moved inland.', bad:'The tide rose, the crew moved inland.' },
+  'possessive':         { t:'Apóstrofos posesivos', r:'Singular: dog’s. Plural terminado en -s: dogs’. its = posesivo (sin apóstrofo); it’s = “it is”. El plural simple NUNCA lleva apóstrofo.', ok:'The two teams’ coaches met after the game.', bad:'The two team’s coaches met after the game.' },
+  'coordination':       { t:'Coordinación de cláusulas', r:'Formas VÁLIDAS de unir dos cláusulas: coma + FANBOYS · punto y coma · subordinar una (although, because, while…). Una cláusula subordinada NUNCA se queda sola como oración.', ok:'Although the museum was closed, the tour continued outside.', bad:'Although the museum was closed. The tour continued outside.' },
+  'verb-agreement':     { t:'Concordancia sujeto–verbo', r:'El verbo concuerda con el SUJETO real, no con la frase intermedia (“of the students…”). Tapa lo que está entre comas o tras “of”. each/either/neither → singular. En orden invertido, busca el sujeto DESPUÉS del verbo.', ok:'The collection of rare maps was donated to the library.', bad:'The collection of rare maps were donated to the library.' },
+  'pronoun-agreement':  { t:'Concordancia de pronombres', r:'El pronombre concuerda en número con su antecedente: antecedente singular → it/its; plural → they/their. Verifica QUIÉN es el antecedente exacto. who = sujeto, whom = objeto.', ok:'Each device saves its settings automatically.', bad:'Each device saves their settings automatically.' },
+  'verb-forms':         { t:'Formas y tiempos verbales', r:'Mantén el tiempo verbal consistente con el contexto (marcadores como “in 1990”, “today”, “by next year” mandan). Tras “to” va la forma base; los verbos en listas paralelas deben tener la misma forma.', ok:'In 1962, the lab developed a faster method.', bad:'In 1962, the lab develops a faster method.' }
+};
+// Skill → cheat-rule mapping (most specific first) so EVERY conventions question in the
+// bank gets an adaptive cheat sheet in Drill mode, not just the Check-Up set.
+var CHEAT_SKILL_MAP = [
+  [/ap[óo]strofo|posesiv|possessive/i, 'possessive'],
+  [/sujeto-verbo|verb agreement|subject-verb/i, 'verb-agreement'],
+  [/pronoun|pronombres/i, 'pronoun-agreement'],
+  [/formas y tiempos/i, 'verb-forms'],
+  [/introductoria|introductory/i, 'comma-intro'],
+  [/no esencial|nonessential|appositive|esencial \(sin comas\)/i, 'comma-nonessential'],
+  [/fanboys|conjunci[óo]n coordinante/i, 'comma-fanboys'],
+  [/innecesaria|no separar|sin coma|sin puntuaci[óo]n|entre sujeto y verbo|verbo y su complemento/i, 'comma-unnecessary'],
+  [/adverbio conjuntivo|however|therefore/i, 'semicolon-adverb'],
+  [/punto y coma|semicolon/i, 'semicolon'],
+  [/dos puntos|colon/i, 'colon'],
+  [/raya|dash/i, 'dash'],
+  [/splice|run-on|l[íi]mites|boundar/i, 'boundaries'],
+  [/coordinaci|coordination/i, 'coordination']
+];
+function cheatKeyFor(q){
+  if(!q || q._section === 'math' || q.domain !== 'Standard English Conventions') return null;
+  var s = q.skill || '';
+  for(var i = 0; i < CHEAT_SKILL_MAP.length; i++){
+    if(CHEAT_SKILL_MAP[i][0].test(s)) return CHEAT_SKILL_MAP[i][1];
+  }
+  return null;
+}
+function buildCheatSheet(){
+  var html = '<p class="cheat-intro">The highlighted rule is the one this question tests. Tap any rule to review it.</p>';
+  Object.keys(CHEAT_RULES).forEach(function(k){
+    var c = CHEAT_RULES[k];
+    html += '<div class="cheat-rule" id="cheat-' + k + '"><h4>' + c.t + '</h4><p>' + c.r + '</p>' +
+      '<div class="cheat-ex ok">✓ ' + c.ok + '</div><div class="cheat-ex bad">✗ ' + c.bad + '</div></div>';
+  });
+  $('#cheat-body').innerHTML = html;
+}
+function updateCheatFor(q){
+  var key = q && q.cheat;
+  // Learning aid: available in Drill mode (and always in the Check-Up); hidden in timed exams so mocks stay realistic.
+  var allowed = !!(key && S && (S.mode === 'drill' || (S.set && S.set.id === 'rw-punct-checkup')));
+  $('#btn-cheat').classList.toggle('hidden', !allowed);
+  if(!allowed){ $('#cheat-panel').classList.add('hidden'); $('#btn-cheat').classList.remove('active'); return; }
+  if(!$('#cheat-body').innerHTML) buildCheatSheet();
+  Array.prototype.forEach.call(document.querySelectorAll('.cheat-rule'), function(el){
+    el.classList.toggle('active', el.id === 'cheat-' + key);
+  });
+  if(!$('#cheat-panel').classList.contains('hidden')){
+    var el = $('#cheat-' + key);
+    if(el) el.scrollIntoView({ block:'start', behavior:'smooth' });
+  }
+}
+function toggleCheat(){
+  var p = $('#cheat-panel');
+  var show = p.classList.contains('hidden');
+  p.classList.toggle('hidden', !show);
+  $('#btn-cheat').setAttribute('aria-pressed', String(show));
+  $('#btn-cheat').classList.toggle('active', show);
+  if(show){
+    if(!$('#cheat-body').innerHTML) buildCheatSheet();
+    var q = S && S.set.questions[S.idx];
+    if(q && q.cheat){ updateCheatFor(q); var el = $('#cheat-' + q.cheat); if(el) el.scrollIntoView({ block:'start' }); }
+  }
 }
 
 /* ================= LINE READER ================= */
@@ -2671,6 +2782,10 @@ function init(){
   $('#btn-ref-max').addEventListener('click', function(){ $('#ref-panel').classList.toggle('max'); });
   makeDraggable('#calc-panel', '#calc-drag');
   makeDraggable('#ref-panel', '#ref-drag');
+  $('#btn-cheat').addEventListener('click', toggleCheat);
+  $('#btn-cheat-close').addEventListener('click', toggleCheat);
+  $('#btn-cheat-max').addEventListener('click', function(){ $('#cheat-panel').classList.toggle('max'); });
+  makeDraggable('#cheat-panel', '#cheat-drag');
 
   $('#btn-more').addEventListener('click', function(){ $('#more-menu').classList.toggle('hidden'); });
   $('#mm-linereader').addEventListener('click', function(){ toggleLineReader(); $('#more-menu').classList.add('hidden'); });
