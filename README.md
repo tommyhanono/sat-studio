@@ -54,9 +54,12 @@ Descomprime la carpeta y abre `index.html` en Chrome/Edge/Safari. Listo. Todo fu
    ```
 3. Recarga. El set aparece en el menú automáticamente.
 
-## Sets incluidos
+## Contenido actual
 
-| Set | Sección | Preguntas | IDs |
-|---|---|---|---|
-| Punctuation Drill — Set 1 | Reading & Writing | 10 | RW-001–RW-010 |
-| Math Mixed Practice — Set 1 | Math | 10 (7 MC + 3 SPR) | M-001–M-010 |
+- **Banco:** 45+ sets · 530+ preguntas originales (0 IDs duplicados), Verbal y Math, niveles Easy/Medium/Hard.
+- **Mocks adaptativos** con la lógica del SAT real (Módulo 1 → rutea Módulo 2; score escalado): **Full Mocks** (8, /1600), **Hard Mocks** (6, todo difícil), **English Mocks** (8, /800) y **Math Mocks** (6, /800) — numerados, estables y re-tomables, con Review completo de cada intento.
+- **📋 Exam-Day Playbook:** estrategia investigada (pacing con checkpoints, Módulo 1 adaptativo, jugadas de Desmos, plan de semana final, protocolo del día del examen). Fuentes en `docs/final-week-playbook.md`.
+- **📖 Cheat sheet adaptativo** de Grammar & Punctuation: en cualquier Drill, el botón "Rules" abre un panel que resalta la regla exacta que evalúa la pregunta actual.
+- **Explicaciones de Math** paso a paso + bloque "📈 In Desmos" con botón que abre la calculadora con las expresiones pre-cargadas.
+- **Calculadora:** Desmos graphing (la misma del SAT/Bluebook) + modo Scientific.
+- **🎯 Study Plan** (cuenta admin): ruta de dominio por temas débiles — rondas de 4/4 por tema + exámenes finales que exigen 100%.
