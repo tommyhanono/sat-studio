@@ -1,19 +1,20 @@
 /* SAT Studio question set — Reading & Writing: Paired Passages (Hard tier) */
 (function(){
+  var PASSAGE = '<b>Passage A (Museum Curator):</b> Artificial intelligence-generated art lacks the authenticity that defines true creativity. A computer follows algorithms; it does not suffer, struggle, or question. Without the human experience—the weight of memory, failure, and emotion—can a machine truly create? This is not dismissal; it is precision. Art emerges from the human condition. A sculpture carved by a hand that trembles with doubt carries meaning a rendered image never can.<br><br><b>Passage B (AI Researcher):</b> To claim that emotion is a prerequisite for art is to misunderstand both emotion and art. Bach\'s fugues follow mathematical rules with absolute rigor. Does their beauty diminish because they follow a formula? Conversely, human artists often work mechanically, copying styles without understanding. The question is not whether the creator suffers, but whether the artifact itself—its coherence, innovation, originality—merits consideration. A perfectly rendered digital painting has aesthetic merit regardless of its origin.';
+
   window.SAT_SETS.push({
     id: 'rw-paired-tone',
     title: 'R&W — Paired Passages: Contrast & Tone Shifts',
-    section: 'reading',
-    level: 'Hard',
+    section: 'rw',
+    level: 'Difícil',
     description: 'Paired passages testing tone comparison, author perspective, and synthesis across two texts. Real SAT format.',
     minutes: 14,
     questions: [
       {
-        id:'PAIR-01', type:'mc', domain:'Ideas', difficulty:'Difícil',
+        id:'PAIR-01', type:'mc', domain:'Information and Ideas', difficulty:'Difícil',
         skill:'Identifying perspective differences (Passage A vs. Passage B)',
-        passageA:'Passage A (Museum Curator):\nArtificial intelligence-generated art lacks the authenticity that defines true creativity. A computer follows algorithms; it does not suffer, struggle, or question. Without the human experience—the weight of memory, failure, and emotion—can a machine truly create? This is not dismissal; it is precision. Art emerges from the human condition. A sculpture carved by a hand that trembles with doubt carries meaning a rendered image never can.',
-        passageB:'Passage B (AI Researcher):\nTo claim that emotion is a prerequisite for art is to misunderstand both emotion and art. Bach\'s fugues follow mathematical rules with absolute rigor. Does their beauty diminish because they follow a formula? Conversely, human artists often work mechanically, copying styles without understanding. The question is not whether the creator suffers, but whether the artifact itself—its coherence, innovation, originality—merits consideration. A perfectly rendered digital painting has aesthetic merit regardless of its origin.',
-        stem:'How would Passage B\'s author likely respond to Passage A\'s claim that "a machine does not suffer"?',
+        passage:PASSAGE,
+        stem:'How would Passage B\'s author most likely respond to Passage A\'s claim that a computer "does not suffer, struggle, or question"?',
         choices:{A:'By pointing out that suffering is not necessary for artistic achievement', B:'By suggesting that computers will eventually be programmed to experience suffering', C:'By acknowledging that this is a genuine disadvantage of AI-generated art', D:'By arguing that suffering is a form of mathematical computation'},
         correct:'A',
         expCorrect:'Passage B argues that art\'s merit depends on the artifact\'s "coherence, innovation, originality," not on the creator\'s emotional state. The author would dismiss the suffering requirement as irrelevant. A is the only choice that aligns with this counterargument.',
@@ -25,8 +26,9 @@
         tip:'When comparing passages, identify each author\'s main claim, then match the response to that claim. Look for author B\'s explicit counterargument, not plausible but unsupported responses.'
       },
       {
-        id:'PAIR-02', type:'mc', domain:'Craft & Structure', difficulty:'Difícil',
+        id:'PAIR-02', type:'mc', domain:'Craft and Structure', difficulty:'Difícil',
         skill:'Identifying tone shifts across passages',
+        passage:PASSAGE,
         stem:'The tone of Passage A can be described as:',
         choices:{A:'Dismissive and hostile toward AI', B:'Defensive yet respectful of the boundary between human and machine', C:'Uncertain and wavering in its position', D:'Condescending toward other art forms'},
         correct:'B',
@@ -39,12 +41,13 @@
         tip:'Tone questions require attention to modifiers and explicit disclaimers. "Not dismissal; it is precision" signals a specific, non-hostile tone.'
       },
       {
-        id:'PAIR-03', type:'mc', domain:'Ideas', difficulty:'Hard',
-        skill:'Recognizing implied disagreement',
+        id:'PAIR-03', type:'mc', domain:'Information and Ideas', difficulty:'Difícil',
+        skill:'Recognizing implied agreement across passages',
+        passage:PASSAGE,
         stem:'Both authors would likely agree that:',
-        choices:{A:'Art must emerge from human experience to be valuable', B:'The definition of "art" should consider the artifact, not just its origin', C:'Computers are incapable of creating meaningful art', D:'Emotion and suffering are required for artistic creation'},
+        choices:{A:'Art must emerge from human experience to be valuable', B:'The question of what gives art its value deserves serious examination', C:'Computers are incapable of creating meaningful art', D:'Emotion and suffering are required for artistic creation'},
         correct:'B',
-        expCorrect:'Passage A emphasizes human experience, but Passage B shifts focus to the artifact\'s properties (coherence, innovation). Both implicitly agree that what matters is evaluable—it\'s just a question of *what to evaluate*. B is the only common ground.',
+        expCorrect:'El pasaje A defiende su postura con cuidado ("This is not dismissal; it is precision") y el pasaje B propone criterios concretos (coherencia, innovación, originalidad). Los dos tratan la pregunta de qué le da valor al arte como algo serio que merece examinarse; solo discrepan en la respuesta. Ese es el único terreno común entre las cuatro opciones.',
         expWrong:{
           A:'Passage B explicitly rejects this; emotion is not required.',
           C:'Passage B does not concede that computers are incapable.',
@@ -53,8 +56,9 @@
         tip:'For "both would agree" questions, find the safest common ground, not the most obvious shared word.'
       },
       {
-        id:'PAIR-04', type:'mc', domain:'Ideas', difficulty:'Difícil',
+        id:'PAIR-04', type:'mc', domain:'Information and Ideas', difficulty:'Difícil',
         skill:'Using evidence from one passage to evaluate claims in another',
+        passage:PASSAGE,
         stem:'Passage B\'s reference to "human artists often work mechanically, copying styles without understanding" primarily serves to:',
         choices:{A:'Admit that humans are also capable of unthinking labor', B:'Undermine Passage A\'s assumption that human creation guarantees authenticity', C:'Prove that machines are superior to humans', D:'Show that Passage A\'s criteria are too broad'},
         correct:'B',
@@ -67,8 +71,9 @@
         tip:'Purpose questions: identify what the statement *does to* the opposing argument, not just what it says.'
       },
       {
-        id:'PAIR-05', type:'mc', domain:'Craft & Structure', difficulty:'Hard',
+        id:'PAIR-05', type:'mc', domain:'Craft and Structure', difficulty:'Difícil',
         skill:'Identifying the effect of a rhetorical technique (analogy)',
+        passage:PASSAGE,
         stem:'Passage B uses the example of Bach\'s fugues primarily to:',
         choices:{A:'Show that mathematical rigor can coexist with beauty', B:'Prove that music is more valuable than visual art', C:'Suggest that all classical composers lacked emotion', D:'Demonstrate that computers can now write music better than humans'},
         correct:'A',
@@ -81,9 +86,10 @@
         tip:'Analogy questions: identify what property or principle the analogy illustrates, not just what it describes.'
       },
       {
-        id:'PAIR-06', type:'mc', domain:'Ideas', difficulty:'Difícil',
+        id:'PAIR-06', type:'mc', domain:'Information and Ideas', difficulty:'Difícil',
         skill:'Inferring unstated disagreement',
-        stem:'The passages suggest that Passage A\'s author would most likely view Passage B\'s emphasis on "artifact coherence" as:',
+        passage:PASSAGE,
+        stem:'The passages suggest that Passage A\'s author would most likely view Passage B\'s emphasis on the artifact\'s "coherence, innovation, originality" as:',
         choices:{A:'A reasonable alternative to measuring artistic merit', B:'An evasion of the deeper question: where meaning originates', C:'A technically sound but emotionally hollow framework', D:'A valid supplement to the human experience requirement'},
         correct:'B',
         expCorrect:'Passage A grounds art in the human condition and emotional origin. Passage B shifts focus to properties of the work itself. The curator would likely see this as dodging the fundamental question of *meaning\'s source*. B captures this philosophical gulf.',
@@ -95,8 +101,9 @@
         tip:'Inference questions across paired passages: identify the *deep* disagreement, not just surface differences.'
       },
       {
-        id:'PAIR-07', type:'mc', domain:'Ideas', difficulty:'Hard',
+        id:'PAIR-07', type:'mc', domain:'Craft and Structure', difficulty:'Difícil',
         skill:'Recognizing a logical structure (premise-counterargument)',
+        passage:PASSAGE,
         stem:'Passage A\'s structure can be described as:',
         choices:{A:'Thesis → evidence → conclusion', B:'Claim → anticipation of objection → reaffirmation', C:'Question → exploration → open debate', D:'Anecdote → generalization → recommendation'},
         correct:'B',
@@ -109,26 +116,28 @@
         tip:'Structure questions: look for signal phrases ("This is not," "However," "To be clear") that reveal the author\'s argumentative moves.'
       },
       {
-        id:'PAIR-08', type:'mc', domain:'Ideas', difficulty:'Difícil',
+        id:'PAIR-08', type:'mc', domain:'Information and Ideas', difficulty:'Difícil',
         skill:'Synthesizing a claim across both passages',
+        passage:PASSAGE,
         stem:'Which of the following would both authors likely support as a research question for future study?',
-        choices:{A:'"How can we ensure that AI art is indistinguishable from human art?"', B:'"What criteria should we use to evaluate artistic merit independent of the creator?"', C:'"Why do humans respond emotionally to certain artworks?"', D:'"Is suffering necessary for understanding beauty?"'},
+        choices:{A:'"How can we ensure that AI art is indistinguishable from human art?"', B:'"What standards should we use to judge whether a work of art has merit?"', C:'"Why do humans respond emotionally to certain artworks?"', D:'"Is suffering necessary for understanding beauty?"'},
         correct:'B',
-        expCorrect:'A asks how to eliminate difference (not relevant); B asks about objective criteria—both authors grapple with this, just from different angles. C is too narrow (Passage A\'s concern, not B\'s). D assumes suffering matters (Passage B rejects this).',
+        expCorrect:'Los dos autores ya están debatiendo justamente eso: A sostiene que el mérito nace de la experiencia humana y B propone criterios del objeto (coherencia, innovación, originalidad). Una investigación sobre qué estándares usar para juzgar el mérito artístico les interesa a ambos, cada uno desde su ángulo.',
         expWrong:{
           A:'Not aligned with either author\'s goal.',
-          C:'Passage B wouldn\'t frame it as a "human suffering" question.',
+          C:'Le interesa sobre todo al autor A, que liga el arte a la emoción humana; B centra su criterio en el objeto, no en la reacción emocional del público.',
           D:'Passage B explicitly argues suffering is not necessary.'
         },
         tip:'Synthesis questions: find the meta-level concern both authors share, even if they disagree on details.'
       },
       {
-        id:'PAIR-09', type:'mc', domain:'Craft & Structure', difficulty:'Hard',
+        id:'PAIR-09', type:'mc', domain:'Craft and Structure', difficulty:'Difícil',
         skill:'Identifying word choice and its effect',
+        passage:PASSAGE,
         stem:'In Passage A, the phrase "a hand that trembles with doubt" primarily conveys:',
         choices:{A:'Physical weakness in the artist', B:'The emotional vulnerability embedded in the creative act', C:'A criticism of imprecise craftsmanship', D:'A preference for sculpture over other art forms'},
         correct:'B',
-        expCorrect:'"Trembles with doubt" is emotional, not literal. It illustrates the curator\'s point: authentic art embodies the creator\'s inner struggle. B captures this.",
+        expCorrect:'"Trembles with doubt" is emotional, not literal. It illustrates the curator\'s point: authentic art embodies the creator\'s inner struggle. B captures this.',
         expWrong:{
           A:'Trembling is metaphorical, not literal weakness.',
           C:'"Doubt" is not a criticism of craft quality; it\'s a sign of authenticity.',
@@ -137,8 +146,9 @@
         tip:'Word choice questions: distinguish between literal and figurative meaning. "Trembles" is emotional, not physical.'
       },
       {
-        id:'PAIR-10', type:'mc', domain:'Ideas', difficulty:'Difícil',
+        id:'PAIR-10', type:'mc', domain:'Information and Ideas', difficulty:'Difícil',
         skill:'Recognizing implications of author position',
+        passage:PASSAGE,
         stem:'Passage B\'s argument implies that the value of an artwork depends on:',
         choices:{A:'The artist\'s emotional state during creation', B:'The amount of conscious effort invested by the creator', C:'Measurable properties of the work itself', D:'The audience\'s understanding of the creator\'s intent'},
         correct:'C',
@@ -151,8 +161,9 @@
         tip:'Implication questions: trace the author\'s logic to unstated but necessary conclusions.'
       },
       {
-        id:'PAIR-11', type:'mc', domain:'Ideas', difficulty:'Hard',
+        id:'PAIR-11', type:'mc', domain:'Information and Ideas', difficulty:'Difícil',
         skill:'Evaluating a compromise position',
+        passage:PASSAGE,
         stem:'A third author argues that "both emotion and algorithm matter in art—human creation without thought is soulless, and algorithmic creation without purpose is meaningless." This position is most consistent with which of the following?',
         choices:{A:'Passage A\'s emphasis on human struggle', B:'Passage B\'s rejection of emotion as necessary', C:'A synthesis of both passages\' concerns', D:'Neither passage\'s core argument'},
         correct:'C',
@@ -165,14 +176,15 @@
         tip:'Synthesis questions: recognize when a new position borrows from both original positions without fully endorsing either.'
       },
       {
-        id:'PAIR-12', type:'mc', domain:'Craft & Structure', difficulty:'Difícil',
+        id:'PAIR-12', type:'mc', domain:'Craft and Structure', difficulty:'Difícil',
         skill:'Identifying a rhetorical shift',
-        stem:'The shift from Passage A\'s focus on "human experience" to Passage B\'s focus on "artifact properties" represents:',
-        choices:{A:'A change in subject matter from creation to evaluation', B:'A rejection of Passage A\'s values in favor of practical criteria', C:'A logical progression from one step of the argument to the next', D:'An acknowledgment that Passage A was partially correct'},
+        passage:PASSAGE,
+        stem:'The shift from Passage A\'s focus on "the human experience" to Passage B\'s focus on "the artifact itself" represents:',
+        choices:{A:'A change in subject matter from creation to evaluation', B:'A concession that machines cannot match human creativity', C:'A logical progression from one step of the argument to the next', D:'An acknowledgment that Passage A was partially correct'},
         correct:'A',
         expCorrect:'A shifts the question: instead of "Where does meaning originate?" (creation), B asks "What makes something art?" (evaluation). Different subject, different frame. A is correct.',
         expWrong:{
-          B:'B doesn\'t "reject" A\'s values—B reframes the question entirely.',
+          B:'El pasaje B sostiene lo contrario: defiende el mérito del arte generado por máquinas, así que no concede que las máquinas no puedan igualar la creatividad humana.',
           C:'These are opposing views, not progressive steps.',
           D:'B doesn\'t concede A\'s correctness; it sidesteps A\'s premise.'
         },
