@@ -429,6 +429,15 @@
   .cheat-rule.active h4{color:var(--blue)}
   .cheat-rule.active h4::after{content:" · this question";font-size:.7rem;text-transform:uppercase;letter-spacing:.04em}
   @media (max-width:760px){ #cheat-panel{right:auto} }
+  /* Exam-Day Playbook */
+  .pb details{background:#fff;border:1px solid var(--gray-line);border-radius:10px;margin-bottom:9px;overflow:hidden}
+  .pb summary{cursor:pointer;padding:12px 15px;font-weight:700;font-size:.92rem;list-style:none;display:flex;align-items:center;gap:8px}
+  .pb summary::-webkit-details-marker{display:none}
+  .pb summary::after{content:"▾";margin-left:auto;color:var(--gray-mid);transition:transform .15s}
+  .pb details[open] summary::after{transform:rotate(180deg)}
+  .pb .pb-b{padding:2px 16px 13px;font-size:.88rem;line-height:1.65;color:#2b2b2b}
+  .pb .pb-b p{margin-bottom:9px}
+  .pb .pb-b code{background:#f1f3f8;border-radius:4px;padding:1px 6px;font-size:.85em}
 </style>
 </head>
 <body>
@@ -1043,6 +1052,7 @@ function renderHome(){
       '<h4 class="study-h">4 · English Final (100%)</h4>' + studyFinalCard('rw', stp);
     sec += homeSection('🎯 Study Plan — Tommy', spBody, masteredAll + '/' + STUDY_TOPICS.length, true);
   }
+  sec += homeSection('📋 Exam-Day Playbook', PLAYBOOK_HTML, null, false);
   var mocks = pastMocks();
   if(mocks.length){
     var mockRows = mocks.slice().reverse().map(function(e){
@@ -1257,6 +1267,46 @@ function renderSavedReview(e, results){
   $('#mres-home').addEventListener('click', function(){ MOCK=null; ensureMockView().classList.add('hidden'); $('#view-home').classList.remove('hidden'); renderHome(); });
   $('#mres-redo').addEventListener('click', function(){ MOCK=null; ensureMockView().classList.add('hidden'); startSession('redo','drill'); });
 }
+
+/* ================= EXAM-DAY PLAYBOOK (research-based strategy, public) ================= */
+var PLAYBOOK_HTML =
+  '<p class="study-hint">Research-backed tactics for the Digital SAT (College Board, Kaplan, PrepScholar, Desmos guides & top-scorer consensus). Open what you need — read the Pacing and Module 1 cards before any mock.</p>' +
+  '<div class="pb">' +
+  '<details><summary>⏱️ Pacing & time budgets</summary><div class="pb-b">' +
+    '<p><b>R&W (27 q / 32 min ≈ 71s each):</b> ~85–90s for reading questions (first half), ~45s for grammar/transitions. Checkpoints: at <b>Q9</b> you should have ~21 min left; at <b>Q18</b>, ~10 min.</p>' +
+    '<p><b>Math (22 q / 35 min ≈ 95s each):</b> the <b>“12 and 24” rule</b> — when you start Q12, the clock should show ~24 min. Questions run easy→hard, so bank time early.</p>' +
+    '<p><b>30-second rule:</b> stuck with no path forward → pick your <b>letter of the day</b>, flag it, move on (no penalty for guessing; you can return within the module). Never leave blanks.</p>' +
+  '</div></details>' +
+  '<details><summary>🎯 Module 1 is everything (adaptive strategy)</summary><div class="pb-b">' +
+    '<p>Module 1 decides your ceiling: roughly <b>18–19/27 in R&W</b> and <b>13–16/22 in Math</b> routes you to the hard Module 2 — the only path to high scores (easy M2 caps the section around ~590–650).</p>' +
+    '<p>So: maximum care on M1, and always do a <b>flag-and-return sweep</b> before the module ends. If Module 2 feels brutal — <b>that’s good news</b>: it means you made the hard module. Don’t spiral.</p>' +
+  '</div></details>' +
+  '<details><summary>📖 Verbal playbook</summary><div class="pb-b">' +
+    '<p><b>Question first, then passage</b> — know the task before you read.</p>' +
+    '<p><b>Predict before peeking:</b> Words in Context → put YOUR word in the blank first. Transitions → name the relationship (contrast / cause / addition / example), sort the choices into same-direction vs opposite, and two die instantly. Twin choices (thus/therefore) eliminate each other.</p>' +
+    '<p><b>Punctuation tree:</b> can each side stand alone? Both independent → period ≡ semicolon ≡ comma+FANBOYS (if two of those appear, BOTH are wrong). Colon/dash need a complete sentence before. Interrupters take matched pairs. Torn between comma and nothing → usually nothing.</p>' +
+    '<p><b>Synthesis (bullets):</b> read the GOAL first, match its exact verb, fact-check the winner against the notes.</p>' +
+    '<p><b>Structure/Purpose:</b> eliminate by the choice’s first VERB (describe ≠ argue ≠ critique), then beware part-vs-whole. <b>Main idea:</b> kill too-narrow, too-broad, opposite, extreme. <b>Evidence/Quotation:</b> underline the claim first; the classic trap is “true but irrelevant.”</p>' +
+  '</div></details>' +
+  '<details><summary>🧮 Math playbook (Desmos = your superpower)</summary><div class="pb-b">' +
+    '<p><b>Desmos moves:</b> type both sides of ANY equation as y= lines → the gray <b>intersection dots</b> are the solutions (works for systems and “how many solutions”). Parabolas auto-show zeros & vertex. Unknown constant → add a <b>slider k</b>. Best-fit line → table + <code>y1 ~ mx1 + b</code>. Backsolve by plugging all 4 choices into a table.</p>' +
+    '<p><b>Backsolve from B or C</b> on “which value…” questions; <b>plug in easy numbers</b> (x=2, or 100 for percents) on variable-heavy ones.</p>' +
+    '<p><b>Re-read the final question</b> before answering — the “step-3-of-4” value (x when they asked 2x) is always among the choices.</p>' +
+    '<p><b>Fast rules:</b> percents are multipliers (×(1±p/100); successive changes multiply; reverse percent = divide). Circles: complete the square; signs FLIP for the center. Factor (x−a) ⇔ zero at a; remainder ÷(x−a) = p(a) — plug in, never divide. Two-way tables: “of/among/given” sets the DENOMINATOR (that row/column, not the grand total). Scaling: ×k lengths ⇒ ×k² areas ⇒ ×k³ volumes. sin x = cos(90−x).</p>' +
+  '</div></details>' +
+  '<details><summary>🗓️ Final-week plan</summary><div class="pb-b">' +
+    '<p>Your last <b>full-length</b> test should be <b>≥48h before</b> the real one — after that, review beats volume. Daily: <b>45–60 min of targeted drills from your error log</b> (twice-missed topics = system problem → drill those first).</p>' +
+    '<p>End each day with <b>retrieval</b>: redo missed questions cold instead of rereading notes. Day before the test: 20–30 min light review max, and never a new topic that week.</p>' +
+  '</div></details>' +
+  '<details><summary>😴 Night before & morning of</summary><div class="pb-b">' +
+    '<p>Bluebook installed + exam setup done days before; device charged to 100% with charger packed; ID + admission ticket ready. Stop studying by ~8pm, normal bedtime, <b>8h of sleep two nights in a row</b>.</p>' +
+    '<p>Wake 2–2.5h before start; protein+carb breakfast; only your usual caffeine. Do a <b>10–15 min warm-up</b> (3 easy Verbal + 3 easy Math from sets you’ve done) — warmed-up brains test better.</p>' +
+  '</div></details>' +
+  '<details><summary>🧠 Sacrifice strategy (score math)</summary><div class="pb-b">' +
+    '<p>In Math, attempting <b>~15–17 of 22 carefully</b> beats rushing all 22: accuracy on attempted questions > coverage. Letter-of-the-day the 5–7 hardest (usually late-module word problems), flag them, return only if time remains.</p>' +
+    '<p><b>Sunk-time trap:</b> time already spent on a question is never a reason to stay. 4 minutes on one hard question + rushing five easy ones is the worst trade on the test.</p>' +
+  '</div></details>' +
+  '</div>';
 
 /* ================= STUDY PLAN (mastery path — Tommy's admin account only) ================= */
 var STUDY_TOPICS = [
