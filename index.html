@@ -736,6 +736,8 @@
 <script src="sets/rw-mock1review.js"></script>
 <script src="sets/math-mock1review.js"></script>
 <script src="sets/rw-punct-checkup.js"></script>
+<script src="sets/math-expo1.js"></script>
+<script src="sets/math-solids1.js"></script>
 <!-- Desmos how-to hints per Math question (merged into questions at load) -->
 <script src="sets/desmos-a.js"></script>
 <script src="sets/desmos-b.js"></script>
@@ -1058,7 +1060,7 @@ function renderHome(){
     sec += homeSection('Your Practice Tests', mockRows, mocks.length, true);
   }
   // ===== English Mocks category (Reading & Writing only, adaptive, /800) =====
-  var N_ENG = 6;
+  var N_ENG = 8;
   var engBest = {};
   h.forEach(function(e){ if(e.mock && e.mock.kind === 'rw' && typeof e.mock.num === 'number'){ var n = e.mock.num; if(engBest[n] == null || (e.mock.total||0) > engBest[n]) engBest[n] = e.mock.total; } });
   var engCards = '';
@@ -1072,6 +1074,22 @@ function renderHome(){
       '</div><div class="set-actions"><button class="btn-primary" data-start-engmock="' + ei + '">' + (eb != null ? 'Retake' : 'Start') + '</button></div></div>';
   }
   sec += homeSection('English Mocks', engCards, N_ENG, true);
+
+  // ===== Math Mocks category (Math only, adaptive, /800) =====
+  var N_MATH = 6;
+  var mmBest = {};
+  h.forEach(function(e){ if(e.mock && e.mock.kind === 'math' && typeof e.mock.num === 'number'){ var n = e.mock.num; if(mmBest[n] == null || (e.mock.total||0) > mmBest[n]) mmBest[n] = e.mock.total; } });
+  var mmCards = '';
+  for(var mmi = 1; mmi <= N_MATH; mmi++){
+    var mb = mmBest[mmi];
+    mmCards += '<div class="set-card"><div class="set-info"><span class="set-badge mixed">Math only</span>' +
+      '<h3>Math Mock ' + mmi + '</h3>' +
+      '<div class="set-desc">Math only — 2 adaptive modules → scaled score out of 800. Build the consistency to hit 16/22 in Module 1.</div>' +
+      '<div class="set-meta">~44 questions · ~1h 10m' + (mb != null ? ' · <b>best ' + mb + '/800</b>' : '') + '</div>' +
+      (mb != null ? '<div class="set-done">✓ completed</div>' : '') +
+      '</div><div class="set-actions"><button class="btn-primary" data-start-mathmock="' + mmi + '">' + (mb != null ? 'Retake' : 'Start') + '</button></div></div>';
+  }
+  sec += homeSection('Math Mocks', mmCards, N_MATH, true);
 
   // ===== Hard Mocks category (all questions difficult, no easy routing) =====
   var N_HARD = 6;
@@ -1124,6 +1142,9 @@ function renderHome(){
   });
   Array.prototype.forEach.call(document.querySelectorAll('#set-sections [data-start-engmock]'), function(b){
     b.addEventListener('click', function(){ var n = parseInt(b.getAttribute('data-start-engmock'), 10); startMock('rw', n, 100 + n); });
+  });
+  Array.prototype.forEach.call(document.querySelectorAll('#set-sections [data-start-mathmock]'), function(b){
+    b.addEventListener('click', function(){ var n = parseInt(b.getAttribute('data-start-mathmock'), 10); startMock('math', n, 300 + n); });
   });
   Array.prototype.forEach.call(document.querySelectorAll('#set-sections [data-study-round]'), function(b){
     b.addEventListener('click', function(){ startStudyRound(b.getAttribute('data-study-round')); });
@@ -2544,7 +2565,7 @@ function mockFinish(){
   var total = kind === 'full' ? (rwScore + mathScore) : (kind === 'rw' ? rwScore : mathScore);
   var title = kind === 'full' ? (MOCK.hard ? (MOCK.num != null ? 'Hard Mock ' + MOCK.num : 'Hard Full Mock') : (MOCK.num != null ? 'Practice Test ' + MOCK.num : 'Full Practice Test'))
             : kind === 'rw' ? (MOCK.num != null ? 'English Mock ' + MOCK.num : 'Reading & Writing Test')
-            : 'Math Test';
+            : (MOCK.num != null ? 'Math Mock ' + MOCK.num : 'Math Test');
   var allR = rwAll.concat(mathAll);
   var correct = allR.filter(function(r){ return r.ok; }).length;
   MOCK.active = false;
