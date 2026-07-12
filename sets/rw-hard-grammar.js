@@ -102,12 +102,12 @@ window.SAT_SETS.push({
       skill:'Verb Agreement',
       passage:"A series of unexpected setbacks—a flooded basement, a broken furnace, and a leaking roof—%BLANK% the renovation nearly four months behind schedule.",
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
-      choices:{A:'has put', B:'have put', C:'put', D:'are putting'},
+      choices:{A:'has put', B:'have put', C:'putting', D:'are putting'},
       correct:'A',
       expCorrect:'El sujeto real es “A series” (singular). La lista entre rayas (“a flooded basement, a broken furnace, and a leaking roof”) solo detalla los setbacks y no cambia el número del sujeto. Un sujeto singular pide un verbo singular: “has put”.',
       expWrong:{
         B:'“have put” es plural; concuerda con “setbacks”, pero el verdadero sujeto es el singular “A series”.',
-        C:'“put” aquí es plural; el sujeto singular “A series” pide la forma singular “has put”.',
+        C:'“putting” no es un verbo conjugado: dejaría la oración sin verbo principal (fragmento).',
         D:'“are putting” es plural; el sujeto singular “A series” pide un verbo singular.'
       },
       tip:'“A series of…”, “a set of…” y “a pair of…” son singulares. Tapa la frase intervenida y concuerda con “A series”.'
@@ -162,11 +162,11 @@ window.SAT_SETS.push({
       skill:'Coordination',
       passage:"Sea otters must eat close to a quarter of their body weight every %BLANK% they lack the thick layer of blubber that keeps other marine mammals warm in frigid water.",
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
-      choices:{A:'day', B:'day; and', C:'day, for', D:'day for'},
+      choices:{A:'day,', B:'day; and', C:'day, for', D:'day for'},
       correct:'C',
       expCorrect:'Son dos oraciones completas y la segunda da la razón de la primera. El coordinante “for” (que significa “porque”) une dos independientes con coma ANTES: “…every day, for they lack…”.',
       expWrong:{
-        A:'Sin puntuación ni conjunción, las dos oraciones se fusionan (run-on).',
+        A:'Una coma sola entre dos oraciones completas es un comma splice.',
         B:'El punto y coma ya une dos independientes; agregarle “and” es redundante (“; and” sobra).',
         D:'“for” aquí une dos oraciones completas, así que necesita una coma antes; “day for” sin coma es un run-on.'
       },

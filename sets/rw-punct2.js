@@ -18,7 +18,7 @@ window.SAT_SETS.push({
       expWrong:{
         B:'Una coma sola entre dos oraciones completas es un comma splice.',
         C:'Sin ninguna puntuación, las dos oraciones se fusionan (run-on).',
-        D:'Aquí no aparece una segunda oración tras "and", y la coma después de "and" sobra; el patrón "and," está mal.'
+        D:'"and" sí podría unir las dos oraciones ("hand, and she had learned…"), pero la coma DESPUÉS de "and" separa la conjunción de su cláusula; el patrón "and," está mal.'
       },
       tip:'Prueba del punto: si a ambos lados del blank puedes poner un punto y quedan oraciones completas, el ";" sirve.'
     },
@@ -102,11 +102,11 @@ window.SAT_SETS.push({
       skill:'Puntuación: dos puntos (elaboración entre cláusulas)',
       passage:"The recipe owes its distinctive flavor to a single unexpected %BLANK% a spoonful of dark cocoa stirred into the simmering chili.",
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
-      choices:{A:'ingredient,', B:'ingredient', C:'ingredient:', D:'ingredient, and'},
+      choices:{A:'ingredient;', B:'ingredient', C:'ingredient:', D:'ingredient, and'},
       correct:'C',
       expCorrect:'Antes del blank hay una oración completa ("The recipe owes its distinctive flavor to a single unexpected ingredient") y lo que sigue la ELABORA nombrando ese ingrediente. El colon introduce esa aclaración.',
       expWrong:{
-        A:'Una coma no puede conectar así la oración completa con la aclaración que la sigue.',
+        A:'El punto y coma exige una oración independiente después, y "a spoonful of dark cocoa…" es una frase nominal, no una oración.',
         B:'Sin puntuación, "ingredient a spoonful…" se fusiona.',
         D:'"and" pediría otra cláusula, pero "a spoonful of dark cocoa…" es una frase nominal, no una oración; el patrón queda roto.'
       },

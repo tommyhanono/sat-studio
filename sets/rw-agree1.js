@@ -100,7 +100,7 @@ window.SAT_SETS.push({
     {
       id:'AGR-07', type:'mc', domain:'Standard English Conventions', difficulty:'Media',
       skill:'Pronoun Agreement',
-      passage:"The orchestra tuned %BLANK% instruments quietly as the audience settled into their seats and the lights above the stage began to dim.",
+      passage:"The orchestra tuned %BLANK% instruments quietly as the audience members settled into their seats and the lights above the stage began to dim.",
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'their', B:'its', C:'it’s', D:'our'},
       correct:'B',
@@ -130,7 +130,7 @@ window.SAT_SETS.push({
     {
       id:'AGR-09', type:'mc', domain:'Standard English Conventions', difficulty:'Difícil',
       skill:'Pronoun Agreement',
-      passage:"A person who truly wants to master a second language must practice %BLANK% every single day, because even a short break can slow real progress.",
+      passage:"A person who truly wants to master a second language must push %BLANK% every single day, because even a short break can slow real progress.",
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'themselves', B:'yourself', C:'himself or herself', D:'ourselves'},
       correct:'C',
