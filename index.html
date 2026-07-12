@@ -406,6 +406,15 @@
   .mock-hist-row .mh-out{font-size:.85rem;color:var(--gray-mid)}
   .mock-hist-row .mh-meta{font-size:.85rem;color:var(--gray-mid);margin-left:6px}
   .mock-hist-row .btn-outline{white-space:nowrap}
+  /* Study Plan (mastery path) */
+  .study-hint{font-size:.85rem;color:var(--gray-mid);line-height:1.6;margin:2px 0 12px}
+  .study-h{font-size:.76rem;text-transform:uppercase;letter-spacing:.06em;color:var(--blue);margin:18px 0 8px;font-weight:800}
+  .study-badge{display:inline-block;font-size:.7rem;font-weight:700;border-radius:999px;padding:3px 10px;background:#eef0f5;color:var(--gray-mid);margin-bottom:6px}
+  .study-badge.done{background:#e7f6ec;color:#0e7a41}
+  .study-badge.prog{background:var(--blue-soft);color:var(--blue)}
+  .set-card.mastered{border-color:#bfe6cb;background:#fbfefc}
+  .study-final.locked{opacity:.62}
+  .study-final.locked .btn-primary{cursor:not-allowed}
 </style>
 </head>
 <body>
@@ -990,6 +999,18 @@ function renderHome(){
   var totalMissed = pool.length;
 
   var sec = '';
+  if(currentUser && currentUser.app_metadata && currentUser.app_metadata.role === 'admin'){
+    var stp = studyState();
+    var mT = STUDY_TOPICS.filter(function(t){ return t.sec === 'math'; });
+    var vT = STUDY_TOPICS.filter(function(t){ return t.sec === 'rw'; });
+    var masteredAll = STUDY_TOPICS.filter(function(t){ return stp.topics[t.key].mastered; }).length;
+    var spBody = '<p class="study-hint">Your personal mastery path (only visible on your account). Rule: get a perfect <b>4/4 round</b> to master a topic — a miss breaks the round. Each Final needs <b>100%</b>: miss one and those topics reopen. <b>Your week:</b> Sun → Polynomials + Punctuation (after workshops) · Tue → Circles (workshop night) · Wed → Percents + Evidence · Thu → both Finals.</p>' +
+      '<h4 class="study-h">1 · Math — weak topics</h4>' + mT.map(function(t){ return studyTopicCard(t, stp.topics[t.key]); }).join('') +
+      '<h4 class="study-h">2 · English — weak topics</h4>' + vT.map(function(t){ return studyTopicCard(t, stp.topics[t.key]); }).join('') +
+      '<h4 class="study-h">3 · Math Final (100%)</h4>' + studyFinalCard('math', stp) +
+      '<h4 class="study-h">4 · English Final (100%)</h4>' + studyFinalCard('rw', stp);
+    sec += homeSection('🎯 Study Plan — Tommy', spBody, masteredAll + '/' + STUDY_TOPICS.length, true);
+  }
   var mocks = pastMocks();
   if(mocks.length){
     var mockRows = mocks.slice().reverse().map(function(e){
@@ -1073,6 +1094,12 @@ function renderHome(){
   });
   Array.prototype.forEach.call(document.querySelectorAll('#set-sections [data-start-engmock]'), function(b){
     b.addEventListener('click', function(){ var n = parseInt(b.getAttribute('data-start-engmock'), 10); startMock('rw', n, 100 + n); });
+  });
+  Array.prototype.forEach.call(document.querySelectorAll('#set-sections [data-study-round]'), function(b){
+    b.addEventListener('click', function(){ startStudyRound(b.getAttribute('data-study-round')); });
+  });
+  Array.prototype.forEach.call(document.querySelectorAll('#set-sections [data-study-final]'), function(b){
+    b.addEventListener('click', function(){ if(!b.disabled) startStudyFinal(b.getAttribute('data-study-final')); });
   });
   Array.prototype.forEach.call(document.querySelectorAll('#set-sections [data-start-hardmock]'), function(b){
     b.addEventListener('click', function(){ var n = parseInt(b.getAttribute('data-start-hardmock'), 10); startMock('full', n, 200 + n, true); });
@@ -1178,6 +1205,119 @@ function renderSavedReview(e, results){
   mockScreen(html);
   $('#mres-home').addEventListener('click', function(){ MOCK=null; ensureMockView().classList.add('hidden'); $('#view-home').classList.remove('hidden'); renderHome(); });
   $('#mres-redo').addEventListener('click', function(){ MOCK=null; ensureMockView().classList.add('hidden'); startSession('redo','drill'); });
+}
+
+/* ================= STUDY PLAN (mastery path — Tommy's admin account only) ================= */
+var STUDY_TOPICS = [
+  // Math weak topics (order = pool-matching priority)
+  { key:'circles',  sec:'math', title:'Circles',                          why:'Zinkerz: 3/9 · 3 recent misses in a row',        match:/c[ií]rc|circunferencia|arco|sector|tangen/i },
+  { key:'poly',     sec:'math', title:'Polynomials & Rational Functions', why:'Zinkerz: Polynomial Functions 1/5',              match:/polin[óo]m|polinomi|racional|teorema del (factor|residuo)|ceros|end behavior|comportamiento en los extremos/i },
+  { key:'probstat', sec:'math', title:'Probability & Statistics',         why:'Zinkerz: Probability 1/5 · Stats 3/6',           match:/probabilidad|estad[íi]stic|desviaci[óo]n|dispersi[óo]n|mediana|media \(|promedio/i },
+  { key:'expo',     sec:'math', title:'Exponents & Exponentials',         why:'Zinkerz: Exponents 1/4 · Growth/Decay 0/1',      match:/exponente|exponencial|semivida/i },
+  { key:'percents', sec:'math', title:'Percents',                         why:'Zinkerz: 3/6 · 3 recent misses',                 match:/porcentaje/i },
+  { key:'solids',   sec:'math', title:'Solid Geometry & Volume',          why:'Zinkerz: Solid Geometry 2/5',                    match:/volumen|superficie|s[óo]lidos|escalar una dimensi[óo]n/i },
+  { key:'trig',     sec:'math', title:'Triangles & Trig',                 why:'Zinkerz: Trig 1/3 · Similar 1/3 · Triangles 3/6', match:/tri[áa]ngulo|trigonometr|pit[áa]goras|soh|semejante/i },
+  // English weak topics
+  { key:'possagree',sec:'rw',   title:'Possessives & Agreement',          why:'Zinkerz: Possessives 2/5 · Verb Agreement 6/12', match:/posesiv|possessive|ap[óo]strofo|concordancia|agreement|pronoun|formas y tiempos/i },
+  { key:'punct',    sec:'rw',   title:'Punctuation & Boundaries',         why:'Zinkerz: 3/12 (25%) — your worst Verbal skill',  match:/puntuaci|punctuation|coma|comma|punto y coma|semicolon|dos puntos|colon|raya|dash|l[íi]mites|boundar|no separar|sin coma|sin puntuaci|coordinaci[óo]n|coordination/i },
+  { key:'structure',sec:'rw',   title:'Structure, Purpose & Conclusions', why:'Zinkerz: Structure 0/4 (0%)',                    match:/structure|purpose|estructura|prop[óo]sito|conclusion/i },
+  { key:'mainidea', sec:'rw',   title:'Main Idea & Details',              why:'Zinkerz: Main Idea 2/6 · Detail 5/9',            match:/main idea|ideas centrales|central ideas/i },
+  { key:'evidence', sec:'rw',   title:'Evidence, Quotation & Data',       why:'Zinkerz: Quotation 4/9 · Data 5/10',             match:/command of evidence|quotation|interpreting data/i }
+];
+var _studyPools = null;
+function studyPools(){
+  if(_studyPools) return _studyPools;
+  _studyPools = {};
+  STUDY_TOPICS.forEach(function(t){ _studyPools[t.key] = []; });
+  Object.keys(QINDEX).forEach(function(qid){
+    var q = QINDEX[qid];
+    var isM = q._section === 'math';
+    for(var i = 0; i < STUDY_TOPICS.length; i++){
+      var t = STUDY_TOPICS[i];
+      if((t.sec === 'math') !== isM) continue;
+      if(t.match.test(q.skill || '')){ _studyPools[t.key].push(q); break; }
+    }
+  });
+  return _studyPools;
+}
+// Mastery state is DERIVED from history (cloud-synced for free):
+// a topic is mastered if a 4/4 "study-<key>" round exists AFTER the last Final in which
+// a question OF THAT TOPIC was missed (only the missed topics reopen on a failed Final).
+function studyState(){
+  var h = getHistory();
+  var pools = studyPools();
+  var topicOf = {};
+  Object.keys(pools).forEach(function(k){ pools[k].forEach(function(q){ topicOf[q.id] = k; }); });
+  var lastFail = {};
+  STUDY_TOPICS.forEach(function(t){ lastFail[t.key] = -1; });
+  h.forEach(function(e, i){
+    if(!e.setId || e.setId.indexOf('study-final-') !== 0) return;
+    (e.perQuestion || []).forEach(function(p){
+      if(!p.ok && topicOf[p.qid] != null) lastFail[topicOf[p.qid]] = i;
+    });
+  });
+  var st = { topics:{}, finals:{} };
+  STUDY_TOPICS.forEach(function(t){
+    var best = 0, tries = 0, mastered = false;
+    h.forEach(function(e, i){
+      if(e.setId !== 'study-' + t.key || i <= lastFail[t.key]) return;
+      tries++;
+      best = Math.max(best, e.score);
+      if(e.total >= 4 && e.score === e.total) mastered = true;
+    });
+    st.topics[t.key] = { best: best, tries: tries, mastered: mastered };
+  });
+  ['math','rw'].forEach(function(sc){
+    var last = null;
+    h.forEach(function(e){ if(e.setId === 'study-final-' + sc) last = e; });
+    st.finals[sc] = { attempted: !!last, passed: !!(last && last.total > 0 && last.score === last.total) };
+  });
+  return st;
+}
+function _seenCounts(){
+  var seen = {};
+  getHistory().forEach(function(e){ (e.perQuestion || []).forEach(function(p){ seen[p.qid] = (seen[p.qid] || 0) + 1; }); });
+  return seen;
+}
+function startStudyRound(key){
+  var t = STUDY_TOPICS.filter(function(x){ return x.key === key; })[0];
+  var pool = studyPools()[key] || [];
+  if(!t || pool.length < 4){ alert('Not enough questions for this topic yet.'); return; }
+  var seen = _seenCounts();
+  var order = _shuffle(pool).sort(function(a, b){ return (seen[a.id] || 0) - (seen[b.id] || 0); });
+  _beginSession({ id:'study-' + key, title: t.title + ' — Round of 4', section: t.sec, minutes: t.sec === 'math' ? 8 : 6, questions: order.slice(0, 4) }, 'drill');
+}
+function startStudyFinal(sc){
+  var st = studyState();
+  var topics = STUDY_TOPICS.filter(function(t){ return t.sec === sc; });
+  if(!topics.every(function(t){ return st.topics[t.key].mastered; })) return;
+  var seen = _seenCounts();
+  var qs = [];
+  topics.forEach(function(t){
+    var order = _shuffle(studyPools()[t.key]).sort(function(a, b){ return (seen[a.id] || 0) - (seen[b.id] || 0); });
+    qs = qs.concat(order.slice(0, 2));
+  });
+  _beginSession({ id:'study-final-' + sc, title: (sc === 'math' ? 'Math' : 'English') + ' Final — 100%', section: sc, minutes: sc === 'math' ? 22 : 16, questions: _shuffle(qs) }, 'exam');
+}
+function studyTopicCard(t, ts){
+  var state = ts.mastered ? '<span class="study-badge done">✓ Mastered</span>'
+            : ts.tries ? '<span class="study-badge prog">best ' + ts.best + '/4 · ' + ts.tries + ' round' + (ts.tries > 1 ? 's' : '') + '</span>'
+            : '<span class="study-badge">not started</span>';
+  return '<div class="set-card study-card' + (ts.mastered ? ' mastered' : '') + '"><div class="set-info">' + state +
+    '<h3>' + t.title + '</h3><div class="set-desc">' + t.why + '</div></div>' +
+    '<div class="set-actions"><button class="btn-primary" data-study-round="' + t.key + '">' + (ts.mastered ? 'Extra round' : 'Round of 4') + '</button></div></div>';
+}
+function studyFinalCard(sc, st){
+  var topics = STUDY_TOPICS.filter(function(t){ return t.sec === sc; });
+  var done = topics.filter(function(t){ return st.topics[t.key].mastered; }).length;
+  var unlocked = done === topics.length;
+  var badge = st.finals[sc].passed ? '<span class="study-badge done">🏆 Passed — 100%</span>'
+            : unlocked ? '<span class="study-badge prog">Unlocked — score 100% to pass</span>'
+            : '<span class="study-badge">🔒 Master all topics to unlock (' + done + '/' + topics.length + ')</span>';
+  return '<div class="set-card study-final' + (unlocked ? '' : ' locked') + '"><div class="set-info">' + badge +
+    '<h3>' + (sc === 'math' ? 'Math' : 'English') + ' Final — 100%</h3>' +
+    '<div class="set-desc">Mixed exam across all your ' + (sc === 'math' ? 'Math' : 'English') + ' topics (2 per topic). Miss one and those topics reopen; the retake draws new questions.</div></div>' +
+    '<div class="set-actions"><button class="btn-primary" data-study-final="' + sc + '"' + (unlocked ? '' : ' disabled') + '>' + (st.finals[sc].passed ? 'Retake' : 'Start Final') + '</button></div></div>';
 }
 
 /* ================= SESSION ================= */
@@ -1541,6 +1681,15 @@ function renderResults(g){
     $('#res-est').innerHTML = 'Estimated section score (' + (S.set.section === 'math' ? 'Math' : 'Reading & Writing') + '): <b>' + lo + '–' + hi + '</b> <span class="cav">· rough estimate based on a short set; full modules give a more accurate read</span>';
   } else {
     $('#res-est').innerHTML = '';
+  }
+  if(S.set.id && S.set.id.indexOf('study-final-') === 0){
+    $('#res-est').innerHTML = (g.correct === n)
+      ? '<b>🏆 100% — Final passed!</b> This part of your Study Plan is complete.'
+      : '<b>Not 100% yet (' + g.correct + '/' + n + ').</b> The topics you missed just reopened — get a 4/4 round in each again, then retake the Final (it draws new questions).';
+  } else if(S.set.id && S.set.id.indexOf('study-') === 0){
+    $('#res-est').innerHTML = (g.correct === n)
+      ? '<b>✓ 4/4 — Topic mastered!</b> It now counts toward unlocking the Final.'
+      : 'Round: <b>' + g.correct + '/4</b> — you need a perfect 4/4 round to master the topic. Review the explanations below, then try a new round.';
   }
   $('#res-expired').classList.toggle('hidden', !S.expired);
   $('#summary-text').value = buildSummary(g);
