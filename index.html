@@ -459,6 +459,15 @@
   .method-reminder .mr-b{padding:0 14px 10px}
   .method-reminder .lesson-steps{font-size:.85rem;margin-top:2px}
   .method-reminder .lesson-trap{margin-bottom:0}
+  /* Today's Focus */
+  .tf-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+  .tf-card{background:#fff;border:1px solid var(--gray-line);border-radius:11px;padding:14px 15px;display:flex;flex-direction:column}
+  .tf-top h4{font-size:1rem;margin:4px 0 0}
+  .tf-pct{font-size:.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.03em;color:var(--gray-mid);background:#eef0f5;border-radius:999px;padding:2px 9px;display:inline-block}
+  .tf-pct.bad{background:#fdecec;color:#c0392b}
+  .tf-pct.mid{background:#fdf5e6;color:#a97400}
+  .tf-trap{font-size:.83rem;line-height:1.5;color:#444;margin:9px 0 12px;flex:1}
+  .tf-go{font-size:.83rem;padding:9px 0;width:100%}
 </style>
 </head>
 <body>
@@ -1086,6 +1095,8 @@ function renderHome(){
       '<h4 class="study-h">4 · English Final (100%)</h4>' + studyFinalCard('rw', stp);
     sec += homeSection('🎯 Study Plan — Tommy', spBody, masteredAll + '/' + STUDY_TOPICS.length, true);
   }
+  var tf = todaysFocusHTML();
+  if(tf) sec += homeSection('🎯 Today’s Focus', tf, 3, true);
   var learnBody = '<p class="study-hint">' + LEARN_ROADMAP + '</p>' +
     '<h4 class="study-h">Math — method + trap + worked example</h4>' + LESSONS.filter(function(l){ return l.sec === 'math'; }).map(lessonCardHTML).join('') +
     '<h4 class="study-h">Reading &amp; Writing</h4>' + LESSONS.filter(function(l){ return l.sec === 'rw'; }).map(lessonCardHTML).join('');
@@ -1534,6 +1545,50 @@ function methodReminderHTML(q){
   return '<details class="method-reminder"><summary>📚 Method reminder — ' + L.title + '</summary><div class="mr-b">' +
     '<ol class="lesson-steps">' + L.steps.map(function(s){ return '<li>' + s + '</li>'; }).join('') + '</ol>' +
     '<div class="lesson-trap"><b>⚠ #1 trap:</b> ' + L.trap + '</div></div></details>';
+}
+// Pick the student's weakest lesson-topics from THEIR own history (lowest accuracy with ≥3 attempts).
+// Falls back to the default priority order when there's no data yet.
+function weakSpots(limit){
+  var acc = {};
+  LESSONS.forEach(function(L){ acc[L.key] = { L:L, ok:0, n:0 }; });
+  getHistory().forEach(function(e){
+    (e.perQuestion || []).forEach(function(p){
+      var q = QINDEX[p.qid];
+      if(!q) return;
+      LESSONS.forEach(function(L){
+        if((L.sec === 'math') !== (q._section === 'math')) return;
+        if(L.match.test(q.skill || '')){ acc[L.key].n++; if(p.ok) acc[L.key].ok++; }
+      });
+    });
+  });
+  var withData = LESSONS.map(function(L){ return acc[L.key]; }).filter(function(x){ return x.n >= 3; });
+  withData.sort(function(a, b){ return (a.ok/a.n) - (b.ok/b.n); });
+  if(withData.length >= limit) return withData.slice(0, limit).map(function(x){ return { L:x.L, pct: Math.round(100*x.ok/x.n), n:x.n }; });
+  // Not enough history → default priority (his Mock-1 weak areas), skipping ones already strong.
+  var order = ['l-expo','l-prob','l-punct','l-circles','l-poly','l-structure','l-trig','l-percent','l-trans'];
+  var out = withData.map(function(x){ return { L:x.L, pct: Math.round(100*x.ok/x.n), n:x.n }; });
+  var have = {}; out.forEach(function(o){ have[o.L.key] = 1; });
+  for(var i = 0; i < order.length && out.length < limit; i++){
+    if(have[order[i]]) continue;
+    var L = LESSONS.filter(function(x){ return x.key === order[i]; })[0];
+    if(L) out.push({ L:L, pct:null, n:0 });
+  }
+  return out.slice(0, limit);
+}
+function todaysFocusHTML(){
+  var spots = weakSpots(3);
+  if(!spots.length) return '';
+  var intro = (spots[0].pct != null)
+    ? '<p class="study-hint">Based on <b>your</b> misses in the app, drill these three today. Learn the method (tap the topic in Learn below), then hit Practice until you get 4 right in a row.</p>'
+    : '<p class="study-hint">Start-here plan from your Mock 1 weak areas. Learn the method (in Learn below), then Practice each until you get 4 right in a row. Your accuracy will start showing here once you drill.</p>';
+  var cards = spots.map(function(s){
+    var meter = s.pct != null ? '<span class="tf-pct ' + (s.pct < 50 ? 'bad' : s.pct < 75 ? 'mid' : '') + '">' + s.pct + '% right (' + s.n + ')</span>' : '<span class="tf-pct">priority</span>';
+    var pool = lessonPool(s.L.key).length;
+    return '<div class="tf-card"><div class="tf-top">' + meter + '<h4>' + s.L.title + '</h4></div>' +
+      '<div class="tf-trap"><b>Watch for:</b> ' + s.L.trap + '</div>' +
+      '<button class="btn-primary tf-go" data-lesson="' + s.L.key + '">Practice now · ' + pool + ' q</button></div>';
+  }).join('');
+  return intro + '<div class="tf-grid">' + cards + '</div>';
 }
 function startWarmup(){
   var all = Object.keys(QINDEX).map(function(id){ return QINDEX[id]; });
