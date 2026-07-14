@@ -1097,6 +1097,8 @@ function renderHome(){
   }
   var tf = todaysFocusHTML();
   if(tf) sec += homeSection('🎯 Today’s Focus', tf, 3, true);
+  var sr = spacedReviewHTML();
+  if(sr){ var srDue = spacedQueue().due.length; sec += homeSection('🔁 Spaced Review', sr, srDue || null, true); }
   var learnBody = '<p class="study-hint">' + LEARN_ROADMAP + '</p>' +
     '<h4 class="study-h">Math — method + trap + worked example</h4>' + LESSONS.filter(function(l){ return l.sec === 'math'; }).map(lessonCardHTML).join('') +
     '<h4 class="study-h">Reading &amp; Writing</h4>' + LESSONS.filter(function(l){ return l.sec === 'rw'; }).map(lessonCardHTML).join('');
@@ -1250,6 +1252,7 @@ function renderHome(){
     b.addEventListener('click', function(){ startLessonDrill(b.getAttribute('data-lesson')); });
   });
   var _wu = document.querySelector('#set-sections [data-warmup]'); if(_wu) _wu.addEventListener('click', startWarmup);
+  var _sr = document.querySelector('#set-sections [data-spaced]'); if(_sr) _sr.addEventListener('click', startSpacedReview);
   Array.prototype.forEach.call(document.querySelectorAll('#set-sections [data-study-round]'), function(b){
     b.addEventListener('click', function(){ startStudyRound(b.getAttribute('data-study-round')); });
   });
@@ -1589,6 +1592,51 @@ function todaysFocusHTML(){
       '<button class="btn-primary tf-go" data-lesson="' + s.L.key + '">Practice now · ' + pool + ' q</button></div>';
   }).join('');
   return intro + '<div class="tf-grid">' + cards + '</div>';
+}
+/* ===== Spaced Review (evidence-based spaced repetition of missed questions) ===== */
+var SR_INTERVALS = [1, 2, 4, 7, 14];   // days until next review per Leitner box (tuned for a 1-3 week horizon)
+function _addDaysStr(dateStr, n){
+  var d = new Date((dateStr || todayStr()) + 'T00:00:00');
+  if(isNaN(d.getTime())) d = new Date();
+  d.setDate(d.getDate() + n);
+  return d.getFullYear() + '-' + ('0'+(d.getMonth()+1)).slice(-2) + '-' + ('0'+d.getDate()).slice(-2);
+}
+// Replay every question's attempt history in order → Leitner box + due date. A miss resets to box 0;
+// a hit advances a box. Only questions that were EVER missed are tracked; those past the last box are "mastered".
+function spacedQueue(){
+  var attempts = {};
+  getHistory().forEach(function(e){
+    (e.perQuestion || []).forEach(function(p){
+      if(!QINDEX[p.qid]) return;
+      (attempts[p.qid] = attempts[p.qid] || []).push({ date: e.date || todayStr(), ok: !!p.ok });
+    });
+  });
+  var today = todayStr(), due = [], scheduled = [], mastered = 0;
+  Object.keys(attempts).forEach(function(qid){
+    var seq = attempts[qid], box = 0, everWrong = false, lastDate = today;
+    seq.forEach(function(a){ if(!a.ok){ everWrong = true; box = 0; } else { box = box + 1; } lastDate = a.date; });
+    if(!everWrong) return;
+    if(box >= SR_INTERVALS.length){ mastered++; return; }
+    var dueDate = _addDaysStr(lastDate, SR_INTERVALS[box]);
+    if(dueDate <= today) due.push(QINDEX[qid]); else scheduled.push(QINDEX[qid]);
+  });
+  return { due: due, scheduled: scheduled.length, mastered: mastered };
+}
+function startSpacedReview(){
+  var q = spacedQueue().due;
+  if(!q.length){ alert('Nothing due for review right now — nice work.'); return; }
+  _beginSession({ id:'spaced-review', title:'Spaced Review', section:'mixed', minutes: Math.max(6, Math.ceil(Math.min(q.length,12) * 1.3)), questions: _shuffle(q).slice(0, 12) }, 'drill');
+}
+function spacedReviewHTML(){
+  var s = spacedQueue();
+  if(!s.due.length && !s.scheduled && !s.mastered) return '';
+  var due = s.due.length;
+  var main = '<div class="tf-card"><div class="tf-top"><span class="tf-pct ' + (due ? 'bad' : '') + '">' + due + ' due today</span><h4>Review your misses</h4></div>' +
+    '<div class="tf-trap">' + (due ? 'Questions you got wrong that are scheduled for review today. Get them right to push them further out; miss again and they reset.' : 'Nothing due right now — everything you missed is scheduled for later. ✓') + '</div>' +
+    (due ? '<button class="btn-primary tf-go" data-spaced="1">Review ' + due + ' now</button>' : '') + '</div>';
+  var side = '<div class="tf-card"><div class="tf-top"><span class="tf-pct mid">' + s.scheduled + ' scheduled · ' + s.mastered + ' mastered</span><h4>Your review pipeline</h4></div>' +
+    '<div class="tf-trap">Each miss returns at growing gaps (' + SR_INTERVALS.join(' → ') + ' days). Clear it ' + SR_INTERVALS.length + ' times in a row and it is mastered and retires from the queue.</div></div>';
+  return '<p class="study-hint">Spaced repetition — the highest-yield habit for retention. Every question you miss comes back at growing intervals until it sticks. <b>Do your due reviews first, every day.</b></p><div class="tf-grid">' + main + side + '</div>';
 }
 function startWarmup(){
   var all = Object.keys(QINDEX).map(function(id){ return QINDEX[id]; });
