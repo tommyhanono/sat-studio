@@ -453,6 +453,12 @@
   .lesson-trap{background:#fdf3f0;border-left:3px solid #e07a5f;border-radius:6px;padding:8px 12px;font-size:.86rem;line-height:1.55;margin-bottom:9px}
   .lesson-ex{background:var(--blue-soft);border-radius:8px;padding:9px 13px;font-size:.87rem;line-height:1.6;margin-bottom:11px}
   .lesson-go{font-size:.84rem;padding:9px 18px}
+  .method-reminder{margin:10px 0;border:1px dashed var(--blue);border-radius:8px;background:var(--blue-soft)}
+  .method-reminder summary{cursor:pointer;padding:9px 13px;font-weight:700;font-size:.86rem;color:var(--blue);list-style:none}
+  .method-reminder summary::-webkit-details-marker{display:none}
+  .method-reminder .mr-b{padding:0 14px 10px}
+  .method-reminder .lesson-steps{font-size:.85rem;margin-top:2px}
+  .method-reminder .lesson-trap{margin-bottom:0}
 </style>
 </head>
 <body>
@@ -1510,6 +1516,23 @@ function startLessonDrill(key){
   var order = _shuffle(pool).sort(function(a, b){ return (seen[a.id]||0) - (seen[b.id]||0); });
   _beginSession({ id:'lesson-' + key, title: L.title + ' — Practice', section: L.sec, minutes: L.sec === 'math' ? 12 : 8, questions: order.slice(0, 6) }, 'drill');
 }
+// Map a question to its skill lesson (for the "method reminder" on missed questions).
+function lessonForQ(q){
+  if(!q) return null;
+  for(var i = 0; i < LESSONS.length; i++){
+    var L = LESSONS[i];
+    if((L.sec === 'math') !== (q._section === 'math')) continue;
+    if(L.match.test(q.skill || '')) return L;
+  }
+  return null;
+}
+function methodReminderHTML(q){
+  var L = lessonForQ(q);
+  if(!L) return '';
+  return '<details class="method-reminder"><summary>📚 Method reminder — ' + L.title + '</summary><div class="mr-b">' +
+    '<ol class="lesson-steps">' + L.steps.map(function(s){ return '<li>' + s + '</li>'; }).join('') + '</ol>' +
+    '<div class="lesson-trap"><b>⚠ #1 trap:</b> ' + L.trap + '</div></div></details>';
+}
 function lessonCardHTML(L){
   var steps = '<ol class="lesson-steps">' + L.steps.map(function(s){ return '<li>' + s + '</li>'; }).join('') + '</ol>';
   var n = lessonPool(L.key).length;
@@ -1816,6 +1839,7 @@ function drillCardHTML(q){
     });
   }
   body += desmosBlockHTML(q);
+  if(!ok) body += methodReminderHTML(q);
   body += '<div class="res-tip">⚡ <strong>Shortcut:</strong> ' + fmtExp(q.tip, isMath) + '</div></div>';
   return body;
 }
@@ -2046,6 +2070,7 @@ function renderResQ(r){
       '<div class="res-answers">Your answer: ' + userTxt + '<br>Correct answer: ' + corrTxt + '</div>' +
       '<div class="res-exp">' + exp + '</div>' +
       desmosBlockHTML(q) +
+      (r.ok ? '' : methodReminderHTML(q)) +
       '<div class="res-tip">⚡ <strong>Shortcut:</strong> ' + fmtExp(q.tip, isMath) + '</div>' +
       '</div></details>';
 }
