@@ -441,6 +441,18 @@
   /* Extreme tier */
   .lvl-badge.lvl-extreme{background:#1a1a1a;color:#ff5252;border:1px solid #ff5252}
   .set-card.extreme-card{border-color:#e3b8b8;background:linear-gradient(180deg,#fff 0%,#fff6f6 100%)}
+  /* Learn — skill lessons */
+  .lesson{background:#fff;border:1px solid var(--gray-line);border-radius:10px;margin-bottom:9px;overflow:hidden}
+  .lesson summary{cursor:pointer;padding:12px 15px;font-weight:700;font-size:.92rem;list-style:none;display:flex;align-items:center;gap:8px}
+  .lesson summary::-webkit-details-marker{display:none}
+  .lesson summary::after{content:"▾";margin-left:auto;color:var(--gray-mid);transition:transform .15s}
+  .lesson[open] summary::after{transform:rotate(180deg)}
+  .lesson-b{padding:2px 16px 15px}
+  .lesson-steps{margin:4px 0 10px;padding-left:22px;font-size:.88rem;line-height:1.7;color:#2b2b2b}
+  .lesson-steps li{margin:7px 0}
+  .lesson-trap{background:#fdf3f0;border-left:3px solid #e07a5f;border-radius:6px;padding:8px 12px;font-size:.86rem;line-height:1.55;margin-bottom:9px}
+  .lesson-ex{background:var(--blue-soft);border-radius:8px;padding:9px 13px;font-size:.87rem;line-height:1.6;margin-bottom:11px}
+  .lesson-go{font-size:.84rem;padding:9px 18px}
 </style>
 </head>
 <body>
@@ -1068,6 +1080,10 @@ function renderHome(){
       '<h4 class="study-h">4 · English Final (100%)</h4>' + studyFinalCard('rw', stp);
     sec += homeSection('🎯 Study Plan — Tommy', spBody, masteredAll + '/' + STUDY_TOPICS.length, true);
   }
+  var learnBody = '<p class="study-hint">' + LEARN_ROADMAP + '</p>' +
+    '<h4 class="study-h">Math — method + trap + worked example</h4>' + LESSONS.filter(function(l){ return l.sec === 'math'; }).map(lessonCardHTML).join('') +
+    '<h4 class="study-h">Reading &amp; Writing</h4>' + LESSONS.filter(function(l){ return l.sec === 'rw'; }).map(lessonCardHTML).join('');
+  sec += homeSection('📚 Learn — Master Each Skill', learnBody, LESSONS.length, false);
   sec += homeSection('📋 Exam-Day Playbook', PLAYBOOK_HTML, null, false);
   var mocks = pastMocks();
   if(mocks.length){
@@ -1209,6 +1225,12 @@ function renderHome(){
   });
   Array.prototype.forEach.call(document.querySelectorAll('#set-sections [data-start-realmock]'), function(b){
     b.addEventListener('click', function(){ var n = parseInt(b.getAttribute('data-start-realmock'), 10); startMock('full', n, 500 + n, 'real'); });
+  });
+  Array.prototype.forEach.call(document.querySelectorAll('#set-sections [data-start-realmock]'), function(b){
+    b.addEventListener('click', function(){ var n = parseInt(b.getAttribute('data-start-realmock'), 10); startMock('full', n, 500 + n, 'real'); });
+  });
+  Array.prototype.forEach.call(document.querySelectorAll('#set-sections [data-lesson]'), function(b){
+    b.addEventListener('click', function(){ startLessonDrill(b.getAttribute('data-lesson')); });
   });
   Array.prototype.forEach.call(document.querySelectorAll('#set-sections [data-study-round]'), function(b){
     b.addEventListener('click', function(){ startStudyRound(b.getAttribute('data-study-round')); });
@@ -1361,6 +1383,142 @@ var PLAYBOOK_HTML =
     '<p><b>Sunk-time trap:</b> time already spent on a question is never a reason to stay. 4 minutes on one hard question + rushing five easy ones is the worst trade on the test.</p>' +
   '</div></details>' +
   '</div>';
+
+/* ================= LEARN — SKILL LESSONS (public; method + trap + worked example + practice) ================= */
+var LEARN_ROADMAP =
+  '<b>Your targets: 700 Math, 600–700 Verbal.</b> The fastest path from a ~1040 is to LEARN the method for each weak topic, then drill it — not just do more questions.<br>' +
+  '• <b>Math (450→700 = your biggest gains):</b> master these first — Exponents, Probability, Circles, Polynomials/Quadratics, Percents. Each is 2–4 points you keep missing for the SAME reason. Read the method, hit <b>Practice</b> until you get 4 right in a row, then confirm in a Realistic Hard Mock.<br>' +
+  '• <b>Verbal (590→680):</b> you are close. Lock in Punctuation (the independent-clause test below fixes most of it), Structure/Purpose (verb-first), and Transitions — all rule-based and learnable in days.<br>' +
+  '• <b>Cadence:</b> one Realistic Hard Mock every ~2 days (not more), review every miss here, drill the exact skill it came from.';
+
+var LESSONS = [
+  { key:'l-circles', sec:'math', title:'Circles', match:/c[ií]rc|circunferencia|arco|sector|tangen/i,
+    steps:['<b>Equation:</b> from x²+y²+Dx+Ey=F, complete the square → (x−h)²+(y−k)²=r². Center (−D/2, −E/2); r² = F + (D/2)² + (E/2)².',
+           '<b>Signs flip:</b> (y+4)² means k = −4, not +4. Same for x.',
+           '<b>Arc & sector — one proportion:</b> angle/360 = arc/circumference = sector/(whole area). (In radians: arc = rθ, sector = ½r²θ.)'],
+    trap:'Reporting r when the equation gives r² (you forgot the square root) — or a sign-flipped center.',
+    example:'<b>Ex.</b> x²+y²−6x+8y=0 → half of −6 is −3 (h=3); half of 8 is 4 (k=−4); r² = 0+9+16 = 25 → r=5. Center (3,−4), r=5. <i>Desmos: paste the equation, it draws the circle and you read the center/radius.</i>' },
+  { key:'l-quad', sec:'math', title:'Quadratics', match:/cuadr[áa]t|quadratic|discriminante|v[ée]rtice|factoriz|par[áa]bola/i,
+    steps:['<b>Three forms tell you three things:</b> standard ax²+bx+c (c = y-intercept), factored a(x−r)(x−s) (r,s = x-intercepts/roots), vertex a(x−h)²+k (h,k = vertex = min/max).',
+           '<b>Vertex x = −b/2a</b>; plug back for y. The vertex is the minimum if a&gt;0, maximum if a&lt;0.',
+           '<b>Discriminant b²−4ac:</b> &gt;0 → two real solutions; =0 → exactly one; &lt;0 → none (parametric versions set it =0 for tangency).'],
+    trap:'Answering with the x of the vertex (or a root) when the question asks for the y-value (the minimum), or vice versa.',
+    example:'<b>Ex.</b> y=x²−6x+5. Vertex x=6/2=3, y=9−18+5=−4 → min value −4. Roots: (x−1)(x−5)=0 → x=1,5. <i>Desmos shows the vertex and roots as dots.</i>' },
+  { key:'l-poly', sec:'math', title:'Polynomials & Rational', match:/polin[óo]m|racional|teorema del (factor|residuo)|ceros|multiplicidad|end behavior|comportamiento en los extremos/i,
+    steps:['<b>Factor ⇔ zero:</b> (x−a) is a factor exactly when the graph hits zero at x=a. So (x+3) → a zero at x=−3 (flip the sign).',
+           '<b>Multiplicity:</b> odd power → the graph CROSSES the x-axis; even power → it TOUCHES and bounces.',
+           '<b>Remainder Theorem:</b> the remainder of p(x)÷(x−a) is just p(a). Plug in — never do long division.'],
+    trap:'Reading (x+3) as a zero at +3 instead of −3; or dividing when p(a) gives the remainder instantly.',
+    example:'<b>Ex.</b> p(x)=(x−2)(x+3)². Zeros: x=2 (crosses, mult 1) and x=−3 (bounces, mult 2). Remainder of p(x)÷(x−1) = p(1)=(−1)(16)=−16.' },
+  { key:'l-expo', sec:'math', title:'Exponents & Exponentials', match:/exponente|exponencial|semivida|ra[íi]z/i,
+    steps:['<b>Force the same base first</b> (9=3², 27=3³, 8=2³). Then: multiply → add exponents; power of a power → multiply; divide → subtract.',
+           '<b>Fractional exponent = root:</b> x^(a/b) = the b-th root of x^a. Denominator is the root, numerator is the power. Negative exponent = reciprocal.',
+           '<b>Growth/decay model:</b> amount = a·(base)^(t/period). Grows 8%/yr → (1.08)^t; decays 12% every 5 days → (0.88)^(t/5).'],
+    trap:'Applying exponent laws across DIFFERENT bases, or making (0.88)^(t/5) into (0.88)^(5t).',
+    example:'<b>Ex.</b> 8^(2/3) = (∛8)² = 2² = 4. And 2^5 · 2^(−3) = 2^(5−3) = 4. <i>Desmos evaluates 8^(2/3) directly.</i>' },
+  { key:'l-systems', sec:'math', title:'Systems of Equations', match:/sistema|systems|paralel|perpendicular/i,
+    steps:['<b>Solve:</b> substitution when one variable is alone; elimination when you can cancel a variable by adding/scaling.',
+           '<b>Number of solutions (memorize):</b> for a₁x+b₁y=c₁ and a₂x+b₂y=c₂ → INFINITE if a₁/a₂ = b₁/b₂ = c₁/c₂ (same line); NONE if the coefficient ratios match but the constant ratio differs (parallel); ONE otherwise.',
+           '<b>Target-expression trick:</b> if it asks for “3x−2y”, add/subtract the equations to build that combo directly — often no need to solve for x and y separately.'],
+    trap:'Grinding for x and y when the question only wants a combination like x+y (Desmos: graph both lines, click the intersection).',
+    example:'<b>Ex.</b> 2x+3y=7 and 4x+6y=k. Ratios 2/4 = 3/6 = 1/2. So NO solution when k≠14, INFINITE when k=14.' },
+  { key:'l-prob', sec:'math', title:'Probability & Two-Way Tables', match:/probabilidad|estad[íi]stic|tabla de doble|desviaci[óo]n|dispersi[óo]n|mediana|promedio|media \(/i,
+    steps:['<b>The denominator is the group you were GIVEN.</b> Words like “of the”, “among”, or “given that” point to a row or column total — NOT the grand total.',
+           '<b>Numerator = the cell inside that group.</b> Write the fraction before you compute.',
+           '<b>Stats:</b> mean = shifts toward outliers; median = resistant to them. Adding a value at the mean leaves the mean unchanged.'],
+    trap:'Using the grand total as the denominator on a conditional probability — it is ALWAYS offered as a wrong choice.',
+    example:'<b>Ex.</b> Of 40 students, 24 play a sport; of those 24, 9 also do music. P(music | plays sport) = 9/24 = 3/8 — denominator is 24, not 40.' },
+  { key:'l-percent', sec:'math', title:'Percents', match:/porcentaje|percent|raz[óo]n|proporci[óo]n|tasa/i,
+    steps:['<b>Every change is a multiplier:</b> ±p% → ×(1 ± p/100). +25% → ×1.25; −30% → ×0.70.',
+           '<b>Successive changes MULTIPLY</b> (never add): +20% then −20% = 1.2×0.8 = 0.96 → a 4% LOSS, not 0.',
+           '<b>Reverse percent = divide:</b> “$60 after 20% off” → 60 ÷ 0.8 = $75 was the original.'],
+    trap:'Adding percentages, or taking the percent of the wrong base (final price instead of original).',
+    example:'<b>Ex.</b> A price rises 10% then falls 10%: ×1.1×0.9 = ×0.99 → down 1% overall. <i>Desmos: type 60/0.8 to un-do a discount.</i>' },
+  { key:'l-trig', sec:'math', title:'Triangles & Trig', match:/tri[áa]ngulo|trigonometr|pit[áa]goras|soh|semejante|cofunci/i,
+    steps:['<b>Label from the QUESTION’S angle:</b> opposite, adjacent, hypotenuse — then SOH-CAH-TOA (sin=O/H, cos=A/H, tan=O/A).',
+           '<b>Cofunction:</b> sin(x) = cos(90−x). The two acute angles of a right triangle just swap sin and cos — no computing.',
+           '<b>Know the special triangles</b> before Pythagoras: 3-4-5, 5-12-13, 45-45-90 (1:1:√2), 30-60-90 (1:√3:2). Similar triangles → set up a proportion of matching sides.'],
+    trap:'Measuring opposite/adjacent from the WRONG angle — the flipped ratio is always a listed choice.',
+    example:'<b>Ex.</b> Right triangle, legs 5 and 12, hyp 13. For the angle opposite the 5: sin = 5/13, cos = 12/13, tan = 5/12. If sin A = 5/13, then cos(90−A) = 5/13 too.' },
+  { key:'l-solids', sec:'math', title:'Solid Geometry & Volume', match:/volumen|superficie|s[óo]lidos|escalar una dimensi[óo]n|cono|cilindro|esfera|densidad/i,
+    steps:['<b>Open the reference sheet</b> — every volume/area formula is there. Do not memorize; plug carefully (radius vs diameter!).',
+           '<b>Scaling rule:</b> multiply every length by k → areas grow by k², volumes by k³.',
+           '<b>Density/rate:</b> mass = density × volume; time = volume ÷ fill-rate. Watch buried unit conversions (cm³ → liters).'],
+    trap:'Doubling a dimension and multiplying volume by 2 instead of 2³=8; or plugging the diameter in as the radius.',
+    example:'<b>Ex.</b> Double a sphere’s radius → volume ×8. Cone with r=3, h=4: V = ⅓π(3²)(4) = 12π. <i>Desmos: type (1/3)*pi*3^2*4.</i>' },
+
+  { key:'l-punct', sec:'rw', title:'Punctuation (the one test that fixes most)', match:/puntuaci|punctuation|coma|comma|punto y coma|semicolon|dos puntos|colon|raya|dash|l[íi]mites|boundar|coordinaci|coordination/i,
+    steps:['<b>The independent-clause test:</b> can each side of the mark stand alone as a full sentence? If BOTH sides are independent → period, semicolon, and comma+FANBOYS are all valid (so if two of those are offered, both are WRONG — the SAT never makes you choose between equals).',
+           '<b>Colon and dash</b> need a COMPLETE sentence before them (a colon then introduces a list/explanation).',
+           '<b>Interrupters take a matched pair</b> (comma…comma or dash…dash, never mixed). Cross out the interrupter — the sentence must still work.',
+           '<b>Comma vs nothing?</b> Usually nothing: never split a subject from its verb, or a verb from its object.'],
+    trap:'The comma splice — a lone comma joining two independent clauses. If both sides are full sentences, a comma alone is wrong.',
+    example:'<b>Ex.</b> “The trial failed, the team tried again” is a splice. Fix with any of: period · semicolon · comma+so. “The trial failed, so the team tried again.”' },
+  { key:'l-structure', sec:'rw', title:'Structure, Purpose & Conclusions', match:/structure|purpose|estructura|prop[óo]sito|conclusion|funci[óo]n/i,
+    steps:['Ask <b>“why did the author write this?”</b> and summarize the job in ~5 words BEFORE reading choices.',
+           '<b>Eliminate by the first VERB:</b> does the text describe, or argue, or critique, or refute? Kill every choice whose verb the text does not actually do — then check the verb’s object.',
+           'For overall STRUCTURE, describe the MOVEMENT (old view → problem → new view), not one sentence.'],
+    trap:'Part-vs-whole: a choice that is true of ONE sentence but not the entire text. The right answer covers everything.',
+    example:'<b>Ex.</b> If a passage only reports two theories neutrally, “critiques” and “argues for one” are out — the answer will say “compares” or “describes.”' },
+  { key:'l-trans', sec:'rw', title:'Transitions', match:/transici|transition/i,
+    steps:['<b>Cover the choices.</b> Read the sentence before and after the blank and NAME the relationship: same-direction (addition, example, result) or opposite (contrast).',
+           'Predict a word, then sort the four choices into those buckets — two die instantly.',
+           'Within same-direction, separate cause/effect (therefore) vs addition (moreover) vs example (for instance) vs restatement (in other words / specifically).'],
+    trap:'Defaulting to “however”; and TWIN choices — if “thus” and “therefore” both appear, both are wrong (they are identical).',
+    example:'<b>Ex.</b> Sentence 2 restates sentence 1 in narrower terms → “specifically.” Distractors “consequently/similarly” signal the wrong relationship.' },
+  { key:'l-mainidea', sec:'rw', title:'Main Idea & Details', match:/main idea|ideas centrales|central ideas|detail|inferenc/i,
+    steps:['<b>Headline the text in your own words</b> before looking at choices.',
+           '<b>Eliminate</b> the too-narrow (one detail), the too-broad (beyond the passage), the opposite, and the extreme (always/never). Correct main-idea answers are general and moderate.',
+           'For inferences, the answer must follow NECESSARILY from the text — no outside knowledge, no maybe.'],
+    trap:'A vivid mid-passage detail dressed up as the “main idea.” Specific ≠ main.',
+    example:'<b>Ex.</b> If a passage argues a method is useful but limited, the main idea is “useful but limited,” not the one striking example it gave.' },
+  { key:'l-evidence', sec:'rw', title:'Command of Evidence & Quotation', match:/command of evidence|quotation|interpreting data|evidence/i,
+    steps:['<b>Read the CLAIM in the question first</b> and underline exactly what it asserts. Predict what proof would look like.',
+           'Test each choice ONLY against that claim: does it directly support / weaken / illustrate it?',
+           'For data/graphs: read the axis and units, then find the specific row/column the claim needs.'],
+    trap:'“True but irrelevant” — a real quote or a correct number that supports a DIFFERENT claim than the one asked.',
+    example:'<b>Ex.</b> Claim: a dye was made for EXPORT. Support = evidence it was shipped far away; a choice about local ceremonial use is true-but-irrelevant.' },
+  { key:'l-synth', sec:'rw', title:'Rhetorical Synthesis (bullet points)', match:/synthesis|s[íi]ntesis|rhetorical/i,
+    steps:['<b>Read the GOAL sentence FIRST</b>, before the bullets. Identify its exact verb (emphasize a contrast / introduce to an unfamiliar audience / present a result).',
+           'Keep only choices that hit that goal, then fact-check the winner: every detail must come from the notes.',
+           'If the goal says “for readers unfamiliar with X,” the answer must DEFINE X inline.'],
+    trap:'A fluent, true sentence that misses the stated goal — or one that adds a fact not in the notes.',
+    example:'<b>Ex.</b> Goal: “emphasize a difference.” A choice that lists two facts without contrasting them fails, even if both facts are from the notes.' },
+  { key:'l-wic', sec:'rw', title:'Words in Context', match:/words in context|word in context/i,
+    steps:['<b>Predict your OWN word</b> for the blank before reading choices, using the context clues (contrast words like “but/although”, cause words like “because”).',
+           'Substitute each choice back and check tone AND precision — the SAT loves the second meaning of a common word (economy = efficiency, wanting = deficient, qualified = limited).',
+           'Watch double-contrast frames: the blank may need to oppose one clause while matching another.'],
+    trap:'Picking a near-synonym that fits the sentence casually but misses the exact register or the second meaning intended.',
+    example:'<b>Ex.</b> “Her prose achieves a rare ______, saying in ten words what others need a paragraph for.” → economy (efficiency), not “brevity” alone.' }
+];
+function lessonPool(key){
+  var L = LESSONS.filter(function(x){ return x.key === key; })[0];
+  if(!L) return [];
+  var a = [];
+  Object.keys(QINDEX).forEach(function(id){
+    var q = QINDEX[id], isM = q._section === 'math';
+    if((L.sec === 'math') !== isM) return;
+    if(L.match.test(q.skill || '')) a.push(q);
+  });
+  return a;
+}
+function startLessonDrill(key){
+  var L = LESSONS.filter(function(x){ return x.key === key; })[0];
+  var pool = lessonPool(key);
+  if(!L || pool.length < 3){ alert('Not enough practice questions for this skill yet.'); return; }
+  var seen = _seenCounts();
+  var order = _shuffle(pool).sort(function(a, b){ return (seen[a.id]||0) - (seen[b.id]||0); });
+  _beginSession({ id:'lesson-' + key, title: L.title + ' — Practice', section: L.sec, minutes: L.sec === 'math' ? 12 : 8, questions: order.slice(0, 6) }, 'drill');
+}
+function lessonCardHTML(L){
+  var steps = '<ol class="lesson-steps">' + L.steps.map(function(s){ return '<li>' + s + '</li>'; }).join('') + '</ol>';
+  var n = lessonPool(L.key).length;
+  return '<details class="lesson"><summary>' + L.title + '</summary><div class="lesson-b">' + steps +
+    '<div class="lesson-trap"><b>⚠ #1 trap:</b> ' + L.trap + '</div>' +
+    '<div class="lesson-ex">' + L.example + '</div>' +
+    (n >= 3 ? '<button class="btn-primary lesson-go" data-lesson="' + L.key + '">Practice this skill · ' + n + ' q</button>' : '') +
+    '</div></details>';
+}
 
 /* ================= STUDY PLAN (mastery path — Tommy's admin account only) ================= */
 var STUDY_TOPICS = [
