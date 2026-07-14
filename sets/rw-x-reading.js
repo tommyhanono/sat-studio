@@ -167,7 +167,7 @@ window.SAT_SETS.push({
         C:'Que a ambos grupos les gustara escribir no separa “contenido positivo” de “acto de escribir”; ambos escribían. No debilita la afirmación específica.',
         D:'Que la mejora fuera mayor en quienes ya dormían bien habla de en QUIÉN funciona más, no de si la causa es el contenido positivo vs. escribir. No toca la claim.'
       },
-      tip:'Para debilitar “el efecto viene del contenido positivo, no del acto de escribir”, busca un grupo que escriba SIN contenido positivo y mejore igual (B). Eso reasigna la causa al acto de escribir.'
+      tip:'Para debilitar “el efecto viene del contenido positivo, no del acto de escribir”, busca un grupo que escriba SIN contenido positivo y mejore igual (A). Eso reasigna la causa al acto de escribir.'
     },
     {
       id:'XR-09', type:'mc', domain:'Information and Ideas', difficulty:'Difícil', extreme:true,
