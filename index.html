@@ -1117,6 +1117,22 @@ function renderHome(){
   }
   sec += homeSection('Math Mocks', mmCards, N_MATH, true);
 
+  // ===== Realistic Hard Mocks (true-to-test difficult form: tough M1, EARNED hard M2 with real composition) =====
+  var N_REAL = 4;
+  var realBest = {};
+  h.forEach(function(e){ if(e.mock && e.mock.kind === 'full' && e.mock.real && typeof e.mock.num === 'number'){ var n = e.mock.num; if(realBest[n] == null || (e.mock.total||0) > realBest[n]) realBest[n] = e.mock.total; } });
+  var realCards = '';
+  for(var ri = 1; ri <= N_REAL; ri++){
+    var rb = realBest[ri];
+    realCards += '<div class="set-card"><div class="set-info"><span class="lvl-badge lvl-hard">Real difficulty</span>' +
+      '<h3>Realistic Hard Mock ' + ri + '</h3>' +
+      '<div class="set-desc">Replicates a difficult real SAT form: a tough easy→hard Module 1, and the adaptive routing is REAL — hit 17/27 (R&W) or 16/22 (Math) and Module 2 matches a true hard module (~half hard, back third brutal). Miss the cut and you get the easier Module 2, just like the real test.</div>' +
+      '<div class="set-meta">~98 questions · ~2h 14m' + (rb != null ? ' · <b>best ' + rb + '/1600</b>' : '') + '</div>' +
+      (rb != null ? '<div class="set-done">✓ completed</div>' : '') +
+      '</div><div class="set-actions"><button class="btn-primary" data-start-realmock="' + ri + '">' + (rb != null ? 'Retake' : 'Start') + '</button></div></div>';
+  }
+  sec += homeSection('Realistic Hard Mocks · true to test', realCards, N_REAL, true);
+
   // ===== Extreme Mocks category (only extreme-flagged questions — real hard-Module-2 level) =====
   var N_EXTREME = 4;
   var exBest = {};
@@ -1152,7 +1168,7 @@ function renderHome(){
   // ===== Full Mocks category (numbered, stable full-length adaptive tests) =====
   var N_MOCKS = 8;
   var mockBest = {};
-  h.forEach(function(e){ if(e.mock && e.mock.kind === 'full' && !e.mock.hard && typeof e.mock.num === 'number'){ var n = e.mock.num; if(mockBest[n] == null || (e.mock.total||0) > mockBest[n]) mockBest[n] = e.mock.total; } });
+  h.forEach(function(e){ if(e.mock && e.mock.kind === 'full' && !e.mock.hard && !e.mock.real && !e.mock.extreme && typeof e.mock.num === 'number'){ var n = e.mock.num; if(mockBest[n] == null || (e.mock.total||0) > mockBest[n]) mockBest[n] = e.mock.total; } });
   var mockCards = '';
   for(var mi = 1; mi <= N_MOCKS; mi++){
     var best = mockBest[mi];
@@ -1190,6 +1206,9 @@ function renderHome(){
   });
   Array.prototype.forEach.call(document.querySelectorAll('#set-sections [data-start-extrememock]'), function(b){
     b.addEventListener('click', function(){ var n = parseInt(b.getAttribute('data-start-extrememock'), 10); startMock('full', n, 400 + n, 'extreme'); });
+  });
+  Array.prototype.forEach.call(document.querySelectorAll('#set-sections [data-start-realmock]'), function(b){
+    b.addEventListener('click', function(){ var n = parseInt(b.getAttribute('data-start-realmock'), 10); startMock('full', n, 500 + n, 'real'); });
   });
   Array.prototype.forEach.call(document.querySelectorAll('#set-sections [data-study-round]'), function(b){
     b.addEventListener('click', function(){ startStudyRound(b.getAttribute('data-study-round')); });
@@ -2513,6 +2532,27 @@ function assembleModule(section, tier, count, used, rnd){
     pickX.forEach(function(q){ used[q.id] = 1; });
     return pickX;
   }
+  if(tier === 'realhard'){
+    // Replicates a REAL hard Module 2 (Bluebook calibration): ~22% medium ramp-in,
+    // ~48% hard, and the back ~30% brutal (extreme) — ordered medium → hard → brutal.
+    var nMed = Math.round(count * 0.22), nXtr = Math.round(count * 0.30);
+    var Mr = _shuffle(pool.filter(function(q){ return q.difficulty === 'Media'; }), rnd).slice(0, nMed);
+    var Xr = _shuffle(pool.filter(function(q){ return q.extreme; }), rnd).slice(0, nXtr);
+    var Dr = _shuffle(pool.filter(function(q){ return !q.extreme && q.difficulty === 'Difícil'; }), rnd).slice(0, count - Mr.length - Xr.length);
+    var pickR = Mr.concat(Dr).concat(Xr).slice(0, count);
+    pickR.forEach(function(q){ used[q.id] = 1; });
+    return pickR;
+  }
+  if(tier === 'tough'){
+    // Module 1 of a tough real form: full easy→hard ramp but weighted harder than average.
+    var nFt = Math.round(count * 0.2), nMt = Math.round(count * 0.4);
+    var Ft = _shuffle(pool.filter(function(q){ return q.difficulty === 'Fácil'; }), rnd).slice(0, nFt);
+    var Mt = _shuffle(pool.filter(function(q){ return q.difficulty === 'Media'; }), rnd).slice(0, nMt);
+    var Dt = _shuffle(pool.filter(function(q){ return q.difficulty === 'Difícil'; }), rnd).slice(0, count - Ft.length - Mt.length);
+    var pickT = Ft.concat(Mt).concat(Dt).slice(0, count);
+    pickT.forEach(function(q){ used[q.id] = 1; });
+    return pickT;
+  }
   var F = _shuffle(pool.filter(function(q){return q.difficulty==='Fácil';}), rnd);
   var M = _shuffle(pool.filter(function(q){return q.difficulty==='Media';}), rnd);
   var D = _shuffle(pool.filter(function(q){return q.difficulty==='Difícil';}), rnd);
@@ -2568,9 +2608,11 @@ function startMock(kind, num, seedArg, hardMode){
   var firstKey = section === 'math' ? 'math1' : 'rw1';
   var rnd = seed != null ? mulberry32(seed * 97 + (section === 'math' ? 3 : 1)) : null;
   var extreme = hardMode === 'extreme';
-  var first = assembleModule(section, extreme ? 'extreme' : (hardMode ? 'hard' : 'mixed'), count, used, rnd);
+  var real = hardMode === 'real';   // realistic hard form: tough M1, EARNED routing into a real-composition hard M2
+  var m1tier = extreme ? 'extreme' : real ? 'tough' : (hardMode ? 'hard' : 'mixed');
+  var first = assembleModule(section, m1tier, count, used, rnd);
   if(first.length < 12){ alert('Not enough questions loaded yet for this test.'); return; }
-  MOCK = { active:true, kind:kind, hard:!!hardMode, extreme:extreme, num:(typeof num === 'number' ? num : null), seed:seed, stage:firstKey, used:used, results:{}, paths:{}, time:0, mods:{} };
+  MOCK = { active:true, kind:kind, hard:hardMode === true, extreme:extreme, real:real, num:(typeof num === 'number' ? num : null), seed:seed, stage:firstKey, used:used, results:{}, paths:{}, time:0, mods:{} };
   MOCK.mods[firstKey] = makeModuleSet(section, first, 'Module 1');
   mockScreen(mockIntroHTML(kind, first.length));
   $('#mock-next').addEventListener('click', function(){ _beginSession(MOCK.mods[firstKey], 'exam'); });
@@ -2627,7 +2669,7 @@ function mockCapture(g){
   if(st === 'rw1'){
     var hard = MOCK.hard || g.results.filter(function(r){ return r.ok; }).length >= RW_HARD_MIN;
     MOCK.paths.rw = hard ? 'hard' : 'easy';
-    var rw2 = assembleModule('rw', MOCK.extreme?'extreme':(hard?'hard':'easy'), MOCK_RW, MOCK.used, mockRnd(2));
+    var rw2 = assembleModule('rw', MOCK.extreme?'extreme':(hard?(MOCK.real?'realhard':'hard'):'easy'), MOCK_RW, MOCK.used, mockRnd(2));
     MOCK.mods.rw2 = makeModuleSet('rw', rw2, 'Module 2');
     MOCK.stage = 'rw2';
     mockTransition('Reading &amp; Writing — Module 2', 'Second and final Reading &amp; Writing module. Keep going.', 32, rw2.length, function(){ _beginSession(MOCK.mods.rw2,'exam'); });
@@ -2635,14 +2677,14 @@ function mockCapture(g){
     if(MOCK.kind === 'rw'){ mockFinish(); return; }
     MOCK.stage = 'math1';
     mockBreak(function(){
-      var m1 = assembleModule('math', MOCK.extreme?'extreme':(MOCK.hard?'hard':'mixed'), MOCK_MATH, MOCK.used, mockRnd(3));
+      var m1 = assembleModule('math', MOCK.extreme?'extreme':MOCK.real?'tough':(MOCK.hard?'hard':'mixed'), MOCK_MATH, MOCK.used, mockRnd(3));
       MOCK.mods.math1 = makeModuleSet('math', m1, 'Module 1');
       mockTransition('Math — Module 1', 'First Math module. The Reference Sheet and Desmos calculator are in the toolbar.', 35, m1.length, function(){ _beginSession(MOCK.mods.math1,'exam'); });
     });
   } else if(st === 'math1'){
     var hardM = MOCK.hard || g.results.filter(function(r){ return r.ok; }).length >= MATH_HARD_MIN;
     MOCK.paths.math = hardM ? 'hard' : 'easy';
-    var m2 = assembleModule('math', MOCK.extreme?'extreme':(hardM?'hard':'easy'), MOCK_MATH, MOCK.used, mockRnd(4));
+    var m2 = assembleModule('math', MOCK.extreme?'extreme':(hardM?(MOCK.real?'realhard':'hard'):'easy'), MOCK_MATH, MOCK.used, mockRnd(4));
     MOCK.mods.math2 = makeModuleSet('math', m2, 'Module 2');
     MOCK.stage = 'math2';
     mockTransition('Math — Module 2', 'Second and final Math module. Last one!', 35, m2.length, function(){ _beginSession(MOCK.mods.math2,'exam'); });
@@ -2659,6 +2701,7 @@ function mockFinish(){
   var max = kind === 'full' ? 1600 : 800;
   var total = kind === 'full' ? (rwScore + mathScore) : (kind === 'rw' ? rwScore : mathScore);
   var title = kind === 'full' ? (MOCK.extreme ? (MOCK.num != null ? 'Extreme Mock ' + MOCK.num : 'Extreme Full Mock')
+              : MOCK.real ? (MOCK.num != null ? 'Realistic Hard Mock ' + MOCK.num : 'Realistic Hard Mock')
               : MOCK.hard ? (MOCK.num != null ? 'Hard Mock ' + MOCK.num : 'Hard Full Mock')
               : (MOCK.num != null ? 'Practice Test ' + MOCK.num : 'Full Practice Test'))
             : kind === 'rw' ? (MOCK.num != null ? 'English Mock ' + MOCK.num : 'Reading & Writing Test')
@@ -2669,7 +2712,7 @@ function mockFinish(){
   saveSession({
     date: todayStr(), setId:'full-mock', setTitle:title, mode:'exam',
     score: correct, total: allR.length, timeUsed: MOCK.time||0, expired:false,
-    mock: { kind:kind, hard:!!MOCK.hard, extreme:!!MOCK.extreme, num:MOCK.num, max:max, total:total, rwScore:rwScore, mathScore:mathScore, rwPath:MOCK.paths.rw||null, mathPath:MOCK.paths.math||null },
+    mock: { kind:kind, hard:!!MOCK.hard, extreme:!!MOCK.extreme, real:!!MOCK.real, num:MOCK.num, max:max, total:total, rwScore:rwScore, mathScore:mathScore, rwPath:MOCK.paths.rw||null, mathPath:MOCK.paths.math||null },
     perQuestion: allR.map(function(r){ return { qid:r.q.id, setId:r.q._setId, domain:r.q.domain, skill:r.q.skill, difficulty:r.q.difficulty, ok:r.ok, user:r.user, correct: r.q.type==='spr'?r.q.answer:r.q.correct }; })
   });
   renderMockResults({ kind:kind, max:max, total:total, rwScore:rwScore, mathScore:mathScore, paths:MOCK.paths, rwAll:rwAll, mathAll:mathAll, meta:{ date:todayStr() } });
