@@ -1238,6 +1238,7 @@ function renderHome(){
   Array.prototype.forEach.call(document.querySelectorAll('#set-sections [data-lesson]'), function(b){
     b.addEventListener('click', function(){ startLessonDrill(b.getAttribute('data-lesson')); });
   });
+  var _wu = document.querySelector('#set-sections [data-warmup]'); if(_wu) _wu.addEventListener('click', startWarmup);
   Array.prototype.forEach.call(document.querySelectorAll('#set-sections [data-study-round]'), function(b){
     b.addEventListener('click', function(){ startStudyRound(b.getAttribute('data-study-round')); });
   });
@@ -1383,6 +1384,7 @@ var PLAYBOOK_HTML =
   '<details><summary>😴 Night before & morning of</summary><div class="pb-b">' +
     '<p>Bluebook installed + exam setup done days before; device charged to 100% with charger packed; ID + admission ticket ready. Stop studying by ~8pm, normal bedtime, <b>8h of sleep two nights in a row</b>.</p>' +
     '<p>Wake 2–2.5h before start; protein+carb breakfast; only your usual caffeine. Do a <b>10–15 min warm-up</b> (3 easy Verbal + 3 easy Math from sets you’ve done) — warmed-up brains test better.</p>' +
+    '<button class="btn-primary" data-warmup="1" style="font-size:.84rem;padding:9px 18px">▶ Start test-day warm-up (6 easy)</button>' +
   '</div></details>' +
   '<details><summary>🧠 Sacrifice strategy (score math)</summary><div class="pb-b">' +
     '<p>In Math, attempting <b>~15–17 of 22 carefully</b> beats rushing all 22: accuracy on attempted questions > coverage. Letter-of-the-day the 5–7 hardest (usually late-module word problems), flag them, return only if time remains.</p>' +
@@ -1532,6 +1534,14 @@ function methodReminderHTML(q){
   return '<details class="method-reminder"><summary>📚 Method reminder — ' + L.title + '</summary><div class="mr-b">' +
     '<ol class="lesson-steps">' + L.steps.map(function(s){ return '<li>' + s + '</li>'; }).join('') + '</ol>' +
     '<div class="lesson-trap"><b>⚠ #1 trap:</b> ' + L.trap + '</div></div></details>';
+}
+function startWarmup(){
+  var all = Object.keys(QINDEX).map(function(id){ return QINDEX[id]; });
+  var rw = _shuffle(all.filter(function(q){ return q._section !== 'math' && q.difficulty === 'Fácil' && !q.extreme; })).slice(0, 3);
+  var m = _shuffle(all.filter(function(q){ return q._section === 'math' && q.difficulty === 'Fácil' && !q.extreme; })).slice(0, 3);
+  var qs = _shuffle(rw.concat(m));
+  if(qs.length < 4){ alert('Not enough easy questions loaded yet.'); return; }
+  _beginSession({ id:'warmup', title:'Test-Day Warm-Up', section:'mixed', minutes: 10, questions: qs }, 'drill');
 }
 function lessonCardHTML(L){
   var steps = '<ol class="lesson-steps">' + L.steps.map(function(s){ return '<li>' + s + '</li>'; }).join('') + '</ol>';
