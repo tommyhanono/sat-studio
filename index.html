@@ -1253,6 +1253,7 @@ function renderHome(){
   });
   var _wu = document.querySelector('#set-sections [data-warmup]'); if(_wu) _wu.addEventListener('click', startWarmup);
   var _sr = document.querySelector('#set-sections [data-spaced]'); if(_sr) _sr.addEventListener('click', startSpacedReview);
+  var _ed = document.querySelector('#set-sections #sr-exam-date'); if(_ed) _ed.addEventListener('change', function(){ store.set('sat_exam_date', this.value || ''); renderHome(); });
   Array.prototype.forEach.call(document.querySelectorAll('#set-sections [data-study-round]'), function(b){
     b.addEventListener('click', function(){ startStudyRound(b.getAttribute('data-study-round')); });
   });
@@ -1369,6 +1370,12 @@ function renderSavedReview(e, results){
 var PLAYBOOK_HTML =
   '<p class="study-hint">Research-backed tactics for the Digital SAT (College Board, Kaplan, PrepScholar, Desmos guides & top-scorer consensus). Open what you need — read the Pacing and Module 1 cards before any mock.</p>' +
   '<div class="pb">' +
+  '<details open><summary>🔬 How to study (what the science says)</summary><div class="pb-b">' +
+    '<p><b>Only two techniques reliably work</b> (Dunlosky et&nbsp;al. 2013 review): <b>testing yourself</b> (retrieval practice) and <b>spacing it out over days</b>. This whole app runs on those. Rereading notes, highlighting, and re-watching feel productive but barely move your score — do not spend your last week on them.</p>' +
+    '<p><b>Hard practice IS the point.</b> If a drill feels easy, you are not learning — just confirming what you already know. Practicing mixed, harder questions lowers your accuracy WHILE you practice but roughly TRIPLES test-day performance (Rohrer &amp; Taylor: 63% vs 20%). The struggle is the mechanism, not failure — that is why topic practice here serves you the hard questions first, and why the Realistic Hard / Extreme Mocks match the real test, not an easy version.</p>' +
+    '<p><b>Space your reviews.</b> A miss you review once and forget is relearned from scratch; reviewed at growing gaps (1 → 2 → 4 days) it sticks — optimal spacing beat cramming by ~64% recall (Cepeda et&nbsp;al. 2008). Clear your Spaced Review “due” list every day.</p>' +
+    '<p><b>Mastery = 3 correct spaced tries</b>, not one lucky hit. And <b>protect a full night of sleep</b> — memory consolidates in sleep; one all-nighter cuts thinking 20–30%, and sleeping beats extra cramming the night before.</p>' +
+  '</div></details>' +
   '<details><summary>⏱️ Pacing & time budgets</summary><div class="pb-b">' +
     '<p><b>R&W (27 q / 32 min ≈ 71s each):</b> ~85–90s for reading questions (first half), ~45s for grammar/transitions. Checkpoints: at <b>Q9</b> you should have ~21 min left; at <b>Q18</b>, ~10 min.</p>' +
     '<p><b>Math (22 q / 35 min ≈ 95s each):</b> the <b>“12 and 24” rule</b> — when you start Q12, the clock should show ~24 min. Questions run easy→hard, so bank time early.</p>' +
@@ -1529,8 +1536,15 @@ function startLessonDrill(key){
   var pool = lessonPool(key);
   if(!L || pool.length < 3){ alert('Not enough practice questions for this skill yet.'); return; }
   var seen = _seenCounts();
-  var order = _shuffle(pool).sort(function(a, b){ return (seen[a.id]||0) - (seen[b.id]||0); });
-  _beginSession({ id:'lesson-' + key, title: L.title + ' — Practice', section: L.sec, minutes: L.sec === 'math' ? 12 : 8, questions: order.slice(0, 6) }, 'drill');
+  // Practice at the REAL test level: hard + extreme items rank together on top (a real hard module is
+  // mostly hard with a brutal tail), then least-seen — challenging but not an all-brutal wall.
+  function hrank(q){ return (q.extreme || q.difficulty === 'Difícil') ? 2 : (q.difficulty === 'Media' ? 1 : 0); }
+  var order = _shuffle(pool).sort(function(a, b){
+    var da = hrank(a), db = hrank(b);
+    if(da !== db) return db - da;
+    return (seen[a.id]||0) - (seen[b.id]||0);
+  });
+  _beginSession({ id:'lesson-' + key, title: L.title + ' — Practice (hard)', section: L.sec, minutes: L.sec === 'math' ? 12 : 8, questions: order.slice(0, 6) }, 'drill');
 }
 // Map a question to its skill lesson (for the "method reminder" on missed questions).
 function lessonForQ(q){
@@ -1594,7 +1608,10 @@ function todaysFocusHTML(){
   return intro + '<div class="tf-grid">' + cards + '</div>';
 }
 /* ===== Spaced Review (evidence-based spaced repetition of missed questions) ===== */
-var SR_INTERVALS = [1, 2, 4, 7, 14];   // days until next review per Leitner box (tuned for a 1-3 week horizon)
+// Days until next review per Leitner box. Base gap ≈1 day per Cepeda et al. (2008) for a ~1-week
+// horizon; expanding modestly; mastery = 3 consecutive spaced hits (Rawson & Dunlosky). Capped at exam date.
+var SR_INTERVALS = [1, 2, 4];
+function examDateStr(){ return store.get('sat_exam_date', ''); }
 function _addDaysStr(dateStr, n){
   var d = new Date((dateStr || todayStr()) + 'T00:00:00');
   if(isNaN(d.getTime())) d = new Date();
@@ -1618,6 +1635,8 @@ function spacedQueue(){
     if(!everWrong) return;
     if(box >= SR_INTERVALS.length){ mastered++; return; }
     var dueDate = _addDaysStr(lastDate, SR_INTERVALS[box]);
+    var ed = examDateStr();
+    if(ed && dueDate > ed) dueDate = ed;   // never schedule a review past the exam
     if(dueDate <= today) due.push(QINDEX[qid]); else scheduled.push(QINDEX[qid]);
   });
   return { due: due, scheduled: scheduled.length, mastered: mastered };
@@ -1636,7 +1655,9 @@ function spacedReviewHTML(){
     (due ? '<button class="btn-primary tf-go" data-spaced="1">Review ' + due + ' now</button>' : '') + '</div>';
   var side = '<div class="tf-card"><div class="tf-top"><span class="tf-pct mid">' + s.scheduled + ' scheduled · ' + s.mastered + ' mastered</span><h4>Your review pipeline</h4></div>' +
     '<div class="tf-trap">Each miss returns at growing gaps (' + SR_INTERVALS.join(' → ') + ' days). Clear it ' + SR_INTERVALS.length + ' times in a row and it is mastered and retires from the queue.</div></div>';
-  return '<p class="study-hint">Spaced repetition — the highest-yield habit for retention. Every question you miss comes back at growing intervals until it sticks. <b>Do your due reviews first, every day.</b></p><div class="tf-grid">' + main + side + '</div>';
+  return '<p class="study-hint">Spaced repetition — the highest-yield habit for retention (Cepeda et&nbsp;al.; Dunlosky et&nbsp;al.). Every question you miss comes back at growing intervals until it sticks. <b>Do your due reviews first, every day.</b></p>' +
+    '<div class="sr-exam">🗓️ <b>Exam date:</b> <input type="date" id="sr-exam-date" value="' + escAttr(examDateStr()) + '"> <span class="cav">set it and reviews get capped so nothing is scheduled after your test.</span></div>' +
+    '<div class="tf-grid">' + main + side + '</div>';
 }
 function startWarmup(){
   var all = Object.keys(QINDEX).map(function(id){ return QINDEX[id]; });
