@@ -2889,9 +2889,59 @@ function assembleModule(section, tier, count, used, rnd){
   pick.forEach(function(q){ used[q.id]=1; });
   return pick;
 }
+// College Board question order. R&W: grouped by domain in this fixed sequence, then easy→hard within
+// each domain (and a skill sub-order). Math: one overall easy→hard difficulty ramp, domains interspersed.
+var CB_RW_DOMAIN_ORDER = { 'Craft and Structure':0, 'Information and Ideas':1, 'Standard English Conventions':2, 'Expression of Ideas':3 };
+var CB_DIFF_RANK = { 'Fácil':0, 'Media':1, 'Difícil':2 };
+function cbDiff(q){ return q.extreme ? 3 : (CB_DIFF_RANK[q.difficulty] != null ? CB_DIFF_RANK[q.difficulty] : 1); }
+// Within-domain skill sub-order (lower = earlier), per College Board. Each skill group then runs
+// easy→hard. Standard English Conventions is the EXCEPTION — intermixed by pure difficulty (handled below).
+var CB_RW_SKILL_ORDER = [
+  /words in context|word in context/i,                                    // Craft & Structure — Words in Context
+  /text structure|structure and purpose|estructura|prop[óo]sito|purpose/i, // Craft & Structure — Text Structure & Purpose
+  /cross-text|cross text/i,                                               // Craft & Structure — Cross-Text Connections
+  /central ideas|ideas centrales|main idea|detail/i,                      // Info & Ideas — Central Ideas & Details
+  /(command of evidence|evidence).*text|quotation/i,                      // Info & Ideas — Command of Evidence (textual)
+  /interpreting data|(command of evidence|evidence).*(quantitat|cuantitat|graph)/i, // Info & Ideas — Command of Evidence (quantitative)
+  /command of evidence|evidence/i,                                        // Info & Ideas — Command of Evidence (generic)
+  /inferenc/i,                                                            // Info & Ideas — Inferences
+  /transici|transition/i,                                                 // Expression of Ideas — Transitions
+  /synthesis|s[íi]ntesis|rhetorical|conclusi/i                            // Expression of Ideas — Rhetorical Synthesis / Conclusions (ALWAYS LAST)
+];
+var CB_SYNTH_RANK = CB_RW_SKILL_ORDER.length - 1; // index of the synthesis bucket (last EoI skill)
+function cbSkillRank(q){
+  // SEC skills (Boundaries + Form/Structure/Sense) are intermixed and ordered by difficulty only.
+  if(q.domain === 'Standard English Conventions') return 0;
+  var s = q.skill || '';
+  for(var i = 0; i < CB_RW_SKILL_ORDER.length; i++){ if(CB_RW_SKILL_ORDER[i].test(s)) return i; }
+  // Domain-aware fallback so an unrecognized label never sorts out of place:
+  // any unknown Expression-of-Ideas skill is a synthesis-family task → last of that block, never after it.
+  if(q.domain === 'Expression of Ideas') return CB_SYNTH_RANK;
+  return 99; // unknown skill in another domain → end of its own domain block (domain sort keeps it contained)
+}
+function sortModuleCB(qs, section){
+  var arr = qs.slice();
+  arr.forEach(function(q, i){ q._ord0 = i; });   // stable tiebreak
+  if(section === 'math'){
+    arr.sort(function(a, b){ return (cbDiff(a) - cbDiff(b)) || (a._ord0 - b._ord0); });
+  } else {
+    arr.sort(function(a, b){
+      var da = CB_RW_DOMAIN_ORDER[a.domain]; if(da == null) da = 9;
+      var db = CB_RW_DOMAIN_ORDER[b.domain]; if(db == null) db = 9;
+      if(da !== db) return da - db;                 // 1) domain block (fixed CB sequence)
+      var sa = cbSkillRank(a), sb = cbSkillRank(b);
+      if(sa !== sb) return sa - sb;                 // 2) skill group within domain (SEC exempt → constant)
+      var dd = cbDiff(a) - cbDiff(b);
+      if(dd !== 0) return dd;                        // 3) easy → hard within the skill group
+      return a._ord0 - b._ord0;                     // 4) stable
+    });
+  }
+  arr.forEach(function(q){ delete q._ord0; });
+  return arr;
+}
 function makeModuleSet(section, questions, label){
   return { id:'mock-'+section+'-'+label.replace(/\s/g,''), title:(section==='math'?'Math':'Reading & Writing')+' — '+label,
-    section: section, minutes: section==='math'?35:32, questions: questions };
+    section: section, minutes: section==='math'?35:32, questions: sortModuleCB(questions, section) };
 }
 function weightedRatio(results){
   if(!results || !results.length) return 0;
