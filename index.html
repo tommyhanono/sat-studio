@@ -726,7 +726,7 @@
 <!-- SETS: add one line here for each new question set -->
 <script src="sets/rw-set1.js"></script>
 <script src="sets/rw-set2.js"></script>
-<script src="sets/rw-set3.js"></script>
+<!-- <script src="sets/rw-set3.js"></script> retired 2026-07-14: "Words in Context — Easy" too simple for 700-target practice (its harder sibling rw-set4 stays) -->
 <script src="sets/rw-set4.js"></script>
 <script src="sets/rw-set5.js"></script>
 <script src="sets/rw-set6.js"></script>
@@ -734,7 +734,7 @@
 <script src="sets/rw-mock1.js"></script>
 <script src="sets/rw-set8.js"></script>
 <script src="sets/rw-set9.js"></script>
-<script src="sets/rw-set10.js"></script>
+<!-- <script src="sets/rw-set10.js"></script> retired 2026-07-14: "Rhetorical Synthesis — Easy" too simple (harder siblings rw-set11/rw-set12 stay) -->
 <script src="sets/rw-set11.js"></script>
 <script src="sets/rw-set12.js"></script>
 <script src="sets/math-set1.js"></script>
@@ -2877,7 +2877,10 @@ function assembleModule(section, tier, count, used, rnd){
   if(tier==='easy') order = F.concat(M).concat(D);
   else if(tier==='hard') order = D.concat(M).concat(F);
   else {
-    var nF=Math.round(count*0.33), nM=Math.round(count*0.45);
+    // 'mixed' = standard Module 1. Hardened 2026-07-14 (raise overall difficulty): was 33%F/45%M/22%D,
+    // now ~20%F / 40%M / 40%D — a short easy on-ramp, then medium/hard-dominant. Keeps it distinguishable
+    // from the dedicated 'tough'/'hard' tiers while feeling much less soft early.
+    var nF=Math.round(count*0.20), nM=Math.round(count*0.40);
     order = F.slice(0,nF).concat(M.slice(0,nM)).concat(D.slice(0,count))
               .concat(F.slice(nF)).concat(M.slice(nM)).concat(D);
   }
