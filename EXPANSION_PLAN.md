@@ -7,7 +7,7 @@ de git.
 > **El plan anterior no fue ignorado: se ejecutó completo.** Sus cinco
 > prioridades —mashups de Algebra+Functions, paired passages, drill de SPR,
 > tono y actitud, y el puente de vocabulario— están todas en `sets/`. El banco
-> pasó de ~34 sets a 61. Y precisamente por eso sus conclusiones hoy están
+> pasó de ~34 sets a 62. Y precisamente por eso sus conclusiones hoy están
 > **invertidas**: pedía más dificultad alta y más SPR, y ahora sobra dificultad
 > alta y el SPR está en su punto. Seguir aquel documento llevaría a expandir en
 > la dirección opuesta a la que hace falta.
@@ -24,8 +24,8 @@ cada pregunta. La distinción importa:
 | Archivos en `sets/` | 69 |
 | − diccionarios de pistas `desmos-*.js` (no son sets) | −6 |
 | − sets retirados (`rw-set3`, `rw-set10`: `<script>` comentado el 14-jul-2026) | −2 |
-| **Sets que la app carga** | **61** |
-| **Preguntas jugables** | **725** (307 math · 418 R&W) |
+| **Sets que la app carga** | **62** |
+| **Preguntas jugables** | **737** (319 math · 418 R&W) |
 
 Contar la carpeta en vez de lo que se carga infla el número en dos sets. Un set
 retirado no es práctica.
@@ -41,20 +41,22 @@ La columna que aplica es la del **SAT**.
 
 ## Estado real del banco
 
-### Matemática — 307 preguntas
+### Matemática — 319 preguntas
 
 Las preguntas cruzadas (*Algebra + Functions*) cuentan en cada dominio que
 tocan, así que los porcentajes suman más de 100.
 
 | Dominio | Preguntas | Banco | Oficial | Relación |
 |---|---:|---:|---:|:--|
-| **Algebra** | 82 | 26,7 % | **35 %** | **0,76×** ← el hueco |
-| Advanced Math | 94 | 30,6 % | 35 % | 0,87× |
-| Problem-Solving and Data Analysis | 70 | 22,8 % | 15 % | **1,52×** |
-| Geometry and Trigonometry | 79 | 25,7 % | 15 % | **1,72×** |
+| Algebra | 94 | 29,5 % | 35 % | 0,84× |
+| Advanced Math | 94 | 29,5 % | 35 % | 0,84× |
+| Problem-Solving and Data Analysis | 70 | 21,9 % | 15 % | **1,46×** |
+| Geometry and Trigonometry | 79 | 24,8 % | 15 % | **1,65×** |
 
-**Algebra y Advanced Math son el 70 % del examen** y el 57 % del banco. Los dos
-dominios chicos son el 30 % del examen y casi la mitad de la práctica.
+**Algebra y Advanced Math son el 70 % del examen** y el 59 % del banco. Los dos
+dominios chicos son el 30 % del examen y el 47 % de la práctica. El desbalance
+que queda ya no se arregla escribiendo Algebra: se arregla **no** escribiendo más
+geometría ni más análisis de datos.
 
 ### Reading and Writing — 418 preguntas
 
@@ -73,9 +75,9 @@ matemática.
 
 | Nivel | Math | R&W | Total |
 |---|---:|---:|---:|
-| Fácil | 13,0 % | 9,8 % | **11,2 %** |
-| Media | 27,7 % | 31,1 % | 29,7 % |
-| **Difícil** | **59,3 %** | **59,1 %** | **59,2 %** |
+| Fácil | 12,5 % | 9,8 % | **11,0 %** |
+| Media | 29,2 % | 31,1 % | 30,3 % |
+| **Difícil** | **58,3 %** | **59,1 %** | **58,8 %** |
 
 **Por qué esto es un problema y no un logro.** El SAT digital es adaptativo por
 módulo: el **primer** módulo trae una mezcla amplia y es el que fija el techo de
@@ -91,22 +93,22 @@ el efecto lateral fue quedarse sin material que se parezca al primero.
 
 | | Banco | Oficial |
 |---|---:|---:|
-| Opción múltiple | 77,9 % | ≈75 % |
-| SPR (grid-in) | 22,1 % | ≈25 % |
+| Opción múltiple | 78,4 % | ≈75 % |
+| SPR (grid-in) | 21,6 % | ≈25 % |
 
 El hueco de SPR que denunciaba el plan viejo (**«solo 3 preguntas»**) está
 cerrado: hay **68**.
 
 ### Pistas de Desmos — 85 %
 
-260 de 307 preguntas de matemática traen pista. Se guardan de **dos formas** y
+272 de 319 preguntas de matemática traen pista. Se guardan de **dos formas** y
 hay que mirar las dos al contar: el diccionario `SAT_DESMOS` de los archivos
 `desmos-*.js`, y la propiedad `desmos` **inline** en la pregunta. Mirar solo una
 da 55 % y hace parecer un hueco grande donde hay un pendiente menor.
 
 ### Integridad — impecable
 
-Verificadas las 725: **cero** sin explicación de la correcta, cero MC sin
+Verificadas las 737: **cero** sin explicación de la correcta, cero MC sin
 explicar los tres distractores, cero sin `tip`, cero con la clave fuera de las
 opciones, cero IDs duplicados.
 
@@ -124,23 +126,21 @@ inversión de signo, producto de binomios, traducción de enunciados e
 interpretación del intercepto. Nivel Media, una SPR, pista de Desmos en las
 doce. Cada respuesta y cada distractor verificados con álgebra simbólica.
 
-Efecto medido: **Algebra 0,68× → 0,76×**.
+**`math-alg4` — «Algebra 4 (sistemas y rectas)»**, 12 preguntas.
+Sistemas por sustitución y por eliminación con multiplicación, infinitas
+soluciones, desigualdades en dos variables, paralelas y perpendiculares,
+modelos con dos condiciones, valor absoluto y fracciones. Mezcla 8 Media /
+4 Difícil para no empujar el sesgo de dificultad.
+
+Efecto medido: **Algebra 0,68× → 0,76× → 0,84×**, ya empatada con Advanced Math.
+Las 24 preguntas nuevas se verificaron una por una con álgebra simbólica, tanto
+la respuesta correcta como el error concreto que representa cada distractor.
 
 ---
 
 ## Qué falta, en orden de impacto
 
-### 1. Segundo set de Algebra — llegar a ~1,0×
-
-Faltan unas **25 preguntas** del dominio. Dos sets de 12 lo dejan parejo. Uno
-Media y uno Difícil, para no empeorar el sesgo de dificultad.
-
-Habilidades a cubrir, priorizando las que siguen finas: sistemas por sustitución
-· sistemas sin solución e infinitas soluciones · desigualdades en dos variables
-· rectas paralelas y perpendiculares · modelos lineales con dos condiciones ·
-valor absoluto lineal.
-
-### 2. Set Fácil/Media mixto que simule el primer módulo
+### 1. Set Fácil/Media mixto que simule el primer módulo
 
 **Hoy no existe nada parecido.** El banco entero está calibrado para el segundo
 módulo difícil. Hacen falta 20–22 preguntas con la mezcla real del primer módulo
@@ -150,17 +150,17 @@ del examen que decide el techo.
 Es también el mejor destino para `rw-set3` y `rw-set10`: en vez de dejarlos
 retirados, sus preguntas fáciles pueden alimentar este set.
 
-### 3. Dejar de agregar a Geometry and Trigonometry
+### 2. Dejar de agregar a Geometry and Trigonometry
 
-Está en 1,72×, y Problem-Solving en 1,52×. No hay que sacar nada —el material es
+Está en 1,65×, y Problem-Solving en 1,46×. No hay que sacar nada —el material es
 bueno— pero cada set nuevo de esos dominios empeora el balance. **La forma más
 barata de corregir una proporción es no seguir empujándola.**
 
-### 4. Pistas de Desmos para las 47 que faltan
+### 3. Pistas de Desmos para las 47 que faltan
 
 Mecánico, por tandas. Impacto bajo, costo bajo.
 
-### 5. Cruzar el banco con el desempeño real
+### 4. Cruzar el banco con el desempeño real
 
 Esta medición dice **qué practicás**, no **qué fallás**. Los aciertos por dominio
 están en la tabla `sat_sessions` de Supabase. Un dominio sobrerrepresentado puede
