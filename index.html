@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='13' fill='%230b1f3a'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='34' font-weight='bold' text-anchor='middle' fill='%23ffc861'%3ES%3C/text%3E%3C/svg%3E">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SAT Studio — Bluebook-style Practice</title>
 <style>
@@ -2247,7 +2248,14 @@ function _beginSession(set, mode){
 /* ================= TIMER ================= */
 function startTimer(){
   updateTimer();
+  // Si ya había un timer corriendo, se limpia ANTES de crear el nuevo. Sin
+  // esto, cualquier camino que arranque una sesión sin pasar por goHome deja
+  // el intervalo anterior huérfano: sigue disparando cada segundo y, cuando S
+  // pasa a null, revienta con "Cannot read properties of null".
+  if(S.timerId){ clearInterval(S.timerId); S.timerId = null; }
   S.timerId = setInterval(function(){
+    // Cinturón y tirantes: si el estado desapareció, el intervalo se apaga solo.
+    if(!S){ clearInterval(_tid); return; }
     if(S.mode === 'exam'){
       S.secondsLeft--;
       if(S.secondsLeft <= 0){ S.secondsLeft = 0; updateTimer(); finishSession(true); return; }
@@ -2256,6 +2264,7 @@ function startTimer(){
     }
     updateTimer();
   }, 1000);
+  var _tid = S.timerId;
 }
 function updateTimer(){
   var t = $('#timer');
