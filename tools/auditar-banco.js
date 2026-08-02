@@ -148,6 +148,36 @@ for (const [nombre, arr] of checks) {
   console.log(`  ${n ? '❌' : '✅'} ${nombre.padEnd(38)} ${n}${muestra}`);
 }
 
+// ---- duplicados ----
+// OJO con como se comparan. En Reading and Writing el ENUNCIADO es estandar por
+// diseno ("Which choice completes the text so that it conforms to the
+// conventions of Standard English?"): decenas de preguntas legitimas comparten
+// stem y lo que las distingue es el PASAJE. Comparar solo el stem daba 16
+// "duplicados" y 13 "contradicciones" que eran todas falsas. Hay que comparar
+// enunciado + pasaje.
+const norm = t => String(t || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+const porClave = {};
+for (const q of qs) {
+  const k = norm(q.stem) + '||' + norm(q.passage);
+  if (k.length < 25) continue;
+  (porClave[k] = porClave[k] || []).push(q);
+}
+const dups = Object.values(porClave).filter(a => a.length > 1);
+const contradictorios = dups.filter(a =>
+  new Set(a.map(q => q.type === 'spr' ? String(q.answer) : (q.choices || {})[q.correct])).size > 1);
+
+console.log('\nDUPLICADOS  (mismo enunciado Y mismo pasaje)');
+if (!dups.length) console.log('  ✅ ninguno');
+for (const a of dups) {
+  const resp = [...new Set(a.map(q => q.type === 'spr' ? String(q.answer) : (q.choices || {})[q.correct]))];
+  console.log(`  ${resp.length > 1 ? '❌' : 'ℹ️ '} ${a.map(q => q.set + '/' + q.id).join(' == ')}`
+    + (resp.length > 1 ? '  ← RESPUESTAS DISTINTAS: ' + resp.join(' | ') : '  (misma respuesta)'));
+}
+// Repetir una pregunta en otro set no es un error —sirve para repaso espaciado—
+// pero que la MISMA pregunta tenga DISTINTA respuesta si lo es, y de los graves:
+// una de las dos esta ensenando algo falso.
+if (contradictorios.length) fallos += contradictorios.length;
+
 console.log('\n' + '='.repeat(72));
-if (fallos || rotos.length) { console.log(`FALLA: ${fallos} problemas de integridad, ${rotos.length} archivos rotos`); process.exit(1); }
+if (fallos || rotos.length) { console.log(`FALLA: ${fallos} problemas, ${rotos.length} archivos rotos`); process.exit(1); }
 console.log('Banco íntegro.');
