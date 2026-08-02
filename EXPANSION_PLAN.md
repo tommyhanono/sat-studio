@@ -171,18 +171,21 @@ lo de arriba es una hipótesis basada en el examen, no en el estudiante.
 
 ## Cómo reproducir la medición
 
-No hace falta ninguna herramienta especial: los sets son JavaScript ejecutable.
+```
+node tools/auditar-banco.js
+```
 
-1. Sacar de `index.html` los `<script src="sets/...">` que **no** estén dentro de
-   un comentario HTML.
-2. Ejecutar cada archivo en un contexto con `window.SAT_SETS = []` y
-   `window.SAT_DESMOS = {}`.
-3. Contar sobre `window.SAT_SETS`, agrupando por `section`, `domain`,
-   `difficulty` y `type`.
-4. Para Desmos, contar `SAT_DESMOS[q.id] || q.desmos`.
+Eso es todo. Imprime el estado completo —sets cargados, dominios contra los
+pesos oficiales, dificultad, formato, cobertura de Desmos e integridad— y
+**sale con código 1 si algo está roto**, así que sirve igual como chequeo antes
+de publicar.
 
-Rehacerla después de cada set nuevo cuesta segundos, y es lo único que evita que
-este documento vuelva a quedar equivocado.
+La primera versión de este documento explicaba el procedimiento a mano, en
+cuatro pasos. Nadie repite una medición que cuesta trabajo: por eso el plan
+anterior terminó describiendo un banco que ya no existía. Ahora es un comando.
+
+**Corré la auditoría después de cada set nuevo.** Es lo único que evita que este
+documento vuelva a quedar equivocado.
 
 ## Qué sigue valiendo del plan viejo
 
