@@ -22,18 +22,34 @@ const RAIZ = path.resolve(__dirname, '..');
 const PUERTO = 8873;
 const CHROME = ['/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
                 '/Applications/Chromium.app/Contents/MacOS/Chromium'].find(p => fs.existsSync(p));
-// puppeteer-core vive en el proyecto de JARVIS; se resuelve desde ahí para no
-// duplicar node_modules en este repo, que es HTML estático a propósito.
-const PUP = '/Users/tommyhanono/jarvis/app/node_modules/puppeteer-core';
+// Este repo es HTML estático a propósito: no tiene node_modules ni package.json.
+// puppeteer-core se busca donde pueda estar y, si no aparece, el test se SALTA
+// con código 0 en vez de fallar — así el repo sigue siendo clonable y usable
+// por cualquiera sin instalar nada.
+const CANDIDATOS_PUP = [
+  path.join(RAIZ, 'node_modules', 'puppeteer-core'),
+  path.join(process.env.HOME || '', 'jarvis/app/node_modules/puppeteer-core'),
+  'puppeteer-core',
+];
+function resolverPuppeteer() {
+  for (const c of CANDIDATOS_PUP) {
+    try { return require(c); } catch (e) { /* siguiente */ }
+  }
+  return null;
+}
 
 const res = [];
 const check = (n, c, extra) => { res.push([n, !!c, c ? '' : (extra === undefined ? '' : ' → ' + JSON.stringify(extra))]); };
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
 (async () => {
-  if (!CHROME) { console.error('No se encontró Chrome. Se salta el test de humo.'); process.exit(0); }
-  if (!fs.existsSync(PUP)) { console.error('No se encontró puppeteer-core en ' + PUP + '. Se salta.'); process.exit(0); }
-  const puppeteer = require(PUP);
+  if (!CHROME) { console.error('No se encontró Chrome ni Chromium. Se salta el test de humo.'); process.exit(0); }
+  const puppeteer = resolverPuppeteer();
+  if (!puppeteer) {
+    console.error('No se encontró puppeteer-core. Se salta el test de humo.');
+    console.error('Para correrlo:  npm i puppeteer-core   (o tenerlo en ~/jarvis/app)');
+    process.exit(0);
+  }
 
   const srv = spawn('python3', ['-m', 'http.server', String(PUERTO)], { cwd: RAIZ, stdio: 'ignore' });
   await sleep(1200);
