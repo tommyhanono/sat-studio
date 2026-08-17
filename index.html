@@ -518,6 +518,27 @@
   .pt-next{margin-top:16px;display:flex;gap:10px;flex-wrap:wrap}
   .pt-summary{text-align:center;padding:30px 12px}
   .pt-home-btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:4px}
+  /* Final Week Countdown */
+  .fw-head{background:var(--ink);color:#fff;border-radius:12px;padding:13px 16px;margin-bottom:12px;line-height:1.6;font-size:.92rem}
+  .fw-head b{color:#ffd479}
+  .fw-goal{background:#fff8e6;border-left:4px solid var(--amber);border-radius:8px;padding:9px 13px;margin:0 0 12px;font-size:.9rem;line-height:1.55}
+  .fw-day{border:1px solid var(--gray-line);border-radius:12px;margin-bottom:10px;padding:13px 15px;background:#fff}
+  .fw-day.today{border:2px solid var(--blue);background:var(--blue-soft)}
+  .fw-day.past{opacity:.6}
+  .fw-day.exam{border:2px solid var(--ink)}
+  .fw-dt{display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap}
+  .fw-dt h4{font-size:1.01rem;margin:0}
+  .fw-when{color:var(--gray-mid);font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em}
+  .fw-day.today .fw-when{color:var(--blue)}
+  .fw-focus{color:var(--gray-mid);font-size:.86rem;margin:3px 0 8px;line-height:1.5}
+  .fw-task{display:flex;gap:10px;align-items:flex-start;padding:7px 0;border-top:1px dashed #e3e6ef}
+  .fw-chk{flex:none;width:25px;height:25px;border-radius:50%;border:2px solid var(--gray-line);background:#fff;font-size:.8rem;line-height:1;color:transparent;padding:0}
+  .fw-task.done .fw-chk{background:var(--green);border-color:var(--green);color:#fff}
+  .fw-task.done .fw-tx{color:var(--gray-mid);text-decoration:line-through}
+  .fw-tx{font-size:.92rem;line-height:1.55;flex:1;padding-top:2px}
+  .fw-tx .btn-outline,.fw-tx .btn-primary{padding:4px 13px;font-size:.79rem;margin:2px 0 0 6px;text-decoration:none}
+  .fw-daycount{font-size:.75rem;font-weight:800;color:var(--gray-mid);background:#eef0f5;border-radius:999px;padding:2px 9px}
+  .fw-day.today .fw-daycount{background:#dbe2fb;color:var(--blue-dark)}
   @media(max-width:560px){ .cc-title{font-size:1.42rem} #view-class{padding:16px 12px 96px} .cc-sec{padding:15px 15px} }
 </style>
 </head>
@@ -1145,6 +1166,9 @@ function renderHome(){
 
   var sec = '';
   if(currentUser && currentUser.app_metadata && currentUser.app_metadata.role === 'admin'){
+    if(!store.get('sat_exam_date')) store.set('sat_exam_date', FW_EXAM_DATE); // cap spaced review to test day
+    var fw = fwPlanHTML();
+    sec += homeSection('🚨 SAT Countdown — Final Week Plan', fw.html, fw.badge, true);
     var stp = studyState();
     var mT = STUDY_TOPICS.filter(function(t){ return t.sec === 'math'; });
     var vT = STUDY_TOPICS.filter(function(t){ return t.sec === 'rw'; });
@@ -1320,12 +1344,17 @@ function renderHome(){
   Array.prototype.forEach.call(document.querySelectorAll('#set-sections [data-lesson]'), function(b){
     b.addEventListener('click', function(){ startLessonDrill(b.getAttribute('data-lesson')); });
   });
-  var _ccOpen = document.querySelector('#set-sections [data-open-class="circles"]'); if(_ccOpen) _ccOpen.addEventListener('click', openCircleClass);
+  Array.prototype.forEach.call(document.querySelectorAll('#set-sections [data-open-class="circles"]'), function(b){
+    b.addEventListener('click', openCircleClass);
+  });
   Array.prototype.forEach.call(document.querySelectorAll('#set-sections [data-pt]'), function(b){
     b.addEventListener('click', function(){ var m = b.getAttribute('data-pt'); if(m === 'read') openPunctRules(); else startPunctTrainer(m); });
   });
-  var _wu = document.querySelector('#set-sections [data-warmup]'); if(_wu) _wu.addEventListener('click', startWarmup);
-  var _sr = document.querySelector('#set-sections [data-spaced]'); if(_sr) _sr.addEventListener('click', startSpacedReview);
+  Array.prototype.forEach.call(document.querySelectorAll('#set-sections [data-warmup]'), function(b){ b.addEventListener('click', startWarmup); });
+  Array.prototype.forEach.call(document.querySelectorAll('#set-sections [data-spaced]'), function(b){ b.addEventListener('click', startSpacedReview); });
+  Array.prototype.forEach.call(document.querySelectorAll('#set-sections [data-fw-check]'), function(b){
+    b.addEventListener('click', function(){ fwToggle(b.getAttribute('data-fw-check'), b); });
+  });
   var _ed = document.querySelector('#set-sections #sr-exam-date'); if(_ed) _ed.addEventListener('change', function(){ store.set('sat_exam_date', this.value || ''); renderHome(); });
   Array.prototype.forEach.call(document.querySelectorAll('#set-sections [data-study-round]'), function(b){
     b.addEventListener('click', function(){ startStudyRound(b.getAttribute('data-study-round')); });
@@ -1842,6 +1871,98 @@ function ptSummary(){
       '<button class="btn-outline" data-go-home>Home</button>' +
     '</div></div>';
   var v = showClass(html); ptWire(v);
+}
+
+/* ================= FINAL WEEK COUNTDOWN (Tommy's account, exam Sat Aug 22 2026) ================= */
+var FW_EXAM_DATE = '2026-08-22';
+var FW_PLAN = [
+  { d:'2026-08-16', when:'Sun Aug 16', title:'Baseline under real conditions', focus:'One real-condition mock tells us exactly what to fix this week. Phone in another room, timed, no music.',
+    tasks:[
+      { tx:'<b>Realistic Hard Mock 1</b> — full length, timed, real conditions <button class="btn-primary" data-start-realmock="1">Start</button>' },
+      { tx:'Review <b>EVERY miss</b> in Session History — the review IS the studying. For each miss, name the trap that got you.' },
+      { tx:'Punctuation trainer until at least <b>6 dots green</b> <button class="btn-outline" data-pt="drill">Drill</button>' },
+      { tx:'Daily Minis if you have gas left <button class="btn-outline" data-start-daily="math">Math</button> <button class="btn-outline" data-start-daily="rw">Verbal</button>' }
+    ]},
+  { d:'2026-08-17', when:'Mon Aug 17', title:'Math I — Geometry (your biggest leak)', focus:'Circles, triangles/trig, solids. August hard-M2 reports mention circle+line systems — the Circles class covers exactly that.',
+    tasks:[
+      { tx:'Read the full <b>Circles class</b> (~15 min), redo each example on paper <button class="btn-primary" data-open-class="circles">Open</button>' },
+      { tx:'Hard circles drill until <b>4 in a row</b> <button class="btn-outline" data-lesson="l-circles">Practice</button>' },
+      { tx:'Triangles &amp; Trig <button class="btn-outline" data-lesson="l-trig">Practice</button>' },
+      { tx:'Solids &amp; Volume <button class="btn-outline" data-lesson="l-solids">Practice</button>' },
+      { tx:'Both Daily Minis <button class="btn-outline" data-start-daily="math">Math</button> <button class="btn-outline" data-start-daily="rw">Verbal</button>' }
+    ]},
+  { d:'2026-08-18', when:'Tue Aug 18', title:'Math II — Algebra &amp; Data', focus:'Exponents, polynomials, probability, percents — your four repeat offenders. Hard M2 loves applied exponential word problems.',
+    tasks:[
+      { tx:'Exponents &amp; Exponentials <button class="btn-outline" data-lesson="l-expo">Practice</button>' },
+      { tx:'Polynomials &amp; Rational <button class="btn-outline" data-lesson="l-poly">Practice</button>' },
+      { tx:'Probability &amp; Two-Way Tables <button class="btn-outline" data-lesson="l-prob">Practice</button>' },
+      { tx:'Percents <button class="btn-outline" data-lesson="l-percent">Practice</button>' },
+      { tx:'Punctuation trainer: get <b>all 12 dots green</b> <button class="btn-outline" data-pt="drill">Drill</button>' },
+      { tx:'Both Daily Minis <button class="btn-outline" data-start-daily="math">Math</button> <button class="btn-outline" data-start-daily="rw">Verbal</button>' }
+    ]},
+  { d:'2026-08-19', when:'Wed Aug 19', title:'LAST full test', focus:'No full-length test after today (48-hour rule). Morning if possible, exact real conditions.',
+    tasks:[
+      { tx:'<b>Realistic Hard Mock 2</b> — your dress rehearsal <button class="btn-primary" data-start-realmock="2">Start</button>' },
+      { tx:'Same-day review of every miss — write the trap next to each one' },
+      { tx:'Nothing else tonight. Sleep 8h — memory consolidates while you sleep.' }
+    ]},
+  { d:'2026-08-20', when:'Thu Aug 20', title:'Fix ONLY what failed yesterday', focus:'Twice-missed topics are system problems: reread that lesson’s method first, then drill it.',
+    tasks:[
+      { tx:'Drill the exact skills you missed Wednesday (🎯 Today’s Focus below picks them for you)' },
+      { tx:'Punctuation <b>💯 Perfect Run</b> — all 42, zero misses <button class="btn-primary" data-pt="perfect">Run</button>' },
+      { tx:'Command of Evidence &amp; Quotation <button class="btn-outline" data-lesson="l-evidence">Practice</button>' },
+      { tx:'Structure &amp; Purpose <button class="btn-outline" data-lesson="l-structure">Practice</button>' },
+      { tx:'Both Daily Minis <button class="btn-outline" data-start-daily="math">Math</button> <button class="btn-outline" data-start-daily="rw">Verbal</button>' }
+    ]},
+  { d:'2026-08-21', when:'Fri Aug 21', title:'Light day — 30 minutes MAX', focus:'Cramming today LOWERS tomorrow’s score. Trust the week.',
+    tasks:[
+      { tx:'Reread the 📋 Playbook (below): pacing checkpoints + Desmos plays + sacrifice strategy' },
+      { tx:'Skim the Grammar cheat sheet (the “Rules” button inside any drill)' },
+      { tx:'Prep: laptop charged + Bluebook installed &amp; logged in + ID + snacks + water' },
+      { tx:'No new topics. In bed by ~10pm. (Two nights of 8h beat one.)' }
+    ]},
+  { d:'2026-08-22', when:'Sat Aug 22 · 7:45 AM', title:'TEST DAY 🎯', focus:'You did the work. Execute the plan, nothing new.',
+    tasks:[
+      { tx:'Wake 2–2.5h before · protein+carb breakfast · only your usual caffeine' },
+      { tx:'Warm-up: 6 easy questions ~1h before leaving <button class="btn-primary" data-warmup>Warm up</button>' },
+      { tx:'R&amp;W checkpoints: Q9 ≈ 21 min left · Q18 ≈ 10 · Math: at Q12 ≈ 24 min left' },
+      { tx:'30s with no path → letter-of-the-day, flag it, move on. NEVER leave a blank.' },
+      { tx:'Module 2 feels brutal? You EARNED the hard module — that’s the 700 door. Walk through it. 🔥' }
+    ]}
+];
+function fwKey(){ return 'satapp_fw_v1__' + (window.currentUser && currentUser.id ? currentUser.id : 'guest'); }
+function fwLoad(){ try{ var d = JSON.parse(localStorage.getItem(fwKey()) || '{}'); d.done = d.done || {}; return d; }catch(e){ return { done:{} }; } }
+function fwSave(d){ try{ localStorage.setItem(fwKey(), JSON.stringify(d)); }catch(e){} }
+function fwDateStr(dt){ dt = dt || new Date(); return dt.getFullYear() + '-' + ('0' + (dt.getMonth() + 1)).slice(-2) + '-' + ('0' + dt.getDate()).slice(-2); }
+function fwDaysLeft(){ var t = new Date(); var a = new Date(t.getFullYear(), t.getMonth(), t.getDate()); var p = FW_EXAM_DATE.split('-'); var b = new Date(+p[0], +p[1] - 1, +p[2]); return Math.round((b - a) / 86400000); }
+function fwPlanHTML(){
+  var st = fwLoad(), today = fwDateStr(), dl = fwDaysLeft();
+  var html = '<div class="fw-head">📅 <b>Saturday, August 22 · 7:45 AM</b> — ' + (dl > 0 ? '<b>' + dl + ' day' + (dl === 1 ? '' : 's') + ' left</b>' : dl === 0 ? '<b>TODAY. Go get it.</b>' : 'done — scores out Sept 4') + '.<br>' +
+    'Targets: <b>Math 700</b> · <b>Verbal 600+</b>. To unlock the hard Module 2 (the 700 door): <b>17/27</b> R&amp;W · <b>16/22</b> Math in Module 1.</div>' +
+    '<div class="fw-goal"><b>What August takers report:</b> hard Math M2 = circle+line systems, function transformations, applied exponential problems; hard Verbal M2 = abstract vocab + tricky transitions. Every one of those is drilled in this plan.</div>';
+  FW_PLAN.forEach(function(day, i){
+    var cls = 'fw-day' + (day.d === today ? ' today' : (day.d < today ? ' past' : '')) + (i === FW_PLAN.length - 1 ? ' exam' : '');
+    var doneN = 0;
+    var rows = day.tasks.map(function(t, j){
+      var k = 'd' + i + 't' + j, on = !!st.done[k];
+      if(on) doneN++;
+      return '<div class="fw-task' + (on ? ' done' : '') + '"><button class="fw-chk" data-fw-check="' + k + '" aria-label="mark done">✓</button><div class="fw-tx">' + t.tx + '</div></div>';
+    }).join('');
+    html += '<div class="' + cls + '"><div class="fw-dt"><h4>' + day.title + '</h4><span class="fw-when">' + day.when + (day.d === today ? ' · TODAY' : '') + '</span></div>' +
+      '<div class="fw-focus">' + day.focus + '</div>' + rows +
+      '<div style="text-align:right;margin-top:7px"><span class="fw-daycount">' + doneN + '/' + day.tasks.length + '</span></div></div>';
+  });
+  var badge = dl > 0 ? dl + 'd left' : dl === 0 ? 'TODAY' : '✓';
+  return { html: html, badge: badge };
+}
+function fwToggle(k, btn){
+  var st = fwLoad();
+  if(st.done[k]) delete st.done[k]; else st.done[k] = 1;
+  fwSave(st);
+  var task = btn.closest('.fw-task'); if(!task) return;
+  task.classList.toggle('done', !!st.done[k]);
+  var dayEl = btn.closest('.fw-day');
+  if(dayEl){ var cnt = dayEl.querySelector('.fw-daycount'); if(cnt) cnt.textContent = dayEl.querySelectorAll('.fw-task.done').length + '/' + dayEl.querySelectorAll('.fw-task').length; }
 }
 
 var LESSONS = [
