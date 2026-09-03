@@ -20,3 +20,25 @@ Abrir `index.html` en el navegador, o cualquier server estático. No hay `npm ru
 - Dos deploys (Vercel + Pages) del mismo contenido: si se cambia algo, actualizar los dos o el espejo queda viejo.
 - Los "Daily Mini Mocks" se siembran **por fecha**, así que son deterministas: cambiar la semilla cambia lo que ya vio un estudiante.
 - Feature nueva → revisar que siga funcionando sin cuenta (modo invitado).
+
+## Lanzamiento
+
+Este sitio es **público**: antes de publicar pasa `90_Sistema/TOMMY-WEB-LAUNCH.md` completo
+(vault de Obsidian). No es opcional y no se pregunta.
+
+```bash
+~/.claude/scripts/web-launch-audit/run.sh . --out /tmp/launch.md
+```
+
+Sale con **código 1 si hay algún FAIL**. Deploy: https://sat-studio.vercel.app
+
+Los seis fallos que tenían **todos** los sitios —`robots.txt`, `sitemap.xml`, `llms.txt`,
+canonical, JSON-LD y Open Graph— los genera el propio auditor, no se escriben a mano:
+
+```bash
+~/.claude/scripts/web-launch-audit/run.sh . --fix-all --domain https://sat-studio.vercel.app
+```
+
+Nunca sobrescribe nada y deja `.bak`. Lo que queda después es trabajo de CSS: contraste AA
+y overflow en móvil son los dos que más se repiten. Estado de todos los sitios:
+`90_Sistema/Panel de lanzamiento web.md`.
