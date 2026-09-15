@@ -27,10 +27,10 @@
     '<circle cx="66" cy="145" r="4" fill="#1e1e1e"/>' +
     '<circle cx="234" cy="145" r="4" fill="#1e1e1e"/>' +
     '<circle cx="150" cy="32.5" r="4" fill="#1e1e1e"/>' +
-    '<text x="58" y="167" font-size="14" font-family="Georgia,serif" text-anchor="middle">(−1, 0)</text>' +
-    '<text x="246" y="167" font-size="14" font-family="Georgia,serif" text-anchor="middle">(5, 0)</text>' +
+    '<text x="50" y="168" font-size="14" font-family="Georgia,serif" text-anchor="end">(−1, 0)</text>' +
+    '<text x="250" y="168" font-size="14" font-family="Georgia,serif" text-anchor="start">(5, 0)</text>' +
     '<text x="150" y="26" font-size="14" font-family="Georgia,serif" text-anchor="middle">(2, 9)</text>' +
-    '<text x="282" y="164" font-size="14" font-family="Georgia,serif" font-style="italic">x</text>' +
+    '<text x="282" y="138" font-size="14" font-family="Georgia,serif" font-style="italic">x</text>' +
     '<text x="102" y="26" font-size="14" font-family="Georgia,serif" font-style="italic">y</text>' +
     '</svg>';
 

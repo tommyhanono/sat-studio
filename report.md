@@ -5,10 +5,10 @@
 **Paginas analizadas:** 1 · **Links revisados:** 2  
 **Framework detectado:** static  
 
-**Resultado:** 31 PASS · 3 FAIL · 3 WARN · 9 no aplica · 8 de revision manual
+**Resultado:** 34 PASS · 2 FAIL · 1 WARN · 9 no aplica · 8 de revision manual
 
 > [!danger] No lanzar todavia
-> Hay 3 punto(s) en FAIL. Estan detallados abajo con archivo o selector.
+> Hay 2 punto(s) en FAIL. Estan detallados abajo con archivo o selector.
 
 ## Bloque 1 — QA de interfaz y movil (20 puntos, todos obligatorios)
 
@@ -22,18 +22,18 @@
 | `B1-06` | Meta description en cada pagina | PASS | 1 pagina(s) con description |
 | `B1-07` | Links del footer funcionando | PASS | 2 link(s) de footer, todos responden |
 | `B1-08` | Pagina 404 propia con salida al home | PASS | 404 propia con salida al home |
-| `B1-09` | Año de copyright correcto (calculado) | WARN | no se encontro aviso de copyright en el sitio |
+| `B1-09` | Año de copyright correcto (calculado) | PASS | año 2026 correcto |
 | `B1-10` | Imagenes comprimidas y en formato moderno | PASS | sin imagenes pesadas |
 | `B1-11` | Cero botones rotos o sin handler | PASS | todos los botones tienen handler, submit o delegacion de framework |
-| `B1-12` | Estados de exito visibles en toda accion | PASS | toda accion que escribe tiene estados de carga, exito y error en su archivo |
-| `B1-13` | Estados de error visibles y con mensaje util | **FAIL** | 5 catch mudo(s), 0 formulario(s) probado(s), 0 sin error visible |
+| `B1-12` | Estados de exito visibles en toda accion | **FAIL** | 1 archivo(s) con accion que escribe y sin estado de carga/exito/error |
+| `B1-13` | Estados de error visibles y con mensaje util | PASS | no hay formularios ni catch mudos; queda la revision manual M-02 |
 | `B1-14` | Cero texto placeholder | PASS | sin lorem ipsum ni relleno |
 | `B1-15` | Cero items de navegacion que no llevan a nada | PASS | todos los items de navegacion tienen destino |
 | `B1-16` | Cero overflow de elementos en movil | PASS | ningun elemento se sale del viewport |
 | `B1-17` | Logo clickeable que vuelve al home | PASS | el logo vuelve al home |
 | `B1-18` | Telefono clickeable (tel:) | n/a | el sitio no publica telefono |
 | `B1-19` | Email clickeable (mailto:) | n/a | el sitio no publica correo |
-| `B1-20` | Optimizado para movil de verdad | WARN | 0 problema(s) de viewport, 0 toque(s) chico(s), 3 input(s) con zoom en iOS |
+| `B1-20` | Optimizado para movil de verdad | PASS | viewport, objetivos tactiles y tipografia de inputs correctos |
 
 ## Bloque 2 — SEO y produccion
 
@@ -42,7 +42,7 @@
 | `B2-01` | Sin titulo/favicon default del framework | PASS | sin 'Vite + React' ni iconos de plantilla |
 | `B2-02` | Sin source maps en produccion | PASS | el build no publica source maps |
 | `B2-03` | Cero errores en consola | PASS | consola limpia |
-| `B2-04` | Bundles de JS razonables | WARN | mayor carga JS por pagina: 1.30 MB; total en build: 1.26 MB |
+| `B2-04` | Bundles de JS razonables | WARN | mayor carga JS por pagina: 1.56 MB; total en build: 1.59 MB |
 | `B2-05` | Titulos unicos por pagina | n/a | una sola pagina: no aplica |
 | `B2-06` | Un solo h1 por pagina, unico por pagina | PASS | un h1 por pagina, todos distintos |
 | `B2-07` | Meta descriptions unicas | n/a | una sola pagina: no aplica |
@@ -63,38 +63,23 @@
 
 | id | Punto | Estado | Detalle |
 |---|---|---|---|
-| `B3-01` | Contraste AA (WCAG 2.2) | PASS | 11 elementos de texto, todos sobre el minimo |
-| `B3-02` | Foco de teclado visible | PASS | 7 controles con foco visible |
+| `B3-01` | Contraste AA (WCAG 2.2) | PASS | 10 elementos de texto, todos sobre el minimo |
+| `B3-02` | Foco de teclado visible | PASS | 6 controles con foco visible |
 | `B3-03` | prefers-reduced-motion respetado | PASS | sin animaciones que apagar |
 | `B3-04` | Campos de formulario con etiqueta | PASS | todos los campos etiquetados |
 | `B3-05` | El telefono girado (812x375) | PASS | en horizontal se ve bien |
-| `B3-06` | Core Web Vitals (LCP y CLS) | PASS | LCP 132 ms · CLS 0 (peor pagina, red local sin latencia) |
-| `B3-07` | Regla cero de TOMMY-DESIGN | **FAIL** | 2 firma(s) del look default de IA |
+| `B3-06` | Core Web Vitals (LCP y CLS) | PASS | LCP 92 ms · CLS 0 (peor pagina, red local sin latencia) |
+| `B3-07` | Regla cero de TOMMY-DESIGN | PASS | sin firmas genericas · tipografia: -apple-system |
 
 ## Evidencia
 
-### `B1-13` Estados de error visibles y con mensaje util — **FAIL**
+### `B1-12` Estados de exito visibles en toda accion — **FAIL**
 
-5 catch mudo(s), 0 formulario(s) probado(s), 0 sin error visible
+1 archivo(s) con accion que escribe y sin estado de carga/exito/error
 
-- index.html:1286 — catch que solo hace console: el usuario nunca se entera · catch(e){ console.debug('SAT Studio · falló algo no crítico (' + (que \|\| 'sin nombre') + '):', e && e.message); }
-- index.html:1299 — catch que solo hace console: el usuario nunca se entera · } catch(e){ console.log(msg); }
-- tools/test-datos.js:31 — catch vacio: el usuario nunca se entera · for (const c of CANDIDATOS_PUP) { try { return require(c); } catch (e) {} }
-- tools/test-datos.js:49 — catch vacio: el usuario nunca se entera · } catch (e) {}
-- tools/test-plan.js:28 — catch vacio: el usuario nunca se entera · for (const c of CANDIDATOS_PUP) { try { return require(c); } catch (e) {} }
+- tools/huella-banco.js:37 — falta estado de carga y exito · console.log('huella    : ' + crypto.createHash('md5').update(lineas.join('\n')).digest('hex'));
 
-**Como se arregla:** Probado enviando el formulario vacio con TODA escritura de red bloqueada: nunca se manda nada de verdad.
-
-### `B1-20` Optimizado para movil de verdad — WARN
-
-0 problema(s) de viewport, 0 toque(s) chico(s), 3 input(s) con zoom en iOS
-
-- 3 input(s) con font-size < 16px (iOS hace zoom al enfocar)
--   input#auth-name 15.2px
--   input#auth-email 15.2px
--   input#auth-pass 15.2px
-
-**Como se arregla:** El resto del punto se cierra con la revision manual M-03.
+**Como se arregla:** Un boton que escribe necesita: deshabilitarse mientras carga, y una confirmacion visible al terminar. Cerrar con la revision manual M-01.
 
 ### `B2-17` Imagenes de social share (OG + Twitter) — **FAIL**
 
@@ -103,15 +88,6 @@ la og:image no carga (HTTP 404)
 - og:image no carga (HTTP 404): https://sat-studio.vercel.app/og.png
 
 **Como se arregla:** og:image 1200x630 PNG/JPEG, absoluta, y twitter:card=summary_large_image. La tarjeta real se mira en WhatsApp (M-07).
-
-### `B3-07` Regla cero de TOMMY-DESIGN — **FAIL**
-
-2 firma(s) del look default de IA
-
-- 5. #FFF/#000 planos — 2 superficie(s) grande(s) sin tinte de marca: body background:rgb(255, 255, 255) · div.auth-card background:rgb(255, 255, 255)
-- 8. Fuente por inercia — cuerpo y titulos en "-apple-system" y ninguna fuente propia cargada: body:-apple-system · h:-apple-system
-
-**Como se arregla:** La lista completa esta en 90_Sistema/TOMMY-DESIGN.md, regla cero. El juicio final es humano (M-08).
 
 ## Revision manual guiada
 

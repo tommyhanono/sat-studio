@@ -14,19 +14,11 @@
 const fs = require('fs');
 const path = require('path');
 const crypto = require('crypto');
-const RAIZ = path.resolve(__dirname, '..');
+const { cargarBanco, RAIZ } = require('./lib-banco');
 
-const g = { SAT_SETS: [], SAT_DESMOS: {} };
-global.window = g;
-const html = fs.readFileSync(path.join(RAIZ, 'index.html'), 'utf8').replace(/<!--[\s\S]*?-->/g, '');
-const archivos = [...html.matchAll(/<script(?:\s+defer)?\s+src="(sets\/[a-z0-9-]+\.js)">/g)].map(m => m[1]);
-if (!archivos.length) { console.error('No se encontró ningún set vivo en index.html.'); process.exit(1); }
-for (const rel of archivos) {
-  const abs = path.join(RAIZ, rel);
-  if (!fs.existsSync(abs)) { console.error('Falta ' + rel); process.exit(1); }
-  try { eval(fs.readFileSync(abs, 'utf8')); }
-  catch (e) { console.error('✗ ' + rel + ': ' + e.message); process.exit(1); }
-}
+let g;
+try { g = cargarBanco(RAIZ); }
+catch (e) { console.error('✗ ' + e.message); process.exit(1); }
 
 const lineas = [];
 g.SAT_SETS.forEach(s => (s.questions || []).forEach(q => {

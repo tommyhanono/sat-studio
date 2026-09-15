@@ -41,6 +41,22 @@ const res = [];
 const check = (n, c, extra) => { res.push([n, !!c, c ? '' : (extra === undefined ? '' : ' → ' + JSON.stringify(extra))]); };
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
+/* El banco ya no se carga con `defer`: se inyecta después del primer pintado, así
+   que estar "cargado" no basta. Y la bandera tampoco alcanza sola: el cargador la
+   pone ANTES de que conBanco() llame a renderHome(), así que había una ventana en
+   la que window.SAT_SETS ya tenía todo y el inicio todavía estaba vacío. Se espera
+   a las dos cosas: el banco, y —si el inicio es la pantalla visible— que esté pintado. */
+async function esperarBanco(page, ms) {
+  await page.waitForFunction('window.BANCO_LISTO === true', { timeout: ms || 30000 });
+  await page.waitForFunction(() => {
+    const home = document.getElementById('view-home');
+    if (!home || home.classList.contains('hidden')) return true;   // estamos en cuenta: nada que pintar
+    const secciones = document.getElementById('set-sections');
+    return !!(secciones && secciones.children.length);
+  }, { timeout: ms || 30000 });
+}
+
+
 /* ---------------------------------------------------------------------------
  * El Supabase falso. Vive dentro de la página, guarda las sesiones en memoria
  * y obedece a window.__FAKE.online / __FAKE.failNext para simular fallos.
@@ -185,6 +201,7 @@ const etiqueta = page => page.evaluate(() => window.SATAPP.syncLabel());
     {
       const page = await nuevaPagina(browser);
       await page.goto(URL_APP(), { waitUntil: 'networkidle2' });
+      await esperarBanco(page);
       check('D0 el Supabase falso se inyectó antes que la app', await page.evaluate(() => !!window.__FAKE_READY));
       await login(page);
       await guardar(page, 's1');
@@ -202,6 +219,7 @@ const etiqueta = page => page.evaluate(() => window.SATAPP.syncLabel());
     {
       const page = await nuevaPagina(browser);
       await page.goto(URL_APP(), { waitUntil: 'networkidle2' });
+      await esperarBanco(page);
       await login(page);
       await page.evaluate(() => { window.__FAKE.online = false; });
       await guardar(page, 's2');
@@ -226,6 +244,7 @@ const etiqueta = page => page.evaluate(() => window.SATAPP.syncLabel());
     {
       const page = await nuevaPagina(browser);
       await page.goto(URL_APP(), { waitUntil: 'networkidle2' });
+      await esperarBanco(page);
       await login(page);
       await page.evaluate(() => { window.__FAKE.online = false; });
       await guardar(page, 's3a'); await guardar(page, 's3b');
@@ -251,6 +270,7 @@ const etiqueta = page => page.evaluate(() => window.SATAPP.syncLabel());
     {
       const page = await nuevaPagina(browser);
       await page.goto(URL_APP(), { waitUntil: 'networkidle2' });
+      await esperarBanco(page);
       // La nube ya tiene "vieja" (jugada en otro dispositivo)
       await page.evaluate(() => {
         window.__FAKE.rows['cloudA'] = {
@@ -278,6 +298,7 @@ const etiqueta = page => page.evaluate(() => window.SATAPP.syncLabel());
     {
       const page = await nuevaPagina(browser);
       await page.goto(URL_APP(), { waitUntil: 'networkidle2' });
+      await esperarBanco(page);
       await page.evaluate(() => {
         window.__FAKE.rows['dup'] = {
           sid: 'dup', played_at: '2026-01-01T10:00:00.000Z', mode: 'drill', set_id: 'x',
@@ -303,6 +324,7 @@ const etiqueta = page => page.evaluate(() => window.SATAPP.syncLabel());
     {
       const page = await nuevaPagina(browser);
       await page.goto(URL_APP(), { waitUntil: 'networkidle2' });
+      await esperarBanco(page);
       await login(page);
       await page.evaluate(() => {
         const k = window.SATAPP.histKey();
@@ -322,6 +344,7 @@ const etiqueta = page => page.evaluate(() => window.SATAPP.syncLabel());
     {
       const page = await nuevaPagina(browser);
       await page.goto(URL_APP(), { waitUntil: 'networkidle2' });
+      await esperarBanco(page);
       await page.evaluate(() => {
         window.SATAPP.store.set('satapp_history_v1', [
           { sid: 'g1', date: '2026-02-02T10:00:00.000Z', savedAt: '2026-02-02T10:00:00.000Z', setTitle: 'Jugada de invitado', score: 3, total: 4, perQuestion: [] },
@@ -341,6 +364,7 @@ const etiqueta = page => page.evaluate(() => window.SATAPP.syncLabel());
     {
       const page = await nuevaPagina(browser);
       await page.goto(URL_APP(), { waitUntil: 'networkidle2' });
+      await esperarBanco(page);
       await login(page);
       await guardar(page, 'de-la-cuenta-1');
       await sleep(300);
@@ -363,6 +387,7 @@ const etiqueta = page => page.evaluate(() => window.SATAPP.syncLabel());
     {
       const page = await nuevaPagina(browser);
       await page.goto(URL_APP(), { waitUntil: 'networkidle2' });
+      await esperarBanco(page);
       await login(page);
       await guardar(page, 'nodelete');
       await sleep(300);
@@ -388,6 +413,7 @@ const etiqueta = page => page.evaluate(() => window.SATAPP.syncLabel());
     {
       const page = await nuevaPagina(browser);
       await page.goto(URL_APP(), { waitUntil: 'networkidle2' });
+      await esperarBanco(page);
       await login(page);
       await guardar(page, 'keep1');
       await sleep(200);
@@ -412,6 +438,7 @@ const etiqueta = page => page.evaluate(() => window.SATAPP.syncLabel());
     {
       const page = await nuevaPagina(browser);
       await page.goto(URL_APP(), { waitUntil: 'networkidle2' });
+      await esperarBanco(page);
       await login(page);
       await page.evaluate(() => { window.__FAKE.failNext = 2; });
       await guardar(page, 'err1');
@@ -431,6 +458,7 @@ const etiqueta = page => page.evaluate(() => window.SATAPP.syncLabel());
     {
       const page = await nuevaPagina(browser);
       await page.goto(URL_APP(), { waitUntil: 'networkidle2' });
+      await esperarBanco(page);
       // sin login: currentUser es null
       await guardar(page, 'inv1');
       await guardar(page, 'inv2');
@@ -458,6 +486,7 @@ const etiqueta = page => page.evaluate(() => window.SATAPP.syncLabel());
     {
       const page = await nuevaPagina(browser);
       await page.goto(URL_APP(), { waitUntil: 'networkidle2' });
+      await esperarBanco(page);
       await login(page);
       const r = await page.evaluate(() => {
         const real = Storage.prototype.setItem;
@@ -480,6 +509,7 @@ const etiqueta = page => page.evaluate(() => window.SATAPP.syncLabel());
     {
       const page = await nuevaPagina(browser);
       await page.goto(URL_APP(), { waitUntil: 'networkidle2' });
+      await esperarBanco(page);
       const ui = await page.evaluate(() => ({
         enlace: !!document.querySelector('#auth-forgot'),
         caja: !!document.querySelector('#auth-newpass'),

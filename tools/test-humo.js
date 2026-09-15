@@ -42,6 +42,22 @@ const res = [];
 const check = (n, c, extra) => { res.push([n, !!c, c ? '' : (extra === undefined ? '' : ' → ' + JSON.stringify(extra))]); };
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
+/* El banco ya no se carga con `defer`: se inyecta después del primer pintado, así
+   que estar "cargado" no basta. Y la bandera tampoco alcanza sola: el cargador la
+   pone ANTES de que conBanco() llame a renderHome(), así que había una ventana en
+   la que window.SAT_SETS ya tenía todo y el inicio todavía estaba vacío. Se espera
+   a las dos cosas: el banco, y —si el inicio es la pantalla visible— que esté pintado. */
+async function esperarBanco(page, ms) {
+  await page.waitForFunction('window.BANCO_LISTO === true', { timeout: ms || 30000 });
+  await page.waitForFunction(() => {
+    const home = document.getElementById('view-home');
+    if (!home || home.classList.contains('hidden')) return true;   // estamos en cuenta: nada que pintar
+    const secciones = document.getElementById('set-sections');
+    return !!(secciones && secciones.children.length);
+  }, { timeout: ms || 30000 });
+}
+
+
 (async () => {
   if (!CHROME) { console.error('No se encontró Chrome ni Chromium. Se salta el test de humo.'); process.exit(0); }
   const puppeteer = resolverPuppeteer();
@@ -66,7 +82,8 @@ const sleep = ms => new Promise(r => setTimeout(r, ms));
 
   try {
     await page.goto(`http://127.0.0.1:${PUERTO}/`, { waitUntil: 'networkidle2', timeout: 20000 });
-    await sleep(1500);
+    await esperarBanco(page);
+    await sleep(600);
 
     check('H1 la página carga sin errores de JS', errs.length === 0, errs.slice(0, 3));
     const inv = await page.evaluate(() => {

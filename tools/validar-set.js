@@ -30,6 +30,7 @@
 const fs = require('fs');
 const path = require('path');
 const { esEspanol } = require('./detector-espanol');
+const { cargarBanco } = require('./lib-banco');
 
 const RAIZ = path.resolve(__dirname, '..');
 /* Los ocho oficiales. El banco además usa dominios CRUZADOS ("Algebra + Functions",
@@ -55,13 +56,7 @@ if (!archivos.length) { console.error('Uso: node tools/validar-set.js sets/archi
 
 /* ---------- el banco que ya está vivo, para detectar choques ---------- */
 function bancoVivo() {
-  const g = { SAT_SETS: [], SAT_DESMOS: {} };
-  global.window = g;
-  const html = fs.readFileSync(path.join(RAIZ, 'index.html'), 'utf8').replace(/<!--[\s\S]*?-->/g, '');
-  for (const rel of [...html.matchAll(/<script(?:\s+defer)?\s+src="(sets\/[a-z0-9-]+\.js)">/g)].map(m => m[1])) {
-    const abs = path.join(RAIZ, rel);
-    if (fs.existsSync(abs)) eval(fs.readFileSync(abs, 'utf8'));
-  }
+  const g = cargarBanco(RAIZ);
   const ids = new Set(), setIds = new Set(), enunciados = new Map();
   g.SAT_SETS.forEach(s => {
     setIds.add(s.id);

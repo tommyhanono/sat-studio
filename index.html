@@ -384,6 +384,11 @@
   .auth-extra{border-top:1px solid var(--gray-line);margin-top:14px;padding-top:14px}
   .auth-two{display:flex;gap:10px}
   .auth-two > div{flex:1;min-width:0}
+  .banco-cargando{position:fixed;inset:0;z-index:900;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;
+    background:var(--paper);background-image:radial-gradient(1100px 520px at 50% -10%,#fbfcfe 0,var(--paper) 55%,var(--paper-2) 100%)}
+  .bc-marca{font-family:var(--serif);font-size:1.7rem;font-weight:700;color:var(--navy)}
+  .bc-marca::after{content:'';display:block;width:34px;height:3px;margin:7px auto 0;border-radius:2px;background:var(--gold)}
+  .bc-txt{color:var(--gray-mid);font-size:.9rem}
   .auth-foot{margin-top:22px;padding-top:16px;border-top:1px solid var(--gray-line);color:var(--gray-mid);font-size:.76rem;line-height:1.6;text-align:center}
   .auth-hint{font-size:.78rem;color:var(--gray-mid);margin-top:8px;line-height:1.5}
   .exam-bar{display:flex;gap:12px;align-items:center;flex-wrap:wrap;background:#fff;border:1px solid var(--gray-line);border-radius:10px;padding:12px 16px;margin-bottom:20px;font-size:.86rem}
@@ -798,6 +803,11 @@
   </div>
 </div>
 
+<div id="banco-cargando" class="banco-cargando hidden" role="status" aria-live="polite">
+  <p class="bc-marca">SAT Studio</p>
+  <p class="bc-txt">Loading the question bank…</p>
+</div>
+
 <div id="view-home" class="hidden">
   <div class="home-wrap">
     <header class="brand"><h1><a href="./" id="brand-home" class="brand-link">SAT Studio</a></h1><span class="tag">Bluebook-style practice</span><div id="user-chip" class="user-chip hidden"></div></header>
@@ -1081,104 +1091,120 @@
   </div>
 </div>
 
-<script>window.SAT_SETS = [];</script>
-<!-- SETS: add one line here for each new question set -->
-<script defer src="sets/rw-set1.js"></script>
-<script defer src="sets/rw-set2.js"></script>
-<!-- <script src="sets/rw-set3.js"></script> retired 2026-07-14: "Words in Context — Easy" too simple for 700-target practice (its harder sibling rw-set4 stays) -->
-<script defer src="sets/rw-set4.js"></script>
-<script defer src="sets/rw-set5.js"></script>
-<script defer src="sets/rw-set6.js"></script>
-<script defer src="sets/rw-set7.js"></script>
-<script defer src="sets/rw-mock1.js"></script>
-<script defer src="sets/rw-set8.js"></script>
-<script defer src="sets/rw-set9.js"></script>
-<!-- <script src="sets/rw-set10.js"></script> retired 2026-07-14: "Rhetorical Synthesis — Easy" too simple (harder siblings rw-set11/rw-set12 stay) -->
-<script defer src="sets/rw-set11.js"></script>
-<script defer src="sets/rw-set12.js"></script>
-<script defer src="sets/math-set1.js"></script>
-<script defer src="sets/math-alg.js"></script>
-<script defer src="sets/math-adv.js"></script>
-<script defer src="sets/math-data.js"></script>
-<script defer src="sets/math-geo.js"></script>
-<script defer src="sets/rw-ideas2.js"></script>
-<script defer src="sets/rw-wic2.js"></script>
-<script defer src="sets/rw-trans2.js"></script>
-<script defer src="sets/rw-punct2.js"></script>
-<script defer src="sets/rw-evidence2.js"></script>
-<script defer src="sets/rw-synth2.js"></script>
-<script defer src="sets/math-alg2.js"></script>
-<!-- Algebra 3: cierra el hueco medido el 26-jul-2026. Algebra pesa 35 % del examen
-     y estaba al 0,68x en el banco. Ver docs de la auditoría. -->
-<script defer src="sets/math-alg3.js"></script>
-<script defer src="sets/math-alg4.js"></script>
-<!-- Simulacro del módulo 1: la mezcla oficial de dominios, formatos y dificultad.
-     El banco no tenía nada calibrado para el primer módulo, que es el que fija el techo. -->
-<script defer src="sets/math-mod1-sim.js"></script>
-<!-- Simulacro del modulo 1 de Reading: mismo criterio que el de matematica.
-     Orden de dominios, mezcla y dificultad segun el marco oficial (tabla 9). -->
-<script defer src="sets/rw-mod1-sim.js"></script>
-<script defer src="sets/math-adv2.js"></script>
-<script defer src="sets/math-data2.js"></script>
-<script defer src="sets/math-geo2.js"></script>
-<script defer src="sets/rw-data1.js"></script>
-<script defer src="sets/rw-structure1.js"></script>
-<script defer src="sets/rw-agree1.js"></script>
-<script defer src="sets/rw-b1exam.js"></script>
-<!-- REPAIRED & ADVERSARIALLY VERIFIED 2026-07-13: keys re-solved (parametric 6 fixed, insane-prob 6 fixed), SPR answers added, difficulties normalized -->
-<script defer src="sets/math-mashup-alg-func.js"></script>
-<script defer src="sets/math-spr-drill.js"></script>
-<script defer src="sets/math-insane-parametric.js"></script>
-<script defer src="sets/math-insane-probability.js"></script>
-<!-- REPAIRED 2026-07-12: rw-paired-tone / rw-tone-attitude / rw-vocab-bridge / rw-insane-synthesis re-enabled -->
-<script defer src="sets/rw-paired-tone.js"></script>
-<script defer src="sets/rw-tone-attitude.js"></script>
-<script defer src="sets/rw-vocab-bridge.js"></script>
-<script defer src="sets/rw-insane-synthesis.js"></script>
-<script defer src="sets/rw-warmup1.js"></script>
-<script defer src="sets/math-warmup1.js"></script>
-<!-- HARD sets (all Difícil) — feed Hard Mocks -->
-<script defer src="sets/math-hard-circles.js"></script>
-<script defer src="sets/math-hard-poly.js"></script>
-<script defer src="sets/math-hard-geo.js"></script>
-<script defer src="sets/math-hard-data.js"></script>
-<script defer src="sets/rw-hard-structure.js"></script>
-<script defer src="sets/rw-hard-grammar.js"></script>
-<script defer src="sets/rw-hard-evidence.js"></script>
-<script defer src="sets/rw-mock1review.js"></script>
-<script defer src="sets/math-mock1review.js"></script>
-<script defer src="sets/rw-punct-checkup.js"></script>
-<script defer src="sets/math-expo1.js"></script>
-<script defer src="sets/math-solids1.js"></script>
-<!-- EXTREME tier (real hard-Module-2 level; every question difficulty:'Difícil' + extreme:true) -->
-<script defer src="sets/rw-x-wic.js"></script>
-<script defer src="sets/rw-x-conventions.js"></script>
-<script defer src="sets/rw-x-rhetoric.js"></script>
-<script defer src="sets/rw-x-reading.js"></script>
-<script defer src="sets/math-x-alg.js"></script>
-<script defer src="sets/math-x-adv.js"></script>
-<script defer src="sets/math-x-data.js"></script>
-<script defer src="sets/math-x-geo.js"></script>
-<!-- BRUTAL tier, 15-sep-2026: escritos para tapar los huecos del blueprint
-     (Algebra y Advanced Math venían al 0.85x del peso oficial) y para subir el
-     porcentaje de grid-ins, que estaba en 21.7 % contra el ~25 % real. -->
-<script defer src="sets/math-brutal-alg1.js"></script>
-<script defer src="sets/math-brutal-adv1.js"></script>
-<script defer src="sets/math-hard-spr1.js"></script>
-<script defer src="sets/rw-brutal-inference.js"></script>
-<script defer src="sets/rw-brutal-conventions.js"></script>
-<script defer src="sets/math-hard-alg2.js"></script>
-<script defer src="sets/math-hard-spr2.js"></script>
-<script defer src="sets/math-brutal-adv2.js"></script>
-<script defer src="sets/math-hard-adv2.js"></script>
-<script defer src="sets/rw-brutal-craft.js"></script>
-<!-- Desmos how-to hints per Math question (merged into questions at load) -->
-<script defer src="sets/desmos-a.js"></script>
-<script defer src="sets/desmos-b.js"></script>
-<script defer src="sets/desmos-c.js"></script>
-<script defer src="sets/desmos-d.js"></script>
-<script defer src="sets/desmos-e.js"></script>
-<script defer src="sets/desmos-f.js"></script>
+<script>
+/* El banco: 80 archivos, ~1,5 MB de preguntas. Esta lista es la FUENTE DE
+   VERDAD de qué sets están vivos — la leen las siete herramientas de tools/ a
+   través de lib-banco.js.
+
+   Antes eran 80 etiquetas <script defer>. `defer` descarga en paralelo pero
+   BLOQUEA el DOMContentLoaded, así que la pantalla de cuenta —que no necesita ni
+   una pregunta— se quedaba en blanco hasta que bajaba y se parseaba el banco
+   entero. Ahora los archivos se inyectan DESPUÉS del primer pintado y solo se
+   espera por ellos al entrar a la app. Ver cargarBanco() más abajo. */
+window.SAT_SETS = [];
+window.SAT_DESMOS = window.SAT_DESMOS || {};
+var SAT_SET_FILES = [
+  // SETS: add one line here for each new question set
+  'sets/rw-set1.js',
+  'sets/rw-set2.js',
+  // RETIRADO sets/rw-set3.js — retirado el 2026-07-14: "Words in Context — Easy" too simple for 700-target practice (its harder sibling rw-set4 stays)
+  'sets/rw-set4.js',
+  'sets/rw-set5.js',
+  'sets/rw-set6.js',
+  'sets/rw-set7.js',
+  'sets/rw-mock1.js',
+  'sets/rw-set8.js',
+  'sets/rw-set9.js',
+  // RETIRADO sets/rw-set10.js — retirado el 2026-07-14: "Rhetorical Synthesis — Easy" too simple (harder siblings rw-set11/rw-set12 stay)
+  'sets/rw-set11.js',
+  'sets/rw-set12.js',
+  'sets/math-set1.js',
+  'sets/math-alg.js',
+  'sets/math-adv.js',
+  'sets/math-data.js',
+  'sets/math-geo.js',
+  'sets/rw-ideas2.js',
+  'sets/rw-wic2.js',
+  'sets/rw-trans2.js',
+  'sets/rw-punct2.js',
+  'sets/rw-evidence2.js',
+  'sets/rw-synth2.js',
+  'sets/math-alg2.js',
+  // Algebra 3: cierra el hueco medido el 26-jul-2026. Algebra pesa 35 % del examen
+  // y estaba al 0,68x en el banco. Ver docs de la auditoría.
+  'sets/math-alg3.js',
+  'sets/math-alg4.js',
+  // Simulacro del módulo 1: la mezcla oficial de dominios, formatos y dificultad.
+  // El banco no tenía nada calibrado para el primer módulo, que es el que fija el techo.
+  'sets/math-mod1-sim.js',
+  // Simulacro del modulo 1 de Reading: mismo criterio que el de matematica.
+  // Orden de dominios, mezcla y dificultad segun el marco oficial (tabla 9).
+  'sets/rw-mod1-sim.js',
+  'sets/math-adv2.js',
+  'sets/math-data2.js',
+  'sets/math-geo2.js',
+  'sets/rw-data1.js',
+  'sets/rw-structure1.js',
+  'sets/rw-agree1.js',
+  'sets/rw-b1exam.js',
+  // REPAIRED & ADVERSARIALLY VERIFIED 2026-07-13: keys re-solved (parametric 6 fixed, insane-prob 6 fixed), SPR answers added, difficulties normalized
+  'sets/math-mashup-alg-func.js',
+  'sets/math-spr-drill.js',
+  'sets/math-insane-parametric.js',
+  'sets/math-insane-probability.js',
+  // REPAIRED 2026-07-12: rw-paired-tone / rw-tone-attitude / rw-vocab-bridge / rw-insane-synthesis re-enabled
+  'sets/rw-paired-tone.js',
+  'sets/rw-tone-attitude.js',
+  'sets/rw-vocab-bridge.js',
+  'sets/rw-insane-synthesis.js',
+  'sets/rw-warmup1.js',
+  'sets/math-warmup1.js',
+  // HARD sets (all Difícil) — feed Hard Mocks
+  'sets/math-hard-circles.js',
+  'sets/math-hard-poly.js',
+  'sets/math-hard-geo.js',
+  'sets/math-hard-data.js',
+  'sets/rw-hard-structure.js',
+  'sets/rw-hard-grammar.js',
+  'sets/rw-hard-evidence.js',
+  'sets/rw-mock1review.js',
+  'sets/math-mock1review.js',
+  'sets/rw-punct-checkup.js',
+  'sets/math-expo1.js',
+  'sets/math-solids1.js',
+  // EXTREME tier (real hard-Module-2 level; every question difficulty:'Difícil' + extreme:true)
+  'sets/rw-x-wic.js',
+  'sets/rw-x-conventions.js',
+  'sets/rw-x-rhetoric.js',
+  'sets/rw-x-reading.js',
+  'sets/math-x-alg.js',
+  'sets/math-x-adv.js',
+  'sets/math-x-data.js',
+  'sets/math-x-geo.js',
+  // BRUTAL tier, 15-sep-2026: escritos para tapar los huecos del blueprint
+  // (Algebra y Advanced Math venían al 0.85x del peso oficial) y para subir el
+  // porcentaje de grid-ins, que estaba en 21.7 % contra el ~25 % real.
+  'sets/math-brutal-alg1.js',
+  'sets/math-brutal-adv1.js',
+  'sets/math-hard-spr1.js',
+  'sets/rw-brutal-inference.js',
+  'sets/rw-brutal-conventions.js',
+  'sets/math-hard-alg2.js',
+  'sets/math-hard-spr2.js',
+  'sets/math-brutal-adv2.js',
+  'sets/math-hard-adv2.js',
+  'sets/rw-brutal-craft.js',
+  'sets/math-brutal-alg2.js',
+  // Desmos how-to hints per Math question (merged into questions at load)
+  'sets/desmos-a.js',
+  'sets/desmos-b.js',
+  'sets/desmos-c.js',
+  'sets/desmos-d.js',
+  'sets/desmos-e.js',
+  'sets/desmos-f.js'
+];
+</script>
+
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1"></script>
 
@@ -1252,6 +1278,67 @@ function genSid(){
 window.SAT_SETS = window.SAT_SETS || [];
 var QINDEX = {};   // qid -> question (tagged with _setId, _section)
 var SETS = [];
+
+/* ================= CARGA DEL BANCO =================
+   Los ~1,5 MB de preguntas se inyectan DESPUÉS del primer pintado, no con
+   `defer`. La diferencia importa: `defer` descarga en paralelo pero bloquea el
+   DOMContentLoaded, así que la pantalla de cuenta —que no necesita ni una
+   pregunta— esperaba a que bajara y se parseara el banco entero. Ahora esa
+   pantalla aparece de una y el banco viaja detrás.
+
+   `async = false` en un script inyectado NO significa síncrono: significa que
+   se ejecutan en el ORDEN en que se insertaron. Hace falta, porque el orden de
+   los sets es el orden en que salen listados en el inicio. */
+var BANCO_LISTO = false;
+var _bancoPromesa = null;
+function cargarBanco(){
+  if(_bancoPromesa) return _bancoPromesa;
+  _bancoPromesa = new Promise(function(resolve){
+    var lista = window.SAT_SET_FILES || [];
+    var faltan = lista.length, fallidos = [];
+    if(!faltan){ BANCO_LISTO = true; return resolve(fallidos); }
+    function uno(){
+      if(--faltan > 0) return;
+      BANCO_LISTO = true;
+      // Si indexSets() falla, la app no tiene banco: no es un detalle que se
+      // pueda dejar en la consola. Se dice en pantalla y se cuenta como si todos
+      // los archivos hubieran fallado, que es lo que pasó en la práctica.
+      try { indexSets(); }
+      catch(e){
+        console.error('indexSets:', e);
+        toast('The question bank could not be prepared (' + (e && e.message ? e.message : 'unknown error') +
+              '). Reload the page; if it keeps happening, tell Tommy.', true);
+        fallidos.push('indexSets');
+      }
+      resolve(fallidos);
+    }
+    lista.forEach(function(src){
+      var el = document.createElement('script');
+      el.src = src;
+      el.async = false;
+      el.onload = uno;
+      el.onerror = function(){ fallidos.push(src); uno(); };
+      document.head.appendChild(el);
+    });
+  });
+  return _bancoPromesa;
+}
+/* Corre `fn` cuando el banco esté. Si todavía no está, muestra que está cargando
+   en vez de dejar la pantalla vacía sin explicación. */
+function conBanco(fn){
+  if(BANCO_LISTO) return fn();
+  var cap = $('#banco-cargando');
+  if(cap) cap.classList.remove('hidden');
+  return cargarBanco().then(function(fallidos){
+    if(cap) cap.classList.add('hidden');
+    var archivos = fallidos.filter(function(f){ return f !== 'indexSets'; });
+    if(archivos.length){
+      toast(archivos.length + ' question file(s) did not load. Some sets will be missing. ' +
+            'Reload the page; if it keeps happening, tell Tommy.', true);
+    }
+    fn();
+  });
+}
 
 function indexSets(){
   SETS = window.SAT_SETS.slice();
@@ -4482,7 +4569,7 @@ function showAuthGate(){
 function enterApp(){
   mostrarSolo('view-home');
   setUserChip();
-  renderHome();
+  conBanco(renderHome);
 }
 function setUserChip(){
   var chip = $('#user-chip'); if(!chip) return;
@@ -4945,7 +5032,7 @@ function authBoot(){
   if(!authAvailable()){
     // Sin backend configurado → modo local (funciona igual, guarda en este navegador)
     mostrarSolo('view-home');
-    renderHome();
+    conBanco(renderHome);
     return;
   }
   store.remove('satapp_invitado');   // el modo invitado se retiró: la cuenta es obligatoria
@@ -5230,10 +5317,11 @@ function wireAuth(){
 }
 
 function init(){
-  indexSets();
   applyZoom();
   buildRefSheet();
-  renderHome();
+  // El banco arranca a bajar ya, en paralelo con todo lo demás. Nadie lo espera
+  // todavía: lo espera conBanco(), y solo quien lo necesite.
+  cargarBanco();
 
   document.addEventListener('click', function(e){
     var b = (e.target && e.target.closest) ? e.target.closest('.btn-desmos') : null;
@@ -5361,9 +5449,9 @@ function init(){
   var abr = $('#btn-admin-refresh'); if(abr) abr.addEventListener('click', loadAdmin);
   authBoot();
 }
-/* Los sets se cargan con `defer`: descargan en paralelo sin bloquear el pintado,
-   pero se ejecutan DESPUES de parsear el documento. Por eso init() no puede
-   correr aqui mismo — a esta altura window.SAT_SETS todavia estaria vacio. */
+/* init() ya no depende del banco: cablea la interfaz, arranca la descarga de los
+   sets y deja que authBoot() decida qué pantalla mostrar. Quien necesite las
+   preguntas pasa por conBanco(). */
 if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
 else init();
 

@@ -32,6 +32,7 @@
 const fs = require('fs');
 const path = require('path');
 const vm = require('vm');
+const { archivosDeSets } = require('./lib-banco');
 
 const RAIZ = path.resolve(__dirname, '..');
 const OFICIAL_MATH = {
@@ -52,17 +53,21 @@ const CANON = {
 
 function cargar() {
   const html = fs.readFileSync(path.join(RAIZ, 'index.html'), 'utf8');
-  const sinComentarios = html.replace(/<!--[\s\S]*?-->/g, '');
-  // `defer` tiene que entrar en el patrón: los sets se cargan diferidos desde el
-  // 14-sep-2026 y sin esto la auditoría medía CERO preguntas... y pasaba igual.
-  const vivos = [...sinComentarios.matchAll(/<script(?:\s+defer)?\s+src="(sets\/[a-z0-9-]+\.js)">/g)].map(m => m[1]);
-  const retirados = [...html.matchAll(/<!--\s*<script(?:\s+defer)?\s+src="(sets\/[a-z0-9-]+\.js)">[\s\S]*?-->/g)].map(m => m[1]);
-  if(!vivos.length){
-    console.error('\n  ✗ No se encontró NINGÚN <script src="sets/...">. O index.html cambió de forma,');
-    console.error('    o esta auditoría dejó de ver el banco. Una auditoría que mide cero y dice');
-    console.error('    "todo bien" es peor que no tenerla.\n');
+  // De dónde salen los sets vivos lo decide tools/lib-banco.js, en un solo lugar:
+  // este regex estaba copiado en seis herramientas y cuando la app cambió cómo
+  // los carga, esta auditoría midió CERO preguntas... y pasó igual.
+  let vivos;
+  try { vivos = archivosDeSets(RAIZ); }
+  catch (e) {
+    console.error('\n  ✗ ' + e.message);
+    console.error('    Una auditoría que mide cero y dice "todo bien" es peor que no tenerla.\n');
     process.exit(1);
   }
+  // Los retirados quedan comentados DENTRO de la lista, con su razón al lado.
+  // Cuentan aparte para que la auditoría no los dé por perdidos ni por vivos.
+  const retirados = [...html.matchAll(/^[ \t]*\/\/.*?(sets\/[a-z0-9-]+\.js)/gm)].map(m => m[1])
+    .concat([...html.matchAll(/<!--\s*<script(?:\s+defer)?\s+src="(sets\/[a-z0-9-]+\.js)">[\s\S]*?-->/g)].map(m => m[1]))
+    .filter((v, i, a) => a.indexOf(v) === i && !vivos.includes(v));
   const ctx = { window: { SAT_SETS: [], SAT_DESMOS: {} }, console };
   vm.createContext(ctx);
   const rotos = [];

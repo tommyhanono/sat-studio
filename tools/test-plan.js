@@ -38,6 +38,22 @@ const res = [];
 const check = (n, c, extra) => { res.push([n, !!c, c ? '' : (extra === undefined ? '' : ' → ' + JSON.stringify(extra))]); };
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
+/* El banco ya no se carga con `defer`: se inyecta después del primer pintado, así
+   que estar "cargado" no basta. Y la bandera tampoco alcanza sola: el cargador la
+   pone ANTES de que conBanco() llame a renderHome(), así que había una ventana en
+   la que window.SAT_SETS ya tenía todo y el inicio todavía estaba vacío. Se espera
+   a las dos cosas: el banco, y —si el inicio es la pantalla visible— que esté pintado. */
+async function esperarBanco(page, ms) {
+  await page.waitForFunction('window.BANCO_LISTO === true', { timeout: ms || 30000 });
+  await page.waitForFunction(() => {
+    const home = document.getElementById('view-home');
+    if (!home || home.classList.contains('hidden')) return true;   // estamos en cuenta: nada que pintar
+    const secciones = document.getElementById('set-sections');
+    return !!(secciones && secciones.children.length);
+  }, { timeout: ms || 30000 });
+}
+
+
 (async () => {
   if (!CHROME) { console.error('No se encontró Chrome ni Chromium. Se salta el test del plan.'); process.exit(0); }
   const puppeteer = resolverPuppeteer();
@@ -54,6 +70,7 @@ const sleep = ms => new Promise(r => setTimeout(r, ms));
 
   try {
     await page.goto(`http://127.0.0.1:${PUERTO}/index.html`, { waitUntil: 'networkidle2' });
+      await esperarBanco(page);
     await sleep(600);
 
     /* ---- P1 · la taxonomía cubre el banco ---- */
@@ -164,7 +181,13 @@ const sleep = ms => new Promise(r => setTimeout(r, ms));
     });
     check('P7 las preguntas ya falladas van primero', prio.incluidas === prio.falladas, prio);
 
-    /* ---- P8 · la sección se pinta y se puede usar de verdad ---- */
+    /* ---- P8 · la sección se pinta y se puede usar de verdad ----
+       Se vuelve a pintar a propósito: los pasos de arriba escribieron historial
+       en localStorage, y el plan sin datos se pinta distinto (dice que no puede
+       diagnosticar, y no saca las casillas). Sin este render el test miraba la
+       versión vacía. */
+    await page.evaluate(() => { renderHome(); });
+    await sleep(400);
     const ui = await page.evaluate(() => {
       const secs = [...document.querySelectorAll('#set-sections .home-sec summary')].map(s => s.textContent.trim());
       const plan = document.querySelector('#set-sections .plan-wrap');
@@ -186,12 +209,16 @@ const sleep = ms => new Promise(r => setTimeout(r, ms));
 
     /* ---- P9 · marcar un tema cambia el test (la decisión es del estudiante) ---- */
     const interaccion = await page.evaluate(async () => {
-      const antes = window.SATAPP.planState().elegidos.slice();
+      // `elegidos` vale null mientras el estudiante no haya tocado nada: planHTML()
+      // calcula la recomendación para pintarla pero no la guarda, y eso está bien
+      // (la recomendación sigue a los datos más nuevos). El test no puede asumir
+      // que ya hay un arreglo guardado.
+      const antes = (window.SATAPP.planState().elegidos || []).slice();
       const cb = document.querySelector('.plan-cb');
       const k = cb.getAttribute('data-plan-topic');
       cb.click();
       await new Promise(r => setTimeout(r, 300));
-      const despues = window.SATAPP.planState().elegidos.slice();
+      const despues = (window.SATAPP.planState().elegidos || []).slice();
       return { k, antes, despues, cambio: antes.length !== despues.length };
     });
     check('P9 desmarcar un tema lo saca del plan', interaccion.cambio, interaccion);

@@ -15,6 +15,7 @@
 'use strict';
 const fs = require('fs');
 const path = require('path');
+const { archivosDeSets } = require('./lib-banco');
 
 const RAIZ = path.resolve(__dirname, '..');
 const ENTRADA = process.argv[2] || path.join(RAIZ, 'i18n', 'pendiente.json');
@@ -25,7 +26,7 @@ function leerBanco() {
   global.window = g;
   const html = fs.readFileSync(path.join(RAIZ, 'index.html'), 'utf8');
   const sin = html.replace(/<!--[\s\S]*?-->/g, '');
-  const archivos = [...sin.matchAll(/<script(?:\s+defer)?\s+src="(sets\/[a-z0-9-]+\.js)">/g)].map(m => m[1]);
+  const archivos = archivosDeSets(RAIZ);
   for (const rel of archivos) {
     const abs = path.join(RAIZ, rel);
     if (!fs.existsSync(abs)) continue;

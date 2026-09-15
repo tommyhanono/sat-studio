@@ -17,24 +17,16 @@
 'use strict';
 const fs = require('fs');
 const path = require('path');
+const { archivosDeSets } = require('./lib-banco');
 
 const RAIZ = path.resolve(__dirname, '..');
 const SALIDA = process.argv[2] || path.join(RAIZ, 'i18n', 'pendiente.json');
 
-/* Español de VERDAD. Con una sola palabra suelta no alcanza: "no", "la", "es" y
-   "si" existen igual en inglés, y con ese criterio 80 pasajes en inglés perfecto
-   salían marcados como español. Se pide un acento/ñ/¿/¡, o dos marcas distintas
-   en el mismo texto. */
-// MISMO detector que tools/test-idioma.js. Tenerlos desalineados fue el error
-// de las primeras pasadas.
-const PERMITIDOS = /Inés|Ibáñez|Bogotá|café|Perú|México|Nicolás|Ada Rourke|naïve|résumé|Zaha|José|García|Amara|Petrova|\b(?:sin|cos|tan|sec|csc|cot)\s*[²³]?\s*[(θA-Za-z0-9]|\b(?:sin|cos|tan)\s*[²³]|\bet\s+al\b|SOHCAHTOA/g;
-/* Palabras y terminaciones que no existen en inglés. Una sola basta. */
-const ES_FUERTE = /\b(los|las|una|unos|unas|del|que|por|para|como|cuando|donde|porque|entre|sobre|desde|hasta|hacia|según|durante|mientras|aunque|también|tampoco|siempre|nunca|cada|toda|todos|todas|otra|otros|otras|mismo|misma|tanto|son|era|fue|ser|estar|está|están|tiene|tienen|puede|pueden|hace|hacen|dice|dicen|queda|quedan|salen|más|menos|muy|pero|aquí|esto|eso|este|esta|ese|esa|estos|estas|esos|esas|sus|les|así|solo|sólo|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|primero|segunda|segundo|tercera|tercero|nada|algo|alguien|nadie|cual|cuál|quien|quién|cuyo|cuya|ambos|ambas|varios|varias|mucho|mucha|muchos|muchas|poco|poca|pocos|pocas)\b|\b\w+(ción|ciones|dad|tad|mente|miento|mientos|anza|encia|ancia|aje|ísimo|ería|ando|endo|arse|erse|irse)\b|\b(ecuaci\w*|exponencial\w*|iguales|cuadr[áa]tic\w*|ra[íi]c\w*|ra[íi]z|despeje|pendiente|recta|rectas|circunferencia|tri[áa]ngulo\w*|volumen|posesiv\w*|verbo\w*|oraci\w*|palabra\w*|pregunta\w*|respuesta\w*|nivel\w*|f[áa]cil|dif[íi]cil|simulacro|n[úu]cleo|banco|coma|comas|sujeto|signo|signos|valor|valores|n[úu]mero\w*|suma|resta|divide|multiplica|elevar|elevado|entero|enteros|cateto\w*|hipotenusa|[áa]ngulo\w*|lado|lados|altura|radio|di[áa]metro|[áa]rea|gr[áa]fica|tabla|texto|opci[óo]n\w*)\b/i;
-function esEspanol(t) {
-  const limpio = String(t).replace(PERMITIDOS, '');
-  if (/[áéíóúñ¿¡]/i.test(limpio)) return true;
-  return ES_FUERTE.test(limpio);
-}
+/* El detector vive en tools/detector-espanol.js y NO se copia acá. Tenerlo
+   duplicado ya costó caro: la copia de este archivo se quedó atrás, marcó de más
+   y de menos, y 499 campos del banco se dieron por traducidos cuando no lo
+   estaban. Una sola definición, importada. */
+const { esEspanol } = require('./detector-espanol');
 const ES = { test: esEspanol };
 
 /** Lee un literal de cadena que empieza en `i` (comilla) y devuelve {texto, fin}. */
@@ -74,7 +66,7 @@ function idCercano(src, pos) {
 
 const html = fs.readFileSync(path.join(RAIZ, 'index.html'), 'utf8');
 const sinComentarios = html.replace(/<!--[\s\S]*?-->/g, '');
-const archivos = [...sinComentarios.matchAll(/<script(?:\s+defer)?\s+src="(sets\/[a-z0-9-]+\.js)">/g)].map(m => m[1]);
+const archivos = archivosDeSets(RAIZ);
 if (!archivos.length) { console.error('No se encontró ningún set vivo en index.html.'); process.exit(1); }
 
 const CAMPOS = ['skill', 'expCorrect', 'tip', 'title', 'description'];
@@ -145,6 +137,20 @@ for (const rel of archivos) {
 }
 
 fs.mkdirSync(path.dirname(SALIDA), { recursive: true });
+/* Este archivo es el REGISTRO de la traducción, no un archivo temporal: guarda
+   qué se tradujo y a qué. Sobrescribirlo cuando ya tiene trabajo adentro lo
+   borra sin aviso, y pasó. Ahora hay que pedirlo explícitamente. */
+if (fs.existsSync(SALIDA) && !process.argv.includes('--forzar')) {
+  let previo = [];
+  try { previo = JSON.parse(fs.readFileSync(SALIDA, 'utf8')); } catch (e) { previo = []; }
+  const hechos = previo.filter(i => i && (i.hecho || (typeof i.en === 'string' && i.en.length))).length;
+  if (hechos) {
+    console.error(`\n✗ ${SALIDA} ya tiene ${hechos} traducción(es) registradas.`);
+    console.error('  Sobrescribirlo las borra. Si de verdad querés empezar de cero: --forzar');
+    console.error('  (o pasá otra ruta de salida como primer argumento).\n');
+    process.exit(1);
+  }
+}
 fs.writeFileSync(SALIDA, JSON.stringify(items, null, 1));
 
 const porCampo = {};

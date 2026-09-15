@@ -20,18 +20,12 @@ const path = require('path');
 const RAIZ = path.resolve(__dirname, '..');
 
 const { esEspanol } = require('./detector-espanol');
+const { cargarBanco } = require('./lib-banco');
 
 /* ---------- 1. el banco ---------- */
-const g = { SAT_SETS: [], SAT_DESMOS: {} };
-global.window = g;
-const html = fs.readFileSync(path.join(RAIZ, 'index.html'), 'utf8');
-const sin = html.replace(/<!--[\s\S]*?-->/g, '');
-const archivos = [...sin.matchAll(/<script(?:\s+defer)?\s+src="(sets\/[a-z0-9-]+\.js)">/g)].map(m => m[1]);
-if (!archivos.length) { console.error('No se encontró ningún set vivo en index.html.'); process.exit(1); }
-for (const rel of archivos) {
-  const abs = path.join(RAIZ, rel);
-  if (fs.existsSync(abs)) { try { eval(fs.readFileSync(abs, 'utf8')); } catch (e) { console.error(rel + ': ' + e.message); process.exit(1); } }
-}
+let g;
+try { g = cargarBanco(RAIZ); }
+catch (e) { console.error('✗ ' + e.message); process.exit(1); }
 
 const fallos = [];
 let nPreguntas = 0, nCampos = 0;
