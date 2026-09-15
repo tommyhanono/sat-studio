@@ -14,6 +14,13 @@ Para entrar hace falta **una cuenta**, creada con el correo de la escuela. Al re
 meta** y tu **fecha de examen**, y con eso la app te dice cuánto te falta y cuánto tiempo tienes. El historial
 te sigue a cualquier dispositivo.
 
+## Instálala en el teléfono
+
+Ábrela en el navegador del celular y elige **Añadir a pantalla de inicio** (Safari: el botón de compartir;
+Chrome: el menú de tres puntos). Queda como una app de verdad —icono propio, pantalla completa, sin barra del
+navegador— y **abre aunque no haya internet**. Lo que practiques sin señal se guarda igual y sube solo cuando
+vuelve la conexión.
+
 ## Cómo usarla
 
 **Opción 1 — Doble clic:** abre `index.html` en Chrome/Edge/Safari. Todo funciona en local (la calculadora

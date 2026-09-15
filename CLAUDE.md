@@ -1,8 +1,8 @@
 # SAT Studio — CLAUDE.md
 
-Plataforma de práctica para el **Digital SAT** con interfaz estilo **Bluebook**. Se reparte por link y la
-idea es que la use un colegio entero. **Toda la interfaz y las 918 preguntas están en inglés**, igual que el
-examen; el código, los comentarios y estas notas siguen en español.
+Plataforma de práctica para el **Digital SAT** con interfaz estilo **Bluebook**. Se reparte por link, se
+instala en el teléfono como app, y la idea es que la use un colegio entero. **Toda la interfaz y las 1.002
+preguntas están en inglés**, igual que el examen; el código, los comentarios y estas notas siguen en español.
 
 Para entrar hace falta **cuenta**, creada con el correo de la escuela. Al registrarse, el estudiante elige su
 **puntaje meta** y su **fecha de examen**.
@@ -29,7 +29,7 @@ Abrir `index.html` en el navegador, o cualquier server estático. No hay `npm ru
 tools/verificar.sh
 ```
 
-Corre las siete y sale con código 1 si algo falla:
+Corre las ocho y sale con código 1 si algo falla:
 
 | Qué | Verifica | Casos |
 |---|---|---|
@@ -39,6 +39,7 @@ Corre las siete y sale con código 1 si algo falla:
 | `test-plan.js` | que "Mi plan de mejora" recomienda desde los datos del estudiante y arma el test que prometió | 30 |
 | `test-idioma.js` | que los 9.000+ campos que lee un estudiante en el banco están en inglés | — |
 | `test-pantallas.js` | **lo que se ve**: recorre 13 pantallas en Chrome y lee el texto, los botones sin acción, el XSS, las barras vacías y el scroll horizontal a 320/375/414 | 16 |
+| `test-pwa.js` | que se **instale** en el teléfono y **abra sin internet** (corta la red de verdad) | 20 |
 | `huella-banco.js` | la huella estructural del banco (ids, respuestas, dominios, dificultades) | — |
 
 Necesitan Chrome y `puppeteer-core` (se toma de `~/jarvis/app`); si no están, se **saltan** con código 0 para
@@ -77,6 +78,35 @@ entre A, B, C y D cuando un set generado la deja cargada a una letra.
 `LVLORD`, `DIFFS`) compara contra esas tres cadenas, así que una pregunta marcada así cae al rango 0 y el mock
 adaptativo **la manda al módulo fácil**. `validar-set.js` lo rechaza e `indexSets()` lo normaliza al cargar.
 
+## Las ocho pestañas del inicio
+
+`Daily` · `Math Topics` · `Verbal Topics` · `Fast Pace` · `Practice Tests` · `Full Mocks` · `Classroom` ·
+`My Progress`. Se ve **una a la vez** (la clave está en `store` bajo `satapp_home_tab`, y `homeTab()` traduce
+los nombres viejos para que una preferencia guardada no deje a nadie en una pestaña que ya no existe).
+
+Antes eran cinco grupos apilados en una sola página: 21 secciones plegables y cinco bloques de cabecera
+encima. Decidir entre 21 acordeones es la forma más rápida de que alguien no haga nada.
+
+- Los sets de las dos pestañas de temas pasan por `buscadorSets()`: búsqueda, filtro por tema y por nivel,
+  ocho visibles y "Show the rest". **Filtra en el DOM**, sin repintar el inicio — repintar pierde el scroll y
+  lo que el estudiante ya escribió.
+- `Fast Pace` arma el test en el momento con los temas que el plan marcó como los más flojos. Existe porque
+  el hueco real de un estudiante no son 70 minutos seguidos, son los diez entre clase y clase.
+- `Classroom` es el tablón del profesor: tabla `sat.posts` + tres RPC, el grupo sale del dominio del correo.
+
+## Como app en el teléfono
+
+`manifest.webmanifest` + `sw.js`. Dos cosas que hay que saber antes de tocarlos:
+
+- **`index.html` va por RED PRIMERO** en el service worker. Si se cachea primero, el estudiante se queda
+  congelado en una versión vieja y no hay forma de sacarlo. Los sets y los iconos sí van por caché primero.
+- **Supabase y los CDN nunca se cachean.** Servir una respuesta guardada de la API sería darle a alguien el
+  historial de otro.
+- Al cambiar `sw.js` o el shell hay que **subir `VERSION`** (`sat-studio-v1`), o los navegadores que ya lo
+  tienen siguen sirviendo la caché vieja.
+- Los iconos se regeneran con el script de `iconos.js` desde `icon.svg`: esta Mac no tiene ImageMagick ni
+  brew, así que rasteriza con el Chrome instalado vía puppeteer-core.
+
 ## Cómo se carga el banco
 
 Los ~1,5 MB de preguntas **no** se cargan con `defer`: `defer` descarga en paralelo pero bloquea el
@@ -109,7 +139,11 @@ Este sitio es **público**: pasa `90_Sistema/TOMMY-WEB-LAUNCH.md` completo (vaul
 ~/.claude/scripts/web-launch-audit/run.sh . --out report.md
 ```
 
-Estado al 15-sep-2026: **34 PASS · 2 FAIL · 1 WARN**. Los dos FAIL, con su razón:
+Estado al 15-sep-2026, contra el sitio EN VIVO: **34 PASS · 0 FAIL · 2 WARN**. Contra el repo local salta
+un FAIL extra, `B1-12`, que apunta a un `console.log` de `tools/huella-banco.js` — un script de línea de
+comandos, donde el estado de éxito es lo que imprime y su código de salida. Falso positivo por construcción.
+
+Los WARN que quedan:
 
 1. **`B2-17` og:image 404** — `og.png` existe en el repo; el auditor lo pide contra
    `https://sat-studio.vercel.app/og.png`, que es 404 hasta el deploy. Se cierra solo al publicar.
