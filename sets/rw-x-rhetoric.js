@@ -15,13 +15,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text with the most logical transition?',
       choices:{A:'Specifically,', B:'For example,', C:'Consequently,', D:'Similarly,'},
       correct:'A',
-      expCorrect:'La 2ª oración no agrega un caso nuevo: reformula esa MISMA prioridad (recortar la espera) de manera más precisa y estrecha, poniéndole una cifra exacta (diez minutos). Eso es “Specifically” (dicho con más precisión).',
+      expCorrect:'The 2nd sentence does not add a new case: it restates that SAME priority (cutting the wait) more precisely and more narrowly, putting an exact figure on it (ten minutes). That is “Specifically”.',
       expWrong:{
-        B:'“For example” anunciaría UN caso entre varios que ilustra la idea, pero aquí no hay ejemplos: la 2ª oración es la misma meta expresada con más detalle, no una instancia.',
-        C:'“Consequently” marca causa→efecto, y la meta de diez minutos no es una CONSECUENCIA de tener una prioridad: es esa prioridad definida con más exactitud.',
-        D:'“Similarly” compara dos cosas parecidas, pero aquí solo hay una idea que se precisa, no dos elementos comparados.'
+        B:'“For example” would announce ONE case among several illustrating the idea, but there are no examples here: the 2nd sentence is the same goal stated in more detail, not an instance.',
+        C:'“Consequently” marks cause→effect, and the ten-minute target is not a CONSEQUENCE of having a priority: it is that priority stated more exactly.',
+        D:'“Similarly” compares two similar things, but here there is only one idea being made precise, not two items being compared.'
       },
-      tip:'Cuando la 2ª oración dice lo mismo que la 1ª pero con más precisión (“es decir, en concreto…”), usa “Specifically”, no “For example”. El ejemplo aporta un caso; la precisión reescribe la misma idea.'
+      tip:'When the 2nd sentence says the same thing as the 1st but more precisely (“that is, specifically…”), use “Specifically”, not “For example”. An example supplies a case; precision rewrites the same idea.'
     },
     {
       id:'XT-02', type:'mc', domain:'Expression of Ideas', difficulty:'Difícil', extreme:true,
@@ -30,13 +30,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text with the most logical transition?',
       choices:{A:'In addition,', B:'Therefore,', C:'For instance,', D:'However,'},
       correct:'B',
-      expCorrect:'El movimiento del acero (causa) es lo que OBLIGA a usar juntas deslizantes (respuesta de los ingenieros). La 2ª oración es la consecuencia de la 1ª, así que “Therefore” (por eso) es lo correcto.',
+      expCorrect:'The movement of the steel (the cause) is what FORCES the use of sliding joints (the engineers’ response). The 2nd sentence is the consequence of the 1st, so “Therefore” is what you want.',
       expWrong:{
-        A:'“In addition” suma un dato del mismo tipo, pero la decisión de las juntas no es “un dato más”: es lo que provoca el problema de la 1ª oración.',
-        C:'“For instance” introduce un ejemplo de algo dicho antes, y las juntas no son un ejemplo de la dilatación del acero, sino la respuesta a ella.',
-        D:'“However” marca contraste, pero las dos ideas no chocan: la 2ª resuelve lo que plantea la 1ª.'
+        A:'“In addition” adds a fact of the same kind, but the decision about the joints is not “one more fact”: it is what the problem in the 1st sentence forces.',
+        C:'“For instance” introduces an example of something said before, and the joints are not an example of steel expanding, but the response to it.',
+        D:'“However” marks contrast, but the two ideas do not clash: the 2nd solves what the 1st raises.'
       },
-      tip:'Ojo con el falso gemelo “In addition”: ambas van hacia adelante, pero solo “Therefore” funciona cuando la 2ª oración es lo que la 1ª CAUSA. Pregúntate: ¿es un dato más o es la consecuencia?'
+      tip:'Watch the false twin “In addition”: both move forward, but only “Therefore” works when the 2nd sentence is what the 1st CAUSES. Ask yourself: is this one more fact or is it the consequence?'
     },
     {
       id:'XT-03', type:'mc', domain:'Expression of Ideas', difficulty:'Difícil', extreme:true,
@@ -45,13 +45,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text with the most logical transition?',
       choices:{A:'Furthermore,', B:'Instead,', C:'Nevertheless,', D:'As a result,'},
       correct:'C',
-      expCorrect:'La 1ª oración es un obstáculo real (poco tiempo, un solo camión); la 2ª dice que aun así lo lograron. Ese “a pesar del obstáculo, igual sucedió” es exactamente “Nevertheless”.',
+      expCorrect:'The 1st sentence is a real obstacle (little time, one truck); the 2nd says they pulled it off anyway. That “despite the obstacle, it happened all the same” is exactly “Nevertheless”.',
       expWrong:{
-        A:'“Furthermore” suma una idea en la misma dirección, pero aquí la 2ª oración se opone a lo que el obstáculo hacía esperar (que NO terminaran).',
-        B:'“Instead” sustituye un plan A rechazado por un plan B, pero no hay un plan que se descarte y se reemplace: hay una dificultad y un éxito logrado pese a ella.',
-        D:'“As a result” marca consecuencia, pero terminar a tiempo no es el EFECTO de tener poco tiempo y un solo camión; ocurre en contra de esa limitación.'
+        A:'“Furthermore” adds an idea in the same direction, but here the 2nd sentence opposes what the obstacle led you to expect (that they would NOT finish).',
+        B:'“Instead” swaps a rejected plan A for a plan B, but no plan is discarded and replaced: there is a difficulty and a success achieved despite it.',
+        D:'“As a result” marks consequence, but finishing on time is not the EFFECT of having little time and one truck; it happens against that limitation.'
       },
-      tip:'“Nevertheless” vs “Instead”: usa “Nevertheless” cuando el resultado se da PESE a un obstáculo; usa “Instead” solo cuando algo reemplaza a otra cosa que se descartó.'
+      tip:'“Nevertheless” vs “Instead”: use “Nevertheless” when the result happens DESPITE an obstacle; use “Instead” only when something replaces another thing that was ruled out.'
     },
     /* ===== CONCESSION-THEN-RETURN pivots ===== */
     {
@@ -61,13 +61,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text with the most logical transition?',
       choices:{A:'In fact,', B:'Likewise,', C:'Furthermore,', D:'Still,'},
       correct:'D',
-      expCorrect:'La 2ª oración es un contraejemplo (unas pocas especies en aguas frías y oscuras). La 3ª deja atrás esa excepción y RETOMA la afirmación original (casi todos los arrecifes viven en aguas someras y con sol). Ese regreso al reclamo inicial pese a la excepción es “Still” (aun así).',
+      expCorrect:'The 2nd sentence is a counterexample (a few species in cold, dark water). The 3rd leaves that exception behind and RETURNS to the original claim (almost all reefs live in shallow, sunlit water). That return to the initial claim despite the exception is “Still”.',
       expWrong:{
-        A:'“In fact” intensificaría el contraejemplo (las especies de aguas profundas), pero la 3ª oración no refuerza esa excepción: vuelve a la regla general.',
-        B:'“Likewise” marcaría que la 3ª oración es semejante a la 2ª (más casos de arrecifes en la oscuridad), y en realidad dice lo contrario.',
-        C:'“Furthermore” sumaría otro dato en la línea del contraejemplo, pero la 3ª oración no extiende la excepción: la contrarresta.'
+        A:'“In fact” would intensify the counterexample (the deep-water species), but the 3rd sentence does not reinforce that exception: it returns to the general rule.',
+        B:'“Likewise” would mark the 3rd sentence as similar to the 2nd (more cases of reefs in darkness), and it actually says the opposite.',
+        C:'“Furthermore” would add another fact along the lines of the counterexample, but the 3rd sentence does not extend the exception: it counters it.'
       },
-      tip:'En cadenas “regla → pero un caso raro → ___ la regla sigue mandando”, el hueco RETOMA la afirmación inicial: usa “Still”, “Even so” o “Nonetheless”, no transiciones que sumen al contraejemplo.'
+      tip:'In chains of “rule → but a rare case → ___ the rule still holds”, the blank RETURNS to the initial claim: use “Still”, “Even so” or “Nonetheless”, not transitions that add to the counterexample.'
     },
     {
       id:'XT-05', type:'mc', domain:'Expression of Ideas', difficulty:'Difícil', extreme:true,
@@ -76,13 +76,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text with the most logical transition?',
       choices:{A:'Even so,', B:'Indeed,', C:'What is more,', D:'Likewise,'},
       correct:'A',
-      expCorrect:'La 2ª oración concede un fracaso (una obra abucheada). La 3ª deja de lado esa excepción y regresa a la idea inicial: el público en general aceptaba su música enseguida. Volver al reclamo original pese a la concesión es “Even so”.',
+      expCorrect:'The 2nd sentence concedes a failure (a work that was booed). The 3rd sets that exception aside and returns to the initial idea: audiences in general took to his music right away. Returning to the original claim despite the concession is “Even so”.',
       expWrong:{
-        B:'“Indeed” confirmaría y reforzaría lo dicho justo antes (el abucheo), pero la 3ª oración no refuerza el fracaso: vuelve a la aceptación general.',
-        C:'“What is more” añade otro punto en la misma línea del contraejemplo, y aquí se hace lo opuesto: se retoma la regla favorable.',
-        D:'“Likewise” marcaría semejanza con la obra abucheada, cuando la 3ª oración describe la situación contraria.'
+        B:'“Indeed” would confirm and reinforce what was just said (the booing), but the 3rd sentence does not reinforce the failure: it returns to the general acceptance.',
+        C:'“What is more” adds another point along the counterexample’s line, and here the opposite happens: the favorable rule is taken back up.',
+        D:'“Likewise” would mark a similarity with the booed work, when the 3rd sentence describes the opposite situation.'
       },
-      tip:'“Even so” es la señal de que, tras admitir un caso en contra, vuelves a defender la afirmación original. Los distractores aquí empujan a seguir hablando del contraejemplo.'
+      tip:'“Even so” is the signal that, after granting a case against you, you go back to defending the original claim. The distractors here push you to keep talking about the counterexample.'
     },
     {
       id:'XT-06', type:'mc', domain:'Expression of Ideas', difficulty:'Difícil', extreme:true,
@@ -91,13 +91,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text with the most logical transition?',
       choices:{A:'In fact,', B:'Nonetheless,', C:'Similarly,', D:'Consequently,'},
       correct:'B',
-      expCorrect:'La 2ª oración admite una excepción (el barro tras la lluvia). La 3ª supera esa objeción y RETOMA la afirmación inicial: casi todo el año el sendero es fácil para carriolas. Ese regreso pese a la concesión es “Nonetheless”.',
+      expCorrect:'The 2nd sentence admits an exception (the mud after rain). The 3rd gets past that objection and RETURNS to the initial claim: for almost the whole year the trail is easy for strollers. That return despite the concession is “Nonetheless”.',
       expWrong:{
-        A:'“In fact” intensificaría el problema del barro, pero la 3ª oración no agrava la excepción: vuelve a lo fácil que es el sendero.',
-        C:'“Similarly” marcaría semejanza con el tramo embarrado, y la 3ª oración describe lo contrario (superficie firme, sin problemas).',
+        A:'“In fact” would intensify the mud problem, but the 3rd sentence does not worsen the exception: it returns to how easy the trail is.',
+        C:'“Similarly” would mark a similarity with the muddy stretch, and the 3rd sentence describes the opposite (a firm surface, no trouble).',
         D:'“Consequently” haría del sendero fácil una consecuencia del barro, lo cual no tiene sentido: son ideas opuestas, no causa y efecto.'
       },
-      tip:'Detecta el patrón “normalmente sí → una vez no → ___ normalmente sí”. El hueco vuelve al inicio: “Nonetheless”. Descarta lo que continúe describiendo la excepción.'
+      tip:'Spot the pattern “usually yes → once no → ___ usually yes”. The blank returns to the start: “Nonetheless”. Rule out anything that keeps describing the exception.'
     },
     /* ===== SYNTHESIS — dual-constraint goals ===== */
     {
@@ -111,13 +111,13 @@ window.SAT_SETS.push({
         D:'Offset printing can produce thousands of pages an hour, far more than letterpress can.'
       },
       correct:'C',
-      expCorrect:'Cumple LAS DOS metas. Presenta qué es el letterpress para quien no lo conoce (“prensa tipos metálicos en relieve sobre el papel”) Y marca la diferencia con el offset (deja marca vs. imagen totalmente plana).',
+      expCorrect:'It meets BOTH goals. It introduces what letterpress is for someone who does not know it (“presses raised metal type into the paper”) AND marks the difference from offset (it leaves an impression vs. a completely flat image).',
       expWrong:{
         A:'Falla la meta de DIFERENCIA: define bien el letterpress para un público nuevo, pero nunca lo contrasta con el offset.',
         B:'Falla la meta de PRESENTAR: sí contrasta letterpress y offset, pero da por sabido qué es el letterpress; nunca lo explica a quien no lo conoce.',
         D:'Falla la meta de PRESENTAR el letterpress: la oración habla del offset y su velocidad, sin decir qué es el letterpress ni definirlo.'
       },
-      tip:'Con metas dobles, marca mentalmente las dos casillas: (1) ¿presenta qué es el término a quien no lo conoce? (2) ¿contrasta con lo otro? Solo la opción que marca AMBAS sirve.'
+      tip:'With double goals, tick both boxes in your head: (1) does it introduce what the term is to someone who does not know it? (2) does it contrast with the other thing? Only the option ticking BOTH works.'
     },
     {
       id:'XT-08', type:'mc', domain:'Expression of Ideas', difficulty:'Difícil', extreme:true,
@@ -130,13 +130,13 @@ window.SAT_SETS.push({
         D:'A regressive tax, one that takes a bigger share of income from lower earners, works in the opposite direction from a progressive tax, which takes more from higher earners.'
       },
       correct:'D',
-      expCorrect:'Cumple LAS DOS metas. Define el término “regressive tax” dentro de la misma oración (“toma una porción mayor del ingreso de quienes ganan menos”) Y lo contrasta con el progressive tax (dirección opuesta). Presenta y diferencia a la vez.',
+      expCorrect:'It meets BOTH goals. It defines the term “regressive tax” within the same sentence (“takes a larger share of income from those who earn less”) AND contrasts it with a progressive tax (the opposite direction). It introduces and differentiates at once.',
       expWrong:{
         A:'Falla la meta de DIFERENCIA: define bien qué es un impuesto regresivo, pero no lo compara con el progresivo.',
         B:'Falla la meta de PRESENTAR: afirma que van en direcciones opuestas (diferencia), pero nunca explica qué significa “regressive tax” a quien no conoce el término.',
         C:'Falla la meta de PRESENTAR el término: da ejemplos (impuestos a las ventas vs. a la renta), pero no define qué quiere decir “regresivo” para un público nuevo.'
       },
-      tip:'Cuando la meta pide “introducir el término X”, la opción correcta suele definirlo ahí mismo (“X, que es…”). Si solo lo nombra sin explicarlo, no presenta.'
+      tip:'When the goal asks you to “introduce the term X”, the right option usually defines it right there (“X, which is…”). If it only names it without explaining, it does not introduce.'
     },
     {
       id:'XT-09', type:'mc', domain:'Expression of Ideas', difficulty:'Difícil', extreme:true,
@@ -149,13 +149,13 @@ window.SAT_SETS.push({
         D:'Despite its name, the maned wolf is not actually a true wolf.'
       },
       correct:'A',
-      expCorrect:'Cumple LAS DOS metas. Presenta al animal para quien no lo conoce (patas largas, pelaje rojizo, pastizales de Sudamérica) Y marca la diferencia con los lobos verdaderos (caza solo, no en manada).',
+      expCorrect:'It meets BOTH goals. It introduces the animal for someone who does not know it (long legs, reddish coat, South American grasslands) AND marks the difference from true wolves (it hunts alone, not in packs).',
       expWrong:{
         B:'Falla la meta de DIFERENCIA: describe bien al animal para un público nuevo, pero no lo compara con los lobos verdaderos.',
         C:'Falla la meta de PRESENTAR: sí contrasta (caza solo vs. en manada), pero no dice qué es ni cómo es el lobo de crin para quien no lo conoce.',
         D:'Falla ambas casi por completo: da un dato aislado (que no es un lobo real) sin presentar al animal ni marcar en qué se diferencia su forma de vivir o cazar.'
       },
-      tip:'“Presentar a quien no conoce” pide el panorama (qué es, cómo es, de dónde). Súmale el contraste que pide la meta y verás que solo una opción trae las dos cosas.'
+      tip:'“Introduce to someone unfamiliar” calls for the overview (what it is, what it is like, where it is from). Add the contrast the goal asks for and you will see only one option carries both.'
     },
     {
       id:'XT-10', type:'mc', domain:'Expression of Ideas', difficulty:'Difícil', extreme:true,
@@ -168,13 +168,13 @@ window.SAT_SETS.push({
         D:'A theremin player moves both hands near two metal antennas to control pitch and volume.'
       },
       correct:'B',
-      expCorrect:'Cumple LAS DOS metas. Presenta qué es el theremin (instrumento electrónico que se toca acercando las manos a dos antenas) Y lo diferencia de la mayoría de instrumentos (que se golpean o soplan; este no se toca).',
+      expCorrect:'It meets BOTH goals. It introduces what a theremin is (an electronic instrument played by moving your hands near two antennas) AND differentiates it from most instruments (which are struck or blown; this one is never touched).',
       expWrong:{
         A:'Falla la meta de DIFERENCIA: presenta el theremin, pero solo aporta su fecha; no lo contrasta con cómo se tocan los demás instrumentos.',
         C:'Falla la meta de PRESENTAR: marca la diferencia (no se toca), pero no explica qué es el theremin ni cómo funciona para un público nuevo.',
         D:'Falla la meta de DIFERENCIA: describe cómo se toca (lo presenta), pero no lo compara con los demás instrumentos.'
       },
-      tip:'Revisa que la opción cumpla las DOS casillas. Varias “casi” lo logran presentando o contrastando; solo una hace ambas en la misma oración.'
+      tip:'Check that the option ticks BOTH boxes. Several “almost” make it by introducing or contrasting; only one does both in the same sentence.'
     },
     {
       id:'XT-11', type:'mc', domain:'Expression of Ideas', difficulty:'Difícil', extreme:true,
@@ -187,13 +187,13 @@ window.SAT_SETS.push({
         D:'Wind and solar plants depend on weather that cannot be forecast far in advance.'
       },
       correct:'C',
-      expCorrect:'Cumple LAS DOS metas. Presenta qué es la energía mareomotriz (saca electricidad de la subida y bajada diaria del mar) Y la diferencia de la eólica y la solar (su producción se puede predecir con años de anticipación).',
+      expCorrect:'It meets BOTH goals. It introduces what tidal power is (it draws electricity from the daily rise and fall of the sea) AND differentiates it from wind and solar (its output can be predicted years in advance).',
       expWrong:{
         A:'Falla la meta de DIFERENCIA: presenta bien qué es la energía mareomotriz, pero no la compara con la eólica ni la solar.',
         B:'Falla la meta de PRESENTAR: marca la diferencia (se puede predecir), pero no explica qué es la energía mareomotriz para quien no la conoce.',
         D:'Falla la meta de PRESENTAR la energía mareomotriz: la oración habla de la eólica y la solar, sin decir qué es la mareomotriz.'
       },
-      tip:'Si la oración solo habla del OTRO lado de la comparación, no está presentando el tema pedido. La correcta define el tema y además lo contrasta.'
+      tip:'If the sentence is only about the OTHER side of the comparison, it is not introducing the subject being asked about. The right one defines the subject and contrasts it too.'
     },
     {
       id:'XT-12', type:'mc', domain:'Expression of Ideas', difficulty:'Difícil', extreme:true,
@@ -206,13 +206,13 @@ window.SAT_SETS.push({
         D:'Bamboo, a giant grass rather than a tree, can shoot up nearly a meter in a single day—far faster than the few centimeters most trees add in a year.'
       },
       correct:'D',
-      expCorrect:'Cumple LAS DOS metas. Presenta qué es el bambú (un pasto gigante, no un árbol) Y marca la diferencia de crecimiento (casi un metro al día frente a los pocos centímetros al año de los árboles).',
+      expCorrect:'It meets BOTH goals. It introduces what bamboo is (a giant grass, not a tree) AND marks the difference in growth (nearly a meter a day against the few centimeters a year of trees).',
       expWrong:{
         A:'Falla la meta de DIFERENCIA: presenta el bambú de forma vaga, pero no lo compara con los árboles ni da las cifras de crecimiento.',
         B:'Falla la meta de PRESENTAR: da la diferencia de crecimiento con números, pero no dice qué es el bambú (que es un pasto, no un árbol) a quien no lo conoce.',
         C:'Falla la meta de DIFERENCIA de CRECIMIENTO: clasifica al bambú (pasto, no árbol), pero no menciona su rapidez frente a los árboles.'
       },
-      tip:'Cuando la diferencia pedida es específica (aquí, el CRECIMIENTO), no basta cualquier contraste: la correcta presenta el tema y toca justo esa diferencia con los datos.'
+      tip:'When the difference asked for is specific (here, the GROWTH), any old contrast will not do: the right one introduces the subject and hits exactly that difference with the data.'
     }
   ]
 });

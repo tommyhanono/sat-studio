@@ -76,9 +76,9 @@ window.SAT_SETS.push({
       correct:"A",
       expCorrect:"A double contrast: the word has to (1) oppose the accuracy of his forecasts — what rivals CRITICIZED — and (2) line up with “a spare handful of assumptions”, set against models “bristling with variables”. “Simplistic” is the exact criticism of a model with few assumptions: “too simple”. And yet it kept getting things right.",
       expWrong:{
-        B:"“Derivative” (copiado de otros) no se opone a “forecasts turned out right” ni conecta con lo escueto del modelo; el texto lo contrasta por su ESCASEZ de supuestos, no por falta de originalidad.",
-        C:"“Opaque” (impenetrable, difícil de entender) choca con la imagen: un modelo de pocos supuestos es transparente, no oscuro. Falla el segundo contraste (el paralelo con “spare”).",
-        D:"“Reckless” (temerario, imprudente) sería una crítica, pero no es la que corresponde a la POCA CANTIDAD de supuestos; se critica por simple, no por peligroso."
+        B:"“Derivative” does not oppose “forecasts turned out right” and does not connect with how spare the model was; the text contrasts it for its SCARCITY of assumptions, not for a lack of originality.",
+        C:"“Opaque” clashes with the picture: a model with few assumptions is transparent, not murky. It fails the second contrast (the parallel with “spare”).",
+        D:"“Reckless” would be a criticism, but not the one matching the SMALL NUMBER of assumptions; he is criticized for being simple, not for being dangerous."
       },
       tip:"In a double contrast, the word has to do TWO things: be the criticism being made AND fit the parallel detail (“spare handful of assumptions”). Only “simplistic” does both; the others manage one at most."
     },
@@ -91,9 +91,9 @@ window.SAT_SETS.push({
       correct:"B",
       expCorrect:"A double contrast: the word has to oppose “restraint / a single gesture” (the late work) and at the same time explain “every inch crowded with incident” (the early work). “Busy”, in its visual sense, describes exactly a surface packed with detail; it is the opposite of restraint.",
       expWrong:{
-        A:"“Garish” (chillón, de colores estridentes) habla del COLOR/gusto, no de la cantidad de elementos. No es lo que aclara “crowded with incident”, que es densidad, no estridencia.",
-        C:"“Somber” (sombrío, apagado) describe el ánimo o el tono, y no se opone a “restraint”; una obra sobria bien puede ser sombría, así que falla el contraste.",
-        D:"“Derivative” (poco original) no tiene relación ni con lo atiborrado ni con la contención; es una crítica de otra dimensión."
+        A:"“Garish” is about COLOR and taste, not about the number of elements. It does not clarify “crowded with incident”, which is density, not loudness.",
+        C:"“Somber” describes mood or tone, and does not oppose “restraint”; a restrained work can perfectly well be somber, so the contrast fails.",
+        D:"“Derivative” has nothing to do with clutter or with restraint; it is a criticism along a different axis."
       },
       tip:"“Busy” has a visual sense: “cluttered, packed with detail”. When the contrast is between a crowded image and a restrained one, aim for density, not color (“garish”) or mood (“somber”)."
     },
@@ -106,9 +106,9 @@ window.SAT_SETS.push({
       correct:"C",
       expCorrect:"A double contrast: the contemporaries’ criticism has to (1) oppose the idea that he merely said aloud what everyone already thought and (2) fit “an indiscretion” (as against “a fabrication”). “Scandalous” is exactly the reaction to an indiscretion: saying in public what was whispered in private shocks people, even when it is true.",
       expWrong:{
-        A:"“Seditious” (que incita a la rebelión contra el poder) introduce una amenaza política que el texto no plantea; el problema era el decoro, no la subversión. Suena grave y encaja de lejos, pero no es lo que el pasaje precisa.",
-        B:"“Mendacious” (mentiroso) queda descartado por el texto mismo: “hardly a fabrication” niega que mintiera. El escándalo no fue por falsedad.",
-        D:"“Derivative” (poco original) no es una denuncia coherente aquí ni se relaciona con “indiscretion”; nada sugiere que copiara a otros."
+        A:"“Seditious” introduces a political threat the text never raises; the problem was decorum, not subversion. It sounds grave and fits from a distance, but it is not what the passage needs.",
+        B:"“Mendacious” is ruled out by the text itself: “hardly a fabrication” denies that he lied. The scandal was not about falsehood.",
+        D:"“Derivative” is not a coherent charge here and has no link to “indiscretion”; nothing suggests he copied anyone."
       },
       tip:"The clue sits in “an indiscretion” and in “hardly a fabrication”: he did not lie, he just said the unsayable. That is “scandalous”, not “mendacious” (lying) or “seditious” (rebellion)."
     },
@@ -121,9 +121,9 @@ window.SAT_SETS.push({
       correct:"D",
       expCorrect:"A double contrast: what the critics EXPECTED has to (1) oppose “genuinely unforeseen” and (2) fit “merely reworking the first film’s tricks… echoing it”. “Derivative” means “merely repeating or copying what came before, adding nothing new”: exactly what the sequel avoided.",
       expWrong:{
-        A:"“Implausible” (inverosímil) trata de credibilidad, dimensión ajena al contraste “repetir vs. innovar” que arma el texto.",
-        B:"“Contrived” (forzado, artificioso) critica que algo se sienta fabricado o poco natural, no que REPITA el original. No se opone directamente a “unforeseen” por la vía del “echoing”.",
-        C:"“Tedious” (aburrido) apunta al tedio, no a la falta de novedad; una secuela puede repetir y aun así entretener, así que falla el paralelo con “reworking the tricks”."
+        A:"“Implausible” is about credibility, a dimension outside the “repeat vs. innovate” contrast the text sets up.",
+        B:"“Contrived” criticizes something for feeling manufactured or unnatural, not for REPEATING the original. It does not directly oppose “unforeseen” by way of the “echoing”.",
+        C:"“Tedious” points at boredom, not at a lack of novelty; a sequel can repeat and still entertain, so it fails the parallel with “reworking the tricks”."
       },
       tip:"When the contrast is “repeating what came before vs. doing something new”, the word for the repeated thing is “derivative”. Do not swap it for flaws of another kind (dull, forced, implausible)."
     },
@@ -136,9 +136,9 @@ window.SAT_SETS.push({
       correct:"A",
       expCorrect:"The historical record is presented as something that, through its silences and its inclusions, IMPOSES the priorities of whoever assembled it: it is not just biased, it pushes the reader toward certain judgments. “Tendentious” — an academic-register word — names precisely that: material built to tilt you toward a position.",
       expWrong:{
-        B:"“Biased” capta el sesgo, pero es la palabra llana y general; en prosa historiográfica densa como esta, y frente a “encode the priorities… inherit their judgments”, el término preciso y de registro es “tendentious”, que añade la idea de propósito orientador.",
-        C:"“Partial” es ambiguo (puede leerse como “incompleto”) y no transmite la intención de inclinar el juicio del lector; queda por debajo del matiz activo del pasaje.",
-        D:"“Subjective” (dependiente de la percepción individual) desplaza el foco al observador, cuando el texto habla del archivo mismo como algo que YA viene cargado por quienes lo ensamblaron."
+        B:"“Biased” captures the slant, but it is the plain, general word; in dense historiographical prose like this, and against “encode the priorities… inherit their judgments”, the precise, register-appropriate term is “tendentious”, which adds the idea of steering the reader.",
+        C:"“Partial” is ambiguous (it can read as “incomplete”) and does not convey the intent to tilt the reader’s judgment; it falls short of the active shade in the passage.",
+        D:"“Subjective” shifts the focus to the observer, when the text is about the archive itself as something ALREADY loaded by whoever assembled it."
       },
       tip:"In academic prose, when something is not merely biased but pushes the reader toward a conclusion, the register-appropriate term is “tendentious”, not the generic “biased”."
     },
@@ -151,9 +151,9 @@ window.SAT_SETS.push({
       correct:"B",
       expCorrect:"The prose anticipates every objection and qualifies every claim before it can be attacked: it is cautious and forward-looking, not out of fear but out of rigor, and that is what gives it authority. “Circumspect” — cautious, weighing every consequence before asserting — captures that tone at exactly the right register.",
       expWrong:{
-        A:"“Evasive” (evasivo) tiene carga negativa de esquivar; pero el texto ELOGIA (“authority”): el autor no rehúye, se blinda con previsión. El matiz peyorativo no encaja.",
-        C:"“Meticulous” (minucioso) describe cuidado en el detalle, no la anticipación de objeciones; algo meticuloso puede no prever ninguna crítica. Se queda corto respecto a “anticipated every possible dissent”.",
-        D:"“Guarded” (reservado, que se guarda cosas) sugiere ocultar o no comprometerse, y suena defensivo; el texto muestra a alguien que sí afirma, pero con todas las salvedades pensadas de antemano. “Circumspect” es la cautela reflexiva, no el recelo."
+        A:"“Evasive” carries the negative charge of dodging; but the text PRAISES (“authority”): the author does not duck, he armors himself with foresight. The pejorative shade does not fit.",
+        C:"“Meticulous” describes care with detail, not the anticipation of objections; something meticulous may foresee no criticism at all. It falls short of “anticipated every possible dissent”.",
+        D:"“Guarded” suggests holding back or refusing to commit, and sounds defensive; the text shows someone who does assert, but with every caveat thought through in advance. “Circumspect” is reflective caution, not wariness."
       },
       tip:"“Circumspect” is the positive caution of someone weighing every consequence before speaking. Distinguish it from “evasive/guarded” (dodging, concealing) and from “meticulous” (detail-oriented), neither of which implies anticipating objections."
     },
@@ -166,9 +166,9 @@ window.SAT_SETS.push({
       correct:"C",
       expCorrect:"The theory absorbs anomalies that would have “shattered” a lesser explanation and adapts to each new finding WITHOUT losing its essential shape. That ability to take blows and keep its form is “resilience”: robustness in the face of what should break it.",
       expWrong:{
-        A:"“Durability” (durar en el tiempo) habla de longevidad, no de absorber anomalías y conservar la forma bajo presión; el texto no destaca cuánto dura, sino cómo soporta embates.",
-        B:"“Flexibility” capta el doblarse para acomodar hallazgos, pero omite lo esencial: RESISTIR lo que “would have shattered a lesser account”. Sin la idea de aguante frente a la ruptura, se queda a medias.",
-        D:"“Elasticity” es doblarse y volver, pero connota estirarse sin límite y suena a propiedad física; roza lo peyorativo (una teoría “elástica” se acomoda a todo y no predice nada), lo contrario del elogio del pasaje."
+        A:"“Durability” is about lasting over time, not about absorbing anomalies and keeping its shape under pressure; the text does not stress how long it lasts, but how it withstands blows.",
+        B:"“Flexibility” captures the bending to accommodate findings, but it leaves out the essential part: WITHSTANDING what “would have shattered a lesser account”. Without the idea of holding up against breakage, it is only half the word.",
+        D:"“Elasticity” is bending and springing back, but it connotes stretching without limit and sounds like a physical property; it edges toward the pejorative (an “elastic” theory accommodates everything and predicts nothing), the opposite of the passage’s praise."
       },
       tip:"“Resilience” = withstanding what should break you and keeping your shape. When the text stresses surviving what “would have shattered” others, it is more precise than the mere bending of “flexibility” or “elasticity”."
     },
@@ -181,9 +181,9 @@ window.SAT_SETS.push({
       correct:"D",
       expCorrect:"The influence works unnoticed and ends up shaping a whole generation that never realizes those ideas are arguable: it slips in and operates below critical awareness. “Insidious” names exactly that influence advancing imperceptibly until it takes root. The “oddly” marks the paradox of a nearly forgotten book having so deep an effect.",
       expWrong:{
-        A:"“Pervasive” (que lo impregna todo) apunta al ALCANCE amplio, no al modo imperceptible en que la idea se vuelve invisible al juicio; además choca un poco con “rarely cited”, que sugiere difusión limitada en la superficie.",
-        B:"“Covert” (encubierto, oculto a propósito) implica una intención de esconder; aquí nadie oculta nada: la influencia simplemente pasa inadvertida por cómo se absorbe, no por ocultamiento deliberado.",
-        C:"“Subtle” (sutil) describe algo fino o poco aparente, pero es neutro y no captura el efecto de arraigarse hasta volverse incuestionable; se queda corto ante “no longer recognized them as arguable”."
+        A:"“Pervasive” points to broad REACH, not to the imperceptible way the idea becomes invisible to judgment; it also sits awkwardly with “rarely cited”, which suggests limited surface circulation.",
+        B:"“Covert” implies an intention to hide; here nobody hides anything: the influence simply goes unnoticed because of how it is absorbed, not through deliberate concealment.",
+        C:"“Subtle” describes something fine or barely apparent, but it is neutral and does not capture the effect of taking root until it becomes unquestionable; it falls short of “no longer recognized them as arguable”."
       },
       tip:"“Insidious” = advancing imperceptibly until it takes root. When an influence works without anyone noticing until it becomes unquestioned, it is more precise than “subtle” (fine), “covert” (deliberately hidden) or “pervasive” (widespread)."
     }
