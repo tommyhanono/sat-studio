@@ -106,6 +106,20 @@ Reglas que el validador exige:
   falla si una letra se lleva más del 45 % de un set de 8 o más preguntas; se
   arregla con `node tools/rebalancear-clave.js <archivo>`, que solo renombra
   letras y comprueba que la pregunta no cambió.
+- **La correcta no puede ser sistemáticamente la opción más larga.** El validador
+  falla si lo es en más del 60 % de un set, y avisa por pregunta cuando le saca
+  demasiada ventaja a las tres incorrectas. No es estética: si el largo delata la
+  respuesta, el estudiante acierta sin leer, aprende una estrategia que en el
+  examen real no funciona, y de paso infla el porcentaje que el plan de mejora
+  usa para decidir qué practicar. Se arregla dándole a los distractores el
+  razonamiento concreto que los hace tentadores, no rellenando con palabras.
+  Medida del banco entero: `node tools/auditar-longitud.js --todos`.
+- **Dos opciones no pueden tener el mismo texto.** El que razona bien puede
+  marcar la que no está en `correct`.
+- **Ojo con `<`**: todo esto se inyecta con `innerHTML`, y un `<` seguido de letra
+  abre una etiqueta — el navegador se come el texto hasta el siguiente `>` sin
+  decir nada. `x < y` hay que escribirlo `x &lt; y` (o dejar el espacio, que ya lo
+  hace seguro). El validador lo revisa.
 - `correct` tiene que ser una de ellas.
 - `expWrong` explica **las tres incorrectas, ni una más ni una menos**. Si
   `correct` es `'B'`, las claves son `A`, `C`, `D`.

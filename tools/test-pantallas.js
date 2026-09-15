@@ -196,8 +196,8 @@ const BOTONES_MUERTOS = function () {
     const tiene = b.onclick || b.getAttribute('onclick') || b.id ||
       b.getAttribute('data-plan-set') || b.getAttribute('data-hl') ||
       b.getAttribute('data-desmos') || b.getAttribute('data-set') ||
-      b.getAttribute('data-act') || b.getAttribute('data-go') ||
-      b.className.split(/\s+/).some(c => /^(btn-|mini|plan-op|an-|hist-review|set-)/.test(c));
+      b.getAttribute('data-act') || b.getAttribute('data-go') || b.getAttribute('data-tab') ||
+      b.className.split(/\s+/).some(c => /^(btn-|mini|plan-op|an-|hist-review|set-|hnav-a|hs-)/.test(c));
     if (!tiene) malos.push((b.textContent || '').trim().slice(0, 40) + ' · ' + b.className);
   });
   return malos;
@@ -274,10 +274,29 @@ const BOTONES_MUERTOS = function () {
     check(`P0 se sembró historial de prueba (${nSem} sesiones)`, nSem >= 4, nSem);
     await sleep(900);
 
-    // todo abierto: los <details> cerrados esconden la mitad del texto
-    await page.evaluate(() => { document.querySelectorAll('details').forEach(d => { d.open = true; }); });
-    await sleep(500);
-    await mirar('inicio');
+    /* El inicio ahora son PESTAÑAS: se ve un grupo a la vez. Hay que recorrerlas
+       todas o el chequeo de idioma solo mira una quinta parte de la pantalla. */
+    const pestanas = await page.evaluate(() =>
+      [...document.querySelectorAll('#set-sections .hnav-a')].map(b => b.getAttribute('data-tab')));
+    check(`P1b el inicio tiene pestañas (${pestanas.length})`, pestanas.length >= 4, pestanas);
+    for (const t of (pestanas.length ? pestanas : [null])) {
+      if (t) {
+        await page.evaluate(tab => {
+          const b = document.querySelector('#set-sections .hnav-a[data-tab="' + tab + '"]');
+          if (b) b.click();
+        }, t);
+        await sleep(450);
+      }
+      await page.evaluate(() => { document.querySelectorAll('details').forEach(d => { d.open = true; }); });
+      await sleep(350);
+      await mirar('inicio · ' + (t || 'todo'));
+    }
+    // se vuelve a la primera para el resto del recorrido
+    await page.evaluate(() => {
+      const b = document.querySelector('#set-sections .hnav-a');
+      if (b) b.click();
+    });
+    await sleep(400);
 
     check('P1 el inicio se ve', await page.evaluate(() =>
       !document.getElementById('view-home').classList.contains('hidden')));

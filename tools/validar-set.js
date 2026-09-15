@@ -50,6 +50,15 @@ const CRUZADO = /^(Algebra|Advanced Math|Problem-Solving & Data Analysis|Geometr
 const DIF_PREGUNTA = new Set(['Fácil', 'Media', 'Difícil']);
 const DIF_SET = new Set(['Fácil', 'Media', 'Difícil', 'Extreme']);
 const SECCIONES = new Set(['math', 'rw', 'mixed']);
+/* Todo este texto se inyecta con innerHTML. Un `<` seguido de letra abre una
+   etiqueta: si no es una de estas, el navegador se come el texto hasta el `>`
+   sin decir nada. `y < 2x` es seguro porque el `<` va seguido de espacio. */
+const ETIQUETAS_OK = new Set([
+  'b', 'i', 'em', 'strong', 'br', 'ul', 'ol', 'li', 'p', 'span', 'div', 'sub', 'sup',
+  'table', 'thead', 'tbody', 'tfoot', 'tr', 'th', 'td', 'caption', 'code', 'small', 'u', 'a',
+  'svg', 'polygon', 'polyline', 'line', 'text', 'circle', 'ellipse', 'rect', 'path', 'g',
+  'tspan', 'defs', 'marker', 'title', 'desc', 'use',
+]);
 
 const archivos = process.argv.slice(2);
 if (!archivos.length) { console.error('Uso: node tools/validar-set.js sets/archivo.js [...]'); process.exit(1); }
@@ -170,7 +179,14 @@ for (const rel of archivos) {
     Object.entries(q.expWrong || {}).forEach(([kk, v]) => campos.push(['expWrong.' + kk, v]));
     Object.entries(q.choices || {}).forEach(([kk, v]) => campos.push(['choices.' + kk, v]));
     campos.forEach(([c, v]) => {
-      if (typeof v === 'string' && v && esEspanol(v)) err(rel, `${d}: ${c} parece estar en español → ${v.slice(0, 60)}`);
+      if (typeof v !== 'string' || !v) return;
+      if (esEspanol(v)) err(rel, `${d}: ${c} parece estar en español → ${v.slice(0, 60)}`);
+      for (const m of v.matchAll(/<([a-zA-Z][a-zA-Z0-9]*)/g)) {
+        if (!ETIQUETAS_OK.has(m[1].toLowerCase())) {
+          err(rel, `${d}: ${c} tiene "<${m[1]}", que el navegador va a leer como una etiqueta y se va a comer el texto. ` +
+            `Si es un menor-que, escribí "&lt;" o dejá un espacio después.`);
+        }
+      }
     });
 
     // matemática sin pista de calculadora: se avisa, no se bloquea (hay preguntas

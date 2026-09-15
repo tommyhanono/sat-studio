@@ -64,6 +64,23 @@
   .foot-links a{color:var(--blue-dark);text-decoration:none;display:inline-block;padding:6px 2px}
   .foot-links a:hover{text-decoration:underline}
   .foot-c{font-size:.78rem}
+  /* La tira del inicio: tres números en una fila. Reemplazó a la barra de fecha
+     + cuatro tarjetas + el banner del simulacro, que eran cinco bloques antes de
+     que el estudiante llegara a lo que tiene que hacer hoy. */
+  .home-strip{display:flex;align-items:stretch;gap:10px;flex-wrap:wrap;margin:14px 0 4px}
+  .hs-cell{display:flex;flex-direction:column;justify-content:center;gap:2px;text-align:left;
+    background:#fff;border:1px solid #e3e6ef;border-radius:12px;padding:12px 16px;min-height:66px;
+    box-shadow:var(--sombra);font-family:var(--sans)}
+  button.hs-cell{cursor:pointer;transition:border-color .15s,box-shadow .15s}
+  button.hs-cell:hover{border-color:#ccd3e6;box-shadow:var(--sombra-alta)}
+  .hs-main{flex:1 1 230px}
+  .hs-k{font-size:.7rem;color:var(--gray-mid);text-transform:uppercase;letter-spacing:.07em;font-weight:700}
+  .hs-v{font-family:var(--serif);font-size:1.5rem;font-weight:700;color:var(--navy);line-height:1.1;font-variant-numeric:tabular-nums}
+  .hs-s{font-size:.76rem;color:var(--gray-mid)}
+  .hs-date{gap:4px}
+  .hs-date-inp{border:none;background:none;padding:0;font-size:.76rem;color:var(--gray-mid);width:120px}
+  .hs-sync{display:flex;align-items:center;font-size:.74rem;color:var(--gray-mid);padding:0 2px}
+  @media(max-width:520px){ .home-strip{gap:8px} .hs-cell{flex:1 1 calc(50% - 4px);padding:10px 12px;min-height:58px} .hs-main{flex:1 1 100%} }
   .dash-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-bottom:26px}
   .dash-card{background:#fff;border:1px solid #e3e6ef;border-radius:12px;padding:18px 20px;box-shadow:var(--sombra)}
   .dash-card .k{font-size:.78rem;color:var(--gray-mid);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
@@ -634,7 +651,7 @@
   @media(max-width:620px){ .prog-card.big{grid-column:span 2} .prog-dom{grid-template-columns:1fr 80px 42px} }
 
   /* ---- grupos del home ---- */
-  .home-nav{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 24px;position:sticky;top:0;z-index:20;background:#f7f8fc;padding:10px 0}
+  .home-nav{display:flex;gap:8px;flex-wrap:wrap}
   /* En el telefono la navegacion se desliza en UNA fila dentro de su propio
      contenedor: envuelta ocupaba tres filas, y la pagina nunca scrollea en
      horizontal porque el desborde vive aqui adentro. */
@@ -645,6 +662,13 @@
   }
   .hnav-a{display:flex;align-items:center;gap:6px;min-height:44px;padding:9px 16px;border:1px solid var(--gray-line);border-radius:999px;background:#fff;color:var(--ink);text-decoration:none;font-size:.86rem;font-weight:600}
   .hnav-a:hover{border-color:var(--blue);background:var(--blue-soft)}
+  /* La activa tiene que verse activa: es lo único que le dice al estudiante
+     dónde está parado ahora que el inicio son pestañas y no una lista larga. */
+  .hnav-a.on{background:var(--navy);border-color:var(--navy);color:#fff;font-family:var(--serif);font-weight:700}
+  .hnav-a.on span{background:rgba(255,255,255,.22);color:#fff}
+  .hnav-a.on:hover{background:var(--navy-soft);border-color:var(--navy-soft)}
+  .home-nav{position:sticky;top:0;z-index:20;padding:12px 0 14px;margin:6px 0 4px;
+    background:linear-gradient(180deg,var(--paper) 74%,rgba(243,245,250,0))}
   .hnav-a span{background:var(--gray-strip);border-radius:999px;padding:1px 8px;font-size:.74rem;color:var(--gray-mid);font-weight:600}
   .home-group{margin-bottom:38px;scroll-margin-top:72px}
   .hg-t{font-size:1.35rem;font-family:var(--serif);margin-bottom:2px}
@@ -814,12 +838,16 @@
 <div id="view-home" class="hidden">
   <div class="home-wrap">
     <header class="brand"><h1><a href="./" id="brand-home" class="brand-link">SAT Studio</a></h1><span class="tag">Bluebook-style practice</span><div id="user-chip" class="user-chip hidden"></div></header>
-    <p class="home-sub">Pick a set and a mode. <strong>Exam</strong> = timed, graded at the end. <strong>Drill</strong> = no timer, with instant feedback and an explanation on every question.</p>
+    <!-- Una sola tira de tres números. Antes acá había: una línea de instrucciones,
+         la barra de fecha, cuatro tarjetas de dashboard y el banner del simulacro
+         — cinco bloques antes de llegar a lo que hay que hacer hoy. El resto de
+         los números vive en Progress, y el simulacro en su propia pestaña. -->
+    <div id="home-strip" class="home-strip"></div>
 
-    <div id="exam-date-bar"></div>
-    <div class="dash-cards" id="dash-cards"></div>
+    <div id="set-sections"></div>
 
-    <div class="mock-launch" id="mock-launch">
+    <!-- El lanzador del simulacro lo mueve renderHome() a la pestaña "Full test" -->
+    <div class="mock-launch hidden" id="mock-launch">
       <div class="mock-launch-txt">
         <h3>📝 Practice Test <span class="mock-badge">Adaptive</span></h3>
         <p>Adaptive and timed like the real Digital SAT, with a scaled score at the end. Take the <strong>full test (/1600)</strong>, or just one <strong>section (/800)</strong> when you're short on time.</p>
@@ -831,8 +859,6 @@
       </div>
       <button class="btn-primary" id="btn-start-mock">Start full test · /1600</button>
     </div>
-
-    <div id="set-sections"></div>
 
     <footer class="home-foot">
       <p><b>SAT Studio</b> — free Digital SAT practice. All questions are original;
@@ -1199,6 +1225,11 @@ var SAT_SET_FILES = [
   'sets/rw-brutal-craft.js',
   'sets/math-brutal-alg2.js',
   'sets/math-hard-adv3.js',
+  'sets/math-hard-alg3.js',
+  'sets/math-brutal-alg3.js',
+  'sets/math-brutal-adv3.js',
+  'sets/math-mixed-hard1.js',
+  'sets/math-hard-adv4.js',
   // Desmos how-to hints per Math question (merged into questions at load)
   'sets/desmos-a.js',
   'sets/desmos-b.js',
@@ -2040,6 +2071,10 @@ function planWire(){
 }
 
 /* ================= HOME ================= */
+/* Qué pestaña del inicio está abierta. Se recuerda entre visitas, pero arranca
+   en 'hoy': lo que el estudiante necesita al abrir es qué hacer AHORA. */
+function homeTab(){ return store.get('satapp_home_tab', 'hoy') || 'hoy'; }
+
 function renderHome(){
   var h = getHistory();
   var allPQ = [];
@@ -2049,27 +2084,39 @@ function renderHome(){
   var pool = missedPool();
   var last = h.length ? h[h.length-1] : null;
 
-  var edb = $('#exam-date-bar');
-  if(edb){
-    var _ed = examDateStr(), _dl2 = fwDaysLeft();
-    edb.innerHTML = '<div class="exam-bar"><label for="exam-date-inp"><b>Test date</b></label>' +
-      '<input type="date" id="exam-date-inp" value="' + escAttr(_ed) + '">' +
-      '<span class="exam-bar-note">' + (_ed
-        ? (_dl2 > 0 ? '<b>' + _dl2 + '</b> day' + (_dl2 === 1 ? '' : 's') + ' to go. Your day-by-day plan shows up in the final week.'
-           : _dl2 === 0 ? '<b>It is today.</b> Go get it.' : 'Already past. Change the date if you are taking it again.')
-        : 'Set it and the app paces your reviews and builds your final-week plan.') + '</span></div>';
-    var _edi = $('#exam-date-inp');
-    if(_edi) _edi.addEventListener('change', function(){
-      store.set('sat_exam_date', this.value || '');
-      toast(this.value ? 'Test date saved.' : 'Test date cleared.');
-      renderHome();
-    });
-  }
-  $('#dash-cards').innerHTML =
-    '<div class="dash-card"><div class="k">Sessions</div><div class="v">' + h.length + '</div><div class="s"><span id="sync-state" class="sync-state">' + syncLabel() + '</span></div></div>' +
-    '<div class="dash-card"><div class="k">Overall accuracy</div><div class="v">' + (totalQ ? Math.round(100*okQ/totalQ) + '%' : '—') + '</div><div class="s">' + okQ + '/' + totalQ + ' questions</div></div>' +
-    '<div class="dash-card"><div class="k">To review</div><div class="v">' + pool.length + '</div><div class="s">pending missed questions</div></div>' +
-    '<div class="dash-card"><div class="k">Last session</div><div class="v">' + (last ? last.score + '/' + last.total : '—') + '</div><div class="s">' + (last ? (last.setTitle + ' · ' + last.mode) : 'nothing yet') + '</div></div>';
+  /* La tira de arriba: tres números y nada más. Lo que un estudiante necesita
+     ver al abrir es dónde está, cuánto le falta y cuánto tiempo tiene. El resto
+     (sesiones, últimas sesiones, desglose por dominio) está en Progress, a un
+     clic, que es donde se va a mirar cuando se quiera mirar. */
+  var _est = estimadoActual(), _meta = targetScore(), _dl2 = fwDaysLeft(), _ed = examDateStr();
+  var tira = '';
+  tira += '<button type="button" class="hs-cell hs-main" id="hs-score">' +
+    '<span class="hs-k">Estimated score</span>' +
+    '<span class="hs-v">' + (_est ? _est : '—') + '</span>' +
+    '<span class="hs-s">' + (_est && _meta
+        ? (_est >= _meta ? 'you are at your goal of ' + _meta : (_meta - _est) + ' to go to ' + _meta)
+        : _meta ? 'goal ' + _meta + ' · practice to get a reading'
+        : _est ? 'set a goal in Progress' : 'answer a few questions first') + '</span></button>';
+  tira += '<button type="button" class="hs-cell" id="hs-acc">' +
+    '<span class="hs-k">Accuracy</span>' +
+    '<span class="hs-v">' + (totalQ ? Math.round(100 * okQ / totalQ) + '%' : '—') + '</span>' +
+    '<span class="hs-s">' + (totalQ ? okQ + '/' + totalQ + ' questions · ' + h.length + ' sessions' : 'nothing yet') + '</span></button>';
+  tira += '<div class="hs-cell hs-date">' +
+    '<span class="hs-k"><label for="exam-date-inp">Test day</label></span>' +
+    '<span class="hs-v">' + (_ed && _dl2 > 0 ? _dl2 + 'd' : _ed && _dl2 === 0 ? 'today' : '—') + '</span>' +
+    '<input type="date" id="exam-date-inp" class="hs-date-inp" value="' + escAttr(_ed) + '" aria-label="Your test date">' +
+    '</div>';
+  tira += '<span class="hs-sync"><span id="sync-state" class="sync-state">' + syncLabel() + '</span></span>';
+  $('#home-strip').innerHTML = tira;
+
+  var _edi = $('#exam-date-inp');
+  if(_edi) _edi.addEventListener('change', function(){
+    store.set('sat_exam_date', this.value || '');
+    toast(this.value ? 'Test date saved.' : 'Test date cleared.');
+    renderHome();
+  });
+  var _hss = $('#hs-score'); if(_hss) _hss.addEventListener('click', openProgress);
+  var _hsa = $('#hs-acc');   if(_hsa) _hsa.addEventListener('click', openProgress);
 
   // ===== 4 collapsible sections: Math · Verbal · Things To Work On · Completed =====
   var doneBySet = {};
@@ -2127,7 +2174,7 @@ function renderHome(){
 
   var G = { hoy:'', entender:'', practicar:'', examen:'', progreso:'' };
   var _planN = (planState().elegidos || []).length;
-  G.hoy += homeSection('🧭 My improvement plan', planHTML(), _planN ? _planN + ' temas' : null, true);
+  G.hoy += homeSection('🧭 My improvement plan', planHTML(), _planN ? _planN + (_planN === 1 ? ' topic' : ' topics') : null, true);
   // La cuenta regresiva aparece sola cuando el estudiante puso su fecha y el
   // examen esta a una semana o menos. Sin fecha no se le muestra a nadie.
   var _dl = fwDaysLeft();
@@ -2289,15 +2336,41 @@ function renderHome(){
     ['examen',    'Full test',     'Timed, adaptive practice tests'],
     ['progreso',  'My progress',   'What you have done, and what is left']
   ];
+  /* PESTAÑAS, no una página larga.
+     Antes los cinco grupos se pintaban uno debajo del otro: 21 secciones
+     plegables en una sola pantalla. El estudiante tenía que decidir qué hacer
+     entre veintiún acordeones, que es la manera más rápida de que no haga nada.
+     Ahora se ve UN grupo a la vez y se arranca en "Today". */
+  var activa = homeTab();
+  if(!G[activa]) activa = 'hoy';
   var nav = '', cuerpo = '';
   GRUPOS.forEach(function(g){
     if(!G[g[0]]) return;
     var n = (G[g[0]].match(/<details class="home-sec"/g) || []).length;
-    nav += '<a class="hnav-a" href="#g-' + g[0] + '">' + g[1] + ' <span>' + n + '</span></a>';
-    cuerpo += '<section class="home-group" id="g-' + g[0] + '">' +
-      '<h2 class="hg-t">' + g[1] + '</h2><p class="hg-s">' + g[2] + '</p>' + G[g[0]] + '</section>';
+    var on = g[0] === activa;
+    nav += '<button type="button" class="hnav-a' + (on ? ' on' : '') + '" data-tab="' + g[0] + '"' +
+      ' aria-current="' + (on ? 'page' : 'false') + '">' + g[1] + ' <span>' + n + '</span></button>';
+    if(!on) return;
+    cuerpo = '<section class="home-group" id="g-' + g[0] + '">' +
+      '<p class="hg-s">' + g[2] + '</p>' + G[g[0]] + '</section>';
   });
   $('#set-sections').innerHTML = '<nav class="home-nav" aria-label="Sections">' + nav + '</nav>' + cuerpo;
+  Array.prototype.forEach.call(document.querySelectorAll('#set-sections .hnav-a'), function(b){
+    b.addEventListener('click', function(){
+      store.set('satapp_home_tab', b.getAttribute('data-tab'));
+      renderHome();
+      intenta(function(){ $('#set-sections').scrollIntoView({ block: 'start' }); }, 'scroll a la pestaña');
+    });
+  });
+
+  /* El lanzador del simulacro vive en el HTML (tiene sus botones cableados una
+     sola vez en init), pero se MUEVE a la pestaña de examen, que es donde lo va
+     a buscar el estudiante. En el resto de las pestañas no se ve. */
+  var _ml = $('#mock-launch'), _grp = $('#g-examen');
+  if(_ml){
+    if(_grp){ _grp.insertBefore(_ml, _grp.firstChild.nextSibling); _ml.classList.remove('hidden'); }
+    else { _ml.classList.add('hidden'); $('#view-home .home-wrap').appendChild(_ml); }
+  }
   planWire();
 
   Array.prototype.forEach.call(document.querySelectorAll('#set-sections [data-start-exam]'), function(b){
