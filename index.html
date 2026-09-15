@@ -366,6 +366,10 @@
   .auth-newpass{border:1px solid var(--blue);background:var(--blue-soft);border-radius:10px;padding:14px 16px;margin-top:14px}
   .auth-np-t{font-size:.9rem;margin-bottom:10px}
   .auth-newpass .btn-primary{margin-top:10px;width:100%}
+  .auth-extra{border-top:1px solid var(--gray-line);margin-top:14px;padding-top:14px}
+  .auth-two{display:flex;gap:10px}
+  .auth-two > div{flex:1;min-width:0}
+  .auth-hint{font-size:.78rem;color:var(--gray-mid);margin-top:8px;line-height:1.5}
   .auth-or{display:flex;align-items:center;gap:10px;margin:16px 0 12px;color:var(--gray-mid);font-size:.8rem}
   .auth-or::before,.auth-or::after{content:'';flex:1;height:1px;background:var(--gray-line)}
   .auth-guest{width:100%;min-height:44px;background:none;border:1px dashed var(--gray-line);border-radius:999px;padding:11px 18px;color:var(--blue-dark);font-size:.88rem;font-weight:600;font-family:var(--sans)}
@@ -575,6 +579,31 @@
   .fw-day.today .fw-daycount{background:#dbe2fb;color:var(--blue-dark)}
   @media(max-width:560px){ .cc-title{font-size:1.42rem} #view-class{padding:16px 12px 96px} .cc-sec{padding:15px 15px} }
 
+  /* ---- Progress ---- */
+  #view-progress{min-height:100vh;background:#f7f8fc;padding:30px 20px 70px}
+  .prog-wrap{max-width:960px;margin:0 auto}
+  .prog-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:14px;margin:20px 0 10px}
+  .prog-card{background:#fff;border:1px solid var(--gray-line);border-radius:12px;padding:16px 18px}
+  .prog-card.big{grid-column:span 2;border-color:var(--blue);background:var(--blue-soft)}
+  .prog-card .k{font-size:.76rem;color:var(--gray-mid);text-transform:uppercase;letter-spacing:.06em;margin-bottom:5px}
+  .prog-card .v{font-size:1.8rem;font-weight:800;line-height:1.1}
+  .prog-card.big .v{font-size:2.6rem;color:var(--blue-dark)}
+  .prog-card .s{font-size:.8rem;color:var(--gray-mid);margin-top:4px;line-height:1.4}
+  .prog-h{font-family:var(--serif);font-size:1.15rem;margin:30px 0 12px}
+  .prog-doms{display:flex;flex-direction:column;gap:12px;background:#fff;border:1px solid var(--gray-line);border-radius:12px;padding:18px}
+  .prog-dom{display:grid;grid-template-columns:1fr 130px 48px;gap:12px;align-items:center}
+  .pd-t{font-size:.88rem;font-weight:600;display:flex;justify-content:space-between;gap:8px}
+  .pd-t span{color:var(--gray-mid);font-weight:400}
+  .pd-n{text-align:right;font-weight:700;font-size:.9rem}
+  .prog-table-wrap{background:#fff;border:1px solid var(--gray-line);border-radius:12px;overflow-x:auto}
+  .prog-table{width:100%;border-collapse:collapse;font-size:.86rem}
+  .prog-table th{text-align:left;padding:12px 14px;border-bottom:1px solid var(--gray-line);font-size:.76rem;text-transform:uppercase;letter-spacing:.05em;color:var(--gray-mid)}
+  .prog-table td{padding:11px 14px;border-bottom:1px solid var(--gray-strip)}
+  .prog-table tr:last-child td{border-bottom:none}
+  .prog-table .num{text-align:right;white-space:nowrap}
+  .prog-table .sinmed{color:var(--gray-mid);font-size:.8rem}
+  @media(max-width:620px){ .prog-card.big{grid-column:span 2} .prog-dom{grid-template-columns:1fr 80px 42px} }
+
   /* ---- grupos del home ---- */
   .home-nav{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 24px;position:sticky;top:0;z-index:20;background:#f7f8fc;padding:10px 0}
   /* En el telefono la navegacion se desliza en UNA fila dentro de su propio
@@ -595,6 +624,8 @@
   /* ---- Mi plan de mejora ---- */
   .plan-wrap{max-width:100%}
   .plan-intro{font-size:.9rem;color:#42506b;line-height:1.6;margin-bottom:14px}
+  .plan-link{color:var(--blue-dark);font-weight:600;text-decoration:none;white-space:nowrap}
+  .plan-link:hover{text-decoration:underline}
   .plan-step{display:flex;align-items:center;gap:10px;margin:22px 0 10px}
   .plan-step:first-child{margin-top:4px}
   .plan-step h4{font-size:1rem;font-family:var(--serif)}
@@ -738,7 +769,6 @@
     <header class="brand"><h1><a href="./" id="brand-home" class="brand-link">SAT Studio</a></h1><span class="tag">Bluebook-style practice</span><div id="user-chip" class="user-chip hidden"></div></header>
     <p class="home-sub">Pick a set and a mode. <strong>Exam</strong> = timed, graded at the end. <strong>Drill</strong> = no timer, with instant feedback and an explanation on every question.</p>
 
-    <div id="guest-bar"></div>
     <div id="exam-date-bar"></div>
     <div class="dash-cards" id="dash-cards"></div>
 
@@ -802,6 +832,16 @@
 </div>
 
 <!-- ============ ADMIN ============ -->
+<div id="view-progress" class="hidden">
+  <div class="prog-wrap">
+    <header class="admin-head">
+      <div><p class="brand-h admin-h">Progress</p><span class="admin-sub">Everything your answers say about you</span></div>
+      <div class="admin-actions"><button class="btn-primary" id="btn-prog-back">← Back to practice</button></div>
+    </header>
+    <div id="prog-body"></div>
+  </div>
+</div>
+
 <div id="view-admin" class="hidden">
   <div class="admin-wrap">
     <div class="admin-head">
@@ -1299,6 +1339,23 @@ function toast(msg, isErr){
   } catch(e){ console.log(msg); }
 }
 
+/* ================= NIVELES DE DIFICULTAD =================
+   Rebranding pedido el 14-sep-2026: "Easy/Medium/Hard" sonaba a que el examen
+   real es más fácil de lo que es. Los nombres nuevos dicen qué papel cumple cada
+   nivel dentro del SAT, no qué tan cómodo se siente.
+
+   OJO: esto es SOLO la etiqueta visible. El valor interno ('Fácil', 'Media',
+   'Difícil', 'Extreme') no se toca nunca — de él dependen el ruteo adaptativo
+   del Módulo 2, la estimación de puntaje y la auditoría del banco. */
+var SAT_NIVELES = {
+  'Fácil':   'Warm-up',
+  'Media':   'Test Level',
+  'Difícil': 'Hard · real M2',
+  'Extreme': 'Brutal'
+};
+var SAT_NIVEL_CLASE = { 'Fácil':'easy', 'Media':'med', 'Difícil':'hard', 'Extreme':'extreme' };
+function nivelLabel(d){ return SAT_NIVELES[d] || d || ''; }
+
 /* ================= HISTORY ================= */
 function getHistory(){ var h = store.get(histKey(), []); return Array.isArray(h) ? h : []; }
 
@@ -1380,9 +1437,9 @@ function downloadHistory(){
 }
 /* Importa un .json exportado antes. Nunca pisa: solo agrega lo que falta. */
 function importHistory(json){
-  var data; try { data = JSON.parse(json); } catch(e){ return { ok:false, msg:'El archivo no es un .json valido.' }; }
+  var data; try { data = JSON.parse(json); } catch(e){ return { ok:false, msg:'That file is not valid JSON.' }; }
   var arr = data && data.sessions ? data.sessions : (Array.isArray(data) ? data : null);
-  if(!arr) return { ok:false, msg:'El archivo no tiene sesiones adentro.' };
+  if(!arr) return { ok:false, msg:'That file has no sessions in it.' };
   var h = getHistory(), seen = {}, add = 0;
   h.forEach(function(e){ if(e.sid) seen[e.sid] = 1; });
   arr.forEach(function(e){
@@ -1394,7 +1451,7 @@ function importHistory(json){
   h.sort(function(a,b){ return ((a.savedAt||a.date||'') < (b.savedAt||b.date||'')) ? -1 : 1; });
   store.set(histKey(), h);
   syncFlush();
-  return { ok:true, msg:'Se agregaron ' + add + ' sesion(es). Ninguna se sobrescribio.', added:add };
+  return { ok:true, msg:'Added ' + add + ' session(s). Nothing was overwritten.', added:add };
 }
 function latestResults(){ // qid -> {ok, ...} from most recent attempt
   var map = {};
@@ -1527,17 +1584,14 @@ function planRanking(){
       // Cuanto peor te va Y más pesa en el examen, más arriba. El exponente hace
       // que 40% de acierto pese bastante más que 70%, no apenas un poco más.
       s.score = s.peso * Math.pow(1 - s.acc, 1.5) * 10;
-      s.razon = s.acc < 0.6
-        ? 'Fallas ' + Math.round((1 - s.acc) * 10) + ' de cada 10 y este dominio es el ' + s.peso + '% del examen'
-        : (s.acc < 0.8
-            ? 'Vas a medio camino (' + Math.round(s.acc * 100) + '%) en un dominio que vale ' + s.peso + '%'
-            : 'Lo tienes bien (' + Math.round(s.acc * 100) + '%) — solo mantenerlo');
+      s.razon = s.acc < 0.6 ? Math.round((1 - s.acc) * 10) + ' of every 10 wrong · ' + s.peso + '% of the test'
+              : s.acc < 0.8 ? 'Halfway there · ' + s.peso + '% of the test'
+              : 'Solid — just keep it warm';
     } else {
       // Sin datos no se puede decir que estás mal: se dice que NO SABEMOS.
       s.score = s.peso * 0.45 * 10;
-      s.razon = s.hechas === 0
-        ? 'Nunca lo has practicado aquí y vale ' + s.peso + '% del examen'
-        : 'Solo ' + s.hechas + ' pregunta' + (s.hechas === 1 ? '' : 's') + ': todavía no se puede medir';
+      s.razon = s.hechas === 0 ? 'Never practiced · ' + s.peso + '% of the test'
+              : 'Only ' + s.hechas + ' question' + (s.hechas === 1 ? '' : 's') + ' — too few to measure';
     }
     if(!s.banco) s.score = -1;   // sin preguntas en el banco no se puede practicar
   });
@@ -1553,7 +1607,7 @@ function planState(){
     elegidos: Array.isArray(d.elegidos) ? d.elegidos : null,
     minutos: d.minutos || 20,
     modo: d.modo || 'drill',
-    nivel: d.nivel || 'donde',
+    nivel: d.nivel || 'examen',
     verTodos: !!d.verTodos,
     busca: d.busca || ''
   };
@@ -1642,13 +1696,10 @@ function planHTML(){
   p.elegidos = p.elegidos.filter(function(k){ return disponibles[k] > 0; });
 
   var nuevo = practicadas < 20;
-  var head = nuevo
-    ? '<p class="plan-intro"><b>Todavía no te conozco.</b> Llevas ' + practicadas + ' pregunta' + (practicadas === 1 ? '' : 's') +
-      ' contestada' + (practicadas === 1 ? '' : 's') + ', y con eso no puedo decirte en qué estás flojo sin inventar. ' +
-      'Lo honesto es medir primero: abajo están los temas que <b>más pesan en el examen</b>, marcados por defecto. ' +
-      'Practica un poco y esta sección empieza a apuntar a lo tuyo de verdad.</p>'
-    : '<p class="plan-intro">Esto sale de <b>tus</b> ' + practicadas + ' preguntas contestadas. Yo propongo, ' +
-      '<b>tú decides</b>: marca y desmarca lo que quieras y armo el test con eso.</p>';
+  var head = '<p class="plan-intro">' +
+    (nuevo ? 'Not enough answers yet to know your weak spots — these weigh most on the test.'
+           : 'From your ' + practicadas + ' answers. Pick what you want, I build the test.') +
+    ' <a href="#" id="plan-progress" class="plan-link">See all my numbers →</a></p>';
 
   /* ---- paso 1: los temas ---- */
   function fila(s, recomendado){
@@ -1657,16 +1708,16 @@ function planHTML(){
     var barra = s.medido
       ? '<div class="plan-bar"><i style="width:' + Math.round(s.acc * 100) + '%" class="' +
         (s.acc < 0.6 ? 'mal' : s.acc < 0.8 ? 'medio' : 'bien') + '"></i></div>'
-      : '<div class="plan-bar sinmedir"><span>sin medir</span></div>';
+      : '<div class="plan-bar sinmedir"><span>no data</span></div>';
     return '<label class="plan-row' + (marcado ? ' on' : '') + '">' +
       '<input type="checkbox" class="plan-cb" data-plan-topic="' + k + '"' + (marcado ? ' checked' : '') + '>' +
       '<span class="plan-main">' +
-        '<span class="plan-t">' + s.topic.t + (recomendado ? ' <span class="plan-rec">recomendado</span>' : '') + '</span>' +
+        '<span class="plan-t">' + s.topic.t + (recomendado ? ' <span class="plan-rec">pick</span>' : '') + '</span>' +
         '<span class="plan-why">' + s.razon + '</span>' +
       '</span>' +
       '<span class="plan-nums">' +
         '<span class="plan-pct">' + pct + '</span>' + barra +
-        '<span class="plan-meta">' + (s.medido || s.hechas ? s.bien + '/' + s.hechas + ' tuyas · ' : '') + s.banco + ' en el banco</span>' +
+        '<span class="plan-meta">' + (s.medido || s.hechas ? s.bien + '/' + s.hechas + ' yours · ' : '') + s.banco + ' in bank</span>' +
       '</span></label>';
   }
   var g = planGrupos(rank), conBanco = g.todos;
@@ -1675,16 +1726,16 @@ function planHTML(){
   var enTop = {};
   var bloques = '';
   if(!busca){
-    var flojos = g.medidos.slice(0, 5);
+    var flojos = g.medidos.slice(0, 3);
     // Si todavia no hay nada medido, la lista no puede quedar en cuatro renglones:
     // se abre a seis para que el estudiante nuevo tenga de donde elegir.
-    var ciegos = g.sinMedir.slice(0, Math.max(4, 6 - flojos.length));
+    var ciegos = g.sinMedir.slice(0, Math.max(3, 6 - flojos.length));
     if(flojos.length){
-      bloques += '<h5 class="plan-h">Donde estás fallando <span>— medido con tus respuestas</span></h5>' +
+      bloques += '<h5 class="plan-h">Weakest <span>— measured from your answers</span></h5>' +
         '<div class="plan-list">' + flojos.map(function(s){ enTop[s.topic.key] = 1; return fila(s, recKeys.indexOf(s.topic.key) >= 0); }).join('') + '</div>';
     }
     if(ciegos.length){
-      bloques += '<h5 class="plan-h">Puntos ciegos <span>— todavía no sé cómo estás aquí</span></h5>' +
+      bloques += '<h5 class="plan-h">Not measured <span>— heavy on the test, no data from you</span></h5>' +
         '<div class="plan-list">' + ciegos.map(function(s){ enTop[s.topic.key] = 1; return fila(s, recKeys.indexOf(s.topic.key) >= 0); }).join('') + '</div>';
     }
   }
@@ -1692,10 +1743,10 @@ function planHTML(){
     if(busca) return s.topic.t.toLowerCase().indexOf(busca) >= 0 || s.topic.dom.toLowerCase().indexOf(busca) >= 0;
     return !enTop[s.topic.key];
   });
-  var paso1 = head + bloques +
+  var paso1 = bloques +
     '<div class="plan-more">' +
-      '<input type="search" id="plan-busca" class="plan-search" aria-label="Buscar un tema para agregar al plan" placeholder="¿Quieres trabajar otra cosa? Busca un tema…" value="' + escAttr(p.busca || '') + '">' +
-      '<button class="mini" id="plan-vertodos" type="button">' + (p.verTodos ? 'Ocultar' : 'Ver los ' + conBanco.length + ' temas') + '</button>' +
+      '<input type="search" id="plan-busca" class="plan-search" aria-label="Search a topic to add to your plan" placeholder="Want something else? Search a topic…" value="' + escAttr(p.busca || '') + '">' +
+      '<button class="mini" id="plan-vertodos" type="button">' + (p.verTodos ? 'Hide' : 'All ' + conBanco.length + ' topics') + '</button>' +
     '</div>' +
     ((p.verTodos || busca) ? '<div class="plan-list plan-rest">' + resto.map(function(s){ return fila(s, false); }).join('') + '</div>' : '');
 
@@ -1707,17 +1758,17 @@ function planHTML(){
     }).join('') + '</div>';
   }
   var paso2 =
-    '<div class="plan-q"><h4>1 · ¿Cuánto tiempo tienes ahora?</h4>' +
-      ops('minutos', p.minutos, [[10, '10 min', '6 preguntas'], [20, '20 min', '12 preguntas'], [40, '40 min', '20 preguntas']]) + '</div>' +
-    '<div class="plan-q"><h4>2 · ¿Cómo quieres practicar?</h4>' +
-      ops('modo', p.modo, [['drill', 'Sin reloj', 'te explico cada una al momento'], ['exam', 'Con reloj', 'como el examen, calificación al final']]) + '</div>' +
-    '<div class="plan-q"><h4>3 · ¿Qué tan difícil?</h4>' +
-      ops('nivel', p.nivel, [['donde', 'Donde estoy', 'fácil y media, para afianzar'], ['mas', 'Un escalón arriba', 'solo difíciles'], ['examen', 'Como el examen', 'mezcla real']]) + '</div>';
+    '<div class="plan-q">' +
+      ops('minutos', p.minutos, [[10, '10 min', '6 questions'], [20, '20 min', '12 questions'], [40, '40 min', '20 questions']]) + '</div>' +
+    '<div class="plan-q">' +
+      ops('modo', p.modo, [['drill', 'No timer', 'explained as you go'], ['exam', 'Timed', 'like the real thing']]) + '</div>' +
+    '<div class="plan-q">' +
+      ops('nivel', p.nivel, [['examen', 'Test level', 'the real mix'], ['mas', 'Hardest only', 'Module 2 tier'], ['donde', 'Build up', 'warm-up and standard']]) + '</div>';
 
   /* ---- paso 3: el resumen ---- */
   var resumen;
   if(!p.elegidos.length){
-    resumen = '<p class="plan-warn">Marca al menos un tema arriba para poder armarte el test.</p>';
+    resumen = '<p class="plan-warn">Pick at least one topic above.</p>';
   } else {
     var prev = planBuildSet(p.elegidos, p);
     var porTema = {};
@@ -1730,19 +1781,16 @@ function planHTML(){
     }).join('');
     resumen =
       '<div class="plan-sum">' +
-        '<div class="plan-sum-n"><b>' + prev.questions.length + '</b> preguntas · ~' + prev.minutes + ' min · ' +
-          (p.modo === 'drill' ? 'sin reloj' : 'con reloj') + '</div>' +
+        '<div class="plan-sum-n"><b>' + prev.questions.length + '</b> questions · ~' + prev.minutes + ' min · ' +
+          (p.modo === 'drill' ? 'no timer' : 'timed') + '</div>' +
         '<div class="plan-chips">' + chips + '</div>' +
-        '<p class="plan-note">Primero van las que ya fallaste, después las que nunca has visto. ' +
-          'Si un tema aparece con menos preguntas de las que pediste, es que el banco no tiene más de ese tema en ese nivel.</p>' +
-        '<button class="btn-primary plan-go" id="plan-crear" type="button">Crear mi test →</button>' +
+        '<p class="plan-note">Questions you already missed come first, then ones you have never seen.</p>' +
+        '<button class="btn-primary plan-go" id="plan-crear" type="button">Build my test →</button>' +
       '</div>';
   }
   planSave(p);
-  return '<div class="plan-wrap">' +
-    '<div class="plan-step"><span class="plan-num">1</span><h4>Lo que yo mejoraría — tú decides</h4></div>' + paso1 +
-    '<div class="plan-step"><span class="plan-num">2</span><h4>Tres preguntas</h4></div>' + paso2 +
-    '<div class="plan-step"><span class="plan-num">3</span><h4>Tu test</h4></div>' + resumen +
+  return '<div class="plan-wrap">' + head + paso1 +
+    '<div class="plan-step"><h4>How do you want it?</h4></div>' + paso2 + resumen +
   '</div>';
 }
 function planWire(){
@@ -1769,12 +1817,14 @@ function planWire(){
   if(vt) vt.addEventListener('click', function(){ var p = planState(); p.verTodos = !p.verTodos; planSave(p); renderHome(); });
   var bs = root.querySelector('#plan-busca');
   if(bs) bs.addEventListener('change', function(){ var p = planState(); p.busca = this.value || ''; planSave(p); renderHome(); });
+  var pl = root.querySelector('#plan-progress');
+  if(pl) pl.addEventListener('click', function(e){ e.preventDefault(); openProgress(); });
   var cr = root.querySelector('#plan-crear');
   if(cr) cr.addEventListener('click', function(){
     var p = planState();
-    if(!p.elegidos || !p.elegidos.length){ toast('Marca al menos un tema.', true); return; }
+    if(!p.elegidos || !p.elegidos.length){ toast('Pick at least one topic.', true); return; }
     var set = planBuildSet(p.elegidos, p);
-    if(!set.questions.length){ toast('No hay preguntas de esos temas en ese nivel. Prueba con "Como el examen".', true); return; }
+    if(!set.questions.length){ toast('No questions for those topics at that level. Try "Test level".', true); return; }
     _beginSession(set, p.modo);
   });
 }
@@ -1792,31 +1842,17 @@ function renderHome(){
   var edb = $('#exam-date-bar');
   if(edb){
     var _ed = examDateStr(), _dl2 = fwDaysLeft();
-    edb.innerHTML = '<div class="exam-bar"><label for="exam-date-inp">🗓️ <b>¿Cuándo es tu examen?</b></label>' +
+    edb.innerHTML = '<div class="exam-bar"><label for="exam-date-inp"><b>Test date</b></label>' +
       '<input type="date" id="exam-date-inp" value="' + escAttr(_ed) + '">' +
       '<span class="exam-bar-note">' + (_ed
-        ? (_dl2 > 0 ? 'Faltan <b>' + _dl2 + '</b> día' + (_dl2 === 1 ? '' : 's') + '. La última semana te aparece el plan día por día.'
-           : _dl2 === 0 ? '<b>Es hoy.</b> Mucha suerte.' : 'Ya pasó. Cambia la fecha si vas a darlo otra vez.')
-        : 'Ponla y la app ajusta el repaso espaciado y te arma el plan de la semana final.') + '</span></div>';
+        ? (_dl2 > 0 ? '<b>' + _dl2 + '</b> day' + (_dl2 === 1 ? '' : 's') + ' to go. Your day-by-day plan shows up in the final week.'
+           : _dl2 === 0 ? '<b>It is today.</b> Go get it.' : 'Already past. Change the date if you are taking it again.')
+        : 'Set it and the app paces your reviews and builds your final-week plan.') + '</span></div>';
     var _edi = $('#exam-date-inp');
     if(_edi) _edi.addEventListener('change', function(){
       store.set('sat_exam_date', this.value || '');
-      toast(this.value ? 'Fecha guardada.' : 'Fecha borrada.');
+      toast(this.value ? 'Test date saved.' : 'Test date cleared.');
       renderHome();
-    });
-  }
-  var gb = $('#guest-bar');
-  if(gb){
-    gb.innerHTML = (!currentUser && authAvailable())
-      ? '<div class="guest-bar"><span><b>Estás sin cuenta.</b> Tu progreso se guarda solo en este navegador: ' +
-        'si entras desde el celular o se borra el caché, no está. Crear la cuenta es gratis y se lleva lo que ya hiciste.</span>' +
-        '<button id="guest-signup" type="button">Crear mi cuenta</button></div>'
-      : '';
-    var gs = $('#guest-signup');
-    if(gs) gs.addEventListener('click', function(){
-      store.remove('satapp_invitado');
-      $('#view-home').classList.add('hidden');
-      showAuthGate();
     });
   }
   $('#dash-cards').innerHTML =
@@ -1828,7 +1864,7 @@ function renderHome(){
   // ===== 4 collapsible sections: Math · Verbal · Things To Work On · Completed =====
   var doneBySet = {};
   h.forEach(function(s){ doneBySet[s.setId] = (doneBySet[s.setId]||0) + 1; });
-  var LVLLABEL = { 'Fácil':'Easy', 'Media':'Medium', 'Difícil':'Hard', 'Extreme':'Extreme' };
+  var LVLLABEL = SAT_NIVELES;
   var LVLORD = { 'Fácil':1, 'Media':2, 'Difícil':3 };
   function setCat(s){
     return String(s.title).split(' — ')[0].replace(/ Drill$/,'').replace(/ \((Módulo|Module)\)/,'').replace(/:.*/,'').trim();
@@ -1842,7 +1878,7 @@ function renderHome(){
     return items;
   }
   function setCard(s){
-    var badge = s.level ? '<span class="lvl-badge lvl-' + ({'Fácil':'easy','Media':'med','Difícil':'hard','Extreme':'extreme'}[s.level] || 'med') + '">' + (LVLLABEL[s.level] || s.level) + '</span>' : '';
+    var badge = s.level ? '<span class="lvl-badge lvl-' + (SAT_NIVEL_CLASE[s.level] || 'med') + '">' + nivelLabel(s.level) + '</span>' : '';
     return '<div class="set-card">' +
       '<div class="set-info">' + badge +
       '<h3>' + s.title + '</h3>' +
@@ -2844,7 +2880,7 @@ function lessonPool(key){
 function startLessonDrill(key){
   var L = LESSONS.filter(function(x){ return x.key === key; })[0];
   var pool = lessonPool(key);
-  if(!L || pool.length < 3){ toast('Todavía no hay suficientes preguntas de esa destreza en el banco.', true); return; }
+  if(!L || pool.length < 3){ toast('Not enough questions for that skill in the bank yet.', true); return; }
   var seen = _seenCounts();
   // Practice at the REAL test level: hard + extreme items rank together on top (a real hard module is
   // mostly hard with a brutal tail), then least-seen — challenging but not an all-brutal wall.
@@ -2953,7 +2989,7 @@ function spacedQueue(){
 }
 function startSpacedReview(){
   var q = spacedQueue().due;
-  if(!q.length){ toast('No hay nada pendiente de repaso ahora mismo. Bien ahí.'); return; }
+  if(!q.length){ toast('Nothing due for review right now. Nice work.'); return; }
   _beginSession({ id:'spaced-review', title:'Spaced Review', section:'mixed', minutes: Math.max(6, Math.ceil(Math.min(q.length,12) * 1.3)), questions: _shuffle(q).slice(0, 12) }, 'drill');
 }
 function spacedReviewHTML(){
@@ -2974,7 +3010,7 @@ function startWarmup(){
   var rw = _shuffle(all.filter(function(q){ return q._section !== 'math' && q.difficulty === 'Fácil' && !q.extreme; })).slice(0, 3);
   var m = _shuffle(all.filter(function(q){ return q._section === 'math' && q.difficulty === 'Fácil' && !q.extreme; })).slice(0, 3);
   var qs = _shuffle(rw.concat(m));
-  if(qs.length < 4){ toast('Todavía no hay suficientes preguntas fáciles cargadas.', true); return; }
+  if(qs.length < 4){ toast('Not enough warm-up questions loaded yet.', true); return; }
   _beginSession({ id:'warmup', title:'Test-Day Warm-Up', section:'mixed', minutes: 10, questions: qs }, 'drill');
 }
 function lessonCardHTML(L){
@@ -3063,7 +3099,7 @@ function _seenCounts(){
 function startStudyRound(key){
   var t = STUDY_TOPICS.filter(function(x){ return x.key === key; })[0];
   var pool = studyPools()[key] || [];
-  if(!t || pool.length < 4){ toast('Todavía no hay suficientes preguntas de ese tema.', true); return; }
+  if(!t || pool.length < 4){ toast('Not enough questions for that topic yet.', true); return; }
   var seen = _seenCounts();
   var order = _shuffle(pool).sort(function(a, b){ return (seen[a.id] || 0) - (seen[b.id] || 0); });
   _beginSession({ id:'study-' + key, title: t.title + ' — Round of 4', section: t.sec, minutes: t.sec === 'math' ? 8 : 6, questions: order.slice(0, 4) }, 'drill');
@@ -3480,7 +3516,7 @@ function renderResults(g){
   $('#res-score-den').textContent = ' / ' + n;
   var meta = '<span class="chip">Time: ' + fmt(S.timeUsed) + (S.mode === 'exam' ? ' / ' + fmt(S.set.minutes*60) : '') + '</span>';
   DIFFS.forEach(function(d){
-    if(g.byDiff[d][1]) meta += '<span class="chip">' + ({'Fácil':'Easy','Media':'Medium','Difícil':'Hard'}[d]||d) + ': ' + g.byDiff[d][0] + '/' + g.byDiff[d][1] + '</span>';
+    if(g.byDiff[d][1]) meta += '<span class="chip">' + nivelLabel(d) + ': ' + g.byDiff[d][0] + '/' + g.byDiff[d][1] + '</span>';
   });
   $('#res-meta').innerHTML = meta;
   var est = estimateScore(g.results);
@@ -3539,7 +3575,7 @@ function renderResQ(r){
     ctx += '<div class="res-passage">' + renderContent(q.stem) + '</div>';
     return '<details class="res-q' + (r.ok ? '' : ' wrong') + '"' + (r.ok ? '' : ' open') + '>' +
       '<summary><span class="res-id">' + q.id + '</span>' + badge +
-      '<span class="res-diff">' + ({'Fácil':'Easy','Media':'Medium','Difícil':'Hard'}[q.difficulty]||q.difficulty) + '</span>' +
+      '<span class="res-diff">' + nivelLabel(q.difficulty) + '</span>' +
       '<span class="res-skill">' + (q.domain||'') + ' · ' + (q.skill||'') + '</span>' +
       '<span class="res-caret">See explanation ▾</span></summary>' +
       '<div class="res-body">' + ctx +
@@ -3690,7 +3726,7 @@ function openDesmosWith(exprs){
         (exprs || []).forEach(function(l, i){ if(l) desmosCalc.setExpression({ id: 'sat' + i, latex: l }); });
         desmosCalc.resize();
       } catch(e){
-        toast('No se pudo abrir la calculadora con la expresión cargada. Ábrela y escríbela a mano.', true);
+        toast('Could not open the calculator with the expression loaded. Open it and type it in.', true);
       }
     } else if(tries > 0){ setTimeout(function(){ apply(tries - 1); }, 300); }
   };
@@ -4025,6 +4061,93 @@ function wireAnnotations(){
 /* ================= WIRING ================= */
 /* ================= ADMIN PANEL ================= */
 var adminCharts = {};
+/* ================= PROGRESS =================
+   Todo el detalle vive acá y no en el home: el plan de mejora tiene que poder
+   leerse en diez segundos, y el que quiera los números entra a verlos. */
+function openProgress(){
+  ['view-home','view-auth','view-app','view-results','view-admin'].forEach(function(id){
+    var el = $('#' + id); if(el) el.classList.add('hidden');
+  });
+  $('#view-progress').classList.remove('hidden');
+  renderProgress();
+  intenta(function(){ window.scrollTo(0,0); }, 'scroll');
+}
+function closeProgress(){
+  $('#view-progress').classList.add('hidden');
+  $('#view-home').classList.remove('hidden');
+  renderHome();
+}
+function targetScore(){ return store.get('sat_target_score', null); }
+/* Promedio de las estimaciones de las últimas sesiones con peso por tamaño:
+   una sesión de 4 preguntas no puede mover el estimado igual que un mock. */
+function estimadoActual(){
+  var h = getHistory().slice(-12), num = 0, den = 0;
+  h.forEach(function(e){
+    var mock = e.mock && e.mock.total;
+    if(mock){ num += e.mock.total * 3; den += 3; return; }
+    if(!e.total) return;
+    var pct = e.score / e.total;
+    var est = 400 + 1200 * pct;                 // escala /1600 aproximada
+    var peso = Math.min(3, e.total / 10);
+    num += est * peso; den += peso;
+  });
+  if(!den) return null;
+  return Math.round((num / den) / 10) * 10;
+}
+function renderProgress(){
+  var body = $('#prog-body'); if(!body) return;
+  var h = getHistory();
+  var allPQ = [];
+  h.forEach(function(e){ (e.perQuestion || []).forEach(function(p){ allPQ.push(p); }); });
+  var ok = allPQ.filter(function(p){ return p.ok; }).length;
+  var est = estimadoActual(), meta = targetScore(), dl = fwDaysLeft();
+
+  var tarjetas =
+    '<div class="prog-cards">' +
+      '<div class="prog-card big"><div class="k">Estimated score</div><div class="v">' + (est || '—') + '</div>' +
+        '<div class="s">' + (est && meta ? (est >= meta ? '✓ at or above your goal of ' + meta
+          : (meta - est) + ' points below your goal of ' + meta) : (meta ? 'goal ' + meta : 'set a goal in your account')) + '</div></div>' +
+      '<div class="prog-card"><div class="k">Questions answered</div><div class="v">' + allPQ.length + '</div>' +
+        '<div class="s">' + (allPQ.length ? Math.round(100 * ok / allPQ.length) + '% correct' : 'none yet') + '</div></div>' +
+      '<div class="prog-card"><div class="k">Sessions</div><div class="v">' + h.length + '</div>' +
+        '<div class="s">' + syncLabel() + '</div></div>' +
+      '<div class="prog-card"><div class="k">Test day</div><div class="v">' + (dl === null ? '—' : (dl > 0 ? dl + 'd' : dl === 0 ? 'today' : 'past')) + '</div>' +
+        '<div class="s">' + (dl === null ? 'no date set' : fwBonito(examDateStr())) + '</div></div>' +
+    '</div>';
+
+  // barras por dominio
+  var porDom = {};
+  allPQ.forEach(function(p){
+    var d = p.domain || 'Other';
+    if(!porDom[d]) porDom[d] = [0, 0];
+    porDom[d][1]++; if(p.ok) porDom[d][0]++;
+  });
+  var doms = Object.keys(porDom).sort(function(a, b){ return porDom[b][1] - porDom[a][1]; });
+  var barras = doms.length
+    ? '<div class="prog-doms">' + doms.map(function(d){
+        var c = porDom[d][0], t = porDom[d][1], pct = Math.round(100 * c / t);
+        return '<div class="prog-dom"><div class="pd-t">' + d + '<span>' + c + '/' + t + '</span></div>' +
+          '<div class="plan-bar"><i style="width:' + pct + '%" class="' + (pct < 60 ? 'mal' : pct < 80 ? 'medio' : 'bien') + '"></i></div>' +
+          '<div class="pd-n">' + pct + '%</div></div>';
+      }).join('') + '</div>'
+    : '<p class="empty-note">Answer some questions and this fills in.</p>';
+
+  // tabla de temas: el detalle que antes vivía dentro del plan
+  var rank = planRanking().filter(function(x){ return x.banco > 0; });
+  var filas = rank.map(function(x){
+    return '<tr><td>' + x.topic.t + '</td><td class="num">' + (x.medido ? x.bien + '/' + x.hechas : '—') + '</td>' +
+      '<td class="num">' + (x.medido ? Math.round(x.acc * 100) + '%' : '<span class="sinmed">not measured</span>') + '</td>' +
+      '<td class="num">' + x.peso + '%</td><td class="num">' + x.banco + '</td></tr>';
+  }).join('');
+
+  body.innerHTML = tarjetas +
+    '<h3 class="prog-h">By domain</h3>' + barras +
+    '<h3 class="prog-h">Every topic</h3>' +
+    '<div class="prog-table-wrap"><table class="prog-table"><thead><tr><th>Topic</th><th class="num">Yours</th>' +
+      '<th class="num">Accuracy</th><th class="num">Weight on test</th><th class="num">In the bank</th></tr></thead>' +
+      '<tbody>' + filas + '</tbody></table></div>';
+}
+
 function openAdmin(){
   if(!authAvailable() || !currentUser) return;
   $('#view-home').classList.add('hidden');
@@ -4324,7 +4447,7 @@ function buildDailyMini(sec, di){
 }
 function startDailyMini(sec){
   var set = buildDailyMini(sec);
-  if(!set){ toast('Todavía no cargaron suficientes preguntas para el mini de hoy.', true); return; }
+  if(!set){ toast('Not enough questions loaded for today\'s mini.', true); return; }
   if(MOCK){ MOCK.active = false; MOCK = null; }   // never let a stale mock hijack finishSession
   _beginSession(set, 'exam');
 }
@@ -4429,7 +4552,7 @@ function startMock(kind, num, seedArg, hardMode){
   var real = hardMode === 'real';   // realistic hard form: tough M1, EARNED routing into a real-composition hard M2
   var m1tier = extreme ? 'extreme' : real ? 'tough' : (hardMode ? 'hard' : 'mixed');
   var first = assembleModule(section, m1tier, count, used, rnd);
-  if(first.length < 12){ toast('Todavía no cargaron suficientes preguntas para este examen.', true); return; }
+  if(first.length < 12){ toast('Not enough questions loaded for this test.', true); return; }
   MOCK = { active:true, kind:kind, hard:hardMode === true, extreme:extreme, real:real, num:(typeof num === 'number' ? num : null), seed:seed, stage:firstKey, used:used, results:{}, paths:{}, time:0, mods:{} };
   MOCK.mods[firstKey] = makeModuleSet(section, first, 'Module 1');
   mockScreen(mockIntroHTML(kind, first.length));
@@ -4602,13 +4725,12 @@ function authBoot(){
     renderHome();
     return;
   }
-  var invitado = function(){ return !!store.get('satapp_invitado', 0); };
+  store.remove('satapp_invitado');   // el modo invitado se retiró: la cuenta es obligatoria
   SB.auth.getSession().then(function(res){
     var session = res && res.data ? res.data.session : null;
     if(session && session.user){ if(!currentUser){ currentUser = session.user; afterLogin(); } }
-    else if(invitado()){ entrarComoInvitado(); }
     else { if(!currentUser) showAuthGate(); }
-  }).catch(function(){ if(!currentUser){ if(invitado()) entrarComoInvitado(); else showAuthGate(); } });
+  }).catch(function(){ if(!currentUser) showAuthGate(); });
   SB.auth.onAuthStateChange(function(_event, session){
     var u = session && session.user ? session.user : null;
     if(_event === 'PASSWORD_RECOVERY'){ currentUser = u; mostrarNuevaContrasena(); return; }
@@ -4617,7 +4739,31 @@ function authBoot(){
   });
 }
 
+/* La meta y la fecha viven en user_metadata (servidor) y en store (dispositivo).
+   Al entrar manda el servidor: es lo que sigue al estudiante entre dispositivos. */
+function sincronizarPerfil(){
+  if(!currentUser) return;
+  var md = currentUser.user_metadata || {};
+  if(md.exam_date) store.set('sat_exam_date', md.exam_date);
+  if(md.target_score) store.set('sat_target_score', parseInt(md.target_score, 10) || null);
+}
+/* Guarda el perfil en el servidor. Si falla, queda local y se avisa. */
+function guardarPerfil(campos){
+  Object.keys(campos).forEach(function(k){
+    if(k === 'exam_date') store.set('sat_exam_date', campos[k] || '');
+    if(k === 'target_score') store.set('sat_target_score', campos[k] || null);
+  });
+  if(!authAvailable() || !currentUser) return Promise.resolve();
+  var md = Object.assign({}, currentUser.user_metadata || {}, campos);
+  return SB.auth.updateUser({ data: md }).then(function(r){
+    if(r && r.error) throw r.error;
+    if(r && r.data && r.data.user) currentUser = r.data.user;
+  }).catch(function(e){
+    toast('Saved on this device, but it could not reach your account (' + ((e && e.message) || 'no connection') + ').', true);
+  });
+}
 function afterLogin(){
+  sincronizarPerfil();
   return migrateLegacy()
     .catch(function(e){
       console.warn('SAT Studio · no se pudo adoptar el historial de invitado:', e);
@@ -4707,21 +4853,21 @@ function migrateLegacy(){
    servidor realmente borro antes de decir que borro. */
 function safeClearHistory(){
   var h = getHistory();
-  if(!h.length){ toast('No hay historial que borrar.'); return; }
+  if(!h.length){ toast('There is no history to clear.'); return; }
   downloadHistory();
   var w = window.prompt('Esto borra tu historial (' + h.length + ' sesiones)' +
     (currentUser ? ' en TODOS tus dispositivos' : ' de este navegador') + '.\n' +
     'Ya se descargo un respaldo .json que puedes volver a importar.\n\n' +
-    'Escribe BORRAR para confirmar:');
-  if((w || '').trim().toUpperCase() !== 'BORRAR'){ toast('Cancelado. No se borro nada.'); return; }
+    'Type DELETE to confirm:');
+  if((w || '').trim().toUpperCase() !== 'DELETE'){ toast('Cancelled. Nothing was deleted.'); return; }
   if(!currentUser){
     store.remove(histKey()); store.remove(syncKey()); renderHome();
-    toast('Historial borrado de este navegador.');
+    toast('History cleared from this browser.');
     return;
   }
   cloudDeleteAll().then(function(){
     store.remove(histKey()); store.remove(syncKey());
-    renderHome(); toast('Historial borrado en todos tus dispositivos.');
+    renderHome(); toast('History cleared on all your devices.');
   }).catch(function(e){
     toast('\u26a0\ufe0f No se pudo borrar en el servidor (' + ((e && e.message) || 'sin conexion') +
           '). NO se borro nada, para no dejarte a medias. Intenta de nuevo con internet.', true);
@@ -4747,12 +4893,24 @@ function doSignup(){
   var pass = $('#auth-pass').value || '';
   var name = ($('#auth-name').value || '').trim();
   if(!email || !pass){ setAuthMsg('Enter your email and password.', true); return; }
-  if(pass.length < 6){ setAuthMsg('Password must be at least 6 characters.', true); return; }
+  // 8, no 6: el servidor exige 8 y con 6 el estudiante recibía un error del
+  // backend en inglés técnico después de haber llenado todo el formulario.
+  if(pass.length < 8){ setAuthMsg('Password must be at least 8 characters.', true); return; }
+  var target = parseInt(($('#auth-target') || {}).value || '', 10);
+  var examDate = (($('#auth-exam') || {}).value || '').trim();
   setAuthMsg('Creating account…'); setAuthBusy(true);
-  SB.auth.signUp({ email: email, password: pass, options: { data: { name: name, app: 'sat-studio' } } }).then(function(r){
+  SB.auth.signUp({ email: email, password: pass, options: { data: {
+    name: name, app: 'sat-studio',
+    target_score: (target >= 400 && target <= 1600) ? String(target) : null,
+    exam_date: examDate || null
+  } } }).then(function(r){
     setAuthBusy(false);
     if(r.error){ setAuthMsg(traducirAuthError(r.error.message), true); return; }
-    if(r.data && r.data.session){ setAuthMsg(''); } // logueado directo (confirmación desactivada)
+    if(r.data && r.data.session){
+      if(examDate) store.set('sat_exam_date', examDate);
+      if(target >= 400 && target <= 1600) store.set('sat_target_score', target);
+      setAuthMsg('');
+    }
     else { setAuthMsg('Account created. Check your email to confirm it, then sign in.', false); }
   }).catch(function(e){ setAuthBusy(false); setAuthMsg('Could not connect. Check your internet.', true); });
 }
@@ -4762,7 +4920,7 @@ function doLogout(){
   var salir = function(){
     SB.auth.signOut().catch(function(e){
       console.warn('signOut:', e);
-      toast('No se pudo cerrar sesión en el servidor. Cierra la pestaña para asegurarte.', true);
+      toast('Could not sign out on the server. Close the tab to be sure.', true);
     });
     currentUser = null;
     showAuthGate();
@@ -4784,21 +4942,11 @@ function traducirAuthError(m){
   if(/rate limit|too many|email rate/i.test(m)) return 'Demasiados intentos seguidos. Espera unos minutos y vuelve a probar.';
   if(/new password should be different/i.test(m)) return 'La contraseña nueva tiene que ser distinta a la anterior.';
   if(/not found|no user/i.test(m)) return 'No hay ninguna cuenta con ese correo.';
-  if(/password/i.test(m) && /6/.test(m)) return 'Password must be at least 6 characters.';
+  if(/password/i.test(m) && /(6|8)/.test(m)) return 'Password must be at least 8 characters.';
+  if(/pwned|leaked|compromised/i.test(m)) return 'That password has appeared in a known data breach. Pick a different one.';
   return m;
 }
 
-/* Entrar sin cuenta. Existe porque la app se reparte por link: obligar a crear
-   cuenta antes de ver nada hace que la mayoria no entre nunca. Lo que juegue
-   como invitado se adopta solo cuando decida crear su cuenta (migrateLegacy). */
-function entrarComoInvitado(){
-  store.set('satapp_invitado', 1);
-  $('#view-auth').classList.add('hidden');
-  $('#view-home').classList.remove('hidden');
-  setUserChip();
-  renderHome();
-  intenta(function(){ window.scrollTo(0,0); }, 'scroll');
-}
 /* Recuperar la contraseña. Sin esto, un estudiante que la olvida pierde el
    acceso a TODO su historial — con un colegio entero eso pasa seguro.
    Ojo de operación: el correo lo manda Supabase, y su SMTP por defecto está
@@ -4827,14 +4975,14 @@ function mostrarNuevaContrasena(){
 function guardarNuevaContrasena(){
   if(!authAvailable()) return;
   var pass = $('#auth-pass2').value || '';
-  if(pass.length < 6){ setAuthMsg('La contraseña nueva necesita al menos 6 caracteres.', true); return; }
+  if(pass.length < 8){ setAuthMsg('Your new password needs at least 8 characters.', true); return; }
   setAuthBusy(true); setAuthMsg('Guardando…');
   SB.auth.updateUser({ password: pass }).then(function(r){
     setAuthBusy(false);
     if(r && r.error){ setAuthMsg(traducirAuthError(r.error.message), true); return; }
     $('#auth-newpass').classList.add('hidden');
     setAuthMsg('');
-    toast('Contraseña cambiada. Tu historial está completo.');
+    toast('Password changed. Your history is all here.');
     if(r && r.data && r.data.user){ currentUser = r.data.user; afterLogin(); }
   }).catch(function(){ setAuthBusy(false); setAuthMsg('No se pudo guardar. Revisa tu internet.', true); });
 }
@@ -4842,9 +4990,20 @@ function wireAuth(){
   var fg = $('#auth-forgot'); if(fg) fg.addEventListener('click', doForgot);
   var sp = $('#auth-savepass'); if(sp) sp.addEventListener('click', guardarNuevaContrasena);
   var p2 = $('#auth-pass2'); if(p2) p2.addEventListener('keydown', function(e){ if(e.key === 'Enter') guardarNuevaContrasena(); });
-  var gb = $('#auth-guest-btn'); if(gb) gb.addEventListener('click', entrarComoInvitado);
   var lb = $('#auth-login-btn'); if(lb) lb.addEventListener('click', doLogin);
-  var sub = $('#auth-signup-btn'); if(sub) sub.addEventListener('click', doSignup);
+  var sub = $('#auth-signup-btn');
+  if(sub) sub.addEventListener('click', function(){
+    var extra = $('#auth-extra');
+    // Primer toque: aparecen meta y fecha. Segundo: se crea la cuenta. Así el
+    // login no arrastra dos campos que solo sirven para registrarse.
+    if(extra && extra.classList.contains('hidden')){
+      extra.classList.remove('hidden');
+      setAuthMsg('One more step: your goal and your test date (both optional). Then tap "Create account" again.', false);
+      intenta(function(){ $('#auth-target').focus(); }, 'foco');
+      return;
+    }
+    doSignup();
+  });
   var pass = $('#auth-pass'); if(pass) pass.addEventListener('keydown', function(e){ if(e.key === 'Enter') doLogin(); });
 }
 
@@ -4938,14 +5097,14 @@ function init(){
   $('#btn-home').addEventListener('click', goHome);
   $('#btn-clear-history').addEventListener('click', safeClearHistory);
   var _dl = $('#btn-download-history'); if(_dl) _dl.addEventListener('click', function(){
-    if(downloadHistory()) toast('Respaldo descargado.'); else toast('No se pudo descargar.', true);
+    if(downloadHistory()) toast('Backup downloaded.'); else toast('Could not download the backup.', true);
   });
   var _imp = $('#btn-import-history'); if(_imp) _imp.addEventListener('click', function(){ var f = $('#import-file'); if(f) f.click(); });
   var _impf = $('#import-file'); if(_impf) _impf.addEventListener('change', function(){
     var file = this.files && this.files[0]; if(!file) return;
     var rd = new FileReader();
     rd.onload = function(){ var r = importHistory(String(rd.result)); renderHome(); toast(r.msg, !r.ok); };
-    rd.onerror = function(){ toast('No se pudo leer el archivo.', true); };
+    rd.onerror = function(){ toast('Could not read that file.', true); };
     rd.readAsText(file);
     this.value = '';
   });
@@ -4970,6 +5129,7 @@ function init(){
     if(!$('#line-reader').classList.contains('hidden')) layoutLineReader();
   });
   wireAuth();
+  var pbk = $('#btn-prog-back'); if(pbk) pbk.addEventListener('click', closeProgress);
   var abk = $('#btn-admin-back'); if(abk) abk.addEventListener('click', closeAdmin);
   var abr = $('#btn-admin-refresh'); if(abr) abr.addEventListener('click', loadAdmin);
   authBoot();

@@ -77,7 +77,7 @@ const sleep = ms => new Promise(r => setTimeout(r, ms));
     });
     check('P2 sin historial, ningún tema figura como "medido"', vacio.medidos === 0, vacio);
     check('P2b y lo dice explícitamente en vez de inventar un %',
-          vacio.razones.every(t => /Nunca lo has practicado|todav[íi]a no se puede medir/.test(t)), vacio.razones);
+          vacio.razones.every(t => /Never practiced|too few to measure/.test(t)), vacio.razones);
     check('P2c sin datos, prioriza los dominios que más pesan (35%)',
           vacio.primeros.some(d => /Algebra|Advanced Math/.test(d)), vacio.primeros);
 
@@ -104,7 +104,7 @@ const sleep = ms => new Promise(r => setTimeout(r, ms));
     check('P3c y 100% en lo acertado', reco.punct.acc === 1, reco.punct);
     check('P3d con 8 respuestas ya lo considera medido', reco.circ.medido === true && reco.punct.medido === true, reco);
     check('P3e la razón menciona el peso del dominio en el examen',
-          /% del examen|vale/.test(reco.circ.razon), reco.circ.razon);
+          /% of the test|keep it warm/.test(reco.circ.razon), reco.circ.razon);
 
     /* ---- P4 · el test armado respeta lo que el estudiante eligió ---- */
     const t20 = await page.evaluate(() => {
