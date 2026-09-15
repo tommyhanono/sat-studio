@@ -19,13 +19,13 @@ window.SAT_SETS.push({
         D:'Tardigrades are microscopic animals, and many species of them live in moss and damp soil.'
       },
       correct:'B',
-      expCorrect:'La meta pide un CONTRASTE entre el hábitat común y las habilidades extraordinarias. La B usa "Although" para oponer el moss y damp soil (ordinario) con sobrevivir al calor extremo, la radiación y el vacío del espacio (extraordinario). Cumple la meta con notas exactas.',
+      expCorrect:'The goal calls for a CONTRAST between the ordinary habitat and the extraordinary abilities. B uses "Although" to set moss and damp soil (ordinary) against surviving extreme heat, radiation and the vacuum of space (extraordinary). It meets the goal with accurate notes.',
       expWrong:{
-        A:'Solo describe qué son y dónde viven; no menciona las habilidades extraordinarias, así que no hay contraste.',
-        C:'Explica el proceso de la criptobiosis, pero no contrasta el hábitat ordinario con las habilidades. Persigue otra meta.',
-        D:'Junta dos datos del hábitat sin ningún contraste con las capacidades de supervivencia.'
+        A:'It only describes what they are and where they live; it never mentions the extraordinary abilities, so there is no contrast.',
+        C:'It explains the process of cryptobiosis, but does not contrast the ordinary habitat with the abilities. It chases a different goal.',
+        D:'It pairs two habitat facts with no contrast at all against the survival capabilities.'
       },
-      tip:'Lee la META primero. Si pide "contraste", busca la opción con palabra de oposición (Although, but, while) que junte los DOS lados.'
+      tip:'Read the GOAL first. If it asks for "contrast", look for the option with an opposition word (Although, but, while) that brings BOTH sides together.'
     },
     {
       id:'RHS-02', type:'mc', domain:'Expression of Ideas', difficulty:'Difícil',
@@ -39,13 +39,13 @@ window.SAT_SETS.push({
         D:'The kora’s strings, once made from animal hide, are now often made from nylon fishing line.'
       },
       correct:'A',
-      expCorrect:'La meta es PRESENTAR el instrumento a alguien que no lo conoce. La A da lo básico y esencial: qué es (21-string instrument), de dónde viene (West Africa) y de qué está hecho. Es la mejor introducción con notas exactas.',
+      expCorrect:'The goal is to INTRODUCE the instrument to someone who does not know it. A gives the basic essentials: what it is (a 21-string instrument), where it comes from (West Africa) and what it is made of. It is the best introduction, with accurate notes.',
       expWrong:{
-        B:'Compara materiales de las cuerdas (antes vs. ahora); es un detalle específico, no una presentación general.',
-        C:'Habla de quién lo toca, pero no dice qué es el instrumento; presenta pobremente a un público nuevo.',
-        D:'Es un dato puntual sobre las cuerdas, no una introducción del instrumento en su conjunto.'
+        B:'It compares string materials (then vs. now); that is a specific detail, not a general introduction.',
+        C:'It says who plays it, but never says what the instrument is; it introduces it poorly to a new audience.',
+        D:'It is a narrow fact about the strings, not an introduction to the instrument as a whole.'
       },
-      tip:'"Introducir a un público que no conoce" = elige lo más general y básico, no un detalle fino.'
+      tip:'"Introduce to an audience unfamiliar with it" = pick the most general and basic, not a fine detail.'
     },
     {
       id:'RHS-03', type:'mc', domain:'Expression of Ideas', difficulty:'Media',
@@ -59,13 +59,13 @@ window.SAT_SETS.push({
         D:'Coral reefs can differ greatly in the number of fish species they support.'
       },
       correct:'C',
-      expCorrect:'La meta pide un HALLAZGO específico. La C da los números concretos que descubrió el estudio: 42 especies en el arrecife protegido vs. 19 en el de pesca. Eso es un resultado medible y exacto.',
+      expCorrect:'The goal calls for a specific FINDING. C gives the concrete numbers the study turned up: 42 species on the protected reef vs. 19 on the fished one. That is a measurable, exact result.',
       expWrong:{
-        A:'Describe el montaje del estudio, no lo que se encontró.',
-        B:'Explica la diferencia entre los dos arrecifes, pero no reporta ningún resultado con datos.',
-        D:'Es una afirmación general y vaga; no presenta el hallazgo específico del estudio.'
+        A:'It describes the study setup, not what was found.',
+        B:'It explains the difference between the two reefs, but reports no result with data.',
+        D:'It is a general, vague claim; it does not present the study’s specific finding.'
       },
-      tip:'"Hallazgo específico" = busca la opción con los DATOS/números concretos, no la que describe el diseño del estudio.'
+      tip:'"Specific finding" = look for the option with concrete DATA or numbers, not the one describing the study design.'
     },
     {
       id:'RHS-04', type:'mc', domain:'Expression of Ideas', difficulty:'Difícil',
@@ -79,13 +79,13 @@ window.SAT_SETS.push({
         D:'Former fishing towns around the Aral Sea now sit in a dry, salty desert.'
       },
       correct:'A',
-      expCorrect:'La meta pide explicar la CAUSA de la reducción. La A nombra el motivo: los ingenieros desviaron los dos ríos en los 60 para regar algodón, y por eso el lago empezó a encogerse. Es causa + efecto con notas exactas.',
+      expCorrect:'The goal calls for explaining the CAUSE of the shrinking. A names the reason: engineers diverted the two rivers in the 60s to irrigate cotton, and that is why the lake began to shrink. It is cause plus effect, with accurate notes.',
       expWrong:{
-        B:'Da el resultado (perdió 90% del volumen), no la causa de por qué pasó.',
-        C:'Contrasta pasado y presente, pero no explica qué provocó la reducción.',
-        D:'Describe una consecuencia (los pueblos en el desierto), no la causa.'
+        B:'It gives the result (it lost 90% of its volume), not the cause of why it happened.',
+        C:'It contrasts past and present, but does not explain what caused the shrinking.',
+        D:'It describes a consequence (the towns left in the desert), not the cause.'
       },
-      tip:'"Explicar la causa" = busca la opción que responda POR QUÉ pasó, no la que describe el resultado.'
+      tip:'"Explain the cause" = look for the option answering WHY it happened, not the one describing the result.'
     },
     {
       id:'RHS-05', type:'mc', domain:'Expression of Ideas', difficulty:'Media',
@@ -99,13 +99,13 @@ window.SAT_SETS.push({
         D:'Baker’s yeast, used in commercial bread, produces a rise in only a few hours.'
       },
       correct:'C',
-      expCorrect:'La meta pide COMPARAR cómo se leudan los dos panes. La C pone los dos lados frente a frente: el comercial usa levadura de paquete y el sourdough usa un starter de levadura silvestre y bacterias. Compara ambos con notas exactas.',
+      expCorrect:'The goal calls for COMPARING how the two breads rise. C puts both sides face to face: the commercial one uses packaged yeast and the sourdough uses a starter of wild yeast and bacteria. It compares both, with accurate notes.',
       expWrong:{
-        A:'Solo describe el sourdough; falta el otro lado de la comparación.',
-        B:'Da un dato del sourdough (el tiempo), pero no lo compara con el pan comercial.',
+        A:'It only describes the sourdough; the other side of the comparison is missing.',
+        B:'It gives one fact about sourdough (the time), but does not compare it with the commercial bread.',
         D:'Solo habla de la levadura comercial; no menciona el sourdough para comparar.'
       },
-      tip:'"Comparar dos cosas" = la opción correcta debe mencionar AMBAS, no solo una.'
+      tip:'"Compare two things" = the right option has to mention BOTH, not just one.'
     },
     {
       id:'RHS-06', type:'mc', domain:'Expression of Ideas', difficulty:'Difícil',
@@ -119,13 +119,13 @@ window.SAT_SETS.push({
         D:'John Glenn trusted Johnson so completely that he refused to fly until she had personally verified the computer’s numbers by hand.'
       },
       correct:'D',
-      expCorrect:'La meta es resaltar la CONFIANZA que los astronautas tenían en Johnson. La D lo muestra directo: Glenn confiaba tanto que no despegaría hasta que ella verificara los números a mano. Cumple la meta con notas exactas.',
+      expCorrect:'The goal is to highlight the TRUST the astronauts placed in Johnson. D shows it directly: Glenn trusted her so much that he would not lift off until she checked the numbers by hand. It meets the goal with accurate notes.',
       expWrong:{
-        A:'Presenta quién era, pero no dice nada sobre la confianza que le tenían.',
+        A:'It introduces who she was, but says nothing about the trust placed in her.',
         B:'Habla de la computadora y los ingenieros; no muestra confianza en Johnson.',
-        C:'Da un logro (el vuelo de Shepard), pero no demuestra la confianza de los astronautas en ella.'
+        C:'It gives an achievement (Shepard’s flight), but does not demonstrate the astronauts’ trust in her.'
       },
-      tip:'"Resaltar la confianza" = busca la opción donde alguien ACTÚA por confiar en ella, no un logro suelto.'
+      tip:'"Emphasize the trust" = look for the option where someone ACTS because they trust her, not a standalone achievement.'
     },
     {
       id:'RHS-07', type:'mc', domain:'Expression of Ideas', difficulty:'Media',
@@ -139,13 +139,13 @@ window.SAT_SETS.push({
         D:'Bioluminescence is called "cold light" because its chemical reaction releases energy almost entirely as light, with very little heat.'
       },
       correct:'D',
-      expCorrect:'La meta pide explicar POR QUÉ se le llama "cold light". La D lo dice: la reacción libera casi toda la energía como luz y muy poco calor, por eso se le dice luz fría. Explica la causa del nombre con notas exactas.',
+      expCorrect:'The goal calls for explaining WHY it is called "cold light". D says it: the reaction releases almost all its energy as light and very little heat, which is why it is called cold light. It explains the reason for the name, with accurate notes.',
       expWrong:{
-        A:'Define qué es la bioluminiscencia, pero no explica el apodo "cold light".',
-        B:'Lista los ingredientes de la reacción; no explica por qué se llama luz fría.',
-        C:'Describe la química (luciferin, oxígeno, luciferase), pero no conecta con el "poco calor" que da el nombre.'
+        A:'It defines what bioluminescence is, but does not explain the nickname "cold light".',
+        B:'It lists the ingredients of the reaction; it does not explain why it is called cold light.',
+        C:'It describes the chemistry (luciferin, oxygen, luciferase), but does not connect it to the "very little heat" behind the name.'
       },
-      tip:'Cuando la meta pide explicar un nombre o apodo, busca la nota que da la RAZÓN de ese nombre (aquí: poco calor).'
+      tip:'When the goal is to explain a name or nickname, look for the note giving the REASON for that name (here: very little heat).'
     },
     {
       id:'RHS-08', type:'mc', domain:'Expression of Ideas', difficulty:'Difícil',
@@ -159,13 +159,13 @@ window.SAT_SETS.push({
         D:'Voyager 1 carries a gold-plated record with sounds and images from Earth.'
       },
       correct:'B',
-      expCorrect:'La meta es enfatizar la DISTANCIA recorrida. La B junta las dos notas de distancia: más de 24 mil millones de km y una señal de radio que tarda más de 22 horas en llegar. Ambas subrayan lo lejos que está. Cumple la meta con notas exactas.',
+      expCorrect:'The goal is to emphasize the DISTANCE covered. B pairs the two distance notes: more than 24 billion km and a radio signal that takes more than 22 hours to arrive. Both underline how far away it is. It meets the goal with accurate notes.',
       expWrong:{
-        A:'Habla del lanzamiento y del disco dorado; no enfatiza la distancia.',
-        C:'Menciona un hito (espacio interestelar), pero no cuánto se ha alejado en distancia.',
+        A:'It is about the launch and the golden record; it does not emphasize the distance.',
+        C:'It mentions a milestone (interstellar space), but not how far it has traveled in distance.',
         D:'Describe la carga de la sonda, no la distancia recorrida.'
       },
-      tip:'"Enfatizar cuán lejos" = escoge la opción con los datos de DISTANCIA (kilómetros, tiempo de la señal), no un hito o la carga.'
+      tip:'"Emphasize how far" = choose the option with the DISTANCE data (kilometers, signal time), not a milestone or the payload.'
     },
     {
       id:'RHS-09', type:'mc', domain:'Expression of Ideas', difficulty:'Media',
@@ -179,13 +179,13 @@ window.SAT_SETS.push({
         D:'Today, Fresnel lenses appear in car headlights, camera flashes, and stage lights.'
       },
       correct:'B',
-      expCorrect:'La meta pide explicar CÓMO la lente se mantiene ligera sin perder potencia. La B da el mecanismo: al dividirla en anillos delgados y concéntricos, queda liviana pero desvía la luz igual de fuerte. Explica el cómo con notas exactas.',
+      expCorrect:'The goal calls for explaining HOW the lens stays light without losing power. B gives the mechanism: by splitting it into thin concentric rings, it stays light but bends light just as strongly. It explains the how, with accurate notes.',
       expWrong:{
-        A:'Da la historia y los usos actuales, pero no explica cómo logra ser ligera.',
-        C:'Describe la lente tradicional (gruesa y pesada), no cómo la de Fresnel evita ese problema.',
-        D:'Lista usos modernos; no explica el diseño que la hace ligera.'
+        A:'It gives the history and the current uses, but does not explain how it manages to stay light.',
+        C:'It describes the traditional lens (thick and heavy), not how the Fresnel one avoids that problem.',
+        D:'It lists modern uses; it does not explain the design that makes it light.'
       },
-      tip:'"Explicar cómo" = busca la opción que describe el MECANISMO (aquí: los anillos concéntricos), no la historia ni los usos.'
+      tip:'"Explain how" = look for the option describing the MECHANISM (here: the concentric rings), not the history or the uses.'
     },
     {
       id:'RHS-10', type:'mc', domain:'Expression of Ideas', difficulty:'Difícil',
@@ -199,13 +199,13 @@ window.SAT_SETS.push({
         D:'Monarchs west of the Rockies spend the winter in groves along the California coast.'
       },
       correct:'C',
-      expCorrect:'La meta pide destacar algo SORPRENDENTE de la migración. La C lo hace: ninguna mariposa completa el viaje entera y hacen falta varias generaciones para cerrar un ciclo. Ese dato es el más asombroso y usa notas exactas.',
+      expCorrect:'The goal calls for highlighting something SURPRISING about the migration. C does it: no single butterfly completes the whole journey and it takes several generations to close one cycle. That fact is the most astonishing one, and it uses accurate notes.',
       expWrong:{
-        A:'Da el dato general de que migran miles de km; es informativo pero no lo más sorprendente.',
-        B:'Describe la ruta del este; es un detalle geográfico, no algo sorprendente.',
-        D:'Describe la ruta del oeste; otro detalle de ruta, no la parte asombrosa.'
+        A:'It gives the general fact that they migrate thousands of km; informative, but not the most surprising part.',
+        B:'It describes the eastern route; that is a geographic detail, not something surprising.',
+        D:'It describes the western route; another route detail, not the astonishing part.'
       },
-      tip:'"Rasgo sorprendente" = elige el dato más inesperado (varias generaciones para un solo viaje), no una ruta ni un hecho general.'
+      tip:'"Surprising feature" = pick the most unexpected fact (several generations for a single journey), not a route or a general fact.'
     }
   ]
 });

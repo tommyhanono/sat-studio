@@ -16,13 +16,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text with the most logical and precise word or phrase?',
       choices:{A:'untenable', B:'ornate', C:'provisional', D:'conventional'},
       correct:'A',
-      expCorrect:'La segunda parte, tras los dos puntos, explica que el techo no podría soportar las cargas: la idea central no se sostiene. La palabra untenable significa justamente insostenible o indefendible, que es lo que muestran los cálculos.',
+      expCorrect:'The second part, after the colon, explains that the roof could not carry the loads: the central idea does not hold up. The word untenable means precisely unsustainable or indefensible, which is what the calculations show.',
       expWrong:{
-        B:'Ornate (recargado, ornamental) describe apariencia, no un fallo lógico o estructural; el problema aquí es que la premisa no funciona.',
-        C:'Provisional (provisional, temporal) implica que algo es transitorio, pero el texto dice que la premisa es imposible, no temporal.',
-        D:'Conventional (convencional) sugeriría algo común o poco original, lo contrario del techo llamado visually striking.'
+        B:'Ornate describes appearance, not a logical or structural failure; the problem here is that the premise does not work.',
+        C:'Provisional implies something is temporary, but the text says the premise is impossible, not temporary.',
+        D:'Conventional would suggest something common or unoriginal, the opposite of a roof called visually striking.'
       },
-      tip:'Usa la pista después de los dos puntos como definición del blank. Si esa parte dice que algo no puede funcionar, busca una palabra que signifique insostenible.'
+      tip:'Use the clue after the colon as the definition of the blank. If that part says something cannot work, look for a word meaning untenable.'
     },
     {
       id:'MK1-02', type:'mc', domain:'Craft and Structure', difficulty:'Difícil',
@@ -31,13 +31,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text with the most logical and precise word or phrase?',
       choices:{A:'obtrusively', B:'obliquely', C:'reluctantly', D:'exhaustively'},
       correct:'B',
-      expCorrect:'El texto contrasta con stated her themes outright (decirlos directamente): ella los deja aparecer de forma indirecta, escondidos en comentarios y detalles. Obliquely significa de manera indirecta o sesgada, justo ese contraste.',
+      expCorrect:'The text contrasts with stated her themes outright: she lets them surface indirectly, tucked into asides and details. Obliquely means in an indirect or slanted way, exactly that contrast.',
       expWrong:{
-        A:'Obtrusively (de forma llamativa, entrometida) es lo opuesto: los temas están escondidos, no saltan a la vista.',
-        C:'Reluctantly (a regañadientes) atribuye una emoción a la autora que el texto no describe; el punto es cómo aparecen los temas, no su ánimo.',
-        D:'Exhaustively (exhaustivamente) implica cubrirlo todo en detalle, pero aquí los temas apenas se insinúan.'
+        A:'Obtrusively is the opposite: the themes are tucked away, they do not jump out at you.',
+        C:'Reluctantly attributes an emotion to the author that the text never describes; the point is how the themes surface, not her mood.',
+        D:'Exhaustively implies covering everything in detail, but here the themes are barely hinted at.'
       },
-      tip:'El punto y coma opone dos ideas: outright (directo) frente al blank. Necesitas una palabra que signifique lo contrario de directo.'
+      tip:'The semicolon sets two ideas against each other: outright versus the blank. You need a word meaning the opposite of direct.'
     },
     {
       id:'MK1-03', type:'mc', domain:'Craft and Structure', difficulty:'Media',
@@ -46,13 +46,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text with the most logical and precise word or phrase?',
       choices:{A:'authenticated', B:'catalogued', C:'reconstituted', D:'digitized'},
       correct:'C',
-      expCorrect:'El argumento es que el archivo no es fijo: cada generación decide de nuevo qué guardar, qué descartar y cómo leerlo. Reconstituted (reconstituido, rehecho) capta esa transformación continua.',
+      expCorrect:'The argument is that the archive is not fixed: each generation decides anew what to keep, what to discard and how to read it. Reconstituted captures that continuous remaking.',
       expWrong:{
-        A:'Authenticated (autenticado) se refiere a verificar que algo es genuino, no a rehacer el archivo entero según cada época.',
-        B:'Catalogued (catalogado) es solo organizar o listar; no abarca decidir qué descartar ni cómo reinterpretar los documentos.',
-        D:'Digitized (digitalizado) es un detalle técnico específico que el texto no menciona; el punto es conceptual, no de formato.'
+        A:'Authenticated refers to verifying that something is genuine, not to remaking the whole archive in each era.',
+        B:'Catalogued is only organizing or listing; it does not cover deciding what to discard or how to reinterpret the documents.',
+        D:'Digitized is a specific technical detail the text never mentions; the point is conceptual, not about format.'
       },
-      tip:'Busca la palabra que resuma toda la lista que sigue (guardar, descartar, reinterpretar). Una que solo cubra una parte se queda corta.'
+      tip:'Look for the word that sums up the whole list that follows (keeping, discarding, reinterpreting). One that covers only part of it falls short.'
     },
     /* Text Structure and Purpose ×2 (reading) */
     {
@@ -67,13 +67,13 @@ window.SAT_SETS.push({
         D:'It lists the technical specifications of an invention and then evaluates whether they were practical.'
       },
       correct:'A',
-      expCorrect:'El texto arranca con la creencia común (un solo inventor) y luego la complica: los registros muestran varios inventores cuyas patentes hubo que combinar. Es creencia establecida seguida de evidencia que apunta a un origen colectivo.',
+      expCorrect:'The text opens with the common belief (a single inventor) and then complicates it: the records show several inventors whose patents had to be combined. It is an established belief followed by evidence pointing to a collective origin.',
       expWrong:{
-        B:'No sigue la carrera de un solo inventor; de hecho, el punto es que no hubo un único inventor.',
-        C:'No compara dos máquinas rivales para elegir la mejor; habla de patentes que debieron unirse, no de una superioridad.',
-        D:'No enumera especificaciones técnicas ni evalúa su practicidad; el eje es histórico y de autoría, no técnico.'
+        B:'It does not follow the career of a single inventor; in fact, the point is that there was no single inventor.',
+        C:'It does not compare two rival machines to pick the better one; it is about patents that had to be combined, not about superiority.',
+        D:'It does not list technical specifications or weigh their practicality; the thread is historical and about authorship, not technical.'
       },
-      tip:'En preguntas de estructura, fíjate en el giro. El Yet tras la primera oración avisa que van a matizar la creencia inicial: creencia luego complicación.'
+      tip:'On structure questions, watch the turn. The Yet after the first sentence warns that the opening belief is about to be complicated: belief, then complication.'
     },
     {
       id:'MK1-05', type:'mc', domain:'Craft and Structure', difficulty:'Difícil',
@@ -87,13 +87,13 @@ window.SAT_SETS.push({
         D:'To explain the method a survey used to identify individual species of bees.'
       },
       correct:'B',
-      expCorrect:'El texto toma una postura desdeñosa (too small and scattered to matter) y la refuta con datos: incluso techos aislados atraen abejas y los cercanos comparten especies, funcionando como stepping-stones. El propósito es mostrar que ese hábitat descartado sí vale.',
+      expCorrect:'The text takes a dismissive stance (too small and scattered to matter) and refutes it with data: even isolated roofs draw bees, and nearby ones share species, working as stepping-stones. The purpose is to show that dismissed habitat does count.',
       expWrong:{
         A:'No compara amenazas urbanas contra rurales; el foco es el valor de los techos, no un peligro exclusivo de la ciudad.',
         C:'No recomienda plantas ni se dirige a jardineros; presenta hallazgos de un estudio.',
-        D:'Menciona un estudio, pero no explica su método para identificar especies; usa el resultado, no el procedimiento.'
+        D:'It mentions a study, but does not explain its method for identifying species; it uses the result, not the procedure.'
       },
-      tip:'Main purpose es por qué el autor escribió todo el texto. Si empieza rebatiendo una idea (suggests otherwise), el propósito suele ser presentar evidencia contra esa idea.'
+      tip:'Main purpose is why the author wrote the whole text. If it opens by pushing back on an idea (suggests otherwise), the purpose is usually to present evidence against that idea.'
     },
     /* Cross-Text Connections ×2 (reading, two short passages) */
     {
@@ -108,13 +108,13 @@ window.SAT_SETS.push({
         D:'By contending that her prediction overlooks remote workers\' continued desire to live near urban amenities.'
       },
       correct:'D',
-      expCorrect:'Prieto predice que los trabajadores remotos abandonarán el centro por pueblos baratos. Vale objeta con encuestas: la mayoría igual quiere vivir cerca de teatros, restaurantes y parques, y extrañan el contacto social. Respondería que ella ignora ese deseo de estar cerca de las amenidades urbanas.',
+      expCorrect:'Prieto predicts that remote workers will abandon downtown for cheap towns. Vale objects with surveys: most still want to live near theaters, restaurants and parks, and they miss the social contact. She would answer that he ignores that desire to be close to urban amenities.',
       expWrong:{
-        A:'Vale no acepta que el centro caerá; duda de esa predicción y sugiere que las ciudades pueden atraer de vuelta a esos trabajadores.',
-        B:'Vale nunca dice que el trabajo remoto sea pasajero; discute lo que la gente quiere, no si la tendencia se revierte sola.',
-        C:'Vale no limita el análisis de Prieto a pueblos; su punto es sobre lo que atrae a la gente a las ciudades grandes.'
+        A:'Vale does not accept that downtown will fall; she doubts that prediction and suggests cities can pull those workers back.',
+        B:'Vale never says remote work is a passing phase; she is arguing about what people want, not whether the trend reverses on its own.',
+        C:'Vale does not limit Prieto’s analysis to small towns; her point is about what draws people to big cities.'
       },
-      tip:'Primero fija la tesis de cada autor. Vale contradice a Prieto con un dato (la gente quiere amenidades), así que su respuesta será ese contraargumento, no un simple acuerdo.'
+      tip:'First pin down each author’s thesis. Vale contradicts Prieto with a fact (people want amenities), so her answer will be that counterargument, not simple agreement.'
     },
     {
       id:'MK1-07', type:'mc', domain:'Craft and Structure', difficulty:'Difícil',
@@ -128,13 +128,13 @@ window.SAT_SETS.push({
         D:'By insisting that the toppled walls prove the city was abandoned peacefully.'
       },
       correct:'B',
-      expCorrect:'La visión estándar lee la capa de ceniza como una sola noche de destrucción. Chen observa que la ceniza está en bandas separadas por pisos usados normalmente, señal de varios incendios menores a lo largo de años. Respondería que los datos apuntan a un declive gradual, no a un ataque único.',
+      expCorrect:'The standard view reads the ash layer as a single night of destruction. Chen observes that the ash sits in separate bands divided by normally used floors, a sign of several smaller fires over years. She would answer that the data point to a gradual decline, not a single attack.',
       expWrong:{
-        A:'Chen no acepta el saqueo por invasores; su relectura sustituye el ataque único por incendios repetidos en el tiempo.',
-        C:'Chen dice lo contrario: la gente siguió viviendo entre las capas de ceniza, así que el sitio sí estuvo habitado.',
-        D:'Chen no habla de un abandono pacífico ni usa los muros caídos para probarlo; su evidencia es la ceniza en bandas.'
+        A:'Chen does not accept the sack by invaders; her rereading replaces the single attack with repeated fires over time.',
+        C:'Chen says the opposite: people went on living between the ash layers, so the site was indeed inhabited.',
+        D:'Chen does not argue for a peaceful abandonment or use the fallen walls to prove it; her evidence is the banded ash.'
       },
-      tip:'Cuando dos autores interpretan la misma evidencia, la respuesta describe la lectura alternativa. Chen reinterpreta la ceniza: de una noche a muchos años.'
+      tip:'When two authors read the same evidence, the answer describes the alternative reading. Chen reinterprets the ash: from one night to many years.'
     },
     /* ===== Q8–14 — INFORMATION AND IDEAS ===== */
     /* Central Ideas and Details ×2 (reading) */
@@ -150,13 +150,13 @@ window.SAT_SETS.push({
         D:'The idea of an ecosystem engineer highlights how some species shape habitats that many others rely on.'
       },
       correct:'D',
-      expCorrect:'La idea central define ecosystem engineer como un organismo que remodela su entorno de forma que muchas otras especies dependen de él, con el castor como ejemplo. El texto subraya por qué importa el término: revela cómo perder a esa especie desarma la comunidad.',
+      expCorrect:'The central idea defines ecosystem engineer as an organism that reshapes its surroundings in ways many other species depend on, with the beaver as the example. The text stresses why the term matters: it reveals how losing that species unravels the community.',
       expWrong:{
-        A:'El castor es el textbook case, un ejemplo, no la única especie capaz; el texto habla de una categoría general.',
-        B:'No hay desacuerdo entre biólogos en el texto; el término se presenta como útil, no en disputa.',
-        C:'El texto dice lo opuesto: el valor del término es correr el foco de lo que come a lo que construye.'
+        A:'The beaver is the textbook case, an example, not the only species capable of it; the text is about a general category.',
+        B:'There is no disagreement among biologists in the text; the term is presented as useful, not disputed.',
+        C:'The text says the opposite: the value of the term is shifting the focus from what it eats to what it builds.'
       },
-      tip:'La idea principal cubre todo el párrafo, no una sola oración. Un ejemplo (el castor) ilustra la idea; no la reemplaza.'
+      tip:'The main idea covers the whole paragraph, not one sentence. An example (the beaver) illustrates the idea; it does not replace it.'
     },
     {
       id:'MK1-09', type:'mc', domain:'Information and Ideas', difficulty:'Difícil',
@@ -170,13 +170,13 @@ window.SAT_SETS.push({
         D:'a way to preserve spirituals unchanged by keeping them separate from classical music.'
       },
       correct:'C',
-      expCorrect:'El texto contrasta a los críticos (que lo veían como concesión) con la visión de Price: para ella era una afirmación de que esa música pertenecía a la sala de conciertos y que ambas tradiciones se enriquecían. Es una unión deliberada que fortalece a las dos.',
+      expCorrect:'The text contrasts the critics (who saw it as a concession) with Price’s own view: for her it was an assertion that this music belonged in the concert hall and that both traditions were enriched. It is a deliberate joining that strengthens both.',
       expWrong:{
-        A:'Reluctant compromise es la lectura de los críticos, que el texto atribuye a Critics of her era, no a Price (Price saw it differently).',
-        B:'El texto no dice que Price juzgara el experimento como fallido; lo defiende como una afirmación positiva.',
-        D:'Ella no mantenía los espirituales separados ni intactos: precisamente los insertaba dentro de la sinfonía.'
+        A:'Reluctant compromise is the critics’ reading, which the text attributes to Critics of her era, not to Price (Price saw it differently).',
+        B:'The text does not say Price judged the experiment a failure; it defends it as a positive assertion.',
+        D:'She did not keep the spirituals separate or untouched: she was precisely embedding them inside the symphony.'
       },
-      tip:'Ojo con las trampas que repiten la opinión del otro bando. La pregunta pide la visión de Price; Price saw it differently marca dónde empieza su postura.'
+      tip:'Watch for traps that repeat the other side’s opinion. The question asks for Price’s view; Price saw it differently marks where her position starts.'
     },
     /* Command of Evidence ×3 (reading; ONE quantitative described in words) */
     {
@@ -191,13 +191,13 @@ window.SAT_SETS.push({
         D:'The isolated birds produced abnormal songs, while the birds exposed during the early window sang normally.'
       },
       correct:'D',
-      expCorrect:'La hipótesis dice que oír canto adulto en esa ventana temprana es necesario para un canto normal. El resultado que la apoya es: los aislados (sin oír canto) cantan mal y los expuestos en la ventana cantan bien. Eso liga la exposición con el desarrollo normal.',
+      expCorrect:'The hypothesis says hearing adult song in that early window is necessary for normal song. The result that supports it is: the isolated birds (never hearing song) sing poorly and those exposed during the window sing well. That ties exposure to normal development.',
       expWrong:{
-        A:'Si ambos grupos cantan normal, entonces oír el canto no importó, lo que contradice la hipótesis.',
-        B:'Si ninguno canta, no se puede distinguir el efecto de la ventana; no apoya que la exposición produzca canto normal.',
-        C:'Es el patrón inverso: apoyaría lo contrario, que la exposición perjudica en vez de ayudar.'
+        A:'If both groups sing normally, then hearing the song did not matter, which contradicts the hypothesis.',
+        B:'If neither sings, the effect of the window cannot be told apart; it does not support exposure producing normal song.',
+        C:'It is the reverse pattern: it would support the opposite, that exposure hurts rather than helps.'
       },
-      tip:'Empareja el resultado con la hipótesis: variable presente da el efecto esperado; variable ausente da el efecto ausente. Aquí oyó canto lleva a canta bien, y no oyó lleva a canta mal.'
+      tip:'Match the result to the hypothesis: variable present gives the expected effect; variable absent gives the effect absent. Here heard song leads to sings well, and did not hear leads to sings poorly.'
     },
     {
       id:'MK1-11', type:'mc', domain:'Information and Ideas', difficulty:'Difícil',
@@ -211,13 +211,13 @@ window.SAT_SETS.push({
         D:'As the number of sessions attended rose across the four groups, the average points gained rose as well.'
       },
       correct:'D',
-      expCorrect:'La conclusión es que más sesiones se asocian con mayores mejoras. El dato que mejor la sustenta es la tendencia completa: al subir las sesiones (0, luego 1–5, luego 6–10, luego +10), suben los puntos (2, 5, 9, 14). Es la relación creciente en los cuatro grupos.',
+      expCorrect:'The conclusion is that more sessions go with bigger gains. The data point that best supports it is the whole trend: as sessions rise (0, then 1–5, then 6–10, then 10+), the scores rise (2, 5, 9, 14). It is the increasing relationship across all four groups.',
       expWrong:{
-        A:'El grupo de cero sesiones por sí solo no dice nada sobre más sesiones igual a más mejora; es un único punto sin comparación.',
-        B:'Es cierto, pero solo compara dos de los cuatro grupos; la conclusión requiere la tendencia general, que la opción D sí captura.',
-        C:'Que todos mejoren algo no muestra que más sesiones den más mejora; hasta el grupo sin sesiones subió.'
+        A:'The zero-session group on its own says nothing about more sessions meaning more improvement; it is a single point with nothing to compare.',
+        B:'It is true, but it compares only two of the four groups; the conclusion needs the overall trend, which option D does capture.',
+        C:'Everyone improving somewhat does not show that more sessions give more improvement; even the no-session group went up.'
       },
-      tip:'Para una conclusión sobre una tendencia, elige el dato que recorre todos los grupos, no uno que compare solo un par. La respuesta debe reflejar a más X, más Y.'
+      tip:'For a conclusion about a trend, pick the data point that runs across all groups, not one comparing a single pair. The answer has to reflect more X, more Y.'
     },
     {
       id:'MK1-12', type:'mc', domain:'Information and Ideas', difficulty:'Media',
@@ -231,13 +231,13 @@ window.SAT_SETS.push({
         D:'A different lake in a neighboring region has also seen its water quality improve recently.'
       },
       correct:'B',
-      expCorrect:'La estudiante quiere evidencia sobre el lago, no sobre el equipo. Medir que los contaminantes en el lago bajaron notablemente tras instalar los filtros habla directamente de la calidad del agua del lago, que es justo su afirmación.',
+      expCorrect:'The student wants evidence about the lake, not about the equipment. Measuring that contaminants in the lake dropped sharply after the filters went in speaks directly to the water quality of the lake, which is exactly her claim.',
       expWrong:{
-        A:'Cuánto costó el equipo es información sobre la fábrica, no sobre la calidad del agua del lago, que es lo que ella pide.',
-        C:'La confianza de los gerentes es opinión sobre el equipo, no una medición del propio lago.',
-        D:'Otro lago en otra región no dice nada sobre este lago ni sobre el efecto de estos filtros.'
+        A:'How much the equipment cost is information about the plant, not about the water quality of the lake, which is what she is asking for.',
+        C:'The managers’ confidence is an opinion about the equipment, not a measurement of the lake itself.',
+        D:'Another lake in another region says nothing about this lake or about the effect of these filters.'
       },
-      tip:'Fíjate en la restricción del enunciado: about the lake itself. Descarta todo lo que hable de la fábrica, el costo u otro lago.'
+      tip:'Notice the constraint in the prompt: about the lake itself. Rule out anything about the plant, the cost, or another lake.'
     },
     /* Inferences ×2 (reading, inference-completion) */
     {
@@ -252,13 +252,13 @@ window.SAT_SETS.push({
         D:'the challenge of gathering enough sunlight to survive at depth.'
       },
       correct:'A',
-      expCorrect:'El texto subraya que las hembras vagan mucho sin hallar pareja y que fusionarse asegura no perderse en la oscuridad. La inferencia lógica es que el mayor obstáculo no es competir, sino lo difícil que es encontrar pareja en un ambiente tan vacío.',
+      expCorrect:'The text stresses that females wander a long way without finding a mate and that fusing guarantees not being lost in the dark. The logical inference is that the biggest obstacle is not competition, but how hard it is to find a mate in such an empty environment.',
       expWrong:{
-        B:'El texto opone explícitamente el obstáculo a la competencia (not competition but simply), así que la rivalidad no puede ser la respuesta.',
-        C:'No se mencionan depredadores que ataquen a los machos adheridos; eso se inventa fuera del texto.',
-        D:'Estos peces no dependen de la luz solar para reproducirse; viven donde sunlight never reaches y el tema es hallar pareja.'
+        B:'The text explicitly sets the obstacle against competition (not competition but simply), so rivalry cannot be the answer.',
+        C:'No predators attacking the attached males are mentioned; that is invented from outside the text.',
+        D:'These fish do not depend on sunlight to reproduce; they live where sunlight never reaches and the topic is finding a mate.'
       },
-      tip:'Cuando el texto dice not X but simply ___, la respuesta debe contrastar con X. Aquí X es la competencia, así que busca la opción sobre la escasez o dificultad de encontrarse.'
+      tip:'When the text says not X but simply ___, the answer has to contrast with X. Here X is competition, so look for the option about scarcity or the difficulty of meeting.'
     },
     {
       id:'MK1-14', type:'mc', domain:'Information and Ideas', difficulty:'Difícil',
@@ -272,13 +272,13 @@ window.SAT_SETS.push({
         D:'the project abandons the practice of reviewing contributions altogether.'
       },
       correct:'A',
-      expCorrect:'La economista halló que lo clave es un núcleo estable que revise e integre el trabajo; sin él, los proyectos que crecen rápido acumulan aportes sin fusionar y se fragmentan. La inferencia es que el crecimiento perjudica salvo que exista ese núcleo que integre el trabajo.',
+      expCorrect:'The economist found that the key is a stable core that reviews and integrates the work; without it, fast-growing projects pile up unmerged contributions and fragment. The inference is that growth hurts unless that integrating core exists.',
       expWrong:{
-        B:'Más colaboradores es justo lo que causa el problema si falta el núcleo; añadir gente no resuelve la falta de integración.',
-        C:'El texto nunca vincula la salud del proyecto con limitarse a un solo lenguaje; eso está fuera del argumento.',
-        D:'Abandonar la revisión es lo contrario de lo que ayuda; los proyectos sanos sí revisan e integran los aportes.'
+        B:'More contributors is exactly what causes the problem when the core is missing; adding people does not fix the lack of integration.',
+        C:'The text never ties project health to sticking to a single language; that is outside the argument.',
+        D:'Dropping review is the opposite of what helps; healthy projects do review and integrate contributions.'
       },
-      tip:'La palabra unless pide la condición que evita el problema. El texto ya nombró esa condición: un núcleo estable que revise. Elige la opción que la reponga.'
+      tip:'The word unless calls for the condition that prevents the problem. The text already named it: a stable core that reviews. Pick the option that restores it.'
     },
     /* ===== Q15–21 — STANDARD ENGLISH CONVENTIONS ===== */
     /* Boundaries ×4 (fill-in-blank punctuation) */
@@ -289,13 +289,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'overheating,', B:'overheating;', C:'overheating:', D:'overheating'},
       correct:'C',
-      expCorrect:'Antes del blank hay una oración completa (the engineers finally understood why the prototype kept overheating) y lo que sigue es una FRASE que la explica ("a single faulty sensor feeding…" no tiene verbo conjugado, así que no es una oración). Ese es justo el trabajo de los dos puntos: presentar la explicación. Como la 2a parte no es independiente, el colon es la única opción válida.',
+      expCorrect:'Before the blank there is a complete sentence (the engineers finally understood why the prototype kept overheating) and what follows is a PHRASE that explains it ("a single faulty sensor feeding…" has no finite verb, so it is not a sentence). That is exactly the job of the colon: to present the explanation. Since the 2nd part is not independent, the colon is the only valid option.',
       expWrong:{
-        A:'Una coma no puede introducir así una explicación tras una oración completa; queda una unión suelta e incorrecta.',
-        B:'El punto y coma exige una oración INDEPENDIENTE después, pero "a single faulty sensor feeding…" es una frase nominal (sin verbo conjugado), no una oración; por eso aquí el punto y coma no encaja.',
-        D:'Sin puntuación, overheating a single faulty sensor se fusiona (run-on) y confunde el sentido.'
+        A:'A comma cannot introduce an explanation this way after a complete sentence; it leaves a loose, incorrect join.',
+        B:'A semicolon demands an INDEPENDENT sentence after it, but "a single faulty sensor feeding…" is a noun phrase (no finite verb), not a sentence; that is why the semicolon does not fit here.',
+        D:'With no punctuation, overheating a single faulty sensor fuses into a run-on and muddles the meaning.'
       },
-      tip:'Colon es oración completa más algo que la explica o ejemplifica. Prueba: si lo de antes termina en punto y lo de después responde por qué, van dos puntos.'
+      tip:'Colon = a complete sentence plus something that explains or illustrates it. Test it: if what comes before ends in a period and what comes after answers why, use a colon.'
     },
     {
       id:'MK1-16', type:'mc', domain:'Standard English Conventions', difficulty:'Difícil',
@@ -304,13 +304,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'spring,', B:'spring;', C:'spring:', D:'spring and'},
       correct:'B',
-      expCorrect:'Hay dos oraciones completas: The city\'s oldest bakery closed its doors last spring y within weeks, a cooperative had reopened it. Para unir dos independientes sin conjunción, el punto y coma es lo correcto.',
+      expCorrect:'There are two complete sentences: The city\'s oldest bakery closed its doors last spring and within weeks, a cooperative had reopened it. To join two independent clauses with no conjunction, the semicolon is what you want.',
       expWrong:{
-        A:'Una coma sola entre dos oraciones completas es comma splice.',
-        C:'El colon pide que la 2a parte explique o detalle a la 1a; aquí la 2a narra un hecho nuevo (la reabrieron), no explica el cierre.',
-        D:'La conjunción and sin coma antes une mal dos oraciones completas; necesitaría spring, and para ser correcto.'
+        A:'A single comma between two complete sentences is a comma splice.',
+        C:'The colon demands that the 2nd part explain or spell out the 1st; here the 2nd narrates a new fact (they reopened it), it does not explain the closing.',
+        D:'The conjunction and with no comma before it joins two complete sentences badly; it would need spring, and to be correct.'
       },
-      tip:'Si a ambos lados del blank puedes poner un punto y quedan oraciones completas, y no hay conjunción, el punto y coma es tu opción segura.'
+      tip:'If you can put a period on both sides of the blank and still have complete sentences, and there is no conjunction, the semicolon is your safe pick.'
     },
     {
       id:'MK1-17', type:'mc', domain:'Standard English Conventions', difficulty:'Media',
@@ -324,13 +324,13 @@ window.SAT_SETS.push({
         D:'notes,/pencil—'
       },
       correct:'C',
-      expCorrect:'El inciso no esencial some in ink, others in faded pencil describe las notas y va encerrado. Como el primer blank abre con raya, el segundo debe cerrar con raya: notes—…pencil—reveal. La puntuación del inciso debe coincidir en ambos extremos.',
+      expCorrect:'The non-essential aside some in ink, others in faded pencil describes the notes and has to be fenced off. Since the first blank opens with a dash, the second has to close with a dash: notes—…pencil—reveal. The punctuation of an aside must match at both ends.',
       expWrong:{
-        A:'Coma para abrir y punto y coma para cerrar no coinciden, y el punto y coma exigiría una oración independiente después, que no la hay.',
-        B:'Abre con raya pero cierra con coma; la puntuación de un inciso debe ser del mismo tipo en ambos extremos.',
-        D:'Abre con coma pero cierra con raya; de nuevo, apertura y cierre desiguales.'
+        A:'A comma to open and a semicolon to close do not match, and the semicolon would demand an independent sentence after it, which there is not.',
+        B:'It opens with a dash but closes with a comma; the punctuation around an aside has to be the same kind at both ends.',
+        D:'It opens with a comma but closes with a dash; again, mismatched opening and closing.'
       },
-      tip:'Un inciso se abre y se cierra con el mismo signo: raya y raya, o coma y coma. Si un extremo usa raya, el otro también.'
+      tip:'An aside opens and closes with the same mark: dash and dash, or comma and comma. If one end uses a dash, so does the other.'
     },
     {
       id:'MK1-18', type:'mc', domain:'Standard English Conventions', difficulty:'Difícil',
@@ -344,13 +344,13 @@ window.SAT_SETS.push({
         D:'Rourke;/floor;'
       },
       correct:'A',
-      expCorrect:'La frase a marine geologist whose maps redrew our picture of the sea floor es un apositivo no esencial que renombra a Ada Rourke; va entre dos comas. Además, and the audience listened es otra oración, así que la coma de cierre tras floor también prepara la unión con and.',
+      expCorrect:'The phrase a marine geologist whose maps redrew our picture of the sea floor is a non-essential appositive renaming Ada Rourke; it sits between two commas. On top of that, and the audience listened is another sentence, so the closing comma after floor also sets up the join with and.',
       expWrong:{
-        B:'Falta la coma de apertura tras Rourke; el inciso quedaría abierto sin su primera coma.',
+        B:'The opening comma after Rourke is missing; the aside would be left open without its first comma.',
         C:'Falta la coma de cierre tras floor; el apositivo se abre pero no se cierra, y se pega a and.',
-        D:'El punto y coma no encierra apositivos y no hay oración independiente entre Rourke y el resto del sujeto.'
+        D:'A semicolon does not fence off appositives, and there is no independent sentence between Rourke and the rest of the subject.'
       },
-      tip:'Un apositivo no esencial lleva coma de apertura y coma de cierre (comas gemelas). Revisa que ambas estén presentes.'
+      tip:'A non-essential appositive takes an opening comma and a closing comma (twin commas). Check that both are there.'
     },
     /* Form, Structure, and Sense ×3 (fill-in-blank grammar) */
     {
@@ -360,13 +360,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'allow', B:'have allowed', C:'are allowing', D:'allows'},
       correct:'D',
-      expCorrect:'El sujeto es The array (singular); of sensors mounted along the bridge\'s underside es solo una frase preposicional que describe al núcleo. Un sujeto singular pide verbo singular en presente: The array allows.',
+      expCorrect:'The subject is The array (singular); of sensors mounted along the bridge\'s underside is only a prepositional phrase describing the head noun. A singular subject takes a singular present-tense verb: The array allows.',
       expWrong:{
-        A:'La forma allow es plural y concordaría con sensors, pero el núcleo del sujeto es array (singular), no sensors.',
-        B:'La forma have allowed es plural; concuerda con sensors, no con array, así que rompe la concordancia.',
-        C:'La forma are allowing es plural y además cambia el sentido a algo en progreso; el núcleo singular array pide allows.'
+        A:'The form allow is plural and would agree with sensors, but the head of the subject is array (singular), not sensors.',
+        B:'The form have allowed is plural; it agrees with sensors, not with array, so it breaks agreement.',
+        C:'The form are allowing is plural and also shifts the meaning to something in progress; the singular head array calls for allows.'
       },
-      tip:'Tapa la frase of más el complemento para hallar el verdadero sujeto. The array allows: núcleo singular, verbo singular.'
+      tip:'Cover the of phrase and its object to find the real subject. The array allows: singular head, singular verb.'
     },
     {
       id:'MK1-20', type:'mc', domain:'Standard English Conventions', difficulty:'Difícil',
@@ -375,13 +375,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'its', B:'their', C:'his or her', D:"one's"},
       correct:'B',
-      expCorrect:'En neither… nor…, el pronombre concuerda con el sujeto más cercano al verbo, que aquí es the other musicians (plural). El posesivo plural correcto es their: could hide their relief.',
+      expCorrect:'In neither… nor…, the pronoun agrees with the subject closest to the verb, which here is the other musicians (plural). The correct plural possessive is their: could hide their relief.',
       expWrong:{
-        A:'La forma its es singular y se usa para cosas, no para músicos (personas) ni para el sujeto plural más cercano.',
-        C:'La forma his or her es singular, pero el sujeto más cercano (the other musicians) es plural, así que pide un posesivo plural.',
+        A:'The form its is singular and is used for things, not for musicians (people) or for the nearest plural subject.',
+        C:'The form his or her is singular, but the nearest subject (the other musicians) is plural, so it calls for a plural possessive.',
         D:'La forma one\'s es impersonal y singular; no concuerda con the other musicians.'
       },
-      tip:'Con neither…nor…, el verbo y el pronombre siguen al sujeto más cercano. Si ese es plural, usa their.'
+      tip:'With neither…nor…, the verb and the pronoun follow the nearest subject. If that one is plural, use their.'
     },
     {
       id:'MK1-21', type:'mc', domain:'Standard English Conventions', difficulty:'Difícil',
@@ -395,13 +395,13 @@ window.SAT_SETS.push({
         D:'there was a hawk that'
       },
       correct:'C',
-      expCorrect:'El modificador inicial Circling high above the canyon for nearly an hour describe a quien vuela: el halcón. Justo después de la coma debe ir ese sujeto, the hawk, para que it had been searching for también cuadre: the hawk finally spotted.',
+      expCorrect:'The opening modifier Circling high above the canyon for nearly an hour describes whoever is flying: the hawk. Right after the comma has to come that subject, the hawk, so that it had been searching for lines up too: the hawk finally spotted.',
       expWrong:{
-        A:'Pone the thermal updraft justo tras la coma, sugiriendo que la corriente volaba en círculos; el que vuela es el halcón.',
-        B:'Deja the canyon como quien vuela, pero un cañón no puede circular sobre sí mismo; el modificador no encaja.',
-        D:'La construcción there was a hawk that no coloca al halcón como sujeto inmediato del modificador y resulta torpe y sin concordancia con it.'
+        A:'It puts the thermal updraft right after the comma, suggesting the updraft was flying in circles; the one flying is the hawk.',
+        B:'It leaves the canyon as the one flying, but a canyon cannot circle above itself; the modifier does not fit.',
+        D:'The construction there was a hawk that does not place the hawk as the immediate subject of the modifier and reads clumsily, with no agreement with it.'
       },
-      tip:'Tras un modificador inicial con -ing, el sujeto de la oración principal debe ser quien realiza esa acción. Pregúntate: ¿quién está circling? Ese va justo después de la coma.'
+      tip:'After an opening -ing modifier, the subject of the main clause has to be whoever performs that action. Ask yourself: who is circling? That goes right after the comma.'
     },
     /* ===== Q22–27 — EXPRESSION OF IDEAS ===== */
     /* Transitions ×3 (fill-in-blank) */
@@ -412,13 +412,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text with the most logical transition?',
       choices:{A:'however,', B:'therefore,', C:'likewise,', D:'for example,'},
       correct:'A',
-      expCorrect:'La primera oración elogia los paneles como maintenance-free; la segunda muestra lo contrario: en zonas polvorientas su rendimiento cae si no se limpian. Ese contraste pide however (sin embargo).',
+      expCorrect:'The first sentence praises the panels as maintenance-free; the second shows the opposite: in dusty regions their output drops unless they are cleaned. That contrast calls for however.',
       expWrong:{
-        B:'La transición therefore marca consecuencia lógica, pero la 2a oración no se deduce de la 1a: la contradice.',
-        C:'La transición likewise indica semejanza, y aquí las ideas se oponen (libre de mantenimiento frente a requiere limpieza).',
-        D:'La transición for example introduciría un ejemplo de maintenance-free, pero el texto da un caso donde sí hace falta mantenimiento.'
+        B:'The transition therefore marks a logical consequence, but the 2nd sentence does not follow from the 1st: it contradicts it.',
+        C:'The transition likewise signals similarity, and here the ideas oppose each other (maintenance-free versus requires cleaning).',
+        D:'The transition for example would introduce an example of maintenance-free, but the text gives a case where maintenance is in fact needed.'
       },
-      tip:'Pregunta si la 2a idea confirma o contradice la 1a. Aquí la contradice (free frente a must be cleaned), así que necesitas una transición de contraste.'
+      tip:'Ask whether the 2nd idea confirms or contradicts the 1st. Here it contradicts it (free versus must be cleaned), so you need a contrast transition.'
     },
     {
       id:'MK1-23', type:'mc', domain:'Expression of Ideas', difficulty:'Media',
@@ -427,13 +427,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text with the most logical transition?',
       choices:{A:'Nevertheless,', B:'In contrast,', C:'Consequently,', D:'Meanwhile,'},
       correct:'C',
-      expCorrect:'Tres ensayos coincidieron en el mismo resultado; por eso los investigadores ya consideran el efecto bien establecido. La 3a oración es la consecuencia de las anteriores, así que Consequently (por consiguiente) encaja.',
+      expCorrect:'Three trials converged on the same result; that is why researchers now consider the effect well established. The 3rd sentence is the consequence of the previous ones, so Consequently fits.',
       expWrong:{
-        A:'La transición Nevertheless señala contraste, pero no hay oposición: los resultados se refuerzan entre sí.',
-        B:'La transición In contrast marca diferencia, y aquí los ensayos concuerdan, no difieren.',
-        D:'La transición Meanwhile indica simultaneidad temporal, no la relación de causa-efecto entre la evidencia y la conclusión.'
+        A:'The transition Nevertheless signals contrast, but there is no opposition: the results reinforce each other.',
+        B:'The transition In contrast marks difference, and here the trials agree rather than differ.',
+        D:'The transition Meanwhile marks simultaneity in time, not the cause-and-effect link between the evidence and the conclusion.'
       },
-      tip:'Si varias oraciones acumulan evidencia y la última saca la conclusión, la transición es de resultado: consequently, therefore, as a result.'
+      tip:'If several sentences pile up evidence and the last one draws the conclusion, the transition is result-based: consequently, therefore, as a result.'
     },
     {
       id:'MK1-24', type:'mc', domain:'Expression of Ideas', difficulty:'Difícil',
@@ -442,13 +442,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text with the most logical transition?',
       choices:{A:'in addition,', B:'in short,', C:'as a result,', D:'by contrast,'},
       correct:'D',
-      expCorrect:'Los críticos primero desecharon las obras como descuidadas; la investigación reciente hace lo opuesto: las ve como un estilo tardío deliberado. Esa oposición entre el antes y el ahora pide by contrast.',
+      expCorrect:'Critics first dismissed the works as careless; recent scholarship does the opposite: it sees them as a deliberate late style. That opposition between then and now calls for by contrast.',
       expWrong:{
-        A:'La transición in addition sumaría una idea del mismo tipo, pero la 2a oración se opone a la 1a en vez de reforzarla.',
-        B:'La transición in short resume lo ya dicho, pero aquí se introduce una postura nueva y opuesta, no un resumen.',
-        C:'La transición as a result marca consecuencia, y la nueva visión no es efecto del desprecio inicial, sino su contrario.'
+        A:'The transition in addition would add an idea of the same kind, but the 2nd sentence opposes the 1st instead of reinforcing it.',
+        B:'The transition in short sums up what was already said, but here a new and opposite position is introduced, not a summary.',
+        C:'The transition as a result marks consequence, and the new view is not an effect of the initial dismissal, it is its opposite.'
       },
-      tip:'Fíjate en el cambio de sujeto y de época: Critics initially frente a Recent scholarship. Ese giro de opinión suele pedir una transición de contraste.'
+      tip:'Notice the change of subject and of era: Critics initially versus Recent scholarship. That swing of opinion usually calls for a contrast transition.'
     },
     /* Rhetorical Synthesis ×3 (stem with bulleted notes + goal; full-sentence choices) */
     {
@@ -463,13 +463,13 @@ window.SAT_SETS.push({
         D:'The kakapo, a parrot that can live for several decades, is native to New Zealand.'
       },
       correct:'C',
-      expCorrect:'La meta es resaltar el cambio de población. Solo la opción C usa las dos cifras clave (menos de 50 en los 90 y más de 200 ahora) y las contrasta, que es exactamente destacar cómo cambió la población.',
+      expCorrect:'The goal is to highlight the change in population. Only option C uses the two key figures (fewer than 50 in the 90s and more than 200 now) and sets them against each other, which is exactly highlighting how the population changed.',
       expWrong:{
-        A:'Describe rasgos generales (grande, nocturno, longevo) pero no menciona números ni cambio poblacional.',
-        B:'Combina rasgos físicos y de hábitat; nada sobre el aumento de la población.',
-        D:'Da hábitat y longevidad, pero omite por completo las cifras que muestran el cambio.'
+        A:'It describes general traits (large, nocturnal, long-lived) but mentions no numbers or change in population.',
+        B:'It mixes physical and habitat traits; nothing about the population increase.',
+        D:'It gives habitat and lifespan, but leaves out entirely the figures that show the change.'
       },
-      tip:'Ancla cada opción a la meta. Si el objetivo es el cambio en la población, la respuesta debe incluir el antes y el después (los dos números).'
+      tip:'Anchor every option to the goal. If the goal is the change in the population, the answer has to include the before and the after (both numbers).'
     },
     {
       id:'MK1-26', type:'mc', domain:'Expression of Ideas', difficulty:'Difícil',
@@ -483,13 +483,13 @@ window.SAT_SETS.push({
         D:'Both incandescent and LED bulbs are widely used to light homes and workplaces.'
       },
       correct:'B',
-      expCorrect:'La meta es resaltar un contraste entre los dos tipos. La opción B enfrenta directamente las cifras (5% del incandescente frente al 40% del LED) usando whereas, que marca la oposición con precisión.',
+      expCorrect:'The goal is to highlight a contrast between the two types. Option B puts the figures head to head (5% for the incandescent against 40% for the LED) using whereas, which marks the opposition precisely.',
       expWrong:{
         A:'Subraya un parecido (ambos se queman), no el contraste que pide la meta.',
-        C:'Habla solo del bombillo incandescente; sin comparar con el LED no hay contraste.',
-        D:'Señala algo común a ambos (se usan mucho), lo opuesto a resaltar una diferencia.'
+        C:'It is only about the incandescent bulb; with no comparison to the LED there is no contrast.',
+        D:'It points to something both share (they are widely used), the opposite of highlighting a difference.'
       },
-      tip:'Emphasize a contrast exige mencionar los dos elementos y oponerlos. Palabras como whereas, while o in contrast suelen delatar la opción correcta.'
+      tip:'Emphasize a contrast demands naming both elements and setting them against each other. Words like whereas, while or in contrast usually give the right option away.'
     },
     {
       id:'MK1-27', type:'mc', domain:'Expression of Ideas', difficulty:'Media',
@@ -503,13 +503,13 @@ window.SAT_SETS.push({
         D:'Mounted on aircraft, lidar sends laser pulses toward the ground far below.'
       },
       correct:'A',
-      expCorrect:'La meta es explicar a un público nuevo cómo el lidar ayuda a la arqueología. La opción A reúne lo esencial: qué es (método láser), cómo se usa (sobrevuela bosques y atraviesa el follaje) y su resultado (revela estructuras antiguas ocultas). Cumple todo el objetivo.',
+      expCorrect:'The goal is to explain to a new audience how lidar helps archaeology. Option A pulls together the essentials: what it is (a laser method), how it is used (flown over forests, piercing the canopy) and its result (revealing hidden ancient structures). It meets the whole goal.',
       expWrong:{
-        B:'Define el lidar en general pero no dice cómo ayuda a los arqueólogos; se queda sin el propósito pedido.',
-        C:'Habla de la búsqueda de estructuras, pero no explica qué es el lidar ni cómo funciona para un público nuevo.',
-        D:'Describe un detalle del método (pulsos hacia el suelo) sin conectar con el beneficio para la arqueología.'
+        B:'It defines lidar in general but does not say how it helps archaeologists; it misses the stated purpose.',
+        C:'It is about the search for structures, but does not explain what lidar is or how it works for a new audience.',
+        D:'It describes one detail of the method (pulses toward the ground) without connecting it to the benefit for archaeology.'
       },
-      tip:'Cuando la meta es explicar cómo algo ayudó, la mejor opción suele encadenar qué es, cómo funciona y qué logró. Descarta las que solo cubren una pieza.'
+      tip:'When the goal is to explain how something helped, the best option usually chains what it is, how it works and what it achieved. Rule out the ones covering only one piece.'
     }
   ]
 });

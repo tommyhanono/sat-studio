@@ -16,11 +16,11 @@ window.SAT_SETS.push({
       correct:'B',
       expCorrect:'El sujeto es “The collection” (singular). La frase “of rare beetles that the museum acquired…” solo describe al sujeto y no lo cambia. Un sujeto singular pide un verbo singular: “includes”.',
       expWrong:{
-        A:'“include” es plural; concuerda con “beetles”, no con el verdadero sujeto “The collection” (singular).',
+        A:'“include” is plural; it agrees with “beetles”, not with the real subject “The collection” (singular).',
         C:'“have included” es plural; el sujeto singular “collection” pide “has”, no “have”.',
         D:'“were including” es plural y pasado; el sujeto singular “collection” pide un verbo singular en presente.'
       },
-      tip:'Tapa la frase entre el sujeto y el verbo (“of… entomologist”). Lo que queda es “The collection ___”: singular pide verbo singular.'
+      tip:'Cover the phrase between the subject and the verb (“of… entomologist”). What is left is “The collection ___”: singular calls for a singular verb.'
     },
     {
       id:'GRM-02', type:'mc', domain:'Standard English Conventions', difficulty:'Difícil',
@@ -29,13 +29,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'was', B:'has been', C:'is', D:'were'},
       correct:'D',
-      expCorrect:'Con “neither… nor…”, el verbo concuerda con el sujeto MÁS CERCANO. El más cercano es “her three assistants” (plural), así que el verbo va en plural: “were”.',
+      expCorrect:'With “neither… nor…”, the verb agrees with the NEAREST subject. The nearest is “her three assistants” (plural), so the verb is plural: “were”.',
       expWrong:{
-        A:'“was” es singular; concordaría con “architect”, pero la regla “neither/nor” manda concordar con el sujeto más cercano, que es plural.',
-        B:'“has been” es singular; el sujeto más cercano “assistants” es plural.',
-        C:'“is” es singular y presente; el sujeto más cercano es plural y el resto del texto está en pasado.'
+        A:'“was” is singular; it would agree with “architect”, but the neither/nor rule says agree with the nearest subject, which is plural.',
+        B:'“has been” is singular; the nearest subject “assistants” is plural.',
+        C:'“is” is singular and present tense; the nearest subject is plural and the rest of the text is in the past.'
       },
-      tip:'En “neither X nor Y”, mira SOLO la Y (lo más cercano al verbo). Si Y es plural, el verbo es plural.'
+      tip:'In “neither X nor Y”, look ONLY at the Y (the one closest to the verb). If Y is plural, the verb is plural.'
     },
     {
       id:'GRM-03', type:'mc', domain:'Standard English Conventions', difficulty:'Media',
@@ -44,13 +44,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'were', B:'are', C:'was', D:'have been'},
       correct:'C',
-      expCorrect:'La oración está invertida: el sujeto real viene después del verbo. El sujeto es “a faint pencil sketch” (singular), así que el verbo es singular y en pasado: “was”.',
+      expCorrect:'The sentence is inverted: the real subject comes after the verb. The subject is “a faint pencil sketch” (singular), so the verb is singular and past tense: “was”.',
       expWrong:{
         A:'“were” es plural; el sujeto “a faint pencil sketch” es singular.',
-        B:'“are” es plural y presente; el sujeto es singular y el texto está en pasado.',
+        B:'“are” is plural and present tense; the subject is singular and the text is in the past.',
         D:'“have been” es plural; el sujeto singular “a sketch” pide un verbo singular.'
       },
-      tip:'Cuando la oración empieza con lugar (“Beneath…”), busca el sujeto DESPUÉS del verbo. Aquí es “a sketch” (singular).'
+      tip:'When the sentence opens with a place (“Beneath…”), look for the subject AFTER the verb. Here it is “a sketch” (singular).'
     },
     {
       id:'GRM-04', type:'mc', domain:'Standard English Conventions', difficulty:'Difícil',
@@ -59,13 +59,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'has already destroyed', B:'already destroys', C:'is already destroying', D:'had already destroyed'},
       correct:'D',
-      expCorrect:'“By the time the volunteers arrived” marca un momento pasado; la destrucción ocurrió ANTES de esa llegada. Para una acción anterior a otra acción pasada se usa el pasado perfecto: “had already destroyed”.',
+      expCorrect:'“By the time the volunteers arrived” marks a point in the past; the destruction happened BEFORE that arrival. For an action earlier than another past action you use the past perfect: “had already destroyed”.',
       expWrong:{
         A:'“has destroyed” es presente perfecto; no encaja con el marco claramente pasado “arrived”.',
-        B:'“destroys” es presente simple; el hecho ocurrió en el pasado.',
+        B:'“destroys” is simple present; the event happened in the past.',
         C:'“is destroying” es presente continuo; choca con el pasado “arrived”.'
       },
-      tip:'¿Dos cosas en el pasado y una pasó ANTES que la otra? La más antigua va en pasado perfecto (had + participio).'
+      tip:'Two things in the past and one happened BEFORE the other? The earlier one goes in the past perfect (had + participle).'
     },
     {
       id:'GRM-05', type:'mc', domain:'Standard English Conventions', difficulty:'Media',
@@ -74,58 +74,58 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'submits', B:'has submitted', C:'submitted', D:'submitting'},
       correct:'C',
-      expCorrect:'La oración ya está en pasado (“reviewed”). El verbo unido por “and” debe mantener el mismo tiempo: pasado simple “submitted”.',
+      expCorrect:'The sentence is already in the past (“reviewed”). The verb joined by “and” has to keep the same tense: simple past “submitted”.',
       expWrong:{
         A:'“submits” es presente; rompe con el pasado “reviewed”.',
         B:'“has submitted” es presente perfecto; no combina con la secuencia en pasado simple.',
-        D:'“submitting” no es un verbo conjugado; sin verbo principal la oración queda incompleta.'
+        D:'“submitting” is not a finite verb; with no main verb the sentence is incomplete.'
       },
-      tip:'Si la oración ya arrancó en pasado (“reviewed”), el verbo unido por “and” también va en pasado.'
+      tip:'If the sentence already started in the past (“reviewed”), the verb joined by “and” goes in the past too.'
     },
     {
       id:'GRM-06', type:'mc', domain:'Standard English Conventions', difficulty:'Difícil',
-      skill:'Coordinación de cláusulas',
+      skill:'Joining clauses',
       passage:"The river had looked calm from the bridge that %BLANK% the kayakers soon discovered that a strong current ran just beneath its glassy surface.",
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'morning,', B:'morning, but', C:'morning but', D:'morning;,'},
       correct:'B',
-      expCorrect:'Hay dos oraciones completas que CONTRASTAN: “The river had looked calm… that morning” y “the kayakers soon discovered…”. Para unirlas con contraste se usa coma + FANBOYS: “, but”.',
+      expCorrect:'There are two complete sentences that CONTRAST: “The river had looked calm… that morning” and “the kayakers soon discovered…”. To join them with contrast you use comma + FANBOYS: “, but”.',
       expWrong:{
-        A:'Una coma sola entre dos oraciones completas es un comma splice.',
-        C:'“but” sin coma antes une mal dos oraciones completas; falta la coma delante de la conjunción.',
-        D:'“;,” no es puntuación válida: no se combinan punto y coma con coma.'
+        A:'A single comma between two complete sentences is a comma splice.',
+        C:'“but” with no comma before it joins two complete sentences badly; the comma before the conjunction is missing.',
+        D:'“;,” is not valid punctuation: you do not combine a semicolon with a comma.'
       },
-      tip:'Dos oraciones completas que se oponen → coma + but. Recuerda: la coma va ANTES del FANBOYS.'
+      tip:'Two complete sentences that clash → comma + but. Remember: the comma goes BEFORE the FANBOYS.'
     },
     {
       id:'GRM-07', type:'mc', domain:'Standard English Conventions', difficulty:'Difícil',
-      skill:'Coordinación de cláusulas',
+      skill:'Joining clauses',
       passage:"The mural took nearly three years to %BLANK% the artist worked on it only during the summer months, when the plaster was dry enough to hold the pigment.",
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'complete,', B:'complete', C:'complete;', D:'complete, however'},
       correct:'C',
-      expCorrect:'Son dos oraciones independientes (“The mural took nearly three years to complete” y “the artist worked on it only during the summer months…”). El punto y coma une dos oraciones completas sin conjunción y es lo correcto.',
+      expCorrect:'These are two independent sentences (“The mural took nearly three years to complete” and “the artist worked on it only during the summer months…”). The semicolon joins two complete sentences with no conjunction, and that is what is correct.',
       expWrong:{
-        A:'Una coma sola entre dos oraciones completas es un comma splice.',
-        B:'Sin puntuación, las dos oraciones se fusionan (run-on).',
-        D:'“however” es un adverbio conjuntivo, no una conjunción; con solo una coma antes sigue siendo comma splice (haría falta “; however,”).'
+        A:'A single comma between two complete sentences is a comma splice.',
+        B:'With no punctuation, the two sentences fuse (run-on).',
+        D:'“however” is a conjunctive adverb, not a conjunction; with only a comma before it, it is still a comma splice (it would need “; however,”).'
       },
-      tip:'Dos oraciones completas sin conjunción → punto y coma. Prueba: ¿puedes poner punto en el blank? Si sí, el “;” sirve.'
+      tip:'Two complete sentences with no conjunction → semicolon. Test it: can you put a period in the blank? If so, the “;” works.'
     },
     {
       id:'GRM-08', type:'mc', domain:'Standard English Conventions', difficulty:'Media',
-      skill:'Coordinación de cláusulas',
+      skill:'Joining clauses',
       passage:"Early telescopes gathered too little light to reveal distant %BLANK% modern instruments collect photons for hours, uncovering galaxies far too faint for earlier astronomers to detect.",
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'galaxies,', B:'galaxies however', C:'galaxies, however', D:'galaxies; however,'},
       correct:'D',
-      expCorrect:'Son dos oraciones completas en contraste, y la segunda arranca con el adverbio conjuntivo “however”. El patrón correcto es: oración 1 + punto y coma + however + coma + oración 2.',
+      expCorrect:'These are two complete sentences in contrast, and the second opens with the conjunctive adverb “however”. The correct pattern is: sentence 1 + semicolon + however + comma + sentence 2.',
       expWrong:{
-        A:'Una coma sola entre dos oraciones completas es un comma splice.',
-        B:'“however” sin puntuación no une oraciones; queda un run-on.',
-        C:'“, however” con solo comas no puede unir dos oraciones completas: sigue siendo comma splice.'
+        A:'A single comma between two complete sentences is a comma splice.',
+        B:'“however” with no punctuation does not join sentences; it leaves a run-on.',
+        C:'“, however” with commas alone cannot join two complete sentences: it is still a comma splice.'
       },
-      tip:'however NO es conjunción. Entre dos oraciones completas usa el patrón “; however,”.'
+      tip:'however is NOT a conjunction. Between two complete sentences use the pattern “; however,”.'
     },
     {
       id:'GRM-09', type:'mc', domain:'Standard English Conventions', difficulty:'Difícil',
@@ -134,13 +134,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'their', B:'his or her', C:'its', D:'our'},
       correct:'B',
-      expCorrect:'El antecedente es “Each”, que es singular (fíjate en “was asked”). Un pronombre singular que se refiere a una persona indefinida es “his or her”.',
+      expCorrect:'The antecedent is “Each”, which is singular (look at “was asked”). A singular pronoun referring to an indefinite person is “his or her”.',
       expWrong:{
-        A:'“their” es plural; no concuerda con el singular “Each” (que ya pide “was”).',
-        C:'“its” es para cosas o animales, no para investigadores (personas).',
+        A:'“their” is plural; it does not agree with the singular “Each” (which already calls for “was”).',
+        C:'“its” is for things or animals, not for researchers (people).',
         D:'“our” es primera persona; el texto habla de los investigadores en tercera persona, no de nosotros.'
       },
-      tip:'“Each” es SINGULAR (por eso “was”). Un pronombre singular para personas es “his or her”.'
+      tip:'“Each” is SINGULAR (that is why “was”). A singular pronoun for people is “his or her”.'
     },
     {
       id:'GRM-10', type:'mc', domain:'Standard English Conventions', difficulty:'Media',
@@ -149,13 +149,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'its', B:'their', C:'it’s', D:'they’re'},
       correct:'A',
-      expCorrect:'“The debate team” es un sustantivo colectivo tratado como una sola unidad (celebró junta). El pronombre posesivo singular que le corresponde es “its”.',
+      expCorrect:'“The debate team” is a collective noun treated as one unit (it celebrated together). The matching singular possessive pronoun is “its”.',
       expWrong:{
-        B:'“their” es plural; el texto trata al equipo como una unidad singular.',
-        C:'“it’s” significa “it is”; aquí se necesita el posesivo “its”, sin apóstrofo.',
+        B:'“their” is plural; the text treats the team as a single unit.',
+        C:'“it’s” means “it is”; here you need the possessive “its”, with no apostrophe.',
         D:'“they’re” significa “they are” (plural) y no es posesivo; no puede describir “months of preparation”.'
       },
-      tip:'Posesivo de “it” = “its” (sin apóstrofo). “it’s” siempre significa “it is”.'
+      tip:'The possessive of “it” is “its” (no apostrophe). “it’s” always means “it is”.'
     },
     {
       id:'GRM-11', type:'mc', domain:'Standard English Conventions', difficulty:'Difícil',
@@ -164,13 +164,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'guides’', B:'guide’s', C:'guides', D:'guides’s'},
       correct:'A',
-      expCorrect:'Son “the two guides” (plural) y las botas les pertenecen. El posesivo de un plural que ya termina en -s se forma con apóstrofo DESPUÉS de la s: “the guides’ boots”.',
+      expCorrect:'It is “the two guides” (plural) and the boots belong to them. The possessive of a plural already ending in -s is formed with an apostrophe AFTER the s: “the guides’ boots”.',
       expWrong:{
-        B:'“guide’s” es posesivo SINGULAR (de un solo guía); el texto dice “the two”, o sea dos.',
-        C:'“guides” es plural sin posesivo; no marca que las botas les pertenecen.',
-        D:'“guides’s” no es correcto: un plural que ya termina en -s solo lleva apóstrofo al final, sin otra s.'
+        B:'“guide’s” is a SINGULAR possessive (one guide); the text says “the two”, that is, two of them.',
+        C:'“guides” is a plural with no possessive; it does not mark that the boots belong to them.',
+        D:'“guides’s” is not correct: a plural already ending in -s takes only an apostrophe at the end, with no extra s.'
       },
-      tip:'Plural terminado en -s + posesión → solo apóstrofo al final: guides’.'
+      tip:'Plural ending in -s + possession → just an apostrophe at the end: guides’.'
     },
     {
       id:'GRM-12', type:'mc', domain:'Standard English Conventions', difficulty:'Media',
@@ -179,13 +179,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'its', B:'it’s', C:'their', D:'the storys'},
       correct:'A',
-      expCorrect:'El “pacing” pertenece al libro, que es una sola cosa (singular). El posesivo singular para una cosa es “its”, sin apóstrofo.',
+      expCorrect:'The “pacing” belongs to the book, which is one single thing (singular). The singular possessive for a thing is “its”, with no apostrophe.',
       expWrong:{
-        B:'“it’s” significa “it is”; aquí se necesita el posesivo “its”.',
+        B:'“it’s” means “it is”; here you need the possessive “its”.',
         C:'“their” es plural, pero el ritmo pertenece a un solo libro (singular).',
-        D:'“storys” no es posesivo ni está bien escrito; el posesivo singular sería “story’s”.'
+        D:'“storys” is neither a possessive nor spelled correctly; the singular possessive would be “story’s”.'
       },
-      tip:'Posesivo de una cosa singular = “its” (sin apóstrofo). Nunca confundas “its” con “it’s” (= it is).'
+      tip:'The possessive of a singular thing is “its” (no apostrophe). Never mix up “its” with “it’s” (= it is).'
     }
   ]
 });

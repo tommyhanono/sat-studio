@@ -14,13 +14,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text with the most logical transition?',
       choices:{A:'Eventually,', B:'For example,', C:'However,', D:'Similarly,'},
       correct:'A',
-      expCorrect:'Las dos ideas están en orden de tiempo: primero botaba las puntas “por años” y luego empezó a secarlas y venderlas. “Eventually” (con el tiempo, al final) marca esa secuencia temporal.',
+      expCorrect:'The two ideas are in time order: first he threw the tips out “for years” and then he started drying and selling them. “Eventually” marks that sequence in time.',
       expWrong:{
         B:'“For example” anuncia un ejemplo de algo dicho antes, pero la 2ª idea no ejemplifica a la 1ª, la sigue en el tiempo.',
-        C:'“However” marca contraste, pero aquí no hay oposición: es un cambio que ocurre DESPUÉS, no en contra.',
-        D:'“Similarly” señala semejanza entre dos cosas parecidas, y aquí solo hay una historia que avanza en el tiempo.'
+        C:'“However” marks contrast, but there is no opposition here: it is a change that happens AFTERWARD, not against.',
+        D:'“Similarly” points to a likeness between two similar things, and here there is only one story moving forward in time.'
       },
-      tip:'Cuando la 2ª oración es lo que pasó DESPUÉS (primero… luego…), busca una transición de secuencia como “Eventually” o “Later”.'
+      tip:'When the 2nd sentence is what happened AFTERWARD (first… then…), look for a sequence transition like “Eventually” or “Later”.'
     },
     {
       id:'TRN-02', type:'mc', domain:'Expression of Ideas', difficulty:'Media',
@@ -29,13 +29,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text with the most logical transition?',
       choices:{A:'Nevertheless,', B:'In other words,', C:'For instance,', D:'As a result,'},
       correct:'D',
-      expCorrect:'La lluvia empapó la ladera (causa) y por eso la tierra se deslizó y tapó la carretera (consecuencia). “As a result” conecta causa con efecto.',
+      expCorrect:'The rain soaked the hillside (cause) and that is why the earth slid and covered the road (consequence). “As a result” connects cause to effect.',
       expWrong:{
-        A:'“Nevertheless” marca contraste (algo pasa a pesar de lo otro), pero aquí la 2ª idea es el RESULTADO directo de la 1ª.',
-        B:'“In other words” reformula la misma idea con otras palabras, y el deslizamiento es un hecho nuevo, no la misma frase repetida.',
+        A:'“Nevertheless” marks contrast (something happens in spite of the other), but here the 2nd idea is the direct RESULT of the 1st.',
+        B:'“In other words” restates the same idea in different words, and the landslide is a new fact, not the same sentence repeated.',
         C:'“For instance” introduce un ejemplo, pero el deslizamiento no es un ejemplo de la lluvia, es su efecto.'
       },
-      tip:'Si la 2ª oración es lo que la 1ª PROVOCA, la relación es causa→efecto: usa “As a result”, “Therefore” o “Consequently”.'
+      tip:'If the 2nd sentence is what the 1st one CAUSES, the relationship is cause→effect: use “As a result”, “Therefore” or “Consequently”.'
     },
     {
       id:'TRN-03', type:'mc', domain:'Expression of Ideas', difficulty:'Media',
@@ -44,13 +44,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text with the most logical transition?',
       choices:{A:'In addition,', B:'Therefore,', C:'By contrast,', D:'For example,'},
       correct:'C',
-      expCorrect:'La 1ª idea dice que casi todos los búhos cazan de noche por el oído; la 2ª presenta uno que caza de día y por la vista. Son opuestos, así que “By contrast” es lo correcto.',
+      expCorrect:'The 1st idea says almost all owls hunt at night by ear; the 2nd presents one that hunts by day and by sight. They are opposites, so “By contrast” is what you want.',
       expWrong:{
-        A:'“In addition” suma una idea del mismo tipo, pero la 2ª idea no se suma: se OPONE al patrón general.',
-        B:'“Therefore” marca consecuencia, y el búho pigmeo no es resultado de lo que hacen los demás, es una excepción.',
-        D:'“For example” daría un caso que confirma la 1ª idea, pero este búho la contradice, no la ilustra.'
+        A:'“In addition” adds an idea of the same kind, but the 2nd idea does not add on: it OPPOSES the general pattern.',
+        B:'“Therefore” marks consequence, and the pygmy owl is not a result of what the others do, it is an exception.',
+        D:'“For example” would give a case confirming the 1st idea, but this owl contradicts it rather than illustrating it.'
       },
-      tip:'Palabras como “most… but this one…” avisan un choque entre lo general y una excepción: eso pide contraste (“By contrast”, “However”).'
+      tip:'Words like “most… but this one…” warn of a clash between the general case and an exception: that calls for contrast (“By contrast”, “However”).'
     },
     {
       id:'TRN-04', type:'mc', domain:'Expression of Ideas', difficulty:'Fácil',
@@ -59,13 +59,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text with the most logical transition?',
       choices:{A:'Nevertheless,', B:'For example,', C:'As a result,', D:'Meanwhile,'},
       correct:'B',
-      expCorrect:'La 1ª idea dice que las bibliotecas prestan mucho más que libros; la 2ª da la lista concreta (herramientas, telescopios, juegos…) que lo demuestra. “For example” introduce ese ejemplo.',
+      expCorrect:'The 1st idea says libraries lend far more than books; the 2nd gives the concrete list (tools, telescopes, games…) that proves it. “For example” introduces that example.',
       expWrong:{
-        A:'“Nevertheless” marca contraste, pero la 2ª idea no se opone a la 1ª: la confirma con casos.',
+        A:'“Nevertheless” marks contrast, but the 2nd idea does not oppose the 1st: it confirms it with cases.',
         C:'“As a result” marca consecuencia, y la lista no es un efecto de la 1ª idea, es un ejemplo de ella.',
-        D:'“Meanwhile” indica algo que pasa al mismo tiempo en otro lado, pero aquí no hay dos escenas paralelas.'
+        D:'“Meanwhile” signals something happening at the same time elsewhere, but there are no two parallel scenes here.'
       },
-      tip:'Si la 2ª oración da casos concretos que prueban la 1ª, es ejemplificación: “For example” o “For instance”.'
+      tip:'If the 2nd sentence gives concrete cases that prove the 1st, it is exemplification: “For example” or “For instance”.'
     },
     {
       id:'TRN-05', type:'mc', domain:'Expression of Ideas', difficulty:'Media',
@@ -74,13 +74,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text with the most logical transition?',
       choices:{A:'However,', B:'In other words,', C:'Therefore,', D:'In addition,'},
       correct:'D',
-      expCorrect:'Las dos oraciones dan dos mejoras del mismo programa: bajó la tarifa y además puso más estaciones. “In addition” suma una segunda acción parecida.',
+      expCorrect:'The two sentences give two improvements to the same program: it lowered the fare and it also added more stations. “In addition” piles on a second, similar action.',
       expWrong:{
-        A:'“However” marca contraste, pero las dos ideas van en la misma dirección (dos mejoras), no se oponen.',
-        B:'“In other words” reformula lo mismo, y poner estaciones nuevas es una acción distinta, no la misma idea repetida.',
-        C:'“Therefore” marca consecuencia, pero agregar estaciones no es el resultado de bajar la tarifa, es otra medida sumada.'
+        A:'“However” marks contrast, but the two ideas run in the same direction (two improvements), they do not clash.',
+        B:'“In other words” restates the same thing, and adding new stations is a different action, not the same idea repeated.',
+        C:'“Therefore” marks consequence, but adding stations is not the result of lowering the fare, it is another measure stacked on.'
       },
-      tip:'Dos ideas del mismo tipo que se suman (una y TAMBIÉN otra) piden adición: “In addition”, “Moreover”, “Furthermore”.'
+      tip:'Two ideas of the same kind stacking up (one and ALSO another) call for addition: “In addition”, “Moreover”, “Furthermore”.'
     },
     {
       id:'TRN-06', type:'mc', domain:'Expression of Ideas', difficulty:'Difícil',
@@ -89,13 +89,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text with the most logical transition?',
       choices:{A:'Likewise,', B:'In summary,', C:'Instead,', D:'As a result,'},
       correct:'C',
-      expCorrect:'Los críticos predijeron que las salas quedarían vacías, pero pasó lo contrario: subió la asistencia. “Instead” marca que la realidad reemplazó lo esperado, un contraste fuerte.',
+      expCorrect:'Critics predicted the theaters would sit empty, but the opposite happened: attendance rose. “Instead” marks that reality replaced what was expected, a strong contrast.',
       expWrong:{
-        A:'“Likewise” marca semejanza, pero lo que ocurrió es lo OPUESTO a lo predicho, no algo parecido.',
-        B:'“In summary” cierra o resume varias ideas, y aquí no se está resumiendo nada, se contrasta lo esperado con lo real.',
-        D:'“As a result” haría de la subida un efecto de la predicción, pero una predicción fallida no causa lo contrario de sí misma.'
+        A:'“Likewise” marks similarity, but what happened is the OPPOSITE of what was predicted, not something alike.',
+        B:'“In summary” closes or sums up several ideas, and nothing is being summed up here — the expectation is being set against the reality.',
+        D:'“As a result” would make the rise an effect of the prediction, but a failed prediction does not cause the opposite of itself.'
       },
-      tip:'Cuando lo que pasó CONTRADICE lo que se esperaba, la relación es contraste: “Instead”, “However”, “Nevertheless”.'
+      tip:'When what happened CONTRADICTS what was expected, the relationship is contrast: “Instead”, “However”, “Nevertheless”.'
     },
     {
       id:'TRN-07', type:'mc', domain:'Expression of Ideas', difficulty:'Media',
@@ -104,13 +104,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text with the most logical transition?',
       choices:{A:'In contrast,', B:'Through this dance,', C:'Nevertheless,', D:'By comparison,'},
       correct:'B',
-      expCorrect:'La 1ª oración describe el baile; la 2ª dice qué logra la abeja POR MEDIO de ese baile: informar dónde y a qué distancia está la comida. “Through this dance” conecta el método con lo que consigue.',
+      expCorrect:'The 1st sentence describes the dance; the 2nd says what the bee achieves THROUGH that dance: telling the others where the food is and how far. “Through this dance” connects the method with what it accomplishes.',
       expWrong:{
-        A:'“In contrast” marca oposición, pero la 2ª idea no contradice a la 1ª: la explica.',
-        C:'“Nevertheless” señala que algo pasa a pesar de lo anterior, y aquí no hay obstáculo ni oposición.',
-        D:'“By comparison” compara dos cosas, pero solo se habla de un baile y su función, no de dos elementos comparados.'
+        A:'“In contrast” marks opposition, but the 2nd idea does not contradict the 1st: it explains it.',
+        C:'“Nevertheless” signals that something happens in spite of what came before, and there is no obstacle or opposition here.',
+        D:'“By comparison” compares two things, but only one dance and its function are discussed, not two items being compared.'
       },
-      tip:'Si la 2ª oración dice el RESULTADO de usar lo descrito en la 1ª (por medio de esto se logra…), busca una transición de medio/consecuencia, no de contraste.'
+      tip:'If the 2nd sentence states the RESULT of using what the 1st described (by means of this, it achieves…), look for a means/consequence transition, not a contrast one.'
     },
     {
       id:'TRN-08', type:'mc', domain:'Expression of Ideas', difficulty:'Media',
@@ -119,13 +119,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text with the most logical transition?',
       choices:{A:'Therefore,', B:'For instance,', C:'By contrast,', D:'In other words,'},
       correct:'C',
-      expCorrect:'Los paneles solares NO producen de noche; las turbinas de viento, al revés, giran más de noche. Las dos ideas se oponen, así que “By contrast” es lo correcto.',
+      expCorrect:'Solar panels do NOT produce at night; wind turbines, the other way around, spin more at night. The two ideas oppose each other, so “By contrast” is what you want.',
       expWrong:{
-        A:'“Therefore” marca consecuencia, pero lo del viento no es un efecto de lo del sol, es su opuesto.',
-        B:'“For instance” daría un ejemplo de la 1ª idea, pero el viento no ejemplifica a los paneles solares.',
-        D:'“In other words” repite la misma idea con otras palabras, y aquí se presenta un caso CONTRARIO, no la misma frase.'
+        A:'“Therefore” marks consequence, but the wind fact is not an effect of the sun fact, it is its opposite.',
+        B:'“For instance” would give an example of the 1st idea, but wind does not exemplify solar panels.',
+        D:'“In other words” repeats the same idea in different words, and here a CONTRARY case is presented, not the same sentence.'
       },
-      tip:'Cuando cada oración describe fuentes o casos que se comportan al REVÉS, la relación es contraste: “By contrast”, “However”.'
+      tip:'When each sentence describes sources or cases behaving in OPPOSITE ways, the relationship is contrast: “By contrast”, “However”.'
     },
     {
       id:'TRN-09', type:'mc', domain:'Expression of Ideas', difficulty:'Media',
@@ -134,13 +134,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text with the most logical transition?',
       choices:{A:'Similarly,', B:'Therefore,', C:'On the other hand,', D:'For example,'},
       correct:'B',
-      expCorrect:'La cumbre era muy peligrosa para colocar sensores a mano (causa), así que el equipo usó drones (consecuencia). “Therefore” conecta el problema con la solución que provocó.',
+      expCorrect:'The summit was far too dangerous for placing sensors by hand (cause), so the team used drones (consequence). “Therefore” connects the problem to the solution it forced.',
       expWrong:{
-        A:'“Similarly” marca semejanza, pero las dos oraciones no describen cosas parecidas: una es el problema y la otra la respuesta.',
-        C:'“On the other hand” marca contraste, y usar drones no se opone al peligro, es lo que el peligro OBLIGÓ a hacer.',
-        D:'“For example” daría un ejemplo de la 1ª idea, pero enviar drones no ejemplifica el peligro, lo resuelve.'
+        A:'“Similarly” marks likeness, but the two sentences do not describe similar things: one is the problem and the other is the response.',
+        C:'“On the other hand” marks contrast, and using drones does not oppose the danger, it is what the danger FORCED them to do.',
+        D:'“For example” would give an example of the 1st idea, but sending drones does not exemplify the danger, it solves it.'
       },
-      tip:'Problema → decisión que ese problema obliga a tomar es causa→efecto: usa “Therefore”, “As a result” o “Consequently”.'
+      tip:'Problem → the decision that problem forces is cause→effect: use “Therefore”, “As a result” or “Consequently”.'
     },
     {
       id:'TRN-10', type:'mc', domain:'Expression of Ideas', difficulty:'Difícil',
@@ -149,13 +149,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text with the most logical transition?',
       choices:{A:'In fact,', B:'Consequently,', C:'Likewise,', D:'Meanwhile,'},
       correct:'A',
-      expCorrect:'La 1ª idea es una creencia (que el primer borrador ya sale perfecto); la 2ª la corrige con un caso real: Morrison revisaba una y otra vez. “In fact” introduce la realidad que refuta esa suposición.',
+      expCorrect:'The 1st idea is a belief (that a first draft already comes out perfect); the 2nd corrects it with a real case: Morrison revised over and over. “In fact” introduces the reality that refutes that assumption.',
       expWrong:{
-        B:'“Consequently” marca consecuencia, pero lo de Morrison no es un efecto de la creencia, es la prueba de que es falsa.',
-        C:'“Likewise” marca semejanza, y el ejemplo de Morrison va EN CONTRA de la suposición, no la acompaña.',
-        D:'“Meanwhile” señala algo simultáneo en otro lugar, pero aquí no hay dos escenas al mismo tiempo, hay una idea y su refutación.'
+        B:'“Consequently” marks consequence, but the Morrison fact is not an effect of the belief, it is the proof that the belief is false.',
+        C:'“Likewise” marks similarity, and the Morrison example runs AGAINST the assumption rather than alongside it.',
+        D:'“Meanwhile” signals something simultaneous elsewhere, but there are no two scenes at once here — there is an idea and its refutation.'
       },
-      tip:'Cuando la 2ª oración corrige o desmiente una suposición de la 1ª con la verdad, funciona “In fact” (en realidad…).'
+      tip:'When the 2nd sentence corrects or disproves an assumption in the 1st with the truth, “In fact” works.'
     }
   ]
 });

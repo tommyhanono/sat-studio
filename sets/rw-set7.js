@@ -19,13 +19,13 @@ window.SAT_SETS.push({
         D:'Reefs located in deeper, cooler water tended to contain fewer algae species than shallow reefs.'
       },
       correct:'B',
-      expCorrect:'La hipótesis dice que MÁS variedad de algas → recuperación MÁS rápida (más coral vivo después). B conecta exactamente esas dos variables: más especies de algas antes → más coral vivo un año después. Es justo lo que ella midió.',
+      expCorrect:'The hypothesis says MORE algae variety → FASTER recovery (more live coral afterward). B connects exactly those two variables: more algae species before → more live coral a year later. That is precisely what she measured.',
       expWrong:{
-        A:'Habla de especies de PECES, no de la variedad de algas dentro del coral. Es otra variable distinta a la de la hipótesis.',
-        C:'Que todos perdieran algo de coral no dice nada sobre si la VARIEDAD de algas ayudó a recuperarse; no compara arrecifes con más vs. menos algas.',
-        D:'Relaciona profundidad con número de algas, pero no dice nada sobre la RECUPERACIÓN del coral. No toca la afirmación.'
+        A:'It talks about FISH species, not the variety of algae inside the coral. That is a different variable from the one in the hypothesis.',
+        C:'That every reef lost some coral says nothing about whether algae VARIETY helped recovery; it does not compare reefs with more vs. fewer algae.',
+        D:'It links depth to the number of algae, but says nothing about coral RECOVERY. It does not touch the claim.'
       },
-      tip:'Subraya las dos variables de la hipótesis (aquí: variedad de algas ↔ coral que sobrevive). La respuesta correcta une ESAS dos, no otras parecidas.'
+      tip:'Underline the two variables in the hypothesis (here: algae variety ↔ coral that survives). The right answer links THOSE two, not other similar-sounding ones.'
     },
     {
       id:'COE-02', type:'mc', domain:'Information and Ideas', difficulty:'Difícil',
@@ -39,13 +39,13 @@ window.SAT_SETS.push({
         D:'Similar dyeing vats have been discovered at several other ancient sites across the region.'
       },
       correct:'A',
-      expCorrect:'La afirmación es que producían tinte para EXPORTAR (venderlo lejos), no para uso local. A muestra la misma tela teñida distintiva apareciendo a cientos de kilómetros → evidencia directa de que el producto viajaba fuera. Eso es exportación.',
+      expCorrect:'The claim is that they produced dye for EXPORT (selling it far away), not for local use. A shows the same distinctive dyed cloth turning up hundreds of kilometers away → direct evidence that the product traveled. That is export.',
       expWrong:{
-        B:'De dónde sacaron la arcilla de las tinajas no dice a dónde iba el tinte. Es irrelevante para “exportar vs. local”.',
-        C:'Tener un río cerca explica cómo podían teñir en cantidad, pero no muestra que el producto se vendiera lejos.',
-        D:'Que existan tinajas parecidas en otros sitios no dice que ESTE taller exportara; incluso podría sugerir que era algo común y local.'
+        B:'Where the clay for the vats came from does not say where the dye went. Irrelevant to “export vs. local”.',
+        C:'Having a river nearby explains how they could dye in quantity, but does not show the product was sold far away.',
+        D:'Similar vats existing at other sites does not show THIS workshop exported; it might even suggest the practice was common and local.'
       },
-      tip:'“Para exportar” = el producto termina LEJOS. Busca la opción que rastrea el producto fuera del sitio, no la que solo explica cómo se fabricaba.'
+      tip:'“For export” = the product ends up FAR AWAY. Look for the option that traces the product off-site, not the one that only explains how it was made.'
     },
     {
       id:'COE-03', type:'mc', domain:'Information and Ideas', difficulty:'Difícil',
@@ -59,13 +59,13 @@ window.SAT_SETS.push({
         D:'Most workers in the survey said they enjoyed their midday walks and hoped to continue them.'
       },
       correct:'C',
-      expCorrect:'El escéptico dice que quizá un TERCER factor explica el patrón. C ofrece justo eso: los de horario flexible ya tenían mejor foco Y además podían salir a caminar. Así, la caminata y el foco podrían venir ambos del horario flexible, no ser causa uno del otro. Eso debilita el “caminar CAUSA foco”.',
+      expCorrect:'The skeptic says a THIRD factor may explain the pattern. C offers exactly that: the flexible-schedule workers already had better focus AND could also step out for a walk. So the walking and the focus could both come from the flexible schedule rather than one causing the other. That weakens “walking CAUSES focus”.',
       expWrong:{
-        A:'El estiramiento bajo techo es otra actividad distinta; que no funcione no dice nada sobre si caminar afuera causa o no el foco.',
-        B:'Sentirse más relajado va en la MISMA dirección que la conclusión (hasta la apoyaría); no la debilita.',
-        D:'Que disfruten las caminatas es irrelevante para si esas caminatas CAUSAN el mejor foco.'
+        A:'Indoor stretching is a different activity; that it does not work says nothing about whether walking outdoors causes the focus.',
+        B:'Feeling more relaxed runs in the SAME direction as the conclusion (it would even support it); it does not weaken it.',
+        D:'Whether they enjoy the walks is irrelevant to whether those walks CAUSE the better focus.'
       },
-      tip:'Para debilitar una relación causa–efecto, busca un TERCER factor que explique ambas cosas a la vez, o una causa al revés. Cuidado: una opción que apoya va en dirección contraria a “debilitar”.'
+      tip:'To weaken a cause-and-effect claim, look for a THIRD factor that explains both things at once, or a reversed cause. Careful: an option that supports runs opposite to “weaken”.'
     },
     {
       id:'COE-04', type:'mc', domain:'Information and Ideas', difficulty:'Difícil',
@@ -79,13 +79,13 @@ window.SAT_SETS.push({
         D:'City officials reported that making the buses free was more expensive than they had originally expected.'
       },
       correct:'B',
-      expCorrect:'Su afirmación específica es que los nuevos pasajeros ANTES caminaban o iban en bici (no manejaban), por eso los autos no bajan. B dice exactamente eso: la mayoría de los nuevos usuarios antes caminaba o pedaleaba. Apoya la afirmación en su propio detalle.',
+      expCorrect:'Her specific claim is that the new riders used to walk or bike (not drive), which is why car counts do not fall. B says exactly that: most new users used to walk or bike. It supports the claim on its own terms.',
       expWrong:{
-        A:'Que suba el total de pasajeros no dice DE DÓNDE vienen; podrían ser exconductores, lo cual iría en contra de ella. Es demasiado vago.',
-        C:'Habla de otras ciudades que SÍ cobran; no informa sobre quiénes son los nuevos pasajeros de la ciudad del estudio.',
-        D:'El costo del programa no tiene relación con si los pasajeros antes manejaban o caminaban. Irrelevante.'
+        A:'A rise in total ridership does not say WHERE those riders come from; they could be former drivers, which would work against her. Too vague.',
+        C:'It is about other cities that DO charge; it tells you nothing about who the new riders are in the studied city.',
+        D:'The cost of the program has nothing to do with whether the riders used to drive or walk. Irrelevant.'
       },
-      tip:'Cuando la afirmación tiene un detalle preciso (“antes caminaban/pedaleaban”), la evidencia correcta menciona ESE detalle. Un número grande pero genérico (ridership subió) suele ser el distractor vago.'
+      tip:'When the claim has a precise detail (“they used to walk or bike”), the right evidence mentions THAT detail. A big but generic number (ridership rose) is usually the vague distractor.'
     },
     {
       id:'COE-05', type:'mc', domain:'Information and Ideas', difficulty:'Media',
@@ -99,13 +99,13 @@ window.SAT_SETS.push({
         D:'The shrubs with the thickest, most water-filled roots survived the two-month drought at far higher rates than those with thinner roots.'
       },
       correct:'D',
-      expCorrect:'Su propuesta es que sobrevive gracias al agua guardada en las RAÍCES gruesas, no por las hojas. D une justo eso: raíces más gruesas y llenas de agua → mucha mayor supervivencia. Apoya el mecanismo que ella señala.',
+      expCorrect:'Her proposal is that it survives thanks to water stored in the thick ROOTS, not the leaves. D ties exactly that together: thicker, water-filled roots → far higher survival. It supports the mechanism she points to.',
       expWrong:{
-        A:'Que parientes sin raíces gruesas aguanten sequías cortas más bien debilitaría la importancia de las raíces; no la apoya.',
-        B:'La capa cerosa reduce la pérdida por las HOJAS, que es justo la explicación que ella DESCARTÓ. Apoya la idea contraria, no la suya.',
-        C:'Dónde crece la planta describe su hábitat seco, pero no muestra que sean las raíces (y no las hojas) las que la salvan.'
+        A:'Relatives without thick roots surviving short droughts would rather weaken the importance of the roots; it does not support it.',
+        B:'The waxy layer cuts loss through the LEAVES, which is exactly the explanation she RULED OUT. It supports the opposite idea, not hers.',
+        C:'Where the plant grows describes its dry habitat, but does not show that the roots (and not the leaves) are what save it.'
       },
-      tip:'Ojo con la parte “rather than…” (en vez de…). Una opción que apoya el mecanismo RECHAZADO (aquí, las hojas) es trampa: parece evidencia, pero va al lado equivocado.'
+      tip:'Watch the “rather than…” part. An option supporting the REJECTED mechanism (here, the leaves) is a trap: it looks like evidence, but it points the wrong way.'
     },
     {
       id:'COE-06', type:'mc', domain:'Information and Ideas', difficulty:'Difícil',
@@ -119,13 +119,13 @@ window.SAT_SETS.push({
         D:'Several other towns in the region also grew wealthier during the 1300s.'
       },
       correct:'C',
-      expCorrect:'Ella sostiene que la riqueza vino de la LANA, no de la mina. C da evidencia directa de ambos lados: muchos mercaderes y bodegas de lana Y casi cero ingreso de la mina. Confirma la fuente que ella defiende y descarta la que niega.',
+      expCorrect:'She argues the wealth came from WOOL, not the mine. C gives direct evidence on both sides: many merchants and wool warehouses AND almost no income from the mine. It confirms the source she defends and rules out the one she denies.',
       expWrong:{
-        A:'Que crezca la población no dice si el dinero vino de la lana o de la mina; puede pasar con cualquier fuente. Muy vago.',
-        B:'Que la mina diera buen mineral en siglos ANTERIORES apoyaría la leyenda de la mina, no el argumento de la lana. Dirección equivocada.',
-        D:'Que otros pueblos prosperaran no identifica la causa en ESTE pueblo; podría deberse a muchas cosas.'
+        A:'Population growth does not say whether the money came from wool or from the mine; it can happen with either source. Far too vague.',
+        B:'The mine yielding good ore in EARLIER centuries would support the mine legend, not the wool argument. Wrong direction.',
+        D:'Other towns prospering does not identify the cause in THIS town; it could be down to many things.'
       },
-      tip:'Cuando la afirmación es “A, no B”, la mejor evidencia toca los dos lados: confirma A y/o descarta B. Una opción que refuerza B está en tu contra.'
+      tip:'When the claim is “A, not B”, the best evidence touches both sides: it confirms A and/or rules out B. An option reinforcing B works against you.'
     },
     {
       id:'COE-07', type:'mc', domain:'Information and Ideas', difficulty:'Difícil',
@@ -139,13 +139,13 @@ window.SAT_SETS.push({
         D:'Volunteers who slept performed the finger-tapping sequence markedly faster and more accurately the next day than those who stayed awake.'
       },
       correct:'D',
-      expCorrect:'La conclusión es que el SUEÑO (y no solo que pase el tiempo) fortalece la memoria motora. Como ambos grupos dejaron pasar las mismas 8 horas, la única diferencia es dormir o no. D muestra que los que durmieron mejoraron mucho más → la mejora se debe al sueño, no al tiempo. Apoyo directo.',
+      expCorrect:'The conclusion is that SLEEP (not just the passing of time) strengthens motor memory. Since both groups let the same 8 hours pass, the only difference is sleeping or not. D shows the sleepers improved far more → the gain is due to sleep, not time. Direct support.',
       expWrong:{
-        A:'Que la secuencia se parezca a otras de estudios previos es un detalle de método, irrelevante para la conclusión sobre el sueño.',
-        B:'Que la tarea fuera agradable en ambos grupos no compara el DESEMPEÑO; no dice si dormir ayudó.',
-        C:'Sentirse más descansado explica un estado de ánimo, pero no demuestra que la HABILIDAD (rapidez/precisión) mejorara por dormir.'
+        A:'The sequence resembling ones from earlier studies is a methodological detail, irrelevant to the conclusion about sleep.',
+        B:'That the task was enjoyable for both groups does not compare PERFORMANCE; it does not say whether sleeping helped.',
+        C:'Feeling more rested explains a mood, but does not show that the SKILL (speed and accuracy) improved because of sleep.'
       },
-      tip:'En experimentos con dos grupos, la evidencia fuerte COMPARA resultados entre ellos. Aquí el tiempo es igual para ambos, así que la diferencia de desempeño solo puede venir del sueño.'
+      tip:'In two-group experiments, strong evidence COMPARES the results between them. Here the time is the same for both, so the difference in performance can only come from sleep.'
     },
     {
       id:'COE-08', type:'mc', domain:'Information and Ideas', difficulty:'Media',
@@ -159,13 +159,13 @@ window.SAT_SETS.push({
         D:'“The author notes that narrow streets can be more expensive for the city to clean and maintain.”'
       },
       correct:'A',
-      expCorrect:'La afirmación es que las calles angostas y arboladas hacen que la gente se sienta MÁS segura y con ganas de quedarse, frente a las avenidas anchas. A muestra a una residente diciendo que la calle angosta y con sombra la invitaba a detenerse, y la avenida ancha la hacía apurarse. Ilustra exactamente el contraste que ella defiende.',
+      expCorrect:'The claim is that narrow, tree-lined streets make people feel SAFER and willing to linger, compared with wide avenues. A shows a resident saying the narrow shaded street invited her to stop, while the wide avenue made her hurry. It illustrates exactly the contrast she defends.',
       expWrong:{
-        B:'Cuenta la HISTORIA de por qué se diseñaron las avenidas anchas; no dice nada sobre cómo se sienten hoy los peatones. Irrelevante a la afirmación.',
-        C:'Que los árboles sean muy jóvenes para dar sombra más bien va en contra del beneficio de las calles arboladas; no ilustra la afirmación.',
-        D:'El costo de limpieza y mantenimiento es otro tema; no dice si los peatones se sienten seguros o si quieren quedarse.'
+        B:'It tells the HISTORY of why the wide avenues were designed; it says nothing about how pedestrians feel today. Irrelevant to the claim.',
+        C:'Trees being too young to give shade rather works against the benefit of tree-lined streets; it does not illustrate the claim.',
+        D:'Cleaning and maintenance costs are a different topic; they do not say whether pedestrians feel safe or want to linger.'
       },
-      tip:'“Ilustra la afirmación” = pon en escena justo lo que dice. Busca la cita donde alguien VIVE el efecto descrito (aquí: quedarse en la calle angosta, apurarse en la ancha), no datos de historia o costos.'
+      tip:'“Illustrates the claim” = stage exactly what it says. Look for the quote where someone LIVES the described effect (here: lingering on the narrow street, hurrying on the wide one), not history or cost data.'
     },
     {
       id:'COE-09', type:'mc', domain:'Information and Ideas', difficulty:'Difícil',
@@ -179,13 +179,13 @@ window.SAT_SETS.push({
         D:'In the stretches of the valley where beavers built dams, the water table rose and wetland plants spread widely, while undammed stretches stayed dry.'
       },
       correct:'D',
-      expCorrect:'La predicción es que las represas de los castores subirían el nivel del agua y traerían de vuelta las plantas de humedal. D muestra justo esa cadena donde HAY represas (agua sube + plantas vuelven) y lo compara con tramos SIN represas que siguen secos. Une la causa (represas) con el efecto predicho.',
+      expCorrect:'The prediction is that beaver dams would raise the water level and bring wetland plants back. D shows exactly that chain where dams EXIST (water rises + plants return) and compares it with stretches WITHOUT dams that stay dry. It links the cause (dams) to the predicted effect.',
       expWrong:{
-        A:'Los castores de otros valles más húmedos no dicen nada sobre lo que pasó en ESTE valle seco. No toca la predicción.',
-        B:'Que sean la misma especie histórica es un dato de contexto; no muestra que las represas subieran el agua ni que volvieran las plantas.',
-        C:'Que a los vecinos les guste ver castores es irrelevante para el nivel del agua o la vegetación.'
+        A:'Beavers in other, wetter valleys say nothing about what happened in THIS dry one. It does not touch the prediction.',
+        B:'Them being the same historical species is background; it does not show the dams raised the water or that the plants returned.',
+        C:'Neighbors enjoying the sight of beavers is irrelevant to water level or vegetation.'
       },
-      tip:'La mejor evidencia enfrenta lo predicho con un contraste: donde ocurrió la causa vs. donde no. Ver “con represas cambió, sin represas no” es lo que ata la causa al efecto.'
+      tip:'The best evidence sets the prediction against a contrast: where the cause happened vs. where it did not. Seeing “with dams it changed, without dams it did not” is what ties cause to effect.'
     },
     {
       id:'COE-10', type:'mc', domain:'Information and Ideas', difficulty:'Difícil',
@@ -199,13 +199,13 @@ window.SAT_SETS.push({
         D:'The vegetables most commonly grown by the gardeners were tomatoes, peppers, and lettuce.'
       },
       correct:'A',
-      expCorrect:'La conclusión es que la jardinería EN SÍ hace que la gente coma más verduras. A la derriba: si los jardineros ya comían más verduras AÑOS ANTES de empezar a cultivar, entonces no fue la jardinería la que los cambió; ya eran así. La causa propuesta se cae.',
+      expCorrect:'The conclusion is that gardening ITSELF makes people eat more vegetables. A knocks it down: if the gardeners already ate more vegetables YEARS BEFORE they started growing, then gardening is not what changed them; they were already like that. The proposed cause collapses.',
       expWrong:{
-        B:'Cuántas horas dedican al jardín describe el hábito, pero no dice si comer más verduras viene de cultivar o de otra cosa. No debilita.',
-        C:'Lo que harían los NO jardineros con más espacio es hipotético e irrelevante para la causa del consumo de verduras.',
-        D:'Qué verduras cultivan es un detalle del tipo de cosecha; no toca si la jardinería causa comer más. Demasiado al margen.'
+        B:'How many hours they spend gardening describes the habit, but does not say whether eating more vegetables comes from growing them or from something else. It does not weaken.',
+        C:'What NON-gardeners would do with more space is hypothetical and irrelevant to the cause of vegetable consumption.',
+        D:'Which vegetables they grow is a detail about the harvest; it does not touch whether gardening causes eating more. Too far off to the side.'
       },
-      tip:'Para debilitar “X causa Y”, la jugada más fuerte es mostrar que Y ya existía ANTES de X. Si comían más verduras antes de tener jardín, la jardinería no pudo ser la causa.'
+      tip:'To weaken “X causes Y”, the strongest move is showing that Y already existed BEFORE X. If they ate more vegetables before having a garden, gardening cannot have been the cause.'
     }
   ]
 });

@@ -19,13 +19,13 @@ window.SAT_SETS.push({
         D:'The doldrums were a hazardous region for sailing ships because the lack of wind could strand them for long periods.'
       },
       correct:'D',
-      expCorrect:'El texto explica QUÉ son los doldrums (una franja sin viento) y POR QUÉ los marineros los temían (un barco podía quedar detenido por días o semanas). La opción D junta esas dos ideas: el peligro venía de la falta de viento. Esa es la idea central.',
+      expCorrect:'The text explains WHAT the doldrums are (a windless belt) and WHY sailors feared them (a ship could sit still for days or weeks). Option D joins those two ideas: the danger came from the lack of wind. That is the central idea.',
       expWrong:{
-        A:'Detalle, no idea central: el agua y la comida se mencionan como un efecto del problema, no como el tema principal. El foco es quedar varados sin viento.',
-        B:'No está apoyado: el texto nunca compara con barcos modernos ni dice que hoy no se teman los doldrums.',
-        C:'Demasiado amplio y extremo: el texto habla solo de barcos de vela y de la falta de viento, no de que el ecuador sea “lo más peligroso” para cualquier barco.'
+        A:'Detail, not central idea: water and food are mentioned as an effect of the problem, not as the main topic. The focus is being stranded without wind.',
+        B:'Not supported: the text never compares them with modern ships or says the doldrums are not feared today.',
+        C:'Too broad and too extreme: the text is only about sailing ships and the lack of wind, not about the equator being “the most dangerous” place for any ship.'
       },
-      tip:'La idea central cubre TODO el texto, no una sola frase. Pregúntate: ¿de qué trata el párrafo completo? Aquí: por qué los doldrums eran peligrosos.'
+      tip:'The central idea covers the WHOLE text, not one sentence. Ask yourself: what is the entire paragraph about? Here: why the doldrums were dangerous.'
     },
     {
       id:'RDG-02', type:'mc', domain:'Information and Ideas', difficulty:'Media',
@@ -39,13 +39,13 @@ window.SAT_SETS.push({
         D:'To warn that the tuatara is in danger of dying out like its relatives.'
       },
       correct:'B',
-      expCorrect:'El texto presenta al tuatara, dice que casi no ha cambiado desde los dinosaurios y que sus parientes se extinguieron, y termina con “por eso” los biólogos lo ven como una ventana a un linaje antiguo. El propósito es explicar por qué es valioso para la ciencia.',
+      expCorrect:'The text introduces the tuatara, says it has barely changed since the dinosaurs and that its relatives went extinct, and ends with “therefore” biologists see it as a window into an ancient lineage. The purpose is to explain why it is valuable to science.',
       expWrong:{
-        A:'No está apoyado: le dicen “fósil viviente”, pero el texto nunca afirma que sea el reptil MÁS viejo vivo hoy. Es una exageración.',
-        C:'El texto casi no describe su aspecto físico; se enfoca en su antigüedad y su valor científico, no en cómo se ve.',
-        D:'Contradice el texto: dice que sus PARIENTES se extinguieron, no que el tuatara esté en peligro de extinguirse.'
+        A:'Not supported: it is called a “living fossil”, but the text never claims it is the OLDEST reptile alive today. That is an exaggeration.',
+        C:'The text barely describes what it looks like; it focuses on its age and its scientific value, not its appearance.',
+        D:'It contradicts the text: it says its RELATIVES went extinct, not that the tuatara is in danger of going extinct.'
       },
-      tip:'“Main purpose” = por qué el autor escribió esto. La palabra clave “therefore” al final te muestra hacia dónde apunta todo: su valor para los biólogos.'
+      tip:'“Main purpose” = why the author wrote this. The key word “therefore” at the end shows you where everything is pointing: its value to biologists.'
     },
     {
       id:'RDG-03', type:'mc', domain:'Information and Ideas', difficulty:'Media',
@@ -59,13 +59,13 @@ window.SAT_SETS.push({
         D:'Cities with more trees have fewer residents than cities with fewer trees.'
       },
       correct:'A',
-      expCorrect:'El texto muestra que las calles con árboles estaban más frescas, el pavimento con sombra absorbía menos calor y la gente se sentía más cómoda. De ahí se infiere razonablemente que plantar árboles puede reducir el calor que sienten las personas en la ciudad.',
+      expCorrect:'The text shows that tree-lined streets were cooler, shaded pavement absorbed less heat and people felt more comfortable. From that it reasonably follows that planting trees can lower the heat people feel in the city.',
       expWrong:{
-        B:'Demasiado extremo: “la ÚNICA forma” va más allá del texto. El estudio muestra que los árboles ayudan, no que sean el único método posible.',
-        C:'Demasiado amplio: la gente reportó sentirse más cómoda con sombra, pero el texto no dice que ODIEN cualquier calle sin sombra.',
-        D:'No está apoyado: el texto no dice nada sobre cuántos residentes tienen las ciudades. Es información de afuera.'
+        B:'Too extreme: “the ONLY way” goes beyond the text. The study shows trees help, not that they are the only possible method.',
+        C:'Too broad: people reported feeling more comfortable in shade, but the text does not say they HATE any street without it.',
+        D:'Not supported: the text says nothing about how many residents cities have. That is outside information.'
       },
-      tip:'Una inferencia buena da UN pasito lógico desde el texto. Cuidado con palabras como “único”, “siempre” o “nunca”: casi siempre son trampa.'
+      tip:'A good inference takes ONE small logical step from the text. Watch out for words like “only”, “always” or “never”: they are almost always traps.'
     },
     {
       id:'RDG-04', type:'mc', domain:'Information and Ideas', difficulty:'Media',
@@ -79,13 +79,13 @@ window.SAT_SETS.push({
         D:'Merchants and students were the main inventors of the printing press.'
       },
       correct:'C',
-      expCorrect:'El texto dice que la imprenta hizo los libros más rápidos y baratos, que las ideas llegaron a más gente (comerciantes, estudiantes, gente del pueblo) y que eso cambió qué tan rápido viajaban los descubrimientos. La idea central es esa ampliación del acceso y la velocidad.',
+      expCorrect:'The text says the printing press made books faster and cheaper, that ideas reached more people (merchants, students, ordinary townspeople) and that this changed how fast discoveries traveled. The central idea is that widening of access and speed.',
       expWrong:{
-        A:'No está apoyado: el texto habla de rapidez, costo y alcance, nunca de que los libros fueran más “bonitos”.',
-        B:'Contradice el texto: dice que antes las ideas llegaban a pocos ERUDITOS, no que solo los eruditos supieran leer. Es un salto que el texto no da.',
-        D:'No está apoyado: comerciantes y estudiantes aparecen como LECTORES nuevos, no como inventores de la imprenta.'
+        A:'Not supported: the text is about speed, cost and reach, never about books being prettier.',
+        B:'It contradicts the text: it says ideas used to reach only a few SCHOLARS, not that only scholars could read. That is a leap the text does not make.',
+        D:'Not supported: merchants and students appear as new READERS, not as inventors of the press.'
       },
-      tip:'La idea central debe recoger el efecto principal descrito. Aquí todo apunta al mismo punto: más gente accede a las ideas y más rápido.'
+      tip:'The central idea has to capture the main effect described. Everything here points the same way: more people reach the ideas, and faster.'
     },
     {
       id:'RDG-05', type:'mc', domain:'Information and Ideas', difficulty:'Difícil',
@@ -99,13 +99,13 @@ window.SAT_SETS.push({
         D:'the tern will lay more eggs to make up for the lost distance.'
       },
       correct:'B',
-      expCorrect:'El texto dice que el charrán DEBE encontrar zonas de alimento confiables para completar su viaje. Si un punto de parada clave se interrumpe, lo lógico es que le cueste reunir la energía para terminar ese viaje tan largo. La opción B sigue directamente de esa idea.',
+      expCorrect:'The text says the tern MUST find reliable feeding grounds to complete its journey. If a key stopover is disrupted, it follows that it would struggle to gather the energy to finish such a long trip. Option B follows directly from that idea.',
       expWrong:{
-        A:'No está apoyado: el texto no da pistas de que dejaría de migrar; su migración es su rasgo definitorio. Es una suposición sin base.',
-        C:'Ilógico aquí: la luz del día viene de perseguir el verano en ambos hemisferios, no de una parada concreta. Perder un stopover afecta la comida, no las horas de sol.',
-        D:'No está apoyado: el texto no menciona huevos ni reproducción; poner más huevos no “compensa” la distancia perdida.'
+        A:'Not supported: the text gives no hint that it would stop migrating; its migration is its defining trait. That is an assumption with no basis.',
+        C:'Illogical here: the daylight comes from chasing summer in both hemispheres, not from one particular stop. Losing a stopover affects food, not hours of sun.',
+        D:'Not supported: the text never mentions eggs or breeding; laying more eggs does not “make up for” lost distance.'
       },
-      tip:'En “completa el texto”, sigue el hilo de la última oración. El texto ligó las paradas con la ENERGÍA para el viaje; la respuesta debe cerrar esa misma idea.'
+      tip:'On “complete the text”, follow the thread of the last sentence. The text tied the stopovers to the ENERGY for the journey; the answer has to close that same idea.'
     },
     {
       id:'RDG-06', type:'mc', domain:'Information and Ideas', difficulty:'Media',
@@ -119,13 +119,13 @@ window.SAT_SETS.push({
         D:'The curator was unable to tell the old coins apart from the newer ones.'
       },
       correct:'C',
-      expCorrect:'La curadora conecta el desgaste con el uso: las gastadas pasaron por muchas manos en el comercio, y las nítidas se guardaron pronto. De ahí se infiere que el nivel de desgaste de una moneda sugiere cuánto se usó en el día a día. Eso es exactamente lo que muestra el texto.',
+      expCorrect:'The curator connects wear with use: the worn ones passed through many hands in trade, and the crisp ones were put away early. From that it follows that how worn a coin is suggests how much it was used day to day. That is exactly what the text shows.',
       expWrong:{
-        A:'No está apoyado: el texto habla de desgaste y uso, nunca del VALOR de las monedas. “Las más valiosas jamás acuñadas” es información de afuera.',
-        B:'Demasiado amplio: el texto dice que ALGUNAS monedas nítidas se guardaron, no que la gente en general prefiriera enterrarlas en vez de gastarlas.',
-        D:'Contradice el texto: la curadora SÍ distingue las monedas y explica por qué unas están gastadas y otras no.'
+        A:'Not supported: the text is about wear and use, never about the VALUE of the coins. “The most valuable ever minted” is outside information.',
+        B:'Too broad: the text says SOME crisp coins were put away, not that people in general preferred burying them over spending them.',
+        D:'It contradicts the text: the curator DOES tell the coins apart and explains why some are worn and others are not.'
       },
-      tip:'La inferencia correcta suele reformular la conexión que el propio texto ya hace. Aquí la conexión es clara: más desgaste = más uso.'
+      tip:'The right inference usually restates the connection the text itself already makes. Here the connection is clear: more wear = more use.'
     },
     {
       id:'RDG-07', type:'mc', domain:'Information and Ideas', difficulty:'Media',
@@ -139,13 +139,13 @@ window.SAT_SETS.push({
         D:'To argue that bees should be protected from human activity.'
       },
       correct:'A',
-      expCorrect:'El texto define el “waggle dance” y detalla cómo transmite dirección (el ángulo) y distancia (la duración) de las flores a las demás abejas. El propósito es explicar cómo usan ese baile para compartir dónde está la comida.',
+      expCorrect:'The text defines the waggle dance and details how it conveys direction (the angle) and distance (the duration) of the flowers to the other bees. The purpose is to explain how they use that dance to share where food is.',
       expWrong:{
-        B:'No está apoyado: el texto describe el baile, pero nunca compara la inteligencia de las abejas con la de otros insectos.',
-        C:'Detalle secundario: el panal solo se menciona como el lugar donde bailan, no como el tema. El foco es el baile y su mensaje.',
-        D:'Fuera de tema: no hay ninguna mención de protegerlas de la actividad humana. Es información de afuera.'
+        B:'Not supported: the text describes the dance, but never compares bee intelligence with that of other insects.',
+        C:'Secondary detail: the hive is mentioned only as the place where they dance, not as the topic. The focus is the dance and its message.',
+        D:'Off topic: there is no mention of protecting them from human activity. That is outside information.'
       },
-      tip:'Si el texto DEFINE algo y luego dice cómo funciona, su propósito casi siempre es “explicar” eso, no opinar ni comparar.'
+      tip:'If a text DEFINES something and then says how it works, its purpose is almost always to “explain” that, not to argue or compare.'
     },
     {
       id:'RDG-08', type:'mc', domain:'Information and Ideas', difficulty:'Media',
@@ -159,13 +159,13 @@ window.SAT_SETS.push({
         D:'The writer eventually decided that the lighthouse stood for loneliness alone.'
       },
       correct:'B',
-      expCorrect:'El texto dice que el faro a veces significaba guía y otras veces soledad, y que la escritora NO se quedó con un solo significado, sino que dejó que la misma imagen llevara sentimientos distintos. Esa es la idea central: una imagen, varios significados.',
+      expCorrect:'The text says the lighthouse sometimes meant guidance and other times solitude, and that the writer did NOT settle on a single meaning, but let the same image carry different feelings. That is the central idea: one image, several meanings.',
       expWrong:{
-        A:'No está apoyado: el texto habla de los SIGNIFICADOS del faro, no de que fuera lo más “bonito” que ella vio. Es información de afuera.',
-        C:'Demasiado amplio: el texto trata de una imagen (el faro) en sus poemas, no afirma que ella escribiera SOLO sobre el mar y sus objetos.',
-        D:'Contradice el texto: dice explícitamente que NO se quedó con un solo significado, así que “solo soledad” va en contra de lo que se lee.'
+        A:'Not supported: the text is about the MEANINGS of the lighthouse, not about it being the prettiest thing she saw. That is outside information.',
+        C:'Too broad: the text is about one image (the lighthouse) in her poems; it does not claim she wrote ONLY about the sea and its objects.',
+        D:'It contradicts the text: it says explicitly that she did NOT settle on a single meaning, so “only solitude” runs against what you read.'
       },
-      tip:'Cuidado con la trampa que toma un detalle real (soledad) y lo vuelve “la” respuesta. La idea central aquí es la variedad de significados, no uno solo.'
+      tip:'Watch for the trap that takes one real detail (solitude) and turns it into “the” answer. The central idea here is the range of meanings, not a single one.'
     },
     {
       id:'RDG-09', type:'mc', domain:'Information and Ideas', difficulty:'Difícil',
@@ -179,13 +179,13 @@ window.SAT_SETS.push({
         D:'the ability to see becomes the most valuable trait a fish can have.'
       },
       correct:'A',
-      expCorrect:'El texto muestra que en total oscuridad la vista no daba ventaja, así que los peces la perdieron mientras afinaban el tacto y la vibración. Lo lógico para completar es: en un ambiente sin luz, los rasgos que dependen de la luz pueden desaparecer mientras otros sentidos se vuelven más importantes. Es justo el patrón que describe el texto.',
+      expCorrect:'The text shows that in total darkness sight gave no advantage, so the fish lost it while sharpening touch and vibration. The logical completion is: in an environment with no light, traits that depend on light can disappear while other senses become more important. That is exactly the pattern the text describes.',
       expWrong:{
-        B:'No está apoyado: el texto no dice que los peces regresen a los ríos; describe su adaptación a la oscuridad, no una vuelta a la luz.',
-        C:'Demasiado amplio: el texto habla de vista, tacto y vibración, no de tamaño ni fuerza, y menos de “todos los animales”.',
-        D:'Contradice el texto: si la vista fuera lo MÁS valioso, no la habrían perdido. El texto dice lo opuesto: sin luz, ver no daba ventaja.'
+        B:'Not supported: the text does not say the fish return to rivers; it describes their adaptation to darkness, not a return to light.',
+        C:'Too broad: the text is about sight, touch and vibration, not size or strength, and certainly not about “all animals”.',
+        D:'It contradicts the text: if sight were the MOST valuable sense, they would not have lost it. The text says the opposite: with no light, seeing gave no advantage.'
       },
-      tip:'La conclusión debe generalizar lo que el ejemplo ya mostró. El caso concreto (perdieron la vista, ganaron tacto) apunta a la regla de la opción A.'
+      tip:'The conclusion has to generalize what the example already showed. The concrete case (lost sight, gained touch) points to the rule in option A.'
     },
     {
       id:'RDG-10', type:'mc', domain:'Information and Ideas', difficulty:'Media',
@@ -199,13 +199,13 @@ window.SAT_SETS.push({
         D:'Testing a model beforehand can reveal problems that might affect a full-size bridge.'
       },
       correct:'D',
-      expCorrect:'Los ingenieros probaron un modelo a escala, vieron que el tablero se torcía con viento fuerte y ajustaron el diseño ANTES de construir la versión real. De ahí se infiere que probar un modelo antes puede revelar problemas que afectarían al puente de tamaño real.',
+      expCorrect:'The engineers tested a scale model, saw the deck twist in strong wind and adjusted the design BEFORE building the real version. From that it follows that testing a model first can reveal problems that would affect the full-size bridge.',
       expWrong:{
-        A:'Demasiado extremo: no lo abandonaron; lo AJUSTARON. Decir que era “completamente inútil” contradice que siguieran mejorándolo.',
-        B:'Demasiado amplio: el texto usa un túnel de viento en este caso, pero nunca dice que sea la ÚNICA herramienta para probar cualquier estructura.',
-        C:'No está apoyado / contradice: el propio modelo se sacudió; el texto no promete que los puentes reales “nunca” se muevan.'
+        A:'Too extreme: they did not abandon it, they ADJUSTED it. Calling it “completely useless” contradicts the fact that they kept improving it.',
+        B:'Too broad: the text uses a wind tunnel in this case, but never says it is the ONLY tool for testing any structure.',
+        C:'Not supported / contradicts: the model itself shook; the text does not promise that real bridges “never” move.'
       },
-      tip:'Fíjate en la palabra “before”: la prueba sirvió para detectar el problema a tiempo. La inferencia correcta capta ese valor de probar primero.'
+      tip:'Notice the word “before”: the test served to catch the problem in time. The right inference captures that value of testing first.'
     }
   ]
 });

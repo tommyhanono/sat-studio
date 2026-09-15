@@ -602,6 +602,8 @@
   .prog-table tr:last-child td{border-bottom:none}
   .prog-table .num{text-align:right;white-space:nowrap}
   .prog-table .sinmed{color:var(--gray-mid);font-size:.8rem}
+  .gtag{background:var(--blue-soft);color:var(--blue-dark);border-radius:999px;padding:3px 10px;font-size:.78rem;font-weight:600}
+  .gpct{color:var(--gray-mid);font-size:.8rem}
   @media(max-width:620px){ .prog-card.big{grid-column:span 2} .prog-dom{grid-template-columns:1fr 80px 42px} }
 
   /* ---- grupos del home ---- */
@@ -857,6 +859,7 @@
       <div class="achart"><h3>Accuracy by domain</h3><div class="achart-box"><canvas id="admin-chart-domain"></canvas></div></div>
       <div class="achart"><h3>Sessions per set</h3><div class="achart-box"><canvas id="admin-chart-set"></canvas></div></div>
     </div>
+    <div class="atable-wrap"><h3>Groups</h3><div id="admin-groups"></div></div>
     <div class="atable-wrap"><h3>Students</h3><div id="admin-table"></div></div>
   </div>
 </div>
@@ -4170,6 +4173,7 @@ function loadAdmin(){
     if(st) st.textContent = '';
     renderAdminKPIs(rs[0].data || {});
     renderAdminCharts(rs[0].data || {});
+    renderAdminGroups((rs[0].data || {}).by_group || []);
     renderAdminTable(rs[1].data || []);
   }).catch(function(){ if(st) st.textContent = 'Connection error loading the panel.'; });
 }
@@ -4209,11 +4213,28 @@ function renderAdminCharts(ov){
   var ss = ov.by_set || [];
   drawAdminBar('admin-chart-set', ss.map(function(s){ return s.label; }), ss.map(function(s){ return s.sessions; }), {});
 }
+/* Los grupos salen del dominio del correo: nadie tiene que crear nada ni elegir
+   nada al registrarse, y un colegio entero aparece junto con solo usar su correo. */
+function renderAdminGroups(grupos){
+  var el = $('#admin-groups'); if(!el) return;
+  if(!grupos.length){ el.innerHTML = '<div class="empty-note" style="padding:18px">No groups yet.</div>'; return; }
+  el.innerHTML = '<table class="atable"><thead><tr><th>Group</th><th>Students</th><th>Practiced</th>' +
+    '<th>Sessions</th><th>Accuracy</th></tr></thead><tbody>' +
+    grupos.map(function(g){
+      var act = g.active || 0, tot = g.students || 0;
+      return '<tr><td><span class="gtag">' + (g.group || '—') + '</span></td>' +
+        '<td>' + tot + '</td>' +
+        '<td>' + act + (tot ? ' <span class="gpct">(' + Math.round(100 * act / tot) + '%)</span>' : '') + '</td>' +
+        '<td>' + (g.sessions || 0) + '</td>' +
+        '<td>' + (g.accuracy == null ? '—' : g.accuracy + '%') + '</td></tr>';
+    }).join('') + '</tbody></table>';
+}
 function renderAdminTable(students){
   var cols = [
-    {f:'name', l:'Name'}, {f:'email', l:'Email'}, {f:'role', l:'Role'},
-    {f:'sessions', l:'Sessions'}, {f:'accuracy', l:'Accuracy'},
-    {f:'questions', l:'Questions'}, {f:'last_active', l:'Last active'}, {f:'joined', l:'Joined'}
+    {f:'name', l:'Name'}, {f:'email', l:'Email'}, {f:'group', l:'Group'}, {f:'role', l:'Role'},
+    {f:'sessions', l:'Sessions'}, {f:'accuracy', l:'Accuracy'}, {f:'questions', l:'Questions'},
+    {f:'target', l:'Goal'}, {f:'exam_date', l:'Test date'},
+    {f:'last_active', l:'Last active'}, {f:'joined', l:'Joined'}
   ];
   var sortF = 'sessions', sortDir = 'desc';
   function draw(){
@@ -4232,6 +4253,7 @@ function renderAdminTable(students){
         if(c.f === 'accuracy') v = (v == null ? '—' : v + '%');
         if(v == null || v === '') v = '—';
         if(c.f === 'role') v = '<span class="rtag ' + (r.role === 'admin' ? 'radm' : '') + '">' + (v === 'estudiante' ? 'student' : v) + '</span>';
+        if(c.f === 'group' && v !== '—') v = '<span class="gtag">' + v + '</span>';
         return '<td>' + v + '</td>';
       }).join('') + '</tr>';
     });

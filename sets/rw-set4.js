@@ -14,13 +14,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text with the most logical and precise word or phrase?',
       choices:{A:'lucrative', B:'multifaceted', C:'ambiguous', D:'ceremonial'},
       correct:'B',
-      expCorrect:'La lista que sigue a los dos puntos muestra que el gremio hacía muchas cosas distintas a la vez (economía, religión, caridad, justicia). “Multifaceted” significa justamente “con muchas facetas o funciones”, que es lo contrario de “purely economic”.',
+      expCorrect:'The list after the colon shows the guild doing many different things at once (economy, religion, charity, justice). “Multifaceted” means exactly “with many sides or functions”, which is the opposite of “purely economic”.',
       expWrong:{
-        A:'“Lucrative” significa “que da mucha ganancia”, pero el texto no habla de cuánto dinero ganaba, sino de la VARIEDAD de sus funciones.',
-        C:'“Ambiguous” (confuso, poco claro) no encaja: los ejemplos son claros y concretos, no vagos.',
-        D:'“Ceremonial” describe solo una de las facetas (los desfiles religiosos), pero deja fuera la economía, la caridad y la justicia; es demasiado estrecho.'
+        A:'“Lucrative” means “highly profitable”, but the text is not about how much money it made — it is about the VARIETY of its functions.',
+        C:'“Ambiguous” (unclear, murky) does not fit: the examples are clear and concrete, not vague.',
+        D:'“Ceremonial” describes only one of the facets (the religious processions), but leaves out the economy, the charity and the justice; it is too narrow.'
       },
-      tip:'Cuando el texto contrasta “purely X” con una lista de cosas MUY distintas, busca la palabra que signifique “variado / con muchos lados”, no la que describa solo un lado.'
+      tip:'When a text contrasts “purely X” with a list of VERY different things, look for the word meaning “varied / many-sided”, not the one describing only one side.'
     },
     {
       id:'WIC-H-02', type:'mc', domain:'Craft and Structure', difficulty:'Difícil',
@@ -29,13 +29,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text with the most logical and precise word or phrase?',
       choices:{A:'austere', B:'meticulous', C:'incoherent', D:'derivative'},
       correct:'A',
-      expCorrect:'El texto dice que quita el color y el detalle, dejando pocas frases secas e impersonales. “Austere” significa “despojado, sin adornos”, que es exactamente ese estilo pelado.',
+      expCorrect:'The text says it strips out color and detail, leaving a few dry, impersonal sentences. “Austere” means “bare, unadorned”, which is exactly that stripped-down style.',
       expWrong:{
-        B:'“Meticulous” (muy detallado y cuidadoso) contradice el texto, que dice que ELIMINA el detalle.',
-        C:'“Incoherent” (sin sentido, desordenado) no aplica: las frases son secas pero sí tienen sentido; el punto es que son escasas, no confusas.',
+        B:'“Meticulous” (highly detailed and careful) contradicts the text, which says it REMOVES detail.',
+        C:'“Incoherent” (senseless, disordered) does not apply: the sentences are dry but they do make sense; the point is that they are few, not confusing.',
         D:'“Derivative” (copiado de otros) no viene al caso; nada dice que imite otras obras.'
       },
-      tip:'“Oddly ___” tras un contraste (cuaderno lleno vs. libro pelado) pide una palabra que capture la falta de adornos. No te dejes tentar por “meticulous” solo porque suena a ciencia.'
+      tip:'“Oddly ___” after a contrast (full notebook vs. bare book) calls for a word that captures the lack of adornment. Do not be tempted by “meticulous” just because it sounds scientific.'
     },
     {
       id:'WIC-H-03', type:'mc', domain:'Craft and Structure', difficulty:'Difícil',
@@ -44,11 +44,11 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text with the most logical and precise word or phrase?',
       choices:{A:'resolved', B:'summarized', C:'inflamed', D:'postponed'},
       correct:'C',
-      expCorrect:'“Far from settling” avisa que el fósil NO calmó nada; y el final dice que el desacuerdo se volvió más agudo. “Inflamed” significa “avivar / encender” un conflicto, justo ese aumento de tensión.',
+      expCorrect:'“Far from settling” warns you that the fossil did NOT calm anything down; and the ending says the disagreement grew sharper. “Inflamed” means to “fan or ignite” a conflict, precisely that rise in tension.',
       expWrong:{
-        A:'“Resolved” (resolvió) es lo opuesto: “Far from settling” ya niega que se haya resuelto.',
-        B:'“Summarized” (resumió) no encaja: un fósil no resume un debate, y el efecto descrito es intensificarlo.',
-        D:'“Postponed” (pospuso) sugiere pausa, pero el texto dice que el conflicto siguió y CRECIÓ de inmediato, no que se aplazara.'
+        A:'“Resolved” is the opposite: “Far from settling” already denies that anything was resolved.',
+        B:'“Summarized” does not fit: a fossil does not summarize a debate, and the effect described is intensifying it.',
+        D:'“Postponed” suggests a pause, but the text says the conflict continued and GREW immediately, not that it was put off.'
       },
       tip:'“Far from ___ing” invierte el sentido esperado. Si crece el conflicto (“sharper, more entrenched”), busca un verbo de INTENSIFICAR, no de calmar ni aplazar.'
     },
@@ -59,13 +59,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text with the most logical and precise word or phrase?',
       choices:{A:'erudition', B:'lucidity', C:'brevity', D:'candor'},
       correct:'B',
-      expCorrect:'Lo que se elogia es que vuelve CLARO un argumento enredado, de modo que cualquiera lo entiende al instante. “Lucidity” es precisamente la cualidad de ser clara y fácil de entender.',
+      expCorrect:'What is being praised is that it makes a tangled argument CLEAR, so that anyone gets it instantly. “Lucidity” is precisely the quality of being clear and easy to understand.',
       expWrong:{
-        A:'“Erudition” (gran conocimiento) no es el punto; de hecho el texto dice que se le admira “menos por sus ideas” y más por CÓMO las expresa.',
-        C:'“Brevity” (ser breve) es tentador por “single sentence”, pero lo clave no es que sea corto, sino que se ENTIENDA (“a general reader grasps at once”). Algo breve puede seguir siendo oscuro.',
+        A:'“Erudition” (great learning) is not the point; in fact the text says he is admired “less for his ideas” and more for HOW he expresses them.',
+        C:'“Brevity” is tempting because of “single sentence”, but the key is not that it is short — it is that it is UNDERSTOOD (“a general reader grasps at once”). Something brief can still be murky.',
         D:'“Candor” (franqueza, honestidad) es un rasgo moral que el texto no menciona.'
       },
-      tip:'Ojo con “brevity”: una frase corta no es lo mismo que una frase clara. Si el texto subraya que el lector ENTIENDE, la palabra es “lucidity” (claridad).'
+      tip:'Careful with “brevity”: a short sentence is not the same as a clear one. If the text stresses that the reader UNDERSTANDS, the word is “lucidity”.'
     },
     {
       id:'WIC-H-05', type:'mc', domain:'Craft and Structure', difficulty:'Media',
@@ -74,13 +74,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text with the most logical and precise word or phrase?',
       choices:{A:'dismissive', B:'credulous', C:'nostalgic', D:'discerning'},
       correct:'D',
-      expCorrect:'La científica ni rechaza todo ni acepta todo: prueba cada remedio y aprueba SOLO los que pasan el filtro. “Discerning” describe a alguien que juzga con cuidado y sabe distinguir lo bueno de lo malo.',
+      expCorrect:'The scientist neither rejects everything nor accepts everything: she tests each remedy and approves ONLY the ones that pass. “Discerning” describes someone who judges carefully and can tell good from bad.',
       expWrong:{
-        A:'“Dismissive” (que descarta sin más) contradice “Rather than rejecting… outright”: precisamente NO los descartó de golpe.',
-        B:'“Credulous” (que se cree todo) es lo opuesto: ella somete cada remedio a pruebas rigurosas.',
-        C:'“Nostalgic” (sentimental por el pasado) no describe un método de evaluación; el texto habla de juicio científico, no de añoranza.'
+        A:'“Dismissive” contradicts “Rather than rejecting… outright”: she precisely did NOT throw them out on the spot.',
+        B:'“Credulous” (believing anything) is the opposite: she puts every remedy through rigorous testing.',
+        C:'“Nostalgic” (sentimental about the past) does not describe a method of evaluation; the text is about scientific judgment, not longing.'
       },
-      tip:'Cuando alguien filtra y aprueba SOLO una parte tras examinar todo, la palabra clave es “discerning” (con criterio): un punto medio entre creerlo todo y rechazarlo todo.'
+      tip:'When someone filters and approves ONLY part of it after examining everything, the key word is “discerning”: a middle ground between believing it all and rejecting it all.'
     },
     {
       id:'WIC-H-06', type:'mc', domain:'Craft and Structure', difficulty:'Difícil',
@@ -89,13 +89,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text with the most logical and precise word or phrase?',
       choices:{A:'partisan', B:'exhaustive', C:'tedious', D:'speculative'},
       correct:'A',
-      expCorrect:'Los autores adornan su propio juicio y esconden sus errores por lealtades y rencores: no son neutrales. “Partisan” significa “parcial, que toma partido”, justo esa falta de imparcialidad.',
+      expCorrect:'The authors dress up their own judgment and hide their mistakes out of loyalties and grudges: they are not neutral. “Partisan” means “biased, taking a side”, exactly that lack of impartiality.',
       expWrong:{
-        B:'“Exhaustive” (completísimo) contradice el texto: OMITEN sus errores, así que no lo cuentan todo.',
+        B:'“Exhaustive” (complete in every detail) contradicts the text: they OMIT his mistakes, so they are not telling all of it.',
         C:'“Tedious” (aburrido) juzga el estilo, pero el texto habla de SESGO, no de si aburren.',
-        D:'“Speculative” (basado en conjeturas) no encaja: el problema no es que adivinen, sino que ocultan hechos para quedar bien.'
+        D:'“Speculative” (based on guesswork) does not fit: the problem is not that they guess, but that they hide facts to look good.'
       },
-      tip:'Si el texto dice que alguien esconde sus fallos y realza lo suyo por lealtades, apunta a “partisan / biased” (parcial), no a un defecto de estilo como “tedious”.'
+      tip:'If the text says someone hides their failures and plays up their own out of loyalties, aim for “partisan / biased”, not a style flaw like “tedious”.'
     },
     {
       id:'WIC-H-07', type:'mc', domain:'Craft and Structure', difficulty:'Difícil',
@@ -104,13 +104,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text with the most logical and precise word or phrase?',
       choices:{A:'exorbitant', B:'flimsy', C:'transparent', D:'provisional'},
       correct:'B',
-      expCorrect:'El presupuesto se apoya en optimismo vago, olvida costos y usa supuestos sin verificar: está mal armado y no se sostiene. “Flimsy” significa “endeble, poco sólido”, justo esa debilidad.',
+      expCorrect:'The budget leans on vague optimism, forgets costs and uses unchecked assumptions: it is badly built and does not hold up. “Flimsy” means “weak, not solid”, exactly that fragility.',
       expWrong:{
-        A:'“Exorbitant” (excesivamente caro) habla del TAMAÑO del gasto, pero la crítica es que el presupuesto es poco confiable, no que sea demasiado alto.',
+        A:'“Exorbitant” (outrageously expensive) is about the SIZE of the spending, but the criticism is that the budget is unreliable, not that it is too high.',
         C:'“Transparent” (claro, honesto) es lo contrario de lo que describe el texto: oculta costos y no verifica nada.',
-        D:'“Provisional” (temporal, preliminar) suena neutral; el texto no dice que sea un borrador, sino que es defectuoso y frágil.'
+        D:'“Provisional” (temporary, preliminary) sounds neutral; the text does not say it is a draft, it says it is faulty and fragile.'
       },
-      tip:'Reúne las pistas (“airy optimism”, costos omitidos, supuestos sin verificar): todas apuntan a algo DÉBIL. “Flimsy” captura esa fragilidad mejor que una palabra sobre el precio.'
+      tip:'Gather the clues (“airy optimism”, omitted costs, unchecked assumptions): they all point to something WEAK. “Flimsy” captures that fragility better than a word about price.'
     },
     {
       id:'WIC-H-08', type:'mc', domain:'Craft and Structure', difficulty:'Media',
@@ -119,13 +119,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text with the most logical and precise word or phrase?',
       choices:{A:'lucrative', B:'controversial', C:'enduring', D:'derivative'},
       correct:'C',
-      expCorrect:'El contraste es claro: las copias se olvidaron, pero la película original SIGUE impactando tras cuarenta años. “Enduring” significa “que perdura en el tiempo”, justo lo que la distingue.',
+      expCorrect:'The contrast is clear: the copies were forgotten, but the original film STILL lands forty years on. “Enduring” means “lasting over time”, exactly what sets it apart.',
       expWrong:{
-        A:'“Lucrative” (rentable) habla de dinero; el texto compara qué obra PERDURA, no cuánto recaudó.',
-        B:'“Controversial” (que causa polémica) no es el punto: incomoda al público, pero lo destacado es que dura, no que divida opiniones.',
-        D:'“Derivative” (copiado de otros) describe a los imitadores, no a la original, que es la fuente, no la copia.'
+        A:'“Lucrative” is about money; the text compares which work LASTS, not how much it grossed.',
+        B:'“Controversial” is not the point: it unsettles audiences, but what stands out is that it lasts, not that it divides opinion.',
+        D:'“Derivative” (copied from others) describes the imitators, not the original, which is the source rather than the copy.'
       },
-      tip:'“Unlike… forty years on… still” marca supervivencia en el tiempo. La palabra correcta es “enduring” (duradera); no te desvíes hacia dinero o polémica.'
+      tip:'“Unlike… forty years on… still” marks survival over time. The right word is “enduring”; do not drift toward money or controversy.'
     },
     {
       id:'WIC-H-09', type:'mc', domain:'Craft and Structure', difficulty:'Difícil',
@@ -134,13 +134,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text with the most logical and precise word or phrase?',
       choices:{A:'perfunctory', B:'belated', C:'eloquent', D:'inflammatory'},
       correct:'A',
-      expCorrect:'La disculpa suena mecánica, llena de reservas y sin sentimiento, y no convence a nadie de arrepentimiento real. “Perfunctory” describe algo hecho por mero trámite, sin interés ni sinceridad: eso lo abarca todo.',
+      expCorrect:'The apology sounds mechanical, full of hedges and with no feeling, and it convinces nobody of real remorse. “Perfunctory” describes something done as a mere formality, with no interest or sincerity: that covers all of it.',
       expWrong:{
-        B:'“Belated” (tardío) es CIERTO —llegó tarde— pero solo cubre una pista; el rechazo se debe sobre todo a que sonó vacía y forzada, no únicamente a la demora.',
+        B:'“Belated” is TRUE — it did come late — but it covers only one clue; the rejection is mostly because it sounded hollow and forced, not only because of the delay.',
         C:'“Eloquent” (elocuente) contradice “flat monotone”: fue plana, no brillante.',
-        D:'“Inflammatory” (que enciende los ánimos) no aplica: una disculpa sosa y con reservas no provoca; deja indiferente.'
+        D:'“Inflammatory” does not apply: a bland, hedged apology does not provoke anyone; it leaves people cold.'
       },
-      tip:'Cuando varias pistas apuntan juntas (mecánica + con reservas + sin emoción), elige la palabra que las RESUMA (“perfunctory”), no una que solo describa un detalle como el retraso (“belated”).'
+      tip:'When several clues point the same way (mechanical + hedged + no emotion), pick the word that SUMS THEM UP (“perfunctory”), not one that describes a single detail like the delay (“belated”).'
     },
     {
       id:'WIC-H-10', type:'mc', domain:'Craft and Structure', difficulty:'Difícil',
@@ -149,13 +149,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text with the most logical and precise word or phrase?',
       choices:{A:'novelty', B:'rigor', C:'elegance', D:'elasticity'},
       correct:'D',
-      expCorrect:'La teoría está formulada tan flojamente que se estira para “explicar” cualquier resultado, y por eso no se puede refutar. “Elasticity” (elasticidad) capta esa cualidad de estirarse para acomodar todo.',
+      expCorrect:'The theory is framed so loosely that it stretches to “explain” any result, and that is why it cannot be refuted. “Elasticity” captures that quality of stretching to fit everything.',
       expWrong:{
-        A:'“Novelty” (ser nueva) no explica por qué no se puede probar; una idea nueva puede ser perfectamente comprobable.',
-        B:'“Rigor” (precisión estricta) es lo OPUESTO: el texto dice que está “framed so loosely”, es decir, sin rigor.',
-        C:'“Elegance” (elegancia) es una virtud estética que no tiene que ver con que la teoría evite predicciones refutables.'
+        A:'“Novelty” (being new) does not explain why it cannot be tested; a new idea can be perfectly testable.',
+        B:'“Rigor” (strict precision) is the OPPOSITE: the text says it is “framed so loosely”, that is, without rigor.',
+        C:'“Elegance” is an aesthetic virtue that has nothing to do with the theory avoiding refutable predictions.'
       },
-      tip:'“Framed so loosely… any outcome… confirmation” describe algo que se ESTIRA para todo. Busca la palabra de flexibilidad excesiva (“elasticity”), no un elogio como “rigor” o “elegance”.'
+      tip:'“Framed so loosely… any outcome… confirmation” describes something that STRETCHES to fit anything. Look for the word about excessive flexibility (“elasticity”), not a compliment like “rigor” or “elegance”.'
     }
   ]
 });

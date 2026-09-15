@@ -19,7 +19,7 @@ window.SAT_SETS.push({
         D:'The zoetrope, an early animation device, delighted audiences long before film.'
       },
       correct:'A',
-      expCorrect:'La meta pide explicar CÓMO se crea la ilusión de movimiento. La A describe el mecanismo completo: al girar el cilindro, el espectador mira por las ranuras en movimiento y esos vistazos rápidos hacen que los dibujos quietos parezcan moverse. Cumple la meta con notas exactas.',
+      expCorrect:'The goal calls for explaining HOW the illusion of motion is created. A describes the full mechanism: as the cylinder spins, the viewer looks through the moving slits and those rapid glimpses make the still drawings appear to move. It meets the goal with accurate notes.',
       expWrong:{
         B:'Describe la forma del aparato, pero no explica cómo produce el movimiento.',
         C:'Da un detalle de dónde van los dibujos; no explica el efecto de movimiento.',
@@ -39,7 +39,7 @@ window.SAT_SETS.push({
         D:'When listeners subscribe to a podcast, new episodes download automatically.'
       },
       correct:'B',
-      expCorrect:'La meta pide COMPARAR cuándo se puede escuchar cada uno. La B pone los dos lados frente a frente: la radio obliga a sintonizar a la hora del programa, mientras que el podcast se escucha cuando uno quiera. Compara ambos con notas exactas.',
+      expCorrect:'The goal calls for COMPARING when each one can be listened to. B puts the two sides face to face: radio forces you to tune in at broadcast time, whereas a podcast is heard whenever you like. It compares both, with accurate notes.',
       expWrong:{
         A:'Solo describe el podcast; falta el lado de la radio para comparar.',
         C:'Solo habla de la radio; no menciona el podcast, así que no compara.',
@@ -59,7 +59,7 @@ window.SAT_SETS.push({
         D:'The medium a person reads on can affect how well they understand a text.'
       },
       correct:'C',
-      expCorrect:'La meta pide un HALLAZGO específico. La C da los números concretos del estudio: 82% para quienes leyeron en papel frente a 71% para quienes leyeron en el teléfono. Es un resultado medible y exacto.',
+      expCorrect:'The goal calls for a specific FINDING. C gives the study’s concrete numbers: 82% for those who read on paper against 71% for those who read on a phone. It is a measurable, exact result.',
       expWrong:{
         A:'Describe el montaje del estudio, no lo que se descubrió.',
         B:'Explica cómo se dividieron los grupos, pero no reporta ningún resultado con datos.',
