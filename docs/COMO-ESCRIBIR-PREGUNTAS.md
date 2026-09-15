@@ -84,18 +84,18 @@ el examen adaptativo en silencio. **Todo lo demás va en inglés.**
 {
   id:'BAL-01', type:'mc', domain:'Algebra', difficulty:'Difícil', extreme:true,
   skill:'Systems with a parameter (no solution)',
-  stem:'In the system 3x + ky = 12 and 9x + 15y = 36, k is a constant. For which value of k does the system have NO solution?',
+  stem:'In the system 3x + ky = 12 and 9x + 15y = 30, k is a constant. For which value of k does the system have NO solution?',
   choices:{A:'5', B:'3', C:'15', D:'−5'},
-  correct:'B',
-  expCorrect:'…por qué la correcta es correcta, con la cuenta hecha…',
+  correct:'A',
+  expCorrect:'Divide the second equation by 3: 3x + 5y = 10. Now the left sides match when k = 5, and the right sides do NOT (12 ≠ 10): two parallel lines, no solution. (With k = 5 and 12 = 10 it would have been the same line.)',
   expWrong:{
-    A:'…el error concreto que lleva a A…',
-    C:'…',
-    D:'…'
+    B:'3 comes from 9/3, the factor that relates the two equations — not from the coefficient of y.',
+    C:'15 compares k to the 15 in the second equation without scaling it down first. Divide by 3 and the number to match is 5.',
+    D:'−5 is a sign slip: dividing 15 by 3 gives +5.'
   },
-  tip:'…la regla que se lleva el estudiante y le sirve en la próxima…',
-  desmos:'Graph both lines and slide k: they become parallel at k = 3.',
-  desmosLatex:['3x+ky=12','9x+15y=36']
+  tip:'Scale one equation so the x-coefficients match. Then: same left side and same right side → infinitely many; same left side and DIFFERENT right side → no solution.',
+  desmos:'Graph 3x+5y=12 and 3x+5y=10: parallel, never meet.',
+  desmosLatex:['3x+5y=12','3x+5y=10']
 }
 ```
 
