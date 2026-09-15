@@ -134,6 +134,21 @@ for (const rel of archivos) {
         err(rel, `${d}: expWrong tiene que explicar exactamente las incorrectas ${malas.join(',')} (trae ${exp.join(',') || 'ninguna'})`);
       }
       exp.forEach(k => { if (typeof q.expWrong[k] !== 'string' || !q.expWrong[k].trim()) err(rel, `${d}: expWrong.${k} vacía`); });
+
+      /* Dos opciones con el MISMO texto hacen la pregunta imposible: el estudiante
+         que razona bien puede marcar la que no está en `correct`. */
+      const textos = ks.map(k => String(q.choices[k] || '').trim());
+      const repes = textos.filter((t, i) => t && textos.indexOf(t) !== i);
+      if (repes.length) err(rel, `${d}: hay opciones con el mismo texto (${repes[0].slice(0, 40)})`);
+
+      /* Si la correcta es SIEMPRE la más larga, se contesta sin leer la pregunta.
+         Se avisa por pregunta solo cuando saca mucha ventaja; el patrón de todo el
+         set se mira abajo. */
+      const largoCorrecta = String(q.choices[q.correct] || '').length;
+      const largoOtras = malas.map(k => String(q.choices[k] || '').length);
+      if (largoOtras.length && largoCorrecta > Math.max.apply(null, largoOtras) * 1.8 && largoCorrecta > 25) {
+        avi(rel, `${d}: la correcta es bastante más larga que las tres incorrectas; se adivina por la forma`);
+      }
       if (q.answer) avi(rel, `${d}: es MC pero trae "answer"; se ignora`);
     } else if (tipo === 'spr') {
       if (q.answer === undefined || q.answer === '') err(rel, `${d}: SPR sin "answer"`);
@@ -183,6 +198,17 @@ for (const rel of archivos) {
     } else if (distintas < 3) {
       err(rel, `la clave usa solo ${distintas} letra(s) distinta(s). Corré: node tools/rebalancear-clave.js ${rel}`);
     }
+  }
+
+  /* Y el patrón del set entero: si la correcta es la más larga casi siempre, el
+     set se puede contestar midiendo con la vista. */
+  const conOpciones = mcQs.filter(q => q.choices && q.correct);
+  const masLarga = conOpciones.filter(q => {
+    const l = String(q.choices[q.correct] || '').length;
+    return ['A', 'B', 'C', 'D'].every(k => k === q.correct || String(q.choices[k] || '').length <= l);
+  }).length;
+  if (conOpciones.length >= 8 && masLarga > conOpciones.length * 0.6) {
+    err(rel, `la correcta es la opción más larga en ${masLarga} de ${conOpciones.length}: el set se contesta sin leerlo`);
   }
 
   const mc = mcQs.length;

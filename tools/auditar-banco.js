@@ -135,6 +135,46 @@ console.log(`  SPR             ${fmt(pct(tipos.spr || 0, M.length))}   oficial �
 const conPista = M.filter(q => desmos[q.id] || q.desmos).length;
 console.log(`\nPISTAS DE DESMOS  ${conPista} de ${M.length} (${pct(conPista, M.length).toFixed(1)} %) · faltan ${M.length - conPista}`);
 
+/* ---- ¿se puede contestar sin leer? ----
+   Si la respuesta correcta es sistemáticamente la opción más larga, el set se
+   contesta midiendo con la vista, y peor: le enseña al estudiante una estrategia
+   que en el examen real no funciona, mientras le infla el porcentaje que después
+   usa el plan de mejora para decidir qué practicar. Al azar debería rondar el
+   25 %. Se mide por sección porque el problema es de Reading, no de matemática. */
+{
+  const mcq = qs.filter(q => (q.type || 'mc') === 'mc' && q.choices && q.correct);
+  const medir = lista => {
+    let larga = 0;
+    lista.forEach(q => {
+      const otras = Object.keys(q.choices).filter(k => k !== q.correct).map(k => String(q.choices[k]).length);
+      if (String(q.choices[q.correct]).length > Math.max.apply(null, otras)) larga++;
+    });
+    return [larga, lista.length];
+  };
+  const marca = (l, n) => {
+    const p = pct(l, n);
+    return `${l} de ${n} (${p.toFixed(1)} %)` + (p >= 45 ? '  ← se adivina por el largo' : p >= 35 ? '  ← justo' : '');
+  };
+  const [lt, nt] = medir(mcq);
+  console.log('\n¿LA CORRECTA ES LA MÁS LARGA?  (al azar sería ~25 %)');
+  console.log(`  total       ${marca(lt, nt)}`);
+  // `_section` lo pone la app al indexar, no existe acá: se saca del set.
+  const deSeccion = {};
+  sets.forEach(s => (s.questions || []).forEach(q => {
+    if ((q.type || 'mc') === 'mc' && q.choices && q.correct) (deSeccion[s.section] = deSeccion[s.section] || []).push(q);
+  }));
+  Object.keys(deSeccion).sort().forEach(sec => {
+    console.log(`  ${sec.padEnd(11)} ${marca(...medir(deSeccion[sec]))}`);
+  });
+  const peores = sets.map(s => {
+    const l = (s.questions || []).filter(q => (q.type || 'mc') === 'mc' && q.choices && q.correct);
+    if (l.length < 8) return null;
+    const [a, b] = medir(l);
+    return pct(a, b) >= 60 ? `${s.id} ${a}/${b}` : null;
+  }).filter(Boolean);
+  if (peores.length) console.log(`  sets sobre 60 %: ${peores.length} · ${peores.slice(0, 6).join(' · ')}${peores.length > 6 ? ' …' : ''}`);
+}
+
 // ---- integridad ----
 const sinExp = qs.filter(q => !q.expCorrect);
 const sinTip = qs.filter(q => !q.tip);
