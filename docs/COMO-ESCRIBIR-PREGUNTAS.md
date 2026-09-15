@@ -120,6 +120,9 @@ Reglas que el validador exige:
   El punto vive en Reading, donde las opciones son prosa y el largo sí se ve.
   Y no hay que empujarlo a 0 %: eso solo invierte el problema, y "nunca marques
   la más larga" pasa a ser la estrategia ganadora. El objetivo es el azar, ~25 %.
+  Por eso la herramienta mide **las dos direcciones**, más larga y más corta: el
+  primer set que se arregló a conciencia terminó con la correcta siendo la más
+  corta en el 42 % de sus preguntas, que es el mismo defecto al revés.
 - **Dos opciones no pueden tener el mismo texto.** El que razona bien puede
   marcar la que no está en `correct`.
 - **Ojo con `<`**: todo esto se inyecta con `innerHTML`, y un `<` seguido de letra

@@ -5,11 +5,19 @@
  *     node tools/auditar-longitud.js sets/rw-data1.js [...más]
  *     node tools/auditar-longitud.js --todos          # todo el banco vivo, peor primero
  *
- * Mide una sola cosa: cuántas veces la respuesta correcta es la opción MÁS LARGA.
- * Al azar sería ~25 %. Muy por encima significa que el estudiante puede acertar
- * midiendo con la vista — y eso hace daño dos veces: le enseña una estrategia que
- * en el examen real no funciona, y le infla el porcentaje que el plan de mejora
- * usa para decidir qué practicar.
+ * Mide cuántas veces la respuesta correcta es la opción MÁS LARGA **y cuántas es
+ * la MÁS CORTA**. Las dos, porque arreglar solo la primera crea la segunda: si
+ * nadie revisa, "nunca marques la más larga" pasa a ser la estrategia ganadora.
+ * Al azar cada una debería rondar el 25 %.
+ *
+ * Muy por encima significa que el estudiante puede acertar midiendo con la vista,
+ * y eso hace daño dos veces: le enseña una estrategia que en el examen real no
+ * funciona, y le infla el porcentaje que el plan de mejora usa para decidir qué
+ * practicar.
+ *
+ * Los sets de opciones CORTAS se saltan: cuando las cuatro son «4 · 6 · 12 · 18»,
+ * "la más larga" es ruido y no una pista. El corte está en 14 caracteres de
+ * promedio, que separa limpiamente la matemática numérica de la prosa.
  *
  * Funciona sobre sets que ya están vivos (a diferencia de `validar-set.js`, que
  * es la puerta de entrada y rechaza lo que ya está en el banco).
@@ -45,35 +53,53 @@ for (const rel of archivos) {
   const mc = (s.questions || []).filter(q => (q.type || 'mc') === 'mc' && q.choices && q.correct);
   if (!mc.length) continue;
 
-  let larga = 0;
+  let larga = 0, corta = 0, sumaMax = 0;
   const casos = [];
   mc.forEach(q => {
     const lc = String(q.choices[q.correct]).length;
+    const todas = Object.keys(q.choices).map(k => String(q.choices[k]).length);
     const otras = Object.keys(q.choices).filter(k => k !== q.correct).map(k => String(q.choices[k]).length);
     const max = Math.max.apply(null, otras);
     const min = Math.min.apply(null, otras);
-    if (lc > max) { larga++; casos.push({ id: q.id, lc, max, min, ventaja: lc - max }); }
+    sumaMax += Math.max.apply(null, todas);
+    if (lc > max) { larga++; casos.push({ id: q.id, lc, max, min, ventaja: lc - max, tipo: 'larga' }); }
+    if (lc < min) { corta++; casos.push({ id: q.id, lc, max, min, ventaja: min - lc, tipo: 'corta' }); }
   });
-  filas.push({ rel, id: s.id, sec: s.section, larga, n: mc.length, pct: 100 * larga / mc.length, casos });
+  const promMax = sumaMax / mc.length;
+  filas.push({
+    rel, id: s.id, sec: s.section, larga, corta, n: mc.length,
+    pctL: 100 * larga / mc.length, pctC: 100 * corta / mc.length,
+    // con opciones cortas el largo no transmite nada: no se juzga
+    prosa: promMax > 14, promMax: Math.round(promMax), casos,
+  });
 }
 
-filas.sort((a, b) => b.pct - a.pct);
-console.log('¿la correcta es la opción MÁS LARGA?  (al azar ~25 %, tope aceptable ' + TOPE + ' %)');
-console.log('En matemática el número no significa nada: cuando las cuatro opciones son «4 · 6 · 12 · 18»,');
-console.log('«la más larga» es ruido, no una pista. El punto vive en Reading, donde las opciones son prosa.\n');
+const peor = f => Math.max(f.pctL, f.pctC);
+filas.sort((a, b) => peor(b) - peor(a));
+console.log('¿EL LARGO DELATA LA RESPUESTA?  (al azar ~25 % cada columna, tope ' + TOPE + ' %)');
+console.log('Se miden las dos direcciones: arreglar solo "la más larga" crea "la más corta".');
+console.log('Los sets marcados con ~ tienen opciones cortas (números, una palabra, un signo):');
+console.log('ahí el largo es ruido y no una pista, así que no se juzgan.\n');
 let malos = 0;
+console.log('  +larga  -corta   set');
 for (const f of filas) {
-  const alerta = f.pct > TOPE;
+  const alerta = f.prosa && peor(f) > TOPE;
   if (alerta) malos++;
-  console.log(`${alerta ? '✗' : '·'} ${String(Math.round(f.pct)).padStart(3)} %  ${String(f.larga + '/' + f.n).padStart(6)}  ${f.id} (${f.sec})`);
+  const marca = alerta ? '✗' : (f.prosa ? '·' : '~');
+  console.log(`${marca} ${String(Math.round(f.pctL)).padStart(5)} % ${String(Math.round(f.pctC)).padStart(6)} %   ` +
+    `${f.id} (${f.sec}, ${f.n})${f.prosa ? '' : '  opciones cortas: el largo es ruido'}`);
   if (detalle && f.casos.length) {
-    f.casos.forEach(c => console.log(`        ${c.id}: la correcta mide ${c.lc}, la más larga de las otras ${c.max} (+${c.ventaja})`));
+    f.casos.forEach(c => console.log(`        ${c.id}: la correcta es la más ${c.tipo} por ${c.ventaja} caracteres`));
   }
 }
 
-const totalL = filas.reduce((a, f) => a + f.larga, 0);
-const totalN = filas.reduce((a, f) => a + f.n, 0);
-console.log(`\ntotal: ${totalL} de ${totalN} (${(100 * totalL / totalN).toFixed(1)} %)`);
-if (!malos) { console.log(`✓ ningún archivo pasa del ${TOPE} %`); process.exit(0); }
-console.error(`✗ ${malos} archivo(s) por encima del ${TOPE} %`);
+const prosa = filas.filter(f => f.prosa);
+const tL = prosa.reduce((a, f) => a + f.larga, 0);
+const tC = prosa.reduce((a, f) => a + f.corta, 0);
+const tN = prosa.reduce((a, f) => a + f.n, 0) || 1;
+console.log(`\nsolo los de prosa: más larga ${tL}/${tN} (${(100 * tL / tN).toFixed(1)} %) · ` +
+  `más corta ${tC}/${tN} (${(100 * tC / tN).toFixed(1)} %)`);
+console.log('al azar, cada una debería rondar el 25 %');
+if (!malos) { console.log(`✓ ningún set de prosa pasa del ${TOPE} % en ninguna de las dos direcciones`); process.exit(0); }
+console.error(`✗ ${malos} set(s) por encima del ${TOPE} %`);
 process.exit(1);
