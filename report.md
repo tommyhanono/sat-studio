@@ -5,10 +5,10 @@
 **Paginas analizadas:** 1 · **Links revisados:** 2  
 **Framework detectado:** static  
 
-**Resultado:** 34 PASS · 2 FAIL · 1 WARN · 9 no aplica · 8 de revision manual
+**Resultado:** 35 PASS · 1 FAIL · 1 WARN · 9 no aplica · 8 de revision manual
 
 > [!danger] No lanzar todavia
-> Hay 2 punto(s) en FAIL. Estan detallados abajo con archivo o selector.
+> Hay 1 punto(s) en FAIL. Estan detallados abajo con archivo o selector.
 
 ## Bloque 1 — QA de interfaz y movil (20 puntos, todos obligatorios)
 
@@ -42,7 +42,7 @@
 | `B2-01` | Sin titulo/favicon default del framework | PASS | sin 'Vite + React' ni iconos de plantilla |
 | `B2-02` | Sin source maps en produccion | PASS | el build no publica source maps |
 | `B2-03` | Cero errores en consola | PASS | consola limpia |
-| `B2-04` | Bundles de JS razonables | WARN | mayor carga JS por pagina: 1.56 MB; total en build: 1.59 MB |
+| `B2-04` | Bundles de JS razonables | WARN | mayor carga JS por pagina: 1.72 MB; total en build: 1.76 MB |
 | `B2-05` | Titulos unicos por pagina | n/a | una sola pagina: no aplica |
 | `B2-06` | Un solo h1 por pagina, unico por pagina | PASS | un h1 por pagina, todos distintos |
 | `B2-07` | Meta descriptions unicas | n/a | una sola pagina: no aplica |
@@ -55,7 +55,7 @@
 | `B2-14` | Breadcrumbs y jerarquia de paginas | n/a | sin paginas de segundo nivel: no hacen falta |
 | `B2-15` | Structured data (JSON-LD) valido | PASS | valido y coherente con la pagina · tipos: WebApplication |
 | `B2-16` | LocalBusiness schema (si es negocio local) | SKIP | no se declaro negocio local (correr con --local si lo es) — revision manual M-05 |
-| `B2-17` | Imagenes de social share (OG + Twitter) | **FAIL** | la og:image no carga (HTTP 404) |
+| `B2-17` | Imagenes de social share (OG + Twitter) | PASS | og completo y og:image de 1200x630 (17 KB) |
 | `B2-18` | Dominio propio conectado | SKIP | auditoria local: el dominio se verifica en produccion (revision manual M-06) |
 | `B2-19` | Atributo lang en <html> | PASS | lang="en" |
 
@@ -68,7 +68,7 @@
 | `B3-03` | prefers-reduced-motion respetado | PASS | sin animaciones que apagar |
 | `B3-04` | Campos de formulario con etiqueta | PASS | todos los campos etiquetados |
 | `B3-05` | El telefono girado (812x375) | PASS | en horizontal se ve bien |
-| `B3-06` | Core Web Vitals (LCP y CLS) | PASS | LCP 92 ms · CLS 0 (peor pagina, red local sin latencia) |
+| `B3-06` | Core Web Vitals (LCP y CLS) | PASS | LCP 260 ms · CLS 0 (peor pagina, red local sin latencia) |
 | `B3-07` | Regla cero de TOMMY-DESIGN | PASS | sin firmas genericas · tipografia: -apple-system |
 
 ## Evidencia
@@ -80,14 +80,6 @@
 - tools/huella-banco.js:37 — falta estado de carga y exito · console.log('huella    : ' + crypto.createHash('md5').update(lineas.join('\n')).digest('hex'));
 
 **Como se arregla:** Un boton que escribe necesita: deshabilitarse mientras carga, y una confirmacion visible al terminar. Cerrar con la revision manual M-01.
-
-### `B2-17` Imagenes de social share (OG + Twitter) — **FAIL**
-
-la og:image no carga (HTTP 404)
-
-- og:image no carga (HTTP 404): https://sat-studio.vercel.app/og.png
-
-**Como se arregla:** og:image 1200x630 PNG/JPEG, absoluta, y twitter:card=summary_large_image. La tarjeta real se mira en WhatsApp (M-07).
 
 ## Revision manual guiada
 

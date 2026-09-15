@@ -113,6 +113,14 @@ const FAKE = function () {
             { email: 'ana@iae.edu', name: 'Ana', group: 'iae.edu', target: '1450', exam_date: '2027-03-13',
               joined: '2026-08-01', role: 'student', sessions: 12, last_active: '2026-09-12', questions: 140, accuracy: 72.1 },
           ], error: null });
+          if (name === 'sat_class_posts') return Promise.resolve({ data: [
+            { id: 'p1', titulo: 'Homework for Friday', cuerpo: 'Finish the circles set and bring your questions.',
+              fijado: true, autor: 'Ms. Reyes', fecha: '2026-09-14', mio: true },
+            { id: 'p2', titulo: 'Practice test next Tuesday', cuerpo: 'Full mock in class. Bring headphones.',
+              fijado: false, autor: 'Ms. Reyes', fecha: '2026-09-10', mio: true },
+          ], error: null });
+          if (name === 'sat_class_post_save') return Promise.resolve({ data: 'p3', error: null });
+          if (name === 'sat_class_post_delete') return Promise.resolve({ data: null, error: null });
           if (name === 'sat_teacher_overview') return Promise.resolve({ data: {
             group: 'iae.edu', is_admin: true,
             students: [{ name: 'Ana', email: 'ana@iae.edu', target: '1450', exam_date: '2027-03-13',
@@ -377,6 +385,42 @@ const BOTONES_MUERTOS = function () {
       if (terminó) { await sleep(1100); await mirar('resultados'); }
       check('P8 se llega a la pantalla de resultados', terminó);
     }
+
+    // --- P13. el tablón del salón pinta lo que publicó el profesor ---
+    const tablon = await page.evaluate(async () => {
+      const b = document.querySelector('#set-sections .hnav-a[data-tab="clase"]');
+      if (!b) return { hayPestana: false };
+      b.click();
+      await new Promise(r => setTimeout(r, 700));
+      const caja = document.getElementById('class-list');
+      return {
+        hayPestana: true,
+        posts: caja ? caja.querySelectorAll('.class-post').length : 0,
+        fijado: caja ? caja.querySelectorAll('.class-post.pinned').length : 0,
+        compositor: !!document.getElementById('class-save'),
+        texto: caja ? caja.textContent.slice(0, 120) : '',
+      };
+    });
+    check('P13 la pestaña Classroom existe', tablon.hayPestana, tablon);
+    check(`P13b pinta los posts del profesor (${tablon.posts})`, tablon.posts === 2, tablon);
+    check('P13c el fijado va primero y se marca', tablon.fijado === 1, tablon);
+    check('P13d el profesor ve el compositor', tablon.compositor, tablon);
+
+    // --- P13e. un post con HTML tampoco puede ejecutarse ---
+    const postXss = await page.evaluate(() => {
+      window.__XSSP = 0;
+      const veneno = '<img src=x onerror="window.__XSSP=1">';
+      window.CLASS_POSTS = [{ id: 'x', titulo: veneno, cuerpo: veneno, fijado: false, autor: veneno, fecha: '2026-09-15', mio: true }];
+      if (typeof classRender === 'function') classRender();
+      const caja = document.getElementById('class-list');
+      return {
+        ejecutado: window.__XSSP,
+        imgs: caja ? caja.querySelectorAll('img').length : -1,
+        literal: !!(caja && caja.textContent.indexOf('onerror') >= 0),
+      };
+    });
+    check('P13e un post con HTML no se ejecuta', postXss.ejecutado === 0 && postXss.imgs === 0 && postXss.literal, postXss);
+    await page.evaluate(() => { window.CLASS_POSTS = null; });
 
     // --- P11. un nombre con HTML no puede ejecutarse en el panel del profesor ---
     // El nombre lo escribe el estudiante al registrarse. Si el panel lo mete

@@ -446,6 +446,26 @@
   .mock-badge{font-size:.64rem;letter-spacing:.06em;text-transform:uppercase;background:rgba(255,255,255,.22);padding:3px 9px;border-radius:999px;font-weight:700}
   .mock-launch .btn-primary{background:#fff;color:var(--blue);border:0;white-space:nowrap;font-weight:700}
   .mock-launch .btn-primary:hover{background:#eef1ff}
+  .mock-launch-btns{display:flex;gap:10px;flex-wrap:wrap}
+  .class-wrap{padding:2px 0 4px}
+  .class-compose{background:var(--gold-soft);border:1px solid #e6d3a8;border-radius:12px;padding:16px 18px;margin-bottom:18px}
+  .class-hint{font-size:.85rem;color:#5c4212;line-height:1.6;margin-bottom:12px}
+  .class-ta{width:100%;border:1px solid var(--gray-line);border-radius:10px;padding:11px 13px;font-size:16px;font-family:var(--sans);resize:vertical;box-sizing:border-box}
+  .class-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:12px}
+  .class-pin{display:flex;align-items:center;gap:7px;font-size:.85rem;color:#5c4212;font-weight:600;min-height:44px}
+  .class-list{display:flex;flex-direction:column;gap:12px}
+  .class-post{background:#fff;border:1px solid #e3e6ef;border-radius:12px;padding:16px 18px;box-shadow:var(--sombra)}
+  .class-post.pinned{border-left:4px solid var(--gold)}
+  .cp-head h4{font-family:var(--serif);font-size:1.08rem;font-weight:700;color:var(--navy);margin:2px 0 3px}
+  .cp-pin{font-size:.72rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#8a6a15}
+  .cp-meta{font-size:.78rem;color:var(--gray-mid)}
+  .cp-body{font-size:.92rem;line-height:1.65;margin-top:9px}
+  .cp-tools{display:flex;gap:8px;margin-top:12px}
+  .mini.danger{color:var(--red);border-color:#e8bcc3}
+  .fast-wrap{padding:2px 0 4px}
+  .fast-lead{font-size:.92rem;line-height:1.6;margin-bottom:14px}
+  .fast-btns{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+  .fast-note{font-size:.82rem;color:var(--gray-mid);line-height:1.6}
   .mock-mini{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:14px}
   .mock-mini-lbl{font-size:.8rem;opacity:.9;font-weight:600}
   .mini-btn{background:rgba(255,255,255,.16);color:#fff;border:1px solid rgba(255,255,255,.4);border-radius:999px;padding:7px 15px;font-size:.82rem;font-weight:600;cursor:pointer;white-space:nowrap}
@@ -846,16 +866,28 @@
 
     <div id="set-sections"></div>
 
-    <!-- El lanzador del simulacro lo mueve renderHome() a la pestaña "Full test" -->
-    <div class="mock-launch hidden" id="mock-launch">
+    <!-- Los dos lanzadores. renderHome() los mueve a su pestaña: el de sección a
+         Practice Tests y el completo a Full Mocks. Están acá y no generados en JS
+         porque sus botones se cablean una sola vez, en init(). -->
+    <div class="mock-launch hidden" id="mock-launch-sec">
       <div class="mock-launch-txt">
-        <h3>📝 Practice Test <span class="mock-badge">Adaptive</span></h3>
-        <p>Adaptive and timed like the real Digital SAT, with a scaled score at the end. Take the <strong>full test (/1600)</strong>, or just one <strong>section (/800)</strong> when you're short on time.</p>
-        <div class="mock-mini">
-          <span class="mock-mini-lbl">One section only:</span>
-          <button class="mini-btn" id="btn-mock-rw">Reading &amp; Writing · /800</button>
-          <button class="mini-btn" id="btn-mock-math">Math · /800</button>
-        </div>
+        <h3>📝 One section <span class="mock-badge">Adaptive</span></h3>
+        <p>Half the test, timed and adaptive exactly like the real thing, scored out of 800.
+          Reading &amp; Writing takes about 64 minutes; Math about 70. Pick one when you do not have
+          the three hours a full mock needs.</p>
+      </div>
+      <div class="mock-launch-btns">
+        <button class="btn-primary" id="btn-mock-rw">Reading &amp; Writing · /800</button>
+        <button class="btn-primary" id="btn-mock-math">Math · /800</button>
+      </div>
+    </div>
+
+    <div class="mock-launch hidden" id="mock-launch-full">
+      <div class="mock-launch-txt">
+        <h3>📝 Full practice test <span class="mock-badge">Adaptive</span></h3>
+        <p>The whole Digital SAT: both sections, both modules, timed, with the real routing —
+          how you do on Module 1 decides whether Module 2 is the easy or the hard one, and the hard
+          one is what puts 700+ per section in reach. About 2 hours 14 minutes, scored out of 1600.</p>
       </div>
       <button class="btn-primary" id="btn-start-mock">Start full test · /1600</button>
     </div>
@@ -2071,10 +2103,121 @@ function planWire(){
   });
 }
 
+/* ================= CLASSROOM =================
+   El tablón donde el profesor deja tareas y avisos. Lee cualquiera del mismo
+   dominio de correo; escribe solo teacher o admin, y eso lo decide la RPC
+   sat_class_post_save, no esta pantalla. */
+var CLASS_POSTS = null;
+function classLoad(forzar){
+  var caja = $('#class-list');
+  if(!caja) return;
+  if(CLASS_POSTS && !forzar){ classRender(); return; }
+  if(!authAvailable() || !currentUser){
+    caja.innerHTML = '<p class="empty-note">Sign in to see what your teacher posted.</p>';
+    return;
+  }
+  SB.rpc('sat_class_posts').then(function(r){
+    if(r.error){
+      caja.innerHTML = '<p class="empty-note">Could not load the board (' + escHtml(r.error.message || 'unknown error') + ').</p>';
+      return;
+    }
+    CLASS_POSTS = r.data || [];
+    classRender();
+  }).catch(function(){
+    caja.innerHTML = '<p class="empty-note">Could not load the board. Check your connection.</p>';
+  });
+}
+function classRender(){
+  var caja = $('#class-list'); if(!caja) return;
+  var lista = CLASS_POSTS || [];
+  if(!lista.length){
+    caja.innerHTML = '<p class="empty-note">' +
+      (esProfe() ? 'Nothing posted yet. What you write above lands here.'
+                 : 'Your teacher has not posted anything yet.') + '</p>';
+    return;
+  }
+  var puedeEditar = esProfe();
+  caja.innerHTML = lista.map(function(p){
+    return '<article class="class-post' + (p.fijado ? ' pinned' : '') + '">' +
+      '<header class="cp-head">' +
+        (p.fijado ? '<span class="cp-pin">📌 Pinned</span>' : '') +
+        '<h4>' + escHtml(p.titulo) + '</h4>' +
+        '<p class="cp-meta">' + escHtml(p.autor || 'Teacher') + ' · ' + escHtml(p.fecha || '') + '</p>' +
+      '</header>' +
+      (p.cuerpo ? '<p class="cp-body">' + escHtml(p.cuerpo).replace(/\n/g, '<br>') + '</p>' : '') +
+      (puedeEditar
+        ? '<div class="cp-tools">' +
+            '<button type="button" class="mini" data-class-edit="' + escAttr(p.id) + '">Edit</button>' +
+            '<button type="button" class="mini danger" data-class-del="' + escAttr(p.id) + '">Delete</button>' +
+          '</div>'
+        : '') +
+    '</article>';
+  }).join('');
+  Array.prototype.forEach.call(caja.querySelectorAll('[data-class-edit]'), function(b){
+    b.addEventListener('click', function(){
+      var p = (CLASS_POSTS || []).filter(function(x){ return String(x.id) === b.getAttribute('data-class-edit'); })[0];
+      if(!p) return;
+      $('#class-id').value = p.id;
+      $('#class-title').value = p.titulo || '';
+      $('#class-body').value = p.cuerpo || '';
+      $('#class-pin').checked = !!p.fijado;
+      $('#class-save').textContent = 'Save changes';
+      $('#class-cancel').classList.remove('hidden');
+      intenta(function(){ $('#class-title').focus(); }, 'focus');
+    });
+  });
+  Array.prototype.forEach.call(caja.querySelectorAll('[data-class-del]'), function(b){
+    b.addEventListener('click', function(){
+      // Borrar es lo único que no se deshace acá: se pregunta, siempre.
+      if(!window.confirm('Delete this post? Students will stop seeing it.')) return;
+      SB.rpc('sat_class_post_delete', { p_id: b.getAttribute('data-class-del') }).then(function(r){
+        if(r.error){ toast('Could not delete it: ' + (r.error.message || 'unknown error'), true); return; }
+        toast('Post deleted.');
+        classLoad(true);
+      }).catch(function(){ toast('Could not delete it. Check your connection.', true); });
+    });
+  });
+}
+function classWire(){
+  var g = $('#class-save'); if(!g) return;
+  g.addEventListener('click', function(){
+    var t = ($('#class-title').value || '').trim();
+    if(!t){ toast('A post needs a title.', true); return; }
+    g.disabled = true;
+    SB.rpc('sat_class_post_save', {
+      p_id: $('#class-id').value || null,
+      p_titulo: t,
+      p_cuerpo: $('#class-body').value || '',
+      p_fijado: !!$('#class-pin').checked
+    }).then(function(r){
+      g.disabled = false;
+      if(r.error){ toast('Could not post it: ' + (r.error.message || 'unknown error'), true); return; }
+      classLimpiar();
+      toast('Posted. Your students see it now.');
+      classLoad(true);
+    }).catch(function(){ g.disabled = false; toast('Could not post it. Check your connection.', true); });
+  });
+  var c = $('#class-cancel'); if(c) c.addEventListener('click', classLimpiar);
+}
+function classLimpiar(){
+  if(!$('#class-save')) return;
+  $('#class-id').value = ''; $('#class-title').value = ''; $('#class-body').value = '';
+  $('#class-pin').checked = false;
+  $('#class-save').textContent = 'Post';
+  $('#class-cancel').classList.add('hidden');
+}
+
 /* ================= HOME ================= */
 /* Qué pestaña del inicio está abierta. Se recuerda entre visitas, pero arranca
    en 'hoy': lo que el estudiante necesita al abrir es qué hacer AHORA. */
-function homeTab(){ return store.get('satapp_home_tab', 'hoy') || 'hoy'; }
+var HOME_TAB_DEF = 'daily';
+function homeTab(){
+  var t = store.get('satapp_home_tab', HOME_TAB_DEF) || HOME_TAB_DEF;
+  // las pestañas se renombraron el 15-sep-2026; una preferencia vieja no puede
+  // dejar a nadie mirando una pestaña que ya no existe
+  var VIEJAS = { hoy:'daily', entender:'math', practicar:'math', examen:'mocks' };
+  return VIEJAS[t] || t;
+}
 
 function renderHome(){
   var h = getHistory();
@@ -2173,15 +2316,19 @@ function renderHome(){
   var completedSets = sortSets(SETS.filter(function(s){ return doneBySet[s.id]; }));
   var totalMissed = pool.length;
 
-  var G = { hoy:'', entender:'', practicar:'', examen:'', progreso:'' };
+  /* Ocho destinos, cada uno con una sola razón de existir. Antes eran cinco
+     grupos en una página larga y "Practice" era una pared de 77 tarjetas: el
+     estudiante tenía que separar mentalmente matemática de verbal y tema de
+     simulacro. Ahora esa separación la hace la navegación. */
+  var G = { daily:'', math:'', verbal:'', fast:'', tests:'', mocks:'', clase:'', progreso:'' };
   var _planN = (planState().elegidos || []).length;
-  G.hoy += homeSection('🧭 My improvement plan', planHTML(), _planN ? _planN + (_planN === 1 ? ' topic' : ' topics') : null, true);
+  G.daily += homeSection('🧭 My improvement plan', planHTML(), _planN ? _planN + (_planN === 1 ? ' topic' : ' topics') : null, true);
   // La cuenta regresiva aparece sola cuando el estudiante puso su fecha y el
   // examen esta a una semana o menos. Sin fecha no se le muestra a nadie.
   var _dl = fwDaysLeft();
   if(_dl !== null && _dl <= 7 && _dl >= -1){
     var fw = fwPlanHTML();
-    G.hoy += homeSection('Final week — your day-by-day plan', fw.html, fw.badge, true);
+    G.daily += homeSection('Final week — your day-by-day plan', fw.html, fw.badge, true);
   }
   {
     var stp = studyState();
@@ -2193,28 +2340,33 @@ function renderHome(){
       '<h4 class="study-h">2 · Verbal</h4>' + vT.map(function(t){ return studyTopicCard(t, stp.topics[t.key]); }).join('') +
       '<h4 class="study-h">3 · Math Final (100%)</h4>' + studyFinalCard('math', stp) +
       '<h4 class="study-h">4 · English Final (100%)</h4>' + studyFinalCard('rw', stp);
-    G.entender += homeSection('Mastery path', spBody, masteredAll + '/' + STUDY_TOPICS.length, true);
+    G.daily += homeSection('Mastery path', spBody, masteredAll + '/' + STUDY_TOPICS.length, true);
   }
   var dm = dailyMiniHTML();
-  G.hoy += homeSection('🌅 Daily Mini Mocks', dm.html, (dm.streak > 0 ? '🔥 ' + dm.streak + ' · ' : '') + dm.done + '/2 today', true);
+  G.daily += homeSection('🌅 Daily Mini Mocks', dm.html, (dm.streak > 0 ? '🔥 ' + dm.streak + ' · ' : '') + dm.done + '/2 today', true);
   var tf = todaysFocusHTML();
-  if(tf) G.hoy += homeSection('🎯 Today’s Focus', tf, 3, true);
+  if(tf) G.daily += homeSection('🎯 Today’s Focus', tf, 3, true);
   var _ccSt = planStats().circles;
   var _ccMio = (_ccSt && _ccSt.hechas >= PLAN_MIN_MEDIDO)
     ? ' You are at <b>' + _ccSt.bien + '/' + _ccSt.hechas + '</b> on circles.' : '';
   var ccTeaser = '<p class="study-hint">Every SAT circle question is one of <b>6 fixed shapes</b>. This class walks each one with its diagram, a worked example and the exact trap where points get lost, then drops you into hard practice.' + _ccMio + '</p><button class="btn-primary" data-open-class="circles">Open the Circles class</button>';
-  G.entender += homeSection('📐 Circles — Full Class', ccTeaser, 'NEW', true);
+  G.math += homeSection('📐 Circles — Full Class', ccTeaser, 'NEW', true);
   var ptM = (typeof ptMasteredCount === 'function') ? ptMasteredCount() : 0;
   var ptTeaser = '<p class="study-hint">Punctuation costs points when the RULES are not automatic yet. This trainer doesn’t give practice passages — it drills <b>the rules themselves</b>, over and over: every answer (right or wrong) shows you the full rule again, a rule is mastered only after <b>3 correct in a row</b>, and one miss resets it. When every dot is green, prove it with the <b>Perfect Run</b> — all questions, zero misses, or you start over.</p>' +
     '<div class="pt-home-btns"><button class="btn-primary" data-pt="drill">Memorization drill</button><button class="btn-outline" data-pt="read">Read the 12 rules</button><button class="btn-outline" data-pt="perfect">Perfect Run</button></div>';
-  G.entender += homeSection('🧠 Punctuation Rules — Know Them 100%', ptTeaser, ptM + '/12', true);
+  G.verbal += homeSection('🧠 Punctuation Rules — Know Them 100%', ptTeaser, ptM + '/12', true);
   var sr = spacedReviewHTML();
-  if(sr){ var srDue = spacedQueue().due.length; G.hoy += homeSection('🔁 Spaced Review', sr, srDue || null, true); }
-  var learnBody = '<p class="study-hint">' + LEARN_ROADMAP + '</p>' +
-    '<h4 class="study-h">Math — method + trap + worked example</h4>' + LESSONS.filter(function(l){ return l.sec === 'math'; }).map(lessonCardHTML).join('') +
-    '<h4 class="study-h">Reading &amp; Writing</h4>' + LESSONS.filter(function(l){ return l.sec === 'rw'; }).map(lessonCardHTML).join('');
-  G.entender += homeSection('📚 Learn — Master Each Skill', learnBody, LESSONS.length, false);
-  G.entender += homeSection('📋 Exam-Day Playbook', PLAYBOOK_HTML, null, false);
+  // Se guarda y se agrega más abajo: en Fast Pace lo primero tiene que ser el
+  // botón que arranca algo en cinco minutos, no el panel de repaso.
+  var _srHtml = sr ? homeSection('🔁 Spaced Review', sr, spacedQueue().due.length || null, true) : '';
+  /* Las lecciones se parten por sección: la de matemática vive con los sets de
+     matemática y la de verbal con los de verbal. Tenerlas juntas obligaba a
+     buscar la propia entre las de la otra materia. */
+  var _lecMath = LESSONS.filter(function(l){ return l.sec === 'math'; });
+  var _lecRw   = LESSONS.filter(function(l){ return l.sec === 'rw'; });
+  G.math   += homeSection('📚 Method, trap and worked example', '<p class="study-hint">' + LEARN_ROADMAP + '</p>' + _lecMath.map(lessonCardHTML).join(''), _lecMath.length, false);
+  G.verbal += homeSection('📚 Method, trap and worked example', '<p class="study-hint">' + LEARN_ROADMAP + '</p>' + _lecRw.map(lessonCardHTML).join(''), _lecRw.length, false);
+  G.mocks += homeSection('📋 Exam-Day Playbook', PLAYBOOK_HTML, null, false);
   var mocks = pastMocks();
   if(mocks.length){
     var mockRows = mocks.slice().reverse().map(function(e){
@@ -2245,7 +2397,7 @@ function renderHome(){
       (eb != null ? '<div class="set-done">✓ completed</div>' : '') +
       '</div><div class="set-actions"><button class="btn-primary" data-start-engmock="' + ei + '">' + (eb != null ? 'Retake' : 'Start') + '</button></div></div>';
   }
-  G.examen += homeSection('English Mocks', engCards, N_ENG, true);
+  G.tests += homeSection('English Mocks', engCards, N_ENG, true);
 
   // ===== Math Mocks category (Math only, adaptive, /800) =====
   var N_MATH = 6;
@@ -2261,7 +2413,7 @@ function renderHome(){
       (mb != null ? '<div class="set-done">✓ completed</div>' : '') +
       '</div><div class="set-actions"><button class="btn-primary" data-start-mathmock="' + mmi + '">' + (mb != null ? 'Retake' : 'Start') + '</button></div></div>';
   }
-  G.examen += homeSection('Math Mocks', mmCards, N_MATH, true);
+  G.tests += homeSection('Math Mocks', mmCards, N_MATH, true);
 
   // ===== Realistic Hard Mocks (true-to-test difficult form: tough M1, EARNED hard M2 with real composition) =====
   var N_REAL = 4;
@@ -2277,7 +2429,7 @@ function renderHome(){
       (rb != null ? '<div class="set-done">✓ completed</div>' : '') +
       '</div><div class="set-actions"><button class="btn-primary" data-start-realmock="' + ri + '">' + (rb != null ? 'Retake' : 'Start') + '</button></div></div>';
   }
-  G.examen += homeSection('Realistic Hard Mocks · true to test', realCards, N_REAL, true);
+  G.mocks += homeSection('Realistic Hard Mocks · true to test', realCards, N_REAL, true);
 
   // ===== Extreme Mocks category (only extreme-flagged questions — real hard-Module-2 level) =====
   var N_EXTREME = 4;
@@ -2293,7 +2445,7 @@ function renderHome(){
       (xb != null ? '<div class="set-done">✓ completed</div>' : '') +
       '</div><div class="set-actions"><button class="btn-primary" data-start-extrememock="' + xi + '">' + (xb != null ? 'Retake' : 'Start') + '</button></div></div>';
   }
-  G.examen += homeSection('Extreme Mocks · brutal tier', exCards, N_EXTREME, true);
+  G.mocks += homeSection('Extreme Mocks · brutal tier', exCards, N_EXTREME, true);
 
   // ===== Hard Mocks category (all questions difficult, no easy routing) =====
   var N_HARD = 6;
@@ -2309,7 +2461,7 @@ function renderHome(){
       (hb != null ? '<div class="set-done">✓ completed</div>' : '') +
       '</div><div class="set-actions"><button class="btn-primary" data-start-hardmock="' + hi + '">' + (hb != null ? 'Retake' : 'Start') + '</button></div></div>';
   }
-  G.examen += homeSection('Hard Mocks · all difficult', hardCards, N_HARD, true);
+  G.mocks += homeSection('Hard Mocks · all difficult', hardCards, N_HARD, true);
 
   // ===== Full Mocks category (numbered, stable full-length adaptive tests) =====
   var N_MOCKS = 8;
@@ -2325,17 +2477,72 @@ function renderHome(){
       (best != null ? '<div class="set-done">✓ completed</div>' : '') +
       '</div><div class="set-actions"><button class="btn-primary" data-start-fullmock="' + mi + '">' + (best != null ? 'Retake' : 'Start') + '</button></div></div>';
   }
-  G.examen += homeSection('Full Mocks', mockCards, N_MOCKS, true);
-  G.practicar += homeSection('Math', mathSets.length ? mathSets.map(setCard).join('') : '<div class="empty-note">No Math sets pending — see Completed below.</div>', mathSets.length, true);
-  G.practicar += homeSection('Verbal', verbalSets.length ? verbalSets.map(setCard).join('') : '<div class="empty-note">No Verbal sets pending — see Completed below.</div>', verbalSets.length, true);
-  G.practicar += homeSection('Things To Work On', redoCard('redo-math', 'Math', 'math') + redoCard('redo-verbal', 'Verbal', 'rw'), totalMissed || null, true);
+  G.mocks += homeSection('Full Mocks', mockCards, N_MOCKS, true);
+  G.math += homeSection('All Math sets', mathSets.length ? mathSets.map(setCard).join('') : '<div class="empty-note">No Math sets pending — see Completed below.</div>', mathSets.length, true);
+  G.verbal += homeSection('All Verbal sets', verbalSets.length ? verbalSets.map(setCard).join('') : '<div class="empty-note">No Verbal sets pending — see Completed below.</div>', verbalSets.length, true);
+  /* Fast Pace: lo que se puede hacer en cinco minutos. Existe porque el hueco
+     real de un estudiante de colegio no son 70 minutos seguidos, son los diez
+     entre clase y clase — y si en ese rato la app solo le ofrece un simulacro
+     de dos horas, no hace nada. Los tres botones arman el test en el momento con
+     los temas que el plan ya identificó como los más flojos. */
+  var _fastTemas = (planState().elegidos && planState().elegidos.length)
+    ? planState().elegidos : planRecomendados(planRanking());
+  var _fastNom = _fastTemas.map(function(k){
+    var t = PLAN_TOPICS.filter(function(x){ return x.key === k; })[0];
+    return t ? t.t : k;
+  });
+  var _fastHtml =
+    '<div class="fast-wrap">' +
+      '<p class="fast-lead">Built right now from your weakest topics: <b>' +
+        (_fastNom.length ? escHtml(_fastNom.slice(0, 3).join(', ')) : 'we need a few answers first') +
+      '</b>. No timer, explanation after every question.</p>' +
+      '<div class="fast-btns">' +
+        '<button type="button" class="btn-primary" data-fast="5">5 questions · ~5 min</button>' +
+        '<button type="button" class="btn-outline" data-fast="10">10 questions · ~10 min</button>' +
+        '<button type="button" class="btn-outline" data-fast="15">15 questions · ~15 min</button>' +
+      '</div>' +
+      '<p class="fast-note">Short and often beats long and rare. Ten minutes a day is worth more ' +
+        'than one two-hour session a week — the gap between sessions is what makes it stick.</p>' +
+    '</div>';
+  G.fast += homeSection('⚡ Quick drill', _fastHtml, null, true);
+  G.fast += _srHtml;
+  G.fast += homeSection('Redo your mistakes', redoCard('redo-math', 'Math', 'math') + redoCard('redo-verbal', 'Verbal', 'rw'), totalMissed || null, true);
+  /* ---- Classroom: el tablón del profesor ----
+     El grupo sale del dominio del correo, igual que en el panel de admin y en la
+     vista de profesor: nadie tiene que escribir a qué clase pertenece. Quien
+     escribe es teacher o admin, y el límite está puesto en la RPC, no acá. */
+  var _esProfe = esProfe();
+  G.clase += homeSection('🏫 Classroom',
+    '<div class="class-wrap">' +
+      (_esProfe
+        ? '<div class="class-compose">' +
+            '<p class="class-hint">Anything you post here shows up for every student with a ' +
+              '<b>' + escHtml((currentUser && currentUser.email ? currentUser.email.split('@')[1] : 'your school')) + '</b> account.</p>' +
+            '<input type="hidden" id="class-id" value="">' +
+            '<label class="auth-lbl" for="class-title">Title</label>' +
+            '<input id="class-title" class="auth-inp" type="text" maxlength="120" placeholder="Homework for Friday">' +
+            '<label class="auth-lbl" for="class-body">Message</label>' +
+            '<textarea id="class-body" class="class-ta" rows="4" maxlength="2000" placeholder="What they need to know, and by when."></textarea>' +
+            '<div class="class-actions">' +
+              '<label class="class-pin"><input type="checkbox" id="class-pin"> Pin to the top</label>' +
+              '<button type="button" class="btn-primary" id="class-save">Post</button>' +
+              '<button type="button" class="btn-outline hidden" id="class-cancel">Cancel edit</button>' +
+            '</div>' +
+          '</div>'
+        : '') +
+      '<div id="class-list" class="class-list"><p class="empty-note">Loading…</p></div>' +
+    '</div>', null, true);
+
   G.progreso += homeSection('Completed', completedSets.length ? completedSets.map(setCard).join('') : '<div class="empty-note">Nothing completed yet.</div>', completedSets.length, false);
   var GRUPOS = [
-    ['hoy',       'Today',         'What to do right now'],
-    ['entender',  'Learn',         'Lessons and rules, before you drill'],
-    ['practicar', 'Practice',      'Sets by topic, at your pace'],
-    ['examen',    'Full test',     'Timed, adaptive practice tests'],
-    ['progreso',  'My progress',   'What you have done, and what is left']
+    ['daily',    'Daily',          'What to do right now — start here'],
+    ['math',     'Math Topics',    'Algebra, advanced math, data and geometry — plus the method for each'],
+    ['verbal',   'Verbal Topics',  'Reading, writing and the punctuation rules — plus the method for each'],
+    ['fast',     'Fast Pace',      'Short bursts. Five minutes still counts'],
+    ['tests',    'Practice Tests', 'One section, timed, scored out of 800'],
+    ['mocks',    'Full Mocks',     'The whole test, adaptive, scored out of 1600'],
+    ['clase',    'Classroom',      'From your teacher'],
+    ['progreso', 'My Progress',    'Everything your answers say about you']
   ];
   /* PESTAÑAS, no una página larga.
      Antes los cinco grupos se pintaban uno debajo del otro: 21 secciones
@@ -2343,7 +2550,7 @@ function renderHome(){
      entre veintiún acordeones, que es la manera más rápida de que no haga nada.
      Ahora se ve UN grupo a la vez y se arranca en "Today". */
   var activa = homeTab();
-  if(!G[activa]) activa = 'hoy';
+  if(!G[activa]) activa = HOME_TAB_DEF;
   var nav = '', cuerpo = '';
   GRUPOS.forEach(function(g){
     if(!G[g[0]]) return;
@@ -2364,16 +2571,31 @@ function renderHome(){
     });
   });
 
-  /* El lanzador del simulacro vive en el HTML (tiene sus botones cableados una
-     sola vez en init), pero se MUEVE a la pestaña de examen, que es donde lo va
-     a buscar el estudiante. En el resto de las pestañas no se ve. */
-  var _ml = $('#mock-launch'), _grp = $('#g-examen');
-  if(_ml){
-    if(_grp){ _grp.insertBefore(_ml, _grp.firstChild.nextSibling); _ml.classList.remove('hidden'); }
-    else { _ml.classList.add('hidden'); $('#view-home .home-wrap').appendChild(_ml); }
-  }
+  /* Cada lanzador a su pestaña. Fuera de ella se esconde y se guarda al final del
+     home, para que sus listeners (cableados una vez en init) sigan vivos. */
+  [['#mock-launch-sec', 'g-tests'], ['#mock-launch-full', 'g-mocks']].forEach(function(par){
+    var el = $(par[0]), grupo = document.getElementById(par[1]);
+    if(!el) return;
+    if(grupo){ grupo.insertBefore(el, grupo.firstChild.nextSibling); el.classList.remove('hidden'); }
+    else { el.classList.add('hidden'); $('#view-home .home-wrap').appendChild(el); }
+  });
   planWire();
+  if(activa === 'clase'){ classWire(); classLoad(); }
 
+  Array.prototype.forEach.call(document.querySelectorAll('#set-sections [data-fast]'), function(b){
+    b.addEventListener('click', function(){
+      var n = parseInt(b.getAttribute('data-fast'), 10) || 5;
+      var temas = (planState().elegidos && planState().elegidos.length)
+        ? planState().elegidos : planRecomendados(planRanking());
+      if(!temas.length){ toast('Answer a few questions first so there is something to target.', true); return; }
+      // minutos ≈ una pregunta por minuto, que es el ritmo real del examen
+      var set = planBuildSet(temas, { minutos: n, modo: 'drill', nivel: 'examen' });
+      if(!set.questions.length){ toast('No questions left for those topics. Pick others in Daily → My improvement plan.', true); return; }
+      set.questions = set.questions.slice(0, n);
+      set.title = n + '-question quick drill';
+      _beginSession(set, 'drill');
+    });
+  });
   Array.prototype.forEach.call(document.querySelectorAll('#set-sections [data-start-exam]'), function(b){
     b.addEventListener('click', function(){ if(!b.disabled) startSession(b.getAttribute('data-start-exam'), 'exam'); });
   });

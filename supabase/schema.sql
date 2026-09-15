@@ -228,4 +228,101 @@ end $$;
 revoke all on function public.sat_teacher_overview() from public, anon;
 grant  execute on function public.sat_teacher_overview() to authenticated;
 
+-- ============================================================
+-- CLASSROOM: el tablón del profesor.
+-- Un post pertenece a un GRUPO, y el grupo es el dominio del correo — la misma
+-- regla que usan el panel de admin y la vista de profesor, así que nadie tiene
+-- que escribir a qué clase pertenece. Lee cualquiera de ese dominio; escribe
+-- solo teacher o admin, y ese límite está acá, no en la pantalla.
+-- ============================================================
+
+create table if not exists sat.posts (
+  id          uuid primary key default gen_random_uuid(),
+  grupo       text not null,
+  autor_id    uuid not null references auth.users(id) on delete cascade,
+  autor_nom   text,
+  titulo      text not null,
+  cuerpo      text not null default '',
+  fijado      boolean not null default false,
+  created_at  timestamptz not null default now(),
+  updated_at  timestamptz not null default now()
+);
+create index if not exists sat_posts_grupo_idx on sat.posts (grupo, fijado desc, created_at desc);
+
+alter table sat.posts enable row level security;
+revoke all on sat.posts from anon, authenticated;
+
+create or replace function public.sat_dominio_actual()
+returns text language sql stable security definer set search_path = '' as $$
+  select lower(split_part(u.email, '@', 2)) from auth.users u where u.id = (select auth.uid());
+$$;
+
+create or replace function public.sat_class_posts()
+returns jsonb language plpgsql security definer set search_path = '' as $$
+declare v_dom text; res jsonb;
+begin
+  if (select auth.uid()) is null then raise exception 'not authorized' using errcode = '42501'; end if;
+  v_dom := public.sat_dominio_actual();
+  select coalesce(jsonb_agg(to_jsonb(t) order by t.fijado desc, t.created_at desc), '[]'::jsonb) into res
+  from (
+    select p.id, p.titulo, p.cuerpo, p.fijado,
+           coalesce(p.autor_nom, 'Teacher') as autor,
+           to_char(p.created_at, 'YYYY-MM-DD') as fecha,
+           (p.autor_id = (select auth.uid())) as mio
+    from sat.posts p
+    where p.grupo = v_dom
+  ) t;
+  return res;
+end $$;
+
+create or replace function public.sat_class_post_save(
+  p_id uuid, p_titulo text, p_cuerpo text, p_fijado boolean
+) returns uuid language plpgsql security definer set search_path = '' as $$
+declare v_role text; v_dom text; v_id uuid; v_nom text;
+begin
+  v_role := coalesce((auth.jwt() -> 'app_metadata' ->> 'role'), '');
+  if v_role not in ('teacher', 'admin') then
+    raise exception 'not authorized' using errcode = '42501';
+  end if;
+  if coalesce(btrim(p_titulo), '') = '' then
+    raise exception 'a post needs a title' using errcode = '22023';
+  end if;
+  v_dom := public.sat_dominio_actual();
+  select coalesce(u.raw_user_meta_data->>'name', split_part(u.email, '@', 1)) into v_nom
+  from auth.users u where u.id = (select auth.uid());
+
+  if p_id is null then
+    insert into sat.posts(grupo, autor_id, autor_nom, titulo, cuerpo, fijado)
+    values (v_dom, (select auth.uid()), v_nom, btrim(p_titulo), coalesce(p_cuerpo, ''), coalesce(p_fijado, false))
+    returning id into v_id;
+  else
+    update sat.posts
+       set titulo = btrim(p_titulo), cuerpo = coalesce(p_cuerpo, ''),
+           fijado = coalesce(p_fijado, false), updated_at = now()
+     where id = p_id and grupo = v_dom
+     returning id into v_id;
+    if v_id is null then raise exception 'post not found in your group' using errcode = '42501'; end if;
+  end if;
+  return v_id;
+end $$;
+
+create or replace function public.sat_class_post_delete(p_id uuid)
+returns void language plpgsql security definer set search_path = '' as $$
+declare v_role text;
+begin
+  v_role := coalesce((auth.jwt() -> 'app_metadata' ->> 'role'), '');
+  if v_role not in ('teacher', 'admin') then
+    raise exception 'not authorized' using errcode = '42501';
+  end if;
+  delete from sat.posts where id = p_id and grupo = public.sat_dominio_actual();
+end $$;
+
+revoke all on function public.sat_dominio_actual() from public, anon;
+revoke all on function public.sat_class_posts() from public, anon;
+revoke all on function public.sat_class_post_save(uuid, text, text, boolean) from public, anon;
+revoke all on function public.sat_class_post_delete(uuid) from public, anon;
+grant execute on function public.sat_class_posts() to authenticated;
+grant execute on function public.sat_class_post_save(uuid, text, text, boolean) to authenticated;
+grant execute on function public.sat_class_post_delete(uuid) to authenticated;
+
 notify pgrst, 'reload schema';
