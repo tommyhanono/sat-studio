@@ -14,7 +14,7 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text with the most logical transition?',
       choices:{A:'However,', B:'For example,', C:'Therefore,', D:'In summary,'},
       correct:'A',
-      expCorrect:'Antes de mirar las opciones, lee la relación: el jardín SIEMPRE cultivó solo vegetales, pero este año sembró flores. Predice tu transición: es un cambio que rompe la costumbre, o sea contraste. “However” marca esa oposición entre lo que siempre pasaba y lo nuevo.',
+      expCorrect:'Before you look at the options, read the relationship: the garden ALWAYS grew only vegetables, but this year he planted flowers. Predict your transition: it is a change breaking the habit, that is, contrast. “However” marks that opposition between what always happened and what is new.',
       expWrong:{
         B:'“For example” anuncia un ejemplo de la 1ª idea, pero las flores no son un caso de “solo vegetales”: la contradicen.',
         C:'“Therefore” marca consecuencia, y sembrar flores no es un efecto de haber cultivado solo vegetales, es un giro contra esa costumbre.',
@@ -29,7 +29,7 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text with the most logical transition?',
       choices:{A:'Nevertheless,', B:'Next,', C:'In contrast,', D:'For instance,'},
       correct:'B',
-      expCorrect:'Antes de mirar las opciones, lee la relación: son dos pasos de una receta en orden, primero batir y luego incorporar la harina. Predice tu transición: algo de secuencia. “Next” marca el paso que sigue.',
+      expCorrect:'Before you look at the options, read the relationship: these are two steps of a recipe in order, first beat and then fold in the flour. Predict your transition: something about sequence. “Next” marks the step that follows.',
       expWrong:{
         A:'“Nevertheless” marca contraste, pero el 2º paso no se opone al 1º: lo continúa en orden.',
         C:'“In contrast” señala oposición entre dos cosas, y aquí no se contrastan pasos, se ordenan uno tras otro.',
@@ -44,7 +44,7 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text with the most logical transition?',
       choices:{A:'Moreover,', B:'However,', C:'As a result,', D:'In other words,'},
       correct:'A',
-      expCorrect:'Antes de mirar las opciones, lee la relación: la 1ª idea da una ventaja (batería larga) y la 2ª suma otra ventaja parecida (pantalla más brillante). Predice tu transición: algo que agrega. “Moreover” suma una segunda cualidad del mismo tipo.',
+      expCorrect:'Before you look at the options, read the relationship: the 1st idea gives an advantage (long battery) and the 2nd adds another similar advantage (brighter screen). Predict your transition: something that adds on. “Moreover” stacks a second quality of the same kind.',
       expWrong:{
         B:'“However” marca contraste, pero las dos ideas van en la misma dirección (dos ventajas), no se oponen.',
         C:'“As a result” marca consecuencia, y la pantalla brillante no es un efecto de la batería larga, es otra ventaja aparte.',

@@ -16,11 +16,11 @@
         correct:'B',
         expCorrect:'40% de 350 = 0.40 × 350 = 140 estudiantes.',
         expWrong:{
-          A:'40 es el porcentaje mismo, no la cantidad de estudiantes. Tienes que multiplicarlo por el total.',
-          C:'210 es el 60% (los que NO están en la banda). Piden el 40%.',
+          A:'40 is the percent itself, not the number of students. You have to multiply it by the total.',
+          C:'210 is 60% (the ones NOT in the band). They are asking for the 40%.',
           D:'245 es el 70% de 350; no corresponde al 40% que se pide.'
         },
-        tip:'"Porcentaje de un total" = decimal × total en un solo paso. 40% → 0.40 × 350. Si el resultado te da el mismo número del porcentaje, olvidaste multiplicar.'
+        tip:'"Percent of a total" = decimal × total in one step. 40% → 0.40 × 350. If your result is the same number as the percent, you forgot to multiply.'
       },
       {
         id:'DAT-02', type:'mc', domain:'Problem-Solving & Data Analysis', difficulty:'Fácil',
@@ -30,8 +30,8 @@
         correct:'C',
         expCorrect:'Aumento porcentual = (cambio / valor original) × 100 = (75 − 60)/60 × 100 = 15/60 × 100 = 25%.',
         expWrong:{
-          A:'15% confunde el cambio absoluto (15 cm) con el porcentaje. Hay que dividir entre el valor original.',
-          B:'20% sale de dividir el cambio entre el valor NUEVO (15/75), pero el porcentaje de cambio siempre se calcula sobre el valor original.',
+          A:'15% confuses the absolute change (15 cm) with the percent. You have to divide by the original value.',
+          B:'20% comes from dividing the change by the NEW value (15/75), but percent change is always figured on the original value.',
           D:'75% es la altura final en cm, no un porcentaje de cambio.'
         },
         tip:'Porcentaje de cambio = (nuevo − viejo) / VIEJO. El denominador siempre es el valor de partida. Divide entre 75 y ya te equivocaste.'
@@ -42,13 +42,13 @@
         stem:'In a club, the ratio of boys to girls is 3 to 5. If there are 240 members in the club, how many of the members are girls?',
         choices:{A:'90', B:'96', C:'144', D:'150'},
         correct:'D',
-        expCorrect:'La razón 3:5 tiene 3 + 5 = 8 partes. Cada parte = 240 / 8 = 30 miembros. Las niñas son 5 partes: 5 × 30 = 150.',
+        expCorrect:'The ratio 3:5 has 3 + 5 = 8 parts. Each part = 240 / 8 = 30 members. The girls are 5 parts: 5 × 30 = 150.',
         expWrong:{
-          A:'90 es el número de NIÑOS (3 partes × 30). Piden las niñas.',
-          B:'96 sale de repartir mal las partes; con 8 partes iguales cada una vale 30, no 32.',
-          C:'144 sería el 60% de 240 tratando la razón como 3:5 = 2:3; la razón correcta da 8 partes, no 5.'
+          A:'90 is the number of BOYS (3 parts × 30). They are asking for the girls.',
+          B:'96 comes from splitting the parts wrong; with 8 equal parts each one is 30, not 32.',
+          C:'144 would be 60% of 240, treating the ratio as 3:5 = 2:3; the correct ratio gives 8 parts, not 5.'
         },
-        tip:'Razón a:b sobre un total → suma las partes (a+b), divide el total entre esa suma, y multiplica por la parte que te piden. Cuidado con contestar el grupo equivocado.'
+        tip:'Ratio a:b over a total → add the parts (a+b), divide the total by that sum, and multiply by the part they asked for. Careful not to answer for the wrong group.'
       },
       {
         id:'DAT-04', type:'mc', domain:'Problem-Solving & Data Analysis', difficulty:'Media',
@@ -58,11 +58,11 @@
         correct:'C',
         expCorrect:'Velocidad = 150 / 2.5 = 60 millas por hora. En 4 horas: 60 × 4 = 240 millas.',
         expWrong:{
-          A:'96 invierte la razón (multiplica por 2.5/4 en vez de por la velocidad).',
+          A:'96 flips the ratio (it multiplies by 2.5/4 instead of by the speed).',
           B:'160 usa una velocidad mal calculada; 150/2.5 = 60, no 40.',
-          D:'375 sale de 150 × 2.5, multiplicando en vez de dividir para hallar la tasa.'
+          D:'375 comes from 150 × 2.5, multiplying instead of dividing to find the rate.'
         },
-        tip:'Primero saca la tasa por unidad (millas por HORA = distancia/tiempo), luego multiplica por el tiempo nuevo. Divide antes de multiplicar y evitas la trampa.'
+        tip:'First get the unit rate (miles per HOUR = distance/time), then multiply by the new time. Divide before you multiply and you dodge the trap.'
       },
       {
         id:'DAT-05', type:'spr', domain:'Problem-Solving & Data Analysis', difficulty:'Fácil',
@@ -71,7 +71,7 @@
         answer:'18',
         expCorrect:'Media = suma / cantidad. Suma = 12 + 15 + 18 + 20 + 25 = 90. Media = 90 / 5 = 18. Respuesta: 18.',
         expWrong:{},
-        tip:'Media = suma de todos los valores dividida entre cuántos hay. No la confundas con la mediana (aquí el valor central ordenado también es 18, pero eso es coincidencia).'
+        tip:'Mean = the sum of all the values divided by how many there are. Do not confuse it with the median (here the middle ordered value is also 18, but that is a coincidence).'
       },
       {
         id:'DAT-06', type:'mc', domain:'Problem-Solving & Data Analysis', difficulty:'Media',
@@ -84,22 +84,22 @@
           D:'There is not enough information to compare the standard deviations.'
         },
         correct:'B',
-        expCorrect:'La desviación estándar mide qué tan dispersos están los datos alrededor de la media. Los valores de X están muy juntos (48 a 52), mientras que los de Y están muy separados (10 a 90). Como Y está más disperso, su desviación estándar es mayor.',
+        expCorrect:'Standard deviation measures how spread out the data are around the mean. The X values sit very close together (48 to 52), while the Y values are far apart (10 to 90). Since Y is more spread out, its standard deviation is larger.',
         expWrong:{
-          A:'Al revés: X es el conjunto MÁS agrupado, así que tiene la desviación estándar MENOR, no la mayor.',
-          C:'No son iguales: tener la misma media no implica la misma dispersión. Y está mucho más esparcido.',
-          D:'Sí hay información suficiente: conocemos todos los valores, así que podemos comparar la dispersión directamente.'
+          A:'The other way around: X is the MORE clustered set, so it has the SMALLER standard deviation, not the larger one.',
+          C:'They are not equal: having the same mean does not imply the same spread. Y is far more scattered.',
+          D:'There is enough information: we know every value, so we can compare the spread directly.'
         },
-        tip:'Desviación estándar = qué tan "esparcidos" están los datos alrededor de la media. Más juntos → menor. Más separados → mayor. No necesitas calcularla: compara los rangos de un vistazo.'
+        tip:'Standard deviation = how "spread out" the data are around the mean. Closer together → smaller. Further apart → larger. You do not need to compute it: compare the ranges at a glance.'
       },
       {
         id:'DAT-07', type:'spr', domain:'Problem-Solving & Data Analysis', difficulty:'Media',
         skill:'Probabilidad (evento simple)',
         stem:'A bag contains 30 marbles: 12 are red, 8 are green, and 10 are blue. If one marble is selected at random from the bag, what is the probability that it is red?',
         answer:'2/5',
-        expCorrect:'Probabilidad = casos favorables / casos totales = 12 / 30 = 2/5. Formas válidas para el box: 2/5 o .4 o 0.4 (también 12/30, mismo valor). Respuesta: 2/5.',
+        expCorrect:'Probability = favorable cases / total cases = 12 / 30 = 2/5. Valid forms for the box: 2/5 or .4 or 0.4 (also 12/30, the same value). Answer: 2/5.',
         expWrong:{},
-        tip:'Probabilidad simple = (lo que quieres) / (el total). Aquí 12 rojas de 30. Simplifica o pon el decimal; 2/5 y .4 valen igual en el box.'
+        tip:'Simple probability = (what you want) / (the total). Here 12 red out of 30. Simplify it or write the decimal; 2/5 and .4 are worth the same in the box.'
       },
       {
         id:'DAT-08', type:'mc', domain:'Problem-Solving & Data Analysis', difficulty:'Difícil',
@@ -107,13 +107,13 @@
         stem:'A survey was given to 200 people. Of the 120 adults surveyed, 90 said they prefer tea over coffee. If one of the surveyed adults is selected at random, what is the probability that this person prefers tea over coffee?',
         choices:{A:'0.375', B:'0.45', C:'0.60', D:'0.75'},
         correct:'D',
-        expCorrect:'La condición ya restringe el grupo a los adultos, así que el denominador es 120 (no 200). Probabilidad = 90 / 120 = 3/4 = 0.75.',
+        expCorrect:'The condition already narrows the group to the adults, so the denominator is 120 (not 200). Probability = 90 / 120 = 3/4 = 0.75.',
         expWrong:{
-          A:'0.375 divide 90 entre 240; no hay 240 personas y el grupo relevante son los 120 adultos.',
-          B:'0.45 usa 90/200, tomando el total completo en vez de solo los adultos. La palabra "de los adultos" fija el denominador en 120.',
-          C:'0.60 es la proporción de adultos en la encuesta (120/200), no la probabilidad pedida.'
+          A:'0.375 divides 90 by 240; there are no 240 people and the relevant group is the 120 adults.',
+          B:'0.45 uses 90/200, taking the whole total instead of only the adults. The words "of the adults" fix the denominator at 120.',
+          C:'0.60 is the proportion of adults in the survey (120/200), not the probability being asked for.'
         },
-        tip:'Probabilidad condicional: la frase "de los adultos…" te dice que el denominador es SOLO ese subgrupo (120), no el total. Favorables/subgrupo, no favorables/total.'
+        tip:'Conditional probability: the phrase "of the adults…" tells you the denominator is ONLY that subgroup (120), not the total. Favorable/subgroup, not favorable/total.'
       },
       {
         id:'DAT-09', type:'mc', domain:'Problem-Solving & Data Analysis', difficulty:'Media',
@@ -121,13 +121,13 @@
         stem:'A scatterplot shows the relationship between the number of hours studied, x, and a test score, y. The line of best fit for the data is given by y = 2.5x + 60. Based on this line, what is the predicted test score for a student who studies for 8 hours?',
         choices:{A:'68', B:'80', C:'62.5', D:'140'},
         correct:'B',
-        expCorrect:'Sustituye x = 8 en la línea de mejor ajuste: y = 2.5(8) + 60 = 20 + 60 = 80.',
+        expCorrect:'Substitute x = 8 into the line of best fit: y = 2.5(8) + 60 = 20 + 60 = 80.',
         expWrong:{
-          A:'68 sale de sumar 8 + 60, olvidando multiplicar por la pendiente 2.5.',
-          C:'62.5 sale de sumar 2.5 + 60 (usando x mal, como si x = 1).',
+          A:'68 comes from adding 8 + 60, forgetting to multiply by the slope 2.5.',
+          C:'62.5 comes from adding 2.5 + 60 (using x wrong, as if x = 1).',
           D:'140 multiplica todo mal: 2.5 × 8 = 20, no 80. La cuenta correcta da 80.'
         },
-        tip:'"Predicción con la línea de mejor ajuste" = sustituye el valor de x en la ecuación y calcula y. Respeta el orden: multiplica la pendiente por x ANTES de sumar la intersección.'
+        tip:'"Prediction with the line of best fit" = substitute the x value into the equation and compute y. Respect the order: multiply the slope by x BEFORE adding the intercept.'
       },
       {
         id:'DAT-10', type:'mc', domain:'Problem-Solving & Data Analysis', difficulty:'Difícil',
@@ -135,13 +135,13 @@
         stem:'The price of a product was first increased by 20%. Later, the new price was decreased by 10%. The final price is what percent of the original price?',
         choices:{A:'108%', B:'110%', C:'100%', D:'90%'},
         correct:'A',
-        expCorrect:'Los cambios sucesivos se MULTIPLICAN, no se suman. Subir 20% = ×1.20; bajar 10% = ×0.90. Factor total = 1.20 × 0.90 = 1.08. El precio final es 108% del original.',
+        expCorrect:'Successive changes MULTIPLY, they do not add. Up 20% = ×1.20; down 10% = ×0.90. Total factor = 1.20 × 0.90 = 1.08. The final price is 108% of the original.',
         expWrong:{
-          B:'110% suma los porcentajes (+20 − 10 = +10%). Los cambios porcentuales sucesivos no se suman.',
-          C:'100% asume que subir 20% y bajar 10% se cancelan, pero el 10% se aplica sobre un precio ya más alto, así que no vuelven al inicio.',
-          D:'90% aplica solo la bajada del 10% e ignora la subida del 20%.'
+          B:'110% adds the percentages (+20 − 10 = +10%). Successive percent changes do not add.',
+          C:'100% assumes up 20% and down 10% cancel, but the 10% applies to an already higher price, so they do not return to the start.',
+          D:'90% applies only the 10% drop and ignores the 20% rise.'
         },
-        tip:'Cambios sucesivos = multiplica los factores (1 ± p/100), nunca los sumes. Subir 20% y bajar 10% NO se cancela: 1.20 × 0.90 = 1.08, un 8% de aumento neto.'
+        tip:'Successive changes = multiply the factors (1 ± p/100), never add them. Up 20% and down 10% does NOT cancel out: 1.20 × 0.90 = 1.08, a net 8% increase.'
       }
     ]
   });

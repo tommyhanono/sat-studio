@@ -33,31 +33,31 @@
     questions: [
       {
         id:'GEO-01', type:'mc', domain:'Geometry & Trigonometry', difficulty:'Fácil',
-        skill:'Círculos (área y circunferencia)',
+        skill:'Circles (area and circumference)',
         stem:'A circle in the xy-plane has an area of 36π square units. What is the circumference of the circle?',
         choices:{A:'6π', B:'18π', C:'12π', D:'72π'},
         correct:'C',
-        expCorrect:'Área = πr² = 36π → r² = 36 → r = 6. Circunferencia = 2πr = 2π(6) = 12π.',
+        expCorrect:'Area = πr² = 36π → r² = 36 → r = 6. Circumference = 2πr = 2π(6) = 12π.',
         expWrong:{
           A:'6π usa el radio (6) como si fuera la circunferencia, olvidando el 2πr. 6 es solo el radio.',
-          B:'18π sale de dividir el área entre 2 (36π / 2), que no es una fórmula válida.',
-          D:'72π es 2 × 36π, es decir el doble del área, no la circunferencia.'
+          B:'18π comes from dividing the area by 2 (36π / 2), which is not a valid formula.',
+          D:'72π is 2 × 36π, that is, twice the area, not the circumference.'
         },
-        tip:'Siempre saca primero el radio. De πr² despejas r, y con r calculas lo que pidan (2πr para circunferencia). El área y la circunferencia NO son proporcionales entre sí.'
+        tip:'Always get the radius first. From πr² you solve for r, and with r you compute whatever they ask (2πr for circumference). Area and circumference are NOT proportional to each other.'
       },
       {
         id:'GEO-02', type:'mc', domain:'Geometry & Trigonometry', difficulty:'Fácil',
-        skill:'Triángulo especial 45-45-90',
+        skill:'Special 45-45-90 triangle',
         stem:'In a right isosceles triangle, each of the two legs has a length of 7. What is the length of the hypotenuse?',
         choices:{A:'7', B:'7√2', C:'7√3', D:'14'},
         correct:'B',
-        expCorrect:'En un triángulo 45-45-90, la hipotenusa = cateto × √2. Con cateto 7: hipotenusa = 7√2. (Comprobación con Pitágoras: 7² + 7² = 49 + 49 = 98, y √98 = 7√2.)',
+        expCorrect:'In a 45-45-90 triangle, the hypotenuse = leg × √2. With a leg of 7: hypotenuse = 7√2. (Check with Pythagoras: 7² + 7² = 49 + 49 = 98, and √98 = 7√2.)',
         expWrong:{
-          A:'7 es la longitud de un cateto, no de la hipotenusa. La hipotenusa siempre es el lado más largo.',
-          C:'7√3 corresponde al triángulo 30-60-90, no al 45-45-90. Aquí el factor es √2.',
-          D:'14 sería sumar los dos catetos (7 + 7). La hipotenusa nunca es la suma de los catetos.'
+          A:'7 is the length of a leg, not of the hypotenuse. The hypotenuse is always the longest side.',
+          C:'7√3 belongs to the 30-60-90 triangle, not the 45-45-90. Here the factor is √2.',
+          D:'14 would be adding the two legs (7 + 7). The hypotenuse is never the sum of the legs.'
         },
-        tip:'Memoriza los dos triángulos especiales: 45-45-90 → lados x, x, x√2. 30-60-90 → lados x, x√3, 2x. Están en el Reference Sheet, pero reconocerlos de memoria te ahorra segundos.'
+        tip:'Memorize the two special triangles: 45-45-90 → sides x, x, x√2. 30-60-90 → sides x, x√3, 2x. They are on the Reference Sheet, but recognizing them from memory saves you seconds.'
       },
       {
         id:'GEO-03', type:'mc', domain:'Geometry & Trigonometry', difficulty:'Fácil',
@@ -67,15 +67,15 @@
         correct:'A',
         expCorrect:'Volumen del cilindro = πr²h = π(3)²(10) = π(9)(10) = 90π.',
         expWrong:{
-          B:'60π sale de π(2)(3)(10), confundiendo la fórmula del volumen con algo tipo “2rh” (área lateral / r).',
-          C:'30π sale de π(3)(10): usaste el radio SIN elevarlo al cuadrado. La fórmula pide r².',
-          D:'300π usa r = 10 y h = 3 mal, o eleva el 10 en vez del 3. Aquí r = 3, así que r² = 9.'
+          B:'60π comes from π(2)(3)(10), mixing up the volume formula with something like “2rh” (lateral area / r).',
+          C:'30π comes from π(3)(10): you used the radius WITHOUT squaring it. The formula calls for r².',
+          D:'300π uses r = 10 and h = 3 wrong, or squares the 10 instead of the 3. Here r = 3, so r² = 9.'
         },
-        tip:'El error #1 en volúmenes es olvidar elevar el radio al cuadrado. Escribe siempre r² primero: 3² = 9, LUEGO multiplica por h. La fórmula está en el Reference Sheet.'
+        tip:'Error #1 in volumes is forgetting to square the radius. Always write r² first: 3² = 9, THEN multiply by h. The formula is on the Reference Sheet.'
       },
       {
         id:'GEO-04', type:'mc', domain:'Geometry & Trigonometry', difficulty:'Media',
-        skill:'Ecuación de la circunferencia',
+        skill:'Equation of a circle',
         stem:'In the xy-plane, a circle has its center at (2, −3) and a radius of 5. Which of the following is an equation of the circle?',
         choices:{
           A:'(x − 2)² + (y + 3)² = 25',
@@ -84,89 +84,89 @@
           D:'(x + 2)² + (y − 3)² = 5'
         },
         correct:'A',
-        expCorrect:'La forma estándar es (x − h)² + (y − k)² = r², con centro (h, k). Centro (2, −3) → (x − 2)² + (y − (−3))² = (x − 2)² + (y + 3)². Y r² = 5² = 25.',
+        expCorrect:'The standard form is (x − h)² + (y − k)² = r², with center (h, k). Center (2, −3) → (x − 2)² + (y − (−3))² = (x − 2)² + (y + 3)². And r² = 5² = 25.',
         expWrong:{
-          B:'(x + 2)² + (y − 3)² invierte los signos del centro: eso daría centro (−2, 3), no (2, −3).',
-          C:'El centro está bien, pero el lado derecho debe ser r² = 25, no r = 5. Falta elevar el radio al cuadrado.',
+          B:'(x + 2)² + (y − 3)² flips the signs of the center: that would give center (−2, 3), not (2, −3).',
+          C:'The center is right, but the right-hand side has to be r² = 25, not r = 5. The radius still needs squaring.',
           D:'Combina dos errores: signos del centro invertidos Y usa 5 en vez de 25.'
         },
         tip:'Dos trampas fijas: (1) los signos se INVIERTEN respecto al centro — centro (2, −3) da (x − 2) y (y + 3). (2) el lado derecho es r², no r. Radio 5 → 25.'
       },
       {
         id:'GEO-05', type:'mc', domain:'Geometry & Trigonometry', difficulty:'Media',
-        skill:'Trigonometría del triángulo rectángulo (SOHCAHTOA)',
+        skill:'Right-triangle trigonometry (SOHCAHTOA)',
         figure: FIG_RIGHT_TRI,
         stem:'In the right triangle shown, the hypotenuse has length 10 and the leg opposite angle θ has length 6. What is the value of cos θ?',
         choices:{A:'3/5', B:'5/4', C:'3/4', D:'4/5'},
         correct:'D',
-        expCorrect:'El cateto opuesto a θ mide 6 y la hipotenusa mide 10, así que el cateto adyacente = √(10² − 6²) = √(100 − 36) = √64 = 8. cos θ = adyacente / hipotenusa = 8/10 = 4/5.',
+        expCorrect:'The leg opposite θ is 6 and the hypotenuse is 10, so the adjacent leg = √(10² − 6²) = √(100 − 36) = √64 = 8. cos θ = adjacent / hypotenuse = 8/10 = 4/5.',
         expWrong:{
           A:'3/5 es sin θ (opuesto/hipotenusa = 6/10). Te pidieron el coseno, que usa el cateto ADYACENTE.',
-          B:'5/4 es el recíproco de 4/5 (sería 1/cos, o sea sec θ). Un coseno en un triángulo nunca pasa de 1.',
+          B:'5/4 is the reciprocal of 4/5 (that would be 1/cos, i.e. sec θ). A cosine in a triangle never goes above 1.',
           C:'3/4 es tan θ (opuesto/adyacente = 6/8). No es lo que piden.'
         },
-        tip:'SOHCAHTOA: Coseno = Adyacente / Hipotenusa. Primero identifica quién es opuesto y quién adyacente respecto al ángulo. Aquí faltaba el adyacente: sácalo con Pitágoras (terna 6-8-10).'
+        tip:'SOHCAHTOA: Cosine = Adjacent / Hypotenuse. First work out which side is opposite and which is adjacent relative to the angle. Here the adjacent one was missing: get it with Pythagoras (the 6-8-10 triple).'
       },
       {
         id:'GEO-06', type:'spr', domain:'Geometry & Trigonometry', difficulty:'Media',
-        skill:'Triángulos semejantes',
+        skill:'Similar triangles',
         stem:'Triangle ABC is similar to triangle DEF, where vertices A, B, and C correspond to vertices D, E, and F, respectively. The length of side AB is 6 and the length of the corresponding side DE is 15. If the length of side BC is 8, what is the length of side EF?',
         answer:'20',
-        expCorrect:'En triángulos semejantes, los lados correspondientes son proporcionales. La razón es DE/AB = 15/6 = 2.5. Entonces EF = BC × 2.5 = 8 × 2.5 = 20. (O por proporción: 6/15 = 8/EF → EF = 8·15/6 = 20.) Respuesta: 20.',
+        expCorrect:'In similar triangles, corresponding sides are proportional. The ratio is DE/AB = 15/6 = 2.5. So EF = BC × 2.5 = 8 × 2.5 = 20. (Or by proportion: 6/15 = 8/EF → EF = 8·15/6 = 20.) Answer: 20.',
         expWrong:{},
-        tip:'Semejanza = multiplicar por una RAZÓN (escala), nunca sumar. Arma la proporción lado/lado correspondiente = lado/lado y haz multiplicación en cruz. Confirma que la escala tenga sentido: aquí el triángulo grande es 2.5×.'
+        tip:'Similarity = multiplying by a RATIO (a scale factor), never adding. Set up the proportion side/corresponding side = side/side and cross-multiply. Sanity-check the scale: here the big triangle is 2.5×.'
       },
       {
         id:'GEO-07', type:'mc', domain:'Geometry & Trigonometry', difficulty:'Media',
-        skill:'Círculos (longitud de arco)',
+        skill:'Circles (arc length)',
         stem:'A circle has a radius of 9. An arc of the circle is intercepted by a central angle of 40°. What is the length of the arc?',
         choices:{A:'π', B:'4π', C:'2π', D:'18π'},
         correct:'C',
-        expCorrect:'Longitud de arco = (ángulo central / 360°) × circunferencia. Circunferencia = 2π(9) = 18π. Arco = (40/360)(18π) = (1/9)(18π) = 2π.',
+        expCorrect:'Arc length = (central angle / 360°) × circumference. Circumference = 2π(9) = 18π. Arc = (40/360)(18π) = (1/9)(18π) = 2π.',
         expWrong:{
-          A:'π sale de tomar (40/360) del radio (9) en vez de la circunferencia (18π): (1/9)(9) = 1, y con π daría π. Debes usar la circunferencia.',
-          B:'4π duplica el resultado, como si el radio fuera 18 o el ángulo 80°. La fracción correcta es 40/360 = 1/9.',
-          D:'18π es la circunferencia COMPLETA (todo el círculo, 360°), no solo el arco de 40°.'
+          A:'π comes from taking (40/360) of the radius (9) instead of the circumference (18π): (1/9)(9) = 1, and with π that gives π. You have to use the circumference.',
+          B:'4π doubles the result, as if the radius were 18 or the angle 80°. The correct fraction is 40/360 = 1/9.',
+          D:'18π is the FULL circumference (the whole circle, 360°), not just the 40° arc.'
         },
-        tip:'Arco y sector siempre son una FRACCIÓN del total: (ángulo/360). Arco → fracción × circunferencia (2πr). Sector → fracción × área (πr²). No mezcles radio con circunferencia.'
+        tip:'An arc and a sector are always a FRACTION of the whole: (angle/360). Arc → fraction × circumference (2πr). Sector → fraction × area (πr²). Do not mix up radius with circumference.'
       },
       {
         id:'GEO-08', type:'mc', domain:'Geometry & Trigonometry', difficulty:'Difícil',
-        skill:'Rectas paralelas y ángulos',
+        skill:'Parallel lines and angles',
         figure: FIG_PARALLEL,
         stem:'In the figure, lines m and n are parallel and are cut by a transversal. The two marked angles have measures (5x + 12)° and (3x + 48)°. What is the value of x?',
         choices:{A:'12', B:'18', C:'22', D:'30'},
         correct:'B',
-        expCorrect:'Los ángulos marcados son alternos internos, así que son iguales: 5x + 12 = 3x + 48. Restando 3x: 2x + 12 = 48 → 2x = 36 → x = 18. (Verifica: 5(18)+12 = 102 y 3(18)+48 = 102 ✓.)',
+        expCorrect:'The marked angles are alternate interior angles, so they are equal: 5x + 12 = 3x + 48. Subtracting 3x: 2x + 12 = 48 → 2x = 36 → x = 18. (Check: 5(18)+12 = 102 and 3(18)+48 = 102 ✓.)',
         expWrong:{
-          A:'12 es solo el término constante del primer ángulo, no la solución de la ecuación. Debes igualar las dos expresiones y despejar x.',
-          C:'22 sale de resolver mal la ecuación (por ejemplo 5x + 12 = 3x + 48 dando 2x = 44). El paso correcto es 2x = 36.',
-          D:'30 sale de tratarlos como suplementarios (5x + 12 + 3x + 48 = 180 → 8x = 120 → x = 15) mal calculado, o de otro error de planteo. Estos ángulos son iguales, no suman 180.'
+          A:'12 is only the constant term of the first angle, not the solution of the equation. You have to set the two expressions equal and solve for x.',
+          C:'22 comes from solving the equation wrong (for example 5x + 12 = 3x + 48 giving 2x = 44). The correct step is 2x = 36.',
+          D:'30 comes from treating them as supplementary (5x + 12 + 3x + 48 = 180 → 8x = 120 → x = 15) miscomputed, or from another setup error. These angles are equal, they do not add to 180.'
         },
-        tip:'Con rectas paralelas: alternos internos y correspondientes son IGUALES; los que forman una línea recta (co-interiores del mismo lado y lineales) SUMAN 180. Identifica cuál caso es ANTES de plantear la ecuación.'
+        tip:'With parallel lines: alternate interior and corresponding angles are EQUAL; the ones forming a straight line (same-side interior and linear pairs) ADD to 180. Work out which case it is BEFORE setting up the equation.'
       },
       {
         id:'GEO-09', type:'mc', domain:'Geometry & Trigonometry', difficulty:'Difícil',
-        skill:'Triángulo 30-60-90 (área)',
+        skill:'30-60-90 triangle (area)',
         stem:'In right triangle PQR, angle Q is 90°, angle R is 30°, and the hypotenuse PR has length 12. What is the area of triangle PQR?',
         choices:{A:'18', B:'36', C:'36√3', D:'18√3'},
         correct:'D',
-        expCorrect:'Es un triángulo 30-60-90 con hipotenusa PR = 12 = 2x, así que x = 6. El lado opuesto a 30° (PQ) mide x = 6, y el opuesto a 60° (QR) mide x√3 = 6√3. Los catetos son PQ y QR (el ángulo recto está en Q). Área = (1/2)(6)(6√3) = 18√3.',
+        expCorrect:'It is a 30-60-90 triangle with hypotenuse PR = 12 = 2x, so x = 6. The side opposite 30° (PQ) is x = 6, and the one opposite 60° (QR) is x√3 = 6√3. The legs are PQ and QR (the right angle is at Q). Area = (1/2)(6)(6√3) = 18√3.',
         expWrong:{
-          A:'18 usa (1/2)(6)(6) = 18, olvidando que uno de los catetos es 6√3, no 6.',
-          B:'36 sale de (1/2)(12)(6) usando la hipotenusa como cateto. La hipotenusa NO es un cateto; los catetos son 6 y 6√3.',
-          C:'36√3 usa (1/2)(12)(6√3), otra vez tomando la hipotenusa (12) como base. Debes usar los dos catetos: 6 y 6√3.'
+          A:'18 uses (1/2)(6)(6) = 18, forgetting that one of the legs is 6√3, not 6.',
+          B:'36 comes from (1/2)(12)(6) using the hypotenuse as a leg. The hypotenuse is NOT a leg; the legs are 6 and 6√3.',
+          C:'36√3 uses (1/2)(12)(6√3), again taking the hypotenuse (12) as the base. You have to use the two legs: 6 and 6√3.'
         },
-        tip:'En 30-60-90 con hipotenusa 2x: el cateto corto (frente al 30°) es x y el largo (frente al 60°) es x√3. El área usa los dos CATETOS, nunca la hipotenusa. Ubica el ángulo recto para saber cuáles son los catetos.'
+        tip:'In a 30-60-90 with hypotenuse 2x: the short leg (facing the 30°) is x and the long one (facing the 60°) is x√3. The area uses the two LEGS, never the hypotenuse. Locate the right angle to know which sides are the legs.'
       },
       {
         id:'GEO-10', type:'spr', domain:'Geometry & Trigonometry', difficulty:'Difícil',
-        skill:'Círculos (ecuación general → radio)',
+        skill:'Circles (general equation → radius)',
         stem:'The equation x² + y² − 6x + 8y + 9 = 0 represents a circle in the xy-plane. What is the radius of the circle?',
         answer:'4',
-        expCorrect:'Completa cuadrados. Para x: x² − 6x = (x − 3)² − 9. Para y: y² + 8y = (y + 4)² − 16. Sustituyendo: (x − 3)² − 9 + (y + 4)² − 16 + 9 = 0 → (x − 3)² + (y + 4)² = 16. Entonces r² = 16 → r = 4.',
+        expCorrect:'Complete the square. For x: x² − 6x = (x − 3)² − 9. For y: y² + 8y = (y + 4)² − 16. Substituting: (x − 3)² − 9 + (y + 4)² − 16 + 9 = 0 → (x − 3)² + (y + 4)² = 16. So r² = 16 → r = 4.',
         expWrong:{},
-        tip:'Para pasar de la forma general a la estándar, completa cuadrados en x y en y por separado: toma la mitad del coeficiente lineal y elévala al cuadrado. Recuerda mover TODAS las constantes al lado derecho. El radio es √(lado derecho), no el lado derecho.'
+        tip:'To go from general form to standard form, complete the square in x and in y separately: take half the linear coefficient and square it. Remember to move ALL the constants to the right-hand side. The radius is √(right side), not the right side itself.'
       }
     ]
   });

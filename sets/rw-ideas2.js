@@ -19,13 +19,13 @@ window.SAT_SETS.push({
         D:'Despite their small size, coral reefs support a large portion of marine life, so their health matters greatly.'
       },
       correct:'D',
-      expCorrect:'El texto dice que los arrecifes ocupan poco espacio pero albergan una cuarta parte de las especies marinas, y cierra con que la salud del arrecife afecta a gran parte de la vida oceánica. La opción D junta esas dos ideas: pequeños pero clave. Ese es el main idea.',
+      expCorrect:'The text says reefs take up little space but host a quarter of all marine species, and closes with the reef’s health affecting a large share of ocean life. Option D joins those two ideas: small but crucial. That is the main idea.',
       expWrong:{
-        A:'Detalle, no idea central: que ocupen poco espacio es solo un dato de apoyo. El texto lo usa para contrastar con lo mucho que sostienen, no como su tema.',
-        B:'Demasiado estrecho: tortugas y cangrejos son solo ejemplos en una lista. El texto habla de toda la vida marina, no de esos dos animales como los más dependientes.',
-        C:'No está apoyado: el texto nunca menciona colores ni belleza. “Los más coloridos” es información de afuera.'
+        A:'Detail, not central idea: taking up little space is only a supporting fact. The text uses it to contrast with how much they sustain, not as its topic.',
+        B:'Too narrow: turtles and crabs are just examples in a list. The text is about all marine life, not those two animals as the most dependent.',
+        C:'Not supported: the text never mentions colors or beauty. “The most colorful” is outside information.'
       },
-      tip:'El main idea cubre TODO el texto, no un detalle. Aquí el punto es el contraste: espacio pequeño, impacto enorme.'
+      tip:'The main idea covers the WHOLE text, not one detail. Here the point is the contrast: small footprint, enormous impact.'
     },
     {
       id:'CI2-02', type:'mc', domain:'Information and Ideas', difficulty:'Fácil',
@@ -39,13 +39,13 @@ window.SAT_SETS.push({
         D:'To list the tools that archaeologists use during excavations.'
       },
       correct:'B',
-      expCorrect:'El texto plantea una vieja creencia (la ciudad era solo ceremonial) y luego presenta hallazgos (cocinas, almacenes, herramientas) que sugieren que sí vivía gente todo el año. El propósito es explicar cómo la nueva evidencia cambió lo que se creía.',
+      expCorrect:'The text lays out an old belief (the city was only ceremonial) and then presents findings (kitchens, storerooms, tools) suggesting people did live there year-round. The purpose is to explain how the new evidence changed what was believed.',
       expWrong:{
-        A:'Detalle, no propósito: los festivales se mencionan solo como parte de la creencia antigua. El foco es cómo esa creencia cambió, no describir festivales.',
-        C:'No está apoyado: el texto nunca compara el tamaño de la ciudad con otros asentamientos. Es información de afuera.',
-        D:'Demasiado estrecho: las herramientas son evidencia, no el tema. El texto no trata sobre qué instrumentos usan los arqueólogos.'
+        A:'Detail, not purpose: the festivals are mentioned only as part of the old belief. The focus is how that belief changed, not describing festivals.',
+        C:'Not supported: the text never compares the size of the city with other settlements. That is outside information.',
+        D:'Too narrow: the tools are evidence, not the topic. The text is not about which instruments archaeologists use.'
       },
-      tip:'“Main purpose” = por qué se escribió el texto. El giro “But recent excavations…” te muestra que el punto es un cambio de interpretación.'
+      tip:'“Main purpose” = why the text was written. The turn at “But recent excavations…” shows you the point is a change of interpretation.'
     },
     {
       id:'CI2-03', type:'mc', domain:'Information and Ideas', difficulty:'Fácil',
@@ -59,13 +59,13 @@ window.SAT_SETS.push({
         D:'New books are always more popular than older books.'
       },
       correct:'A',
-      expCorrect:'La bibliotecaria conecta el desgaste con el préstamo: los más prestados estaban más gastados, y los intactos casi no se pedían. De ahí se infiere razonablemente que la condición física de un libro puede indicar cuánto se ha prestado.',
+      expCorrect:'The librarian connects wear with lending: the most borrowed ones were the most worn, and the untouched ones were rarely requested. From that it reasonably follows that the physical condition of a book can indicate how often it has been lent out.',
       expWrong:{
-        B:'Contradice el texto: los libros gastados son justo los MÁS pedidos, así que la gente no los evita por estar desgastados.',
-        C:'No está apoyado: el texto no dice cuántos libros gastados o intactos hay en total. Es un dato que no aparece.',
-        D:'Demasiado amplio: “siempre” va más allá del texto, que ni siquiera compara libros nuevos con viejos por popularidad.'
+        B:'It contradicts the text: the worn books are precisely the MOST requested, so people do not avoid them for being worn.',
+        C:'Not supported: the text does not say how many worn or untouched books there are in total. That figure never appears.',
+        D:'Too broad: “always” goes beyond the text, which does not even compare new and old books by popularity.'
       },
-      tip:'La inferencia debe seguirse OBLIGATORIAMENTE del texto. Cuidado con “siempre” y “nunca”: casi siempre son trampa.'
+      tip:'An inference has to follow NECESSARILY from the text. Watch out for “always” and “never”: they are almost always traps.'
     },
     {
       id:'CI2-04', type:'mc', domain:'Information and Ideas', difficulty:'Media',
@@ -79,13 +79,13 @@ window.SAT_SETS.push({
         D:'Clara Wieck Schumann preferred performing to writing her own music.'
       },
       correct:'B',
-      expCorrect:'El texto reconoce su fama como pianista, pero señala que sus composiciones quedaron opacadas y solo hace poco los estudiosos las valoran. La idea central junta ambas partes: famosa tocando, ignorada como compositora hasta hace poco.',
+      expCorrect:'The text acknowledges her fame as a pianist, but points out that her compositions were overshadowed and only recently have scholars valued them. The central idea joins both halves: famous playing, ignored as a composer until recently.',
       expWrong:{
-        A:'Demasiado amplio y extremo: dice que era “de las mejores”, no “la más grande que Europa produjo jamás”. Además ignora la mitad del texto (sus composiciones).',
-        C:'No está apoyado: el texto habla de que SUS obras fueron opacadas, no de que los estudiosos rechazaran toda la música de mujeres. Es un salto que el texto no da.',
-        D:'No está apoyado: el texto nunca dice qué prefería ella; habla de cómo la vio el público y la crítica, no de sus gustos.'
+        A:'Too broad and too extreme: it says she was “among the finest”, not “the greatest Europe ever produced”. On top of that it ignores half the text (her compositions).',
+        C:'Not supported: the text is about HER works being overshadowed, not about scholars rejecting all music by women. That is a leap the text does not make.',
+        D:'Not supported: the text never says what she preferred; it is about how audiences and critics saw her, not about her own taste.'
       },
-      tip:'Cuando el texto tiene un “Yet” o “Although”, la idea central suele abarcar los DOS lados del contraste, no uno solo.'
+      tip:'When a text has a “Yet” or “Although”, the central idea usually covers BOTH sides of the contrast, not just one.'
     },
     {
       id:'CI2-05', type:'mc', domain:'Information and Ideas', difficulty:'Media',
@@ -99,13 +99,13 @@ window.SAT_SETS.push({
         D:'these plants stop growing entirely once the temperature rises.'
       },
       correct:'B',
-      expCorrect:'El texto dice que las plantas cierran sus poros de día y que, al estar cerrados, escapa muy poca agua. Lo lógico para completar es que así logran conservar la humedad en su ambiente seco. La opción B se sigue directamente de esa idea.',
+      expCorrect:'The text says the plants close their pores by day and that, with them closed, very little water escapes. The logical completion is that this is how they conserve moisture in their dry environment. Option B follows directly from that idea.',
       expWrong:{
-        A:'Contradice el texto: dice que con los poros cerrados escapa POCA agua, así que no pierden la mayor parte de su agua de día.',
-        C:'No está apoyado: el texto describe cómo ahorran agua por su cuenta, no que necesiten riego más frecuente. Es información de afuera.',
-        D:'No está apoyado: el texto no menciona que dejen de crecer con el calor; habla de sus poros y del agua, no del crecimiento.'
+        A:'It contradicts the text: it says that with the pores closed LITTLE water escapes, so they do not lose most of their water by day.',
+        C:'Not supported: the text describes how they save water on their own, not that they need more frequent watering. That is outside information.',
+        D:'Not supported: the text never mentions them stopping growth in the heat; it is about their pores and water, not growth.'
       },
-      tip:'En “completa el texto”, sigue el hilo de la última frase. Aquí liga poros cerrados con poca pérdida de agua; la respuesta debe cerrar esa misma idea: conservar agua.'
+      tip:'On “complete the text”, follow the thread of the last sentence. Here it ties closed pores to little water loss; the answer has to close that same idea: conserving water.'
     },
     {
       id:'CI2-06', type:'mc', domain:'Information and Ideas', difficulty:'Media',
@@ -119,13 +119,13 @@ window.SAT_SETS.push({
         D:'Microscopic algae are the smallest living things found in the sea.'
       },
       correct:'C',
-      expCorrect:'El texto explica que una erupción submarina suelta minerales que actúan como fertilizante, y que después de una se vio un enorme florecimiento de algas alimentándose de esos nutrientes. La idea central es esa relación: la erupción libera nutrientes y dispara el florecimiento de algas.',
+      expCorrect:'The text explains that an undersea eruption releases minerals that act as fertilizer, and that after one, a huge algae bloom was seen feeding on those nutrients. The central idea is that relationship: the eruption releases nutrients and triggers the bloom.',
       expWrong:{
-        A:'No está apoyado: el texto nunca compara la frecuencia de erupciones submarinas y terrestres. Es información de afuera.',
-        B:'Demasiado amplio: los satélites solo aparecen como la herramienta que registró el florecimiento, no como “la única” manera de estudiar el mar.',
-        D:'Detalle, no idea central: que las algas sean microscópicas es un dato; el punto es que la erupción provocó su florecimiento.'
+        A:'Not supported: the text never compares how often undersea and land eruptions happen. That is outside information.',
+        B:'Too broad: the satellites appear only as the tool that recorded the bloom, not as “the only” way to study the ocean.',
+        D:'Detail, not central idea: the algae being microscopic is a fact; the point is that the eruption triggered their bloom.'
       },
-      tip:'El main idea recoge la relación causa-efecto que domina el texto: erupción → nutrientes → florecimiento de algas. Un dato suelto (satélites, tamaño) no es el tema.'
+      tip:'The main idea captures the cause-and-effect running through the text: eruption → nutrients → algae bloom. A loose detail (satellites, size) is not the topic.'
     },
     {
       id:'CI2-07', type:'mc', domain:'Information and Ideas', difficulty:'Media',
@@ -139,13 +139,13 @@ window.SAT_SETS.push({
         D:'The town without rail service will soon lose all its residents.'
       },
       correct:'A',
-      expCorrect:'El estudio muestra que el pueblo con la nueva línea de tren vio subir más el valor de las casas cercanas, incluso tras ajustar por escuelas e ingresos. De ahí se infiere razonablemente que el acceso al tren puede elevar el valor de las casas cercanas.',
+      expCorrect:'The study shows the town with the new rail line saw nearby home values rise more, even after adjusting for schools and income. From that it reasonably follows that rail access can raise the value of nearby homes.',
       expWrong:{
-        B:'Demasiado extremo: “siempre” va más allá del estudio. El texto muestra un caso concreto donde subió, no una ley universal para todo pueblo.',
-        C:'Contradice el texto: los economistas AJUSTARON por calidad escolar precisamente porque puede influir; no dicen que no tenga efecto en ningún lado.',
-        D:'No está apoyado: el texto no dice nada de que el pueblo sin tren vaya a perder a sus habitantes. Es información de afuera.'
+        B:'Too extreme: “always” goes beyond the study. The text shows one concrete case where values rose, not a universal law for every town.',
+        C:'It contradicts the text: the economists ADJUSTED for school quality precisely because it can matter; they do not say it has no effect anywhere.',
+        D:'Not supported: the text says nothing about the town without rail losing its residents. That is outside information.'
       },
-      tip:'La inferencia debe seguirse OBLIGATORIAMENTE del texto. “Puede elevar” encaja; “siempre” o “nunca” casi siempre se pasan de la raya.'
+      tip:'An inference has to follow NECESSARILY from the text. “Can raise” fits; “always” or “never” almost always overreach.'
     },
     {
       id:'CI2-08', type:'mc', domain:'Information and Ideas', difficulty:'Media',
@@ -159,13 +159,13 @@ window.SAT_SETS.push({
         D:'For the narrator, the ruined garden mainly serves as a symbol of loss and memory.'
       },
       correct:'D',
-      expCorrect:'El texto cuenta que el jardín, antes lleno de color, ahora está gris y enredado, y que la narradora recuerda allí a su abuela. Cierra diciendo que el jardín es menos un lugar que un recordatorio de lo que perdió. La idea central es que funciona como símbolo de pérdida y memoria.',
+      expCorrect:'The text tells us the garden, once full of color, is now gray and tangled, and that the narrator remembers her grandmother there. It closes by saying the garden is less a place than a reminder of what she lost. The central idea is that it works as a symbol of loss and memory.',
       expWrong:{
-        A:'No está apoyado: el texto no dice que planee restaurarlo; se enfoca en lo que el jardín le hace sentir y recordar, no en un plan futuro.',
-        B:'Fuera de tema: no es un texto instructivo sobre jardinería. El jardín es un símbolo, no un manual de cuidado.',
-        C:'Detalle, no idea central: la abuela cuidaba el jardín, pero el texto no la califica como “la mejor del pueblo”. Eso es información de afuera.'
+        A:'Not supported: the text does not say she plans to restore it; it focuses on what the garden makes her feel and remember, not on a future plan.',
+        B:'Off topic: this is not an instructional text about gardening. The garden is a symbol, not a care manual.',
+        C:'Detail, not central idea: the grandmother tended the garden, but the text never calls her “the best in town”. That is outside information.'
       },
-      tip:'En textos literarios, el main idea suele ser lo que la imagen SIGNIFICA. Aquí el jardín representa la pérdida, no un problema de jardinería.'
+      tip:'In literary texts, the main idea is usually what the image MEANS. Here the garden stands for loss, not a gardening problem.'
     },
     {
       id:'CI2-09', type:'mc', domain:'Information and Ideas', difficulty:'Difícil',
@@ -179,13 +179,13 @@ window.SAT_SETS.push({
         D:'written records are a more reliable source than archaeological finds.'
       },
       correct:'A',
-      expCorrect:'El texto contrasta dos cosas: los documentos apenas mencionan la ruta en el siglo XIV, pero los arqueólogos hallaron monedas y bienes fechados justo en ese siglo. Lo lógico es concluir que la ruta seguía en uso aunque los documentos casi no la registraran. La opción A resuelve ese contraste.',
+      expCorrect:'The text contrasts two things: the documents barely mention the route in the 14th century, but archaeologists found coins and goods dated to exactly that century. The logical conclusion is that the route stayed in use even though the documents hardly recorded it. Option A resolves that contrast.',
       expWrong:{
-        B:'No está apoyado: el texto no dice nada sobre las preferencias de los comerciantes por comerciar en vez de escribir. Es información de afuera.',
-        C:'Contradice el texto: los objetos están fechados “firmemente” en ese mismo siglo, así que no son de mucho antes.',
-        D:'Ilógico aquí: el hallazgo físico es justo lo que CORRIGE a los documentos escasos, así que el texto no apunta a que lo escrito sea más confiable.'
+        B:'Not supported: the text says nothing about merchants preferring to trade rather than write. That is outside information.',
+        C:'It contradicts the text: the objects are dated “firmly” to that same century, so they are not from much earlier.',
+        D:'Illogical here: the physical find is exactly what CORRECTS the sparse documents, so the text does not suggest the written record is more reliable.'
       },
-      tip:'Cuando el texto pone en tensión dos fuentes (documentos vs. hallazgos), la conclusión lógica es la que RECONCILIA ambas: la ruta seguía activa aunque no se escribiera de ella.'
+      tip:'When a text puts two sources in tension (documents vs. finds), the logical conclusion is the one that RECONCILES both: the route stayed active even if nobody wrote about it.'
     },
     {
       id:'CI2-10', type:'mc', domain:'Information and Ideas', difficulty:'Difícil',
@@ -199,13 +199,13 @@ window.SAT_SETS.push({
         D:'Imitation plays no role whatsoever in how any skill is learned.'
       },
       correct:'B',
-      expCorrect:'El texto contrasta la vieja teoría (los niños imitan) con la evidencia (crean frases nuevas y aplican reglas a palabras inventadas) y concluye que los niños construyen las reglas por sí mismos. La idea central es ese giro: no solo copian, sino que construyen su lengua.',
+      expCorrect:'The text contrasts the old theory (children imitate) with the evidence (they create new sentences and apply rules to invented words) and concludes that children build the rules themselves. The central idea is that turn: they do not just copy, they construct their language.',
       expWrong:{
-        A:'Contradice el texto: los niños aplican reglas gramaticales solos, mucho antes de la escuela. El texto no dice que necesiten que se las enseñen formalmente.',
-        C:'Contradice la evidencia: el punto es que los niños producen frases que NUNCA han oído, no que memoricen a los adultos palabra por palabra.',
-        D:'Demasiado extremo y amplio: el texto matiza el papel de la imitación en el lenguaje, no dice que la imitación no sirva para NINGUNA habilidad.'
+        A:'It contradicts the text: children apply grammatical rules on their own, long before school. The text does not say they need to be formally taught them.',
+        C:'It contradicts the evidence: the point is that children produce sentences they have NEVER heard, not that they memorize adults word for word.',
+        D:'Too extreme and too broad: the text qualifies the role of imitation in language, it does not say imitation is useless for ANY skill.'
       },
-      tip:'El main idea abraza el contraste completo: vieja idea (imitar) contra la nueva (construir reglas). Una opción que niega todo (“ningún papel”) suele pasarse de extremo.'
+      tip:'The main idea embraces the whole contrast: old idea (imitating) against the new one (building rules). An option that denies everything (“no role at all”) usually overreaches.'
     },
     {
       id:'CI2-11', type:'mc', domain:'Information and Ideas', difficulty:'Difícil',
@@ -219,13 +219,13 @@ window.SAT_SETS.push({
         D:'listening to music makes people remember far more than silence does.'
       },
       correct:'A',
-      expCorrect:'El estudio muestra dos resultados distintos: el silencio ayudó a recordar un poco más, pero la música hizo la tarea más placentera. Lo lógico es concluir que cada condición ofrece una ventaja diferente. La opción A recoge ambos hallazgos sin exagerar ninguno.',
+      expCorrect:'The study shows two different results: silence helped recall slightly more, but music made the task more enjoyable. The logical conclusion is that each condition offers a different advantage. Option A captures both findings without overstating either.',
       expWrong:{
-        B:'Demasiado extremo: “siempre” perjudica va más allá del texto, que solo vio una diferencia LEVE a favor del silencio en un experimento.',
-        C:'No está apoyado: el texto no dice que nadie disfrute las tareas en silencio; solo que el grupo con música las disfrutó más.',
-        D:'Contradice el texto: el silencio, no la música, produjo un poco MÁS de recuerdo. Decir que la música hace recordar mucho más va en contra del dato.'
+        B:'Too extreme: “always” hurts goes beyond the text, which only saw a SLIGHT difference in favor of silence in one experiment.',
+        C:'Not supported: the text does not say nobody enjoys tasks in silence; only that the music group enjoyed them more.',
+        D:'It contradicts the text: silence, not music, produced slightly MORE recall. Saying music makes you remember far more runs against the data.'
       },
-      tip:'Cuando el texto da DOS resultados que apuntan a lados distintos, la conclusión lógica los abarca a ambos, no elige uno e ignora el otro.'
+      tip:'When a text gives TWO results pointing different ways, the logical conclusion covers both rather than picking one and ignoring the other.'
     },
     {
       id:'CI2-12', type:'mc', domain:'Information and Ideas', difficulty:'Difícil',
@@ -239,13 +239,13 @@ window.SAT_SETS.push({
         D:'Controlling soil erosion is the most important goal in managing any forest.'
       },
       correct:'C',
-      expCorrect:'El texto reconoce que la enredadera SÍ frenó la erosión, pero explica que, sin depredadores, se esparció y ahogó árboles nativos, volviéndose un gran problema ecológico. La idea central es ese giro: una solución que terminó creando un problema mayor.',
+      expCorrect:'The text grants that the vine DID slow the erosion, but explains that, with no predators, it spread and smothered native trees, turning into a major ecological problem. The central idea is that turn: a solution that ended up creating a bigger problem.',
       expWrong:{
-        A:'Contradice el texto: dice que la enredadera SÍ estabilizó las laderas “como se buscaba”. Que fracasara del todo va en contra de eso.',
-        B:'No está apoyado: el texto dice que la enredadera ahogó a las nativas, no que estas sean más débiles “en todo”. Es una exageración.',
-        D:'Fuera de tema: el texto usa la erosión como punto de partida, pero no afirma que controlarla sea “lo más importante” al manejar cualquier bosque.'
+        A:'It contradicts the text: it says the vine DID stabilize the slopes “as intended”. That it failed entirely runs against that.',
+        B:'Not supported: the text says the vine smothered the natives, not that natives are weaker “at everything”. That is an exaggeration.',
+        D:'Off topic: the text uses erosion as a starting point, but never claims controlling it is “the most important” thing in managing any forest.'
       },
-      tip:'El main idea abarca todo el arco: solución que funciona a medias y luego se vuelve un problema mayor. Una opción que niega la primera mitad (“nunca estabilizó”) contradice el texto.'
+      tip:'The main idea spans the whole arc: a solution that half works and then becomes a bigger problem. An option denying the first half (“never stabilized”) contradicts the text.'
     }
   ]
 });
