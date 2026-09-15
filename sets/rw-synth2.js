@@ -20,11 +20,11 @@ window.SAT_SETS.push({
       correct:'B',
       expCorrect:'The goal is to INTRODUCE the axolotl to a new audience. B gives the basics: what it is (a salamander), where it is from (lakes near Mexico City) and its distinctive trait. It is the general introduction, with accurate notes.',
       expWrong:{
-        A:'Dice por qué lo estudian; es un detalle, no una presentación general del animal.',
-        C:'Da su estado de conservación; es un dato puntual, no una introducción de qué es.',
-        D:'Describe una habilidad específica (regeneración), no presenta qué es el animal.'
+        A:'It says why it is studied; that is a detail, not a general introduction to the animal.',
+        C:'It gives its conservation status; that is a narrow fact, not an introduction to what it is.',
+        D:'It describes one specific ability (regeneration), it does not introduce what the animal is.'
       },
-      tip:'Identifica la meta primero. "Introducir a un público que no conoce" pide el panorama general (qué es, de dónde viene), no un detalle ni una habilidad suelta.'
+      tip:'Identify the goal first. "Introduce to an audience unfamiliar with it" calls for the general picture (what it is, where it comes from), not a detail or a stray ability.'
     },
     {
       id:'RS2-02', type:'mc', domain:'Expression of Ideas', difficulty:'Fácil',
@@ -39,11 +39,11 @@ window.SAT_SETS.push({
       correct:'C',
       expCorrect:'The goal calls for COMPARING the energy use of the two bulb types. C puts both sides face to face with the figures: 150 watts for the old ones vs. 60 watts for the LEDs. It compares both, with accurate notes.',
       expWrong:{
-        A:'Habla del cambio y de planes futuros, no del consumo de energía de cada foco.',
-        B:'Compara el brillo, no el consumo de energía que pide la meta.',
+        A:'It is about the switch and future plans, not the energy use of each bulb.',
+        B:'It compares brightness, not the energy consumption the goal asks for.',
         D:'Da un plan futuro; solo menciona un tipo de foco y no compara consumo.'
       },
-      tip:'"Comparar el consumo" exige mencionar AMBOS con sus watts. Descarta lo que compara otra cosa (brillo) o menciona un solo lado.'
+      tip:'"Compare the consumption" demands mentioning BOTH with their wattage. Rule out anything comparing something else (brightness) or naming only one side.'
     },
     {
       id:'RS2-03', type:'mc', domain:'Expression of Ideas', difficulty:'Fácil',
@@ -58,11 +58,11 @@ window.SAT_SETS.push({
       correct:'C',
       expCorrect:'The goal is to emphasize the LASTING IMPACT of the invention. C shows it: the frequency-hopping idea later helped make Wi-Fi and Bluetooth possible. It connects the invention with its effect to this day, with accurate notes.',
       expWrong:{
-        A:'Presenta quién era; no dice nada del impacto del invento.',
-        B:'Describe el invento original (los torpedos), pero no su influencia posterior.',
+        A:'It introduces who she was; it says nothing about the invention’s impact.',
+        B:'It describes the original invention (the torpedoes), but not its later influence.',
         D:'Cuenta que era inventora autodidacta; no muestra el efecto duradero de su idea.'
       },
-      tip:'"Impacto duradero" pide la opción que conecta el invento con lo que hizo posible DESPUÉS, no con quién era ni con el invento en sí.'
+      tip:'"Lasting impact" calls for the option connecting the invention with what it made possible LATER, not who she was or the invention itself.'
     },
     {
       id:'RS2-04', type:'mc', domain:'Expression of Ideas', difficulty:'Media',
@@ -77,11 +77,11 @@ window.SAT_SETS.push({
       correct:'D',
       expCorrect:'The goal calls for a specific FINDING. D gives the study’s concrete numbers: 8 bee species in the clover meadow vs. 27 in the mixed-flower one. It is a measurable, exact result.',
       expWrong:{
-        A:'Describe el montaje del estudio, no lo que se encontró.',
-        B:'Explica la diferencia entre los prados, pero sin reportar ningún dato del resultado.',
-        C:'Es una afirmación general; no presenta el hallazgo concreto con números.'
+        A:'It describes the study setup, not what was found.',
+        B:'It explains the difference between the meadows, but reports no result data.',
+        C:'It is a general claim; it does not present the concrete finding with numbers.'
       },
-      tip:'"Hallazgo específico" pide la opción con los DATOS concretos (8 vs. 27), no la que describe el diseño ni la que generaliza.'
+      tip:'"Specific finding" calls for the option with the concrete DATA (8 vs. 27), not the one describing the design or the one generalizing.'
     },
     {
       id:'RS2-05', type:'mc', domain:'Expression of Ideas', difficulty:'Media',
@@ -96,11 +96,11 @@ window.SAT_SETS.push({
       correct:'A',
       expCorrect:'The goal calls for naming a MEASURE protecting the city from flooding. A names the concrete measure: the MOSE system of movable barriers, which rises to block high tides. It answers exactly what was asked, with accurate notes.',
       expWrong:{
-        B:'Describe cómo está construida Venecia; no es una medida de protección.',
-        C:'Explica el problema (se hunde, sube el mar), no la solución tomada.',
-        D:'Habla de los cimientos de los edificios, no de una medida contra inundaciones.'
+        B:'It describes how Venice is built; that is not a protective measure.',
+        C:'It explains the problem (it is sinking, the sea is rising), not the solution taken.',
+        D:'It is about the foundations of the buildings, not about a measure against flooding.'
       },
-      tip:'"Especificar una medida/solución" pide la acción concreta que resuelve el problema (aquí, MOSE), no la descripción del lugar ni del problema.'
+      tip:'"Specify a measure or solution" calls for the concrete action that solves the problem (here, MOSE), not a description of the place or the problem.'
     },
     {
       id:'RS2-06', type:'mc', domain:'Expression of Ideas', difficulty:'Media',
@@ -115,11 +115,11 @@ window.SAT_SETS.push({
       correct:'C',
       expCorrect:'The goal calls for a DIFFERENCE in technique. C contrasts the two methods: X made a woodcut by carving wood and Y made an etching with acid on metal. It is pure technique difference, with accurate notes.',
       expWrong:{
-        A:'Dice lo que las dos estampas tienen en COMÚN (mismo tema), no una diferencia de técnica.',
-        B:'Reporta que fueron igual de hábiles; es una semejanza de calidad, no una diferencia de método.',
-        D:'Dice qué hicieron ambos; es lo compartido, no la diferencia de técnica.'
+        A:'It says what the two prints have in COMMON (the same subject), not a difference in technique.',
+        B:'It reports that they were equally skilled; that is a similarity in quality, not a difference in method.',
+        D:'It says what both did; that is the shared part, not the difference in technique.'
       },
-      tip:'"Diferencia en las técnicas" pide la opción que contrasta CÓMO lo hizo cada uno. Descarta todo lo que sea igual entre los dos.'
+      tip:'"Difference in technique" calls for the option contrasting HOW each one did it. Rule out anything the two have in common.'
     },
     {
       id:'RS2-07', type:'mc', domain:'Expression of Ideas', difficulty:'Media',
@@ -132,13 +132,13 @@ window.SAT_SETS.push({
         D:'Pot 1 held a seedling in plain soil, while Pot 2 held one in soil with the fungus added.'
       },
       correct:'B',
-      expCorrect:'La meta pide explicar cómo DISEÑARON el experimento para que el hongo fuera la única diferencia. La B nombra los controles: plántulas idénticas y misma luz, agua y temperatura, de modo que solo cambiaba el hongo. Describe el diseño con notas exactas.',
+      expCorrect:'The goal calls for explaining how they DESIGNED the experiment so the fungus was the only difference. B names the controls: identical seedlings and the same light, water and temperature, so that only the fungus varied. It describes the design, with accurate notes.',
       expWrong:{
-        A:'Da el resultado (Pot 2 el doble de alto), no cómo se controló el diseño.',
-        C:'Enuncia la pregunta de investigación, no cómo aislaron la variable hongo.',
-        D:'Describe qué había en cada maceta, pero no menciona los controles que igualan todo lo demás.'
+        A:'It gives the result (Pot 2 twice as tall), not how the design was controlled.',
+        C:'It states the research question, not how they isolated the fungus variable.',
+        D:'It describes what was in each pot, but never mentions the controls holding everything else equal.'
       },
-      tip:'"El hongo como única diferencia" pide los CONTROLES (idénticas, misma luz/agua/temperatura), no la pregunta ni el resultado.'
+      tip:'"The fungus as the only difference" calls for the CONTROLS (identical seedlings, same light/water/temperature), not the question or the result.'
     },
     {
       id:'RS2-08', type:'mc', domain:'Expression of Ideas', difficulty:'Media',
@@ -151,13 +151,13 @@ window.SAT_SETS.push({
         D:'The centerpiece of Cahokia was Monks Mound, an earthen pyramid.'
       },
       correct:'A',
-      expCorrect:'La meta pide transmitir lo LABORIOSO de construir Monks Mound. La A lo muestra: una pirámide de tierra de 5 hectáreas levantada enteramente a mano, canasta por canasta. La escala y el método manual comunican el esfuerzo, con notas exactas.',
+      expCorrect:'The goal calls for conveying how LABORIOUS building Monks Mound was. A shows it: a 5-hectare earthen pyramid raised entirely by hand, one basket at a time. The scale and the manual method convey the effort, with accurate notes.',
       expWrong:{
-        B:'Compara Cahokia con Londres; es sobre tamaño de la ciudad, no sobre el esfuerzo de construcción.',
-        C:'Da la población de la ciudad, no el trabajo de construir el montículo.',
-        D:'Nombra el montículo, pero sin el detalle (a mano, canasta por canasta) que muestra lo laborioso.'
+        B:'It compares Cahokia with London; that is about city size, not about the effort of building.',
+        C:'It gives the city population, not the work of building the mound.',
+        D:'It names the mound, but without the detail (by hand, basket by basket) that shows how laborious it was.'
       },
-      tip:'"Laborioso" pide detalles de esfuerzo (a mano, una canasta a la vez, 5 hectáreas), no datos de población ni comparaciones de tamaño.'
+      tip:'"Laborious" calls for details of effort (by hand, one basket at a time, 5 hectares), not population figures or size comparisons.'
     },
     {
       id:'RS2-09', type:'mc', domain:'Expression of Ideas', difficulty:'Difícil',
@@ -170,13 +170,13 @@ window.SAT_SETS.push({
         D:'Both groups spent the same total amount of time studying the facts.'
       },
       correct:'C',
-      expCorrect:'La meta pide enfatizar que el resultado fue CONSISTENTE, no una casualidad. La C lo logra: la ventaja del estudio espaciado apareció en tres salones distintos, no una sola vez. Eso subraya la consistencia con notas exactas.',
+      expCorrect:'The goal calls for emphasizing that the result was CONSISTENT, not a fluke. C pulls it off: the spaced-study advantage showed up in three different classrooms, not just once. That underlines the consistency, with accurate notes.',
       expWrong:{
-        A:'Da el resultado principal, pero no muestra que se repitiera; podría ser una sola vez.',
-        B:'Describe cómo estudió cada grupo, no la consistencia del resultado.',
-        D:'Menciona un control (mismo tiempo total), no que el resultado se repitiera.'
+        A:'It gives the main result, but does not show that it repeated; it could have been a one-off.',
+        B:'It describes how each group studied, not the consistency of the result.',
+        D:'It mentions one control (same total time), not that the result repeated.'
       },
-      tip:'"Consistente, no casualidad" pide la opción que muestra REPETICIÓN (aquí, tres salones), no el resultado suelto ni el diseño.'
+      tip:'"Consistent, not a fluke" calls for the option showing REPETITION (here, three classrooms), not the loose result or the design.'
     },
     {
       id:'RS2-10', type:'mc', domain:'Expression of Ideas', difficulty:'Difícil',
@@ -189,13 +189,13 @@ window.SAT_SETS.push({
         D:'The dwarf willow spreads sideways along the ground because staying low protects it from the Arctic’s fierce, cold winds.'
       },
       correct:'D',
-      expCorrect:'La meta pide explicar POR QUÉ crece de lado y no hacia arriba. La D da la razón: al quedarse bajo se protege de los vientos fríos y feroces del Ártico. Es acción + propósito con notas exactas.',
+      expCorrect:'The goal calls for explaining WHY it grows sideways instead of upward. D gives the reason: staying low shelters it from the cold, fierce Arctic winds. It is action plus purpose, with accurate notes.',
       expWrong:{
-        A:'Dice que es un árbol de verdad; no explica por qué crece de lado.',
-        B:'Presenta qué es y dónde vive, sin explicar el porqué de su forma de crecer.',
-        C:'Contrasta que es un árbol pero muy bajo; describe su tamaño, no la razón de crecer horizontal.'
+        A:'It says it is a true tree; it does not explain why it grows sideways.',
+        B:'It introduces what it is and where it lives, without explaining the reason for its growth habit.',
+        C:'It contrasts that it is a tree but a very short one; it describes its size, not the reason for growing horizontally.'
       },
-      tip:'"Explicar por qué" pide la opción que une la acción (crecer de lado) con su PROPÓSITO (protegerse del viento), no la que solo describe la planta.'
+      tip:'"Explain why" calls for the option tying the action (growing sideways) to its PURPOSE (shelter from the wind), not the one that only describes the plant.'
     },
     {
       id:'RS2-11', type:'mc', domain:'Expression of Ideas', difficulty:'Difícil',
@@ -208,13 +208,13 @@ window.SAT_SETS.push({
         D:'Both labs measured the speed of the same nerve signal in a squid.'
       },
       correct:'C',
-      expCorrect:'La meta pide una diferencia en el MÉTODO, no en el resultado. La C contrasta cómo midió cada lab: P metió un electrodo de vidrio dentro de la fibra y Q usó un sensor externo sobre la piel. Es diferencia de método puro, con notas exactas.',
+      expCorrect:'The goal calls for a difference in METHOD, not in the result. C contrasts how each lab measured: P inserted a glass electrode inside the fiber and Q used an external sensor on the skin. It is pure method difference, with accurate notes.',
       expWrong:{
-        A:'Contrasta los RESULTADOS (25.2 vs. 25.0), justo lo que la meta te pide evitar.',
-        B:'Menciona que los métodos difieren, pero su énfasis cae en que los resultados coinciden (within 1%): eso es resultado, no método.',
-        D:'Dice qué midieron ambos; es lo que tienen en común, no una diferencia de método.'
+        A:'It contrasts the RESULTS (25.2 vs. 25.0), exactly what the goal tells you to avoid.',
+        B:'It mentions that the methods differ, but its emphasis falls on the results agreeing (within 1%): that is result, not method.',
+        D:'It says what both measured; that is what they have in common, not a difference in method.'
       },
-      tip:'Si la meta separa "método" de "resultado", descarta toda opción con números/velocidades. Busca la que contrasta CÓMO lo midieron.'
+      tip:'If the goal separates "method" from "result", rule out every option with numbers or speeds. Look for the one contrasting HOW they measured.'
     },
     {
       id:'RS2-12', type:'mc', domain:'Expression of Ideas', difficulty:'Difícil',
@@ -227,13 +227,13 @@ window.SAT_SETS.push({
         D:'Across the species studied, a bird’s beak shape tended to match the kind of food it ate.'
       },
       correct:'D',
-      expCorrect:'La meta pide una GENERALIZACIÓN amplia apoyada por los datos. La D resume el patrón común a todos los casos: la forma del pico tiende a coincidir con el tipo de comida. Abarca los tres ejemplos en una sola idea general, con notas exactas.',
+      expCorrect:'The goal calls for a broad GENERALIZATION supported by the data. D sums up the pattern common to all the cases: beak shape tends to match the type of food. It covers the three examples in a single general idea, with accurate notes.',
       expWrong:{
-        A:'Da un caso concreto (seed-eaters); es un ejemplo, no la generalización que abarca todos.',
-        B:'Describe el montaje del estudio, no un patrón general.',
+        A:'It gives one concrete case (seed-eaters); that is an example, not the generalization covering them all.',
+        B:'It describes the study setup, not a general pattern.',
         C:'Da otro caso concreto (nectar-feeders); es un ejemplo suelto, no la idea general.'
       },
-      tip:'"Generalización amplia" pide la opción que RESUME el patrón de todos los casos en una idea, no un solo ejemplo ni el diseño del estudio.'
+      tip:'"Broad generalization" calls for the option that SUMS UP the pattern across all the cases in one idea, not a single example or the study design.'
     }
   ]
 });
