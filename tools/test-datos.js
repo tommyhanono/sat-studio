@@ -72,6 +72,8 @@ const FAKE_SUPABASE = function () {
           },
           signUp: () => Promise.resolve({ data: { session: null, user: null }, error: null }),
           signOut: () => { F.session = null; F.authCbs.forEach(cb => cb('SIGNED_OUT', null)); return Promise.resolve({ error: null }); },
+          resetPasswordForEmail: () => { F.calls.reset = (F.calls.reset || 0) + 1; return Promise.resolve({ data: {}, error: null }); },
+          updateUser: () => { F.calls.update = (F.calls.update || 0) + 1; return Promise.resolve({ data: { user: F.user }, error: null }); },
         },
         rpc: function (name, args) {
           if (name === 'sat_upsert_session') {
@@ -459,6 +461,47 @@ const etiqueta = page => page.evaluate(() => window.SATAPP.syncLabel());
       check('D13 con la cuota llena, store.set devuelve false', r.ok === false, r);
       check('D13b y avisa al estudiante en pantalla', r.avisos >= 1, r);
       check('D13c el dato queda al menos en memoria', r.leeMemoria === '{"a":1}', r);
+      await page.close();
+    }
+
+    /* =====================================================================
+     * D14 · Recuperar contraseña: el estudiante que la olvida no puede quedar
+     *      fuera de su propio historial.
+     * ===================================================================*/
+    {
+      const page = await nuevaPagina(browser);
+      await page.goto(URL_APP(), { waitUntil: 'networkidle2' });
+      const ui = await page.evaluate(() => ({
+        enlace: !!document.querySelector('#auth-forgot'),
+        caja: !!document.querySelector('#auth-newpass'),
+        ocultaAlInicio: document.querySelector('#auth-newpass').classList.contains('hidden'),
+      }));
+      check('D14 hay "¿olvidaste tu contraseña?" en el login', ui.enlace, ui);
+      check('D14b el formulario de contraseña nueva existe pero arranca oculto',
+            ui.caja && ui.ocultaAlInicio, ui);
+
+      // Sin correo escrito, no se manda nada y se explica por qué.
+      const sinCorreo = await page.evaluate(() => {
+        document.querySelector('#auth-email').value = '';
+        document.querySelector('#auth-forgot').click();
+        return { msg: document.querySelector('#auth-msg').textContent, llamadas: window.__FAKE.calls.reset || 0 };
+      });
+      check('D14c sin correo escrito avisa en vez de fallar callado',
+            /correo/i.test(sinCorreo.msg), sinCorreo);
+
+      // El evento de recuperación NO entra a la app: pide la contraseña nueva.
+      const recuperando = await page.evaluate(async () => {
+        const F = window.__FAKE;
+        F.authCbs.forEach(cb => cb('PASSWORD_RECOVERY', { user: F.user }));
+        await new Promise(r => setTimeout(r, 200));
+        return {
+          cajaVisible: !document.querySelector('#auth-newpass').classList.contains('hidden'),
+          gateVisible: !document.querySelector('#view-auth').classList.contains('hidden'),
+          homeOculto: document.querySelector('#view-home').classList.contains('hidden'),
+        };
+      });
+      check('D14d al abrir el enlace de recuperación pide la contraseña nueva',
+            recuperando.cajaVisible && recuperando.gateVisible && recuperando.homeOculto, recuperando);
       await page.close();
     }
 

@@ -42,7 +42,7 @@
 | `B2-01` | Sin titulo/favicon default del framework | PASS | sin 'Vite + React' ni iconos de plantilla |
 | `B2-02` | Sin source maps en produccion | PASS | el build no publica source maps |
 | `B2-03` | Cero errores en consola | PASS | consola limpia |
-| `B2-04` | Bundles de JS razonables | WARN | mayor carga JS por pagina: 1.30 MB; total en build: 1.25 MB |
+| `B2-04` | Bundles de JS razonables | WARN | mayor carga JS por pagina: 1.30 MB; total en build: 1.26 MB |
 | `B2-05` | Titulos unicos por pagina | n/a | una sola pagina: no aplica |
 | `B2-06` | Un solo h1 por pagina, unico por pagina | PASS | un h1 por pagina, todos distintos |
 | `B2-07` | Meta descriptions unicas | n/a | una sola pagina: no aplica |
@@ -63,12 +63,12 @@
 
 | id | Punto | Estado | Detalle |
 |---|---|---|---|
-| `B3-01` | Contraste AA (WCAG 2.2) | PASS | 10 elementos de texto, todos sobre el minimo |
-| `B3-02` | Foco de teclado visible | PASS | 6 controles con foco visible |
+| `B3-01` | Contraste AA (WCAG 2.2) | PASS | 11 elementos de texto, todos sobre el minimo |
+| `B3-02` | Foco de teclado visible | PASS | 7 controles con foco visible |
 | `B3-03` | prefers-reduced-motion respetado | PASS | sin animaciones que apagar |
 | `B3-04` | Campos de formulario con etiqueta | PASS | todos los campos etiquetados |
 | `B3-05` | El telefono girado (812x375) | PASS | en horizontal se ve bien |
-| `B3-06` | Core Web Vitals (LCP y CLS) | PASS | LCP 116 ms · CLS 0 (peor pagina, red local sin latencia) |
+| `B3-06` | Core Web Vitals (LCP y CLS) | PASS | LCP 132 ms · CLS 0 (peor pagina, red local sin latencia) |
 | `B3-07` | Regla cero de TOMMY-DESIGN | **FAIL** | 2 firma(s) del look default de IA |
 
 ## Evidencia
@@ -77,8 +77,8 @@
 
 5 catch mudo(s), 0 formulario(s) probado(s), 0 sin error visible
 
-- index.html:1273 — catch que solo hace console: el usuario nunca se entera · catch(e){ console.debug('SAT Studio · falló algo no crítico (' + (que \|\| 'sin nombre') + '):', e && e.message); }
-- index.html:1286 — catch que solo hace console: el usuario nunca se entera · } catch(e){ console.log(msg); }
+- index.html:1286 — catch que solo hace console: el usuario nunca se entera · catch(e){ console.debug('SAT Studio · falló algo no crítico (' + (que \|\| 'sin nombre') + '):', e && e.message); }
+- index.html:1299 — catch que solo hace console: el usuario nunca se entera · } catch(e){ console.log(msg); }
 - tools/test-datos.js:31 — catch vacio: el usuario nunca se entera · for (const c of CANDIDATOS_PUP) { try { return require(c); } catch (e) {} }
 - tools/test-datos.js:49 — catch vacio: el usuario nunca se entera · } catch (e) {}
 - tools/test-plan.js:28 — catch vacio: el usuario nunca se entera · for (const c of CANDIDATOS_PUP) { try { return require(c); } catch (e) {} }

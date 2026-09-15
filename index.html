@@ -362,6 +362,10 @@
   .uc-admin:hover{background:var(--blue);color:#fff}
 
   /* ============ AUTH ============ */
+  .auth-forgot{background:none;border:none;color:var(--blue-dark);font-size:.84rem;text-decoration:underline;font-family:var(--sans);min-height:44px;padding:0;margin-top:10px}
+  .auth-newpass{border:1px solid var(--blue);background:var(--blue-soft);border-radius:10px;padding:14px 16px;margin-top:14px}
+  .auth-np-t{font-size:.9rem;margin-bottom:10px}
+  .auth-newpass .btn-primary{margin-top:10px;width:100%}
   .auth-or{display:flex;align-items:center;gap:10px;margin:16px 0 12px;color:var(--gray-mid);font-size:.8rem}
   .auth-or::before,.auth-or::after{content:'';flex:1;height:1px;background:var(--gray-line)}
   .auth-guest{width:100%;min-height:44px;background:none;border:1px dashed var(--gray-line);border-radius:999px;padding:11px 18px;color:var(--blue-dark);font-size:.88rem;font-weight:600;font-family:var(--sans)}
@@ -713,6 +717,15 @@
       <button id="auth-login-btn" class="btn-primary">Sign in</button>
       <button id="auth-signup-btn" class="btn-outline">Create account</button>
     </div>
+    <button id="auth-forgot" class="auth-forgot" type="button">¿Olvidaste tu contraseña?</button>
+
+    <div id="auth-newpass" class="auth-newpass hidden">
+      <p class="auth-np-t"><b>Elige tu contraseña nueva</b></p>
+      <label class="auth-lbl" for="auth-pass2">Contraseña nueva</label>
+      <input id="auth-pass2" class="auth-inp" type="password" autocomplete="new-password" placeholder="Mínimo 6 caracteres">
+      <button id="auth-savepass" class="btn-primary">Guardar y entrar</button>
+    </div>
+
     <div class="auth-or"><span>o</span></div>
     <button id="auth-guest-btn" class="auth-guest" type="button">Entrar sin cuenta y ver la app →</button>
     <p class="auth-foot">Sin cuenta puedes practicar todo: el historial se guarda en este navegador.
@@ -4598,6 +4611,7 @@ function authBoot(){
   }).catch(function(){ if(!currentUser){ if(invitado()) entrarComoInvitado(); else showAuthGate(); } });
   SB.auth.onAuthStateChange(function(_event, session){
     var u = session && session.user ? session.user : null;
+    if(_event === 'PASSWORD_RECOVERY'){ currentUser = u; mostrarNuevaContrasena(); return; }
     if(u && (!currentUser || currentUser.id !== u.id)){ currentUser = u; afterLogin(); }
     else if(!u && currentUser){ currentUser = null; showAuthGate(); }
   });
@@ -4767,7 +4781,9 @@ function traducirAuthError(m){
   if(/invalid login|invalid credentials/i.test(m)) return 'Incorrect email or password.';
   if(/already registered|already been registered|user already/i.test(m)) return 'That email already has an account. Sign in.';
   if(/email not confirmed/i.test(m)) return 'You must confirm your email before signing in (check your inbox).';
-  if(/rate limit|too many/i.test(m)) return 'Too many attempts. Wait a moment and try again.';
+  if(/rate limit|too many|email rate/i.test(m)) return 'Demasiados intentos seguidos. Espera unos minutos y vuelve a probar.';
+  if(/new password should be different/i.test(m)) return 'La contraseña nueva tiene que ser distinta a la anterior.';
+  if(/not found|no user/i.test(m)) return 'No hay ninguna cuenta con ese correo.';
   if(/password/i.test(m) && /6/.test(m)) return 'Password must be at least 6 characters.';
   return m;
 }
@@ -4783,7 +4799,49 @@ function entrarComoInvitado(){
   renderHome();
   intenta(function(){ window.scrollTo(0,0); }, 'scroll');
 }
+/* Recuperar la contraseña. Sin esto, un estudiante que la olvida pierde el
+   acceso a TODO su historial — con un colegio entero eso pasa seguro.
+   Ojo de operación: el correo lo manda Supabase, y su SMTP por defecto está
+   limitado a unos pocos envíos por hora. Para una escuela hay que configurar
+   un SMTP propio en el panel de Supabase (Auth → SMTP Settings). */
+function doForgot(){
+  if(!authAvailable()) return;
+  var email = ($('#auth-email').value || '').trim();
+  if(!email){ setAuthMsg('Escribe tu correo arriba y vuelve a tocar este enlace.', true); $('#auth-email').focus(); return; }
+  setAuthMsg('Enviando el correo…'); setAuthBusy(true);
+  SB.auth.resetPasswordForEmail(email, { redirectTo: location.origin + location.pathname }).then(function(r){
+    setAuthBusy(false);
+    if(r && r.error){ setAuthMsg(traducirAuthError(r.error.message), true); return; }
+    setAuthMsg('Listo: te mandamos un correo a ' + email + ' con un enlace para poner una contraseña nueva. ' +
+               'Revisa también la carpeta de spam.', false);
+  }).catch(function(){ setAuthBusy(false); setAuthMsg('No se pudo enviar el correo. Revisa tu internet.', true); });
+}
+function mostrarNuevaContrasena(){
+  var box = $('#auth-newpass'); if(!box) return;
+  $('#view-auth').classList.remove('hidden');
+  $('#view-home').classList.add('hidden');
+  box.classList.remove('hidden');
+  setAuthMsg('Abriste el enlace de recuperación. Elige tu contraseña nueva aquí abajo.', false);
+  intenta(function(){ $('#auth-pass2').focus(); }, 'foco');
+}
+function guardarNuevaContrasena(){
+  if(!authAvailable()) return;
+  var pass = $('#auth-pass2').value || '';
+  if(pass.length < 6){ setAuthMsg('La contraseña nueva necesita al menos 6 caracteres.', true); return; }
+  setAuthBusy(true); setAuthMsg('Guardando…');
+  SB.auth.updateUser({ password: pass }).then(function(r){
+    setAuthBusy(false);
+    if(r && r.error){ setAuthMsg(traducirAuthError(r.error.message), true); return; }
+    $('#auth-newpass').classList.add('hidden');
+    setAuthMsg('');
+    toast('Contraseña cambiada. Tu historial está completo.');
+    if(r && r.data && r.data.user){ currentUser = r.data.user; afterLogin(); }
+  }).catch(function(){ setAuthBusy(false); setAuthMsg('No se pudo guardar. Revisa tu internet.', true); });
+}
 function wireAuth(){
+  var fg = $('#auth-forgot'); if(fg) fg.addEventListener('click', doForgot);
+  var sp = $('#auth-savepass'); if(sp) sp.addEventListener('click', guardarNuevaContrasena);
+  var p2 = $('#auth-pass2'); if(p2) p2.addEventListener('keydown', function(e){ if(e.key === 'Enter') guardarNuevaContrasena(); });
   var gb = $('#auth-guest-btn'); if(gb) gb.addEventListener('click', entrarComoInvitado);
   var lb = $('#auth-login-btn'); if(lb) lb.addEventListener('click', doLogin);
   var sub = $('#auth-signup-btn'); if(sub) sub.addEventListener('click', doSignup);
