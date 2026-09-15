@@ -32,11 +32,22 @@ const path = require('path');
 const { esEspanol } = require('./detector-espanol');
 
 const RAIZ = path.resolve(__dirname, '..');
+/* Los ocho oficiales. El banco además usa dominios CRUZADOS ("Algebra + Functions",
+   "Advanced Math + Data") para preguntas que tocan dos: el auditor las cuenta en
+   los dos lados a propósito. Un set nuevo debería usar uno de los ocho, así que
+   los cruzados pasan pero con aviso. */
 const DOMINIOS = new Set([
   'Algebra', 'Advanced Math', 'Problem-Solving & Data Analysis', 'Geometry & Trigonometry',
   'Craft and Structure', 'Information and Ideas', 'Standard English Conventions', 'Expression of Ideas',
 ]);
-const DIFICULTADES = new Set(['Fácil', 'Media', 'Difícil', 'Extreme']);
+const CRUZADO = /^(Algebra|Advanced Math|Problem-Solving & Data Analysis|Geometry & Trigonometry|Functions|Data)( \+ (Algebra|Advanced Math|Problem-Solving|Functions|Data))+$/;
+/* En una PREGUNTA la dificultad son tres, y el tier brutal se marca aparte con
+   extreme:true. El motor entero (hrank, cbDiff, assembleModule, weightOf,
+   LVLORD) compara contra esas tres cadenas: un difficulty:'Extreme' cae al
+   rango 0 y el mock adaptativo lo manda al módulo FÁCIL. En el SET, en
+   cambio, level:'Extreme' sí es válido: es la etiqueta que se muestra. */
+const DIF_PREGUNTA = new Set(['Fácil', 'Media', 'Difícil']);
+const DIF_SET = new Set(['Fácil', 'Media', 'Difícil', 'Extreme']);
 const SECCIONES = new Set(['math', 'rw', 'mixed']);
 
 const archivos = process.argv.slice(2);
@@ -86,7 +97,7 @@ for (const rel of archivos) {
     if (s[c] === undefined || s[c] === '') err(rel, `al set le falta "${c}"`);
   });
   if (!SECCIONES.has(s.section)) err(rel, `section "${s.section}" no es math/rw/mixed`);
-  if (s.level && !DIFICULTADES.has(s.level)) err(rel, `level "${s.level}" no es una de las cuatro claves internas`);
+  if (s.level && !DIF_SET.has(s.level)) err(rel, `level "${s.level}" no es una de las cuatro claves internas`);
   if (VIVO.setIds.has(s.id)) err(rel, `el id de set "${s.id}" ya existe en el banco`);
   if (typeof s.minutes !== 'number' || s.minutes <= 0) err(rel, 'minutes tiene que ser un número mayor que cero');
 
@@ -103,8 +114,14 @@ for (const rel of archivos) {
     vistosAqui.add(q.id);
     if (VIVO.ids.has(q.id)) err(rel, `${d}: ese id ya existe en el banco vivo`);
 
-    if (!DOMINIOS.has(q.domain)) err(rel, `${d}: domain "${q.domain}" no es uno de los ocho oficiales`);
-    if (!DIFICULTADES.has(q.difficulty)) err(rel, `${d}: difficulty "${q.difficulty}" no es Fácil/Media/Difícil/Extreme`);
+    if (!DOMINIOS.has(q.domain)) {
+      if (CRUZADO.test(q.domain || '')) avi(rel, `${d}: domain cruzado "${q.domain}"; en un set nuevo conviene uno de los ocho oficiales`);
+      else err(rel, `${d}: domain "${q.domain}" no es uno de los ocho oficiales`);
+    }
+    if (!DIF_PREGUNTA.has(q.difficulty)) {
+      if (q.difficulty === 'Extreme') err(rel, `${d}: en una pregunta el tier brutal va como difficulty:'Difícil' + extreme:true. Con difficulty:'Extreme' el mock adaptativo la manda al módulo FÁCIL.`);
+      else err(rel, `${d}: difficulty "${q.difficulty}" no es Fácil/Media/Difícil`);
+    }
     ['skill', 'stem', 'expCorrect', 'tip'].forEach(c => {
       if (typeof q[c] !== 'string' || !q[c].trim()) err(rel, `${d}: le falta "${c}"`);
     });
@@ -155,7 +172,25 @@ for (const rel of archivos) {
     if (typeof v === 'string' && v && esEspanol(v)) err(rel, `el ${c} del set parece estar en español → ${v.slice(0, 60)}`);
   });
 
-  const mc = qs.filter(q => (q.type || 'mc') === 'mc').length;
+  /* Reparto de la clave. Un set escrito de una sentada tiende a poner la correcta
+     siempre en la misma letra —el primero generado así tenía las nueve en la A—,
+     y con eso el estudiante aprende a marcar A. Se arregla con
+     `node tools/rebalancear-clave.js <archivo>`, que solo renombra letras. */
+  const mcQs = qs.filter(q => (q.type || 'mc') === 'mc');
+  if (mcQs.length >= 8) {
+    const cuenta = {};
+    mcQs.forEach(q => { cuenta[q.correct] = (cuenta[q.correct] || 0) + 1; });
+    const tope = Math.ceil(mcQs.length * 0.45);
+    const peor = Object.entries(cuenta).sort((a, b) => b[1] - a[1])[0];
+    const distintas = Object.keys(cuenta).length;
+    if (peor && peor[1] > tope) {
+      err(rel, `la clave está desbalanceada: ${peor[1]} de ${mcQs.length} respuestas son "${peor[0]}" (tope ${tope}). Corré: node tools/rebalancear-clave.js ${rel}`);
+    } else if (distintas < 3) {
+      err(rel, `la clave usa solo ${distintas} letra(s) distinta(s). Corré: node tools/rebalancear-clave.js ${rel}`);
+    }
+  }
+
+  const mc = mcQs.length;
   const spr = qs.length - mc;
   const dif = {};
   qs.forEach(q => { dif[q.difficulty] = (dif[q.difficulty] || 0) + 1; });

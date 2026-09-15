@@ -20,7 +20,9 @@
           C:'87% confuses sensitivity (true positive rate) with posterior probability.',
           D:'95% is the test\'s sensitivity, not the posterior probability of disease given a positive test.'
         },
-        tip:'Bayes theorem: P(D|+) = P(+|D) × P(D) / P(+). The base rate (prevalence) of disease heavily influences the posterior probability. Low-prevalence diseases often produce many false positives.'
+        tip:'Bayes theorem: P(D|+) = P(+|D) × P(D) / P(+). The base rate (prevalence) of disease heavily influences the posterior probability. Low-prevalence diseases often produce many false positives.',
+        desmos:'Type (0.95*0.01)/(0.95*0.01+0.10*0.99) as a single line and read 0.0876: the hard part is the setup, and one line removes every arithmetic slip from it.',
+        desmosLatex:['(0.95*0.01)/(0.95*0.01+0.10*0.99)']
       },
       {
         id:'INS-PROB-02', type:'mc', domain:'Problem-Solving & Data Analysis', difficulty:'Difícil',
@@ -34,7 +36,9 @@
           C:'336 = 8 × 7 × 6 ignores the constraint entirely: it counts every assignment of 3 posts among the 8 people regardless of department.',
           D:'648 applies the 3! factor twice (18 × 6 × 6); the posts are handed out only once.'
         },
-        tip:'Combinatorics with constraints: split it into stages (choose the people, then assign the posts), compute each stage and multiply. Always verify the constraint has actually been applied.'
+        tip:'Combinatorics with constraints: split it into stages (choose the people, then assign the posts), compute each stage and multiply. Always verify the constraint has actually been applied.',
+        desmos:'Type 3*3*2 and then 3*3*2*6 underneath: seeing 18 sitting above 108 is the reminder that choosing the people is only half the job.',
+        desmosLatex:['3*3*2','3*3*2*6']
       },
       {
         id:'INS-PROB-03', type:'mc', domain:'Problem-Solving & Data Analysis', difficulty:'Difícil',
@@ -48,7 +52,9 @@
           B:'11/35 does not come from any correct computation; the two correct addends are 8/35 and 9/35.',
           C:'12/35 = (3/5)(4/7) = P(neither of the two), not "exactly one".'
         },
-        tip:'"Exactly one" = P(A)(1−P(B)) + P(B)(1−P(A)). Equivalently: P(A or B) − P(A and B). Do not confuse it with "at least one" or with "neither".'
+        tip:'"Exactly one" = P(A)(1−P(B)) + P(B)(1−P(A)). Equivalently: P(A or B) − P(A and B). Do not confuse it with "at least one" or with "neither".',
+        desmos:'Type (2/5)(4/7)+(3/5)(3/7) in one line for 0.4857, then type 17/35 under it and watch the two match.',
+        desmosLatex:['(2/5)(4/7)+(3/5)(3/7)','17/35']
       },
       {
         id:'INS-PROB-04', type:'spr', domain:'Problem-Solving & Data Analysis', difficulty:'Difícil',
@@ -56,7 +62,9 @@
         stem:'A game involves rolling a fair die. If you roll 1 or 2, you win $0. If you roll 3 or 4, you win $3. If you roll 5 or 6, you win $8. What is the expected value of your winnings? (Grid in your answer as a decimal or fraction.)',
         answer:'11/3',
         expCorrect:'E[X] = (1/6)(0) + (1/6)(0) + (1/6)(3) + (1/6)(3) + (1/6)(8) + (1/6)(8) = (1/6)(0 + 0 + 3 + 3 + 8 + 8) = (1/6)(22) = 22/6 = 11/3 ≈ 3.67. Valid forms for the box: 11/3, 3.666 or 3.667.',
-        tip:'Expected value: E[X] = Σ (outcome × probability). For a fair die, each outcome has prob 1/6.'
+        tip:'Expected value: E[X] = Σ (outcome × probability). For a fair die, each outcome has prob 1/6.',
+        desmos:'Type (0+0+3+3+8+8)/6 for 3.666…, then type 11/3 to confirm they agree before you grid it.',
+        desmosLatex:['(0+0+3+3+8+8)/6','11/3']
       },
       {
         id:'INS-PROB-05', type:'mc', domain:'Problem-Solving & Data Analysis', difficulty:'Difícil',
@@ -70,7 +78,9 @@
           C:'35/84 overcounts the favorable cases; the correct count is C(5,2) × C(3,1) = 30.',
           D:'40/84 overcounts (10 × 4 uses 4 blue ones, but there are only 3: C(3,1) = 3).'
         },
-        tip:'Hypergeometric (without replacement): P = [product of the favorable combinations] / C(total, n). The numerator is the C of each color wanted; the denominator is choosing n from the total.'
+        tip:'Hypergeometric (without replacement): P = [product of the favorable combinations] / C(total, n). The numerator is the C of each color wanted; the denominator is choosing n from the total.',
+        desmos:'Type nCr(5,2)*nCr(3,1)/nCr(9,3) and read 0.3571, which is the 30/84 they are asking for — Desmos does the combinations so no factorial gets expanded by hand.',
+        desmosLatex:['nCr(5,2)*nCr(3,1)/nCr(9,3)','30/84']
       },
       {
         id:'INS-PROB-06', type:'mc', domain:'Problem-Solving & Data Analysis', difficulty:'Difícil',
@@ -84,7 +94,9 @@
           C:'0.58 confuses the formula (0.3 + 0.4 − 0.12 treats them as independent, not mutually exclusive).',
           D:'1.0 is wrong; mutually exclusive events don\'t have to cover all outcomes, so the probabilities don\'t sum to 1.'
         },
-        tip:'Mutually exclusive: P(A or B) = P(A) + P(B). Independent: P(A and B) = P(A) × P(B). Don\'t mix them up.'
+        tip:'Mutually exclusive: P(A or B) = P(A) + P(B). Independent: P(A and B) = P(A) × P(B). Don\'t mix them up.',
+        desmos:'There is nothing here worth graphing: just type 0.3+0.4 for the answer 0.7, and type 0.3*0.4 beside it to see that 0.12 is the answer to the independent version of this question, not the mutually exclusive one.',
+        desmosLatex:['0.3+0.4','0.3*0.4']
       },
       {
         id:'INS-PROB-07', type:'mc', domain:'Problem-Solving & Data Analysis', difficulty:'Difícil',
@@ -98,7 +110,9 @@
           C:'1/26 = 2/52 handles the product (13 × 12)/(52 × 51) incorrectly.',
           D:'12/221 simplifies 156/2652 wrong; the correctly reduced fraction is 1/17.'
         },
-        tip:'Without replacement the probabilities change on every draw: P(two hearts) = (13/52) × (12/51). Simplify by cancelling common factors.'
+        tip:'Without replacement the probabilities change on every draw: P(two hearts) = (13/52) × (12/51). Simplify by cancelling common factors.',
+        desmos:'Type (13/52)(12/51) for 0.0588, then type 1/17 and 12/221 underneath: only 1/17 lands on the same number.',
+        desmosLatex:['(13/52)(12/51)','1/17','12/221']
       },
       {
         id:'INS-PROB-08', type:'mc', domain:'Problem-Solving & Data Analysis', difficulty:'Difícil',
@@ -112,7 +126,9 @@
           C:'11! is the raw permutation count, not distinct arrangements.',
           D:'34560 is close but miscalculates the factorial division.'
         },
-        tip:'Permutations with repetition: n! / (n₁! × n₂! × ... × nₖ!), where nᵢ is the count of each repeated element.'
+        tip:'Permutations with repetition: n! / (n₁! × n₂! × ... × nₖ!), where nᵢ is the count of each repeated element.',
+        desmos:'Type 11!/(4!*4!*2!) and read 34650; typing 34560 on the next line shows at a glance that the near-miss option is a different number.',
+        desmosLatex:['11!/(4!*4!*2!)','34560']
       },
       {
         id:'INS-PROB-09', type:'spr', domain:'Problem-Solving & Data Analysis', difficulty:'Difícil',
@@ -120,7 +136,9 @@
         stem:'A coin is flipped 5 times. What is the probability of getting exactly 3 heads? (Grid in your answer as a fraction or decimal.)',
         answer:'5/16',
         expCorrect:'P(exactly 3 heads in 5 flips) = C(5,3) × (1/2)³ × (1/2)² = 10 × (1/32) = 10/32 = 5/16 = 0.3125. Valid forms for the box: 5/16 or .3125.',
-        tip:'Binomial: P(k successes in n trials) = C(n,k) × p^k × (1−p)^(n−k).'
+        tip:'Binomial: P(k successes in n trials) = C(n,k) × p^k × (1−p)^(n−k).',
+        desmos:'Type nCr(5,3)*(1/2)^5 and read .3125, the decimal form of the 5/16 that goes in the box.',
+        desmosLatex:['nCr(5,3)*(1/2)^5','5/16']
       },
       {
         id:'INS-PROB-10', type:'mc', domain:'Problem-Solving & Data Analysis', difficulty:'Difícil',
@@ -134,7 +152,9 @@
           B:'0.5 is P(tea), not the conditional probability asked for.',
           D:'0.75 miscalculates the ratio (the correct ratio is 30/50).'
         },
-        tip:'Conditional probability: P(A|B) = P(A ∩ B) / P(B). Numerator is intersection, denominator is the "given" event.'
+        tip:'Conditional probability: P(A|B) = P(A ∩ B) / P(B). Numerator is intersection, denominator is the "given" event.',
+        desmos:'Type 30/50 for 0.6; the real check is the two-way table behind it — 30 both, 30 coffee only, 20 tea only, 20 neither — which has to total 100.',
+        desmosLatex:['30/50','30+30+20+20']
       },
       {
         id:'INS-PROB-11', type:'mc', domain:'Problem-Solving & Data Analysis', difficulty:'Difícil',
@@ -148,7 +168,9 @@
           C:'0.15 is P(both), not the conditional.',
           D:'0.25 miscalculates 0.15/0.4.'
         },
-        tip:'When given P(A and B) and P(A), solve for P(B|A) = P(A and B) / P(A).'
+        tip:'When given P(A and B) and P(A), solve for P(B|A) = P(A and B) / P(A).',
+        desmos:'Type 0.15/0.4 for 0.375, then type 0.15/0.25 underneath: it returns 0.6, which is exactly where the tempting wrong option comes from.',
+        desmosLatex:['0.15/0.4','0.15/0.25']
       },
       {
         id:'INS-PROB-12', type:'spr', domain:'Problem-Solving & Data Analysis', difficulty:'Difícil',
@@ -156,7 +178,9 @@
         stem:'The probability of event A is 0.3, and the probability of event B is 0.5. If A and B are independent, what is the probability of at least one occurring? (Grid in your answer as a decimal.)',
         answer:'.65',
         expCorrect:'P(at least one) = 1 − P(neither) = 1 − (1 − 0.3)(1 − 0.5) = 1 − 0.7 × 0.5 = 1 − 0.35 = 0.65. Valid forms for the box: .65 or 0.65.',
-        tip:'P(at least one) = 1 − P(none). For independence: P(at least one) = 1 − (1−P(A))(1−P(B)).'
+        tip:'P(at least one) = 1 − P(none). For independence: P(at least one) = 1 − (1−P(A))(1−P(B)).',
+        desmos:'Type 1-0.7*0.5 and read .65; typing 0.3+0.5 beside it gives 0.8, the trap that forgets to remove the overlap.',
+        desmosLatex:['1-0.7*0.5','0.3+0.5']
       }
     ]
   });

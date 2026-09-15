@@ -20,7 +20,9 @@
           C:'43 does leave a remainder of 3 with 5 (43 = 8·5 + 3), but 43 = 6·7 + 1 leaves a remainder of 1 with 7, not 2.',
           D:'52 leaves a remainder of 2 when divided by 5 (52 = 10·5 + 2), not 3. It fails the first condition.'
         },
-        tip:'Systems of congruences: list the numbers satisfying one condition (3, 8, 13, 18, 23, …) and filter with the other. With options given, the fastest route is checking each option against both remainders.'
+        tip:'Systems of congruences: list the numbers satisfying one condition (3, 8, 13, 18, 23, …) and filter with the other. With options given, the fastest route is checking each option against both remainders.',
+        desmos:'Type mod(17,5), mod(23,5), mod(43,5) and mod(52,5), then mod(23,7): only 23 returns 3 with 5 and 2 with 7.',
+        desmosLatex:['mod(17,5)','mod(23,5)','mod(43,5)','mod(52,5)','mod(23,7)']
       },
       {
         id:'INS-PM-03', type:'mc', domain:'Advanced Math', difficulty:'Difícil',
@@ -34,7 +36,9 @@
           B:'h(2) = 2(4) − 5 = 3, not 13. Careful: h(2) = 3 is not the same as h⁻¹(13) = 3.',
           D:'h(4) = 2(16) − 5 = 27, not 13. Check your work: 2x² = 18, not 32.'
         },
-        tip:'For h⁻¹(y) you do not need the inverse formula: solve the equation h(x) = y. And for the composite, work from the inside out: g first, then f.'
+        tip:'For h⁻¹(y) you do not need the inverse formula: solve the equation h(x) = y. And for the composite, work from the inside out: g first, then f.',
+        desmos:'Graph y=2x^2-5 and y=13 and read the crossing on the right-hand branch: x = 3, which is the root the domain x ≥ 0 leaves standing.',
+        desmosLatex:['y=2x^2-5','y=13']
       },
       {
         id:'INS-PM-04', type:'spr', domain:'Advanced Math + Algebra', difficulty:'Difícil',
@@ -43,7 +47,9 @@
         answer:'12',
         expCorrect:'Let a and b be the sides. Perimeter: 2(a + b) = 34 → a + b = 17. Area: ab = 60. So a and b are the roots of t² − 17t + 60 = 0 → (t − 5)(t − 12) = 0 → the sides are 5 and 12. Check: 2(5 + 12) = 34 ✓ and 5 × 12 = 60 ✓. The longer side is 12. Answer: 12.',
         expWrong:{},
-        tip:'With perimeter and area you have the SUM (a + b) and the PRODUCT (ab): the sides are the roots of t² − (sum)t + (product) = 0. You can also hunt factors of 60 that add to 17: 5 and 12.'
+        tip:'With perimeter and area you have the SUM (a + b) and the PRODUCT (ab): the sides are the roots of t² − (sum)t + (product) = 0. You can also hunt factors of 60 that add to 17: 5 and 12.',
+        desmos:'Graph x+y=17 and xy=60 and tap the crossings: (5, 12) and (12, 5), so the longer side is 12.',
+        desmosLatex:['x+y=17','xy=60']
       },
       {
         id:'INS-PM-05', type:'mc', domain:'Advanced Math + Data', difficulty:'Difícil',
@@ -57,7 +63,9 @@
           C:'With T = 5, (0.5)^(20/5) = (0.5)⁴ = 1/16 and 62.5 atoms would be left, not 125.',
           D:'With T = 3.33, (0.5)^(20/3.33) ≈ (0.5)⁶ = 1/64 and about 15.6 atoms would be left, not 125.'
         },
-        tip:'Exponential decay: write the ratio N/N₀ as a power of 1/2 (here 1/8 = (1/2)³) and set the exponents equal: the number of half-lives is t/T.'
+        tip:'Exponential decay: write the ratio N/N₀ as a power of 1/2 (here 1/8 = (1/2)³) and set the exponents equal: the number of half-lives is t/T.',
+        desmos:'Graph y=1000*0.5^(x/T) with a slider for T alongside y=125: the curve passes through 125 at x = 20 exactly when T = 6.67.',
+        desmosLatex:['y=1000*0.5^(x/T)','y=125','T=20/3']
       },
       {
         id:'INS-PM-06', type:'mc', domain:'Algebra + Problem-Solving', difficulty:'Difícil',
@@ -71,7 +79,9 @@
           C:'If a = 3, the horizontal asymptote is y = 3, not 2.',
           D:'If a = 6, the horizontal asymptote is y = 6, not 2.'
         },
-        tip:'Rational function f(x) = P(x)/Q(x): vertical asymptotes are zeros of Q; when degrees are equal, the horizontal asymptote is the ratio of leading coefficients.'
+        tip:'Rational function f(x) = P(x)/Q(x): vertical asymptotes are zeros of Q; when degrees are equal, the horizontal asymptote is the ratio of leading coefficients.',
+        desmos:'Graph y=(ax+2)/(x-3) with a slider for a and the line y=2: the far ends of the curve flatten onto y = 2 only when a = 2.',
+        desmosLatex:['y=(ax+2)/(x-3)','y=2','a=2']
       },
       {
         id:'INS-PM-07', type:'mc', domain:'Advanced Math', difficulty:'Difícil',
@@ -85,7 +95,9 @@
           B:'−24/25 is sin(2θ) = 2·sin(θ)·cos(θ) = 2(3/5)(−4/5), not cos(2θ).',
           C:'−1/5 does not come from any correct double-angle identity; review cos(2θ) = 1 − 2sin²θ.'
         },
-        tip:'Double angle: cos(2θ) = cos²θ − sin²θ = 2cos²θ − 1 = 1 − 2sin²θ. Pick the form that uses the data you have (here only sin θ) and mind the sign of cos θ by quadrant if you need it.'
+        tip:'Double angle: cos(2θ) = cos²θ − sin²θ = 2cos²θ − 1 = 1 − 2sin²θ. Pick the form that uses the data you have (here only sin θ) and mind the sign of cos θ by quadrant if you need it.',
+        desmos:'Type cos(2(pi-arcsin(3/5))) and Desmos returns 0.28, which is 7/25 — positive, even though θ sits in the second quadrant.',
+        desmosLatex:['\\cos(2(\\pi-\\arcsin(3/5)))','7/25']
       },
       {
         id:'INS-PM-08', type:'spr', domain:'Advanced Math + Algebra', difficulty:'Difícil',
@@ -94,7 +106,9 @@
         answer:'6',
         expCorrect:'By Vieta’s formulas, in ax³ + bx² + cx + d = 0 the sum of the roots is −b/a = −(−6)/1 = 6. (You can also factor: x = 1 is a root because 1 − 6 + 11 − 6 = 0; dividing leaves (x − 1)(x − 2)(x − 3) = 0, with roots 1, 2 and 3, and 1 + 2 + 3 = 6.) Answer: 6.',
         expWrong:{},
-        tip:'Vieta’s formulas for cubics: sum of roots = −b/a, sum of pairwise products = c/a, product = −d/a. Here you do not even need to factor.'
+        tip:'Vieta’s formulas for cubics: sum of roots = −b/a, sum of pairwise products = c/a, product = −d/a. Here you do not even need to factor.',
+        desmos:'Graph y=x^3-6x^2+11x-6 and read the three x-intercepts, 1, 2 and 3: they add to 6.',
+        desmosLatex:['y=x^3-6x^2+11x-6']
       },
       {
         id:'INS-PM-09', type:'mc', domain:'Advanced Math', difficulty:'Difícil',
@@ -108,7 +122,9 @@
           C:'If k = 3, the equations are x + 3y = 5 and x + 2y = 5: different lines, exactly one solution.',
           D:'If k = 4, the equations are x + 4y = 5 and x + 2y = 5: different lines, exactly one solution.'
         },
-        tip:'Infinitely many solutions: same line (all coefficients proportional). No solution: parallel lines (x, y proportional but constants not). One solution: non-proportional coefficients.'
+        tip:'Infinitely many solutions: same line (all coefficients proportional). No solution: parallel lines (x, y proportional but constants not). One solution: non-proportional coefficients.',
+        desmos:'Graph both equations with a slider for k: at k = 2 the first line lands exactly on top of the second and you see one line instead of two.',
+        desmosLatex:['x+ky=5','2x+4y=10','k=2']
       },
       {
         id:'INS-PM-10', type:'mc', domain:'Advanced Math + Problem-Solving', difficulty:'Difícil',
@@ -122,7 +138,9 @@
           C:'With x = 4: log₃(4) + log₃(2) = log₃(8) ≠ 1, because 3¹ = 3, not 8.',
           D:'With x = 6: log₃(6) + log₃(4) = log₃(24) ≠ 1.'
         },
-        tip:'Logarithmic equations: combine with log(a) + log(b) = log(ab), convert to exponential form, and ALWAYS check domain restrictions (every argument must be > 0).'
+        tip:'Logarithmic equations: combine with log(a) + log(b) = log(ab), convert to exponential form, and ALWAYS check domain restrictions (every argument must be > 0).',
+        desmos:'Graph y=log_3(x)+log_3(x-2) and y=1: the single crossing is at x = 3, and the curve simply does not exist left of x = 2, which is the domain rule made visible.',
+        desmosLatex:['y=\\log_{3}x+\\log_{3}\\left(x-2\\right)','y=1']
       },
       {
         id:'INS-PM-11', type:'mc', domain:'Advanced Math', difficulty:'Difícil',
@@ -136,7 +154,9 @@
           C:'5 comes from using the wrong piece in the second step: 2² + 1 = 5. Since 2 > 0, the piece is 2x, not x² + 1.',
           D:'8 comes from applying f one time too many: f(4) = 8. It is composed only twice: f(f(−1)) = f(2) = 4.'
         },
-        tip:'In piecewise functions check the condition (≤ or >) for EACH evaluation: the inner one first, then the outer one with the result you got. Do not carry the same piece over.'
+        tip:'In piecewise functions check the condition (≤ or >) for EACH evaluation: the inner one first, then the outer one with the result you got. Do not carry the same piece over.',
+        desmos:'Graph y=x^2+1{x≤0} and y=2x{x>0}, read f(−1) = 2 off the left piece, then feed that back in: the right piece gives f(2) = 4.',
+        desmosLatex:['y=x^2+1\\{x\\le0\\}','y=2x\\{x>0\\}','(-1,2)','(2,4)']
       },
       {
         id:'INS-PM-12', type:'spr', domain:'Advanced Math', difficulty:'Difícil',
@@ -145,7 +165,9 @@
         answer:'52',
         expCorrect:'Use the identity a² + b² = (a + b)² − 2ab = 10² − 2(24) = 100 − 48 = 52. (Direct check: a and b are 4 and 6, since 4 + 6 = 10 and 4·6 = 24; then 16 + 36 = 52 ✓.) Answer: 52.',
         expWrong:{},
-        tip:'Key identity: a² + b² = (a + b)² − 2ab. It saves you finding a and b separately when you know the sum and the product.'
+        tip:'Key identity: a² + b² = (a + b)² − 2ab. It saves you finding a and b separately when you know the sum and the product.',
+        desmos:'Graph x+y=10 and xy=24 to see the pair (4, 6), then type 4^2+6^2 for 52.',
+        desmosLatex:['x+y=10','xy=24','4^2+6^2']
       }
     ]
   });

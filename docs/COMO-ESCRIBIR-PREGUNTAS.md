@@ -60,6 +60,17 @@ Se escriben con acento y en español porque así nacieron y así las lee
 `SAT_NIVELES` / `SAT_NIVEL_CLASE` / `LVLORD` en `index.html`. Cambiarlas rompe
 el examen adaptativo en silencio. **Todo lo demás va en inglés.**
 
+> [!warning] El tier brutal se marca distinto en el SET y en la PREGUNTA
+> En el **set** va `level: 'Extreme'` — esa es la etiqueta que se muestra.
+> En cada **pregunta** va `difficulty: 'Difícil'` **más** `extreme: true`.
+>
+> No es capricho. Todo el motor —`hrank`, `cbDiff`, `assembleModule`,
+> `weightOf`, `LVLORD`, `DIFFS`— compara la dificultad contra las **tres**
+> cadenas `Fácil`/`Media`/`Difícil`. Una pregunta con `difficulty:'Extreme'`
+> cae al rango 0 y el mock adaptativo **la manda al módulo fácil**: justo lo
+> contrario de lo que dice. `validar-set.js` lo rechaza, y `indexSets()` lo
+> normaliza al cargar por si alguna se cuela.
+
 `domain` tiene ocho valores y ninguno más:
 
 - Matemática: `Algebra` · `Advanced Math` · `Problem-Solving & Data Analysis` ·
@@ -71,7 +82,7 @@ el examen adaptativo en silencio. **Todo lo demás va en inglés.**
 
 ```js
 {
-  id:'BAL-01', type:'mc', domain:'Algebra', difficulty:'Extreme',
+  id:'BAL-01', type:'mc', domain:'Algebra', difficulty:'Difícil', extreme:true,
   skill:'Systems with a parameter (no solution)',
   stem:'In the system 3x + ky = 12 and 9x + 15y = 36, k is a constant. For which value of k does the system have NO solution?',
   choices:{A:'5', B:'3', C:'15', D:'−5'},
@@ -91,6 +102,10 @@ el examen adaptativo en silencio. **Todo lo demás va en inglés.**
 Reglas que el validador exige:
 
 - Exactamente cuatro opciones: `A`, `B`, `C`, `D`.
+- La respuesta correcta **no puede caer siempre en la misma letra**. El validador
+  falla si una letra se lleva más del 45 % de un set de 8 o más preguntas; se
+  arregla con `node tools/rebalancear-clave.js <archivo>`, que solo renombra
+  letras y comprueba que la pregunta no cambió.
 - `correct` tiene que ser una de ellas.
 - `expWrong` explica **las tres incorrectas, ni una más ni una menos**. Si
   `correct` es `'B'`, las claves son `A`, `C`, `D`.

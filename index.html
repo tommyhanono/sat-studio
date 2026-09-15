@@ -1231,6 +1231,13 @@ function indexSets(){
     s.questions.forEach(function(q){
       q._setId = s.id;
       q._section = s.section;
+      /* El tier brutal se guarda como difficulty:'Difícil' + extreme:true, no
+         como difficulty:'Extreme'. No es capricho: TODO el motor compara contra
+         las tres cadenas (hrank, cbDiff, assembleModule, weightOf, LVLORD), así
+         que un 'Extreme' ahí se cae al rango 0 y el mock adaptativo lo manda al
+         módulo FÁCIL — al revés de lo que dice. Si alguien lo escribe así, acá
+         se normaliza en vez de romperse en silencio. Lo rechaza validar-set.js. */
+      if(q.difficulty === 'Extreme'){ q.difficulty = 'Difícil'; q.extreme = true; }
       var h = hints[q.id];
       if(h){ if(h.note) q.desmos = h.note; if(h.latex && h.latex.length) q.desmosLatex = h.latex; }
       if(!q.cheat){ var ck = cheatKeyFor(q); if(ck) q.cheat = ck; }

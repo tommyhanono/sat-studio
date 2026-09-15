@@ -20,7 +20,9 @@
           B:'1 results from miscounting the factorization (thinking only x = −3 or only x = 2 works). Solve the quadratic completely.',
           D:'3 is a trap if you confuse the coefficient 3 in the equation with the number of solutions; a line meets a parabola at most twice.'
         },
-        tip:'For systems with quadratic + linear, substitute the linear into the quadratic, get a quadratic in one variable, and count real solutions with the discriminant (≥ 0).'
+        tip:'For systems with quadratic + linear, substitute the linear into the quadratic, get a quadratic in one variable, and count real solutions with the discriminant (≥ 0).',
+        desmos:'Graph y=x^2+3x and y=2x+6 and count the crossings: there are two, at (−3, 0) and (2, 10).',
+        desmosLatex:['y=x^2+3x','y=2x+6']
       },
       {
         id:'MASH-02', type:'mc', domain:'Algebra + Functions', difficulty:'Difícil',
@@ -34,7 +36,9 @@
           C:'6 is only f(3); you forgot to subtract f(0).',
           D:'7 comes from using the wrong piece for f(3): 2(3) + 1 = 7. Since 3 > 2, the right piece is x² − 3.'
         },
-        tip:'In piecewise functions, check the condition (≤ or >) for EACH input before you pick the formula. Do not mix the pieces across domains.'
+        tip:'In piecewise functions, check the condition (≤ or >) for EACH input before you pick the formula. Do not mix the pieces across domains.',
+        desmos:'Graph the two pieces with their domains, y=2x+1{x≤2} and y=x²−3{x>2}, then read the curve at x = 0 and x = 3: f(0) = 1 and f(3) = 6, so the difference is 5.',
+        desmosLatex:['y=2x+1\\{x\\le2\\}','y=x^2-3\\{x>2\\}','(0,1)','(3,6)']
       },
       {
         id:'MASH-03', type:'mc', domain:'Algebra + Functions', difficulty:'Difícil',
@@ -48,7 +52,9 @@
           B:'1500 comes from adding 500 per doubling (linear thinking) instead of multiplying by 2.',
           D:'4000 is 500 · 8, which would be 2^3, not 2^2 — off by one doubling cycle.'
         },
-        tip:'For exponential growth with a doubling time (here 3 hours), identify how many "doubling cycles" occur, then compute 2^(cycles).'
+        tip:'For exponential growth with a doubling time (here 3 hours), identify how many "doubling cycles" occur, then compute 2^(cycles).',
+        desmos:'Type 500*2^(6/3) and Desmos gives you 2000 in one line, with no doubling to count by hand.',
+        desmosLatex:['500*2^(6/3)','y=500*2^(x/3)']
       },
       {
         id:'MASH-04', type:'mc', domain:'Algebra + Functions', difficulty:'Difícil',
@@ -62,7 +68,9 @@
           C:'−3 results from solving −6 = 2a directly (dropping the factor from the vertex x-value).',
           D:'−4 confuses the structure of the vertex formula; the correct equation is −6 = 4a.'
         },
-        tip:'Vertex x-coordinate: −b/(2a). Set it equal to the given x-value and solve for the unknown parameter.'
+        tip:'Vertex x-coordinate: −b/(2a). Set it equal to the given x-value and solve for the unknown parameter.',
+        desmos:'Graph y=ax^2+6x with a slider for a and watch the vertex slide sideways: it lands on x = 2 exactly when a = −1.5.',
+        desmosLatex:['y=ax^2+6x','a=-1.5','x=2']
       },
       {
         id:'MASH-05', type:'mc', domain:'Algebra + Functions', difficulty:'Difícil',
@@ -76,7 +84,9 @@
           C:'4 is a² with a = 2; you forgot to subtract a.',
           D:'6 comes from computing a² + a = 4 + 2 instead of a² − a.'
         },
-        tip:'When two functions are equal at a point, set them equal, solve for the x-value, apply any given condition to pick the right root, then evaluate the requested expression.'
+        tip:'When two functions are equal at a point, set them equal, solve for the x-value, apply any given condition to pick the right root, then evaluate the requested expression.',
+        desmos:'Graph y=3x-4 and y=x^2-2: they cross at x = 1 and x = 2, so the condition a > 1 picks a = 2, and typing 2^2-2 gives the 2 they asked for.',
+        desmosLatex:['y=3x-4','y=x^2-2','2^2-2']
       },
       {
         id:'MASH-06', type:'mc', domain:'Algebra + Functions', difficulty:'Difícil',
@@ -90,7 +100,9 @@
           C:'x > 2 is only half the solution; missing x < −4.',
           D:'x < −4 is only half the solution; missing x > 2.'
         },
-        tip:'For a product of factors, find zeros, then test the sign in each region. Remember: negative × negative = positive; negative × positive = negative.'
+        tip:'For a product of factors, find zeros, then test the sign in each region. Remember: negative × negative = positive; negative × positive = negative.',
+        desmos:'Graph y=(x-2)(x+4) and look at where the curve sits above the x-axis: to the left of −4 and to the right of 2, which is both halves of the answer.',
+        desmosLatex:['y=(x-2)(x+4)']
       },
       {
         id:'MASH-07', type:'spr', domain:'Algebra + Functions', difficulty:'Difícil',
@@ -99,7 +111,9 @@
         answer:'14/3',
         expCorrect:'Add the two equations: (2x + y) + (x − y) = 10 + 4 → 3x = 14 → x = 14/3 ≈ 4.67. (Alternative: from x − y = 4, get y = x − 4. Substitute into 2x + y = 10: 2x + (x − 4) = 10 → 3x = 14 → x = 14/3.) Answer: 14/3.',
         expWrong:{},
-        tip:'SPR trick: if the answer is a fraction, write it as is (14/3). As a decimal you have to fill the whole box: 4.666 or 4.667. A short decimal like 4.67 is not accepted.'
+        tip:'SPR trick: if the answer is a fraction, write it as is (14/3). As a decimal you have to fill the whole box: 4.666 or 4.667. A short decimal like 4.67 is not accepted.',
+        desmos:'Graph 2x+y=10 and x-y=4 and tap the crossing: x = 4.666…, that is 14/3, which is the form to grid in.',
+        desmosLatex:['2x+y=10','x-y=4']
       },
       {
         id:'MASH-08', type:'mc', domain:'Algebra + Functions', difficulty:'Difícil',
@@ -113,7 +127,9 @@
           C:'14 comes from f(2) = 3, then computing 3² + 5 (wrong constant in g).',
           D:'16 results from computing f(2) = 4 (forgetting the −1), then 4² = 16 without adding correctly.'
         },
-        tip:'Composite functions: work inside-out. Evaluate f first, get the result, then apply g to that result. Don\'t confuse the order.'
+        tip:'Composite functions: work inside-out. Evaluate f first, get the result, then apply g to that result. Don\'t confuse the order.',
+        desmos:'Define f(x)=2x-1 and g(x)=x^2+3 on their own lines, then type g(f(2)): Desmos handles the inside-out order for you and returns 12.',
+        desmosLatex:['f(x)=2x-1','g(x)=x^2+3','g(f(2))']
       },
       {
         id:'MASH-09', type:'mc', domain:'Algebra + Functions', difficulty:'Difícil',
@@ -127,7 +143,9 @@
           C:'A = 1000 + 1.05t adds only about a dollar per year; it misuses the growth factor as a slope.',
           D:'A = 1000t + 50 is linear and incorrectly structured (it multiplies the deposit by t).'
         },
-        tip:'Compound interest: exponential, factor (1 + r)^t. Simple interest: linear, adds the same amount each period. "Compounded" is your keyword for exponential.'
+        tip:'Compound interest: exponential, factor (1 + r)^t. Simple interest: linear, adds the same amount each period. "Compounded" is your keyword for exponential.',
+        desmos:'Type 1000*1.05^2 and 1000+50*2 one under the other: 1102.50 against 1100, and that $2.50 gap is the interest-on-interest that makes B the compound model.',
+        desmosLatex:['1000*1.05^2','1000+50*2']
       },
       {
         id:'MASH-10', type:'mc', domain:'Algebra + Functions', difficulty:'Difícil',
@@ -141,7 +159,9 @@
           B:'3 comes from solving 3x = 9 (subtracting 5 from 7 + 5 incorrectly, or computing 7 + 2).',
           D:'5 confuses the constant in the formula with the answer; solving 3x = 12 gives 4, not 5.'
         },
-        tip:'Inverse function notation: f^(−1)(a) is the x-value such that f(x) = a. Don\'t confuse it with 1/f(x).'
+        tip:'Inverse function notation: f^(−1)(a) is the x-value such that f(x) = a. Don\'t confuse it with 1/f(x).',
+        desmos:'Graph y=3x-5 and the horizontal line y=7 and tap the crossing: x = 4, which is exactly what f^(−1)(7) means.',
+        desmosLatex:['y=3x-5','y=7']
       },
       {
         id:'MASH-11', type:'spr', domain:'Algebra + Functions', difficulty:'Difícil',
@@ -150,7 +170,9 @@
         answer:'-4',
         expCorrect:'Substitute the point (2, 4): 4 = 2² + b(2) + 8 → 4 = 4 + 2b + 8 → 4 = 12 + 2b → 2b = −8 → b = −4. (Check: y = x² − 4x + 8 at x = 2 gives 4 − 8 + 8 = 4 ✓.) Answer: -4.',
         expWrong:{},
-        tip:'To find a parameter, substitute the known point (x, y) into the equation and solve. On SPR you can write negative answers: -4.'
+        tip:'To find a parameter, substitute the known point (x, y) into the equation and solve. On SPR you can write negative answers: -4.',
+        desmos:'Plot (2,4) and graph y=x^2+bx+8 with a slider for b: the parabola passes through the point exactly at b = −4.',
+        desmosLatex:['(2,4)','y=x^2+bx+8','b=-4']
       },
       {
         id:'MASH-12', type:'mc', domain:'Algebra + Functions', difficulty:'Difícil',
@@ -164,7 +186,9 @@
           B:'x > 3 is almost correct but misses x = 3 (at x = 3, f(3) = √0 = 0, which is defined).',
           D:'"All real numbers" ignores the restriction from the square root: the radicand x − 3 must be ≥ 0.'
         },
-        tip:'Square roots require the radicand ≥ 0. Fractions require the denominator ≠ 0. Always identify these restrictions first.'
+        tip:'Square roots require the radicand ≥ 0. Fractions require the denominator ≠ 0. Always identify these restrictions first.',
+        desmos:'Graph y=sqrt(x-3): the curve does not exist to the left of x = 3, and it does start at the point (3, 0), which is why the domain includes x = 3.',
+        desmosLatex:['y=\\sqrt{x-3}','(3,0)']
       }
     ]
   });
