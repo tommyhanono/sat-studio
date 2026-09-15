@@ -38,7 +38,7 @@ Corre las ocho y sale con código 1 si algo falla:
 | `test-datos.js` | que **una sesión jugada no se pierde**, con un Supabase falso al que se le corta la red | 48 |
 | `test-plan.js` | que "Mi plan de mejora" recomienda desde los datos del estudiante y arma el test que prometió | 30 |
 | `test-idioma.js` | que los 9.000+ campos que lee un estudiante en el banco están en inglés | — |
-| `test-pantallas.js` | **lo que se ve**: recorre 13 pantallas en Chrome y lee el texto, los botones sin acción, el XSS, las barras vacías y el scroll horizontal a 320/375/414 | 16 |
+| `test-pantallas.js` | **lo que se ve**: recorre las ocho pestañas y todas las pantallas en Chrome leyendo el texto renderizado, más los botones sin acción, el XSS del panel y del tablón, las barras que se pintan vacías y el scroll horizontal a 320/375/414 | 22 |
 | `test-pwa.js` | que se **instale** en el teléfono y **abra sin internet** (corta la red de verdad) | 20 |
 | `huella-banco.js` | la huella estructural del banco (ids, respuestas, dominios, dificultades) | — |
 
@@ -112,7 +112,7 @@ encima. Decidir entre 21 acordeones es la forma más rápida de que alguien no h
 Los ~1,5 MB de preguntas **no** se cargan con `defer`: `defer` descarga en paralelo pero bloquea el
 `DOMContentLoaded`, y la pantalla de cuenta —que no necesita ni una pregunta— esperaba el banco entero.
 
-- La lista de sets vivos es `var SAT_SET_FILES` dentro de `index.html`. **Es la fuente de verdad**, y las siete
+- La lista de sets vivos es `var SAT_SET_FILES` dentro de `index.html`. **Es la fuente de verdad**, y todas las
   herramientas la leen a través de `tools/lib-banco.js` (antes cada una tenía su copia del regex, y cuando el
   formato cambió se rompieron todas a la vez — una siguió diciendo "Banco íntegro" sobre cero preguntas).
 - `cargarBanco()` inyecta los archivos después del primer pintado. `conBanco(fn)` espera por ellos y muestra
@@ -143,12 +143,10 @@ Estado al 15-sep-2026, contra el sitio EN VIVO: **34 PASS · 0 FAIL · 2 WARN**.
 un FAIL extra, `B1-12`, que apunta a un `console.log` de `tools/huella-banco.js` — un script de línea de
 comandos, donde el estado de éxito es lo que imprime y su código de salida. Falso positivo por construcción.
 
-Los WARN que quedan:
+Los dos WARN que quedan, los dos decididos a propósito:
 
-1. **`B2-17` og:image 404** — `og.png` existe en el repo; el auditor lo pide contra
-   `https://sat-studio.vercel.app/og.png`, que es 404 hasta el deploy. Se cierra solo al publicar.
-2. **`B1-12` estado de éxito** — apunta a un `console.log` de `tools/huella-banco.js`, que es un script de
-   línea de comandos. El punto mide botones que escriben; en un CLI el estado de éxito es lo que imprime y su
-   código de salida. Falso positivo por construcción. **En `index.html` no queda ningún catch mudo.**
+1. **`B2-04` peso del JS** — 680 KB comprimidos en vivo. Es el banco entero, y desde que se carga después del
+   primer pintado ya no bloquea nada: `DOMContentLoaded` está en 83 ms locales.
+2. **`B2-18` dominio propio** — el sitio vive en `sat-studio.vercel.app`. Decisión de Tommy.
 
-El WARN es `B2-04` (1,56 MB de JS en total). Es el banco entero, y ya no bloquea el pintado.
+**En `index.html` no queda ningún catch mudo.**
