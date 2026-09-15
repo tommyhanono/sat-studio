@@ -19,13 +19,13 @@ window.SAT_SETS.push({
         D:'It describes a laboratory experiment and then generalizes its result to every known ecosystem.'
       },
       correct:'B',
-      expCorrect:'El texto avanza en tres tiempos: primero el modelo establecido (un solo equilibrio estable), luego los datos de campo que lo complican (poblaciones que oscilan o colapsan), y por último un marco revisado tomado de la dinámica no lineal. La opción B recoge ese movimiento de modelo viejo → observaciones que lo tensionan → marco nuevo.',
+      expCorrect:'The text moves in three stages: first the established model (a single stable equilibrium), then the field data that complicate it (populations that oscillate or collapse), and finally a revised framework borrowed from nonlinear dynamics. Option B captures that movement of old model → observations that strain it → new framework.',
       expWrong:{
-        A:'Describe una parte, no el todo: “carrying capacity” aparece una vez como parte del modelo viejo, pero el texto no cataloga varias definiciones ni respalda la más antigua; de hecho la deja atrás.',
-        C:'Malinterpreta el propósito: el texto dice que los datos “complicaron” el modelo, no que los ecólogos ignoraran datos “deliberadamente”. El verbo cambia todo.',
-        D:'No está apoyado: no se describe ningún experimento de laboratorio; la evidencia proviene de datos de campo a largo plazo.'
+        A:'It describes a part, not the whole: "carrying capacity" appears once as part of the old model, but the text does not catalogue several definitions or endorse the oldest one; in fact it leaves it behind.',
+        C:'It misreads the purpose: the text says the data "complicated" the model, not that ecologists "deliberately" ignored data. The verb changes everything.',
+        D:'Not supported: no laboratory experiment is described; the evidence comes from long-term field data.'
       },
-      tip:'Para STRUCTURE traza el arco completo. Señales como “complicated this picture” y “Confronted with these anomalies… theorists borrowed” marcan tres etapas: modelo, tensión, revisión.'
+      tip:'For STRUCTURE, trace the whole arc. Signals like "complicated this picture" and "Confronted with these anomalies… theorists borrowed" mark three stages: model, strain, revision.'
     },
     {
       id:'HVS-02', type:'mc', domain:'Craft and Structure', difficulty:'Difícil',
@@ -39,13 +39,13 @@ window.SAT_SETS.push({
         D:'It opens with a long-held assumption and then uses new evidence to replace it with a different explanation.'
       },
       correct:'D',
-      expCorrect:'El texto arranca con una suposición vieja (un solo escriba anónimo, prueba: la escritura uniforme) y luego usa el análisis de tinta para reemplazarla: los patrones encajan con varios copistas del mismo taller. La opción D captura ese paso de suposición previa a nueva explicación basada en evidencia.',
+      expCorrect:'The text opens with an old assumption (a single anonymous scribe, evidenced by the uniform hand) and then uses the ink analysis to replace it: the patterns fit several copyists from the same workshop. Option D captures that step from prior assumption to a new, evidence-based explanation.',
       expWrong:{
-        A:'Contradice el texto: no defiende la atribución tradicional ni descarta la evidencia nueva; la usa para dar vuelta la idea. La evidencia se toma como reveladora, no como “no concluyente”.',
-        B:'No está apoyado: se menciona una técnica (análisis químico de la tinta), pero el texto no lista varias herramientas ni las ordena por costo o fiabilidad.',
-        C:'Confunde el foco: no narra la vida de un escriba; el escriba único es justamente la idea que la evidencia derriba.'
+        A:'It contradicts the text: it does not defend the traditional attribution or dismiss the new evidence; it uses that evidence to overturn the idea. The evidence is taken as revealing, not "inconclusive".',
+        B:'Not supported: one technique is mentioned (chemical analysis of the ink), but the text does not list several tools or rank them by cost or reliability.',
+        C:'It shifts the focus: it does not narrate a scribe’s life; the single scribe is precisely the idea the evidence overturns.'
       },
-      tip:'Cuando un texto dice “había sido atribuido a X… told a subtler story”, casi siempre la estructura es: suposición vieja → evidencia → explicación nueva que la sustituye.'
+      tip:'When a text says "had been attributed to X… told a subtler story", the structure is almost always: old assumption → evidence → new explanation replacing it.'
     },
     {
       id:'HVS-03', type:'mc', domain:'Craft and Structure', difficulty:'Difícil',
@@ -59,13 +59,13 @@ window.SAT_SETS.push({
         D:'It proposes a new housing policy and lists the steps a city would take to adopt it.'
       },
       correct:'A',
-      expCorrect:'El texto presenta una idea muy difundida (la densidad es buena), reconoce su mérito (“does not dispute these gains”) y luego la matiza: la densidad no garantiza nada por sí sola; su valor depende de cómo se organice. La opción A recoge ese movimiento de presentar, conceder y condicionar.',
+      expCorrect:'The text presents a widespread idea (density is good), grants its merit ("does not dispute these gains") and then qualifies it: density guarantees nothing on its own; its value depends on how it is organized. Option A captures that movement of presenting, conceding and conditioning.',
       expWrong:{
-        B:'No está apoyado: aparece una sola historiadora (Marceau) frente a los planificadores en general; no hay un debate entre dos historiadoras ni un “ganador”.',
-        C:'Contradice el texto: dice explícitamente que Marceau “does not dispute these gains”; no rechaza que la densidad tenga beneficios.',
+        B:'Not supported: there is one historian (Marceau) against planners in general; there is no debate between two historians and no "winner".',
+        C:'It contradicts the text: it says explicitly that Marceau "does not dispute these gains"; she does not reject that density has benefits.',
         D:'No está apoyado: no se propone ninguna política nueva ni se enumeran pasos para adoptarla; el foco es una condición sobre el valor de la densidad.'
       },
-      tip:'Ojo con los textos que “conceden y luego matizan”. Frases como “does not dispute… however… depends entirely on” señalan que la estructura reconoce algo y luego le pone una condición, no que lo rechace.'
+      tip:'Watch for texts that "concede and then qualify". Phrases like "does not dispute… however… depends entirely on" signal a structure that acknowledges something and then attaches a condition, not one that rejects it.'
     },
     {
       id:'HVS-04', type:'mc', domain:'Craft and Structure', difficulty:'Difícil',
@@ -79,13 +79,13 @@ window.SAT_SETS.push({
         D:'It tells a personal anecdote and concludes that rumors are usually harmless.'
       },
       correct:'A',
-      expCorrect:'El texto abre con una ilustración concreta (el rumor que le gana a su corrección), extrae de ahí un principio general (la asimetría está incrustada en lo que hace viajar a la información) y lo usa para reorientar el estudio: hay que estudiar qué hace que un mensaje se mueva. La opción A sigue ese movimiento de ejemplo → principio → replanteo.',
+      expCorrect:'The text opens with a concrete illustration (the rumor outrunning its correction), draws a general principle from it (the asymmetry is built into what makes information travel) and uses it to redirect the field: what has to be studied is what makes a message move. Option A follows that movement of example → principle → reframing.',
       expWrong:{
         B:'Describe una parte, no el todo: no se define un término técnico ni se dan tres ejemplos de manual; hay una sola ilustración que impulsa un argumento.',
         C:'No está apoyado: no se comparan dos organizaciones de fact-checking; el texto dice que mejor fact-checking no “cura” del todo la asimetría.',
         D:'Contradice el texto: no hay una anécdota personal, y no concluye que los rumores sean “inofensivos”; se pregunta por qué persiste la desinformación.'
       },
-      tip:'Para STRUCTURE fíjate en dónde empieza y adónde llega el texto. Aquí va de un caso concreto (“Consider how…”) a un principio y luego a “must study… what makes any message move”: ejemplo → principio → nuevo enfoque.'
+      tip:'For STRUCTURE, notice where the text starts and where it lands. Here it goes from a concrete case ("Consider how…") to a principle and then to "must study… what makes any message move": example → principle → new approach.'
     },
     {
       id:'HVS-05', type:'mc', domain:'Craft and Structure', difficulty:'Difícil',
@@ -99,13 +99,13 @@ window.SAT_SETS.push({
         D:'To explain why an older metaphor for immunity gave way to one that better fits what the system actually does.'
       },
       correct:'D',
-      expCorrect:'El texto muestra que la metáfora vieja (un ejército contra invasores) no explicaba un hecho terco: el sistema tolera microbios inofensivos y los propios tejidos. Por eso los inmunólogos pasaron a describir la inmunidad como una “negociación”. El propósito es explicar por qué la metáfora vieja cedió el paso a otra que encaja mejor con lo que el sistema realmente hace.',
+      expCorrect:'The text shows that the old metaphor (an army against invaders) failed to explain a stubborn fact: the system tolerates harmless microbes and the body’s own tissues. That is why immunologists shifted to describing immunity as a "negotiation". The purpose is to explain why the old metaphor gave way to one that fits what the system actually does.',
       expWrong:{
         A:'Exagera y contradice: el texto dice que la metáfora del ejército “explicaba cómo el cuerpo ataca” bacterias y virus, así que no sostiene que el sistema no pueda atacar amenazas reales.',
         B:'No está apoyado: no hay instrucciones para “fortalecer” la respuesta inmune; el texto trata de cómo se conceptualiza la inmunidad.',
         C:'Describe una parte, no el todo: los microbios del intestino se mencionan como ejemplo del hecho terco, no como un catálogo de especies.'
       },
-      tip:'Para PURPOSE elige el verbo correcto: aquí el autor “explica” un cambio de metáfora, no “argumenta” un extremo ni “da instrucciones”. Un “however” que rompe la metáfora vieja suele anunciar ese propósito.'
+      tip:'For PURPOSE, pick the right verb: here the author "explains" a change of metaphor, he does not "argue" an extreme or "give instructions". A "however" that breaks the old metaphor usually announces that purpose.'
     },
     {
       id:'HVS-06', type:'mc', domain:'Craft and Structure', difficulty:'Difícil',
@@ -119,13 +119,13 @@ window.SAT_SETS.push({
         D:'To describe the specific rhyme scheme used in a single well-known poem.'
       },
       correct:'C',
-      expCorrect:'El texto plantea un dilema inevitable: conservar el sentido literal aplana la música, y conservar la música tuerce el sentido. Luego dice que las mejores traducciones eligen a conciencia qué sacrificar para que algo esencial sobreviva. El propósito es caracterizar ese trade-off y cómo responden los buenos traductores.',
+      expCorrect:'The text lays out an unavoidable dilemma: keeping the literal sense flattens the music, and keeping the music bends the sense. Then it says the best translations deliberately choose what to sacrifice so that something essential survives. The purpose is to characterize that trade-off and how good translators respond to it.',
       expWrong:{
         A:'No está apoyado: no se nombra ni se ordena a traductores famosos por su exactitud; se describe un dilema general.',
         B:'Exagera y contradice: el texto habla de “the finest translations”, o sea que sí se traduce; nunca afirma que traducir sea imposible.',
         D:'Describe una parte, no el todo: se mencionan ritmo y rima como parte de la “música”, pero no se analiza el esquema de rima de un poema específico.'
       },
-      tip:'Cuando un texto expone un dilema (“to do X is to lose Y”) y luego cómo se maneja, el propósito suele ser “caracterizar un trade-off y la respuesta a él”, no probar un imposible.'
+      tip:'When a text lays out a dilemma ("to do X is to lose Y") and then how it is handled, the purpose is usually to "characterize a trade-off and the response to it", not to prove something impossible.'
     },
     {
       id:'HVS-07', type:'mc', domain:'Craft and Structure', difficulty:'Difícil',
@@ -139,13 +139,13 @@ window.SAT_SETS.push({
         D:'It introduces the topic of the passage, which has not been mentioned before this point.'
       },
       correct:'C',
-      expCorrect:'Antes se contrastan dos reportes con conclusiones opuestas, uno financiado por comerciantes y otro basado en registros de ventas. La oración subrayada extrae la lección general de ese contraste: de quién provienen los datos puede pesar tanto como el método. Su función es sacar esa conclusión general del choque entre los dos estudios.',
+      expCorrect:'Just before, two reports with opposite conclusions are contrasted, one funded by merchants and the other based on sales records. The underlined sentence draws the general lesson from that contrast: who the data come from can weigh as much as the method. Its function is to draw that general conclusion from the clash between the two studies.',
       expWrong:{
         A:'No está apoyado: la oración no da cifras precisas de ingresos; enuncia un principio general sobre las fuentes de los datos.',
         B:'Contradice el texto: no recomienda rechazar la ciclovía; el segundo reporte muestra que los ingresos subieron. No toma partido por el estacionamiento.',
         D:'Malinterpreta la posición: el tema (los dos reportes sobre la ciclovía) ya se presentó antes; la oración cierra con una lección, no lo introduce por primera vez.'
       },
-      tip:'Para FUNCTION mira qué hace la oración tras lo que vino antes. Si sigue a un contraste y arranca una idea amplia (“whose data… can shape its conclusion”), su papel es extraer la lección general.'
+      tip:'For FUNCTION, look at what the sentence does after what came before. If it follows a contrast and opens a broad idea ("whose data… can shape its conclusion"), its role is to draw the general lesson.'
     },
     {
       id:'HVS-08', type:'mc', domain:'Craft and Structure', difficulty:'Difícil',
@@ -159,13 +159,13 @@ window.SAT_SETS.push({
         D:'It defines the technical vocabulary archaeologists use to date buried grain.'
       },
       correct:'B',
-      expCorrect:'La historia estándar decía que el abandono fue súbito por una sequía. La oración subrayada aporta los detalles de las excavaciones (granos que menguan capa a capa, comercio que se adelgaza, reparaciones cada vez más toscas por décadas) que sostienen la relectura: un declive gradual, no un golpe único. Su función es dar la evidencia que apoya esa reinterpretación.',
+      expCorrect:'The standard story said the abandonment was sudden, caused by a drought. The underlined sentence supplies the excavation details (grain stores thinning layer by layer, trade goods dwindling, repairs growing cruder over decades) that support the rereading: a gradual decline, not a single blow. Its function is to give the evidence supporting that reinterpretation.',
       expWrong:{
         A:'Contradice el texto: no reformula el abandono súbito; ofrece justo lo contrario, señales de un proceso lento y gradual.',
         C:'Contradice el texto: no concede que la sequía repentina tenga razón; los datos empujan hacia el declive largo y desigual.',
         D:'No está apoyado: la oración no define vocabulario técnico para datar granos; describe patrones que cambian a lo largo de las capas.'
       },
-      tip:'Para FUNCTION pregúntate a qué idea sirve la oración. Aquí una lista de detalles (“gradually… before they vanish… over decades”) sostiene la nueva lectura de un colapso lento; su papel es apoyar esa reinterpretación.'
+      tip:'For FUNCTION, ask which idea the sentence serves. Here a list of details ("gradually… before they vanish… over decades") supports the new reading of a slow collapse; its role is to back that reinterpretation.'
     },
     {
       id:'HVS-09', type:'mc', domain:'Information and Ideas', difficulty:'Difícil',
@@ -179,13 +179,13 @@ window.SAT_SETS.push({
         D:'Scientific instruments have become too complex for any single researcher to understand.'
       },
       correct:'C',
-      expCorrect:'El texto contrasta la imagen del genio solitario con lo que muestra el registro: la idea dependía de instrumentos de otros, datos de asistentes y una pregunta afinada por toda una comunidad; el “eureka” es un paso tardío en una larga carrera de relevos. La idea central junta ambas partes: lo que parece un chispazo solitario suele ser el último paso de un proceso colectivo. La opción C cubre todo el texto.',
+      expCorrect:'The text contrasts the image of the lone genius with what the record shows: the idea depended on other people’s instruments, assistants’ data and a question sharpened by a whole community; the "eureka" is a late step in a long relay. The central idea joins both halves: what looks like a solitary flash is usually the last step of a collective process. Option C covers the whole text.',
       expWrong:{
         A:'Va más allá del texto: los asistentes se mencionan como parte del proceso colectivo, pero el texto no reclama que merezcan “más premios” que los científicos famosos.',
         B:'Distorsiona el punto: el texto dice que el avance se apoya en instrumentos, datos y una pregunta ya afinada; eso no es un “accidente” sin planeación.',
         D:'Detalle, no idea central: los instrumentos son un ejemplo del aporte de otros, no una afirmación sobre que sean demasiado complejos de entender.'
       },
-      tip:'La idea central abarca TODO el párrafo. Aquí une el mito (genio solitario) con la realidad (proceso colectivo). La última línea (“a better story than a history”) confirma ese contraste: elige la opción que recoge las dos partes.'
+      tip:'The central idea spans the WHOLE paragraph. Here it joins the myth (lone genius) with the reality (a collective process). The last line ("a better story than a history") confirms that contrast: pick the option covering both halves.'
     },
     {
       id:'HVS-10', type:'mc', domain:'Information and Ideas', difficulty:'Difícil',
@@ -199,13 +199,13 @@ window.SAT_SETS.push({
         D:'Regret is the single strongest emotion that shoppers experience in stores.'
       },
       correct:'A',
-      expCorrect:'El texto parte de la suposición de que más opciones siempre benefician, y la complica: pasado cierto umbral, la gente compra menos y queda menos satisfecha, cargando con el peso de lo que descartó. La idea central es justamente que, más allá de un punto, sumar opciones deja de ayudar y empieza a pesar. La opción A recoge ese umbral.',
+      expCorrect:'The text starts from the assumption that more options always help, and complicates it: past a certain threshold, people buy less and end up less satisfied, weighed down by what they gave up. The central idea is precisely that, beyond a point, adding options stops helping and starts costing. Option A captures that threshold.',
       expWrong:{
         B:'No está apoyado: el texto no relaciona el no comprar con tener menos dinero; lo atribuye al exceso de opciones. Es información de afuera.',
         C:'Contradice el texto: el estudio muestra lo opuesto, que demasiadas opciones empeoran la satisfacción; no que la gente siempre decida mejor con más opciones.',
         D:'Describe una parte, no el todo: el arrepentimiento se menciona como uno de los costos del exceso de opciones, no como “la emoción más fuerte” en las tiendas.'
       },
-      tip:'Cuando un texto dice “solemos suponer X, yet la investigación complica eso”, la idea central vive en la corrección: aquí, que el beneficio de elegir no sube sin límite y pasado un umbral cuesta.'
+      tip:'When a text says "we tend to assume X, yet research complicates that", the central idea lives in the correction: here, that the benefit of choice does not rise without limit and past a threshold it costs.'
     },
     {
       id:'HVS-11', type:'mc', domain:'Information and Ideas', difficulty:'Difícil',
@@ -219,7 +219,7 @@ window.SAT_SETS.push({
         D:'Ecologists disagree about which century’s marshes were the healthiest.'
       },
       correct:'B',
-      expCorrect:'El texto contrasta la idea común (restaurar es devolver el humedal a un pasado prístino) con lo que hacen los ecólogos: las especies de hace siglos ya no encajan en una costa transformada, así que buscan construir un ecosistema que resista las condiciones que vienen, incluso con especies nuevas. La idea central junta el contraste y ese objetivo hacia el futuro. La opción B lo cubre.',
+      expCorrect:'The text contrasts the common idea (restoration means returning a wetland to a pristine past) with what ecologists actually do: the species of centuries ago no longer fit a transformed coast, so they aim to build an ecosystem that can withstand the conditions ahead, even with new species. The central idea joins that contrast with the forward-looking goal. Option B covers it.',
       expWrong:{
         A:'No está apoyado: el texto nunca clasifica los humedales como “los más valiosos” de todos los ecosistemas; habla de cómo restaurarlos. Es información de afuera.',
         C:'Exagera y contradice: dice que la costa fue “reshaped”, no que TODO humedal costero ya esté destruido; de hecho se sigue restaurando.',
@@ -239,13 +239,13 @@ window.SAT_SETS.push({
         D:'A map is useful precisely because it selectively omits information, deciding what matters.'
       },
       correct:'D',
-      expCorrect:'El texto dice que un mapa que registrara todo sería inútil y que su valor está justo en lo que deja fuera: cada mapa útil es una decisión sobre qué es relevante, y sus silencios son la fuente de su poder. La idea central es que un mapa sirve precisamente porque omite de forma selectiva, decidiendo qué importa. La opción D recoge esa tesis.',
+      expCorrect:'The text says a map recording everything would be useless and that its value lies precisely in what it leaves out: every useful map is a decision about what is relevant, and its silences are the source of its power. The central idea is that a map works precisely because it omits selectively, deciding what matters. Option D captures that thesis.',
       expWrong:{
         A:'Describe una parte, no el todo: elevación y lluvia son ejemplos de decisiones de relevancia, no una comparación que declare un tipo de mapa mejor que otro.',
         B:'Contradice el texto: dice que incluir “todo” haría inútil al mapa; no que los cartógrafos deban meter todo el detalle posible. Es lo opuesto.',
         C:'Distorsiona el foco: el punto no es cómo medir la exactitud comparando con el territorio, sino que el valor del mapa nace de lo que omite.'
       },
-      tip:'La idea central es la tesis que sostiene todo el párrafo. Aquí la línea clave “what it leaves out… its silences are the very source of its power” marca el punto: el mapa vale por lo que omite, no por incluir todo.'
+      tip:'The central idea is the thesis holding the whole paragraph together. Here the key line "what it leaves out… its silences are the very source of its power" marks the point: a map is valuable for what it omits, not for including everything.'
     }
   ]
 });

@@ -140,7 +140,7 @@
         expWrong:{
           A:'False: even though f wins at first, g overtakes it for large x (at x = 10, for instance). The exponential does not stay behind forever.',
           C:'They are not equal for every x; their values only cross at one point, they do not coincide everywhere.',
-          D:'Falso al inicio: en x = 1, f = 100 pero g = 2, así que f empieza mucho más grande. g no es mayor "siempre".'
+          D:'False at the start: at x = 1, f = 100 but g = 2, so f begins far larger. g is not greater "always".'
         },
         tip:'Key SAT rule: a growing exponential function ALWAYS ends up overtaking any linear or polynomial one, even if it starts out lower. "Eventually" is the word that gives the answer away.'
       },
