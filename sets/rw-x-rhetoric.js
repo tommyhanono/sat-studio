@@ -95,7 +95,7 @@ window.SAT_SETS.push({
       expWrong:{
         A:'“In fact” would intensify the mud problem, but the 3rd sentence does not worsen the exception: it returns to how easy the trail is.',
         C:'“Similarly” would mark a similarity with the muddy stretch, and the 3rd sentence describes the opposite (a firm surface, no trouble).',
-        D:'“Consequently” haría del sendero fácil una consecuencia del barro, lo cual no tiene sentido: son ideas opuestas, no causa y efecto.'
+        D:'“Consequently” would make the easy trail a consequence of the mud, which makes no sense: they are opposing ideas, not cause and effect.'
       },
       tip:'Spot the pattern “usually yes → once no → ___ usually yes”. The blank returns to the start: “Nonetheless”. Rule out anything that keeps describing the exception.'
     },
@@ -113,9 +113,9 @@ window.SAT_SETS.push({
       correct:'C',
       expCorrect:'It meets BOTH goals. It introduces what letterpress is for someone who does not know it (“presses raised metal type into the paper”) AND marks the difference from offset (it leaves an impression vs. a completely flat image).',
       expWrong:{
-        A:'Falla la meta de DIFERENCIA: define bien el letterpress para un público nuevo, pero nunca lo contrasta con el offset.',
-        B:'Falla la meta de PRESENTAR: sí contrasta letterpress y offset, pero da por sabido qué es el letterpress; nunca lo explica a quien no lo conoce.',
-        D:'Falla la meta de PRESENTAR el letterpress: la oración habla del offset y su velocidad, sin decir qué es el letterpress ni definirlo.'
+        A:'It fails the DIFFERENCE goal: it defines letterpress well for a new audience, but never contrasts it with offset.',
+        B:'It fails the INTRODUCE goal: it does contrast letterpress and offset, but it assumes you already know what letterpress is; it never explains it to someone unfamiliar.',
+        D:'It fails the goal of INTRODUCING letterpress: the sentence is about offset and its speed, without saying what letterpress is or defining it.'
       },
       tip:'With double goals, tick both boxes in your head: (1) does it introduce what the term is to someone who does not know it? (2) does it contrast with the other thing? Only the option ticking BOTH works.'
     },
@@ -132,9 +132,9 @@ window.SAT_SETS.push({
       correct:'D',
       expCorrect:'It meets BOTH goals. It defines the term “regressive tax” within the same sentence (“takes a larger share of income from those who earn less”) AND contrasts it with a progressive tax (the opposite direction). It introduces and differentiates at once.',
       expWrong:{
-        A:'Falla la meta de DIFERENCIA: define bien qué es un impuesto regresivo, pero no lo compara con el progresivo.',
-        B:'Falla la meta de PRESENTAR: afirma que van en direcciones opuestas (diferencia), pero nunca explica qué significa “regressive tax” a quien no conoce el término.',
-        C:'Falla la meta de PRESENTAR el término: da ejemplos (impuestos a las ventas vs. a la renta), pero no define qué quiere decir “regresivo” para un público nuevo.'
+        A:'It fails the DIFFERENCE goal: it defines a regressive tax well, but does not compare it with a progressive one.',
+        B:'It fails the INTRODUCE goal: it states that they run in opposite directions (the difference), but never explains what “regressive tax” means to someone unfamiliar with the term.',
+        C:'It fails the goal of INTRODUCING the term: it gives examples (sales taxes vs. income taxes), but does not define what “regressive” means for a new audience.'
       },
       tip:'When the goal asks you to “introduce the term X”, the right option usually defines it right there (“X, which is…”). If it only names it without explaining, it does not introduce.'
     },
@@ -151,9 +151,9 @@ window.SAT_SETS.push({
       correct:'A',
       expCorrect:'It meets BOTH goals. It introduces the animal for someone who does not know it (long legs, reddish coat, South American grasslands) AND marks the difference from true wolves (it hunts alone, not in packs).',
       expWrong:{
-        B:'Falla la meta de DIFERENCIA: describe bien al animal para un público nuevo, pero no lo compara con los lobos verdaderos.',
-        C:'Falla la meta de PRESENTAR: sí contrasta (caza solo vs. en manada), pero no dice qué es ni cómo es el lobo de crin para quien no lo conoce.',
-        D:'Falla ambas casi por completo: da un dato aislado (que no es un lobo real) sin presentar al animal ni marcar en qué se diferencia su forma de vivir o cazar.'
+        B:'It fails the DIFFERENCE goal: it describes the animal well for a new audience, but does not compare it with true wolves.',
+        C:'It fails the INTRODUCE goal: it does contrast (hunting alone vs. in packs), but it does not say what a maned wolf is or what it looks like to someone unfamiliar.',
+        D:'It fails both almost entirely: it gives an isolated fact (that it is not a true wolf) without introducing the animal or marking how its way of living or hunting differs.'
       },
       tip:'“Introduce to someone unfamiliar” calls for the overview (what it is, what it is like, where it is from). Add the contrast the goal asks for and you will see only one option carries both.'
     },
@@ -170,9 +170,9 @@ window.SAT_SETS.push({
       correct:'B',
       expCorrect:'It meets BOTH goals. It introduces what a theremin is (an electronic instrument played by moving your hands near two antennas) AND differentiates it from most instruments (which are struck or blown; this one is never touched).',
       expWrong:{
-        A:'Falla la meta de DIFERENCIA: presenta el theremin, pero solo aporta su fecha; no lo contrasta con cómo se tocan los demás instrumentos.',
-        C:'Falla la meta de PRESENTAR: marca la diferencia (no se toca), pero no explica qué es el theremin ni cómo funciona para un público nuevo.',
-        D:'Falla la meta de DIFERENCIA: describe cómo se toca (lo presenta), pero no lo compara con los demás instrumentos.'
+        A:'It fails the DIFFERENCE goal: it introduces the theremin, but only adds its date; it does not contrast it with how other instruments are played.',
+        C:'It fails the INTRODUCE goal: it marks the difference (it is never touched), but does not explain what a theremin is or how it works for a new audience.',
+        D:'It fails the DIFFERENCE goal: it describes how it is played (introducing it), but does not compare it with other instruments.'
       },
       tip:'Check that the option ticks BOTH boxes. Several “almost” make it by introducing or contrasting; only one does both in the same sentence.'
     },
@@ -189,9 +189,9 @@ window.SAT_SETS.push({
       correct:'C',
       expCorrect:'It meets BOTH goals. It introduces what tidal power is (it draws electricity from the daily rise and fall of the sea) AND differentiates it from wind and solar (its output can be predicted years in advance).',
       expWrong:{
-        A:'Falla la meta de DIFERENCIA: presenta bien qué es la energía mareomotriz, pero no la compara con la eólica ni la solar.',
-        B:'Falla la meta de PRESENTAR: marca la diferencia (se puede predecir), pero no explica qué es la energía mareomotriz para quien no la conoce.',
-        D:'Falla la meta de PRESENTAR la energía mareomotriz: la oración habla de la eólica y la solar, sin decir qué es la mareomotriz.'
+        A:'It fails the DIFFERENCE goal: it introduces tidal power well, but does not compare it with wind or solar.',
+        B:'It fails the INTRODUCE goal: it marks the difference (it can be predicted), but does not explain what tidal power is to someone unfamiliar.',
+        D:'It fails the goal of INTRODUCING tidal power: the sentence is about wind and solar, without saying what tidal power is.'
       },
       tip:'If the sentence is only about the OTHER side of the comparison, it is not introducing the subject being asked about. The right one defines the subject and contrasts it too.'
     },
@@ -208,9 +208,9 @@ window.SAT_SETS.push({
       correct:'D',
       expCorrect:'It meets BOTH goals. It introduces what bamboo is (a giant grass, not a tree) AND marks the difference in growth (nearly a meter a day against the few centimeters a year of trees).',
       expWrong:{
-        A:'Falla la meta de DIFERENCIA: presenta el bambú de forma vaga, pero no lo compara con los árboles ni da las cifras de crecimiento.',
-        B:'Falla la meta de PRESENTAR: da la diferencia de crecimiento con números, pero no dice qué es el bambú (que es un pasto, no un árbol) a quien no lo conoce.',
-        C:'Falla la meta de DIFERENCIA de CRECIMIENTO: clasifica al bambú (pasto, no árbol), pero no menciona su rapidez frente a los árboles.'
+        A:'It fails the DIFFERENCE goal: it introduces bamboo vaguely, but does not compare it with trees or give the growth figures.',
+        B:'It fails the INTRODUCE goal: it gives the growth difference with numbers, but does not say what bamboo is (a grass, not a tree) to someone unfamiliar.',
+        C:'It fails the GROWTH DIFFERENCE goal: it classifies bamboo (a grass, not a tree), but never mentions its speed compared with trees.'
       },
       tip:'When the difference asked for is specific (here, the GROWTH), any old contrast will not do: the right one introduces the subject and hits exactly that difference with the data.'
     }

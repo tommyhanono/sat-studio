@@ -20,13 +20,13 @@ window.SAT_SETS.push({
         D:'It shifts the passage’s attention from Mrs. Harmsworth toward the plight of the lace-makers she assists.'
       },
       correct:'C',
-      expCorrect:'La frase final usa palabras de elogio (“admirable kind”) pero las vacía: una generosidad que “no le cuesta nada salvo la molestia de ser vista”. Eso reinterpreta con ironía todo lo anterior —la suma calculada, el pledge en voz alta— como vanidad disfrazada de virtud. Esa es su función: cerrar el retrato revelando el verdadero motivo.',
+      expCorrect:'The closing phrase uses words of praise (“admirable kind”) but hollows them out: a generosity that “costs the giver nothing but the trouble of being seen”. That ironically reinterprets everything before it — the calculated sum, the pledge said aloud — as vanity dressed up as virtue. That is its function: to close the portrait by revealing the true motive.',
       expWrong:{
-        A:'Cae en la trampa literal: lee “admirable” en serio. El texto es irónico —“costs the giver nothing but the trouble of being seen”— así que NO elogia; desenmascara.',
-        B:'Inventa un suspenso que no existe: el narrador nunca dudó de si daría. De hecho “was the first to pledge”. No se resuelve ninguna incertidumbre.',
-        D:'El foco nunca se mueve hacia las encajeras; ellas son solo el escenario. La frase sigue clavada en el carácter de Mrs. Harmsworth.'
+        A:'It falls into the literal trap: it reads “admirable” straight. The text is ironic — “costs the giver nothing but the trouble of being seen” — so it does NOT praise; it unmasks.',
+        B:'It invents a suspense that does not exist: the narrator never doubted whether he would give. In fact he “was the first to pledge”. No uncertainty is resolved.',
+        D:'The focus never shifts to the lacemakers; they are only the setting. The phrase stays fixed on Mrs. Harmsworth’s character.'
       },
-      tip:'Cuando una frase elogia con palabras demasiado perfectas (“admirable”, “finest”) y luego añade una condición que la deshace, sospecha ironía. La función suele ser revelar, no alabar.'
+      tip:'When a phrase praises with words that are too perfect (“admirable”, “finest”) and then adds a condition that undoes them, suspect irony. The function is usually to reveal, not to praise.'
     },
     {
       id:'XR-02', type:'mc', domain:'Information and Ideas', difficulty:'Difícil', extreme:true,
@@ -40,13 +40,13 @@ window.SAT_SETS.push({
         D:'a source of private regret over the profession he had given up.'
       },
       correct:'A',
-      expCorrect:'El texto dice que las ventajas (evitar el trabajo, los riesgos, la comparación con hombres más capaces) eran cosas que Gerald “never named to himself” y ante las que sentiría “genuine astonishment”. O sea: le convenía, pero de verdad se impedía verlo. A captura ese autoengaño sincero.',
+      expCorrect:'The text says the advantages (avoiding the work, the risks, the comparison with abler men) were things Gerald “never named to himself” and would meet with “genuine astonishment”. That is: it suited him, but he genuinely kept himself from seeing it. A captures that sincere self-deception.',
       expWrong:{
-        C:'“Deliberate deception… knowingly” contradice el texto: precisamente NO lo sabía; su asombro sería “genuine” (auténtico). No es un farsante consciente.',
-        B:'Trampa sentimental: el texto no presenta un cariño real incomprendido; ironiza que el “sacrificio” le convenía. No hay evidencia de apego genuino ignorado.',
-        D:'“Regret over the profession” invierte el sentido: el texto dice que se le ahorraron “las exertions of a profession”. No hay arrepentimiento; hay alivio no reconocido.'
+        C:'“Deliberate deception… knowingly” contradicts the text: he precisely did NOT know; his astonishment would be “genuine”. He is not a conscious fraud.',
+        B:'A sentimental trap: the text does not present a real affection being misunderstood; it ironizes that the “sacrifice” suited him. There is no evidence of genuine attachment being overlooked.',
+        D:'“Regret over the profession” inverts the meaning: the text says he was spared “the exertions of a profession”. There is no regret; there is unacknowledged relief.'
       },
-      tip:'Ojo con “never named to himself” + “genuine astonishment”: marca autoengaño, no cálculo consciente ni virtud. La inferencia debe respetar que él mismo NO lo ve.'
+      tip:'Watch for “never named to himself” + “genuine astonishment”: it marks self-deception, not conscious calculation and not virtue. The inference has to respect that he himself does NOT see it.'
     },
     {
       id:'XR-03', type:'mc', domain:'Craft and Structure', difficulty:'Difícil', extreme:true,
@@ -60,13 +60,13 @@ window.SAT_SETS.push({
         D:'commend the skill of the designer who had been engaged for the work.'
       },
       correct:'B',
-      expCorrect:'Antes, el texto dice que la sala es tan “correcta” que uno siente “the impossibility of ever being comfortable there”. Las sillas son el ejemplo concreto: diseñadas por un hombre de gusto, pero “no one had ever sat in one twice” (nadie se sentó dos veces = incómodas). Ilustran esa idea: la corrección vence a la comodidad.',
+      expCorrect:'Just before, the text says the room is so “correct” that you feel “the impossibility of ever being comfortable there”. The chairs are the concrete example: designed by a man of taste, but “no one had ever sat in one twice” (nobody sat twice = uncomfortable). They illustrate that idea: correctness beats comfort.',
       expWrong:{
         A:'El costo nunca se menciona; el tema es el gusto y la incomodidad, no el precio. Es un detalle que el texto no toca.',
-        C:'Trampa literal de “no one had ever sat in one twice”: no dice que no reciban visitas, sino que quien se sienta no repite —porque son incómodas. Confunde la broma con un dato de frecuencia de visitas.',
-        D:'Lee “a man of taste” en serio como elogio. Es irónico: el gran gusto produjo sillas en las que nadie se sienta dos veces. No busca alabar al diseñador.'
+        C:'A literal trap with “no one had ever sat in one twice”: it does not say they get no visitors, but that whoever sits does not repeat — because the chairs are uncomfortable. It mistakes the joke for a fact about visitor frequency.',
+        D:'It reads “a man of taste” straight as praise. It is ironic: great taste produced chairs no one sits in twice. It is not out to praise the designer.'
       },
-      tip:'Un ejemplo casi siempre sirve para probar la afirmación que lo precede. Aquí la afirmación es “correcta pero incómoda”; la silla es su prueba, no un dato sobre visitas o precios.'
+      tip:'An example almost always serves to prove the claim just before it. Here the claim is “correct but uncomfortable”; the chair is its proof, not a fact about visitors or prices.'
     },
     {
       id:'XR-04', type:'mc', domain:'Craft and Structure', difficulty:'Difícil', extreme:true,
@@ -80,13 +80,13 @@ window.SAT_SETS.push({
         D:'qualify the earlier compliment by implying her frankness is harmless because it is shallow.'
       },
       correct:'D',
-      expCorrect:'El texto elogia su “frankness”, pero el cierre distingue dos franquezas: una que hiere “because it is discerning” y otra que se perdona “because it is not”. Al decir que la perdonan porque “thought so little”, la coloca en la segunda: inofensiva por superficial. La frase matiza (rebaja) el cumplido anterior.',
+      expCorrect:'The text praises her “frankness”, but the close distinguishes two kinds: one that wounds “because it is discerning” and one that is pardoned “because it is not”. By saying she is forgiven because she “thought so little”, it places her in the second: harmless because shallow. The phrase qualifies (deflates) the earlier compliment.',
       expWrong:{
         A:'No la defiende de nadie; el narrador es quien la punza. “Forgave her… she thought so little” es un desprecio elegante, no una defensa.',
-        C:'Trampa con “age”: la edad aparece antes, pero el perdón se atribuye a que piensa poco, no a que los demás se ablandaron con los años. Confunde dos causas.',
-        B:'Invierte el sentido: la última cláusula niega que sus juicios sean “discerning”. No la admiran por su sabiduría; la toleran por su falta de ella.'
+        C:'An “age” trap: age appears earlier, but the pardon is attributed to her thinking so little, not to others mellowing over the years. It confuses two causes.',
+        B:'It inverts the meaning: the last clause denies that her judgments are “discerning”. She is not admired for wisdom; she is tolerated for the lack of it.'
       },
-      tip:'Frases del tipo “X, siendo X lo único que mejora al guardarse” y contrastes gemelos (“wounds… / pardoned…”) son señales de ironía. Busca la opción que rebaja el elogio, no la que lo repite.'
+      tip:'Phrases like “X, X being the one thing that improves with keeping” and twin contrasts (“wounds… / pardoned…”) are irony signals. Look for the option that deflates the praise, not the one that repeats it.'
     },
     // ---------- HEDGED-SCIENCE SUPPORT / WEAKEN (5) ----------
     {
@@ -101,13 +101,13 @@ window.SAT_SETS.push({
         D:'The bare zone around each shrub is roughly the same width as the spread of the shrub’s own root system.'
       },
       correct:'C',
-      expCorrect:'La hipótesis es que la supresión es una ADAPTACIÓN para reducir la competencia por agua, no un simple subproducto. C lo apoya con precisión: el químico golpea mucho más a las plántulas que SÍ compiten por el agua y casi no a las que usan agua profunda que el arbusto no aprovecha. Ese blanco selectivo es justo lo que esperarías de una adaptación contra competidores, no de un efecto ciego.',
+      expCorrect:'The hypothesis is that the suppression is an ADAPTATION for reducing competition for water, not a mere byproduct. C supports it precisely: the chemical hits far harder the seedlings that DO compete for water and barely touches those using deep water the shrub cannot reach. That selective targeting is exactly what you would expect from an anti-competitor adaptation, not from a blind effect.',
       expWrong:{
-        A:'Que el químico se degrade rápido es un dato de química del suelo; no dice nada sobre si su función es reducir competencia por agua. Verdadero pero irrelevante.',
-        B:'Que se libere igual con o sin agua toca el mecanismo (es constitutivo), pero no distingue “adaptación anticompetencia” de “subproducto metabólico”; de hecho un subproducto también saldría igual. No apoya LA afirmación.',
-        D:'Que la zona pelada coincida con el ancho de las raíces apoya la explicación RIVAL del texto (el arbusto seca el agua local primero), no la hipótesis de adaptación química. Apoya la claim vecina equivocada.'
+        A:'The chemical degrading quickly is a fact about soil chemistry; it says nothing about whether its function is reducing competition for water. True but irrelevant.',
+        B:'Being released the same with or without water touches the mechanism (it is constitutive), but it does not distinguish “anti-competition adaptation” from “metabolic byproduct”; in fact a byproduct would also come out the same. It does not support THE claim.',
+        D:'The bare patch matching the width of the roots supports the text’s RIVAL explanation (the shrub dries the local water first), not the chemical-adaptation hypothesis. It supports the wrong neighboring claim.'
       },
-      tip:'La hipótesis distingue “adaptación con propósito” de “subproducto”. Apóyala con evidencia de selectividad dirigida a competidores (C), no con datos que igual valdrían para la explicación rival.'
+      tip:'The hypothesis distinguishes “purposeful adaptation” from “byproduct”. Support it with evidence of selectivity aimed at competitors (C), not with data that would equally fit the rival explanation.'
     },
     {
       id:'XR-06', type:'mc', domain:'Information and Ideas', difficulty:'Difícil', extreme:true,
@@ -121,13 +121,13 @@ window.SAT_SETS.push({
         D:'Different populations of the species sing dialects that differ noticeably in their fine details.'
       },
       correct:'B',
-      expCorrect:'La propuesta es que la PLANTILLA básica del canto es innata (no aprendida). B la debilita: si los aislados solo logran el canto rugoso cuando pueden OÍRSE a sí mismos, y los ensordecidos temprano no producen nada reconocible, entonces incluso ese canto “básico” depende de aprender por retroalimentación auditiva —no es puramente innato. Ataca el núcleo de la afirmación.',
+      expCorrect:'The proposal is that the basic TEMPLATE of the song is innate (not learned). B weakens it: if isolated birds only manage the rough song when they can HEAR themselves, and birds deafened early produce nothing recognizable, then even that “basic” song depends on learning through auditory feedback — it is not purely innate. It attacks the core of the claim.',
       expWrong:{
-        A:'Que con tutores canten normal es lo que el texto YA admite y encaja con su propuesta (lo innato es solo la plantilla). No la debilita; es consistente.',
-        C:'Que el tono anormal desaparezca al madurar toca la maduración del canto, no si la plantilla es innata o aprendida. Verdadero pero irrelevante a la claim.',
-        D:'Los dialectos entre poblaciones afectan los detalles finos —que el texto ya atribuye al aprendizaje del tutor—, no la plantilla básica innata. Debilita una claim vecina, no LA claim.'
+        A:'Singing normally with tutors is what the text ALREADY grants and fits its proposal (only the template is innate). It does not weaken it; it is consistent.',
+        C:'The abnormal tone fading with maturity touches the maturation of the song, not whether the template is innate or learned. True but irrelevant to the claim.',
+        D:'Dialects between populations affect the fine details — which the text already attributes to learning from a tutor — not the innate basic template. It weakens a neighboring claim, not THE claim.'
       },
-      tip:'Para debilitar “X es innato”, busca evidencia de que X en realidad requiere experiencia/aprendizaje (aquí, oírse a sí mismo). Lo que solo afecta los “detalles finos” no toca la plantilla básica.'
+      tip:'To weaken “X is innate”, look for evidence that X actually requires experience or learning (here, hearing oneself). Anything affecting only the “fine details” does not touch the basic template.'
     },
     {
       id:'XR-07', type:'mc', domain:'Information and Ideas', difficulty:'Difícil', extreme:true,
@@ -141,13 +141,13 @@ window.SAT_SETS.push({
         D:'The charcoal-rich layer contains large, angular charcoal fragments of a size that wind cannot transport far, concentrated in a single thin band.'
       },
       correct:'D',
-      expCorrect:'La hipótesis: el carbón registra UN solo incendio grande y local, no acumulación de muchos fuegos lejanos. D lo apoya directo: fragmentos grandes y angulares que el viento NO puede llevar lejos, concentrados en una banda fina y única → un incendio grande cercano y puntual, descartando la alternativa del viento y de muchos fuegos pequeños.',
+      expCorrect:'The hypothesis: the charcoal records ONE large, local fire, not the buildup of many distant ones. D supports it directly: large, angular fragments that wind CANNOT carry far, concentrated in a single thin band → one big nearby fire at a single moment, ruling out the wind alternative and the many-small-fires one.',
       expWrong:{
-        A:'Carbón en capas por encima y por debajo sugiere fuegos recurrentes o soot gradual —eso va EN CONTRA de la idea de un evento único. Si acaso, debilita.',
-        C:'Que otros lagos tengan capas de siglos variados es contexto regional; no dice nada sobre si ESTA capa es un incendio único. Verdadero pero irrelevante.',
-        B:'El polen de un clima más frío/húmedo describe qué pasó DESPUÉS con la vegetación, no si el carbón vino de un solo incendio grande. Apoya una claim vecina (el cambio de vegetación), no la del origen del carbón.'
+        A:'Charcoal in layers above and below suggests recurring fires or gradual soot — that runs AGAINST the idea of a single event. If anything, it weakens it.',
+        C:'Other lakes having layers from varied centuries is regional context; it says nothing about whether THIS layer is a single fire. True but irrelevant.',
+        B:'Pollen from a colder, wetter climate describes what happened to the vegetation AFTERWARD, not whether the charcoal came from one big fire. It supports a neighboring claim (the vegetation change), not the one about the charcoal’s origin.'
       },
-      tip:'“Un solo evento local” se apoya mostrando que el material no pudo venir de lejos ni acumularse poco a poco (fragmentos grandes, banda única). Datos sobre lo que vino después no tocan el origen.'
+      tip:'“A single local event” is supported by showing the material could not have come from far away or piled up slowly (large fragments, one single band). Data about what came afterward do not touch the origin.'
     },
     {
       id:'XR-08', type:'mc', domain:'Information and Ideas', difficulty:'Difícil', extreme:true,
@@ -161,13 +161,13 @@ window.SAT_SETS.push({
         D:'The gratitude group’s sleep improvement was largest among patients who already slept relatively well.'
       },
       correct:'A',
-      expCorrect:'La sugerencia: el beneficio viene ESPECÍFICAMENTE de enfocarse en lo positivo, no del acto de escribir. A la debilita de lleno: un tercer grupo que escribió sobre eventos NEUTRALES mejoró igual que el de gratitud → entonces el beneficio no depende del contenido positivo sino del escribir mismo. Ataca justo el “específicamente positivo”.',
+      expCorrect:'The suggestion: the benefit comes SPECIFICALLY from focusing on the positive, not from the act of writing. A weakens it head on: a third group that wrote about NEUTRAL events improved just as much as the gratitude group → so the benefit does not depend on positive content but on the writing itself. It attacks exactly the “specifically positive” part.',
       expWrong:{
-        B:'Que las entradas de gratitud fueran un poco más largas es un detalle de forma; no muestra que el escribir (y no el contenido positivo) sea la causa. Verdadero pero irrelevante.',
-        C:'Que a ambos grupos les gustara escribir no separa “contenido positivo” de “acto de escribir”; ambos escribían. No debilita la afirmación específica.',
-        D:'Que la mejora fuera mayor en quienes ya dormían bien habla de en QUIÉN funciona más, no de si la causa es el contenido positivo vs. escribir. No toca la claim.'
+        B:'The gratitude entries being slightly longer is a detail of form; it does not show that the writing (rather than the positive content) is the cause. True but irrelevant.',
+        C:'Both groups enjoying the writing does not separate “positive content” from “the act of writing”; both were writing. It does not weaken the specific claim.',
+        D:'The improvement being larger among those who already slept well is about WHO benefits more, not about whether the cause is positive content vs. writing. It does not touch the claim.'
       },
-      tip:'Para debilitar “el efecto viene del contenido positivo, no del acto de escribir”, busca un grupo que escriba SIN contenido positivo y mejore igual (A). Eso reasigna la causa al acto de escribir.'
+      tip:'To weaken “the effect comes from the positive content, not the act of writing”, look for a group that writes WITHOUT positive content and improves just as much (A). That reassigns the cause to the writing itself.'
     },
     {
       id:'XR-09', type:'mc', domain:'Information and Ideas', difficulty:'Difícil', extreme:true,
@@ -181,13 +181,13 @@ window.SAT_SETS.push({
         D:'Cleaners spend more total time servicing large clients than small ones.'
       },
       correct:'C',
-      expCorrect:'La hipótesis: los limpiadores dan buen servicio (no hacen trampa) justo cuando el cliente PUEDE irse a una estación rival, y engañan cuando no hay alternativa. C es una prueba directa: al colocar una estación rival cerca, los limpiadores reducen las mordidas a esos mismos clientes → el comportamiento cambia con la disponibilidad de alternativa, tal como predice la hipótesis.',
+      expCorrect:'The hypothesis: the cleaners give good service (no cheating) precisely when the client CAN leave for a rival station, and cheat when there is no alternative. C is a direct test: placing a rival station nearby makes the cleaners bite those same clients less → the behavior changes with the availability of an alternative, exactly as the hypothesis predicts.',
       expWrong:{
-        A:'Morder igual a grandes y pequeños habla de tamaño, que el texto menciona aparte; no dice nada sobre la variable clave: tener o no una estación rival cerca. Verdadero pero irrelevante.',
-        B:'Que los clientes vuelvan a la misma estación muestra fidelidad, no que el limpiador ajuste su trampa según la existencia de alternativas. No apoya el mecanismo propuesto.',
-        D:'Pasar más tiempo con clientes grandes toca tamaño/temperamento, una claim vecina que el texto separa; no la afirmación sobre la opción de escape del cliente.'
+        A:'Biting large and small clients equally is about size, which the text mentions separately; it says nothing about the key variable: whether a rival station is nearby. True but irrelevant.',
+        B:'Clients returning to the same station shows loyalty, not that the cleaner adjusts its cheating according to whether alternatives exist. It does not support the proposed mechanism.',
+        D:'Spending more time with large clients touches size and temperament, a neighboring claim the text sets aside; it is not the claim about the client’s escape option.'
       },
-      tip:'La hipótesis liga la conducta a UNA variable (¿hay estación rival cerca?). Apóyala con el experimento que manipula esa variable (C), no con datos sobre tamaño o fidelidad.'
+      tip:'The hypothesis ties the behavior to ONE variable (is there a rival station nearby?). Support it with the experiment that manipulates that variable (C), not with data about size or loyalty.'
     },
     // ---------- CROSS-TEXT NUANCE (3) ----------
     {
@@ -202,13 +202,13 @@ window.SAT_SETS.push({
         D:'By arguing that in-office employees are, in general, more satisfied than the survey was able to detect.'
       },
       correct:'A',
-      expCorrect:'Ibáñez “does not dispute the survey’s numbers” (acepta los datos), pero señala que el trabajo remoto se dio sobre todo al personal más senior y autónomo. Por eso duda de la INFERENCIA causal de Text 1: la satisfacción podría reflejar A QUIÉN eligieron, no el arreglo en sí. A dice exactamente eso: acepta los datos, cuestiona la causa.',
+      expCorrect:'Ibáñez “does not dispute the survey’s numbers” (she accepts the data), but points out that remote work went mainly to the most senior, autonomous staff. That is why she doubts Text 1’s causal INFERENCE: the satisfaction could reflect WHO was chosen, not the arrangement itself. A says exactly that: accept the data, question the cause.',
       expWrong:{
-        B:'Trampa de desacuerdo total: el texto dice explícitamente que NO disputa los números (“truly were more satisfied”). No niega el hallazgo, niega la causa.',
-        C:'Trampa de acuerdo total: coincidir en expandir el remoto es la conclusión de Text 1 que ella pone en duda. Ibáñez no la respalda.',
-        D:'Inventa una afirmación que ella nunca hace: no sostiene que los de oficina sean más satisfechos “en general”. Solo cuestiona la causa de los datos existentes.'
+        B:'A total-disagreement trap: the text says explicitly that it does NOT dispute the numbers (“truly were more satisfied”). She does not deny the finding, she denies the cause.',
+        C:'A total-agreement trap: agreeing to expand remote work is Text 1’s conclusion, the one she calls into question. Ibáñez does not endorse it.',
+        D:'It invents a claim she never makes: she does not hold that in-office workers are more satisfied “in general”. She only questions the cause behind the existing data.'
       },
-      tip:'Cuando el Texto 2 “no disputa los números” pero habla de selección/asignación no aleatoria, su objeción es a la CAUSA (correlación ≠ causa), no al dato. Evita las trampas de acuerdo o desacuerdo total.'
+      tip:'When Text 2 “does not dispute the numbers” but talks about non-random selection or assignment, its objection is to the CAUSE (correlation ≠ causation), not to the data. Avoid the traps of total agreement or total disagreement.'
     },
     {
       id:'XR-11', type:'mc', domain:'Information and Ideas', difficulty:'Difícil', extreme:true,
@@ -222,13 +222,13 @@ window.SAT_SETS.push({
         D:'too cautious, because music impairs comprehension even more severely than Text 1 concludes.'
       },
       correct:'B',
-      expCorrect:'Okafor “accepts that, on average, music lowered comprehension”, así que no la llama errónea. Pero matiza el ALCANCE: el efecto casi desaparece con textos simples y música sin letra, y se concentra en música con letra + textos difíciles. O sea: la conclusión general es correcta pero incompleta porque no distingue esas condiciones. Eso es B.',
+      expCorrect:'Okafor “accepts that, on average, music lowered comprehension”, so he does not call it wrong. But he narrows the SCOPE: the effect nearly vanishes with simple texts and instrumental music, and concentrates in music with lyrics + difficult texts. That is: the general conclusion is right but incomplete because it does not distinguish those conditions. That is B.',
       expWrong:{
-        A:'Trampa de desacuerdo total: él NO dice que la música mejore la comprensión; acepta que en promedio la baja. Contradice el texto.',
-        C:'Trampa de acuerdo total: “uniformly… any background music” es justo lo que él niega —el efecto “nearly vanished” en varias condiciones. No es uniforme.',
-        D:'Invierte su postura: no dice que el daño sea aún peor, sino que es más ESTRECHO de lo que sugiere Text 1. “Too cautious” es lo contrario de su objeción de alcance.'
+        A:'A total-disagreement trap: he does NOT say music improves comprehension; he accepts that on average it lowers it. It contradicts the text.',
+        C:'A total-agreement trap: “uniformly… any background music” is exactly what he denies — the effect “nearly vanished” under several conditions. It is not uniform.',
+        D:'It inverts his position: he does not say the harm is even worse, but that it is NARROWER than Text 1 suggests. “Too cautious” is the opposite of his scope objection.'
       },
-      tip:'Cuando el Texto 2 acepta el promedio pero dice “solo bajo ciertas condiciones / casi desaparece en otras”, su objeción es de ALCANCE: correcto pero incompleto. No es ni acuerdo total ni rechazo total.'
+      tip:'When Text 2 accepts the average but says “only under certain conditions / it nearly vanishes in others”, its objection is about SCOPE: correct but incomplete. It is neither full agreement nor full rejection.'
     },
     {
       id:'XR-12', type:'mc', domain:'Information and Ideas', difficulty:'Difícil', extreme:true,
@@ -242,13 +242,13 @@ window.SAT_SETS.push({
         D:'Text 2 accepts Text 1’s evidence but offers an alternative explanation that undercuts the specific inference Text 1 draws from it.'
       },
       correct:'D',
-      expCorrect:'Petrova acepta la evidencia (“finds the pottery genuine”) e incluso concede que los bienes importados suelen indicar riqueza. Pero da otra explicación: la cerámica estaba toda en un edificio junto a la puerta, quizá una posta de comerciantes, no casas. Eso mina la INFERENCIA específica de Text 1 (residentes ricos) ofreciendo una alternativa (ubicación en ruta comercial). Eso es D.',
+      expCorrect:'Petrova accepts the evidence (“finds the pottery genuine”) and even grants that imported goods usually indicate wealth. But she offers a different explanation: the pottery was all in one building by the gate, perhaps a traders’ way station, not homes. That undercuts Text 1’s specific INFERENCE (wealthy residents) by offering an alternative (a location on a trade route). That is D.',
       expWrong:{
-        A:'Falso: dice que la cerámica es “genuine”, no forjada. No rechaza la evidencia; rechaza la interpretación.',
-        C:'Trampa de acuerdo: NO respalda la conclusión de residentes ricos; la reemplaza por la de ruta comercial. “Endorses… conclusion” es incorrecto.',
-        B:'No hay desacuerdo sobre si la cerámica es importada; ambas lo aceptan. El choque es sobre qué INFIERE de ella, no sobre su origen.'
+        A:'False: she says the pottery is “genuine”, not forged. She does not reject the evidence; she rejects the interpretation.',
+        C:'An agreement trap: she does NOT endorse the wealthy-residents conclusion; she replaces it with the trade-route one. “Endorses… conclusion” is incorrect.',
+        B:'There is no disagreement about whether the pottery is imported; both accept that. The clash is about what she INFERS from it, not about its origin.'
       },
-      tip:'Aceptar la evidencia pero reubicar su significado (una posta, no hogares) es “misma data, distinta inferencia”. Descarta las opciones que dicen que niega la evidencia o que respalda la conclusión.'
+      tip:'Accepting the evidence but relocating its meaning (a way station, not homes) is “same data, different inference”. Rule out options saying she denies the evidence or endorses the conclusion.'
     }
   ]
 });
