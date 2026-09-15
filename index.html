@@ -2,12 +2,19 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='13' fill='%230b1f3a'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='34' font-weight='bold' text-anchor='middle' fill='%23ffc861'%3ES%3C/text%3E%3C/svg%3E">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="SAT Studio">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>SAT Studio — Digital SAT practice, Bluebook style</title>
 <meta name="description" content="Free Digital SAT practice in the same interface as Bluebook: 786 explained questions, full adaptive practice tests, and a study plan built from your own mistakes. Nothing to install.">
 <meta name="author" content="SAT Studio">
-<meta name="theme-color" content="#324DC7">
+<meta name="theme-color" content="#0b1f3a">
 <style>
   :root{
     --blue:#324DC7; --blue-dark:#2439a0; --blue-soft:#eef1fd;
@@ -47,7 +54,8 @@
   .chip{background:var(--blue-soft);color:var(--blue-dark);border-radius:999px;padding:5px 13px;font-size:.82rem;font-weight:600;display:inline-block}
 
   /* ============ HOME ============ */
-  #view-home{min-height:100vh;padding:34px 20px 80px;
+  #view-home{min-height:100vh;
+    padding:calc(34px + env(safe-area-inset-top)) calc(20px + env(safe-area-inset-right)) calc(80px + env(safe-area-inset-bottom)) calc(20px + env(safe-area-inset-left));
     background:var(--paper);
     background-image:linear-gradient(180deg,#fbfcfe 0,var(--paper) 340px,var(--paper-2) 100%)}
   .home-wrap{max-width:960px;margin:0 auto}
@@ -79,8 +87,23 @@
   .hs-s{font-size:.76rem;color:var(--gray-mid)}
   .hs-date{gap:4px}
   .hs-date-inp{border:none;background:none;padding:0;font-size:.76rem;color:var(--gray-mid);width:120px}
-  .hs-sync{display:flex;align-items:center;font-size:.74rem;color:var(--gray-mid);padding:0 2px}
-  @media(max-width:520px){ .home-strip{gap:8px} .hs-cell{flex:1 1 calc(50% - 4px);padding:10px 12px;min-height:58px} .hs-main{flex:1 1 100%} }
+  .hs-sync{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:.74rem;color:var(--gray-mid);padding:0 2px}
+  .sw-aviso{color:var(--amber)}
+  @media(max-width:560px){
+    .home-strip{gap:8px;margin:10px 0 2px}
+    .hs-cell{flex:1 1 calc(50% - 4px);padding:10px 12px;min-height:56px}
+    .hs-main{flex:1 1 100%}
+    .hs-v{font-size:1.3rem}
+    .hs-sync{flex:1 1 100%;justify-content:flex-start;padding:0}
+    /* "SAT Studio" partido en dos renglones se come media pantalla en un teléfono:
+       el título baja y la bajada se va debajo, no al lado. */
+    #view-home .brand{display:block;margin-bottom:2px}
+    #view-home .brand h1{font-size:1.5rem;white-space:nowrap}
+    #view-home .brand h1::after{width:26px;height:2px;margin-top:5px}
+    #view-home .brand .tag{display:block;margin-top:6px;font-size:.82rem}
+    #view-home{padding-top:calc(20px + env(safe-area-inset-top))}
+    .hg-s{font-size:.82rem}
+  }
   .dash-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-bottom:26px}
   .dash-card{background:#fff;border:1px solid #e3e6ef;border-radius:12px;padding:18px 20px;box-shadow:var(--sombra)}
   .dash-card .k{font-size:.78rem;color:var(--gray-mid);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
@@ -139,7 +162,10 @@
   .home-tools{font-size:.85rem;color:var(--gray-mid);line-height:1.7;margin-top:8px}
 
   /* ============ TEST CHROME ============ */
-  #view-app{display:flex;flex-direction:column;height:100vh;background:#fff}
+  /* 100dvh y no 100vh: en móvil la barra del navegador aparece y desaparece, y
+     con 100vh el pie del examen quedaba debajo de ella. */
+  #view-app{display:flex;flex-direction:column;height:100vh;height:100dvh;background:#fff;
+    padding-top:env(safe-area-inset-top);padding-bottom:env(safe-area-inset-bottom)}
   header{display:flex;align-items:center;justify-content:space-between;padding:9px 16px;border-bottom:1px dashed #bdbdbd;background:#fff;position:relative;z-index:40}
   .hdr-left{min-width:200px}
   .hdr-left .section-name{font-weight:600;font-size:.92rem}
@@ -416,7 +442,8 @@
   .exam-bar input{border:1px solid var(--gray-line);border-radius:8px;padding:9px 12px;font-family:var(--sans);font-size:16px;min-height:44px}
   .exam-bar input:focus{outline:3px solid #8fa2ef;outline-offset:1px}
   .exam-bar-note{color:var(--gray-mid);flex:1;min-width:220px}
-  #view-auth{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:28px 18px;
+  #view-auth{min-height:100vh;min-height:100dvh;display:flex;align-items:center;justify-content:center;
+    padding:calc(28px + env(safe-area-inset-top)) 18px calc(28px + env(safe-area-inset-bottom));
     background:var(--paper);background-image:radial-gradient(1100px 520px at 50% -10%,#fbfcfe 0,var(--paper) 55%,var(--paper-2) 100%)}
   .auth-card{width:100%;max-width:400px;border:1px solid #e3e6ef;border-radius:16px;padding:32px 28px;box-shadow:var(--sombra-alta);
     background:linear-gradient(175deg,#ffffff 0%,#fdfdff 55%,#fafbff 100%)}
@@ -462,6 +489,14 @@
   .cp-body{font-size:.92rem;line-height:1.65;margin-top:9px}
   .cp-tools{display:flex;gap:8px;margin-top:12px}
   .mini.danger{color:var(--red);border-color:#e8bcc3}
+  .sbuscador{padding:2px 0 2px}
+  .sb-input{width:100%;min-height:44px;border:1px solid var(--gray-line);border-radius:10px;padding:11px 14px;font-size:16px;font-family:var(--sans);box-sizing:border-box;margin-bottom:10px}
+  .sb-chips{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:8px}
+  .f-chip{min-height:34px;border:1px solid var(--gray-line);background:#fff;border-radius:999px;padding:5px 13px;font-size:.8rem;font-weight:600;font-family:var(--sans);color:var(--gray-mid);cursor:pointer}
+  .f-chip:hover{border-color:var(--blue);color:var(--blue-dark)}
+  .f-chip.on{background:var(--navy);border-color:var(--navy);color:#fff}
+  .sb-count{font-size:.78rem;color:var(--gray-mid);margin:10px 0 12px}
+  .sb-more{margin-top:4px}
   .fast-wrap{padding:2px 0 4px}
   .fast-lead{font-size:.92rem;line-height:1.6;margin-bottom:14px}
   .fast-btns{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px}
@@ -2250,7 +2285,8 @@ function renderHome(){
     '<span class="hs-v">' + (_ed && _dl2 > 0 ? _dl2 + 'd' : _ed && _dl2 === 0 ? 'today' : '—') + '</span>' +
     '<input type="date" id="exam-date-inp" class="hs-date-inp" value="' + escAttr(_ed) + '" aria-label="Your test date">' +
     '</div>';
-  tira += '<span class="hs-sync"><span id="sync-state" class="sync-state">' + syncLabel() + '</span></span>';
+  tira += '<span class="hs-sync"><span id="sync-state" class="sync-state">' + syncLabel() + '</span>' +
+    '<span id="sw-aviso" class="sw-aviso">' + avisoSW() + '</span></span>';
   $('#home-strip').innerHTML = tira;
 
   var _edi = $('#exam-date-inp');
@@ -2314,6 +2350,59 @@ function renderHome(){
   var mathSets = sortSets(SETS.filter(function(s){ return s.section === 'math' && !doneBySet[s.id]; }));
   var verbalSets = sortSets(SETS.filter(function(s){ return s.section === 'rw' && !doneBySet[s.id]; }));
   var completedSets = sortSets(SETS.filter(function(s){ return doneBySet[s.id]; }));
+
+  /* ---- El buscador de sets ----
+     Con 43 sets de matemática y 33 de verbal, una lista completa no es una
+     lista: es una pared. Lo que un estudiante quiere preguntarle a esa pantalla
+     es "¿qué hay de círculos?" o "¿qué hay del tier difícil?", no leerla entera.
+     El filtrado pasa en el DOM, sin volver a pintar el inicio, para no perder el
+     scroll ni lo que ya escribió. */
+  function setDominios(s){
+    var c = {};
+    (s.questions || []).forEach(function(q){
+      String(q.domain || '').split('+').forEach(function(d){
+        d = d.trim(); if(d) c[d] = (c[d] || 0) + 1;
+      });
+    });
+    return Object.keys(c).sort(function(a, b){ return c[b] - c[a]; });
+  }
+  var DOM_CORTO = {
+    'Algebra':'Algebra', 'Advanced Math':'Advanced', 'Functions':'Advanced',
+    'Problem-Solving & Data Analysis':'Data', 'Problem-Solving':'Data', 'Data':'Data',
+    'Geometry & Trigonometry':'Geometry',
+    'Craft and Structure':'Craft', 'Information and Ideas':'Ideas',
+    'Standard English Conventions':'Grammar', 'Expression of Ideas':'Expression'
+  };
+  function buscadorSets(lista, sec, vacio){
+    if(!lista.length) return '<div class="empty-note">' + vacio + '</div>';
+    var doms = [], nivs = [];
+    lista.forEach(function(s){
+      setDominios(s).forEach(function(d){ var k = DOM_CORTO[d] || d; if(doms.indexOf(k) < 0) doms.push(k); });
+      if(s.level && nivs.indexOf(s.level) < 0) nivs.push(s.level);
+    });
+    nivs.sort(function(a, b){ return (LVLORD[a] || 9) - (LVLORD[b] || 9); });
+
+    var chips = '<button type="button" class="f-chip on" data-f="dom" data-v="">All topics</button>' +
+      doms.map(function(d){ return '<button type="button" class="f-chip" data-f="dom" data-v="' + escAttr(d) + '">' + escHtml(d) + '</button>'; }).join('');
+    var chipsN = '<button type="button" class="f-chip on" data-f="niv" data-v="">Any level</button>' +
+      nivs.map(function(l){ return '<button type="button" class="f-chip" data-f="niv" data-v="' + escAttr(l) + '">' + escHtml(nivelLabel(l)) + '</button>'; }).join('');
+
+    var tarjetas = lista.map(function(s){
+      var ds = setDominios(s).map(function(d){ return DOM_CORTO[d] || d; });
+      var busq = (s.title + ' ' + s.description + ' ' + ds.join(' ') + ' ' + nivelLabel(s.level || '')).toLowerCase();
+      return '<div class="set-hit" data-doms="' + escAttr(ds.join('|')) + '" data-niv="' + escAttr(s.level || '') +
+        '" data-busca="' + escAttr(busq) + '">' + setCard(s) + '</div>';
+    }).join('');
+
+    return '<div class="sbuscador" data-sec="' + escAttr(sec) + '">' +
+      '<input type="search" class="sb-input" placeholder="Search a topic — circles, exponents, commas…" aria-label="Search the sets">' +
+      '<div class="sb-chips">' + chips + '</div>' +
+      '<div class="sb-chips">' + chipsN + '</div>' +
+      '<p class="sb-count"></p>' +
+      '<div class="sb-hits">' + tarjetas + '</div>' +
+      '<button type="button" class="mini sb-more hidden">Show the rest</button>' +
+      '</div>';
+  }
   var totalMissed = pool.length;
 
   /* Ocho destinos, cada uno con una sola razón de existir. Antes eran cinco
@@ -2350,11 +2439,11 @@ function renderHome(){
   var _ccMio = (_ccSt && _ccSt.hechas >= PLAN_MIN_MEDIDO)
     ? ' You are at <b>' + _ccSt.bien + '/' + _ccSt.hechas + '</b> on circles.' : '';
   var ccTeaser = '<p class="study-hint">Every SAT circle question is one of <b>6 fixed shapes</b>. This class walks each one with its diagram, a worked example and the exact trap where points get lost, then drops you into hard practice.' + _ccMio + '</p><button class="btn-primary" data-open-class="circles">Open the Circles class</button>';
-  G.math += homeSection('📐 Circles — Full Class', ccTeaser, 'NEW', true);
+  var _ccHtml = homeSection('📐 Circles — Full Class', ccTeaser, 'NEW', true);
   var ptM = (typeof ptMasteredCount === 'function') ? ptMasteredCount() : 0;
   var ptTeaser = '<p class="study-hint">Punctuation costs points when the RULES are not automatic yet. This trainer doesn’t give practice passages — it drills <b>the rules themselves</b>, over and over: every answer (right or wrong) shows you the full rule again, a rule is mastered only after <b>3 correct in a row</b>, and one miss resets it. When every dot is green, prove it with the <b>Perfect Run</b> — all questions, zero misses, or you start over.</p>' +
     '<div class="pt-home-btns"><button class="btn-primary" data-pt="drill">Memorization drill</button><button class="btn-outline" data-pt="read">Read the 12 rules</button><button class="btn-outline" data-pt="perfect">Perfect Run</button></div>';
-  G.verbal += homeSection('🧠 Punctuation Rules — Know Them 100%', ptTeaser, ptM + '/12', true);
+  var _ptHtml = homeSection('🧠 Punctuation Rules — Know Them 100%', ptTeaser, ptM + '/12', true);
   var sr = spacedReviewHTML();
   // Se guarda y se agrega más abajo: en Fast Pace lo primero tiene que ser el
   // botón que arranca algo en cinco minutos, no el panel de repaso.
@@ -2364,8 +2453,8 @@ function renderHome(){
      buscar la propia entre las de la otra materia. */
   var _lecMath = LESSONS.filter(function(l){ return l.sec === 'math'; });
   var _lecRw   = LESSONS.filter(function(l){ return l.sec === 'rw'; });
-  G.math   += homeSection('📚 Method, trap and worked example', '<p class="study-hint">' + LEARN_ROADMAP + '</p>' + _lecMath.map(lessonCardHTML).join(''), _lecMath.length, false);
-  G.verbal += homeSection('📚 Method, trap and worked example', '<p class="study-hint">' + LEARN_ROADMAP + '</p>' + _lecRw.map(lessonCardHTML).join(''), _lecRw.length, false);
+  var _lecMathHtml = homeSection('📚 Method, trap and worked example', '<p class="study-hint">' + LEARN_ROADMAP + '</p>' + _lecMath.map(lessonCardHTML).join(''), _lecMath.length, false);
+  var _lecRwHtml   = homeSection('📚 Method, trap and worked example', '<p class="study-hint">' + LEARN_ROADMAP + '</p>' + _lecRw.map(lessonCardHTML).join(''), _lecRw.length, false);
   G.mocks += homeSection('📋 Exam-Day Playbook', PLAYBOOK_HTML, null, false);
   var mocks = pastMocks();
   if(mocks.length){
@@ -2478,8 +2567,12 @@ function renderHome(){
       '</div><div class="set-actions"><button class="btn-primary" data-start-fullmock="' + mi + '">' + (best != null ? 'Retake' : 'Start') + '</button></div></div>';
   }
   G.mocks += homeSection('Full Mocks', mockCards, N_MOCKS, true);
-  G.math += homeSection('All Math sets', mathSets.length ? mathSets.map(setCard).join('') : '<div class="empty-note">No Math sets pending — see Completed below.</div>', mathSets.length, true);
-  G.verbal += homeSection('All Verbal sets', verbalSets.length ? verbalSets.map(setCard).join('') : '<div class="empty-note">No Verbal sets pending — see Completed below.</div>', verbalSets.length, true);
+  G.math += homeSection('All Math sets', buscadorSets(mathSets, 'math', 'No Math sets pending — see Completed under My Progress.'), mathSets.length, true);
+  G.verbal += homeSection('All Verbal sets', buscadorSets(verbalSets, 'rw', 'No Verbal sets pending — see Completed under My Progress.'), verbalSets.length, true);
+  // Primero el buscador, después la clase, después el método. Lo que se busca
+  // al entrar a una pestaña de temas es practicar, no leer.
+  G.math   += _ccHtml + _lecMathHtml;
+  G.verbal += _ptHtml + _lecRwHtml;
   /* Fast Pace: lo que se puede hacer en cinco minutos. Existe porque el hueco
      real de un estudiante de colegio no son 70 minutos seguidos, son los diez
      entre clase y clase — y si en ese rato la app solo le ofrece un simulacro
@@ -2581,6 +2674,58 @@ function renderHome(){
   });
   planWire();
   if(activa === 'clase'){ classWire(); classLoad(); }
+
+  /* El buscador filtra EN EL DOM: nada se vuelve a pintar, así que no se pierde
+     el scroll ni lo que el estudiante ya escribió. Con menos de TOPE resultados
+     se muestran todos; con más, se corta y aparece "Show the rest" — una lista
+     de 40 tarjetas no se lee, se abandona. */
+  var SB_TOPE = 8;
+  Array.prototype.forEach.call(document.querySelectorAll('#set-sections .sbuscador'), function(box){
+    var input = box.querySelector('.sb-input');
+    var hits = Array.prototype.slice.call(box.querySelectorAll('.set-hit'));
+    var cuenta = box.querySelector('.sb-count');
+    var masBtn = box.querySelector('.sb-more');
+    var estado = { texto: '', dom: '', niv: '', todos: false };
+
+    function aplicar(){
+      var t = estado.texto.trim().toLowerCase();
+      var vivos = 0;
+      hits.forEach(function(h){
+        var okT = !t || h.getAttribute('data-busca').indexOf(t) >= 0;
+        var okD = !estado.dom || h.getAttribute('data-doms').split('|').indexOf(estado.dom) >= 0;
+        var okN = !estado.niv || h.getAttribute('data-niv') === estado.niv;
+        var pasa = okT && okD && okN;
+        if(pasa) vivos++;
+        var oculto = !pasa || (!estado.todos && vivos > SB_TOPE);
+        h.classList.toggle('hidden', oculto);
+      });
+      var deMas = vivos - SB_TOPE;
+      if(!vivos){
+        cuenta.textContent = 'Nothing matches that. Clear the filters or try another word.';
+      } else if(deMas > 0 && !estado.todos){
+        cuenta.textContent = 'Showing ' + SB_TOPE + ' of ' + vivos + ' sets';
+      } else {
+        cuenta.textContent = vivos + (vivos === 1 ? ' set' : ' sets');
+      }
+      masBtn.classList.toggle('hidden', !(deMas > 0 && !estado.todos));
+      masBtn.textContent = 'Show the other ' + deMas;
+    }
+
+    if(input) input.addEventListener('input', function(){ estado.texto = this.value || ''; estado.todos = false; aplicar(); });
+    Array.prototype.forEach.call(box.querySelectorAll('.f-chip'), function(c){
+      c.addEventListener('click', function(){
+        var tipo = c.getAttribute('data-f');
+        estado[tipo] = c.getAttribute('data-v') || '';
+        estado.todos = false;
+        Array.prototype.forEach.call(box.querySelectorAll('.f-chip[data-f="' + tipo + '"]'), function(o){
+          o.classList.toggle('on', o === c);
+        });
+        aplicar();
+      });
+    });
+    masBtn.addEventListener('click', function(){ estado.todos = true; aplicar(); });
+    aplicar();
+  });
 
   Array.prototype.forEach.call(document.querySelectorAll('#set-sections [data-fast]'), function(b){
     b.addEventListener('click', function(){
@@ -5748,6 +5893,37 @@ function init(){
   var trf = $('#btn-teacher-refresh'); if(trf) trf.addEventListener('click', loadTeacher);
   var abr = $('#btn-admin-refresh'); if(abr) abr.addEventListener('click', loadAdmin);
   authBoot();
+  registrarSW();
+}
+
+/* El service worker hace que la app abra sin internet. Se registra DESPUÉS de
+   que todo lo demás esté en pie: si falla, no puede impedir que la app funcione.
+   Solo sobre http(s): abierto con file:// el navegador no lo permite y tirar el
+   error en consola solo confunde a quien abre el index a doble clic. */
+var SW_ESTADO = 'pendiente';   // 'listo' | 'no-disponible' | 'falló'
+function registrarSW(){
+  if(!('serviceWorker' in navigator) ||
+     (location.protocol !== 'http:' && location.protocol !== 'https:')){
+    SW_ESTADO = 'no-disponible';   // abierto con file://, o navegador viejo
+    return;
+  }
+  intenta(function(){
+    navigator.serviceWorker.register('sw.js').then(function(){
+      SW_ESTADO = 'listo';
+    }).catch(function(e){
+      // No es cosmético: sin service worker la app NO abre sin internet, y eso
+      // es justo lo que un estudiante necesita saber antes de irse a un lugar
+      // con mal wifi. Se dice donde ya se habla del guardado, en una línea.
+      SW_ESTADO = 'falló';
+      console.warn('SAT Studio · service worker not registered:', e && e.message);
+      intenta(function(){ var el = $('#sw-aviso'); if(el) el.textContent = avisoSW(); }, 'aviso del sw');
+    });
+  }, 'service worker');
+}
+function avisoSW(){
+  return SW_ESTADO === 'falló'
+    ? '⚠️ This browser would not let the app install its offline copy. Everything still works and nothing is lost, but it will not open without internet.'
+    : '';
 }
 /* init() ya no depende del banco: cablea la interfaz, arranca la descarga de los
    sets y deja que authBoot() decida qué pantalla mostrar. Quien necesite las

@@ -27,6 +27,7 @@ corre "Integridad de datos del estudiante"          node tools/test-datos.js
 corre "Mi plan de mejora"                           node tools/test-plan.js
 corre "Banco en inglés"                             node tools/test-idioma.js
 corre "Recorrido de pantallas (lo que se ve)"       node tools/test-pantallas.js
+corre "Instalable en el teléfono y sin internet"     node tools/test-pwa.js
 corre "Huella estructural del banco"                node tools/huella-banco.js
 
 printf '\n'

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="SAT Studio">
+  <!-- La marca: el cuadernillo azul del examen, con el corte de página y la
+       banda dorada de la app. El azul es el mismo #324DC7 de Bluebook y el
+       navy/dorado es el par que usa el resto del sitio. Se lee a 16 px. -->
+  <defs>
+    <linearGradient id="fondo" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#14305c"/>
+      <stop offset="1" stop-color="#0b1f3a"/>
+    </linearGradient>
+    <linearGradient id="hoja" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="1" stop-color="#e8edfb"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="512" height="512" rx="112" fill="url(#fondo)"/>
+
+  <!-- lomo del cuadernillo -->
+  <rect x="116" y="104" width="34" height="304" rx="12" fill="#324DC7"/>
+  <!-- la hoja -->
+  <path d="M150 104 h208 a38 38 0 0 1 38 38 v228 a38 38 0 0 1 -38 38 h-208 z" fill="url(#hoja)"/>
+
+  <!-- tres renglones: una pregunta y sus opciones -->
+  <rect x="186" y="156" width="170" height="20" rx="10" fill="#324DC7" opacity=".85"/>
+  <rect x="186" y="204" width="118" height="16" rx="8" fill="#0b1f3a" opacity=".22"/>
+  <rect x="186" y="244" width="140" height="16" rx="8" fill="#0b1f3a" opacity=".22"/>
+
+  <!-- la marca de la respuesta correcta -->
+  <circle cx="212" cy="318" r="30" fill="#b8862b"/>
+  <path d="M198 318 l10 11 l20 -23" fill="none" stroke="#fff" stroke-width="11"
+        stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- banda dorada al pie, el mismo filete del titular -->
+  <rect x="186" y="366" width="104" height="10" rx="5" fill="#b8862b"/>
+</svg>
