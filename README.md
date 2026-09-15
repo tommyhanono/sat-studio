@@ -8,24 +8,24 @@ Plataforma de práctica para el Digital SAT con interfaz estilo **Bluebook**, he
 
 _(also mirrored at https://tommyhanono.github.io/sat-studio/)_
 
-Entra **sin cuenta** y practica todo (el historial se guarda en ese navegador), o **crea tu cuenta** con correo y
-contraseña y el historial te sigue a cualquier dispositivo. Lo que juegues sin cuenta se pasa solo a tu cuenta
-cuando la crees.
+**Toda la interfaz y todas las preguntas están en inglés**, igual que el examen.
+
+Para entrar hace falta **una cuenta**, creada con el correo de la escuela. Al registrarte eliges tu **puntaje
+meta** y tu **fecha de examen**, y con eso la app te dice cuánto te falta y cuánto tiempo tienes. El historial
+te sigue a cualquier dispositivo.
 
 ## Cómo usarla
 
-**Opción 1 — Doble clic (lo más fácil):**
-Descomprime la carpeta y abre `index.html` en Chrome/Edge/Safari. Listo. Todo funciona en local (la calculadora Desmos necesita internet).
+**Opción 1 — Doble clic:** abre `index.html` en Chrome/Edge/Safari. Todo funciona en local (la calculadora
+Desmos necesita internet).
 
-**Opción 2 — GitHub Pages (recomendado para usarla desde cualquier dispositivo):**
-1. Crea un repositorio en github.com (ej. `sat-studio`).
-2. Sube TODOS los archivos (index.html + carpeta `sets/`), manteniendo la estructura.
-3. Settings → Pages → Source: branch `main`, folder `/ (root)` → Save.
-4. En ~1 minuto tu app queda en `https://TU-USUARIO.github.io/sat-studio/`.
+**Opción 2 — Servidor local:** `python3 -m http.server 8000` dentro de la carpeta y abre `http://localhost:8000`.
 
-**Opción 3 — Servidor local:** `python3 -m http.server 8000` dentro de la carpeta y abre `http://localhost:8000`.
+**Opción 3 — Publicarla:** el repo se despliega solo en Vercel y en GitHub Pages; son el mismo contenido y hay
+que actualizar los dos.
 
-> Con cuenta, tu historial y dashboard se guardan **en la nube** (Supabase) y te siguen en cualquier dispositivo. Sin conexión se guardan localmente y se sincronizan al reconectar.
+> Lo que juegas se guarda **primero en este navegador** y después se sube. Si no hay internet queda en una cola
+> durable y se sube sola al volver. Si algo no subió, **la pantalla lo dice**: nunca se pierde en silencio.
 
 ## 🧭 Mi plan de mejora
 
@@ -53,13 +53,23 @@ en el examen multiplicado por lo mal que vas. **La app propone; la decisión fin
 
 ## Cuentas y sincronización en la nube
 
-- Se puede entrar **sin cuenta**: todo funciona y el historial vive en ese navegador.
-- Con **correo + contraseña**, el historial te sigue a cualquier dispositivo. Cada quien ve **solo su** historial.
+- **La cuenta es obligatoria** y se crea con el correo de la escuela. Al registrarte pones tu puntaje meta y tu
+  fecha de examen (las dos opcionales, y se pueden cambiar después en **Progress**).
+- El historial te sigue a cualquier dispositivo. Cada quien ve **solo su** historial.
 - **Nada de lo que juegues se pierde por quedarte sin internet.** La sesión se guarda primero en tu dispositivo,
   queda en una cola que sobrevive cerrar el navegador, y se sube sola cuando vuelve la conexión. Si algo está
   sin subir, la pantalla te lo dice — nunca te promete "sincronizado" cuando no lo está.
 - **Aislamiento:** los datos viven en un **schema `sat` propio** (separado de los otros proyectos que comparten el mismo Supabase); el acceso va únicamente por **funciones RPC** en `public` que filtran por el usuario autenticado. La info de SAT nunca se cruza con la de otros proyectos.
 - El esquema (schema `sat` + tabla + funciones RPC) está en [`supabase/schema.sql`](supabase/schema.sql).
+
+## Vista de profesor (borrador)
+
+- La cuenta con `app_metadata.role = 'teacher'` (o `admin`) ve un botón **Class** que abre una vista de grupo.
+- Muestra **solo agregados**: cuánto practicó cada estudiante, su porcentaje, cuándo entró por última vez, y en
+  qué dominio falla el grupo entero. **Nunca la respuesta de una pregunta de nadie.**
+- El límite está puesto **en el servidor**, no en la pantalla: `sat_teacher_overview()` solo devuelve los
+  estudiantes del **mismo dominio de correo** que el profesor, y ni siquiera puede pedir el detalle.
+- Está marcada como **borrador** en la propia pantalla: el diseño y los números que muestra pueden cambiar.
 
 ## Panel de admin
 
@@ -67,18 +77,28 @@ en el examen multiplicado por lo mal que vas. **La app propone; la decisión fin
 - Los datos son **en vivo** vía RPC admin-gated (`sat_admin_overview`, `sat_admin_students`) que verifican el rol admin y **solo incluyen usuarios de SAT Studio** (con sesiones SAT o `user_metadata.app='sat-studio'`), nunca los de otros apps del mismo proyecto Supabase.
 - La config del backend (URL + anon key, ambas públicas) está en las constantes `SUPABASE_URL` / `SUPABASE_ANON_KEY` dentro de `index.html`. La anon key es pública por diseño; la seguridad la dan el login + RLS.
 
-## Agregar sets nuevos (los genera Claude)
+## Agregar sets nuevos
 
-1. Guarda el archivo nuevo (ej. `rw-set2.js`) dentro de la carpeta `sets/`.
-2. En `index.html`, agrega una línea junto a las demás:
-   ```html
-   <script src="sets/rw-set2.js"></script>
-   ```
-3. Recarga. El set aparece en el menú automáticamente.
+El contrato completo está en **[`docs/COMO-ESCRIBIR-PREGUNTAS.md`](docs/COMO-ESCRIBIR-PREGUNTAS.md)**: qué campos
+lleva una pregunta, qué hace buena a una explicación, qué hace difícil a una pregunta de verdad, y la regla cero
+(las preguntas son **originales**, nunca copiadas de College Board).
+
+```bash
+node tools/validar-set.js sets/mi-set-nuevo.js   # la puerta de entrada
+node tools/rebalancear-clave.js sets/mi-set.js   # si la clave quedó cargada a una letra
+```
+
+El validador revisa que el id no choque con el banco vivo, que las opciones sean A–D, que `correct` esté entre
+ellas, que `expWrong` explique exactamente las tres incorrectas, que los SPR traigan `answer` y no traigan
+opciones, que el enunciado no repita uno que ya existe, que todo esté en inglés, y que la respuesta correcta no
+caiga siempre en la misma letra. Recién cuando sale en verde se agrega la línea
+`<script defer src="sets/mi-set.js"></script>` en `index.html`.
 
 ## Contenido actual
 
-- **Banco:** 45+ sets · 530+ preguntas originales (0 IDs duplicados), Verbal y Math, niveles Easy/Medium/Hard.
+- **Banco:** 71 sets · 870 preguntas originales, sin ids ni enunciados repetidos, Verbal y Math, en cuatro
+  niveles (Warm-up · Test Level · Hard · real M2 · Brutal). El reparto por dominio y el estado contra los
+  pesos oficiales de College Board sale de `node tools/auditar-banco.js`.
 - **Mocks adaptativos** con la lógica del SAT real (Módulo 1 → rutea Módulo 2; score escalado): **Full Mocks** (8, /1600), **Hard Mocks** (6, todo difícil), **English Mocks** (8, /800) y **Math Mocks** (6, /800) — numerados, estables y re-tomables, con Review completo de cada intento.
 - **📋 Exam-Day Playbook:** estrategia investigada (pacing con checkpoints, Módulo 1 adaptativo, jugadas de Desmos, plan de semana final, protocolo del día del examen). Fuentes en `docs/final-week-playbook.md`.
 - **📖 Cheat sheet adaptativo** de Grammar & Punctuation: en cualquier Drill, el botón "Rules" abre un panel que resalta la regla exacta que evalúa la pregunta actual.
