@@ -14,13 +14,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'is', B:'are', C:'were', D:'have been'},
       correct:'A',
-      expCorrect:'El sujeto real es “The box” (singular). La frase “of antique silver spoons” solo describe al sujeto y no cambia su número. Un sujeto singular pide un verbo singular: “is”.',
+      expCorrect:'The real subject is "The box" (singular). The phrase "of antique silver spoons" only describes the subject and does not change its number. A singular subject calls for a singular verb: "is".',
       expWrong:{
-        B:'“are” es plural; concuerda con “spoons”, no con el verdadero sujeto “The box” (singular).',
+        B:'"are" is plural; it agrees with "spoons", not with the real subject "The box" (singular).',
         C:'“were” es plural; el sujeto singular “box” pide un verbo singular, no plural.',
         D:'“have been” es plural; el sujeto singular “box” pide “has been”, no “have been”.'
       },
-      tip:'Tapa la frase entre el sujeto y el verbo (“of antique silver spoons”). Queda “The box ___”: singular pide verbo singular.'
+      tip:'Cover the phrase between the subject and the verb ("of antique silver spoons"). What is left is "The box ___": singular calls for a singular verb.'
     },
     {
       id:'AGR-02', type:'mc', domain:'Standard English Conventions', difficulty:'Media',
@@ -29,13 +29,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'receive', B:'receives', C:'have received', D:'are receiving'},
       correct:'B',
-      expCorrect:'El sujeto es “Each”, que siempre es singular sin importar la frase que lo siga. Un sujeto singular pide un verbo singular: “receives”.',
+      expCorrect:'The subject is "Each", which is always singular no matter what phrase follows it. A singular subject calls for a singular verb: "receives".',
       expWrong:{
-        A:'“receive” es plural; concuerda con “volunteers”, pero el sujeto real es el singular “Each”.',
+        A:'"receive" is plural; it agrees with "volunteers", but the real subject is the singular "Each".',
         C:'“have received” es plural; el singular “Each” pide “has”, no “have”.',
         D:'“are receiving” es plural; el sujeto singular “Each” pide un verbo singular.'
       },
-      tip:'“Each” (cada uno) es SIEMPRE singular. Ignora “of the volunteers”: el verbo concuerda con “Each”.'
+      tip:'"Each" is ALWAYS singular. Ignore "of the volunteers": the verb agrees with "Each".'
     },
     {
       id:'AGR-03', type:'mc', domain:'Standard English Conventions', difficulty:'Difícil',
@@ -44,13 +44,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'stand', B:'stands', C:'have stood', D:'were standing'},
       correct:'B',
-      expCorrect:'La oración está invertida: el sujeto viene DESPUÉS del verbo. El sujeto es “a small cabin” (singular), así que el verbo es singular: “stands”.',
+      expCorrect:'The sentence is inverted: the subject comes AFTER the verb. The subject is "a small cabin" (singular), so the verb is singular: "stands".',
       expWrong:{
         A:'“stand” es plural; el sujeto “a small cabin” es singular.',
         C:'“have stood” es plural; el sujeto singular “a small cabin” pide “has stood”.',
-        D:'“were standing” es plural; el sujeto es singular y el resto del texto está en presente.'
+        D:'"were standing" is plural; the subject is singular and the rest of the text is in the present.'
       },
-      tip:'Cuando la oración empieza con lugar (“Beyond the ridge…”), busca el sujeto DESPUÉS del verbo. Aquí es “a cabin” (singular).'
+      tip:'When the sentence opens with a place ("Beyond the ridge…"), look for the subject AFTER the verb. Here it is "a cabin" (singular).'
     },
     {
       id:'AGR-04', type:'mc', domain:'Standard English Conventions', difficulty:'Media',
@@ -59,13 +59,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'was', B:'is', C:'were', D:'has been'},
       correct:'C',
-      expCorrect:'Con “neither… nor…”, el verbo concuerda con el sujeto MÁS CERCANO. El más cercano es “the players” (plural), así que el verbo va en plural: “were”.',
+      expCorrect:'With "neither… nor…", the verb agrees with the NEAREST subject. The nearest is "the players" (plural), so the verb is plural: "were".',
       expWrong:{
-        A:'“was” es singular; concordaría con “coach”, pero la regla manda concordar con el sujeto más cercano, que es plural.',
-        B:'“is” es singular y presente; el sujeto más cercano es plural y el texto está en pasado.',
-        D:'“has been” es singular; el sujeto más cercano “players” es plural.'
+        A:'"was" is singular; it would agree with "coach", but the rule says agree with the nearest subject, which is plural.',
+        B:'"is" is singular and present tense; the nearest subject is plural and the text is in the past.',
+        D:'"has been" is singular; the nearest subject "players" is plural.'
       },
-      tip:'En “neither X nor Y”, mira SOLO la Y (lo más cercano al verbo). Si Y es plural, el verbo es plural.'
+      tip:'In "neither X nor Y", look ONLY at the Y (the one closest to the verb). If Y is plural, the verb is plural.'
     },
     {
       id:'AGR-05', type:'mc', domain:'Standard English Conventions', difficulty:'Difícil',
@@ -74,13 +74,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'are', B:'were', C:'is', D:'have been'},
       correct:'C',
-      expCorrect:'El sujeto es “The committee” (singular, tratado como una unidad). La frase “along with several outside consultants” no forma parte del sujeto: solo lo acompaña. Un sujeto singular pide “is”.',
+      expCorrect:'The subject is "The committee" (singular, treated as one unit). The phrase "along with several outside consultants" is not part of the subject: it only accompanies it. A singular subject calls for "is".',
       expWrong:{
-        A:'“are” es plural; “along with…” no suma sujetos, así que el sujeto sigue siendo el singular “committee”.',
+        A:'"are" is plural; "along with…" does not add subjects, so the subject is still the singular "committee".',
         B:'“were” es plural; el sujeto singular “committee” pide un verbo singular.',
         D:'“have been” es plural; el singular “committee” pide “has been”, no “have been”.'
       },
-      tip:'Frases como “along with”, “as well as” o “together with” NO agregan al sujeto. Concuerda solo con el sujeto real (“committee”).'
+      tip:'Phrases like "along with", "as well as" or "together with" do NOT add to the subject. Agree only with the real subject ("committee").'
     },
     {
       id:'AGR-06', type:'mc', domain:'Standard English Conventions', difficulty:'Fácil',
@@ -89,13 +89,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'they', B:'he or she', C:'we', D:'it'},
       correct:'B',
-      expCorrect:'El antecedente es “a student” (singular). Un pronombre singular que se refiere a una persona indefinida es “he or she”.',
+      expCorrect:'The antecedent is "a student" (singular). A singular pronoun referring to an indefinite person is "he or she".',
       expWrong:{
         A:'“they” es plural; no concuerda con el antecedente singular “a student”.',
         C:'“we” es primera persona; el texto habla del estudiante en tercera persona, no de nosotros.',
-        D:'“it” es para cosas o animales, no para un estudiante (persona).'
+        D:'"it" is for things or animals, not for a student (a person).'
       },
-      tip:'Un antecedente singular (“a student”) pide un pronombre singular. Para una persona indefinida, usa “he or she”.'
+      tip:'A singular antecedent ("a student") calls for a singular pronoun. For an indefinite person, use "he or she".'
     },
     {
       id:'AGR-07', type:'mc', domain:'Standard English Conventions', difficulty:'Media',
@@ -104,10 +104,10 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'their', B:'its', C:'it’s', D:'our'},
       correct:'B',
-      expCorrect:'“The orchestra” es un sustantivo colectivo tratado como una sola unidad. El pronombre posesivo singular que le corresponde es “its”.',
+      expCorrect:'"The orchestra" is a collective noun treated as one unit. The matching singular possessive pronoun is "its".',
       expWrong:{
-        A:'“their” es plural; aquí el texto trata a la orquesta como una unidad singular.',
-        C:'“it’s” significa “it is”; aquí se necesita el posesivo “its”, sin apóstrofo.',
+        A:'"their" is plural; here the text treats the orchestra as a singular unit.',
+        C:'"it’s" means "it is"; here you need the possessive "its", with no apostrophe.',
         D:'“our” es primera persona; el texto habla de la orquesta en tercera persona.'
       },
       tip:'Un sustantivo colectivo tratado como unidad (“The orchestra”) pide el posesivo singular “its”.'
@@ -119,13 +119,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'their', B:'your', C:'its', D:'his or her'},
       correct:'D',
-      expCorrect:'El antecedente es “Any hiker” (singular). Un pronombre posesivo singular para una persona indefinida es “his or her”.',
+      expCorrect:'The antecedent is "Any hiker" (singular). A singular possessive pronoun for an indefinite person is "his or her".',
       expWrong:{
         A:'“their” es plural; no concuerda con el singular “Any hiker”.',
-        B:'“your” es segunda persona; el texto habla del excursionista en tercera persona, no le habla a “tú”.',
-        C:'“its” es para cosas o animales, no para un excursionista (persona).'
+        B:'"your" is second person; the text speaks about the hiker in the third person, it does not address "you".',
+        C:'"its" is for things or animals, not for a hiker (a person).'
       },
-      tip:'“Any hiker” es singular. El posesivo singular para una persona es “his or her”; mantén la tercera persona en toda la oración.'
+      tip:'"Any hiker" is singular. The singular possessive for a person is "his or her"; keep the third person throughout the sentence.'
     },
     {
       id:'AGR-09', type:'mc', domain:'Standard English Conventions', difficulty:'Difícil',
@@ -140,7 +140,7 @@ window.SAT_SETS.push({
         B:'“yourself” es segunda persona; el texto habla de “A person” en tercera persona.',
         D:'“ourselves” es primera persona plural; no encaja con el singular en tercera persona “A person”.'
       },
-      tip:'El reflexivo debe concordar en número y persona con su antecedente. “A person” (singular, 3ª persona) → “himself or herself”.'
+      tip:'A reflexive has to agree in number and person with its antecedent. "A person" (singular, 3rd person) → "himself or herself".'
     },
     {
       id:'AGR-10', type:'mc', domain:'Standard English Conventions', difficulty:'Difícil',
@@ -149,13 +149,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'whom', B:'which', C:'who', D:'whose'},
       correct:'C',
-      expCorrect:'El pronombre es el SUJETO del verbo “had spent” (ellos gastaron las noches). El pronombre relativo en caso sujeto, para personas, es “who”.',
+      expCorrect:'The pronoun is the SUBJECT of the verb "had spent" (they spent the nights). The relative pronoun in the subject case, for people, is "who".',
       expWrong:{
-        A:'“whom” es caso objeto; aquí el pronombre hace de sujeto de “had spent”, así que va “who”.',
-        B:'“which” se usa para cosas o animales, no para personas (“colleagues”).',
-        D:'“whose” es posesivo; aquí no se indica posesión, sino quién realizó la acción.'
+        A:'"whom" is the object case; here the pronoun serves as the subject of "had spent", so it takes "who".',
+        B:'"which" is used for things or animals, not for people ("colleagues").',
+        D:'"whose" is possessive; here nothing is being possessed, it is about who performed the action.'
       },
-      tip:'Si el pronombre HACE la acción del verbo que sigue, es sujeto → “who”. Truco: cámbialo por “he/she” (who) vs “him/her” (whom).'
+      tip:'If the pronoun PERFORMS the action of the verb that follows, it is a subject → "who". Trick: swap it for "he/she" (who) vs "him/her" (whom).'
     },
     {
       id:'AGR-11', type:'mc', domain:'Standard English Conventions', difficulty:'Fácil',
@@ -164,13 +164,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'whom', B:'whomever', C:'which', D:'whoever'},
       correct:'D',
-      expCorrect:'El pronombre es el SUJETO de “has shown” (esa persona ha mostrado la mejora). La frase “the judges believe” está intercalada. El caso sujeto es “whoever”.',
+      expCorrect:'The pronoun is the SUBJECT of "has shown" (that person has shown the improvement). The phrase "the judges believe" is inserted in between. The subject case is "whoever".',
       expWrong:{
-        A:'“whom” es caso objeto; aquí el pronombre es sujeto de “has shown”, así que se necesita la forma sujeto.',
+        A:'"whom" is the object case; here the pronoun is the subject of "has shown", so you need the subject form.',
         B:'“whomever” es caso objeto; el pronombre hace de sujeto del verbo “has shown”, no de objeto.',
-        C:'“which” se usa para cosas, no para la persona que recibirá el premio.'
+        C:'"which" is used for things, not for the person who will receive the award.'
       },
-      tip:'Ignora la frase intercalada (“the judges believe”). Pregunta: ¿quién “has shown”? Es el sujeto → “whoever”.'
+      tip:'Ignore the inserted phrase ("the judges believe"). Ask: who "has shown"? That is the subject → "whoever".'
     },
     {
       id:'AGR-12', type:'mc', domain:'Standard English Conventions', difficulty:'Fácil',
@@ -179,11 +179,11 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'there', B:'they’re', C:'their', D:'theirs'},
       correct:'C',
-      expCorrect:'Se necesita un adjetivo posesivo antes del sustantivo “backpacks” (las mochilas de ellos). El posesivo plural correcto es “their”.',
+      expCorrect:'You need a possessive adjective before the noun "backpacks" (their backpacks). The correct plural possessive is "their".',
       expWrong:{
-        A:'“there” indica lugar (“allí”); no es posesivo y no puede describir “backpacks”.',
-        B:'“they’re” significa “they are”; aquí se necesita el posesivo, no una contracción.',
-        D:'“theirs” es pronombre posesivo y va solo (sin sustantivo después); aquí hay un sustantivo (“backpacks”), así que corresponde “their”.'
+        A:'"there" indicates a place; it is not a possessive and cannot describe "backpacks".',
+        B:'"they’re" means "they are"; here you need the possessive, not a contraction.',
+        D:'"theirs" is a possessive pronoun and stands alone (with no noun after it); here there is a noun ("backpacks"), so "their" is what fits.'
       },
       tip:'“their” = posesivo (their backpacks); “there” = lugar; “they’re” = they are. Antes de un sustantivo, usa “their”.'
     }

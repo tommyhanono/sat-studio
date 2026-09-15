@@ -19,13 +19,13 @@ window.SAT_SETS.push({
         D:'in 42 seconds, slightly faster than the painted frog.'
       },
       correct:'B',
-      expCorrect:'La bióloga dice que la clawed frog fue la MÁS rápida. En la tabla su tiempo es 19 s, el menor de los cuatro, así que tardó menos que cada una de las otras tres especies. La opción B usa el dato correcto y respalda su observación.',
+      expCorrect:'The biologist says the clawed frog was the FASTEST. In the table its time is 19 s, the lowest of the four, so it took less than each of the other three species. Option B uses the right figure and backs up her observation.',
       expWrong:{
-        A:'55 s es el tiempo de la painted frog (la más lenta), no de la clawed frog, y “el más largo” contradice que haya sido la más rápida.',
-        C:'31 s es el tiempo de la marsh frog, no de la clawed frog; el dato está mal asignado.',
+        A:'55 s is the painted frog’s time (the slowest), not the clawed frog’s, and "the longest" contradicts it having been the fastest.',
+        C:'31 s is the marsh frog’s time, not the clawed frog’s; the figure is assigned to the wrong species.',
         D:'42 s es el tiempo de la green tree frog; además la clawed frog no fue “ligeramente” más rápida que la painted frog, sino mucho más rápida.'
       },
-      tip:'Primero fija la afirmación (“la más rápida”), luego busca en la tabla el número que le corresponde a ESA especie. Cuidado con opciones que citan el tiempo de otra fila.'
+      tip:'First pin down the claim ("the fastest"), then find in the table the number belonging to THAT species. Watch out for options citing the time from another row.'
     },
     {
       id:'B1X-02', type:'mc', domain:'Information and Ideas', difficulty:'Difícil',
@@ -39,13 +39,13 @@ window.SAT_SETS.push({
         D:'Oakhill showed the largest increase in park use of the three neighborhoods.'
       },
       correct:'A',
-      expCorrect:'La conclusión contrasta un aumento grande en unos barrios con un cambio pequeño en otros. Bellview subió de 4.0 a 7.2 (gran salto) y Oakhill solo de 2.5 a 2.8 (cambio mínimo). La opción A cita ambos extremos y respalda justo esa conclusión.',
+      expCorrect:'The conclusion contrasts a big increase in some neighborhoods with a small change in others. Bellview rose from 4.0 to 7.2 (a big jump) and Oakhill only from 2.5 to 2.8 (a minimal change). Option A cites both extremes and backs up exactly that conclusion.',
       expWrong:{
         B:'Falso según la tabla: los tres barrios reportan valores DISTINTOS después de los senderos (5.4, 2.8, 7.2).',
         C:'Invierte los datos: Riverside SUBIÓ de 3.0 a 5.4, no bajó de 5.4 a 3.0.',
         D:'Oakhill tuvo el aumento MÁS PEQUEÑO (0.3 h), no el más grande; el mayor fue Bellview (+3.2 h).'
       },
-      tip:'Cuando la conclusión dice “grande en unos, pequeño en otros”, la mejor opción muestra los DOS casos. Verifica que la dirección (subió/bajó) coincida con la tabla.'
+      tip:'When the conclusion says "large in some, small in others", the best option shows BOTH cases. Verify that the direction (rose/fell) matches the table.'
     },
     {
       id:'B1X-03', type:'mc', domain:'Craft and Structure', difficulty:'Media',
@@ -54,13 +54,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text with the most logical and precise word or phrase?',
       choices:{A:'chaotic', B:'intricate', C:'careless', D:'plain'},
       correct:'B',
-      expCorrect:'El texto explica que cada subtrama, por menor que pareciera, terminaba encajando al servicio de la historia mayor. Eso describe una estructura “intricate” (compleja pero bien articulada), justo lo que los lectores admiraron.',
+      expCorrect:'The text explains that every subplot, however minor it seemed, ended up fitting in service of the larger story. That describes an "intricate" structure (complex but well articulated), exactly what readers admired.',
       expWrong:{
         A:'“Chaotic” (caótica) choca con la idea de que todo encaja en su lugar; no habría orden que admirar.',
         C:'“Careless” (descuidada) es negativa y contradice que los lectores la ADMIRARAN.',
         D:'“Plain” (simple) contradice que los primeros críticos la hallaran difícil y que cada subtrama aportara al conjunto.'
       },
-      tip:'Busca la pista después de los dos puntos: si todo “encaja para servir a la historia”, la palabra debe significar compleja y bien tejida, no desordenada ni simple.'
+      tip:'Look for the clue after the colon: if everything "fits in service of the story", the word has to mean complex and well woven, not messy or simple.'
     },
     {
       id:'B1X-04', type:'mc', domain:'Craft and Structure', difficulty:'Difícil',
@@ -69,13 +69,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text with the most logical and precise word or phrase?',
       choices:{A:'implicit', B:'explicit', C:'exaggerated', D:'accidental'},
       correct:'A',
-      expCorrect:'El informe no critica abiertamente y solo es evidente para quien mira más allá de la superficie cortés. Esa desaprobación está sugerida sin decirse directamente = “implicit”.',
+      expCorrect:'The report does not criticize openly and is evident only to someone looking past the polite surface. That disapproval is suggested without being stated = "implicit".',
       expWrong:{
         B:'“Explicit” es lo opuesto: significa dicho abiertamente, pero el texto dice que NO critica de forma abierta.',
         C:'“Exaggerated” no encaja: el problema es que la desaprobación está oculta, no inflada.',
         D:'“Accidental” contradice el tono: la desaprobación se disfraza a propósito con elogios “muy matizados”, no por accidente.'
       },
-      tip:'“Did not openly… evident only to readers who looked past the surface” apunta a algo insinuado. Implicit = implícito; explicit = explícito. Elige el opuesto de “abierto”.'
+      tip:'"Did not openly… evident only to readers who looked past the surface" points to something hinted at. Implicit = implied; explicit = stated outright. Pick the opposite of "open".'
     },
     {
       id:'B1X-05', type:'mc', domain:'Standard English Conventions', difficulty:'Media',
@@ -84,13 +84,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'exhibit,', B:'exhibit', C:'exhibit:', D:'exhibit;'},
       correct:'C',
-      expCorrect:'Antes del blank hay una oración completa (“The museum’s newest wing houses a single, breathtaking exhibit”) y lo que sigue describe y nombra ese exhibit. El colon introduce esa aclaración después de una oración completa.',
+      expCorrect:'Before the blank there is a complete sentence ("The museum’s newest wing houses a single, breathtaking exhibit") and what follows describes and names that exhibit. The colon introduces that clarification after a complete sentence.',
       expWrong:{
         A:'Una coma sola no puede introducir así la aclaración; deja la frase suelta “a 12-meter skeleton…” mal conectada.',
         B:'Sin puntuación, “exhibit a 12-meter skeleton…” se fusiona y se lee mal.',
         D:'El punto y coma exige una oración independiente después, y “a 12-meter skeleton… suspended…” no es una oración completa.'
       },
-      tip:'Colon = después de una oración COMPLETA que anuncia lo que sigue. Aquí lo de antes puede terminar en punto, así que el colon encaja.'
+      tip:'Colon = after a COMPLETE sentence that announces what follows. Here what comes before can end in a period, so the colon fits.'
     },
     {
       id:'B1X-06', type:'mc', domain:'Standard English Conventions', difficulty:'Difícil',
@@ -99,13 +99,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'soil,', B:'soil', C:'soil:', D:'soil;'},
       correct:'D',
-      expCorrect:'A ambos lados del blank hay oraciones completas: “Dr. Alvarez had spent a decade studying volcanic soil” y “that background made her the first to recognize…”. Para unir dos independientes sin conjunción, el punto y coma es lo correcto.',
+      expCorrect:'On both sides of the blank there are complete sentences: "Dr. Alvarez had spent a decade studying volcanic soil" and "that background made her the first to recognize…". To join two independent clauses with no conjunction, the semicolon is what you want.',
       expWrong:{
         A:'Una coma sola entre dos oraciones completas es un comma splice.',
         B:'Sin puntuación, las dos oraciones se fusionan (run-on).',
         C:'El colon uniría dos independientes solo si la segunda EXPLICA o ejemplifica la primera; aquí la segunda añade una consecuencia narrativa, así que no encaja mejor que el punto y coma.'
       },
-      tip:'Prueba del punto: si a ambos lados del blank quedan oraciones completas y no hay conjunción, el punto y coma es la unión segura.'
+      tip:'The period test: if both sides of the blank are complete sentences and there is no conjunction, the semicolon is the safe join.'
     },
     {
       id:'B1X-07', type:'mc', domain:'Standard English Conventions', difficulty:'Media',
@@ -120,7 +120,7 @@ window.SAT_SETS.push({
         B:'“They’re” = “they are”, una contracción, no un posesivo; no puede modificar “gloves”.',
         D:'“Its” se usa para cosas o animales, no para personas voluntarias.'
       },
-      tip:'“Each / every / one of…” son SINGULARES aunque venga un plural detrás. Para personas, el posesivo singular es “his or her”.'
+      tip:'"Each / every / one of…" are SINGULAR even with a plural after them. For people, the singular possessive is "his or her".'
     },
     {
       id:'B1X-08', type:'mc', domain:'Standard English Conventions', difficulty:'Difícil',
@@ -135,7 +135,7 @@ window.SAT_SETS.push({
         C:'“Were” es plural y además pasado; el marcador “now” pide presente singular.',
         D:'“Have been” es plural; no concuerda con el sujeto singular “collection”.'
       },
-      tip:'Ignora la frase entre el sujeto y el verbo (“of… specimens…”). Pregunta: ¿qué está displayed? La COLLECTION → singular → “is”.'
+      tip:'Ignore the phrase between the subject and the verb ("of… specimens…"). Ask: what is displayed? The COLLECTION → singular → "is".'
     },
     {
       id:'B1X-09', type:'mc', domain:'Craft and Structure', difficulty:'Difícil',
@@ -149,13 +149,13 @@ window.SAT_SETS.push({
         D:'It compares two ancient cities that declined for the same reason.'
       },
       correct:'A',
-      expCorrect:'El texto empieza con lo que los historiadores “once assumed” (abandono súbito) y luego presenta excavaciones recientes cuyas capas muestran un declive gradual. Es la estructura de creencia antigua → evidencia que la corrige.',
+      expCorrect:'The text opens with what historians "once assumed" (a sudden abandonment) and then presents recent excavations whose layers show a gradual decline. It is the structure of old belief → evidence that corrects it.',
       expWrong:{
         B:'No es una lista de teorías neutrales: el texto SÍ toma partido por la versión gradual apoyada en la nueva evidencia.',
         C:'No predice ningún evento futuro; contrasta pasado súbito vs. declive gradual, sin proyectar nada.',
         D:'Solo se habla de UNA ciudad; no hay comparación entre dos ciudades.'
       },
-      tip:'Marca el giro: “once assumed… Recent excavations tell a more gradual story”. Ese “antes se creía / ahora la evidencia muestra” es la estructura de revisión.'
+      tip:'Spot the turn: "once assumed… Recent excavations tell a more gradual story". That "it used to be believed / now the evidence shows" is the revision structure.'
     },
     {
       id:'B1X-10', type:'mc', domain:'Craft and Structure', difficulty:'Media',
@@ -169,13 +169,13 @@ window.SAT_SETS.push({
         D:'To describe the scientific causes of severe storms.'
       },
       correct:'A',
-      expCorrect:'El texto señala que la autora NO describe la tormenta directamente, sino que usa pequeños detalles inquietantes para que el lector perciba el peligro. El propósito es explicar cómo construye esa sensación de peligro de forma indirecta.',
+      expCorrect:'The text points out that the author does NOT describe the storm directly, but uses small unsettling details so the reader senses the danger. The purpose is to explain how she builds that sense of danger indirectly.',
       expWrong:{
         B:'No opina que el capítulo sea lento ni que deba recortarse; describe una técnica, no la critica.',
         C:'No resume la trama de la novela; se centra solo en el efecto del capítulo inicial.',
         D:'No explica causas científicas de tormentas; la tormenta es un recurso narrativo, no un tema físico.'
       },
-      tip:'“Main purpose” = por qué se escribió esto. Aquí todo apunta a un solo punto: cómo la autora sugiere el peligro con detalles en vez de describirlo.'
+      tip:'"Main purpose" = why this was written. Here everything points to one thing: how the author suggests danger with details instead of describing it.'
     },
     {
       id:'B1X-11', type:'mc', domain:'Expression of Ideas', difficulty:'Media',
@@ -189,13 +189,13 @@ window.SAT_SETS.push({
         D:'The weekend classes for children are held on Saturday mornings.'
       },
       correct:'C',
-      expCorrect:'La meta es cerrar destacando el beneficio AMPLIO para el barrio. La opción C recoge las tres notas (alimenta familias, enseña a los niños, une vecinos) y las presenta como un recurso del que depende toda la comunidad. Justo lo pedido.',
+      expCorrect:'The goal is to close by highlighting the BROAD benefit to the neighborhood. Option C gathers the three notes (it feeds families, it teaches children, it brings neighbors together) and presents them as a resource the whole community depends on. Exactly what was asked.',
       expWrong:{
         A:'Es un detalle sobre tomates; no transmite el beneficio amplio para el barrio.',
         B:'Habla de una necesidad (voluntarios), no del beneficio que el jardín aporta; cambia el enfoque.',
         D:'Da un dato menor (el horario de las clases) en lugar de resumir el impacto general.'
       },
-      tip:'Cuando piden una conclusión que “enfatiza el beneficio amplio”, elige la opción que junta VARIAS notas en una idea general, no la que da un solo detalle.'
+      tip:'When they ask for a conclusion that "emphasizes the broad benefit", pick the option that pulls SEVERAL notes into one general idea, not the one giving a single detail.'
     },
     {
       id:'B1X-12', type:'mc', domain:'Expression of Ideas', difficulty:'Difícil',
@@ -204,13 +204,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text with the most logical transition?',
       choices:{A:'therefore,', B:'however,', C:'for example,', D:'likewise,'},
       correct:'B',
-      expCorrect:'La primera oración elogia los paneles (electricidad sin quemar combustible); la segunda presenta un lado negativo (su fabricación tiene costos ambientales). Ese contraste pide “however”.',
+      expCorrect:'The first sentence praises the panels (electricity without burning fuel); the second presents a downside (their manufacture has environmental costs). That contrast calls for "however".',
       expWrong:{
         A:'“Therefore” marca consecuencia, pero la segunda idea no es un resultado de la primera; es un contrapunto.',
         C:'“For example” anuncia un ejemplo de lo anterior, y el costo de fabricación no ejemplifica lo bueno del panel: lo contradice.',
         D:'“Likewise” suma algo similar, pero aquí las ideas se OPONEN, no se parecen.'
       },
-      tip:'Elogio primero, pero luego un problema → señal de contraste. “However” marca ese “sí, pero por otro lado”.'
+      tip:'Praise first, then a problem → a contrast signal. "However" marks that "yes, but on the other hand".'
     },
     {
       id:'B1X-13', type:'mc', domain:'Expression of Ideas', difficulty:'Media',
@@ -219,13 +219,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text with the most logical transition?',
       choices:{A:'Nevertheless,', B:'For instance,', C:'In contrast,', D:'As a result,'},
       correct:'D',
-      expCorrect:'La primera oración da las causas (sendero muy empinado y lluvia fría); la segunda es la consecuencia (decidieron devolverse). Esa relación causa→efecto pide “as a result”.',
+      expCorrect:'The first sentence gives the causes (a very steep trail and cold rain); the second is the consequence (they decided to turn back). That cause→effect relationship calls for "as a result".',
       expWrong:{
         A:'“Nevertheless” marca contraste, pero devolverse es la reacción ESPERADA ante esas condiciones, no algo a pesar de ellas.',
         B:'“For instance” introduce un ejemplo; la segunda oración no ejemplifica la primera, es su resultado.',
         C:'“In contrast” opone ideas, pero aquí la segunda oración SIGUE lógicamente de la primera, no la contradice.'
       },
-      tip:'Si lo primero es la razón y lo segundo es lo que pasó por eso, la conexión es de resultado: “as a result” / “therefore”.'
+      tip:'If the first thing is the reason and the second is what happened because of it, the connection is result-based: "as a result" / "therefore".'
     },
     {
       id:'B1X-14', type:'mc', domain:'Information and Ideas', difficulty:'Difícil',
@@ -239,13 +239,13 @@ window.SAT_SETS.push({
         D:'The pollinating wasp is more important to gardeners than the fig tree itself.'
       },
       correct:'B',
-      expCorrect:'El texto dice que sin su avispa polinizadora el árbol crece alto y sano pero nunca da semillas viables: “un callejón sin salida” biológico. La idea central es que puede VERSE próspero y a la vez ser incapaz de reproducirse.',
+      expCorrect:'The text says that without its pollinating wasp the tree grows tall and healthy but never produces viable seeds: a biological "dead end". The central idea is that it can LOOK thriving and at the same time be unable to reproduce.',
       expWrong:{
         A:'Contradice el texto: el árbol SÍ sobrevive y crece sano; lo que no puede es reproducirse.',
         C:'No está apoyado: el texto no compara la preferencia de los jardineros por unas plantas u otras.',
         D:'Distorsiona: el texto habla del papel biológico de la avispa, no de qué le importa más al jardinero.'
       },
-      tip:'La idea central concilia las dos partes del texto: se ve sano PERO no da semillas. Descarta opciones que solo toman la mitad (“no sobrevive”).'
+      tip:'The central idea reconciles the two halves of the text: it looks healthy BUT produces no seeds. Rule out options that take only half ("it does not survive").'
     },
     {
       id:'B1X-15', type:'mc', domain:'Information and Ideas', difficulty:'Difícil',
@@ -259,13 +259,13 @@ window.SAT_SETS.push({
         D:'Beavers build dams mainly to provide habitats for human researchers.'
       },
       correct:'A',
-      expCorrect:'El equipo esperaba restaurar la fauna solo con esfuerzo humano directo, pero fueron los castores los que, con sus represas, hicieron volver a peces e insectos. Se infiere que los castores pueden impulsar la recuperación que se creía que exigía intervención humana directa.',
+      expCorrect:'The team expected to restore the wildlife through direct human effort alone, but it was the beavers who, with their dams, brought fish and insects back. You infer that beavers can drive the recovery that was thought to require direct human intervention.',
       expWrong:{
         B:'Demasiado extremo: el río estaba canalizado, pero el texto no dice que NUNCA pueda haber peces o insectos; de hecho regresaron.',
         C:'Contradice el texto: la reintroducción funcionó, no hay señal de arrepentimiento.',
         D:'Ilógico: los castores construyen represas por su propio comportamiento; el beneficio a los investigadores no es su “propósito”.'
       },
-      tip:'Fíjate en el choque entre lo que el equipo ESPERABA (solo esfuerzo humano) y lo que PASÓ (los castores lo lograron). La inferencia capta esa sorpresa.'
+      tip:'Notice the clash between what the team EXPECTED (human effort alone) and what HAPPENED (the beavers pulled it off). The inference captures that surprise.'
     }
   ]
 });

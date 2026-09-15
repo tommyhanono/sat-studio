@@ -19,13 +19,13 @@ window.SAT_SETS.push({
         D:'To compare the size of hot deserts with the size of cold deserts.'
       },
       correct:'A',
-      expCorrect:'El texto arranca con una suposición equivocada (“todos los desiertos son calientes”) y luego la corrige: un desierto se define por la falta de lluvia, no por la temperatura. El propósito es corregir ese malentendido común.',
+      expCorrect:'The text opens with a mistaken assumption ("all deserts are hot") and then corrects it: a desert is defined by the lack of rain, not by temperature. The purpose is to correct that common misunderstanding.',
       expWrong:{
-        B:'Malinterpreta el propósito: el texto no “argumenta” que Antártida sea el lugar más sorprendente; usa Antártida como ejemplo para corregir una idea sobre los desiertos.',
-        C:'Describe una parte, no el todo: el clima diario de Antártida no es el tema; el texto habla de cómo se DEFINE un desierto.',
-        D:'No está apoyado: nunca compara el tamaño de los desiertos calientes y fríos. Es información de afuera.'
+        B:'It misreads the purpose: the text does not "argue" that Antarctica is the most surprising place; it uses Antarctica as an example to correct an idea about deserts.',
+        C:'It describes a part, not the whole: Antarctica’s daily weather is not the topic; the text is about how a desert is DEFINED.',
+        D:'Not supported: it never compares the size of hot and cold deserts. That is outside information.'
       },
-      tip:'Para PURPOSE pregúntate: ¿por qué escribió esto el autor? Cuando el texto empieza con “muchos creen X, pero…”, casi siempre el propósito es corregir esa idea.'
+      tip:'For PURPOSE ask yourself: why did the author write this? When a text starts with "many believe X, but…", the purpose is almost always to correct that idea.'
     },
     {
       id:'STR-02', type:'mc', domain:'Expression of Ideas', difficulty:'Fácil',
@@ -39,13 +39,13 @@ window.SAT_SETS.push({
         D:'The garden has grown into a space that brings the whole neighborhood together.'
       },
       correct:'D',
-      expCorrect:'El texto va de un inicio pequeño (pocos vecinos, pocas verduras) a un presente amplio (decenas de familias, niños, vecinos que ahora comparten). La conclusión debe cerrar ese crecimiento: el jardín se volvió un espacio que une a todo el barrio. La opción D recoge esa idea.',
+      expCorrect:'The text moves from a small beginning (a few neighbors, a few vegetables) to a broad present (dozens of families, children, neighbors now sharing). The conclusion has to close that growth: the garden became a space that brings the whole neighborhood together. Option D captures that idea.',
       expWrong:{
-        A:'Se sale del tema: los lotes vacíos en otras ciudades no cierran ESTA historia sobre cómo creció este jardín en particular.',
-        B:'Detalle general sin conexión: un consejo sobre el sol no concluye una historia sobre comunidad y crecimiento.',
-        C:'Mira hacia atrás, no cierra: repite un detalle del inicio en vez de recoger el punto principal (el jardín ahora une al barrio).'
+        A:'It wanders off topic: vacant lots in other cities do not close THIS story about how this particular garden grew.',
+        B:'A general detail with no connection: advice about sunlight does not conclude a story about community and growth.',
+        C:'It looks backward instead of closing: it repeats a detail from the opening instead of capturing the main point (the garden now brings the neighborhood together).'
       },
-      tip:'Para CONCLUSIONS, la mejor oración recoge la idea principal de TODO el párrafo. Sigue el movimiento del texto: aquí va de pequeño a grande, así que la conclusión debe cerrar ese crecimiento.'
+      tip:'For CONCLUSIONS, the best sentence captures the main idea of the WHOLE paragraph. Follow the movement of the text: here it goes from small to large, so the conclusion has to close that growth.'
     },
     {
       id:'STR-03', type:'mc', domain:'Craft and Structure', difficulty:'Fácil',
@@ -59,13 +59,13 @@ window.SAT_SETS.push({
         D:'It describes a problem and then proposes a solution for scientists to test.'
       },
       correct:'B',
-      expCorrect:'El texto primero presenta un comportamiento de defensa (“una forma inusual de defenderse”) y luego explica los pasos: mezcla dos químicos, se produce un spray caliente, lo apunta al atacante y escapa. Es introducir algo y luego explicar cómo funciona.',
+      expCorrect:'The text first presents a defensive behavior ("an unusual way of defending itself") and then explains the steps: it mixes two chemicals, a hot spray is produced, it aims it at the attacker and escapes. It introduces something and then explains how it works.',
       expWrong:{
-        A:'No está apoyado: el texto habla de UN solo escarabajo y no ordena varios por peligrosidad.',
-        C:'Malinterpreta la estructura: no hay un argumento ni evidencia en contra; es una explicación, no un debate.',
-        D:'No está apoyado: no se plantea un problema para que los científicos lo resuelvan; se describe cómo funciona una defensa.'
+        A:'Not supported: the text is about ONE beetle and does not rank several by how dangerous they are.',
+        C:'It misreads the structure: there is no argument and no counter-evidence; it is an explanation, not a debate.',
+        D:'Not supported: no problem is posed for scientists to solve; it describes how a defense works.'
       },
-      tip:'Para STRUCTURE describe el MOVIMIENTO del texto (de X a Y). Aquí va de “presenta un comportamiento” a “explica sus pasos”. Fíjate en el verbo: explica, no argumenta.'
+      tip:'For STRUCTURE, describe the MOVEMENT of the text (from X to Y). Here it goes from "presents a behavior" to "explains its steps". Watch the verb: explains, not argues.'
     },
     {
       id:'STR-04', type:'mc', domain:'Information and Ideas', difficulty:'Media',
@@ -79,13 +79,13 @@ window.SAT_SETS.push({
         D:'Marine communities can easily recover after a nearby coral reef is damaged.'
       },
       correct:'A',
-      expCorrect:'El texto dice que los arrecifes son diminutos pero sostienen un cuarto de las especies marinas, y que por eso el daño a un arrecife se propaga a toda una comunidad marina. La idea central junta las dos: sostienen mucha vida, así que dañarlos afecta mucho más que al arrecife. Eso cubre todo el texto.',
+      expCorrect:'The text says reefs are tiny but support a quarter of all marine species, and that damage to a reef therefore spreads through a whole marine community. The central idea joins both: they support a lot of life, so harming them affects far more than the reef. That covers the whole text.',
       expWrong:{
-        B:'Describe una parte, no el todo: el tamaño pequeño es solo el punto de partida; el foco es cuánta vida sostienen y qué pasa si se dañan.',
-        C:'Detalle, no idea central: cangrejos y esponjas son ejemplos en una lista, no el punto principal del párrafo.',
-        D:'Contradice el texto: dice que el daño se “propaga” por toda la comunidad, no que se recupere fácilmente.'
+        B:'It describes a part, not the whole: the small size is only the starting point; the focus is how much life they support and what happens if they are damaged.',
+        C:'Detail, not central idea: crabs and sponges are examples in a list, not the main point of the paragraph.',
+        D:'It contradicts the text: it says the damage "spreads" through the whole community, not that it recovers easily.'
       },
-      tip:'La idea central cubre TODO el párrafo, no una frase. Aquí la palabra “Because” conecta las dos partes: mucha vida + daño que se propaga. La respuesta debe unir ambas.'
+      tip:'The central idea covers the WHOLE paragraph, not one sentence. Here the word "Because" connects the two parts: a lot of life + damage that spreads. The answer has to join both.'
     },
     {
       id:'STR-05', type:'mc', domain:'Craft and Structure', difficulty:'Media',
@@ -99,13 +99,13 @@ window.SAT_SETS.push({
         D:'It raises a question that the rest of the passage leaves unanswered.'
       },
       correct:'C',
-      expCorrect:'Justo antes se dice que algunos lectores SUPONEN que el silencio volvía su obra fría. La oración subrayada empieza con “In fact” y da vuelta esa suposición: el silencio en realidad le daba ritmo musical a su prosa. Su función es refutar la suposición previa explicando el efecto real.',
+      expCorrect:'Just before, it says some readers ASSUME the silence made her work cold. The underlined sentence opens with "In fact" and overturns that assumption: the silence actually gave her prose a musical rhythm. Its function is to refute the earlier assumption by explaining the real effect.',
       expWrong:{
-        A:'Malinterpreta la función: el tema (su hábito de escribir en silencio) ya se presentó en la primera oración, no en la subrayada.',
-        B:'No está apoyado: la oración no da un ejemplo del silencio; corrige lo que otros suponían sobre ese silencio.',
-        D:'Contradice el texto: no deja una pregunta abierta; da una respuesta (el efecto positivo real del silencio).'
+        A:'It misreads the function: the topic (her habit of writing in silence) was already introduced in the first sentence, not in the underlined one.',
+        B:'Not supported: the sentence does not give an example of the silence; it corrects what others assumed about that silence.',
+        D:'It contradicts the text: it does not leave an open question; it gives an answer (the real, positive effect of the silence).'
       },
-      tip:'Para FUNCTION mira qué hace la oración DENTRO del texto. Señales como “In fact” o “yet” suelen marcar un giro: la oración contradice o corrige lo que se dijo antes.'
+      tip:'For FUNCTION, look at what the sentence does WITHIN the text. Signals like "In fact" or "yet" usually mark a turn: the sentence contradicts or corrects what was said before.'
     },
     {
       id:'STR-06', type:'mc', domain:'Expression of Ideas', difficulty:'Media',
@@ -119,13 +119,13 @@ window.SAT_SETS.push({
         D:'the two groups of participants were equally skilled at solving puzzles.'
       },
       correct:'B',
-      expCorrect:'El estudio compara silencio vs. ruido de café: el grupo en silencio terminó más rápido y con menos errores. La conclusión lógica es que un ambiente más silencioso ayuda a concentrarse mejor. La opción B generaliza justo lo que mostró el experimento.',
+      expCorrect:'The study compares silence vs. café noise: the silent group finished faster and made fewer errors. The logical conclusion is that a quieter environment helps you concentrate better. Option B generalizes exactly what the experiment showed.',
       expWrong:{
-        A:'Se sale del tema: el estudio mide el efecto del ruido, no si los rompecabezas miden la inteligencia general.',
-        C:'No está apoyado: el texto no dice nada sobre qué sonido es más “agradable”; mide rendimiento, no gusto.',
-        D:'Contradice el resultado: si fueran igual de hábiles rindiendo igual, no habría diferencia; el grupo en silencio rindió mejor.'
+        A:'It wanders off topic: the study measures the effect of noise, not whether puzzles measure general intelligence.',
+        C:'Not supported: the text says nothing about which sound is more "pleasant"; it measures performance, not preference.',
+        D:'It contradicts the result: if they were equally skilled and performed the same, there would be no difference; the silent group performed better.'
       },
-      tip:'Para CONCLUSIONS de un estudio, la respuesta generaliza el RESULTADO. Aquí el dato (silencio = más rápido y menos errores) apunta directo a “el silencio ayuda a concentrarse”.'
+      tip:'For CONCLUSIONS about a study, the answer generalizes the RESULT. Here the data (silence = faster and fewer errors) points straight to "silence helps you concentrate".'
     },
     {
       id:'STR-07', type:'mc', domain:'Craft and Structure', difficulty:'Media',
@@ -139,13 +139,13 @@ window.SAT_SETS.push({
         D:'To explain how the arrival of sound changed the demands placed on film actors.'
       },
       correct:'D',
-      expCorrect:'El texto contrasta la época muda (solo gestos) con la llegada del sonido, y muestra que algunas estrellas batallaron y otras se adaptaron. El propósito es explicar cómo el sonido cambió lo que se les exigía a los actores.',
+      expCorrect:'The text contrasts the silent era (gestures only) with the arrival of sound, and shows that some stars struggled and others adapted. The purpose is to explain how sound changed what actors were asked to do.',
       expWrong:{
-        A:'Malinterpreta el propósito: el texto describe un cambio, no “argumenta” que el cine mudo fuera más artístico. No hay juicio de valor.',
-        B:'Describe una parte, no el todo: no hay un actor específico celebrado; habla de estrellas en general (unas batallaron, otras se adaptaron).',
-        C:'No está apoyado: no explica la tecnología del sonido; explica su EFECTO sobre los actores.'
+        A:'It misreads the purpose: the text describes a change, it does not "argue" that silent film was more artistic. There is no value judgment.',
+        B:'It describes a part, not the whole: no specific actor is celebrated; it is about stars in general (some struggled, others adapted).',
+        C:'Not supported: it does not explain the technology of sound; it explains its EFFECT on the actors.'
       },
-      tip:'Para PURPOSE fíjate en el verbo correcto: aquí el autor “explica” un cambio, no “argumenta” ni “celebra”. Elegir bien el verbo suele decidir la respuesta.'
+      tip:'For PURPOSE, watch for the right verb: here the author "explains" a change, he does not "argue" or "celebrate". Picking the right verb usually decides the answer.'
     },
     {
       id:'STR-08', type:'mc', domain:'Information and Ideas', difficulty:'Media',
@@ -159,13 +159,13 @@ window.SAT_SETS.push({
         D:'Capturing wild yeast from the air is the most difficult step in baking bread.'
       },
       correct:'C',
-      expCorrect:'El texto contrasta el método lento y tradicional con la levadura rápida moderna, y termina con “Yet”: muchos panaderos siguen prefiriendo lo lento por el sabor más complejo. La idea central junta el contraste y esa preferencia por el sabor.',
+      expCorrect:'The text contrasts the slow traditional method with modern fast yeast, and ends with "Yet": many bakers still prefer the slow way for the more complex flavor. The central idea joins that contrast with the preference for flavor.',
       expWrong:{
-        A:'Contradice el texto: dice que MUCHOS panaderos siguen usando el método viejo, así que la levadura de paquete no lo “reemplazó por completo”.',
-        B:'No está apoyado: el texto habla de sabor y tiempo, nunca de que sea el pan “más saludable”. Es información de afuera.',
-        D:'Describe una parte, no el todo: capturar levadura salvaje es un detalle del proceso, no el punto principal del párrafo.'
+        A:'It contradicts the text: it says MANY bakers still use the old method, so packaged yeast did not "completely replace" it.',
+        B:'Not supported: the text is about flavor and time, never about it being the "healthiest" bread. That is outside information.',
+        D:'It describes a part, not the whole: capturing wild yeast is a detail of the process, not the main point of the paragraph.'
       },
-      tip:'La palabra “Yet” marca el giro clave: pese a existir algo más rápido, se prefiere lo lento. La idea central casi siempre vive en ese contraste, no en un detalle suelto.'
+      tip:'The word "Yet" marks the key turn: even though something faster exists, the slow way is preferred. The central idea almost always lives in that contrast, not in a loose detail.'
     },
     {
       id:'STR-09', type:'mc', domain:'Craft and Structure', difficulty:'Difícil',
@@ -179,13 +179,13 @@ window.SAT_SETS.push({
         D:'It compares two present-day fields of economics that remain equally popular.'
       },
       correct:'B',
-      expCorrect:'El texto se mueve en tres tiempos: primero la visión vieja (la gente es racional), luego “Then” aparece evidencia que la desafía (sobrevaloramos lo nuestro, tememos las pérdidas), y por último surge un campo nuevo (economía del comportamiento). La opción B captura ese movimiento de vieja idea → evidencia → campo nuevo.',
+      expCorrect:'The text moves in three stages: first the old view (people are rational), then "Then" evidence appears that challenges it (we overvalue what is ours, we fear losses), and finally a new field emerges (behavioral economics). Option B captures that movement of old idea → evidence → new field.',
       expWrong:{
-        A:'Describe una parte, no el todo: hay ejemplos, pero el texto no se limita a definir un término; narra un cambio de visión a lo largo del tiempo.',
-        C:'Malinterpreta el propósito: el texto dice que los economistas se EQUIVOCABAN en un supuesto, no que fueran “deshonestos”. El verbo importa.',
-        D:'No está apoyado: no compara dos campos actuales igual de populares; muestra cómo uno viejo dio paso a uno nuevo.'
+        A:'It describes a part, not the whole: there are examples, but the text does not merely define a term; it narrates a change of view over time.',
+        C:'It misreads the purpose: the text says economists were WRONG about an assumption, not that they were "dishonest". The verb matters.',
+        D:'Not supported: it does not compare two equally popular current fields; it shows how an old one gave way to a new one.'
       },
-      tip:'Para STRUCTURE traza el MOVIMIENTO completo. Palabras como “once… Then… Out of these findings grew” marcan tres etapas: idea vieja, evidencia en contra y resultado nuevo.'
+      tip:'For STRUCTURE, trace the WHOLE movement. Words like "once… Then… Out of these findings grew" mark three stages: old idea, evidence against it, and the new result.'
     },
     {
       id:'STR-10', type:'mc', domain:'Craft and Structure', difficulty:'Difícil',
@@ -199,13 +199,13 @@ window.SAT_SETS.push({
         D:'It marks a turning point where the text shifts from praising a trend to questioning its costs.'
       },
       correct:'D',
-      expCorrect:'La primera parte elogia la comunicación instantánea; la oración subrayada, con “however”, es el punto donde el autor se detiene a preguntar qué se pierde. A partir de ahí el texto explora los costos. Su función es marcar el giro de elogiar a cuestionar.',
+      expCorrect:'The first part praises instant communication; the underlined sentence, with "however", is where the author stops to ask what is lost. From there on the text explores the costs. Its function is to mark the turn from praising to questioning.',
       expWrong:{
-        A:'Contradice el texto: no repite el elogio; lo pone en duda. “However” señala un cambio de rumbo, no una repetición.',
-        B:'No está apoyado: la oración no da estadísticas; plantea una pregunta sobre lo que se pierde.',
-        C:'Malinterpreta la posición: está a la MITAD y abre la duda; no concluye ni resuelve nada. Las dudas se exploran después.'
+        A:'It contradicts the text: it does not repeat the praise; it calls it into question. "However" signals a change of direction, not a repetition.',
+        B:'Not supported: the sentence gives no statistics; it raises a question about what is being lost.',
+        C:'It misreads the position: it sits in the MIDDLE and opens the doubt; it concludes and resolves nothing. The doubts are explored afterward.'
       },
-      tip:'Para FUNCTION ubica la oración dentro del arco del texto. Si va a la mitad y trae “however”, casi siempre es el pivote: separa la primera parte de la segunda.'
+      tip:'For FUNCTION, place the sentence inside the arc of the text. If it sits in the middle and carries "however", it is almost always the pivot: it separates the first part from the second.'
     },
     {
       id:'STR-11', type:'mc', domain:'Expression of Ideas', difficulty:'Difícil',
@@ -219,13 +219,13 @@ window.SAT_SETS.push({
         D:'The engineers who planned the project had studied wetlands for many years.'
       },
       correct:'C',
-      expCorrect:'El texto acumula beneficios: volvieron las plantas y las aves, el agua quedó más limpia, costó menos de lo temido y hubo menos inundaciones. La conclusión debe recoger todo eso: dejar que el humedal funcione solo trajo beneficios ecológicos y prácticos que superaron lo esperado. La opción C cubre el conjunto.',
+      expCorrect:'The text piles up benefits: plants and birds returned, the water got cleaner, it cost less than feared and there was less flooding. The conclusion has to gather all of that: letting the wetland work on its own brought ecological and practical benefits beyond what was expected. Option C covers the whole set.',
       expWrong:{
-        A:'Contradice el texto: quitaron el canal de concreto y salió BIEN (menos inundaciones), así que decir que el concreto “sigue siendo necesario” va en contra de la evidencia.',
-        B:'Detalle sin base, no conclusión: el texto no dice que sean las MISMAS especies de antaño, y aunque lo fueran, es un detalle, no el punto principal.',
-        D:'Se sale del foco: la experiencia de los ingenieros no cierra la historia; la conclusión es sobre los resultados de la restauración.'
+        A:'It contradicts the text: they removed the concrete channel and it went WELL (less flooding), so saying concrete "is still necessary" runs against the evidence.',
+        B:'An unsupported detail, not a conclusion: the text does not say they are the SAME species as before, and even if they were, that is a detail, not the main point.',
+        D:'It drifts from the focus: the engineers’ experience does not close the story; the conclusion is about the results of the restoration.'
       },
-      tip:'Para CONCLUSIONS, cuando el texto apila varios resultados, la mejor oración los RESUME todos, no rescata uno solo. Fíjate si los datos son ecológicos y prácticos: la respuesta debe abarcar ambos.'
+      tip:'For CONCLUSIONS, when a text piles up several results, the best sentence SUMS THEM ALL UP rather than rescuing one. Notice whether the data are ecological and practical: the answer has to cover both.'
     },
     {
       id:'STR-12', type:'mc', domain:'Craft and Structure', difficulty:'Difícil',
@@ -239,13 +239,13 @@ window.SAT_SETS.push({
         D:'To recount the biography of a single historian and her academic career.'
       },
       correct:'A',
-      expCorrect:'El texto muestra que los textos oficiales solo contaban victorias y grandes obras, y que al sumar restos físicos (basureros, herramientas, casas) la historiadora reconstruyó la vida diaria que los documentos ignoraban. El propósito es mostrar cómo la evidencia física revela lo que los registros escritos dejan fuera.',
+      expCorrect:'The text shows that official records told only of victories and great works, and that by adding physical remains (middens, tools, houses) the historian reconstructed the daily life the documents ignored. The purpose is to show how physical evidence reveals what written records leave out.',
       expWrong:{
-        B:'Describe una parte, no el todo: las herramientas y basureros son ejemplos; el punto es qué revelan, no un inventario de lo hallado.',
-        C:'Exagera y malinterpreta: el texto dice que los restos dan un cuadro MÁS completo, no que los registros escritos sean “totalmente inútiles”. Es demasiado extremo.',
-        D:'Confunde el foco: no es la biografía de la historiadora; ella es el vehículo para mostrar el valor de la evidencia física.'
+        B:'It describes a part, not the whole: the tools and middens are examples; the point is what they reveal, not an inventory of what was found.',
+        C:'It exaggerates and misreads: the text says the remains give a MORE complete picture, not that written records are "completely useless". Far too extreme.',
+        D:'It shifts the focus: this is not the historian’s biography; she is the vehicle for showing the value of physical evidence.'
       },
-      tip:'Para PURPOSE resume la idea que sostiene TODO el texto, no un ejemplo. Cuidado con distractores “extremos” (como “totalmente inútiles”): el texto suma evidencia, no descarta la otra por completo.'
+      tip:'For PURPOSE, sum up the idea holding the WHOLE text together, not one example. Watch for "extreme" distractors (like "completely useless"): the text adds evidence, it does not throw out the other side entirely.'
     }
   ]
 });
