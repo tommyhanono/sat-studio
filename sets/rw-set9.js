@@ -103,7 +103,7 @@ window.SAT_SETS.push({
       expWrong:{
         A:'It only describes the sourdough; the other side of the comparison is missing.',
         B:'It gives one fact about sourdough (the time), but does not compare it with the commercial bread.',
-        D:'Solo habla de la levadura comercial; no menciona el sourdough para comparar.'
+        D:'It only talks about commercial yeast; it never mentions sourdough to compare.'
       },
       tip:'"Compare two things" = the right option has to mention BOTH, not just one.'
     },

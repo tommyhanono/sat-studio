@@ -45,78 +45,78 @@
         stem:'In the xy-plane, the graph of 2x² + 2y² − 12x + 4y = k, where k is a constant, is a circle that is tangent to the x-axis. What is the value of k?',
         choices:{A:'−36', B:'−18', C:'−20', D:'−2'},
         correct:'B',
-        expCorrect:'Primero divide TODO entre 2: x² + y² − 6x + 2y = k/2. Completa cuadrados: (x − 3)² − 9 + (y + 1)² − 1 = k/2 → (x − 3)² + (y + 1)² = k/2 + 10. El centro es (3, −1). Para ser tangente al eje x, el radio debe ser la distancia vertical del centro al eje: r = |−1| = 1, así que r² = 1. Entonces k/2 + 10 = 1 → k/2 = −9 → k = −18. (Verifica: (x − 3)² + (y + 1)² = 1 toca el eje x solo en (3, 0) ✓.)',
+        expCorrect:'First divide EVERYTHING by 2: x² + y² − 6x + 2y = k/2. Complete the square: (x − 3)² − 9 + (y + 1)² − 1 = k/2 → (x − 3)² + (y + 1)² = k/2 + 10. The center is (3, −1). To be tangent to the x-axis, the radius has to equal the vertical distance from the center to the axis: r = |−1| = 1, so r² = 1. Then k/2 + 10 = 1 → k/2 = −9 → k = −18. (Check: (x − 3)² + (y + 1)² = 1 touches the x-axis only at (3, 0) ✓.)',
         expWrong:{
-          A:'−36 sale de completar cuadrados SIN dividir entre 2 primero: (x − 6)² + (y + 2)² = k + 40 con "radio" 2 da k = −36. Con coeficiente 2 tienes que dividir toda la ecuación antes de completar cuadrados.',
-          C:'−20 hace k/2 + 10 = 0, que da un solo punto (radio cero), no una circunferencia tangente al eje x. Tangencia con el eje x exige r = 1, no r = 0.',
-          D:'−2 usa la distancia al eje y (|3| = 3, r² = 9): eso sería tangente al eje Y. Te pidieron tangente al eje x, que depende de la coordenada y del centro.'
+          A:'−36 comes from completing the square WITHOUT dividing by 2 first: (x − 6)² + (y + 2)² = k + 40 with a “radius” of 2 gives k = −36. With a coefficient of 2 you have to divide the whole equation before completing the square.',
+          C:'−20 makes k/2 + 10 = 0, which gives a single point (zero radius), not a circle tangent to the x-axis. Tangency with the x-axis demands r = 1, not r = 0.',
+          D:'−2 uses the distance to the y-axis (|3| = 3, r² = 9): that would be tangent to the Y-axis. They asked for tangent to the x-axis, which depends on the y-coordinate of the center.'
         },
-        tip:'Con coeficiente principal ≠ 1, el PRIMER paso siempre es dividir toda la ecuación. Tangente al eje x → radio = |coordenada y del centro|. Tangente al eje y → radio = |h|. Y recuerda: el lado derecho de la forma estándar es r², no r.',
+        tip:'With a leading coefficient ≠ 1, the FIRST step is always dividing the whole equation. Tangent to the x-axis → radius = |the y-coordinate of the center|. Tangent to the y-axis → radius = |h|. And remember: the right-hand side of standard form is r², not r.',
         desmos:'Grafica 2x^2+2y^2-12x+4y=-18 en Desmos y vas a ver la circunferencia tocando el eje x en un solo punto, (3, 0). Cambia el −18 por −36 y verás que la tangencia se pierde.',
         desmosLatex:['2x^2+2y^2-12x+4y=-18', '(x-3)^2+(y+1)^2=1']
       },
       {
         id:'XG-02', type:'mc', domain:'Geometry & Trigonometry', difficulty:'Difícil', extreme:true,
-        skill:'Circunferencia (coeficiente ≠ 1 → diámetro)',
+        skill:'Circle (coefficient ≠ 1 → diameter)',
         stem:'The graph of 2x² + 2y² + 16x − 8y = −22 in the xy-plane is a circle. What is the length of the diameter of the circle?',
         choices:{A:'3', B:'9', C:'6', D:'18'},
         correct:'C',
-        expCorrect:'Divide entre 2: x² + y² + 8x − 4y = −11. Completa cuadrados: (x + 4)² − 16 + (y − 2)² − 4 = −11 → (x + 4)² + (y − 2)² = 9. Entonces r² = 9 → r = 3, y el DIÁMETRO = 2r = 6. (Verifica: −11 + 16 + 4 = 9 ✓.)',
+        expCorrect:'Divide by 2: x² + y² + 8x − 4y = −11. Complete the square: (x + 4)² − 16 + (y − 2)² − 4 = −11 → (x + 4)² + (y − 2)² = 9. So r² = 9 → r = 3, and the DIAMETER = 2r = 6. (Check: −11 + 16 + 4 = 9 ✓.)',
         expWrong:{
-          A:'3 es el RADIO. La pregunta pide el diámetro, que es el doble: 6. Esta es la trampa clásica de quedarse en el valor intermedio.',
-          B:'9 es r², el lado derecho de la ecuación estándar. Ni siquiera es el radio: falta sacar raíz (r = 3) y luego duplicar (d = 6).',
-          D:'18 duplica r² (2 × 9) en vez de duplicar el radio (2 × 3). Primero la raíz, después el doble.'
+          A:'3 is the RADIUS. The question asks for the diameter, which is double: 6. This is the classic trap of stopping at the intermediate value.',
+          B:'9 is r², the right-hand side of the standard equation. It is not even the radius: you still have to take the root (r = 3) and then double it (d = 6).',
+          D:'18 doubles r² (2 × 9) instead of doubling the radius (2 × 3). Root first, double after.'
         },
-        tip:'Cadena completa: dividir entre el coeficiente → completar cuadrados → r² → raíz → r → ¿te pidieron radio o diámetro? Subraya la palabra "diameter" en el stem: el examen SIEMPRE pone el radio como distractor.',
+        tip:'The full chain: divide by the coefficient → complete the square → r² → square root → r → did they ask for the radius or the diameter? Underline the word “diameter” in the stem: the test ALWAYS plants the radius as a distractor.',
         desmos:'Grafica 2x^2+2y^2+16x-8y=-22 en Desmos: círculo con centro (−4, 2). De x=−7 a x=−1 pasando por el centro hay 6 unidades: ese es el diámetro.',
         desmosLatex:['2x^2+2y^2+16x-8y=-22', '(x+4)^2+(y-2)^2=9']
       },
       {
         id:'XG-03', type:'mc', domain:'Geometry & Trigonometry', difficulty:'Difícil', extreme:true,
-        skill:'Sistema circunferencia + recta (número de soluciones)',
+        skill:'Circle + line system (number of solutions)',
         stem:'In the xy-plane, how many points of intersection do the graphs of 3x² + 3y² = 48 and y = x + 6 have?',
         choices:{A:'Zero', B:'Exactly one', C:'Exactly two', D:'Infinitely many'},
         correct:'A',
-        expCorrect:'Divide entre 3: x² + y² = 16, circunferencia con centro (0, 0) y radio 4. Sustituye y = x + 6: x² + (x + 6)² = 16 → 2x² + 12x + 36 = 16 → 2x² + 12x + 20 = 0 → x² + 6x + 10 = 0. Discriminante: 6² − 4(1)(10) = 36 − 40 = −4 < 0, así que NO hay soluciones reales: cero intersecciones. (Comprobación geométrica: la distancia del centro a la recta x − y + 6 = 0 es 6/√2 = 3√2 ≈ 4.24 > 4 = radio; la recta pasa por fuera ✓.)',
+        expCorrect:'Divide by 3: x² + y² = 16, a circle with center (0, 0) and radius 4. Substitute y = x + 6: x² + (x + 6)² = 16 → 2x² + 12x + 36 = 16 → 2x² + 12x + 20 = 0 → x² + 6x + 10 = 0. Discriminant: 6² − 4(1)(10) = 36 − 40 = −4 < 0, so there are NO real solutions: zero intersections. (Geometric check: the distance from the center to the line x − y + 6 = 0 is 6/√2 = 3√2 ≈ 4.24 > 4 = the radius; the line passes outside ✓.)',
         expWrong:{
-          B:'Exactamente una intersección requeriría discriminante = 0 (recta tangente), es decir, distancia del centro a la recta IGUAL al radio. Aquí 3√2 ≈ 4.24 ≠ 4.',
-          C:'Dos intersecciones pedirían discriminante positivo (recta secante). Si no divides entre 3 y tratas √48 ≈ 6.9 como radio, concluyes mal que la recta corta — el radio real es 4.',
-          D:'Infinitas soluciones solo pasa cuando las dos ecuaciones describen la MISMA curva. Una recta y una circunferencia nunca coinciden.'
+          B:'Exactly one intersection would require a discriminant of 0 (a tangent line), that is, the distance from the center to the line EQUAL to the radius. Here 3√2 ≈ 4.24 ≠ 4.',
+          C:'Two intersections would need a positive discriminant (a secant line). If you do not divide by 3 and treat √48 ≈ 6.9 as the radius, you wrongly conclude the line cuts through — the real radius is 4.',
+          D:'Infinitely many solutions only happen when the two equations describe the SAME curve. A line and a circle never coincide.'
         },
-        tip:'Sistema circunferencia + recta: sustituye, arma la cuadrática y mira el DISCRIMINANTE: positivo → 2 soluciones, cero → 1 (tangente), negativo → 0. Atajo geométrico: compara la distancia del centro a la recta contra el radio. No olvides dividir 3x² + 3y² = 48 primero: el radio es 4, no √48.',
+        tip:'Circle + line system: substitute, build the quadratic and look at the DISCRIMINANT: positive → 2 solutions, zero → 1 (tangent), negative → 0. Geometric shortcut: compare the distance from the center to the line against the radius. Do not forget to divide 3x² + 3y² = 48 first: the radius is 4, not √48.',
         desmos:'Grafica x^2+y^2=16 y y=x+6 en Desmos: la recta pasa completa por fuera del círculo sin tocarlo. Cero intersecciones a la vista.',
         desmosLatex:['x^2+y^2=16', 'y=x+6']
       },
       {
         id:'XG-04', type:'mc', domain:'Geometry & Trigonometry', difficulty:'Difícil', extreme:true,
-        skill:'Circunferencia (coeficiente ≠ 1, condición sobre k)',
+        skill:'Circle (coefficient ≠ 1, condition on k)',
         stem:'In the xy-plane, the graph of 2x² + 2y² − 20x + 12y = k, where k is a constant, is a circle with radius 6. What is the value of k?',
         choices:{A:'−100', B:'−56', C:'2', D:'4'},
         correct:'D',
-        expCorrect:'Divide entre 2: x² + y² − 10x + 6y = k/2. Completa cuadrados: (x − 5)² − 25 + (y + 3)² − 9 = k/2 → (x − 5)² + (y + 3)² = k/2 + 34. Radio 6 significa r² = 36, entonces k/2 + 34 = 36 → k/2 = 2 → k = 4. (Verifica: con k = 4 el lado derecho es 2/2 + 34 = 36 = 6² ✓.)',
+        expCorrect:'Divide by 2: x² + y² − 10x + 6y = k/2. Complete the square: (x − 5)² − 25 + (y + 3)² − 9 = k/2 → (x − 5)² + (y + 3)² = k/2 + 34. A radius of 6 means r² = 36, so k/2 + 34 = 36 → k/2 = 2 → k = 4. (Check: with k = 4 the right-hand side is 2/2 + 34 = 36 = 6² ✓.)',
         expWrong:{
-          A:'−100 sale de completar cuadrados sin dividir entre 2: (x − 10)² + (y + 6)² = k + 136 = 36 → k = −100. El coeficiente 2 obliga a dividir toda la ecuación primero.',
-          B:'−56 iguala k/2 + 34 a 6 (el radio) en vez de a 36 (el radio al cuadrado). El lado derecho de la forma estándar es r², no r.',
-          C:'2 es el valor de k/2, no de k. Resolviste bien hasta k/2 = 2 pero olvidaste el último paso: multiplicar por 2.'
+          A:'−100 comes from completing the square without dividing by 2: (x − 10)² + (y + 6)² = k + 136 = 36 → k = −100. The coefficient of 2 forces you to divide the whole equation first.',
+          B:'−56 sets k/2 + 34 equal to 6 (the radius) instead of 36 (the radius squared). The right-hand side of standard form is r², not r.',
+          C:'2 is the value of k/2, not of k. You solved correctly up to k/2 = 2 but forgot the last step: multiply by 2.'
         },
-        tip:'Tres trampas apiladas en un solo problema: (1) dividir entre el coeficiente ANTES de completar cuadrados, (2) igualar a r² = 36 y no a r = 6, (3) despejar k completo, no quedarte en k/2. Escribe cada paso.',
+        tip:'Three traps stacked in one problem: (1) divide by the coefficient BEFORE completing the square, (2) set it equal to r² = 36 and not to r = 6, (3) solve for the full k, do not stop at k/2. Write out every step.',
         desmos:'Grafica 2x^2+2y^2-20x+12y=4 en Desmos y encima (x-5)^2+(y+3)^2=36: coinciden exactamente. Círculo con centro (5, −3) y radio 6.',
         desmosLatex:['2x^2+2y^2-20x+12y=4', '(x-5)^2+(y+3)^2=36']
       },
       {
         id:'XG-05', type:'mc', domain:'Geometry & Trigonometry', difficulty:'Difícil', extreme:true,
-        skill:'Altura a la hipotenusa (media geométrica)',
+        skill:'Altitude to the hypotenuse (geometric mean)',
         figure: FIG_ALTITUDE,
         stem:'In right triangle ABC shown, the right angle is at C, and the altitude from C meets hypotenuse AB at point D. If AD = 4 and DB = 9, what is the length of altitude CD?',
         choices:{A:'2√13', B:'6.5', C:'36', D:'6'},
         correct:'D',
-        expCorrect:'La altura a la hipotenusa crea TRES triángulos semejantes (ACD ~ CBD ~ ABC). De la semejanza ACD ~ CBD sale la relación de media geométrica: CD/AD = DB/CD → CD² = AD · DB = 4 · 9 = 36 → CD = 6. (Verifica en la otra dirección: 6/4 = 9/6 = 1.5 ✓.)',
+        expCorrect:'The altitude to the hypotenuse creates THREE similar triangles (ACD ~ CBD ~ ABC). From the similarity ACD ~ CBD comes the geometric-mean relation: CD/AD = DB/CD → CD² = AD · DB = 4 · 9 = 36 → CD = 6. (Check the other way: 6/4 = 9/6 = 1.5 ✓.)',
         expWrong:{
-          A:'2√13 = √(4 · 13) es la longitud del CATETO AC (media geométrica del segmento adyacente AD con TODA la hipotenusa AB = 13). Confundiste la relación del cateto con la de la altura.',
-          B:'6.5 es la mitad de la hipotenusa (13/2), que sería la MEDIANA desde C hasta AB, no la altura. Mediana y altura desde C solo coinciden si el triángulo es isósceles.',
-          C:'36 es CD², el producto 4 × 9. Te faltó sacar la raíz cuadrada: CD = √36 = 6.'
+          A:'2√13 = √(4 · 13) is the length of LEG AC (the geometric mean of the adjacent segment AD with the WHOLE hypotenuse AB = 13). You confused the leg relation with the altitude one.',
+          B:'6.5 is half the hypotenuse (13/2), which would be the MEDIAN from C to AB, not the altitude. The median and the altitude from C coincide only if the triangle is isosceles.',
+          C:'36 is CD², the product 4 × 9. You forgot to take the square root: CD = √36 = 6.'
         },
-        tip:'Memoriza las relaciones de la altura a la hipotenusa: altura² = (segmento)(segmento); cateto² = (segmento adyacente)(hipotenusa completa). La altura usa los DOS pedazos; cada cateto usa su pedazo y el total.',
+        tip:'Memorize the altitude-to-hypotenuse relations: altitude² = (segment)(segment); leg² = (the adjacent segment)(the whole hypotenuse). The altitude uses BOTH pieces; each leg uses its own piece and the whole.',
         desmos:'En Desmos como calculadora: sqrt(4*9) da 6. Compara con sqrt(4*13) ≈ 7.21 — eso es el cateto AC, no la altura. Son dos relaciones distintas.',
         desmosLatex:['sqrt(4*9)', 'sqrt(4*13)']
       },
@@ -126,13 +126,13 @@
         stem:'In a right triangle, the altitude to the hypotenuse has length 6 and divides the hypotenuse into two segments of lengths x and x + 5. What is the length of the hypotenuse?',
         choices:{A:'4', B:'9', C:'13', D:'36'},
         correct:'C',
-        expCorrect:'Por los triángulos semejantes que crea la altura: altura² = producto de los segmentos → 6² = x(x + 5) → x² + 5x − 36 = 0 → (x + 9)(x − 4) = 0 → x = 4 (la longitud debe ser positiva; descarta −9). Los segmentos miden 4 y 4 + 5 = 9, así que la hipotenusa = 4 + 9 = 13. (Verifica: √(4 · 9) = 6 ✓.)',
+        expCorrect:'From the similar triangles the altitude creates: altitude² = the product of the segments → 6² = x(x + 5) → x² + 5x − 36 = 0 → (x + 9)(x − 4) = 0 → x = 4 (the length has to be positive; discard −9). The segments are 4 and 4 + 5 = 9, so the hypotenuse = 4 + 9 = 13. (Check: √(4 · 9) = 6 ✓.)',
         expWrong:{
-          A:'4 es el valor de x (el segmento corto), no la hipotenusa. Después de resolver la cuadrática todavía falta SUMAR los dos segmentos: 4 + 9 = 13.',
-          B:'9 es el segmento largo (x + 5). La hipotenusa es la suma de ambos segmentos, no uno solo.',
-          D:'36 es 6², el cuadrado de la altura (y el producto de los segmentos). No es ninguna longitud del triángulo.'
+          A:'4 is the value of x (the short segment), not the hypotenuse. After solving the quadratic you still have to ADD the two segments: 4 + 9 = 13.',
+          B:'9 is the long segment (x + 5). The hypotenuse is the sum of both segments, not just one.',
+          D:'36 is 6², the square of the altitude (and the product of the segments). It is not any length in the triangle.'
         },
-        tip:'Cuando te dan los segmentos con expresiones: arma altura² = (seg1)(seg2), resuelve la cuadrática, DESCARTA la raíz negativa y relee qué pidieron. Casi nunca es x: suele ser una suma o un lado completo.',
+        tip:'When they give you the segments as expressions: set up altitude² = (seg1)(seg2), solve the quadratic, DISCARD the negative root and reread what they asked for. It is almost never x: usually it is a sum or a whole side.',
         desmos:'Grafica y=x^2+5x-36 en Desmos: cruza el eje x en x=4 y x=−9. Solo x=4 sirve (longitud positiva). Luego 4+(4+5) da 13.',
         desmosLatex:['y=x^2+5x-36', '4+(4+5)']
       },
@@ -142,79 +142,79 @@
         figure: FIG_TANGENT,
         stem:'In the figure, the circle has center O and radius 5. Point P lies outside the circle with OP = 13, and segment PT is tangent to the circle at point T. What is the length of PT?',
         answer:'12',
-        expCorrect:'Una tangente es PERPENDICULAR al radio en el punto de tangencia, así que el triángulo OTP es rectángulo en T, con hipotenusa OP = 13 y cateto OT = 5. Por Pitágoras: PT = √(13² − 5²) = √(169 − 25) = √144 = 12. (Es la terna pitagórica 5-12-13 ✓.) Respuesta: 12.',
+        expCorrect:'A tangent is PERPENDICULAR to the radius at the point of tangency, so triangle OTP is right-angled at T, with hypotenuse OP = 13 and leg OT = 5. By Pythagoras: PT = √(13² − 5²) = √(169 − 25) = √144 = 12. (It is the 5-12-13 Pythagorean triple ✓.) Answer: 12.',
         expWrong:{},
-        tip:'Radio + tangente = ángulo recto EN el punto de tangencia, siempre. Eso convierte casi todo problema de tangentes en un Pitágoras escondido con OP de hipotenusa. Bonus: las DOS tangentes trazadas desde un mismo punto externo miden lo mismo.',
+        tip:'Radius + tangent = a right angle AT the point of tangency, always. That turns almost every tangent problem into a hidden Pythagoras with OP as the hypotenuse. Bonus: the TWO tangents drawn from the same external point are equal in length.',
         desmos:'En Desmos: sqrt(13^2-5^2) da 12. Si quieres verlo, grafica x^2+y^2=25 y marca el punto (13, 0): la tangente desde ahí forma un triángulo 5-12-13 con el radio.',
         desmosLatex:['sqrt(13^2-5^2)', 'x^2+y^2=25']
       },
       {
         id:'XG-08', type:'mc', domain:'Geometry & Trigonometry', difficulty:'Difícil', extreme:true,
-        skill:'Identidad cofunción (sin = cos)',
+        skill:'Cofunction identity (sin = cos)',
         stem:'In the equation sin(3x − 17)° = cos(2x + 42)°, the measures (3x − 17)° and (2x + 42)° are those of acute angles. What is the value of x?',
         choices:{A:'13', B:'31', C:'59', D:'65'},
         correct:'A',
-        expCorrect:'Cofunciones: sin θ = cos(90° − θ). El seno de un ángulo agudo es igual al coseno de otro cuando los dos ángulos SUMAN 90°. Entonces (3x − 17) + (2x + 42) = 90 → 5x + 25 = 90 → 5x = 65 → x = 13. (Verifica: 3(13) − 17 = 22° y 2(13) + 42 = 68°; 22 + 68 = 90 ✓ y sin 22° = cos 68° ≈ 0.3746 ✓.)',
+        expCorrect:'Cofunctions: sin θ = cos(90° − θ). The sine of an acute angle equals the cosine of another when the two angles ADD to 90°. So (3x − 17) + (2x + 42) = 90 → 5x + 25 = 90 → 5x = 65 → x = 13. (Check: 3(13) − 17 = 22° and 2(13) + 42 = 68°; 22 + 68 = 90 ✓ and sin 22° = cos 68° ≈ 0.3746 ✓.)',
         expWrong:{
-          B:'31 sale de igualar la suma a 180 en vez de 90: 5x + 25 = 180 → x = 31. La relación de cofunción usa ángulos COMPLEMENTARIOS (suman 90°), no suplementarios.',
-          C:'59 sale de igualar los ángulos entre sí: 3x − 17 = 2x + 42 → x = 59. Pero sin θ = cos θ solo cuando θ = 45°; la igualdad seno-coseno exige que los ángulos sumen 90°, no que sean iguales.',
-          D:'65 es el valor de 5x, no de x. Te faltó el último paso: dividir entre 5.'
+          B:'31 comes from setting the sum equal to 180 instead of 90: 5x + 25 = 180 → x = 31. The cofunction relation uses COMPLEMENTARY angles (adding to 90°), not supplementary ones.',
+          C:'59 comes from setting the angles equal to each other: 3x − 17 = 2x + 42 → x = 59. But sin θ = cos θ only when θ = 45°; the sine-cosine equality demands that the angles add to 90°, not that they be equal.',
+          D:'65 is the value of 5x, not of x. You skipped the last step: divide by 5.'
         },
-        tip:'Regla de oro del Digital SAT: sin A = cos B (con A y B agudos) ⟺ A + B = 90°. Nunca iguales los ángulos entre sí. Plantea la suma, resuelve y VERIFICA que ambos ángulos salgan agudos y complementarios.',
+        tip:'Golden rule of the Digital SAT: sin A = cos B (with A and B acute) ⟺ A + B = 90°. Never set the angles equal to each other. Set up the sum, solve, and VERIFY that both angles come out acute and complementary.',
         desmos:'En Desmos (modo grados): sin(22) y cos(68) dan exactamente lo mismo, ≈0.3746. Prueba con x=59 (sin(160) vs cos(160)) y verás que no coinciden.',
         desmosLatex:['sin(22)', 'cos(68)']
       },
       {
         id:'XG-09', type:'mc', domain:'Geometry & Trigonometry', difficulty:'Difícil', extreme:true,
-        skill:'Tangente del otro ángulo agudo',
+        skill:'Tangent of the other acute angle',
         stem:'In right triangle JKL, the right angle is at K, and tan J = 8/15. What is the value of tan L?',
         choices:{A:'8/15', B:'8/17', C:'15/17', D:'15/8'},
         correct:'D',
-        expCorrect:'J y L son los dos ángulos agudos, así que son complementarios. El cateto OPUESTO a J (8) es el ADYACENTE a L, y viceversa: la razón se INVIERTE. tan L = 15/8. (Formalmente: tan L = tan(90° − J) = 1/tan J = 15/8. Verifica: (8/15)(15/8) = 1 ✓.)',
+        expCorrect:'J and L are the two acute angles, so they are complementary. The leg OPPOSITE J (8) is the one ADJACENT to L, and vice versa: the ratio FLIPS. tan L = 15/8. (Formally: tan L = tan(90° − J) = 1/tan J = 15/8. Check: (8/15)(15/8) = 1 ✓.)',
         expWrong:{
-          A:'8/15 es tan J, la trampa de repetir la razón sin voltearla. Los ángulos agudos de un triángulo rectángulo intercambian opuesto y adyacente: la tangente del otro ángulo es el RECÍPROCO.',
-          B:'8/17 es sin J (o cos L), metiendo la hipotenusa 17 de la terna 8-15-17. Te pidieron tangente, que es cateto/cateto: la hipotenusa no entra.',
-          C:'15/17 es cos J (o sin L). Otra vez aparece la hipotenusa, que la tangente no usa.'
+          A:'8/15 is tan J, the trap of repeating the ratio without flipping it. The acute angles of a right triangle swap opposite and adjacent: the tangent of the other angle is the RECIPROCAL.',
+          B:'8/17 is sin J (or cos L), pulling in the hypotenuse 17 from the 8-15-17 triple. They asked for the tangent, which is leg/leg: the hypotenuse does not enter.',
+          C:'15/17 is cos J (or sin L). Once again the hypotenuse shows up, and the tangent does not use it.'
         },
-        tip:'Ángulos complementarios en el triángulo rectángulo: sin J = cos L, y tan J y tan L son RECÍPROCOS (su producto es 1). Si te dan tan de uno y piden tan del otro, solo voltea la fracción. Dibuja el triángulo si dudas.',
+        tip:'Complementary angles in a right triangle: sin J = cos L, and tan J and tan L are RECIPROCALS (their product is 1). If they give you the tangent of one and want the tangent of the other, just flip the fraction. Draw the triangle if you are unsure.',
         desmos:'En Desmos: (8/15)*(15/8) da 1, confirmando que son recíprocos. Y en modo grados, arctan(8/15)+arctan(15/8) da 90: los dos ángulos son complementarios.',
         desmosLatex:['(8/15)*(15/8)', '15/8']
       },
       {
         id:'XG-10', type:'spr', domain:'Geometry & Trigonometry', difficulty:'Difícil', extreme:true,
-        skill:'Radianes por proporción de arco',
+        skill:'Radians by arc proportion',
         stem:'An arc on a circle has a length equal to 3/8 of the circumference of the circle. The measure of the central angle that intercepts the arc is kπ radians. What is the value of k?',
         answer:'3/4',
-        expCorrect:'El ángulo central es la misma FRACCIÓN de la vuelta completa que el arco es de la circunferencia. Vuelta completa = 2π radianes, así que el ángulo = (3/8)(2π) = 6π/8 = 3π/4 radianes. Como el ángulo es kπ, k = 3/4 (o 0.75). (Verifica: (3π/4)/(2π) = 3/8 ✓.)',
+        expCorrect:'The central angle is the same FRACTION of a full turn as the arc is of the circumference. A full turn = 2π radians, so the angle = (3/8)(2π) = 6π/8 = 3π/4 radians. Since the angle is kπ, k = 3/4 (or 0.75). (Check: (3π/4)/(2π) = 3/8 ✓.)',
         expWrong:{},
-        tip:'Radianes por proporción: fracción del círculo × 2π. Errores típicos: multiplicar por π en vez de 2π (te daría 3/8) o por 360 (eso son grados). Si el SPR pide el k de "kπ radianes", tu respuesta NO lleva π: escribe solo el número. Acepta 3/4 o .75.',
+        tip:'Radians by proportion: fraction of the circle × 2π. Typical errors: multiplying by π instead of 2π (that would give 3/8) or by 360 (those are degrees). If the SPR wants the k in “kπ radians”, your answer does NOT carry the π: write only the number. 3/4 or .75 are both accepted.',
         desmos:'En Desmos: (3/8)*2 da 3/4, que es el k de kπ. Si quieres el ángulo completo, (3/8)*2*pi da ≈2.356 = 3π/4 radianes.',
         desmosLatex:['(3/8)*2', '(3/8)*2*pi']
       },
       {
         id:'XG-11', type:'mc', domain:'Geometry & Trigonometry', difficulty:'Difícil', extreme:true,
-        skill:'Volumen + tasa (conversión cm³ → litros)',
+        skill:'Volume + rate (converting cm³ → liters)',
         stem:'A cylindrical tank has a base radius of 30 centimeters and a height of 100 centimeters. Water is pumped into the empty tank at a constant rate of 12 liters per minute. (1 liter = 1,000 cubic centimeters.) Which of the following is closest to the number of minutes required to fill the tank completely?',
         choices:{A:'8', B:'24', C:'94', D:'23,562'},
         correct:'B',
-        expCorrect:'Volumen = πr²h = π(30)²(100) = 90,000π cm³ ≈ 282,743 cm³. Conversión escondida: 282,743 ÷ 1,000 ≈ 282.74 litros. Tiempo = 282.74 ÷ 12 ≈ 23.56 ≈ 24 minutos. (Camino limpio: 90,000π cm³ = 90π L; 90π/12 = 7.5π ≈ 23.56 ✓.)',
+        expCorrect:'Volume = πr²h = π(30)²(100) = 90,000π cm³ ≈ 282,743 cm³. The hidden conversion: 282,743 ÷ 1,000 ≈ 282.74 liters. Time = 282.74 ÷ 12 ≈ 23.56 ≈ 24 minutes. (Clean route: 90,000π cm³ = 90π L; 90π/12 = 7.5π ≈ 23.56 ✓.)',
         expWrong:{
-          A:'8 sale de olvidar el π: 90,000 cm³ "= 90 L" y 90/12 = 7.5 ≈ 8. El volumen del cilindro lleva π: son 90π ≈ 283 litros, no 90.',
-          C:'94 sale de usar el diámetro 60 como si fuera el radio: π(60)²(100) = 360,000π cm³ = 360π L, y 360π/12 ≈ 94. En πr²h va el RADIO.',
-          D:'23,562 es 90,000π/12 SIN convertir cm³ a litros: estás dividiendo centímetros cúbicos entre litros por minuto. Las unidades tienen que coincidir antes de dividir.'
+          A:'8 comes from forgetting the π: 90,000 cm³ “= 90 L” and 90/12 = 7.5 ≈ 8. The volume of a cylinder carries π: it is 90π ≈ 283 liters, not 90.',
+          C:'94 comes from using the diameter 60 as if it were the radius: π(60)²(100) = 360,000π cm³ = 360π L, and 360π/12 ≈ 94. In πr²h it is the RADIUS.',
+          D:'23,562 is 90,000π/12 WITHOUT converting cm³ to liters: you are dividing cubic centimeters by liters per minute. The units have to match before you divide.'
         },
-        tip:'Problemas de llenado: (1) volumen en cm³, (2) CONVIERTE a litros (÷1,000) — esta es la trampa enterrada, (3) divide entre la tasa. Chequeo de cordura: un tanque de ~283 L a 12 L/min debe tardar veintipico de minutos, no miles.',
+        tip:'Filling problems: (1) volume in cm³, (2) CONVERT to liters (÷1,000) — this is the buried trap, (3) divide by the rate. Sanity check: a ~283 L tank at 12 L/min should take twenty-odd minutes, not thousands.',
         desmos:'En Desmos: pi*30^2*100/1000 da ≈282.7 litros. Luego 282.7/12 da ≈23.6 → 24 minutos. Todo en una línea: pi*30^2*100/1000/12.',
         desmosLatex:['pi*30^2*100/1000/12', 'pi*30^2*100/1000']
       },
       {
         id:'XG-12', type:'spr', domain:'Geometry & Trigonometry', difficulty:'Difícil', extreme:true,
-        skill:'Volumen parcial + tasa (conversión de unidades)',
+        skill:'Partial volume + rate (unit conversion)',
         stem:'A rectangular tank has a base that is 50 centimeters long and 40 centimeters wide, and the tank is 30 centimeters tall. The empty tank is filled with water at a constant rate of 2.4 liters per minute until the water reaches a depth of 27 centimeters. (1 liter = 1,000 cubic centimeters.) For how many minutes does the water flow?',
         answer:'22.5',
-        expCorrect:'Ojo: el agua llega a 27 cm de profundidad, NO a los 30 cm del tanque. Volumen de agua = 50 × 40 × 27 = 54,000 cm³. Conversión: 54,000 ÷ 1,000 = 54 litros. Tiempo = 54 ÷ 2.4 = 22.5 minutos. (Verifica: 2.4 × 22.5 = 54 L = 54,000 cm³ ✓. Con la altura completa 30 saldría 60 L ÷ 2.4 = 25: esa es la respuesta trampa.) Respuesta: 22.5 (o 45/2).',
+        expCorrect:'Careful: the water reaches a depth of 27 cm, NOT the tank’s 30 cm. Volume of water = 50 × 40 × 27 = 54,000 cm³. Conversion: 54,000 ÷ 1,000 = 54 liters. Time = 54 ÷ 2.4 = 22.5 minutes. (Check: 2.4 × 22.5 = 54 L = 54,000 cm³ ✓. With the full height of 30 you would get 60 L ÷ 2.4 = 25: that is the trap answer.) Answer: 22.5 (or 45/2).',
         expWrong:{},
-        tip:'Dos trampas enterradas: (1) usa la PROFUNDIDAD del agua (27), no la altura del tanque (30) — el volumen que importa es el del agua; (2) convierte cm³ a litros antes de dividir entre la tasa. En el grid-in puedes escribir 22.5 o 45/2.',
+        tip:'Two buried traps: (1) use the DEPTH of the water (27), not the height of the tank (30) — the volume that matters is the water’s; (2) convert cm³ to liters before dividing by the rate. In the grid-in you can write 22.5 or 45/2.',
         desmos:'En Desmos: 50*40*27/1000 da 54 litros de agua. Luego 54/2.4 da 22.5 minutos. Todo junto: 50*40*27/1000/2.4.',
         desmosLatex:['50*40*27/1000/2.4', '50*40*27/1000']
       }

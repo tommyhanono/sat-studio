@@ -91,8 +91,8 @@ window.SAT_SETS.push({
       correct:'B',
       expCorrect:'The antecedent is "a student" (singular). A singular pronoun referring to an indefinite person is "he or she".',
       expWrong:{
-        A:'“they” es plural; no concuerda con el antecedente singular “a student”.',
-        C:'“we” es primera persona; el texto habla del estudiante en tercera persona, no de nosotros.',
+        A:'“they” is plural; it does not agree with the singular antecedent “a student”.',
+        C:'“we” is first person; the text speaks about the student in the third person, not about us.',
         D:'"it" is for things or animals, not for a student (a person).'
       },
       tip:'A singular antecedent ("a student") calls for a singular pronoun. For an indefinite person, use "he or she".'
@@ -110,7 +110,7 @@ window.SAT_SETS.push({
         C:'"it’s" means "it is"; here you need the possessive "its", with no apostrophe.',
         D:'“our” es primera persona; el texto habla de la orquesta en tercera persona.'
       },
-      tip:'Un sustantivo colectivo tratado como unidad (“The orchestra”) pide el posesivo singular “its”.'
+      tip:'A collective noun treated as a unit (“The orchestra”) calls for the singular possessive “its”.'
     },
     {
       id:'AGR-08', type:'mc', domain:'Standard English Conventions', difficulty:'Media',
@@ -121,7 +121,7 @@ window.SAT_SETS.push({
       correct:'D',
       expCorrect:'The antecedent is "Any hiker" (singular). A singular possessive pronoun for an indefinite person is "his or her".',
       expWrong:{
-        A:'“their” es plural; no concuerda con el singular “Any hiker”.',
+        A:'“their” is plural; it does not agree with the singular “Any hiker”.',
         B:'"your" is second person; the text speaks about the hiker in the third person, it does not address "you".',
         C:'"its" is for things or animals, not for a hiker (a person).'
       },
@@ -134,11 +134,11 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'themselves', B:'yourself', C:'himself or herself', D:'ourselves'},
       correct:'C',
-      expCorrect:'El antecedente es “A person” (singular, tercera persona). El pronombre reflexivo singular que le corresponde es “himself or herself”.',
+      expCorrect:'The antecedent is “A person” (singular, third person). The matching singular reflexive pronoun is “himself or herself”.',
       expWrong:{
-        A:'“themselves” es plural; no concuerda con el singular “A person”.',
+        A:'“themselves” is plural; it does not agree with the singular “A person”.',
         B:'“yourself” es segunda persona; el texto habla de “A person” en tercera persona.',
-        D:'“ourselves” es primera persona plural; no encaja con el singular en tercera persona “A person”.'
+        D:'“ourselves” is first person plural; it does not fit the third-person singular “A person”.'
       },
       tip:'A reflexive has to agree in number and person with its antecedent. "A person" (singular, 3rd person) → "himself or herself".'
     },
@@ -167,7 +167,7 @@ window.SAT_SETS.push({
       expCorrect:'The pronoun is the SUBJECT of "has shown" (that person has shown the improvement). The phrase "the judges believe" is inserted in between. The subject case is "whoever".',
       expWrong:{
         A:'"whom" is the object case; here the pronoun is the subject of "has shown", so you need the subject form.',
-        B:'“whomever” es caso objeto; el pronombre hace de sujeto del verbo “has shown”, no de objeto.',
+        B:'“whomever” is the object case; the pronoun serves as the subject of the verb “has shown”, not as an object.',
         C:'"which" is used for things, not for the person who will receive the award.'
       },
       tip:'Ignore the inserted phrase ("the judges believe"). Ask: who "has shown"? That is the subject → "whoever".'

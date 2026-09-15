@@ -22,7 +22,7 @@
         stem:'If 2x + 5 = 17, what is the value of x? (Grid in your answer.)',
         answer:'6',
         expCorrect:'Resta 5 a ambos lados: 2x = 12. Divide entre 2: x = 6. (Verifica: 2(6) + 5 = 17 ✓.)',
-        tip:'No escribas el paso intermedio (12): termina de despejar hasta el final antes de llenar el box.'
+        tip:'Do not write the intermediate step (12): finish solving before you fill the box.'
       },
       {
         id:'SPR-03', type:'spr', domain:'Algebra', difficulty:'Media',
@@ -37,7 +37,7 @@
         skill:'Answer as a fraction or decimal',
         stem:'If 5x + 2 = 4, what is the value of x? (Grid in your answer as a fraction or decimal.)',
         answer:'2/5',
-        expCorrect:'Resta 2: 5x = 2. Divide entre 5: x = 2/5 = 0.4. (Verifica: 5(2/5) + 2 = 2 + 2 = 4 ✓.) En el box valen 2/5, .4 o 0.4.',
+        expCorrect:'Subtract 2: 5x = 2. Divide by 5: x = 2/5 = 0.4. (Check: 5(2/5) + 2 = 2 + 2 = 4 ✓.) The box accepts 2/5, .4 or 0.4.',
         tip:'You can drop the leading zero (.4 instead of 0.4) to save space. A fraction and its equivalent decimal are worth the same.'
       },
       {
@@ -102,7 +102,7 @@
         stem:'A store sells books at $12 each. If a customer buys 5 books and receives a 20% discount on the total, how much does the customer pay? (Grid in your answer.)',
         answer:'48',
         expCorrect:'Original total: 5 × 12 = $60. A 20% discount: 0.20 × 60 = $12. You pay: 60 − 12 = $48. (Shortcut: you pay 80% → 0.80 × 60 = 48.) In the box: 48, with no dollar sign.',
-        tip:'Descuentos: calcula el total, aplica el porcentaje y resta (o multiplica directo por 0.80). Nunca escribas $ ni unidades en el grid.'
+        tip:'Discounts: compute the total, apply the percentage and subtract (or multiply straight by 0.80). Never write $ or units in the grid.'
       }
     ]
   });

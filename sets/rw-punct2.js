@@ -46,7 +46,7 @@ window.SAT_SETS.push({
       correct:'A',
       expCorrect:'These are two independent sentences joined by "but". When a FANBOYS (for, and, nor, but, or, yet, so) joins two independent clauses, it takes a comma BEFORE the conjunction: "…in spring, but a delay…".',
       expWrong:{
-        B:'Falta la coma antes de "but"; sin ella, unir dos oraciones completas es incorrecto en el SAT.',
+        B:'The comma before “but” is missing; without it, joining two complete sentences is wrong on the SAT.',
         C:'The semicolon REPLACES the conjunction; the two are not used together ("; but" is redundant).',
         D:'The comma after "but" is wrong: the comma goes BEFORE the conjunction, not after it.'
       },
@@ -61,7 +61,7 @@ window.SAT_SETS.push({
       correct:'D',
       expCorrect:'"a flightless parrot native to New Zealand" is a NON-essential appositive renaming "The kakapo". It has to sit between TWO commas; since the closing comma is already there before "is", the opening one is missing.',
       expWrong:{
-        A:'Sin la coma de apertura, el inciso cierra pero no abre → desbalanceado.',
+        A:'Without the opening comma, the aside closes but never opens → unbalanced.',
         B:'A colon does not open an aside, and it would split the subject ("The kakapo") from its verb ("is").',
         C:'A semicolon does not fence off appositives, and there is no independent sentence before it.'
       },
@@ -78,7 +78,7 @@ window.SAT_SETS.push({
       expWrong:{
         A:'It mixes an opening dash with a closing comma; the punctuation around an aside has to match.',
         B:'A semicolon does not close asides, and there is no independent sentence before it.',
-        C:'El colon no cierra un inciso abierto con raya.'
+        C:'A colon does not close an aside that was opened with a dash.'
       },
       tip:'"Orphan" dash before the blank → the answer is almost always the dash that pairs with it.'
     },
@@ -122,10 +122,10 @@ window.SAT_SETS.push({
       expCorrect:'"that the coral colonies were recovering…" is the direct object of "concluded". Nothing separates a verb from its object clause: "concluded that…" takes no punctuation.',
       expWrong:{
         A:'A comma between "that" and its clause → it cuts off the object right after "that".',
-        C:'Coma entre el verbo "concluded" y "that" → separa el verbo de su objeto.',
+        C:'A comma between the verb “concluded” and “that” → it separates the verb from its object.',
         D:'A colon needs a complete sentence before it; "the biologists concluded" is left hanging without its object.'
       },
-      tip:'Regla de oro: NADA entre el verbo y su "that". Si dudas, lee sin la coma — si fluye, no la pongas.'
+      tip:'Golden rule: NOTHING between a verb and its “that”. If in doubt, read it without the comma — if it flows, leave it out.'
     },
     {
       id:'PB2-09', type:'mc', domain:'Standard English Conventions', difficulty:'Difícil',
@@ -152,7 +152,7 @@ window.SAT_SETS.push({
       expCorrect:'These are two independent sentences and the second opens with the conjunctive adverb "therefore". The correct pattern is: sentence 1 + semicolon + therefore + comma + sentence 2 → "…nitrate stock; therefore, they must…".',
       expWrong:{
         A:'", therefore," no puede unir dos oraciones completas: sigue siendo comma splice.',
-        C:'Falta el punto y coma antes de "therefore".',
+        C:'The semicolon before “therefore” is missing.',
         D:'It is missing the comma AFTER "therefore".'
       },
       tip:'therefore/however/moreover are NOT conjunctions: they do not join sentences. Between two independent clauses use "; therefore,".'
@@ -168,9 +168,9 @@ window.SAT_SETS.push({
       expWrong:{
         A:'With no punctuation and no conjunction, the two sentences fuse (run-on).',
         B:'A single comma between two complete sentences is a comma splice.',
-        D:'"so" sin la coma antes no basta para unir dos oraciones completas en el SAT.'
+        D:'“so” with no comma before it is not enough to join two complete sentences on the SAT.'
       },
-      tip:'Dos oraciones completas seguidas necesitan algo: ";", ".", o coma + FANBOYS. Nunca una coma sola ni nada.'
+      tip:'Two complete sentences back to back need something: “;”, “.”, or a comma + FANBOYS. Never a lone comma and never nothing.'
     },
     {
       id:'PB2-12', type:'mc', domain:'Standard English Conventions', difficulty:'Difícil',

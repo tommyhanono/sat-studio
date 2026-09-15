@@ -113,7 +113,7 @@
         expWrong:{
           B:'$2.50 is the PER-MILE rate, not the fixed charge. It is the intermediate step; you still have to use it to solve for the fixed part.',
           C:'$10.50 comes from subtracting the per-mile rate only once (13.00 − 2.50). You have to subtract it the 4 times it was charged.',
-          D:'$13.00 es el costo total del viaje de 4 millas, no el cargo fijo. Incluye el millaje.'
+          D:'$13.00 is the total cost of the 4-mile trip, not the fixed charge. It includes the mileage.'
         },
         tip:'"Fixed charge plus a rate per unit" is always y = mx + b with two given points. Compute the slope first, and only then solve for b using EITHER of the two points. Check with the other point: if both give the same thing, you are right.',
         desmos:'Escribe (4,13) y (9,25.5), grafica y=2.5x+3 y mirá que pase por los dos puntos. El intercepto en y es el cargo fijo.',
@@ -145,7 +145,7 @@
         expWrong:{
           B:'98 comes from adding the denominators: x/3 + x/4 is NOT x/7. Fractions are added with a common denominator, not by adding the bottoms.',
           C:'2 comes from treating the equation as 7x = 14. The 7 only appears after multiplying by 12, and the other side gets multiplied too.',
-          D:'168 es 12 × 14, el paso intermedio. Falta dividir entre 7.'
+          D:'168 is 12 × 14, the intermediate step. You still have to divide by 7.'
         },
         tip:'Fractions in an equation: multiply everything by the LCD and they vanish in one step. The error of adding denominators shows up when you try to combine the fractions before solving — you do not need to.',
         desmos:'Grafica y=x/3+x/4 y y=14: se cruzan en x=24.',
@@ -180,7 +180,7 @@
         expCorrect:'The y coefficients are 4 and 2: multiply the SECOND equation by 2 to match them. That gives 10x + 4y = 24. Subtract the first: (10x − 3x) + (4y − 4y) = 24 − 10 ⇒ 7x = 14 ⇒ x = 2. (Check: 3(2) + 4y = 10 ⇒ y = 1, and in the second 5(2) + 2(1) = 12 ✓.)',
         expWrong:{
           B:'1 is the value of y, not of x. The system is solved correctly but the other variable was answered.',
-          C:'14 es 7x, el resultado de la resta antes de despejar. Falta dividir entre 7.',
+          C:'14 is 7x, the result of the subtraction before solving. You still have to divide by 7.',
           D:'7 is the coefficient left after eliminating (the 7 in 7x), not the value of x.'
         },
         tip:'Choose to eliminate the variable whose coefficients match with the smallest multiplication: here 4 and 2 match by multiplying by 2, while 3 and 5 would need 15. And be careful when subtracting: the signs of ALL the terms change.',

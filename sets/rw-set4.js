@@ -33,7 +33,7 @@ window.SAT_SETS.push({
       expWrong:{
         B:'“Meticulous” (highly detailed and careful) contradicts the text, which says it REMOVES detail.',
         C:'“Incoherent” (senseless, disordered) does not apply: the sentences are dry but they do make sense; the point is that they are few, not confusing.',
-        D:'“Derivative” (copiado de otros) no viene al caso; nada dice que imite otras obras.'
+        D:'“Derivative” is beside the point; nothing says it imitates other works.'
       },
       tip:'“Oddly ___” after a contrast (full notebook vs. bare book) calls for a word that captures the lack of adornment. Do not be tempted by “meticulous” just because it sounds scientific.'
     },
@@ -50,7 +50,7 @@ window.SAT_SETS.push({
         B:'“Summarized” does not fit: a fossil does not summarize a debate, and the effect described is intensifying it.',
         D:'“Postponed” suggests a pause, but the text says the conflict continued and GREW immediately, not that it was put off.'
       },
-      tip:'“Far from ___ing” invierte el sentido esperado. Si crece el conflicto (“sharper, more entrenched”), busca un verbo de INTENSIFICAR, no de calmar ni aplazar.'
+      tip:'“Far from ___ing” flips the expected meaning. If the conflict grows (“sharper, more entrenched”), look for a verb meaning to INTENSIFY, not to calm or postpone.'
     },
     {
       id:'WIC-H-04', type:'mc', domain:'Craft and Structure', difficulty:'Difícil',
@@ -63,7 +63,7 @@ window.SAT_SETS.push({
       expWrong:{
         A:'“Erudition” (great learning) is not the point; in fact the text says he is admired “less for his ideas” and more for HOW he expresses them.',
         C:'“Brevity” is tempting because of “single sentence”, but the key is not that it is short — it is that it is UNDERSTOOD (“a general reader grasps at once”). Something brief can still be murky.',
-        D:'“Candor” (franqueza, honestidad) es un rasgo moral que el texto no menciona.'
+        D:'“Candor” is a moral trait the text never mentions.'
       },
       tip:'Careful with “brevity”: a short sentence is not the same as a clear one. If the text stresses that the reader UNDERSTANDS, the word is “lucidity”.'
     },
@@ -92,7 +92,7 @@ window.SAT_SETS.push({
       expCorrect:'The authors dress up their own judgment and hide their mistakes out of loyalties and grudges: they are not neutral. “Partisan” means “biased, taking a side”, exactly that lack of impartiality.',
       expWrong:{
         B:'“Exhaustive” (complete in every detail) contradicts the text: they OMIT his mistakes, so they are not telling all of it.',
-        C:'“Tedious” (aburrido) juzga el estilo, pero el texto habla de SESGO, no de si aburren.',
+        C:'“Tedious” judges the style, but the text is about BIAS, not about whether they are boring.',
         D:'“Speculative” (based on guesswork) does not fit: the problem is not that they guess, but that they hide facts to look good.'
       },
       tip:'If the text says someone hides their failures and plays up their own out of loyalties, aim for “partisan / biased”, not a style flaw like “tedious”.'
@@ -107,7 +107,7 @@ window.SAT_SETS.push({
       expCorrect:'The budget leans on vague optimism, forgets costs and uses unchecked assumptions: it is badly built and does not hold up. “Flimsy” means “weak, not solid”, exactly that fragility.',
       expWrong:{
         A:'“Exorbitant” (outrageously expensive) is about the SIZE of the spending, but the criticism is that the budget is unreliable, not that it is too high.',
-        C:'“Transparent” (claro, honesto) es lo contrario de lo que describe el texto: oculta costos y no verifica nada.',
+        C:'“Transparent” is the opposite of what the text describes: it hides costs and verifies nothing.',
         D:'“Provisional” (temporary, preliminary) sounds neutral; the text does not say it is a draft, it says it is faulty and fragile.'
       },
       tip:'Gather the clues (“airy optimism”, omitted costs, unchecked assumptions): they all point to something WEAK. “Flimsy” captures that fragility better than a word about price.'

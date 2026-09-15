@@ -30,7 +30,7 @@
         correct:'C',
         expCorrect:'Add the two equations (the y terms cancel): (x + y) + (x − y) = 10 + 4 → 2x = 14 → x = 7. (Check: 7 + 3 = 10 and 7 − 3 = 4 ✓.)',
         expWrong:{
-          A:'3 es el valor de y, no de x. La pregunta pide x — no confundas las variables.',
+          A:'3 is the value of y, not of x. The question asks for x — do not mix up the variables.',
           B:'6 comes from averaging wrong, or from subtracting the equations instead of adding them.',
           D:'14 is the value of 2x, not of x. You skipped dividing by 2.'
         },
@@ -58,7 +58,7 @@
         correct:'A',
         expCorrect:'In y = mx + b, the y-intercept is b, which here is 7, and it happens when x = 0. So the point is (0, 7). (Check: y = −4(0) + 7 = 7 ✓.)',
         expWrong:{
-          B:'(0, −4) usa la pendiente (−4) como si fuera el intercepto. La pendiente es m, no b.',
+          B:'(0, −4) uses the slope (−4) as if it were the intercept. The slope is m, not b.',
           C:'(7, 0) swaps the coordinates: the y-intercept has x = 0, not y = 0. (7, 0) would be an x-intercept.',
           D:'(−4, 0) confuses slope with intercept and swaps the coordinates on top of that.'
         },
@@ -72,8 +72,8 @@
         correct:'D',
         expCorrect:'The first equation already gives y. Substitute into the second: 2x + (3x − 4) = 16 → 5x − 4 = 16 → 5x = 20 → x = 4. (Check: y = 3(4)−4 = 8, and 2(4)+8 = 16 ✓.)',
         expWrong:{
-          A:'8 es el valor de y, no de x. La pregunta pide x — no confundas las variables.',
-          B:'2 sale de olvidar el −4 al sustituir: 5x = 16 → no; falta sumar 4 antes de dividir.',
+          A:'8 is the value of y, not of x. The question asks for x — do not mix up the variables.',
+          B:'2 comes from forgetting the −4 when substituting: 5x = 16 → no; you have to add 4 before dividing.',
           C:'12 comes from solving 5x = 20 wrong, or from computing 16 − 4 = 12 without dividing by 5.'
         },
         tip:'When one equation is already solved (y = ...), substitute it straight into the other. Combine terms: 2x + 3x = 5x, then solve.'
@@ -87,8 +87,8 @@
         expCorrect:'Let h be the price of the hot dog and s the soda: 2h + 3s = 13 and h + s = 5. From the second, h = 5 − s. Substitute: 2(5 − s) + 3s = 13 → 10 − 2s + 3s = 13 → 10 + s = 13 → s = 3. Then h = 5 − 3 = 2. (Check: 2(2)+3(3) = 4+9 = 13 ✓ and 2+3 = 5 ✓.)',
         expWrong:{
           B:'4 comes from solving for the wrong variable or from a sign slip; the hot dog costs 2, the soda 3.',
-          C:'3 es el precio de la soda (s), no del hot dog. La pregunta pide el hot dog.',
-          D:'5 es el costo total de 1 hot dog + 1 soda, no el precio del hot dog solo.'
+          C:'3 is the price of the soda (s), not the hot dog. The question asks for the hot dog.',
+          D:'5 is the combined cost of 1 hot dog + 1 soda, not the price of the hot dog alone.'
         },
         tip:'Name each variable (h, s), build one equation per sentence, and solve one of them from the simplest equation. At the end, check which price they asked for.'
       },
@@ -98,7 +98,7 @@
         stem:'Line m in the xy-plane has a slope of 3 and passes through the point (2, 1). Which equation represents line m?',
         choices:{A:'y = 3x + 1', B:'y = 3x − 5', C:'y = 3x − 1', D:'y = −3x + 5'},
         correct:'B',
-        expCorrect:'Usa y = mx + b con m = 3 y el punto (2, 1): 1 = 3(2) + b → 1 = 6 + b → b = −5. La recta es y = 3x − 5. (Comprueba: 3(2)−5 = 1 ✓.)',
+        expCorrect:'Use y = mx + b with m = 3 and the point (2, 1): 1 = 3(2) + b → 1 = 6 + b → b = −5. The line is y = 3x − 5. (Check: 3(2)−5 = 1 ✓.)',
         expWrong:{
           A:'y = 3x + 1 uses 1 as the intercept, but 1 is the y-coordinate of a point, not the value of b.',
           C:'y = 3x − 1 comes from a sign or arithmetic slip while solving for b; the correct value is b = −5.',
@@ -116,7 +116,7 @@
         expWrong:{
           B:'x ≤ −3 forgets to flip the sign when dividing by a negative. That is the classic error here.',
           C:'x ≥ 3 has the wrong sign on the 3: −2x ≤ 6 gives x ≥ −3, not +3.',
-          D:'x ≤ 3 ni invierte la desigualdad ni maneja bien el signo del 3.'
+          D:'x ≤ 3 neither flips the inequality nor handles the sign of the 3 correctly.'
         },
         tip:'If you divide or multiply by a NEGATIVE number, flip the sign (≤ becomes ≥). And watch the sign of the result: 6/(−2) = −3.'
       },

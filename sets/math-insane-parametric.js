@@ -132,7 +132,7 @@
         correct:'B',
         expCorrect:'Evaluate from the inside out. f(−1): since −1 ≤ 0, use x² + 1 → f(−1) = (−1)² + 1 = 2. Then f(2): since 2 > 0, use 2x → f(2) = 4. So f(f(−1)) = 4.',
         expWrong:{
-          A:'2 es solo f(−1), el paso interno; falta aplicar f una segunda vez.',
+          A:'2 is only f(−1), the inner step; you still have to apply f a second time.',
           C:'5 comes from using the wrong piece in the second step: 2² + 1 = 5. Since 2 > 0, the piece is 2x, not x² + 1.',
           D:'8 comes from applying f one time too many: f(4) = 8. It is composed only twice: f(f(−1)) = f(2) = 4.'
         },

@@ -41,7 +41,7 @@ window.SAT_SETS.push({
       correct:'B',
       expCorrect:'The goal calls for COMPARING when each one can be listened to. B puts the two sides face to face: radio forces you to tune in at broadcast time, whereas a podcast is heard whenever you like. It compares both, with accurate notes.',
       expWrong:{
-        A:'Solo describe el podcast; falta el lado de la radio para comparar.',
+        A:'It only describes the podcast; the radio side is missing for the comparison.',
         C:'It is only about radio; it never mentions the podcast, so it does not compare.',
         D:'It gives a detail about subscribing; it does not compare the two media on when you can listen.'
       },
@@ -141,7 +141,7 @@ window.SAT_SETS.push({
       correct:'C',
       expCorrect:'The goal is to emphasize how DRAMATIC the growth was. C pairs the two key figures: from about 900,000 records in 2005 to more than 41 million in 2022. The jump in the numbers underlines the growth. It meets the goal with accurate notes.',
       expWrong:{
-        A:'Describe el punto bajo, pero no muestra el crecimiento posterior.',
+        A:'It describes the low point, but does not show the growth that followed.',
         B:'It explains why people buy vinyl; it does not show the rise in sales.',
         D:'It says it became popular again, but it is vague; it does not quantify the growth.'
       },

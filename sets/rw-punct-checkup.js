@@ -48,7 +48,7 @@ window.SAT_SETS.push({
       correct:'A',
       expCorrect:'There are two independent sentences ("Hand-pulled noodles call for…" and "the pulling technique… can take…") joined by the FANBOYS "but". The correct pattern is comma + conjunction: "…salt, but the pulling technique…".',
       expWrong:{
-        B:'Falta la coma antes de “but”: cuando un FANBOYS une dos oraciones completas, esa coma es obligatoria en el SAT.',
+        B:'The comma before “but” is missing: when a FANBOYS joins two complete sentences, that comma is mandatory on the SAT.',
         C:'The comma after "but" is wrong: the comma goes BEFORE the conjunction, never after.',
         D:'The semicolon REPLACES the conjunction, it does not accompany it: "; but" is redundant.'
       },
@@ -155,7 +155,7 @@ window.SAT_SETS.push({
       expWrong:{
         B:'“family’s” is the SINGULAR possessive (of one family), but the text is about forty of them.',
         C:'With no apostrophe there is no possession marked: “the families grocery budgets” is malformed.',
-        D:'El plural de family es families (con -ies); la forma “familys” no existe.'
+        D:'The plural of family is families (with -ies); the form “familys” does not exist.'
       },
       tip:'Two steps: (1) form the plural correctly (family → families); (2) a plural in -s → apostrophe after the s. And remember: its = possessive, it’s = "it is".'
     }

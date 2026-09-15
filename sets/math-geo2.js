@@ -57,7 +57,7 @@
         expWrong:{
           B:'36π is πr²h without the (1/3) factor: that would be the volume of a CYLINDER with the same radius and height. A cone is one third of that.',
           C:'48π squares the height or mixes up the numbers; the formula is (1/3)πr²h with r=3, h=4.',
-          D:'16π eleva la altura (4²=16) en vez del radio. Se eleva el RADIO al cuadrado, no la altura.'
+          D:'16π squares the height (4²=16) instead of the radius. It is the RADIUS that gets squared, not the height.'
         },
         tip:'The cone carries the (1/3) up front: V = (1/3)πr²h. Forgetting the 1/3 is the classic error — a cone is exactly one third of the cylinder that contains it.'
       },
@@ -82,7 +82,7 @@
         stem:'In the xy-plane, the equation x² + y² − 10x + 4y + 13 = 0 represents a circle. What are the coordinates of the center of the circle?',
         choices:{A:'(−5, 2)', B:'(10, −4)', C:'(−10, 4)', D:'(5, −2)'},
         correct:'D',
-        expCorrect:'Completa cuadrados. En x: x² − 10x = (x − 5)² − 25. En y: y² + 4y = (y + 2)² − 4. Queda (x − 5)² + (y + 2)² − 25 − 4 + 13 = 0 → (x − 5)² + (y + 2)² = 16. El centro es (5, −2).',
+        expCorrect:'Complete the square. In x: x² − 10x = (x − 5)² − 25. In y: y² + 4y = (y + 2)² − 4. That leaves (x − 5)² + (y + 2)² − 25 − 4 + 13 = 0 → (x − 5)² + (y + 2)² = 16. The center is (5, −2).',
         expWrong:{
           A:'(−5, 2) flips the signs: completing the square gives you (x − 5) and (y + 2), which give center (5, −2), not (−5, 2).',
           B:'(10, −4) uses the linear coefficients as they are. The center is HALF those coefficients (with the opposite sign): −(−10)/2 = 5 and −(4)/2 = −2.',
@@ -138,7 +138,7 @@
         stem:'In the xy-plane, a circle has its center at the point (1, 2) and passes through the point (5, 5). What is the radius of the circle?',
         choices:{A:'7', B:'25', C:'5', D:'√7'},
         correct:'C',
-        expCorrect:'El radio es la distancia del centro (1, 2) al punto (5, 5). Distancia = √((5−1)² + (5−2)²) = √(4² + 3²) = √(16 + 9) = √25 = 5.',
+        expCorrect:'The radius is the distance from the center (1, 2) to the point (5, 5). Distance = √((5−1)² + (5−2)²) = √(4² + 3²) = √(16 + 9) = √25 = 5.',
         expWrong:{
           A:'7 adds the differences 4 + 3 = 7. The distance is not the sum; you have to square, add and take the root.',
           B:'25 is r² (16 + 9), that is, the distance squared. The square root is still missing to get the radius.',
@@ -163,7 +163,7 @@
         correct:'A',
         expCorrect:'In a right triangle the two acute angles are complementary (A + B = 90°). For complementary angles, sin A = cos B. That is why cos B = sin A = 0.6. (The side opposite A is the side adjacent to B, so both ratios use the same side over the hypotenuse.)',
         expWrong:{
-          B:'0.8 es cos A (usando sin²A + cos²A = 1: cos A = √(1−0.36) = 0.8), pero te piden cos B, no cos A. Y cos B = sin A = 0.6.',
+          B:'0.8 is cos A (using sin²A + cos²A = 1: cos A = √(1−0.36) = 0.8), but they want cos B, not cos A. And cos B = sin A = 0.6.',
           C:'0.4 comes from computing 1 − 0.6. No identity gives that; the relationship is sin A = cos B directly.',
           D:'1.6 adds 1 + 0.6. A cosine can never be greater than 1, so rule it out immediately.'
         },

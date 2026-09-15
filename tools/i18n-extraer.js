@@ -25,10 +25,16 @@ const SALIDA = process.argv[2] || path.join(RAIZ, 'i18n', 'pendiente.json');
    "si" existen igual en inglés, y con ese criterio 80 pasajes en inglés perfecto
    salían marcados como español. Se pide un acento/ñ/¿/¡, o dos marcas distintas
    en el mismo texto. */
-const MARCA = 'que|para|por|con|los|las|una|unos|unas|del|como|cuando|donde|porque|entre|sobre|desde|hasta|este|esta|cada|puede|tiene|son|más|pero|entonces|así|entonces|sale|queda|hacia|según|aunque|mismo|misma|otro|otra|todo|toda';
-const ES_ACENTO = /[áéíóúñ¿¡]/i;
-const ES_DOBLE = new RegExp('\\b(' + MARCA + ')\\b[\\s\\S]*?\\b(' + MARCA + ')\\b', 'i');
-const ES = { test: (t) => ES_ACENTO.test(t) || ES_DOBLE.test(t) };
+// MISMO criterio que tools/test-idioma.js: si el verificador lo marcaría como
+// español, el extractor tiene que sacarlo. Tenerlos desalineados fue el error
+// de la primera pasada: el extractor daba por traducido lo que el checker
+// seguía viendo en español.
+const PERMITIDOS = /Inés|Ibáñez|Bogotá|café|Perú|México|Nicolás|Ada Rourke|naïve|résumé|Zaha|José|García|Amara|Petrova|\b(?:sin|cos|tan|sec|csc|cot)\s*[²³]?\s*[(\u03b8A-Za-z0-9]|\b(?:sin|cos|tan)\s*[²³]|\bet\s+al\b|SOHCAHTOA/g;
+const SOLO_ES = /\b(el|los|las|una|unos|unas|que|para|por|con|del|como|cuando|donde|porque|entre|sobre|desde|hasta|este|esta|cada|puede|tiene|son|pero|así|queda|hacia|aunque|mismo|misma|otro|otra|toda|todos|sin|más|ya|muy|bien|aquí|ahí|solo|también|siempre|nunca|entonces|ese|esa|esos|esas|era|fue|ser|estar|hacer|decir|dice|dijo|tanto|mientras|según|además|luego|antes|después)\b/gi;
+const ES = { test: (t) => {
+  const limpio = String(t).replace(PERMITIDOS, '');
+  return /[áéíóúñ¿¡]/i.test(limpio) || (limpio.match(SOLO_ES) || []).length >= 2;
+} };
 
 /** Lee un literal de cadena que empieza en `i` (comilla) y devuelve {texto, fin}. */
 function leerCadena(src, i) {

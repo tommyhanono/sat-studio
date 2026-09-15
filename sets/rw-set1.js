@@ -113,18 +113,18 @@ window.SAT_SETS.push({
     },
     {
       id:'RW-008', type:'mc', domain:'Standard English Conventions', difficulty:'Media',
-      skill:'Sin coma entre verbo y su complemento',
+      skill:'No comma between a verb and its object',
       passage:"While mapping the forest floor, researchers %BLANK% the fungal network beneath the soil can transmit electrical signals between trees located dozens of meters apart.",
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'discovered, that', B:'discovered that', C:'discovered that,', D:'discovered: that'},
       correct:'B',
       expCorrect:'"that the fungal network… apart" is the direct object of "discovered". Nothing separates a verb from its object clause: "researchers discovered that…" takes no punctuation.',
       expWrong:{
-        A:'Coma entre el verbo y "that" → corta el verbo de su objeto.',
+        A:'A comma between the verb and “that” → it cuts the verb off from its object.',
         C:'Comma between "that" and its clause → same error, one spot later.',
         D:'A colon needs a complete independent clause before it; "researchers discovered" is left hanging without its object.'
       },
-      tip:'Regla de oro: NADA entre el verbo y su "that". Si dudas, lee sin la coma — si fluye, no la pongas.'
+      tip:'Golden rule: NOTHING between a verb and its “that”. If in doubt, read it without the comma — if it flows, leave it out.'
     },
     {
       id:'RW-009', type:'mc', domain:'Standard English Conventions', difficulty:'Difícil',
@@ -151,7 +151,7 @@ window.SAT_SETS.push({
       expCorrect:'"Although… flood" is an introductory subordinate clause; when it comes first, it is separated from the main clause with a comma.',
       expWrong:{
         A:'El ";" exige independiente + independiente; "Although… flood" es dependiente.',
-        B:'El punto convierte "Although… flood." en un fragmento sin verbo principal.',
+        B:'The period turns “Although… flood.” into a fragment with no main verb.',
         D:'It is missing the comma required after an introductory clause of this kind.'
       },
       tip:'If the sentence starts with Although / Because / When / While… → comma when that clause ends, period. No ";" and no ".".'

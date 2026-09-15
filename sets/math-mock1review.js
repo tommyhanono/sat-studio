@@ -75,7 +75,7 @@
           D:'(−6, 8)'
         },
         correct:'B',
-        expCorrect:'Completa cuadrados. En x: x² − 6x = (x − 3)² − 9. En y: y² + 8y = (y + 4)² − 16. Sustituyendo: (x − 3)² − 9 + (y + 4)² − 16 − 11 = 0 → (x − 3)² + (y + 4)² = 36. El centro es (h, k) = (3, −4) y el radio es 6.',
+        expCorrect:'Complete the square. In x: x² − 6x = (x − 3)² − 9. In y: y² + 8y = (y + 4)² − 16. Substituting: (x − 3)² − 9 + (y + 4)² − 16 − 11 = 0 → (x − 3)² + (y + 4)² = 36. The center is (h, k) = (3, −4) and the radius is 6.',
         expWrong:{
           A:'(−3, 4) flips the signs. Careful: (x − 3)² comes from h = +3, and (y + 4)² comes from k = −4. The sign of the center is the opposite of what you see inside the parentheses.',
           C:'(6, −8) uses the full linear coefficients (−6 and 8) without halving them. When you complete the square you take HALF of each coefficient.',
@@ -126,7 +126,7 @@
         correct:'C',
         expCorrect:'A zero of ODD multiplicity crosses the axis; one of EVEN multiplicity only touches it and bounces. The zeros are x = −2 (mult. 3, odd → crosses), x = 1 (mult. 2, even → touches) and x = 4 (mult. 1, odd → crosses). It crosses at 2 values: x = −2 and x = 4.',
         expWrong:{
-          A:'1 cuenta un solo cruce, pero hay dos factores de multiplicidad impar: (x + 2)³ y (x − 4). Ambos cruzan.',
+          A:'1 counts a single crossing, but there are two factors of odd multiplicity: (x + 2)³ and (x − 4). Both cross.',
           B:'3 is the total number of DISTINCT zeros, not how many cross. At x = 1 the graph only touches (even multiplicity).',
           D:'6 is the degree of the polynomial (3 + 2 + 1), not the number of crossings.'
         },
@@ -195,7 +195,7 @@
         correct:'C',
         expCorrect:'This is P(under 30 | negative). The given group is the 50 who tested negative. Of those, 22 are under 30. P = 22/50 = 11/25.',
         expWrong:{
-          A:'11/20 es 22/40: condicionaste sobre la fila "menor de 30" en vez de la columna "negativo". El grupo dado es negativo (50).',
+          A:'11/20 is 22/40: you conditioned on the “under 30” row instead of the “negative” column. The given group is negative (50).',
           B:'11/40 is 22/80, the JOINT probability. The denominator has to be the 50 who tested negative, not the total.',
           D:'1/2 is 40/80, the MARGINAL probability of being under 30, ignoring the "negative" condition.'
         },
@@ -250,8 +250,8 @@
         correct:'D',
         expCorrect:'Relative to angle A, the adjacent side is AB = 15 and the hypotenuse is AC = 17. Cosine = adjacent/hypotenuse = 15/17. (Note: BC = 8 is the side opposite A; 8-15-17 is a Pythagorean triple.)',
         expWrong:{
-          A:'8/17 es sin A (opuesto/hipotenusa), no el coseno. El opuesto a A es BC = 8.',
-          B:'8/15 es tan A (opuesto/adyacente). El coseno usa la hipotenusa, no el cateto opuesto.',
+          A:'8/17 is sin A (opposite/hypotenuse), not the cosine. The side opposite A is BC = 8.',
+          B:'8/15 is tan A (opposite/adjacent). The cosine uses the hypotenuse, not the opposite leg.',
           C:'15/8 is the reciprocal of tan A (adjacent/opposite), that is, the cotangent, not the cosine.'
         },
         tip:'SOH-CAH-TOA. Work out, relative to the given angle, which side is opposite, adjacent and hypotenuse. Cosine = adjacent/hypotenuse.',
@@ -267,11 +267,11 @@
         correct:'B',
         expCorrect:'In a 30-60-90 triangle the sides are in the ratio 1 : √3 : 2 (opposite 30°, 60° and 90°). The hypotenuse (opposite 90°) is 12, so the base ratio is 6. The side opposite 60° = 6 · √3 = 6√3. (Check: 6² + (6√3)² = 36 + 108 = 144 = 12² ✓.)',
         expWrong:{
-          A:'6 es el lado opuesto a 30° (el cateto corto = hipotenusa/2), no el opuesto a 60°.',
+          A:'6 is the side opposite 30° (the short leg = hypotenuse/2), not the one opposite 60°.',
           C:'12√3 multiplies the hypotenuse by √3 but forgets to divide by 2. The side opposite 60° is hypotenuse · (√3/2).',
           D:'4√3 comes from dividing 12 by √3 (12/√3 = 4√3) instead of multiplying by √3/2.'
         },
-        tip:'Memoriza 30-60-90 → 1 : √3 : 2 (opuestos a 30°, 60°, 90°). El lado frente a 60° es el mediano: hipotenusa · (√3/2).',
+        tip:'Memorize 30-60-90 → 1 : √3 : 2 (opposite 30°, 60°, 90°). The side facing 60° is the middle one: hypotenuse · (√3/2).',
         desmos:'En un 30-60-90 los lados van en razón 1 : √3 : 2. El lado opuesto a 60° = hipotenusa·(√3/2) = 12*√3/2. Escribe 12*\\sqrt{3}/2 en Desmos y te da ≈10.39, que es 6√3.',
         desmosLatex:['12*\\sqrt{3}/2', '6*\\sqrt{3}']
       },

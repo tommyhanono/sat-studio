@@ -44,11 +44,11 @@
         correct:'C',
         expCorrect:'Pendiente = (cambio en y)/(cambio en x) = (17 − 5)/(4 − 1) = 12/3 = 4.',
         expWrong:{
-          A:'3 es el cambio en x (4 − 1), no la pendiente. Es el denominador, no el resultado.',
+          A:'3 is the change in x (4 − 1), not the slope. It is the denominator, not the result.',
           B:'6 sale de dividir mal o de promediar; 12/3 = 4, no 6.',
           D:'12 is only the change in y (17 − 5). You skipped dividing by the change in x.'
         },
-        tip:'Pendiente = subida/avance = Δy/Δx. Resta en el MISMO orden arriba y abajo: (y₂−y₁)/(x₂−x₁). Nunca dejes el Δy solo.'
+        tip:'Slope = rise/run = Δy/Δx. Subtract in the SAME order on top and bottom: (y₂−y₁)/(x₂−x₁). Never leave the Δy on its own.'
       },
       {
         id:'ALG-04', type:'mc', domain:'Algebra', difficulty:'Fácil',
@@ -88,7 +88,7 @@
         expWrong:{
           B:'3 es el valor de x, no de y. La pregunta pide y — sustituye x en y = 2x − 5.',
           C:'-1 sale de un error de signo en 2x − 5: 2(3) − 5 = 1, no −1.',
-          D:'6 es 2x sin restar el 5, o un despeje incompleto de y.'
+          D:'6 is 2x without subtracting the 5, or an incomplete solve for y.'
         },
         tip:'When one equation is already solved (y = ...), substitute it straight into the other. One step less. Then use that same formula to find y.'
       },
@@ -98,7 +98,7 @@
         stem:'Line k in the xy-plane has a slope of −2 and passes through the point (3, 4). Which equation represents line k?',
         choices:{A:'y = −2x + 4', B:'y = −2x − 2', C:'y = 2x − 2', D:'y = −2x + 10'},
         correct:'D',
-        expCorrect:'Usa y = mx + b con m = −2 y el punto (3, 4): 4 = −2(3) + b → 4 = −6 + b → b = 10. La recta es y = −2x + 10. (Comprueba: −2(3)+10 = 4 ✓.)',
+        expCorrect:'Use y = mx + b with m = −2 and the point (3, 4): 4 = −2(3) + b → 4 = −6 + b → b = 10. The line is y = −2x + 10. (Check: −2(3)+10 = 4 ✓.)',
         expWrong:{
           A:'y = −2x + 4 uses 4 as the intercept, but 4 is the y-coordinate of a point, not the value of b.',
           B:'y = −2x − 2 comes from b = −2(3) + 4 with the signs switched: −6 + 4 = −2 instead of solving for b correctly.',
@@ -118,7 +118,7 @@
           B:'7 sale de olvidar el cargo fijo o restarlo dos veces.',
           D:'8 comes from dividing 190/25 ≈ 7.6 and rounding, without taking off the fixed $40 first.'
         },
-        tip:'Traduce: "fijo" = constante, "por hora" = coeficiente de h. Arma total = fijo + tarifa×h, luego resta el fijo ANTES de dividir.'
+        tip:'Translate it: “flat” = the constant, “per hour” = the coefficient of h. Build total = flat + rate×h, then subtract the flat fee BEFORE dividing.'
       },
       {
         id:'ALG-09', type:'mc', domain:'Algebra', difficulty:'Media',
@@ -130,7 +130,7 @@
         expWrong:{
           A:'x ≥ 2 forgets to flip the sign when dividing by a negative. That is the classic error on this question.',
           C:'x ≥ −2 has the wrong sign on the 2 and does not flip the inequality.',
-          D:'x ≤ −2 invierte el signo (bien) pero calcula −6/−3 = 2, no −2. El resultado es +2.'
+          D:'x ≤ −2 flips the sign (correctly) but computes −6/−3 = 2, not −2. The result is +2.'
         },
         tip:'Golden rule of inequalities: if you multiply or divide by a NEGATIVE number, flip the sign (≥ becomes ≤). That is what they test most here.'
       },
@@ -153,7 +153,7 @@
         skill:'Sistemas de ecuaciones lineales (valor combinado)',
         stem:'The system of equations below is given.<br><br>2x + 3y = 18<br>x + y = 7<br><br>What is the value of x + 2y in the solution to the system?',
         answer:'11',
-        expCorrect:'Resuelve el sistema. De x + y = 7 → x = 7 − y. Sustituye: 2(7 − y) + 3y = 18 → 14 − 2y + 3y = 18 → 14 + y = 18 → y = 4. Entonces x = 7 − 4 = 3. Piden x + 2y = 3 + 2(4) = 3 + 8 = 11. (Comprueba el sistema: 2(3)+3(4) = 18 ✓ y 3+4 = 7 ✓.) Respuesta: 11.',
+        expCorrect:'Solve the system. From x + y = 7 → x = 7 − y. Substitute: 2(7 − y) + 3y = 18 → 14 − 2y + 3y = 18 → 14 + y = 18 → y = 4. Then x = 7 − 4 = 3. They want x + 2y = 3 + 2(4) = 3 + 8 = 11. (Check the system: 2(3)+3(4) = 18 ✓ and 3+4 = 7 ✓.) Answer: 11.',
         expWrong:{},
         tip:'Read carefully which combination they want. Here it is not x or y alone, but x + 2y. Solve the whole system first, then build the exact expression they asked for.'
       },

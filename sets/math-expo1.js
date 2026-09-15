@@ -48,7 +48,7 @@
         correct:'A',
         expCorrect:'Coefficients: 6/2 = 3. For x: x⁵/x² = x³ (subtract 5 − 2). For y: y⁻²/y³ = y^(−2−3) = y⁻⁵, and the negative exponent sends it to the denominator. Result: 3x³/y⁵.',
         expWrong:{
-          B:'3x³y⁵ pone la y arriba: y⁻²/y³ = y⁻⁵, y el exponente NEGATIVO significa que y⁵ va en el denominador.',
+          B:'3x³y⁵ puts the y on top: y⁻²/y³ = y⁻⁵, and the NEGATIVE exponent means y⁵ goes in the denominator.',
           C:'4 comes from SUBTRACTING 6 − 2. Coefficients divide like ordinary numbers: 6/2 = 3.',
           D:'x⁷ comes from ADDING 5 + 2. When dividing powers of the same base the exponents are SUBTRACTED: 5 − 2 = 3.'
         },

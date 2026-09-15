@@ -143,7 +143,7 @@
         correct:'A',
         expCorrect:'Let h be the price of a hot dog and d the price of a drink: 3h + 2d = 16 and 2h + 4d = 16. Multiply the first by 2: 6h + 4d = 32. Subtract the second: (6h + 4d) − (2h + 4d) = 32 − 16 → 4h = 16 → h = 4. (Check: d = 2, and 3(4)+2(2)=16 ✓, 2(4)+4(2)=16 ✓.)',
         expWrong:{
-          B:'$2 es el precio de la BEBIDA (d = 2), no del hot dog. La pregunta pide h.',
+          B:'$2 is the price of the DRINK (d = 2), not the hot dog. The question asks for h.',
           C:'$3 comes from a slip while eliminating; subtracting the equations leaves 4h = 16, that is h = 4, not 3.',
           D:'$5 does not work: 3(5) + 2d = 16 would give 2d = 1, which does not fit the second equation. Solve the whole system.'
         },

@@ -167,7 +167,7 @@ window.SAT_SETS.push({
       expCorrect:'These are two complete sentences and the second gives the reason for the first. The coordinator "for" (meaning "because") joins two independent clauses with a comma BEFORE it: "…every day, for they lack…".',
       expWrong:{
         A:'A single comma between two complete sentences is a comma splice.',
-        B:'El punto y coma ya une dos independientes; agregarle “and” es redundante (“; and” sobra).',
+        B:'The semicolon already joins two independent clauses; adding “and” is redundant (“; and” is one too many).',
         D:'"for" here joins two complete sentences, so it needs a comma before it; "day for" with no comma is a run-on.'
       },
       tip:'The FANBOYS "for" = "because". It joins two complete sentences with a comma BEFORE it: "…, for …".'
@@ -181,7 +181,7 @@ window.SAT_SETS.push({
       correct:'D',
       expCorrect:'These are two complete sentences joined by the FANBOYS "but". The rule calls for a comma BEFORE the conjunction and nothing after it: "…riverbank, but a single scorching summer…".',
       expWrong:{
-        A:'Falta la coma antes de “but”; unir dos oraciones completas sin ella es incorrecto.',
+        A:'The comma before “but” is missing; joining two complete sentences without it is wrong.',
         B:'The semicolon replaces the conjunction; using it alongside "but" is redundant, and the comma after "but" is wrong too.',
         C:'The comma after "but" separates the conjunction from its clause; the comma goes BEFORE, not after.'
       },

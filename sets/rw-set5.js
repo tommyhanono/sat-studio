@@ -16,7 +16,7 @@ window.SAT_SETS.push({
       correct:'A',
       expCorrect:'The two ideas are in time order: first he threw the tips out “for years” and then he started drying and selling them. “Eventually” marks that sequence in time.',
       expWrong:{
-        B:'“For example” anuncia un ejemplo de algo dicho antes, pero la 2ª idea no ejemplifica a la 1ª, la sigue en el tiempo.',
+        B:'“For example” announces an example of something said before, but the 2nd idea does not exemplify the 1st, it follows it in time.',
         C:'“However” marks contrast, but there is no opposition here: it is a change that happens AFTERWARD, not against.',
         D:'“Similarly” points to a likeness between two similar things, and here there is only one story moving forward in time.'
       },
@@ -33,7 +33,7 @@ window.SAT_SETS.push({
       expWrong:{
         A:'“Nevertheless” marks contrast (something happens in spite of the other), but here the 2nd idea is the direct RESULT of the 1st.',
         B:'“In other words” restates the same idea in different words, and the landslide is a new fact, not the same sentence repeated.',
-        C:'“For instance” introduce un ejemplo, pero el deslizamiento no es un ejemplo de la lluvia, es su efecto.'
+        C:'“For instance” introduces an example, but the landslide is not an example of the rain, it is its effect.'
       },
       tip:'If the 2nd sentence is what the 1st one CAUSES, the relationship is cause→effect: use “As a result”, “Therefore” or “Consequently”.'
     },

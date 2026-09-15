@@ -128,7 +128,7 @@ window.SAT_SETS.push({
       expWrong:{
         B:'"are" is plural and agrees with "stamps", but "stamps" sits inside the prepositional phrase, it is not the subject.',
         C:'"were" is plural and past tense on top of that; the singular subject "collection" and the present sense call for "is".',
-        D:'“have been” es plural; no concuerda con el sujeto singular “collection”.'
+        D:'“have been” is plural; it does not agree with the singular subject “collection”.'
       },
       tip:'Cover the phrase between the subject and the verb ("of rare stamps that… last spring"). What is left is "The collection ___ now available" → singular "is".'
     },
@@ -142,7 +142,7 @@ window.SAT_SETS.push({
       expCorrect:'There are two independent sentences: "The startup’s first prototype failed every stress test" and "the engineers refused to abandon the design…". To join them with contrast you use a comma + the coordinating conjunction "yet": "…stress test, yet the engineers refused…".',
       expWrong:{
         A:'A single comma between two complete sentences is a comma splice.',
-        B:'Sin nada, las dos oraciones se fusionan en un run-on (“…stress test the engineers refused…”).',
+        B:'With nothing there, the two sentences fuse into a run-on (“…stress test the engineers refused…”).',
         C:'The semicolon already joins the two sentences, so adding "yet" is redundant, and the comma after "yet" is wrong too.'
       },
       tip:'Two complete sentences + contrast → a comma right BEFORE and/but/or/yet/so. Do not mix ";" with the conjunction: one or the other, not both.'

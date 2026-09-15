@@ -69,9 +69,9 @@
         correct:'A',
         expCorrect:'Add the two equations to eliminate y: (2x + y) + (x − y) = 11 + 1 → 3x = 12 → x = 4. (Check: with x = 4, y = 4 − 1 = 3, and 2·4 + 3 = 11 ✓.)',
         expWrong:{
-          B:'3 es el valor de y, no de x. Sumando bien las ecuaciones, x = 4.',
+          B:'3 is the value of y, not of x. Adding the equations correctly gives x = 4.',
           C:'5 comes from a slip adding or subtracting the equations. Correct elimination gives 3x = 12 → x = 4.',
-          D:'7 es x + y (4 + 3), no x sola. Te pidieron solo el valor de x.'
+          D:'7 is x + y (4 + 3), not x alone. They asked only for the value of x.'
         },
         tip:'When the coefficients of a variable are opposites (+y and −y), ADD the equations to eliminate it in one go. Then solve and substitute back to check.'
       },
@@ -85,7 +85,7 @@
         expWrong:{
           A:'Zero solutions would be the case of PARALLEL lines (same slope, different intercept). Here they are the same line, not parallel.',
           B:'Exactly one solution happens when the lines have DIFFERENT slopes and cross at a point. Here they have the same slope AND are the same line.',
-          C:'Dos soluciones es imposible en un sistema de dos rectas: o se cruzan una vez, o nunca, o coinciden en infinitos puntos.'
+          C:'Two solutions is impossible for a system of two lines: they either cross once, never, or coincide at infinitely many points.'
         },
         tip:'Put both into y = mx + b. Same m and same b → the same line → infinitely many solutions. Same m, different b → parallel → zero. Different m → exactly one. Here 6x − 2y = 8 simplifies to y = 3x − 4: identical.'
       },

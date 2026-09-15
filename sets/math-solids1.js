@@ -95,7 +95,7 @@
         expWrong:{
           A:'300π is the volume of the CYLINDER with the same base and height (πr²h). The cone is missing the 1/3 factor.',
           B:'20π sale de (1/3)π(5)(12): olvidaste elevar el radio al cuadrado.',
-          C:'150π usa 1/2 en vez de 1/3. El cono es exactamente UN TERCIO del cilindro, no la mitad.'
+          C:'150π uses 1/2 instead of 1/3. A cone is exactly ONE THIRD of the cylinder, not half.'
         },
         tip:'A cone is one third of the cylinder with the same base and height: V = (1/3)πr²h. Compute the full πr²h (300π) and divide by 3 at the end: 100π.',
         desmos:'Escribe (1/3)*pi*5^2*12 en Desmos y te da ≈314.2, que es 100π. Si te sale el triple (300π), se te olvidó el 1/3 del cono.',

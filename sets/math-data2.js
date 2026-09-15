@@ -34,7 +34,7 @@
           B:'16.7% comes from dividing the change by the NEW value (9/54). Percent change is figured on the original value.',
           D:'54% is the new price in dollars, not a percent change.'
         },
-        tip:'Porcentaje de cambio = (nuevo − viejo) / VIEJO. El denominador siempre es el valor de partida (45), no el nuevo.'
+        tip:'Percent change = (new − old) / OLD. The denominator is always the starting value (45), not the new one.'
       },
       {
         id:'DT2-03', type:'mc', domain:'Problem-Solving & Data Analysis', difficulty:'Difícil',
@@ -95,9 +95,9 @@
         correct:'A',
         expCorrect:'The 7 values are already in order. The median is the middle value: the 4th of 7, which is 14.',
         expWrong:{
-          B:'16 es la media aproximada (114/7 ≈ 16.3), no la mediana. La mediana es el valor del medio, no el promedio.',
+          B:'16 is roughly the mean (114/7 ≈ 16.3), not the median. The median is the middle value, not the average.',
           C:'17 is the 5th value, but with 7 data points the middle is the 4th value (14), not the 5th.',
-          D:'22 es el punto medio entre el menor (8) y el mayor (30); eso no es la mediana.'
+          D:'22 is the midpoint between the smallest (8) and the largest (30); that is not the median.'
         },
         tip:'Median = the middle value of the ORDERED list. With n odd it is the middle term (position (n+1)/2). With 7 data points, it is the 4th. Do not confuse it with the mean.'
       },

@@ -99,7 +99,7 @@
         answer:'9',
         expCorrect:'Set them equal: x² = x + 6 → x² − x − 6 = 0 → (x − 3)(x + 2) = 0 → x = 3 or x = −2. The y values are y = 3² = 9 and y = (−2)² = 4. The greater y value is 9. (Check: (3, 9) satisfies 9 = 3 + 6 ✓.) Answer: 9.',
         expWrong:{},
-        tip:'Truco Desmos: grafica y = x² y y = x + 6, toca los dos puntos de corte: (−2, 4) y (3, 9). Ojo: piden el mayor VALOR DE y (9), no el mayor valor de x.'
+        tip:'Desmos trick: graph y = x² and y = x + 6, and tap the two intersection points: (−2, 4) and (3, 9). Careful: they want the greatest VALUE OF y (9), not the greatest value of x.'
       },
       {
         id:'ADV-08', type:'mc', domain:'Advanced Math', difficulty:'Difícil',

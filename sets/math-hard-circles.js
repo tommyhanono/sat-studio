@@ -50,7 +50,7 @@
           D:'(10, −4)'
         },
         correct:'A',
-        expCorrect:'Completa cuadrados. En x: x² + 10x = (x + 5)² − 25. En y: y² − 4y = (y − 2)² − 4. Sustituyendo: (x + 5)² − 25 + (y − 2)² − 4 − 7 = 0 → (x + 5)² + (y − 2)² = 36. El centro es (h, k) = (−5, 2) y el radio es 6.',
+        expCorrect:'Complete the square. In x: x² + 10x = (x + 5)² − 25. In y: y² − 4y = (y − 2)² − 4. Substituting: (x + 5)² − 25 + (y − 2)² − 4 − 7 = 0 → (x + 5)² + (y − 2)² = 36. The center is (h, k) = (−5, 2) and the radius is 6.',
         expWrong:{
           B:'(5, −2) flips the signs. Careful: (x + 5)² comes from h = −5, and (y − 2)² comes from k = +2. The sign of the center is the opposite of what you see inside the parentheses.',
           C:'(−10, 4) uses the full linear coefficients (10 and −4) without halving them. When you complete the square you take HALF of each coefficient.',

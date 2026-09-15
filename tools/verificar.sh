@@ -25,6 +25,7 @@ corre "Banco de preguntas (contenido e integridad)" node tools/auditar-banco.js
 corre "Humo (la app se juega de verdad)"            node tools/test-humo.js
 corre "Integridad de datos del estudiante"          node tools/test-datos.js
 corre "Mi plan de mejora"                           node tools/test-plan.js
+corre "Todo en inglés (banco + interfaz)"           node tools/test-idioma.js
 
 printf '\n'
 if [ "$fallos" -eq 0 ]; then

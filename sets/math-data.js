@@ -18,7 +18,7 @@
         expWrong:{
           A:'40 is the percent itself, not the number of students. You have to multiply it by the total.',
           C:'210 is 60% (the ones NOT in the band). They are asking for the 40%.',
-          D:'245 es el 70% de 350; no corresponde al 40% que se pide.'
+          D:'245 is 70% of 350; it does not match the 40% being asked for.'
         },
         tip:'"Percent of a total" = decimal × total in one step. 40% → 0.40 × 350. If your result is the same number as the percent, you forgot to multiply.'
       },
@@ -34,7 +34,7 @@
           B:'20% comes from dividing the change by the NEW value (15/75), but percent change is always figured on the original value.',
           D:'75% es la altura final en cm, no un porcentaje de cambio.'
         },
-        tip:'Porcentaje de cambio = (nuevo − viejo) / VIEJO. El denominador siempre es el valor de partida. Divide entre 75 y ya te equivocaste.'
+        tip:'Percent change = (new − old) / OLD. The denominator is always the starting value. Divide by 75 and you have already gone wrong.'
       },
       {
         id:'DAT-03', type:'mc', domain:'Problem-Solving & Data Analysis', difficulty:'Fácil',

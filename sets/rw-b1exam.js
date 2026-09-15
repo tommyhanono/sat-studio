@@ -114,9 +114,9 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'their', B:'they’re', C:'his or her', D:'its'},
       correct:'C',
-      expCorrect:'El sujeto es “Each of the volunteers”, y “each” es singular. El pronombre posesivo singular que concuerda es “his or her”: “bring his or her own gloves”.',
+      expCorrect:'The subject is “Each of the volunteers”, and “each” is singular. The matching singular possessive pronoun is “his or her”: “bring his or her own gloves”.',
       expWrong:{
-        A:'“Their” es plural; no concuerda con el sujeto singular “each”.',
+        A:'“Their” is plural; it does not agree with the singular subject “each”.',
         B:'"They’re" = "they are", a contraction, not a possessive; it cannot modify "gloves".',
         D:'"Its" is used for things or animals, not for volunteers, who are people.'
       },
@@ -129,11 +129,11 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'are', B:'is', C:'were', D:'have been'},
       correct:'B',
-      expCorrect:'El sujeto es “The collection” (singular); “of rare butterfly specimens… expeditions” es solo un modificador. El verbo singular en presente que concuerda es “is”: “The collection… is now displayed”.',
+      expCorrect:'The subject is “The collection” (singular); “of rare butterfly specimens… expeditions” is only a modifier. The singular present-tense verb that agrees is “is”: “The collection… is now displayed”.',
       expWrong:{
         A:'"Are" is plural and agrees with "specimens", but that is not the subject; the subject is "collection", singular.',
         C:'"Were" is plural and past tense on top of that; the marker "now" calls for the singular present.',
-        D:'“Have been” es plural; no concuerda con el sujeto singular “collection”.'
+        D:'“Have been” is plural; it does not agree with the singular subject “collection”.'
       },
       tip:'Ignore the phrase between the subject and the verb ("of… specimens…"). Ask: what is displayed? The COLLECTION → singular → "is".'
     },
@@ -193,7 +193,7 @@ window.SAT_SETS.push({
       expWrong:{
         A:'It is a detail about tomatoes; it does not convey the broad benefit to the neighborhood.',
         B:'It is about a need (volunteers), not about the benefit the garden brings; it shifts the focus.',
-        D:'Da un dato menor (el horario de las clases) en lugar de resumir el impacto general.'
+        D:'It gives a minor fact (the class schedule) instead of summing up the overall impact.'
       },
       tip:'When they ask for a conclusion that "emphasizes the broad benefit", pick the option that pulls SEVERAL notes into one general idea, not the one giving a single detail.'
     },

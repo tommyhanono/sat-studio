@@ -60,7 +60,7 @@ window.SAT_SETS.push({
       expWrong:{
         A:'It introduces who she was; it says nothing about the invention’s impact.',
         B:'It describes the original invention (the torpedoes), but not its later influence.',
-        D:'Cuenta que era inventora autodidacta; no muestra el efecto duradero de su idea.'
+        D:'It tells us she was a self-taught inventor; it does not show the lasting effect of her idea.'
       },
       tip:'"Lasting impact" calls for the option connecting the invention with what it made possible LATER, not who she was or the invention itself.'
     },

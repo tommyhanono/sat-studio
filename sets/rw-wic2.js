@@ -17,8 +17,8 @@ window.SAT_SETS.push({
       expCorrect:'Predict your own word: the plants find clever ways to survive on little water (storing it, dropping leaves). “Resourceful” means “clever at getting by”, exactly what the examples show.',
       expWrong:{
         B:'“Fragile” is the opposite: the text praises that they SURVIVE, not that they break easily.',
-        C:'“Abundant” (abundante) contradice el desierto, donde llueve poco y hay pocas plantas.',
-        D:'“Colorful” (colorido) no se relaciona con la pista: el texto habla de sobrevivir sin agua, no de colores.'
+        C:'“Abundant” contradicts the desert, where rain is scarce and plants are few.',
+        D:'“Colorful” has nothing to do with the clue: the text is about surviving without water, not about color.'
       },
       tip:'Predict your own word for the blank before you look at the options. The examples (storing water, dropping leaves) are shrewd ways of surviving: aim for “clever, resourceful”.'
     },
@@ -76,8 +76,8 @@ window.SAT_SETS.push({
       correct:'A',
       expCorrect:'The biographer shows the good AND the cruel to give a complete human being, not a “polished statue”. She refuses to “idealize”, that is, to paint him as flawless.',
       expWrong:{
-        B:'“Interview” (entrevistar) no encaja: no se opone a mostrar sus defectos; el contraste es con “polished statue”.',
-        C:'“Criticize” (criticar) es lo contrario del punto: ella no lo ataca, solo se niega a idealizarlo.',
+        B:'“Interview” does not fit: it does not oppose showing his flaws; the contrast is with “polished statue”.',
+        C:'“Criticize” is the opposite of the point: she does not attack him, she just refuses to idealize him.',
         D:'“Abandon” is beside the point; she does write about him, with balance.'
       },
       tip:'La “polished statue” es la pista: lo opuesto a un retrato equilibrado es uno idealizado. Predice “pintar como perfecto” y elige “idealize”.'
@@ -95,7 +95,7 @@ window.SAT_SETS.push({
         C:'“Lengthy” has no support: nothing says the method took a long time.',
         D:'“Complicated” is tempting, but the emphasis is that it is NEW (“no one had tried before”), not that it is difficult.'
       },
-      tip:'“Novel” casi nunca significa “novela” en el SAT. La pista “no laboratory had tried before” apunta a “nuevo/innovador”, no a “complicado”.'
+      tip:'“Novel” almost never means “a novel” on the SAT. The clue “no laboratory had tried before” points to “new/innovative”, not to “complicated”.'
     },
     {
       id:'WC2-07', type:'mc', domain:'Craft and Structure', difficulty:'Media',
@@ -125,7 +125,7 @@ window.SAT_SETS.push({
         B:'“Identical” fits nothing in the sentence; there is no comparison of sameness.',
         C:'“Hostile” (hostil) contradice el tono amable de invitar a pensar juntos.'
       },
-      tip:'“Rather than rigid commands” pide lo contrario de imponer. Predice “abiertas, propuestas con suavidad”: esa es “tentative”.'
+      tip:'“Rather than rigid commands” calls for the opposite of imposing. Predict “open, gently proposed”: that is “tentative”.'
     },
     {
       id:'WC2-09', type:'mc', domain:'Craft and Structure', difficulty:'Media',

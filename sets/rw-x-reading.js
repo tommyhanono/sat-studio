@@ -62,7 +62,7 @@ window.SAT_SETS.push({
       correct:'B',
       expCorrect:'Just before, the text says the room is so “correct” that you feel “the impossibility of ever being comfortable there”. The chairs are the concrete example: designed by a man of taste, but “no one had ever sat in one twice” (nobody sat twice = uncomfortable). They illustrate that idea: correctness beats comfort.',
       expWrong:{
-        A:'El costo nunca se menciona; el tema es el gusto y la incomodidad, no el precio. Es un detalle que el texto no toca.',
+        A:'Cost is never mentioned; the topic is taste and discomfort, not price. It is a detail the text does not touch.',
         C:'A literal trap with “no one had ever sat in one twice”: it does not say they get no visitors, but that whoever sits does not repeat — because the chairs are uncomfortable. It mistakes the joke for a fact about visitor frequency.',
         D:'It reads “a man of taste” straight as praise. It is ironic: great taste produced chairs no one sits in twice. It is not out to praise the designer.'
       },
@@ -82,7 +82,7 @@ window.SAT_SETS.push({
       correct:'D',
       expCorrect:'The text praises her “frankness”, but the close distinguishes two kinds: one that wounds “because it is discerning” and one that is pardoned “because it is not”. By saying she is forgiven because she “thought so little”, it places her in the second: harmless because shallow. The phrase qualifies (deflates) the earlier compliment.',
       expWrong:{
-        A:'No la defiende de nadie; el narrador es quien la punza. “Forgave her… she thought so little” es un desprecio elegante, no una defensa.',
+        A:'It does not defend her from anyone; the narrator is the one needling her. “Forgave her… she thought so little” is an elegant put-down, not a defense.',
         C:'An “age” trap: age appears earlier, but the pardon is attributed to her thinking so little, not to others mellowing over the years. It confuses two causes.',
         B:'It inverts the meaning: the last clause denies that her judgments are “discerning”. She is not admired for wisdom; she is tolerated for the lack of it.'
       },

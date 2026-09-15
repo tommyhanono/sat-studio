@@ -60,7 +60,7 @@
         correct:'A',
         expCorrect:'Reemplaza x por 4: g(4) = 5(4) + 2 = 20 + 2 = 22.',
         expWrong:{
-          B:'20 es solo 5(4): falta sumar el 2.',
+          B:'20 is only 5(4): you forgot to add the 2.',
           C:'30 comes from adding before multiplying, 5(4 + 2). The 2 is outside the parentheses.',
           D:'7 is 5 + 2: it ignores that the 5 multiplies x.'
         },
@@ -74,11 +74,11 @@
         stem:'What is the slope of the line that passes through the points (1, −2) and (5, 10) ?',
         choices:{A:'3', B:'2', C:'1/3', D:'−3'},
         correct:'A',
-        expCorrect:'Pendiente = (10 − (−2))/(5 − 1) = 12/4 = 3. Ojo con el numerador: restar −2 SUMA 2.',
+        expCorrect:'Slope = (10 − (−2))/(5 − 1) = 12/4 = 3. Watch the numerator: subtracting −2 ADDS 2.',
         expWrong:{
           B:'2 comes from computing 10 − 2 = 8 in the numerator. The point has y = −2, so it is 10 − (−2) = 12.',
           C:'1/3 is the fraction upside down: you put the change in x on top. It is Δy over Δx.',
-          D:'−3 tiene el signo cambiado. Si y sube de −2 a 10 mientras x crece, la pendiente es positiva.'
+          D:'−3 has the sign flipped. If y rises from −2 to 10 as x grows, the slope is positive.'
         },
         tip:'The double negative in the numerator or the denominator is the only real error on this question. Write the subtraction with parentheses and it does not get lost.',
         desmos:'Escribe (1,-2) y (5,10), y grafica y=3x-5 para confirmar que pasa por los dos.',
@@ -93,7 +93,7 @@
         expCorrect:'The y terms are opposites: add the equations and they vanish. 2x = 16 ⇒ x = 8. (Then y = 4. Check: 8 + 4 = 12 ✓ and 8 − 4 = 4 ✓.)',
         expWrong:{
           B:'4 is the value of y, not of x. It is also the right-hand side of the second equation — a double trap.',
-          C:'16 es 2x, el paso intermedio. Falta dividir entre 2.',
+          C:'16 is 2x, the intermediate step. You still have to divide by 2.',
           D:'12 is the right-hand side of the first equation, not a solution.'
         },
         tip:'When the coefficients are already opposites, adding solves it in one line. It is one of the fastest in the module: do not solve it by substitution.',
@@ -166,7 +166,7 @@
         stem:'If f(x) = x² − 3x, what is the value of f(−2) ?',
         choices:{A:'10', B:'−2', C:'2', D:'−10'},
         correct:'A',
-        expCorrect:'f(−2) = (−2)² − 3(−2) = 4 − (−6) = 4 + 6 = 10. Los dos signos importan: el cuadrado de un negativo es positivo, y restar −6 suma.',
+        expCorrect:'f(−2) = (−2)² − 3(−2) = 4 − (−6) = 4 + 6 = 10. Both signs matter: the square of a negative is positive, and subtracting −6 adds.',
         expWrong:{
           B:'−2 comes from computing 4 − 6: the sign got lost multiplying −3 by −2, which gives +6.',
           C:'2 comes from writing (−2)² as −4. The square of a negative is POSITIVE.',
@@ -227,7 +227,7 @@
         expCorrect:'The vertex of a parabola sits at x = −b/(2a). Here a = 1 and b = −8, so x = −(−8)/(2·1) = 8/2 = 4. Since a > 0 the parabola opens upward and that vertex is the MINIMUM. (Completing the square: x² − 8x + 3 = (x − 4)² − 13, minimum at x = 4.)',
         expWrong:{
           B:'−4 forgot the minus sign in the formula: b is already −8, so −b is +8.',
-          C:'8 es el valor de −b, sin dividir entre 2a.',
+          C:'8 is the value of −b, without dividing by 2a.',
           D:'3 is the constant term, which shifts the parabola vertically. It does not affect where the vertex is.'
         },
         tip:'x = −b/(2a) comes free and answers half a dozen question types: vertex, axis of symmetry, maximum, minimum. Memorize that **b goes in with its own sign**.',
@@ -284,7 +284,7 @@
         stem:'A jacket originally priced at $80 is on sale for 25% off. What is the sale price of the jacket?',
         choices:{A:'$60', B:'$20', C:'$55', D:'$100'},
         correct:'A',
-        expCorrect:'Descontar 25 % es pagar el 75 %: 0.75 × 80 = $60. (O bien: el descuento es 0.25 × 80 = $20, y 80 − 20 = $60.)',
+        expCorrect:'Taking 25% off means paying 75%: 0.75 × 80 = $60. (Or: the discount is 0.25 × 80 = $20, and 80 − 20 = $60.)',
         expWrong:{
           B:'$20 is the DISCOUNT, not the final price. It still has to be subtracted from the $80.',
           C:'$55 subtracts 25 dollars instead of 25 percent. A percentage is computed on the price, it is not subtracted directly.',
@@ -312,7 +312,7 @@
       },
       {
         id:'M1-19', type:'spr', domain:'Problem-Solving & Data Analysis', difficulty:'Media',
-        skill:'Media (hallar el dato que falta)',
+        skill:'Mean (finding the missing value)',
         stem:'The mean of five numbers is 14. Four of the numbers are 10, 12, 16, and 20. What is the fifth number? (Grid in your answer.)',
         answer:'12',
         expCorrect:'If the mean of five numbers is 14, the SUM of the five is 5 × 14 = 70. The four known ones add to 10 + 12 + 16 + 20 = 58. The fifth is 70 − 58 = **12**. (Check: 70/5 = 14 ✓.)',

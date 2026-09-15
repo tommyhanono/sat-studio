@@ -69,8 +69,8 @@
         expCorrect:'Volumen del cono = (1/3)πr²h = (1/3)π(6²)(8) = (1/3)π(36)(8) = (1/3)(288π) = 96π.',
         expWrong:{
           B:'288π is πr²h, the CYLINDER formula. The cone is a third of that: you forgot to multiply by 1/3.',
-          C:'144π usa (1/2)πr²h. El factor del cono es 1/3, no 1/2.',
-          D:'128π = (1/3)π(8²)(6): intercambiaste radio y altura. El que va al cuadrado es el radio (6), no la altura.'
+          C:'144π uses (1/2)πr²h. The cone factor is 1/3, not 1/2.',
+          D:'128π = (1/3)π(8²)(6): you swapped radius and height. The one that gets squared is the radius (6), not the height.'
         },
         tip:'A cone is 1/3 of the cylinder with the same base and height. The two classic errors: forgetting the 1/3 and squaring the height instead of the radius. Write r² first (6² = 36) and do not mix it up with h.'
       },
@@ -134,7 +134,7 @@
         expCorrect:'The diagonal of a square forms a 45-45-90 triangle, so diagonal = side·√2 → 10 = s√2 → s = 10/√2 = 5√2. Area = s² = (5√2)² = 25·2 = 50. (Shortcut: area = diagonal²/2 = 100/2 = 50.)',
         expWrong:{
           B:'100 = 10² uses the diagonal as if it were the side. The diagonal is longer than the side (by a factor of √2).',
-          C:'25 = (10/2)² parte la diagonal a la mitad y la eleva al cuadrado; ese no es el lado del cuadrado.',
+          C:'25 = (10/2)² halves the diagonal and squares it; that is not the side of the square.',
           D:'200 = 10²·2 multiplies by 2 instead of dividing. The formula with the diagonal is d²/2.'
         },
         tip:'Handy trick: for a square, area = diagonal²/2. It follows from diagonal = s√2, so s² = d²/2. Spotting the 45-45-90 inside the square saves you the algebra.'
@@ -148,7 +148,7 @@
         correct:'D',
         expCorrect:'cos θ = adjacent / hypotenuse. The leg adjacent to θ is 12 and the hypotenuse is 15, so cos θ = 12/15 = 4/5.',
         expWrong:{
-          A:'3/5 es sin θ = opuesto/hipotenusa = 9/15. Te piden el coseno, que usa el cateto ADYACENTE.',
+          A:'3/5 is sin θ = opposite/hypotenuse = 9/15. They want the cosine, which uses the ADJACENT leg.',
           B:'3/4 es tan θ = opuesto/adyacente = 9/12. No es el coseno.',
           C:'5/4 is the reciprocal of 4/5 (that would be sec θ). A cosine in a triangle never goes above 1.'
         },

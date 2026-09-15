@@ -39,7 +39,7 @@
         correct:'C',
         expCorrect:'Area = πr² = 36π → r² = 36 → r = 6. Circumference = 2πr = 2π(6) = 12π.',
         expWrong:{
-          A:'6π usa el radio (6) como si fuera la circunferencia, olvidando el 2πr. 6 es solo el radio.',
+          A:'6π uses the radius (6) as if it were the circumference, forgetting the 2πr. 6 is only the radius.',
           B:'18π comes from dividing the area by 2 (36π / 2), which is not a valid formula.',
           D:'72π is 2 × 36π, that is, twice the area, not the circumference.'
         },
@@ -90,7 +90,7 @@
           C:'The center is right, but the right-hand side has to be r² = 25, not r = 5. The radius still needs squaring.',
           D:'Combina dos errores: signos del centro invertidos Y usa 5 en vez de 25.'
         },
-        tip:'Dos trampas fijas: (1) los signos se INVIERTEN respecto al centro — centro (2, −3) da (x − 2) y (y + 3). (2) el lado derecho es r², no r. Radio 5 → 25.'
+        tip:'Two fixed traps: (1) the signs FLIP relative to the center — center (2, −3) gives (x − 2) and (y + 3). (2) the right-hand side is r², not r. Radius 5 → 25.'
       },
       {
         id:'GEO-05', type:'mc', domain:'Geometry & Trigonometry', difficulty:'Media',
@@ -101,7 +101,7 @@
         correct:'D',
         expCorrect:'The leg opposite θ is 6 and the hypotenuse is 10, so the adjacent leg = √(10² − 6²) = √(100 − 36) = √64 = 8. cos θ = adjacent / hypotenuse = 8/10 = 4/5.',
         expWrong:{
-          A:'3/5 es sin θ (opuesto/hipotenusa = 6/10). Te pidieron el coseno, que usa el cateto ADYACENTE.',
+          A:'3/5 is sin θ (opposite/hypotenuse = 6/10). They asked for the cosine, which uses the ADJACENT leg.',
           B:'5/4 is the reciprocal of 4/5 (that would be 1/cos, i.e. sec θ). A cosine in a triangle never goes above 1.',
           C:'3/4 es tan θ (opuesto/adyacente = 6/8). No es lo que piden.'
         },

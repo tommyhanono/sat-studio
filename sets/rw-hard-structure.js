@@ -225,7 +225,7 @@ window.SAT_SETS.push({
         C:'It exaggerates and contradicts: it says the coast was "reshaped", not that EVERY coastal wetland is already destroyed; in fact restoration continues.',
         D:'It distorts the focus: the disagreement is not about "which century" had the healthiest wetlands, but about restoring the past vs. preparing for the future.'
       },
-      tip:'La idea central abarca el giro completo. Frases como “is often described as… but ecologists describe something stranger… Increasingly, restorers aim” apuntan a la meta nueva: durar en el futuro, no rebobinar al pasado.'
+      tip:'The central idea covers the whole turn. Phrases like “is often described as… but ecologists describe something stranger… Increasingly, restorers aim” point to the new goal: lasting into the future, not rewinding to the past.'
     },
     {
       id:'HVS-12', type:'mc', domain:'Information and Ideas', difficulty:'Difícil',

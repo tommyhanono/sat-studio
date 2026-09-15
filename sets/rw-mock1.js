@@ -89,7 +89,7 @@ window.SAT_SETS.push({
       correct:'B',
       expCorrect:'The text takes a dismissive stance (too small and scattered to matter) and refutes it with data: even isolated roofs draw bees, and nearby ones share species, working as stepping-stones. The purpose is to show that dismissed habitat does count.',
       expWrong:{
-        A:'No compara amenazas urbanas contra rurales; el foco es el valor de los techos, no un peligro exclusivo de la ciudad.',
+        A:'It does not compare urban threats against rural ones; the focus is the value of the roofs, not a danger exclusive to the city.',
         C:'No recomienda plantas ni se dirige a jardineros; presenta hallazgos de un estudio.',
         D:'It mentions a study, but does not explain its method for identifying species; it uses the result, not the procedure.'
       },
@@ -347,7 +347,7 @@ window.SAT_SETS.push({
       expCorrect:'The phrase a marine geologist whose maps redrew our picture of the sea floor is a non-essential appositive renaming Ada Rourke; it sits between two commas. On top of that, and the audience listened is another sentence, so the closing comma after floor also sets up the join with and.',
       expWrong:{
         B:'The opening comma after Rourke is missing; the aside would be left open without its first comma.',
-        C:'Falta la coma de cierre tras floor; el apositivo se abre pero no se cierra, y se pega a and.',
+        C:'The closing comma after floor is missing; the appositive opens but never closes, and it runs straight into and.',
         D:'A semicolon does not fence off appositives, and there is no independent sentence between Rourke and the rest of the subject.'
       },
       tip:'A non-essential appositive takes an opening comma and a closing comma (twin commas). Check that both are there.'
@@ -485,7 +485,7 @@ window.SAT_SETS.push({
       correct:'B',
       expCorrect:'The goal is to highlight a contrast between the two types. Option B puts the figures head to head (5% for the incandescent against 40% for the LED) using whereas, which marks the opposition precisely.',
       expWrong:{
-        A:'Subraya un parecido (ambos se queman), no el contraste que pide la meta.',
+        A:'It underlines a similarity (both burn), not the contrast the goal calls for.',
         C:'It is only about the incandescent bulb; with no comparison to the LED there is no contrast.',
         D:'It points to something both share (they are widely used), the opposite of highlighting a difference.'
       },

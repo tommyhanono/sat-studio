@@ -20,7 +20,7 @@
           C:'3 is the total number of distinct zeros, not how many bounce. Only the one with even multiplicity touches without crossing.',
           D:'0 would say the graph never touches the axis, but (x − 3)² does touch it at x = 3.'
         },
-        tip:'Multiplicidad PAR → toca y rebota (no cruza). Multiplicidad IMPAR → cruza el eje. Cuenta solo los factores elevados a potencia par.'
+        tip:'EVEN multiplicity → touches and bounces (does not cross). ODD multiplicity → crosses the axis. Count only the factors raised to an even power.'
       },
       {
         id:'HMP-02', type:'mc', domain:'Advanced Math', difficulty:'Difícil',
@@ -49,7 +49,7 @@
         correct:'C',
         expCorrect:'By the remainder theorem, the remainder when dividing by (x − 2) is p(2). So p(2) = 2(8) − 3(4) + 2k − 5 = 16 − 12 + 2k − 5 = 2k − 1. Set it equal to 7: 2k − 1 = 7 → 2k = 8 → k = 4. (Check: 16 − 12 + 8 − 5 = 7 ✓.)',
         expWrong:{
-          A:'2 es el valor que sustituyes (x = 2), no el resultado de despejar k.',
+          A:'2 is the value you substitute (x = 2), not the result of solving for k.',
           B:'3 comes from an arithmetic slip; substituting correctly, 2k − 1 = 7 forces k = 4.',
           D:'6 probably comes from dropping the −1 (writing 2k = 12). The constant term leaves 2k − 1, not 2k.'
         },
@@ -64,7 +64,7 @@
         expCorrect:'By the factor theorem, if (x + 3) is a factor then p(−3) = 0. Substitute: (−3)³ + 2(−3)² − 5(−3) + c = −27 + 18 + 15 + c = 6 + c. Set it equal to 0: 6 + c = 0 → c = −6. (Check: −27 + 18 + 15 − 6 = 0 ✓.)',
         expWrong:{
           A:'6 is the result of the numeric part (−27 + 18 + 15) before solving; c has to cancel that 6, so c = −6.',
-          B:'12 no cumple p(−3) = 0. Al sustituir x = −3 queda 6 + c, y solo c = −6 lo anula.',
+          B:'12 does not satisfy p(−3) = 0. Substituting x = −3 leaves 6 + c, and only c = −6 makes it zero.',
           C:'−3 is the value of x you use (the root), not the value of c.'
         },
         tip:'Factor theorem: (x − a) is a factor ⇔ p(a) = 0. Here the factor is (x + 3), so a = −3. Evaluate p(−3), set it to 0 and solve for c.'
@@ -77,7 +77,7 @@
         correct:'C',
         expCorrect:'Factor the top and the bottom: x² − 9 = (x − 3)(x + 3) and x² − x − 6 = (x − 3)(x + 2). The common factor (x − 3) cancels, leaving (x + 3)/(x + 2). (Check with x = 0: original = −9/−6 = 3/2; simplified = 3/2 ✓.)',
         expWrong:{
-          A:'(x − 3)/(x + 2) cancela el factor equivocado: se cancela (x − 3), no (x + 3). Arriba queda (x + 3).',
+          A:'(x − 3)/(x + 2) cancels the wrong factor: what cancels is (x − 3), not (x + 3). The top is left with (x + 3).',
           B:'(x − 3)/(x − 2) factoriza mal el denominador; x² − x − 6 = (x − 3)(x + 2), no (x − 2)(algo).',
           D:'(x + 3)/(x − 2) has the wrong denominator: the factor left on the bottom is (x + 2), not (x − 2).'
         },
@@ -152,11 +152,11 @@
         correct:'C',
         expCorrect:'Work from the inside out. First f(3) = 3(3) − 4 = 5. Then g(5) = 5² + 2 = 25 + 2 = 27. So g(f(3)) = 27.',
         expWrong:{
-          A:'11 es g(3) = 3² + 2, es decir, aplicaste solo g al 3 y olvidaste evaluar f primero.',
-          B:'29 es f(g(3)) = 3(11) − 4, o sea invertiste el orden. g(f(3)) aplica f primero, luego g.',
+          A:'11 is g(3) = 3² + 2, that is, you applied only g to the 3 and forgot to evaluate f first.',
+          B:'29 is f(g(3)) = 3(11) − 4, that is, you reversed the order. g(f(3)) applies f first, then g.',
           D:'23 olvida el "+ 2" de g: 5² = 25 y sumas 2 → 27, no 23 (o evaluaste g(3²) mal).'
         },
-        tip:'g(f(3)) se lee de adentro hacia afuera: calcula f(3) primero y ese resultado entra a g. El orden importa: g(f(x)) ≠ f(g(x)).'
+        tip:'g(f(3)) is read from the inside out: compute f(3) first and that result goes into g. Order matters: g(f(x)) ≠ f(g(x)).'
       },
       {
         id:'HMP-11', type:'spr', domain:'Advanced Math', difficulty:'Difícil',

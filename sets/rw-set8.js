@@ -14,7 +14,7 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'include', B:'includes', C:'have included', D:'were including'},
       correct:'B',
-      expCorrect:'El sujeto es “The collection” (singular). La frase “of rare beetles that the museum acquired…” solo describe al sujeto y no lo cambia. Un sujeto singular pide un verbo singular: “includes”.',
+      expCorrect:'The subject is “The collection” (singular). The phrase “of rare beetles that the museum acquired…” only describes the subject and does not change it. A singular subject calls for a singular verb: “includes”.',
       expWrong:{
         A:'“include” is plural; it agrees with “beetles”, not with the real subject “The collection” (singular).',
         C:'“have included” es plural; el sujeto singular “collection” pide “has”, no “have”.',
@@ -61,9 +61,9 @@ window.SAT_SETS.push({
       correct:'D',
       expCorrect:'“By the time the volunteers arrived” marks a point in the past; the destruction happened BEFORE that arrival. For an action earlier than another past action you use the past perfect: “had already destroyed”.',
       expWrong:{
-        A:'“has destroyed” es presente perfecto; no encaja con el marco claramente pasado “arrived”.',
+        A:'“has destroyed” is present perfect; it does not fit the clearly past frame “arrived”.',
         B:'“destroys” is simple present; the event happened in the past.',
-        C:'“is destroying” es presente continuo; choca con el pasado “arrived”.'
+        C:'“is destroying” is present continuous; it clashes with the past “arrived”.'
       },
       tip:'Two things in the past and one happened BEFORE the other? The earlier one goes in the past perfect (had + participle).'
     },
@@ -76,7 +76,7 @@ window.SAT_SETS.push({
       correct:'C',
       expCorrect:'The sentence is already in the past (“reviewed”). The verb joined by “and” has to keep the same tense: simple past “submitted”.',
       expWrong:{
-        A:'“submits” es presente; rompe con el pasado “reviewed”.',
+        A:'“submits” is present tense; it breaks with the past “reviewed”.',
         B:'“has submitted” es presente perfecto; no combina con la secuencia en pasado simple.',
         D:'“submitting” is not a finite verb; with no main verb the sentence is incomplete.'
       },
@@ -138,7 +138,7 @@ window.SAT_SETS.push({
       expWrong:{
         A:'“their” is plural; it does not agree with the singular “Each” (which already calls for “was”).',
         C:'“its” is for things or animals, not for researchers (people).',
-        D:'“our” es primera persona; el texto habla de los investigadores en tercera persona, no de nosotros.'
+        D:'“our” is first person; the text speaks about the researchers in the third person, not about us.'
       },
       tip:'“Each” is SINGULAR (that is why “was”). A singular pronoun for people is “his or her”.'
     },
@@ -182,7 +182,7 @@ window.SAT_SETS.push({
       expCorrect:'The “pacing” belongs to the book, which is one single thing (singular). The singular possessive for a thing is “its”, with no apostrophe.',
       expWrong:{
         B:'“it’s” means “it is”; here you need the possessive “its”.',
-        C:'“their” es plural, pero el ritmo pertenece a un solo libro (singular).',
+        C:'“their” is plural, but the pacing belongs to a single book (singular).',
         D:'“storys” is neither a possessive nor spelled correctly; the singular possessive would be “story’s”.'
       },
       tip:'The possessive of a singular thing is “its” (no apostrophe). Never mix up “its” with “it’s” (= it is).'

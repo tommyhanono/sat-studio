@@ -201,7 +201,7 @@ window.SAT_SETS.push({
       correct:'B',
       expCorrect:'The goal calls for highlighting that the main difference was the use of SENSORS, not the water savings. B contrasts exactly that: both used drip irrigation, but Farm A added sensors and Farm B watered on a fixed schedule. It is a method difference, with no savings figures.',
       expWrong:{
-        A:'Contrasta el AHORRO (40% vs. 38%), justo lo que la meta pide no enfatizar.',
+        A:'It contrasts the SAVINGS (40% vs. 38%), exactly what the goal tells you not to emphasize.',
         C:'It is about the yields, which were the same; it does not touch the sensor difference.',
         D:'It brings in the sensors, but its emphasis falls on comparing the savings percentages, which the goal wants you to avoid.'
       },

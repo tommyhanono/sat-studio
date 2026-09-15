@@ -45,7 +45,7 @@
         skill:'Parametric discriminant (fractional answer)',
         stem:'In the xy-plane, the graph of y = x² + 6x + 12 and the graph of y = −3x + c, where c is a constant, intersect at exactly one point. What is the value of c?',
         answer:'-33/4',
-        expCorrect:'Iguala: x² + 6x + 12 = −3x + c → x² + 9x + (12 − c) = 0. Un solo punto → discriminante cero: 81 − 4(12 − c) = 0 → 81 − 48 + 4c = 0 → 4c = −33 → c = −33/4. Verifica: el constante queda 12 + 33/4 = 81/4 y x² + 9x + 81/4 = (x + 9/2)² = 0. ✓ En la grilla escribe -33/4 (o -8.25).',
+        expCorrect:'Set them equal: x² + 6x + 12 = −3x + c → x² + 9x + (12 − c) = 0. A single point → zero discriminant: 81 − 4(12 − c) = 0 → 81 − 48 + 4c = 0 → 4c = −33 → c = −33/4. Check: the constant becomes 12 + 33/4 = 81/4 and x² + 9x + 81/4 = (x + 9/2)² = 0. ✓ In the grid write -33/4 (or -8.25).',
         expWrong:{},
         tip:'On SPR the answer can be a negative fraction: -33/4 fits the grid perfectly. Do NOT round to -8.2 when you can write the exact fraction or -8.25. And remember: the b in the discriminant is 6 + 3 = 9, not 6.',
         desmos:'Grafica y = x^2 + 6x + 12 y y = -3x + c con slider para c entre -12 y 0. En c = -33/4 = -8.25 la recta es tangente. También puedes graficar y = 81 - 4(12 - x) y ver dónde cruza cero: en x = -8.25.',
@@ -135,8 +135,8 @@
         expCorrect:'Dos pasos, en orden. Paso 1: g(5) = f(5 − 3) + 2 = f(2) + 2. Paso 2: f(2) = 2(2 + 1)² + 3 = 2(9) + 3 = 21. Entonces g(5) = 21 + 2 = 23. Verifica reescribiendo g completo: g(x) = 2(x − 2)² + 5, y g(5) = 2(3)² + 5 = 23. ✓',
         expWrong:{
           A:'21 is f(2) without the final +2: you skipped the last step of g’s definition.',
-          C:'77 sale de evaluar f(5) + 2 = 2(36) + 3 + 2: te saltaste el corrimiento x − 3 y metiste el 5 directo en f.',
-          D:'167 sale de f(5 + 3) + 2 = f(8) + 2 = 2(81) + 3 + 2: sumaste el 3 en vez de restarlo. En f(x − 3), al x le RESTAS 3 antes de entrar a f.'
+          C:'77 comes from evaluating f(5) + 2 = 2(36) + 3 + 2: you skipped the x − 3 shift and put the 5 straight into f.',
+          D:'167 comes from f(5 + 3) + 2 = f(8) + 2 = 2(81) + 3 + 2: you added the 3 instead of subtracting it. In f(x − 3), you SUBTRACT 3 from x before it enters f.'
         },
         tip:'Two-step compositions: evaluate from the inside out. First compute the argument (5 − 3 = 2), then run it through f, and AT THE END apply the outer part (+2). Writing each step on its own line stops you from skipping the last one.',
         desmos:'Define f(x) = 2(x+1)^2 + 3 y g(x) = f(x-3) + 2 en Desmos. Escribe g(5) en una línea nueva y te da 23 directo. También puedes graficar g y hacer clic en el punto donde x = 5.',

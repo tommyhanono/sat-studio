@@ -437,7 +437,7 @@
         expWrong:{
           B:'It leaves the appositive with a closing comma but no opening one. The commas around a non-essential element come in PAIRS: one alone is always wrong.',
           C:'A semicolon demands independent sentences on both sides, and "a salamander native to central Mexico" is not a sentence.',
-          D:'Pone la coma en el lugar equivocado, separando «a salamander» de su propio modificador y dejando igual sin cerrar el aposito.'
+          D:'It puts the comma in the wrong place, separating “a salamander” from its own modifier and still leaving the appositive unclosed.'
         },
         tip:'The commas around a non-essential element are like parentheses: if you see one, look for the other. When the text already has a closing comma, the question is almost always where the opening one goes.'
       },

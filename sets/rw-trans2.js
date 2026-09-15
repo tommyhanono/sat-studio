@@ -17,7 +17,7 @@ window.SAT_SETS.push({
       expCorrect:'Before you look at the options, read the relationship: the garden ALWAYS grew only vegetables, but this year he planted flowers. Predict your transition: it is a change breaking the habit, that is, contrast. “However” marks that opposition between what always happened and what is new.',
       expWrong:{
         B:'“For example” announces an example of the 1st idea, but the flowers are not a case of “only vegetables”: they contradict it.',
-        C:'“Therefore” marca consecuencia, y sembrar flores no es un efecto de haber cultivado solo vegetales, es un giro contra esa costumbre.',
+        C:'“Therefore” marks consequence, and planting flowers is not an effect of having grown only vegetables, it is a turn against that habit.',
         D:'“In summary” closes or sums up several ideas, but nothing is being summed up here: the before is set against the now.'
       },
       tip:'Read the relationship between the two ideas BEFORE you look at the options, and ignore the options while you predict the transition. If the 2nd idea breaks with what always happened, the relationship is contrast: “However”, “But”.'

@@ -45,7 +45,7 @@ window.SAT_SETS.push({
       correct:'D',
       expCorrect:'“a salamander that never fully leaves its larval stage” is a NON-essential appositive renaming “The axolotl”. It has to sit between TWO commas; since the closing comma is already there before “can”, the opening one is missing.',
       expWrong:{
-        A:'Sin la coma de apertura, el inciso cierra pero no abre → desbalanceado.',
+        A:'Without the opening comma, the aside closes but never opens → unbalanced.',
         B:'A colon does not open an aside, and it would split the subject (“The axolotl”) from its verb (“can regrow”).',
         C:'A semicolon does not fence off appositives, and there is no independent sentence before it.'
       },
@@ -60,7 +60,7 @@ window.SAT_SETS.push({
       correct:'B',
       expCorrect:'These are two independent sentences joined by “but”. When a FANBOYS (for, and, nor, but, or, yet, so) joins two independent clauses, it takes a comma BEFORE the conjunction: “…instruments, but it must…”.',
       expWrong:{
-        A:'Falta la coma antes de “but”; sin ella, unir dos oraciones completas es incorrecto en el SAT.',
+        A:'The comma before “but” is missing; without it, joining two complete sentences is wrong on the SAT.',
         C:'The comma after “but” is wrong: the comma goes BEFORE the conjunction, not after it.',
         D:'The semicolon REPLACES the conjunction; the two are not used together (“; but” is redundant).'
       },
@@ -107,7 +107,7 @@ window.SAT_SETS.push({
       expWrong:{
         A:'It mixes an opening dash with a closing comma; the punctuation around an aside has to match.',
         B:'A semicolon does not close asides, and there is no independent sentence before it.',
-        C:'El colon no cierra un inciso abierto con raya.'
+        C:'A colon does not close an aside that was opened with a dash.'
       },
       tip:'“Orphan” dash before the blank → the answer is almost always the dash that pairs with it.'
     },
@@ -118,10 +118,10 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'flap, the albatross', B:'flap, the albatrosses', C:'flap, the albatross’s', D:'flap, the albatrosses’'},
       correct:'C',
-      expCorrect:'“it” y “the largest of any bird alive today” indican UNA ave (singular). El wingspan le pertenece → posesivo singular = nombre + ’s: “the albatross’s wingspan”.',
+      expCorrect:'“it” and “the largest of any bird alive today” indicate ONE bird (singular). The wingspan belongs to it → singular possessive = noun + ’s: “the albatross’s wingspan”.',
       expWrong:{
         A:'With no apostrophe, “the albatross wingspan” does not mark possession.',
-        B:'Plural sin posesivo, y contradice el singular “it”.',
+        B:'A plural with no possessive, and it contradicts the singular “it”.',
         D:'That is a plural possessive (“of the albatrosses”), but the text is talking about a single one.'
       },
       tip:'Two questions: singular or plural? does it own something? Singular + ownership → ’s.'
@@ -137,7 +137,7 @@ window.SAT_SETS.push({
       expWrong:{
         A:'An opening comma with no closing one is unbalanced, and it turns something essential into a non-essential aside.',
         C:'The commas make it NON-essential, but the text needs that clause to identify who is being talked about.',
-        D:'La coma entre “who… Beethoven” y su verbo “was” separa el sujeto de su verbo.'
+        D:'The comma between “who… Beethoven” and its verb “was” separates the subject from its verb.'
       },
       tip:'Can you delete the clause without losing who or what is being talked about? If NOT → it is essential → no commas.'
     },
@@ -151,7 +151,7 @@ window.SAT_SETS.push({
       expCorrect:'These are two independent sentences and the second one opens with the conjunctive adverb “however”. The correct pattern is: sentence 1 + semicolon + however + comma + sentence 2 → “…foot traffic; however, the designers…”.',
       expWrong:{
         A:'“, however,” no puede unir dos oraciones completas: sigue siendo comma splice.',
-        B:'Falta el punto y coma antes de “however”.',
+        B:'The semicolon before “however” is missing.',
         C:'It is missing the comma AFTER “however”.'
       },
       tip:'however/therefore/moreover are NOT conjunctions: they do not join sentences. Between two independent clauses use “; however,”.'

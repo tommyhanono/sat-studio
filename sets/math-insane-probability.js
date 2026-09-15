@@ -67,8 +67,8 @@
         expCorrect:'Total de bolas: 5 + 3 + 1 = 9. Formas de sacar 3 de 9: C(9,3) = 84. Favorables: C(5,2) × C(3,1) = 10 × 3 = 30. Probabilidad = 30/84 = 5/14.',
         expWrong:{
           A:'25/84 cuenta mal los favorables (5 × 5 en vez de C(5,2) × C(3,1) = 10 × 3).',
-          C:'35/84 sobrecuenta los favorables; el conteo correcto es C(5,2) × C(3,1) = 30.',
-          D:'40/84 sobrecuenta (10 × 4 usa 4 azules, pero solo hay 3: C(3,1) = 3).'
+          C:'35/84 overcounts the favorable cases; the correct count is C(5,2) × C(3,1) = 30.',
+          D:'40/84 overcounts (10 × 4 uses 4 blue ones, but there are only 3: C(3,1) = 3).'
         },
         tip:'Hypergeometric (without replacement): P = [product of the favorable combinations] / C(total, n). The numerator is the C of each color wanted; the denominator is choosing n from the total.'
       },

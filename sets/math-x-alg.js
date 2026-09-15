@@ -33,7 +33,7 @@
         expCorrect:'No solution ⇒ proportional coefficients: 6/9 = (k/3)/(−5). The left side is 2/3, so k/3 = (2/3)(−5) = −10/3 and k = −10. Check: with k = −10 the first equation is 6x − (10/3)y = 7; multiplying the second by 2/3 gives 6x − (10/3)y = 8. Same coefficients, different constants (7 ≠ 8): parallel, no solution.',
         expWrong:{
           B:'10 is the classic sign error: the y coefficient in the second equation is −5, not 5. When you solve, k/3 = (2/3)(−5) comes out negative.',
-          C:'−10/3 es el valor de k/3. Te detuviste un paso antes: falta multiplicar por 3.',
+          C:'−10/3 is the value of k/3. You stopped one step early: you still have to multiply by 3.',
           D:'−45/2 comes from inverting the proportion: you used 9/6 = 3/2 instead of 6/9 = 2/3. The order has to be consistent in both fractions (first equation on top in each).'
         },
         tip:'ALWAYS build the proportion in the same order: (x coefficient of eq. 1)/(x coefficient of eq. 2) = (y coefficient of eq. 1)/(y coefficient of eq. 2). Mixing the order inverts the ratio and produces distractors like −45/2.',

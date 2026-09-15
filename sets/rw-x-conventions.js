@@ -54,7 +54,7 @@ window.SAT_SETS.push({
     },
     {
       id:'XC-04', type:'mc', domain:'Standard English Conventions', difficulty:'Difícil', extreme:true,
-      skill:'Sujeto invertido: concordancia con el sujeto pospuesto',
+      skill:'Inverted subject: agreement with the postponed subject',
       passage:"Among the artifacts recovered from the wreck of a sixteenth-century merchant vessel %BLANK% a bronze astrolabe engraved with its maker's initials, an instrument that has allowed historians to date the sinking with unusual precision.",
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'were', B:'are', C:'have been', D:'was'},
@@ -153,7 +153,7 @@ window.SAT_SETS.push({
       expWrong:{
         B:'“The fragile notebook was photographed” says the NOTEBOOK was hoping to preserve the recipes: a dangling modifier. And note: mentioning Amara at the end does not rescue it.',
         C:'The same problem with “the notebook’s pages”: pages do not hope for anything, and the second half (“and stored the images”) is left with no logical subject.',
-        D:'“Photographs were taken” deja el modificador colgando (las fotos no esperaban preservar nada) y nadie realiza “stored”.'
+        D:'“Photographs were taken” leaves the modifier dangling (the photographs were not hoping to preserve anything) and nobody performs “stored”.'
       },
       tip:'Opening modifier + comma → ask yourself “who does this?” and demand that THAT person be the first word after the comma.'
     },

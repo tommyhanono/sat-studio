@@ -49,11 +49,11 @@
         correct:'B',
         expCorrect:'First fill in the table: Senior Car = 60 − 16 − 14 = 30 (or 48 − 18 = 30 from the column). The condition “bus or walk” narrows the universe to 40 + 32 = 72 students. Of those, the seniors are 16 + 14 = 30. Probability = 30/72 = 5/12.',
         expWrong:{
-          A:'1/4 = 30/120 usa el GRAN TOTAL como denominador. La frase “selected from those who travel by bus or walk” cambia el denominador a 72, no 120.',
+          A:'1/4 = 30/120 uses the GRAND TOTAL as the denominator. The phrase “selected from those who travel by bus or walk” changes the denominator to 72, not 120.',
           C:'1/2 = 30/60 divides by the total number of seniors. That answers a different question (P(bus or walk | senior)), not the one asked.',
           D:'3/5 = 72/120 is the probability that any student takes the bus or walks. That is not what they want.'
         },
-        tip:'En probabilidad condicional, la frase “from those who…” define el DENOMINADOR. Completa siempre la tabla antes de calcular: la celda que falta casi siempre entra en la respuesta o en un distractor.',
+        tip:'In conditional probability, the phrase “from those who…” defines the DENOMINATOR. Always complete the table before computing: the missing cell almost always shows up in the answer or in a distractor.',
         desmos:'Completa la celda: 60-16-14 da 30. Luego la probabilidad: (16+14)/(40+32) = 30/72 ≈ 0.4167, que es 5/12. Compara con la trampa 30/120 = 0.25.',
         desmosLatex:['60-16-14', '(16+14)/(40+32)', '5/12']
       },
@@ -173,8 +173,8 @@
         expCorrect:'The margin of error gives a PLAUSIBLE interval for the population sampled: 62% ± 4.8% → between 57.2% and 66.8%, and only for the students of Riverside High School (that is where the random sample came from). “Plausible” is the right word: it is not a guarantee or a certainty.',
         expWrong:{
           A:'“Guaranteed” kills the option: a margin of error NEVER guarantees anything; it describes uncertainty, not certainty. The real value could fall outside the interval.',
-          B:'Extiende la conclusión a “all high school students in the city”, pero la muestra salió SOLO de Riverside. No puedes generalizar más allá de la población muestreada.',
-          C:'“Exactly 62%” confunde el estadístico muestral con el parámetro poblacional, y encima cambia la población al distrito entero. Doble error.'
+          B:'It stretches the conclusion to “all high school students in the city”, but the sample came ONLY from Riverside. You cannot generalize beyond the sampled population.',
+          C:'“Exactly 62%” confuses the sample statistic with the population parameter, and on top of that changes the population to the whole district. A double error.'
         },
         tip:'Checklist: (1) does the conclusion stay WITHIN the sampled population? (2) does it use the language of plausibility (“plausible”, “likely”) and not of certainty (“exactly”, “guaranteed”, “will”)? If either fails, rule it out.',
         desmos:'Calcula el intervalo en Desmos: 62-4.8 = 57.2 y 62+4.8 = 66.8. El rango plausible es [57.2, 66.8], y solo aplica a Riverside High School.',
@@ -193,9 +193,9 @@
         correct:'B',
         expCorrect:'The interval 14.2 ± 0.6 → [13.6, 14.8] is a PLAUSIBLE range for the MEAN of the sampled population: the 10,000 batteries in the shipment. It is about the mean, not individual batteries, and only about the shipment the sample came from.',
         expWrong:{
-          A:'El margen de error describe la incertidumbre sobre la MEDIA, no un rango que cada batería individual deba cumplir. Una batería suelta puede durar 12 o 16 horas sin contradecir nada.',
-          C:'Extiende la conclusión a “all batteries produced by the manufacturer”, pero la muestra salió solo de ESTE envío de 10,000. Fuera del marco muestral no se puede afirmar nada.',
-          D:'“Exactly 14.2” es el valor de la MUESTRA. El margen de error existe precisamente porque la media poblacional casi nunca coincide exactamente con la muestral.'
+          A:'A margin of error describes uncertainty about the MEAN, not a range every individual battery has to fall in. A single battery could last 12 or 16 hours without contradicting anything.',
+          C:'It stretches the conclusion to “all batteries produced by the manufacturer”, but the sample came only from THIS shipment of 10,000. Outside the sampling frame you cannot claim anything.',
+          D:'“Exactly 14.2” is the SAMPLE value. The margin of error exists precisely because the population mean almost never lands exactly on the sample mean.'
         },
         tip:'Three classic MOE traps: (1) applying it to individuals instead of to the mean, (2) stepping outside the sampled population, (3) treating the sample statistic as an exact value. The right one always combines “plausible” + “mean” + the correct population.',
         desmos:'Intervalo en Desmos: 14.2-0.6 = 13.6 y 14.2+0.6 = 14.8. Ese rango es para la media del envío, no para cada batería individual.',
@@ -207,11 +207,11 @@
         stem:'The price of a jacket was first increased by 20%. The new price was then decreased by 25%, resulting in a final price of $270. What was the original price of the jacket?',
         choices:{A:'$300', B:'$283.50', C:'$337.50', D:'$225'},
         correct:'A',
-        expCorrect:'Encadena multiplicadores: +20% → ×1.20; luego −25% → ×0.75. Efecto neto: 1.20 × 0.75 = 0.90. Si p es el precio original, 0.90p = 270 → p = 270/0.90 = 300. Verifica hacia adelante: 300 × 1.2 = 360; 360 × 0.75 = 270 ✓.',
+        expCorrect:'Chain the multipliers: +20% → ×1.20; then −25% → ×0.75. Net effect: 1.20 × 0.75 = 0.90. If p is the original price, 0.90p = 270 → p = 270/0.90 = 300. Check forward: 300 × 1.2 = 360; 360 × 0.75 = 270 ✓.',
         expWrong:{
-          B:'$283.50 sale de sumarle 5% a 270 (270 × 1.05), como si el cambio neto fuera −5% y se revirtiera sumando 5%. Los porcentajes sucesivos NO se suman, y un −5% no se revierte sumando 5%: se revierte DIVIDIENDO entre el multiplicador neto 0.90.',
-          C:'$337.50 = 270/0.80 deshace un descuento de 20% que nadie aplicó (el descuento fue de 25% y antes hubo un aumento). Hay que revertir la cadena COMPLETA.',
-          D:'$225 = 270/1.2 solo deshace el aumento del 20% e ignora el descuento del 25%. Revertiste la mitad de la historia.'
+          B:'$283.50 comes from adding 5% to 270 (270 × 1.05), as if the net change were −5% and could be undone by adding 5%. Successive percentages do NOT add, and a −5% is not undone by adding 5%: it is undone by DIVIDING by the net multiplier 0.90.',
+          C:'$337.50 = 270/0.80 undoes a 20% discount nobody applied (the discount was 25% and there was an increase before it). You have to reverse the WHOLE chain.',
+          D:'$225 = 270/1.2 only undoes the 20% increase and ignores the 25% discount. You reversed half the story.'
         },
         tip:'Turn each percent change into a multiplier and MULTIPLY them: +20% → 1.2, −25% → 0.75. To work backwards, divide the final value by the product of the multipliers. Never add or subtract successive percentages.',
         desmos:'Multiplicador neto: 1.2*0.75 = 0.9. Precio original: 270/0.9 = 300. O resuelve gráficamente: y=1.2*0.75x con y=270 se cruzan en x = 300.',

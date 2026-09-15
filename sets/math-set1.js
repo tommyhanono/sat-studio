@@ -66,7 +66,7 @@
           B:'$45 comes from subtracting 35 directly (80 \u2212 35), treating the percent as dollars.',
           D:'$55 is an incorrect rough calculation; 80 \u2212 0.35(80) = 52, not 55.'
         },
-        tip:'Descuento de p% → multiplica por (1 \u2212 p/100) en un solo paso. "Reduced by 35%" = \u00d70.65. Nunca calcules el descuento aparte si piden el precio final.'
+        tip:'A discount of p% → multiply by (1 \u2212 p/100) in one step. “Reduced by 35%” = \u00d70.65. Never compute the discount separately when they want the final price.'
       },
       {
         id:'M-003', type:'spr', domain:'Algebra', difficulty:'Media',
