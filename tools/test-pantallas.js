@@ -389,6 +389,40 @@ const BOTONES_MUERTOS = function () {
     check('P11b y se muestra como texto literal', xss.textoLiteral, xss);
     await page.evaluate(() => { window.currentUser = window.__FAKE.user; if (typeof setUserChip === 'function') setUserChip(); });
 
+    // --- P12. una barra con width puesto que mide 0 no se ve, y nada falla ---
+    // Pasó en la vista de profesor: la barra estaba armada con <span>, y un
+    // elemento en línea ignora width. El porcentaje salía al lado, correcto,
+    // mientras la barra se veía vacía.
+    const barras = [];
+    for (const [abrir, sel, donde] of [
+      ['openTeacher', '#teacher-domains', 'profesor'],
+      ['openProgress', '#prog-body', 'progreso'],
+    ]) {
+      // hay que ENSEÑAR la vista antes de medir: un elemento oculto mide 0 y
+      // daría un falso positivo en todas sus barras
+      const abierta = await page.evaluate((fn, s) => {
+        if (typeof window[fn] !== 'function') return false;
+        window[fn]();
+        return !!document.querySelector(s);
+      }, abrir, sel);
+      if (!abierta) continue;
+      await sleep(500);
+      const malas = await page.evaluate((s, d) => {
+        const out = [];
+        const raiz = document.querySelector(s);
+        if (!raiz || raiz.closest('.hidden')) return out;
+        raiz.querySelectorAll('.bar-fill').forEach(f => {
+          const m = (f.getAttribute('style') || '').match(/width:\s*([\d.]+)%/);
+          const pedido = m ? parseFloat(m[1]) : 0;
+          if (!(pedido > 0)) return;
+          if (f.getBoundingClientRect().width < 1) out.push(d + ' · pedía ' + pedido + '% y mide 0');
+        });
+        return out;
+      }, sel, donde);
+      barras.push(...malas);
+    }
+    check(`P12 ninguna barra de progreso se pinta vacía (${barras.length})`, barras.length === 0, barras.slice(0, 4));
+
     check('P9 ninguna pantalla lanzó un error de JavaScript', errs.length === 0, errs.slice(0, 4));
 
     // --- 8. móvil: nada de scroll horizontal ---

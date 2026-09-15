@@ -100,8 +100,11 @@
   .set-done{font-size:.78rem;color:var(--green);font-weight:700;margin-top:6px}
   .bar-row{display:flex;align-items:center;gap:10px;margin-bottom:9px;font-size:.86rem}
   .bar-row .lbl{width:230px;flex:none;color:var(--ink)}
-  .bar-track{flex:1;height:10px;background:#e8eaf2;border-radius:999px;overflow:hidden}
-  .bar-fill{height:100%;background:var(--blue);border-radius:999px}
+  /* display:block a propósito: si alguien arma la barra con <span> en vez de
+     <div>, un elemento en línea IGNORA width y height y la barra sale vacía
+     sin que nada falle. Pasó en la vista de profesor. */
+  .bar-track{display:block;flex:1;height:10px;background:#e8eaf2;border-radius:999px;overflow:hidden}
+  .bar-fill{display:block;height:100%;background:var(--blue);border-radius:999px}
   .bar-fill.bad{background:var(--red)}
   .bar-fill.mid{background:var(--amber)}
   .bar-row .pct{width:88px;flex:none;text-align:right;font-variant-numeric:tabular-nums;color:var(--gray-mid)}
@@ -4417,9 +4420,9 @@ function renderTeacher(d){
     $('#teacher-domains').innerHTML = peor.map(function(x){
       var pct = x.total ? Math.round(100 * x.correct / x.total) : 0;
       var cls = pct < 60 ? ' bad' : (pct < 80 ? ' mid' : '');
-      return '<div class="bar-row"><span class="lbl">' + escHtml(x.domain) + '</span>' +
-        '<span class="bar-track"><span class="bar-fill' + cls + '" style="width:' + pct + '%"></span></span>' +
-        '<span class="pct">' + pct + '% · ' + x.total + '</span></div>';
+      return '<div class="bar-row"><div class="lbl">' + escHtml(x.domain) + '</div>' +
+        '<div class="bar-track"><div class="bar-fill' + cls + '" style="width:' + Math.max(pct, 4) + '%"></div></div>' +
+        '<div class="pct">' + pct + '% · ' + x.total + '</div></div>';
     }).join('');
   }
 
