@@ -4,12 +4,15 @@
 <meta charset="UTF-8">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='13' fill='%230b1f3a'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='34' font-weight='bold' text-anchor='middle' fill='%23ffc861'%3ES%3C/text%3E%3C/svg%3E">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SAT Studio — Bluebook-style Practice</title>
+<title>SAT Studio — práctica del Digital SAT, estilo Bluebook</title>
+<meta name="description" content="Práctica gratuita del Digital SAT con la misma interfaz del Bluebook: 786 preguntas con explicación, exámenes adaptativos completos y un plan que sale de tus propios errores. Sin instalar nada.">
+<meta name="author" content="SAT Studio">
+<meta name="theme-color" content="#324DC7">
 <style>
   :root{
     --blue:#324DC7; --blue-dark:#2439a0; --blue-soft:#eef1fd;
-    --ink:#1e1e1e; --gray-strip:#f0f0f0; --gray-line:#d9d9d9; --gray-mid:#757575;
-    --red:#c13145; --green:#1b7d3f; --amber:#a86a00;
+    --ink:#1e1e1e; --gray-strip:#f0f0f0; --gray-line:#d9d9d9; --gray-mid:#5b6070;
+    --red:#c13145; --green:#166b35; --amber:#8a5600;
     --serif:Georgia,'Times New Roman',serif;
     --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;
     --zoom:1;
@@ -18,7 +21,14 @@
   html,body{height:100%}
   body{font-family:var(--sans);color:var(--ink);background:#fff}
   button{font-family:var(--sans);cursor:pointer}
-  button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #8fa2ef;outline-offset:2px}
+  button:focus,a:focus,input:focus,select:focus,textarea:focus,summary:focus,[tabindex]:focus{outline:3px solid #2439a0;outline-offset:2px;border-radius:4px}
+  /* Un dedo no acierta a 32 px: 44x44 es el minimo que recomienda WCAG 2.2.
+     Y un input por debajo de 16 px hace que iOS haga zoom solo al enfocarlo. */
+  .btn-primary,.btn-outline,.mini,.danger-link,.set-actions button,.pt-home-btns button,
+  .home-sec summary,.plan-op,.auth-guest,.uc-out,.uc-admin,#btn-mock-rw,#btn-mock-math,#btn-start-mock{min-height:44px}
+  .set-actions button,.pt-home-btns button{padding-top:11px;padding-bottom:11px}
+  input,select,textarea{font-size:16px}
+  .home-sec summary{display:flex;align-items:center;gap:8px}
   .hidden{display:none !important}
   .btn-primary{background:var(--blue);color:#fff;border:none;border-radius:999px;padding:11px 26px;font-size:.95rem;font-weight:600}
   .btn-primary:hover{background:var(--blue-dark)}
@@ -30,7 +40,8 @@
   #view-home{min-height:100vh;background:#f7f8fc;padding:34px 20px 80px}
   .home-wrap{max-width:960px;margin:0 auto}
   .brand{display:flex;align-items:baseline;gap:12px;margin-bottom:4px}
-  .brand h1{font-size:1.9rem}
+  .brand h1,.brand .brand-h{font-size:1.9rem;font-weight:800}
+  .admin-h{font-size:1.5rem;font-weight:800}
   .brand .tag{color:var(--gray-mid);font-size:.9rem}
   .home-sub{color:var(--gray-mid);margin-bottom:26px}
   .dash-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-bottom:26px}
@@ -344,6 +355,18 @@
   .uc-admin:hover{background:var(--blue);color:#fff}
 
   /* ============ AUTH ============ */
+  .auth-or{display:flex;align-items:center;gap:10px;margin:16px 0 12px;color:var(--gray-mid);font-size:.8rem}
+  .auth-or::before,.auth-or::after{content:'';flex:1;height:1px;background:var(--gray-line)}
+  .auth-guest{width:100%;min-height:44px;background:none;border:1px dashed var(--gray-line);border-radius:999px;padding:11px 18px;color:var(--blue-dark);font-size:.88rem;font-weight:600;font-family:var(--sans)}
+  .auth-guest:hover{border-color:var(--blue);background:var(--blue-soft)}
+  .exam-bar{display:flex;gap:12px;align-items:center;flex-wrap:wrap;background:#fff;border:1px solid var(--gray-line);border-radius:10px;padding:12px 16px;margin-bottom:20px;font-size:.86rem}
+  .exam-bar label{display:flex;align-items:center;gap:6px}
+  .exam-bar input{border:1px solid var(--gray-line);border-radius:8px;padding:9px 12px;font-family:var(--sans);font-size:16px;min-height:44px}
+  .exam-bar input:focus{outline:3px solid #8fa2ef;outline-offset:1px}
+  .exam-bar-note{color:var(--gray-mid);flex:1;min-width:220px}
+  .guest-bar{display:flex;gap:12px;align-items:center;flex-wrap:wrap;background:#fff8e6;border:1px solid #f0d9a0;border-radius:10px;padding:12px 16px;margin-bottom:20px;font-size:.86rem;color:#6b4e00}
+  .guest-bar b{color:#4a3600}
+  .guest-bar button{margin-left:auto;min-height:44px;background:var(--blue);color:#fff;border:none;border-radius:999px;padding:10px 20px;font-size:.84rem;font-weight:600;font-family:var(--sans)}
   #view-auth{min-height:100vh;display:flex;align-items:center;justify-content:center;background:#f7f8fc;padding:28px 18px}
   .auth-card{width:100%;max-width:400px;background:#fff;border:1px solid var(--gray-line);border-radius:16px;padding:30px 26px;box-shadow:0 10px 40px rgba(20,30,60,.08)}
   .auth-card .brand{margin-bottom:6px}
@@ -555,7 +578,12 @@
   .plan-row{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--gray-line);border-radius:10px;padding:12px 14px;background:#fff;cursor:pointer}
   .plan-row:hover{border-color:var(--blue)}
   .plan-row.on{border-color:var(--blue);background:var(--blue-soft)}
-  .plan-cb{flex:none;width:18px;height:18px;margin-top:2px;accent-color:var(--blue)}
+  .plan-cb{flex:none;-webkit-appearance:none;appearance:none;width:44px;height:44px;margin:-11px 0 -11px -11px;
+    background:none;border:none;display:grid;place-content:center;cursor:pointer}
+  .plan-cb::before{content:'';width:22px;height:22px;border:2px solid var(--gray-line);border-radius:5px;background:#fff;display:block}
+  .plan-cb:checked::before{background:var(--blue);border-color:var(--blue);
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath d='M3 8.5l3.2 3.2L13 5' fill='none' stroke='%23fff' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-size:16px;background-position:center;background-repeat:no-repeat}
   .plan-main{flex:1;min-width:0;display:flex;flex-direction:column;gap:3px}
   .plan-t{font-weight:600;font-size:.94rem}
   .plan-rec{background:var(--blue);color:#fff;border-radius:999px;padding:2px 8px;font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;vertical-align:middle}
@@ -569,7 +597,7 @@
   .plan-bar.sinmedir span{font-size:.66rem;color:var(--gray-mid);letter-spacing:.03em}
   .plan-meta{font-size:.72rem;color:var(--gray-mid);text-align:right}
   .plan-more{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
-  .plan-search{flex:1;min-width:210px;border:1px solid var(--gray-line);border-radius:999px;padding:11px 16px;font-size:.86rem;font-family:var(--sans);min-height:44px}
+  .plan-search{flex:1;min-width:210px;border:1px solid var(--gray-line);border-radius:999px;padding:11px 16px;font-size:16px;font-family:var(--sans);min-height:44px}
   .plan-search:focus{outline:3px solid #8fa2ef;outline-offset:1px}
   .plan-rest{margin-top:10px;max-height:340px;overflow-y:auto;padding-right:4px}
   .plan-q{margin-bottom:14px}
@@ -608,6 +636,39 @@
   @keyframes toast-in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
   @media (prefers-reduced-motion:reduce){ .toast{animation:none} }
 </style>
+    <!-- SEO y social — generado por web-launch-audit -->
+    <link rel="canonical" href="https://sat-studio.vercel.app/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://sat-studio.vercel.app/" />
+    <meta property="og:title" content="SAT Studio — práctica del Digital SAT, estilo Bluebook" />
+    <meta property="og:description" content="Práctica gratuita del Digital SAT con la misma interfaz del Bluebook: 786 preguntas con explicación, exámenes adaptativos completos y un plan que sale de tus propios errores. Sin instalar nada." />
+    <meta property="og:locale" content="es_PA" />
+    <meta property="og:site_name" content="SAT Studio" />
+    <meta property="og:image" content="https://sat-studio.vercel.app/og.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="SAT Studio: práctica del Digital SAT con interfaz estilo Bluebook" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="SAT Studio — práctica del Digital SAT, estilo Bluebook" />
+    <meta name="twitter:description" content="Práctica gratuita del Digital SAT con la misma interfaz del Bluebook: 786 preguntas con explicación, exámenes adaptativos completos y un plan que sale de tus propios errores. Sin instalar nada." />
+    <meta name="twitter:image" content="https://sat-studio.vercel.app/og.png" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "SAT Studio",
+        "url": "https://sat-studio.vercel.app/",
+        "applicationCategory": "EducationalApplication",
+        "operatingSystem": "Cualquiera con navegador",
+        "inLanguage": ["es", "en"],
+        "description": "Práctica gratuita del Digital SAT con la misma interfaz del Bluebook: 786 preguntas con explicación, exámenes adaptativos completos y un plan que sale de tus propios errores. Sin instalar nada.",
+        "image": "https://sat-studio.vercel.app/og.png",
+        "isAccessibleForFree": true,
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "educationalLevel": "Secundaria",
+        "teaches": "Digital SAT: Reading and Writing, y Math"
+      }
+    </script>
 </head>
 <body>
 
@@ -615,7 +676,7 @@
 <!-- ============ AUTH ============ -->
 <div id="view-auth" class="hidden">
   <div class="auth-card">
-    <div class="brand"><h1>SAT Studio</h1><span class="tag">Your progress, in the cloud</span></div>
+    <div class="brand"><p class="brand-h">SAT Studio</p><span class="tag">Tu progreso, en la nube</span></div>
     <p class="auth-sub">Sign in or create your account to save your history and see it from any device.</p>
     <label class="auth-lbl" for="auth-name">Name (optional)</label>
     <input id="auth-name" class="auth-inp" type="text" autocomplete="name" placeholder="Your name">
@@ -628,7 +689,10 @@
       <button id="auth-login-btn" class="btn-primary">Sign in</button>
       <button id="auth-signup-btn" class="btn-outline">Create account</button>
     </div>
-    <p class="auth-foot">Your data is private: only you can see your history.</p>
+    <div class="auth-or"><span>o</span></div>
+    <button id="auth-guest-btn" class="auth-guest" type="button">Entrar sin cuenta y ver la app →</button>
+    <p class="auth-foot">Sin cuenta puedes practicar todo: el historial se guarda en este navegador.
+      Con cuenta te sigue a cualquier dispositivo. Tus datos son privados: solo tú ves tu historial.</p>
   </div>
 </div>
 
@@ -637,6 +701,8 @@
     <div class="brand"><h1>SAT Studio</h1><span class="tag">Bluebook-style practice</span><div id="user-chip" class="user-chip hidden"></div></div>
     <p class="home-sub">Pick a set and a mode. <strong>Exam</strong> = timed, graded at the end. <strong>Drill</strong> = no timer, with instant feedback and an explanation on every question.</p>
 
+    <div id="guest-bar"></div>
+    <div id="exam-date-bar"></div>
     <div class="dash-cards" id="dash-cards"></div>
 
     <div class="mock-launch" id="mock-launch">
@@ -661,8 +727,8 @@
           <p class="hist-hint">Everything you've done — sets, drills, and tests. Tap <strong>Review →</strong> on any row to reopen it and see your answers (right / wrong) with explanations.</p>
           <div id="hist-list"><div class="empty-note">No sessions yet.</div></div>
           <div class="hist-tools">
-            <button class="mini" id="btn-download-history" type="button">⬇️ Download my history (.json)</button>
-            <button class="mini" id="btn-import-history" type="button">⬆️ Import a backup</button>
+            <button class="mini" id="btn-download-history" type="button">Download my history (.json)</button>
+            <button class="mini" id="btn-import-history" type="button">Import a backup</button>
             <input type="file" id="import-file" accept="application/json,.json" class="hidden" aria-label="Import a history backup file">
             <span class="sep"></span>
             <button class="danger-link" id="btn-clear-history" type="button">Clear history</button>
@@ -690,7 +756,7 @@
 <div id="view-admin" class="hidden">
   <div class="admin-wrap">
     <div class="admin-head">
-      <div><h1>Admin Panel</h1><span class="admin-sub">SAT Studio · administrator view</span></div>
+      <div><p class="brand-h admin-h">Admin Panel</p><span class="admin-sub">SAT Studio · vista de administrador</span></div>
       <div class="admin-actions">
         <button class="btn-outline" id="btn-admin-refresh">↻ Refresh</button>
         <button class="btn-primary" id="btn-admin-back">← Back</button>
@@ -800,12 +866,12 @@
     <div class="float-bar" id="calc-drag">
       <span>Calculator</span>
       <div class="calc-modes">
-        <button class="calc-mode active" id="calc-mode-graph" type="button" title="Graphing calculator (same as the SAT/Bluebook)">📈 Graphing</button>
-        <button class="calc-mode" id="calc-mode-sci" type="button" title="Scientific calculator">🔢 Scientific</button>
+        <button class="calc-mode active" id="calc-mode-graph" type="button" title="Graphing calculator (same as the SAT/Bluebook)">Graphing</button>
+        <button class="calc-mode" id="calc-mode-sci" type="button" title="Scientific calculator">Scientific</button>
       </div>
       <span class="spacer"></span>
       <button id="btn-calc-max" title="Expand / restore">⤢</button>
-      <button id="btn-calc-close" title="Close">✕</button>
+      <button id="btn-calc-close" title="Close">×</button>
     </div>
     <div class="float-body">
       <div id="calc-status">Loading the Desmos calculator…</div>
@@ -817,9 +883,9 @@
   <!-- Punctuation cheat sheet (adaptive) -->
   <div id="cheat-panel" class="float-panel hidden" role="dialog" aria-label="Punctuation cheat sheet">
     <div class="float-bar" id="cheat-drag">
-      <span>📖 Grammar &amp; Punctuation Rules</span><span class="spacer"></span>
+      <span>Grammar &amp; Punctuation Rules</span><span class="spacer"></span>
       <button id="btn-cheat-max" title="Expand / restore">⤢</button>
-      <button id="btn-cheat-close" title="Close">✕</button>
+      <button id="btn-cheat-close" title="Close">×</button>
     </div>
     <div class="float-body"><div id="cheat-body"></div></div>
   </div>
@@ -829,7 +895,7 @@
     <div class="float-bar" id="ref-drag">
       <span>Reference Sheet</span><span class="spacer"></span>
       <button id="btn-ref-max" title="Expand / restore">⤢</button>
-      <button id="btn-ref-close" title="Close">✕</button>
+      <button id="btn-ref-close" title="Close">×</button>
     </div>
     <div class="float-body" id="ref-body"></div>
   </div>
@@ -861,7 +927,7 @@
     <div class="summary-box">
       <h3>Summary for your error log</h3>
       <p>Copy this block and paste it into a chat to log your results and update your error log.</p>
-      <textarea id="summary-text" readonly></textarea>
+      <textarea id="summary-text" readonly aria-label="Resumen de la sesión para copiar"></textarea>
       <button class="copy-btn" id="btn-copy">Copy summary</button>
     </div>
     <div id="res-list"></div>
@@ -870,91 +936,91 @@
 
 <script>window.SAT_SETS = [];</script>
 <!-- SETS: add one line here for each new question set -->
-<script src="sets/rw-set1.js"></script>
-<script src="sets/rw-set2.js"></script>
+<script defer src="sets/rw-set1.js"></script>
+<script defer src="sets/rw-set2.js"></script>
 <!-- <script src="sets/rw-set3.js"></script> retired 2026-07-14: "Words in Context — Easy" too simple for 700-target practice (its harder sibling rw-set4 stays) -->
-<script src="sets/rw-set4.js"></script>
-<script src="sets/rw-set5.js"></script>
-<script src="sets/rw-set6.js"></script>
-<script src="sets/rw-set7.js"></script>
-<script src="sets/rw-mock1.js"></script>
-<script src="sets/rw-set8.js"></script>
-<script src="sets/rw-set9.js"></script>
+<script defer src="sets/rw-set4.js"></script>
+<script defer src="sets/rw-set5.js"></script>
+<script defer src="sets/rw-set6.js"></script>
+<script defer src="sets/rw-set7.js"></script>
+<script defer src="sets/rw-mock1.js"></script>
+<script defer src="sets/rw-set8.js"></script>
+<script defer src="sets/rw-set9.js"></script>
 <!-- <script src="sets/rw-set10.js"></script> retired 2026-07-14: "Rhetorical Synthesis — Easy" too simple (harder siblings rw-set11/rw-set12 stay) -->
-<script src="sets/rw-set11.js"></script>
-<script src="sets/rw-set12.js"></script>
-<script src="sets/math-set1.js"></script>
-<script src="sets/math-alg.js"></script>
-<script src="sets/math-adv.js"></script>
-<script src="sets/math-data.js"></script>
-<script src="sets/math-geo.js"></script>
-<script src="sets/rw-ideas2.js"></script>
-<script src="sets/rw-wic2.js"></script>
-<script src="sets/rw-trans2.js"></script>
-<script src="sets/rw-punct2.js"></script>
-<script src="sets/rw-evidence2.js"></script>
-<script src="sets/rw-synth2.js"></script>
-<script src="sets/math-alg2.js"></script>
+<script defer src="sets/rw-set11.js"></script>
+<script defer src="sets/rw-set12.js"></script>
+<script defer src="sets/math-set1.js"></script>
+<script defer src="sets/math-alg.js"></script>
+<script defer src="sets/math-adv.js"></script>
+<script defer src="sets/math-data.js"></script>
+<script defer src="sets/math-geo.js"></script>
+<script defer src="sets/rw-ideas2.js"></script>
+<script defer src="sets/rw-wic2.js"></script>
+<script defer src="sets/rw-trans2.js"></script>
+<script defer src="sets/rw-punct2.js"></script>
+<script defer src="sets/rw-evidence2.js"></script>
+<script defer src="sets/rw-synth2.js"></script>
+<script defer src="sets/math-alg2.js"></script>
 <!-- Algebra 3: cierra el hueco medido el 26-jul-2026. Algebra pesa 35 % del examen
      y estaba al 0,68x en el banco. Ver docs de la auditoría. -->
-<script src="sets/math-alg3.js"></script>
-<script src="sets/math-alg4.js"></script>
+<script defer src="sets/math-alg3.js"></script>
+<script defer src="sets/math-alg4.js"></script>
 <!-- Simulacro del módulo 1: la mezcla oficial de dominios, formatos y dificultad.
      El banco no tenía nada calibrado para el primer módulo, que es el que fija el techo. -->
-<script src="sets/math-mod1-sim.js"></script>
+<script defer src="sets/math-mod1-sim.js"></script>
 <!-- Simulacro del modulo 1 de Reading: mismo criterio que el de matematica.
      Orden de dominios, mezcla y dificultad segun el marco oficial (tabla 9). -->
-<script src="sets/rw-mod1-sim.js"></script>
-<script src="sets/math-adv2.js"></script>
-<script src="sets/math-data2.js"></script>
-<script src="sets/math-geo2.js"></script>
-<script src="sets/rw-data1.js"></script>
-<script src="sets/rw-structure1.js"></script>
-<script src="sets/rw-agree1.js"></script>
-<script src="sets/rw-b1exam.js"></script>
+<script defer src="sets/rw-mod1-sim.js"></script>
+<script defer src="sets/math-adv2.js"></script>
+<script defer src="sets/math-data2.js"></script>
+<script defer src="sets/math-geo2.js"></script>
+<script defer src="sets/rw-data1.js"></script>
+<script defer src="sets/rw-structure1.js"></script>
+<script defer src="sets/rw-agree1.js"></script>
+<script defer src="sets/rw-b1exam.js"></script>
 <!-- REPAIRED & ADVERSARIALLY VERIFIED 2026-07-13: keys re-solved (parametric 6 fixed, insane-prob 6 fixed), SPR answers added, difficulties normalized -->
-<script src="sets/math-mashup-alg-func.js"></script>
-<script src="sets/math-spr-drill.js"></script>
-<script src="sets/math-insane-parametric.js"></script>
-<script src="sets/math-insane-probability.js"></script>
+<script defer src="sets/math-mashup-alg-func.js"></script>
+<script defer src="sets/math-spr-drill.js"></script>
+<script defer src="sets/math-insane-parametric.js"></script>
+<script defer src="sets/math-insane-probability.js"></script>
 <!-- REPAIRED 2026-07-12: rw-paired-tone / rw-tone-attitude / rw-vocab-bridge / rw-insane-synthesis re-enabled -->
-<script src="sets/rw-paired-tone.js"></script>
-<script src="sets/rw-tone-attitude.js"></script>
-<script src="sets/rw-vocab-bridge.js"></script>
-<script src="sets/rw-insane-synthesis.js"></script>
-<script src="sets/rw-warmup1.js"></script>
-<script src="sets/math-warmup1.js"></script>
+<script defer src="sets/rw-paired-tone.js"></script>
+<script defer src="sets/rw-tone-attitude.js"></script>
+<script defer src="sets/rw-vocab-bridge.js"></script>
+<script defer src="sets/rw-insane-synthesis.js"></script>
+<script defer src="sets/rw-warmup1.js"></script>
+<script defer src="sets/math-warmup1.js"></script>
 <!-- HARD sets (all Difícil) — feed Hard Mocks -->
-<script src="sets/math-hard-circles.js"></script>
-<script src="sets/math-hard-poly.js"></script>
-<script src="sets/math-hard-geo.js"></script>
-<script src="sets/math-hard-data.js"></script>
-<script src="sets/rw-hard-structure.js"></script>
-<script src="sets/rw-hard-grammar.js"></script>
-<script src="sets/rw-hard-evidence.js"></script>
-<script src="sets/rw-mock1review.js"></script>
-<script src="sets/math-mock1review.js"></script>
-<script src="sets/rw-punct-checkup.js"></script>
-<script src="sets/math-expo1.js"></script>
-<script src="sets/math-solids1.js"></script>
+<script defer src="sets/math-hard-circles.js"></script>
+<script defer src="sets/math-hard-poly.js"></script>
+<script defer src="sets/math-hard-geo.js"></script>
+<script defer src="sets/math-hard-data.js"></script>
+<script defer src="sets/rw-hard-structure.js"></script>
+<script defer src="sets/rw-hard-grammar.js"></script>
+<script defer src="sets/rw-hard-evidence.js"></script>
+<script defer src="sets/rw-mock1review.js"></script>
+<script defer src="sets/math-mock1review.js"></script>
+<script defer src="sets/rw-punct-checkup.js"></script>
+<script defer src="sets/math-expo1.js"></script>
+<script defer src="sets/math-solids1.js"></script>
 <!-- EXTREME tier (real hard-Module-2 level; every question difficulty:'Difícil' + extreme:true) -->
-<script src="sets/rw-x-wic.js"></script>
-<script src="sets/rw-x-conventions.js"></script>
-<script src="sets/rw-x-rhetoric.js"></script>
-<script src="sets/rw-x-reading.js"></script>
-<script src="sets/math-x-alg.js"></script>
-<script src="sets/math-x-adv.js"></script>
-<script src="sets/math-x-data.js"></script>
-<script src="sets/math-x-geo.js"></script>
+<script defer src="sets/rw-x-wic.js"></script>
+<script defer src="sets/rw-x-conventions.js"></script>
+<script defer src="sets/rw-x-rhetoric.js"></script>
+<script defer src="sets/rw-x-reading.js"></script>
+<script defer src="sets/math-x-alg.js"></script>
+<script defer src="sets/math-x-adv.js"></script>
+<script defer src="sets/math-x-data.js"></script>
+<script defer src="sets/math-x-geo.js"></script>
 <!-- Desmos how-to hints per Math question (merged into questions at load) -->
-<script src="sets/desmos-a.js"></script>
-<script src="sets/desmos-b.js"></script>
-<script src="sets/desmos-c.js"></script>
-<script src="sets/desmos-d.js"></script>
-<script src="sets/desmos-e.js"></script>
-<script src="sets/desmos-f.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1"></script>
+<script defer src="sets/desmos-a.js"></script>
+<script defer src="sets/desmos-b.js"></script>
+<script defer src="sets/desmos-c.js"></script>
+<script defer src="sets/desmos-d.js"></script>
+<script defer src="sets/desmos-e.js"></script>
+<script defer src="sets/desmos-f.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1"></script>
 
 <script>
 'use strict';
@@ -963,7 +1029,12 @@
 var SUPABASE_URL = 'https://igsmhrwafhxlhmwcehiu.supabase.co';
 var SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imlnc21ocndhZmh4bGhtd2NlaGl1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODI3MTYyMTgsImV4cCI6MjA5ODI5MjIxOH0.YgABbnpPjbyEk9Pe0kP6Mx6Q8eBn5McxzZiAS5MJpYg';
 var SB = null;
-try { if (window.supabase && /^https?:\/\//.test(SUPABASE_URL)) SB = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY); } catch(e){}
+var SB_ERROR = '';
+try {
+  if (window.supabase && /^https?:\/\//.test(SUPABASE_URL)) SB = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+  else SB_ERROR = 'no cargó la librería de Supabase';
+} catch(e){ SB_ERROR = (e && e.message) || 'error al crear el cliente'; }
+if(SB_ERROR) console.warn('SAT Studio: sin cuentas ni nube —', SB_ERROR, '· la app sigue funcionando y guarda en este navegador.');
 var currentUser = null;
 
 /* ================= STORAGE (safe wrapper: falls back to memory) ================= */
@@ -996,27 +1067,26 @@ var store = (function(){
         // Cuota llena o modo privado. Guardar en memoria es mejor que perderlo,
         // pero el estudiante TIENE que enterarse: si no, cree que quedo guardado.
         mem[k] = raw;
-        try {
-          if(!window.__quotaAvisada){
-            window.__quotaAvisada = true;
-            if(typeof toast === 'function'){
-              toast('\u26a0\ufe0f Este navegador ya no tiene espacio para guardar. ' +
-                    'Descarga tu historial desde Session History y libera espacio.', true);
-            }
-          }
-        } catch(e2){}
+        if(!window.__quotaAvisada && typeof toast === 'function'){
+          window.__quotaAvisada = true;
+          toast('\u26a0\ufe0f Este navegador ya no tiene espacio para guardar. ' +
+                'Descarga tu historial desde Session History y libera espacio.', true);
+        }
         return false;
       }
     },
     remove: function(k){
-      try { if(ok) window.localStorage.removeItem(k); else delete mem[k]; } catch(e){}
+      try { if(ok) window.localStorage.removeItem(k); delete mem[k]; } catch(e){ delete mem[k]; }
     }
   };
 })();
 var HKEY = 'satapp_history_v1'; // clave "invitado" (pre-login); se migra a la cuenta al iniciar sesión
 var PKEY = 'satapp_prefs_v1';
 function histKey(){ return currentUser ? 'satapp_history_v1__' + currentUser.id : HKEY; }
-function genSid(){ try { if(window.crypto && crypto.randomUUID) return crypto.randomUUID(); } catch(e){} return 'sid-' + Date.now() + '-' + Math.random().toString(16).slice(2); }
+function genSid(){
+  var id = intenta(function(){ return (window.crypto && crypto.randomUUID) ? crypto.randomUUID() : null; }, 'uuid');
+  return id || ('sid-' + Date.now() + '-' + Math.random().toString(16).slice(2));
+}
 
 /* ================= DATA ================= */
 window.SAT_SETS = window.SAT_SETS || [];
@@ -1072,7 +1142,7 @@ function renderContent(txt){
   return String(txt).replace('%BLANK%','<span class="blank">______</span>');
 }
 function safeScrollTop(){
-  try { window.scrollTo(0,0); } catch(e){}
+  intenta(function(){ window.scrollTo(0,0); }, 'scroll');
   ['#pane-passage','#pane-question'].forEach(function(s){ var p=$(s); if(p) p.scrollTop=0; });
 }
 function applyZoom(){
@@ -1160,6 +1230,12 @@ function estimateScore(results){
   return Math.round(est / 10) * 10;
 }
 
+/* Para lo accesorio (scroll, foco, resize de la calculadora): si falla no hay
+   nada que reparar, pero queda registrado en la consola en vez de evaporarse. */
+function intenta(fn, que){
+  try { return fn(); }
+  catch(e){ console.debug('SAT Studio · falló algo no crítico (' + (que || 'sin nombre') + '):', e && e.message); }
+}
 /* Aviso no bloqueante. Reemplaza alert() como feedback de exito/error. */
 function toast(msg, isErr){
   try {
@@ -1350,8 +1426,23 @@ function planBank(){
   });
   return _planBank;
 }
-/* Último intento de cada pregunta: lo que sabemos del estudiante, hoy. */
+/* Último intento de cada pregunta: lo que sabemos del estudiante, hoy.
+   Se memoiza porque el home lo pide una vez por tema: sin cache son 15 recorridos
+   del banco entero (786 preguntas) cada vez que se repinta la pantalla. */
+var _planStatsCache = null;
+function planStatsKey(){
+  var h = getHistory();
+  var u = h.length ? (h[h.length - 1].sid || '') + '|' + (h[h.length - 1].savedAt || '') : '';
+  return h.length + '|' + u;
+}
 function planStats(){
+  var k = planStatsKey();
+  if(_planStatsCache && _planStatsCache.k === k) return _planStatsCache.v;
+  var v = planStatsCalc();
+  _planStatsCache = { k: k, v: v };
+  return v;
+}
+function planStatsCalc(){
   var latest = latestResults();       // qid -> {ok, ...} del intento más reciente
   var bank = planBank(), out = {};
   var vistas = {};
@@ -1553,7 +1644,7 @@ function planHTML(){
   });
   var paso1 = head + bloques +
     '<div class="plan-more">' +
-      '<input type="search" id="plan-busca" class="plan-search" placeholder="¿Quieres trabajar otra cosa? Busca un tema…" value="' + escAttr(p.busca || '') + '">' +
+      '<input type="search" id="plan-busca" class="plan-search" aria-label="Buscar un tema para agregar al plan" placeholder="¿Quieres trabajar otra cosa? Busca un tema…" value="' + escAttr(p.busca || '') + '">' +
       '<button class="mini" id="plan-vertodos" type="button">' + (p.verTodos ? 'Ocultar' : 'Ver los ' + conBanco.length + ' temas') + '</button>' +
     '</div>' +
     ((p.verTodos || busca) ? '<div class="plan-list plan-rest">' + resto.map(function(s){ return fila(s, false); }).join('') + '</div>' : '');
@@ -1648,6 +1739,36 @@ function renderHome(){
   var pool = missedPool();
   var last = h.length ? h[h.length-1] : null;
 
+  var edb = $('#exam-date-bar');
+  if(edb){
+    var _ed = examDateStr(), _dl2 = fwDaysLeft();
+    edb.innerHTML = '<div class="exam-bar"><label for="exam-date-inp">🗓️ <b>¿Cuándo es tu examen?</b></label>' +
+      '<input type="date" id="exam-date-inp" value="' + escAttr(_ed) + '">' +
+      '<span class="exam-bar-note">' + (_ed
+        ? (_dl2 > 0 ? 'Faltan <b>' + _dl2 + '</b> día' + (_dl2 === 1 ? '' : 's') + '. La última semana te aparece el plan día por día.'
+           : _dl2 === 0 ? '<b>Es hoy.</b> Mucha suerte.' : 'Ya pasó. Cambia la fecha si vas a darlo otra vez.')
+        : 'Ponla y la app ajusta el repaso espaciado y te arma el plan de la semana final.') + '</span></div>';
+    var _edi = $('#exam-date-inp');
+    if(_edi) _edi.addEventListener('change', function(){
+      store.set('sat_exam_date', this.value || '');
+      toast(this.value ? 'Fecha guardada.' : 'Fecha borrada.');
+      renderHome();
+    });
+  }
+  var gb = $('#guest-bar');
+  if(gb){
+    gb.innerHTML = (!currentUser && authAvailable())
+      ? '<div class="guest-bar"><span><b>Estás sin cuenta.</b> Tu progreso se guarda solo en este navegador: ' +
+        'si entras desde el celular o se borra el caché, no está. Crear la cuenta es gratis y se lleva lo que ya hiciste.</span>' +
+        '<button id="guest-signup" type="button">Crear mi cuenta</button></div>'
+      : '';
+    var gs = $('#guest-signup');
+    if(gs) gs.addEventListener('click', function(){
+      store.remove('satapp_invitado');
+      $('#view-home').classList.add('hidden');
+      showAuthGate();
+    });
+  }
   $('#dash-cards').innerHTML =
     '<div class="dash-card"><div class="k">Sessions</div><div class="v">' + h.length + '</div><div class="s"><span id="sync-state" class="sync-state">' + syncLabel() + '</span></div></div>' +
     '<div class="dash-card"><div class="k">Overall accuracy</div><div class="v">' + (totalQ ? Math.round(100*okQ/totalQ) + '%' : '—') + '</div><div class="s">' + okQ + '/' + totalQ + ' questions</div></div>' +
@@ -1711,30 +1832,37 @@ function renderHome(){
   var sec = '';
   var _planN = (planState().elegidos || []).length;
   sec += homeSection('🧭 Mi plan de mejora', planHTML(), _planN ? _planN + ' temas' : null, true);
-  if(currentUser && currentUser.app_metadata && currentUser.app_metadata.role === 'admin'){
-    if(!store.get('sat_exam_date')) store.set('sat_exam_date', FW_EXAM_DATE); // cap spaced review to test day
+  // La cuenta regresiva aparece sola cuando el estudiante puso su fecha y el
+  // examen esta a una semana o menos. Sin fecha no se le muestra a nadie.
+  var _dl = fwDaysLeft();
+  if(_dl !== null && _dl <= 7 && _dl >= -1){
     var fw = fwPlanHTML();
-    sec += homeSection('🚨 SAT Countdown — Final Week Plan', fw.html, fw.badge, true);
+    sec += homeSection('🚨 Semana final — tu plan día por día', fw.html, fw.badge, true);
+  }
+  {
     var stp = studyState();
     var mT = STUDY_TOPICS.filter(function(t){ return t.sec === 'math'; });
     var vT = STUDY_TOPICS.filter(function(t){ return t.sec === 'rw'; });
     var masteredAll = STUDY_TOPICS.filter(function(t){ return stp.topics[t.key].mastered; }).length;
-    var spBody = '<p class="study-hint">Your personal mastery path (only visible on your account). Rule: get a perfect <b>4/4 round</b> to master a topic — a miss breaks the round. Each Final needs <b>100%</b>: miss one and those topics reopen. <b>Your week:</b> Sun → Polynomials + Punctuation (after workshops) · Tue → Circles (workshop night) · Wed → Percents + Evidence · Thu → both Finals.</p>' +
-      '<h4 class="study-h">1 · Math — weak topics</h4>' + mT.map(function(t){ return studyTopicCard(t, stp.topics[t.key]); }).join('') +
-      '<h4 class="study-h">2 · English — weak topics</h4>' + vT.map(function(t){ return studyTopicCard(t, stp.topics[t.key]); }).join('') +
+    var spBody = '<p class="study-hint">Ruta de dominio tema por tema. La regla: para dominar un tema hay que sacar una <b>ronda perfecta de 4/4</b> — un solo fallo rompe la ronda. Los dos exámenes finales exigen <b>100%</b>: si fallas uno, los temas de esa pregunta se reabren.</p>' +
+      '<h4 class="study-h">1 · Matemática</h4>' + mT.map(function(t){ return studyTopicCard(t, stp.topics[t.key]); }).join('') +
+      '<h4 class="study-h">2 · Verbal</h4>' + vT.map(function(t){ return studyTopicCard(t, stp.topics[t.key]); }).join('') +
       '<h4 class="study-h">3 · Math Final (100%)</h4>' + studyFinalCard('math', stp) +
       '<h4 class="study-h">4 · English Final (100%)</h4>' + studyFinalCard('rw', stp);
-    sec += homeSection('🎯 Study Plan — Tommy', spBody, masteredAll + '/' + STUDY_TOPICS.length, true);
+    sec += homeSection('🎯 Ruta de dominio', spBody, masteredAll + '/' + STUDY_TOPICS.length, true);
   }
   var dm = dailyMiniHTML();
   sec += homeSection('🌅 Daily Mini Mocks', dm.html, (dm.streak > 0 ? '🔥 ' + dm.streak + ' · ' : '') + dm.done + '/2 today', true);
   var tf = todaysFocusHTML();
   if(tf) sec += homeSection('🎯 Today’s Focus', tf, 3, true);
-  var ccTeaser = '<p class="study-hint">Circles are one of your biggest leaks (Zinkerz 3/9 · Mock 1 coordinate-plane 0/1) — but every SAT circle question is one of <b>6 fixed patterns</b>. This class walks each one with a diagram, a worked example, and the exact trap where points get lost, then drops you into hard practice.</p><button class="btn-primary" data-open-class="circles">📐 Open the Circles class</button>';
+  var _ccSt = planStats().circles;
+  var _ccMio = (_ccSt && _ccSt.hechas >= PLAN_MIN_MEDIDO)
+    ? ' Tú llevas <b>' + _ccSt.bien + '/' + _ccSt.hechas + '</b> en círculos.' : '';
+  var ccTeaser = '<p class="study-hint">Toda pregunta de círculos del SAT es una de <b>6 formas fijas</b>. Esta clase recorre cada una con su diagrama, un ejemplo resuelto y la trampa exacta donde se pierden los puntos, y termina soltándote en práctica difícil.' + _ccMio + '</p><button class="btn-primary" data-open-class="circles">Abrir la clase de círculos</button>';
   sec += homeSection('📐 Circles — Full Class', ccTeaser, 'NEW', true);
   var ptM = (typeof ptMasteredCount === 'function') ? ptMasteredCount() : 0;
-  var ptTeaser = '<p class="study-hint">Punctuation keeps costing you points because the RULES aren’t automatic yet. This trainer doesn’t give practice passages — it drills <b>the rules themselves</b>, over and over: every answer (right or wrong) shows you the full rule again, a rule is mastered only after <b>3 correct in a row</b>, and one miss resets it. When every dot is green, prove it with the <b>💯 Perfect Run</b> — all questions, zero misses, or you start over.</p>' +
-    '<div class="pt-home-btns"><button class="btn-primary" data-pt="drill">🧠 Memorization drill</button><button class="btn-outline" data-pt="read">📖 Read the 12 rules</button><button class="btn-outline" data-pt="perfect">💯 Perfect Run</button></div>';
+  var ptTeaser = '<p class="study-hint">La puntuación cuesta puntos cuando las REGLAS no son automáticas todavía. Este entrenador doesn’t give practice passages — it drills <b>the rules themselves</b>, over and over: every answer (right or wrong) shows you the full rule again, a rule is mastered only after <b>3 correct in a row</b>, and one miss resets it. When every dot is green, prove it with the <b>Perfect Run</b> — all questions, zero misses, or you start over.</p>' +
+    '<div class="pt-home-btns"><button class="btn-primary" data-pt="drill">Memorization drill</button><button class="btn-outline" data-pt="read">Read the 12 rules</button><button class="btn-outline" data-pt="perfect">Perfect Run</button></div>';
   sec += homeSection('🧠 Punctuation Rules — Know Them 100%', ptTeaser, ptM + '/12', true);
   var sr = spacedReviewHTML();
   if(sr){ var srDue = spacedQueue().due.length; sec += homeSection('🔁 Spaced Review', sr, srDue || null, true); }
@@ -2034,7 +2162,7 @@ var PLAYBOOK_HTML =
     '<p>Module 1 decides your ceiling: roughly <b>18–19/27 in R&W</b> and <b>13–16/22 in Math</b> routes you to the hard Module 2 — the only path to high scores (easy M2 caps the section around ~590–650).</p>' +
     '<p>So: maximum care on M1, and always do a <b>flag-and-return sweep</b> before the module ends. If Module 2 feels brutal — <b>that’s good news</b>: it means you made the hard module. Don’t spiral.</p>' +
   '</div></details>' +
-  '<details><summary>📖 Verbal playbook</summary><div class="pb-b">' +
+  '<details><summary>Verbal playbook</summary><div class="pb-b">' +
     '<p><b>Question first, then passage</b> — know the task before you read.</p>' +
     '<p><b>Predict before peeking:</b> Words in Context → put YOUR word in the blank first. Transitions → name the relationship (contrast / cause / addition / example), sort the choices into same-direction vs opposite, and two die instantly. Twin choices (thus/therefore) eliminate each other.</p>' +
     '<p><b>Punctuation tree:</b> can each side stand alone? Both independent → period ≡ semicolon ≡ comma+FANBOYS (if two of those appear, BOTH are wrong). Colon/dash need a complete sentence before. Interrupters take matched pairs. Torn between comma and nothing → usually nothing.</p>' +
@@ -2056,7 +2184,7 @@ var PLAYBOOK_HTML =
     '<p>Wake 2–2.5h before start; protein+carb breakfast; only your usual caffeine. Do a <b>10–15 min warm-up</b> (3 easy Verbal + 3 easy Math from sets you’ve done) — warmed-up brains test better.</p>' +
     '<button class="btn-primary" data-warmup="1" style="font-size:.84rem;padding:9px 18px">▶ Start test-day warm-up (6 easy)</button>' +
   '</div></details>' +
-  '<details><summary>🧠 Sacrifice strategy (score math)</summary><div class="pb-b">' +
+  '<details><summary>Sacrifice strategy (score math)</summary><div class="pb-b">' +
     '<p>In Math, attempting <b>~15–17 of 22 carefully</b> beats rushing all 22: accuracy on attempted questions > coverage. Letter-of-the-day the 5–7 hardest (usually late-module word problems), flag them, return only if time remains.</p>' +
     '<p><b>Sunk-time trap:</b> time already spent on a question is never a reason to stay. 4 minutes on one hard question + rushing five easy ones is the worst trade on the test.</p>' +
   '</div></details>' +
@@ -2092,14 +2220,14 @@ function showClass(html){
       openDesmosWith(b.getAttribute('data-desmos').split('||'));
     });
   });
-  try{ window.scrollTo(0,0); }catch(e){}
+  intenta(function(){ window.scrollTo(0,0); }, 'scroll');
   return v;
 }
 
 /* ================= CIRCLES — THE FULL CLASS ================= */
 var CIRCLE_CLASS_HTML =
 '<button class="cc-back">← Back to home</button>' +
-'<h2 class="cc-title">📐 Circles — The Full Class</h2>' +
+'<h2 class="cc-title">Circles — The Full Class</h2>' +
 '<p class="cc-sub">Every SAT circle question is one of <b>6 fixed patterns</b>. None of them is hard — each is a short recipe. Learn the recipe, spot the trap, collect the points.</p>' +
 '<div class="cc-intro"><b>How to use this class:</b> read one section, then cover the worked example and redo it yourself on paper. When you finish all 6, hit <b>Practice hard circles</b> at the bottom — the drill serves real test-level questions and re-shows this method on every miss.' +
 '<ol class="cc-toc">' +
@@ -2316,8 +2444,8 @@ var PUNCT_ITEMS = [
 ];
 var PT = null;
 function ptKey(){ return 'satapp_pt_v1__' + (window.currentUser && currentUser.id ? currentUser.id : 'guest'); }
-function ptLoad(){ try{ var d = JSON.parse(localStorage.getItem(ptKey()) || '{}'); d.streak = d.streak || {}; return d; }catch(e){ return { streak:{} }; } }
-function ptSave(d){ try{ localStorage.setItem(ptKey(), JSON.stringify(d)); }catch(e){} }
+function ptLoad(){ var d = store.get(ptKey(), {}) || {}; d.streak = d.streak || {}; return d; }
+function ptSave(d){ store.set(ptKey(), d); }
 function ptMasteredCount(){ var st = ptLoad(); return PUNCT_RULES.filter(function(r){ return (st.streak[r.id]||0) >= 3; }).length; }
 function ptRule(id){ for(var i = 0; i < PUNCT_RULES.length; i++){ if(PUNCT_RULES[i].id === id) return PUNCT_RULES[i]; } return null; }
 function ptShuffle(a){ for(var i = a.length - 1; i > 0; i--){ var j = Math.floor(Math.random() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; } return a; }
@@ -2325,7 +2453,7 @@ function ptHeader(sub){
   var st = ptLoad();
   var dots = PUNCT_RULES.map(function(r){ var s = st.streak[r.id] || 0; return '<span class="pt-dot' + (s >= 3 ? ' on' : '') + '" title="' + r.name + ' — streak ' + s + '/3"></span>'; }).join('');
   return '<button class="cc-back">← Back to home</button>' +
-    '<h2 class="cc-title">🧠 Punctuation Rule Trainer</h2>' +
+    '<h2 class="cc-title">Punctuation Rule Trainer</h2>' +
     '<div class="pt-prog">' + dots + '</div>' +
     '<div class="pt-meta">' + ptMasteredCount() + '/' + PUNCT_RULES.length + ' rules mastered (3 correct in a row each; a miss resets the rule)' + (sub ? ' · ' + sub : '') + '</div>';
 }
@@ -2343,7 +2471,7 @@ function openPunctRules(){
       '</div>';
   }).join('');
   var v = showClass(ptHeader('read the rules, then drill until every dot is green') + body +
-    '<div class="cc-cta"><button class="btn-primary" data-pt="drill">🧠 Start the memorization drill</button><button class="btn-outline" data-pt="perfect">💯 Perfect Run</button></div>');
+    '<div class="cc-cta"><button class="btn-primary" data-pt="drill">Start the memorization drill</button><button class="btn-outline" data-pt="perfect">Perfect Run</button></div>');
   ptWire(v);
 }
 function startPunctTrainer(mode){
@@ -2412,7 +2540,7 @@ function ptSummary(){
           : '<p>' + m + '/' + all + ' rules mastered. Keep drilling — a rule is yours after 3 in a row, and one miss resets it. That repetition is the point.</p>')) +
     '<div class="cc-cta">' +
       (PT.mode !== 'perfect'
-        ? '<button class="btn-primary" data-pt="drill">Next round →</button><button class="btn-outline" data-pt="perfect">💯 Perfect Run</button>'
+        ? '<button class="btn-primary" data-pt="drill">Next round →</button><button class="btn-outline" data-pt="perfect">Perfect Run</button>'
         : '<button class="btn-primary" data-pt="perfect">Run it again</button>') +
       '<button class="btn-outline" data-lesson="l-punct">Now try real questions</button>' +
       '<button class="btn-outline" data-go-home>Home</button>' +
@@ -2420,17 +2548,20 @@ function ptSummary(){
   var v = showClass(html); ptWire(v);
 }
 
-/* ================= FINAL WEEK COUNTDOWN (Tommy's account, exam Sat Aug 22 2026) ================= */
-var FW_EXAM_DATE = '2026-08-22';
+/* ================= CUENTA REGRESIVA DE LA SEMANA FINAL =================
+   El plan es el mismo para cualquiera, pero las fechas salen de la fecha de
+   examen que ponga el estudiante (antes estaba cableada al 22-ago-2026, que era
+   la de una sola persona). `off` = dias antes del examen.                    */
+function FW_EXAM_DATE_GET(){ return store.get('sat_exam_date', '') || ''; }
 var FW_PLAN = [
-  { d:'2026-08-16', when:'Sun Aug 16', title:'Baseline under real conditions', focus:'One real-condition mock tells us exactly what to fix this week. Phone in another room, timed, no music.',
+  { off:6, title:'Baseline under real conditions', focus:'One real-condition mock tells us exactly what to fix this week. Phone in another room, timed, no music.',
     tasks:[
       { tx:'<b>Realistic Hard Mock 1</b> — full length, timed, real conditions <button class="btn-primary" data-start-realmock="1">Start</button>' },
       { tx:'Review <b>EVERY miss</b> in Session History — the review IS the studying. For each miss, name the trap that got you.' },
       { tx:'Punctuation trainer until at least <b>6 dots green</b> <button class="btn-outline" data-pt="drill">Drill</button>' },
       { tx:'Daily Minis if you have gas left <button class="btn-outline" data-start-daily="math">Math</button> <button class="btn-outline" data-start-daily="rw">Verbal</button>' }
     ]},
-  { d:'2026-08-17', when:'Mon Aug 17', title:'Math I — Geometry (your biggest leak)', focus:'Circles, triangles/trig, solids. August hard-M2 reports mention circle+line systems — the Circles class covers exactly that.',
+  { off:5, title:'Math I — Geometry (your biggest leak)', focus:'Circles, triangles/trig, solids. August hard-M2 reports mention circle+line systems — the Circles class covers exactly that.',
     tasks:[
       { tx:'Read the full <b>Circles class</b> (~15 min), redo each example on paper <button class="btn-primary" data-open-class="circles">Open</button>' },
       { tx:'Hard circles drill until <b>4 in a row</b> <button class="btn-outline" data-lesson="l-circles">Practice</button>' },
@@ -2438,7 +2569,7 @@ var FW_PLAN = [
       { tx:'Solids &amp; Volume <button class="btn-outline" data-lesson="l-solids">Practice</button>' },
       { tx:'Both Daily Minis <button class="btn-outline" data-start-daily="math">Math</button> <button class="btn-outline" data-start-daily="rw">Verbal</button>' }
     ]},
-  { d:'2026-08-18', when:'Tue Aug 18', title:'Math II — Algebra &amp; Data', focus:'Exponents, polynomials, probability, percents — your four repeat offenders. Hard M2 loves applied exponential word problems.',
+  { off:4, title:'Math II — Algebra &amp; Data', focus:'Exponents, polynomials, probability, percents — your four repeat offenders. Hard M2 loves applied exponential word problems.',
     tasks:[
       { tx:'Exponents &amp; Exponentials <button class="btn-outline" data-lesson="l-expo">Practice</button>' },
       { tx:'Polynomials &amp; Rational <button class="btn-outline" data-lesson="l-poly">Practice</button>' },
@@ -2447,28 +2578,28 @@ var FW_PLAN = [
       { tx:'Punctuation trainer: get <b>all 12 dots green</b> <button class="btn-outline" data-pt="drill">Drill</button>' },
       { tx:'Both Daily Minis <button class="btn-outline" data-start-daily="math">Math</button> <button class="btn-outline" data-start-daily="rw">Verbal</button>' }
     ]},
-  { d:'2026-08-19', when:'Wed Aug 19', title:'LAST full test', focus:'No full-length test after today (48-hour rule). Morning if possible, exact real conditions.',
+  { off:3, title:'LAST full test', focus:'No full-length test after today (48-hour rule). Morning if possible, exact real conditions.',
     tasks:[
       { tx:'<b>Realistic Hard Mock 2</b> — your dress rehearsal <button class="btn-primary" data-start-realmock="2">Start</button>' },
       { tx:'Same-day review of every miss — write the trap next to each one' },
       { tx:'Nothing else tonight. Sleep 8h — memory consolidates while you sleep.' }
     ]},
-  { d:'2026-08-20', when:'Thu Aug 20', title:'Fix ONLY what failed yesterday', focus:'Twice-missed topics are system problems: reread that lesson’s method first, then drill it.',
+  { off:2, title:'Fix ONLY what failed yesterday', focus:'Twice-missed topics are system problems: reread that lesson’s method first, then drill it.',
     tasks:[
       { tx:'Drill the exact skills you missed Wednesday (🎯 Today’s Focus below picks them for you)' },
-      { tx:'Punctuation <b>💯 Perfect Run</b> — all 42, zero misses <button class="btn-primary" data-pt="perfect">Run</button>' },
+      { tx:'Punctuation <b>Perfect Run</b> — all 42, zero misses <button class="btn-primary" data-pt="perfect">Run</button>' },
       { tx:'Command of Evidence &amp; Quotation <button class="btn-outline" data-lesson="l-evidence">Practice</button>' },
       { tx:'Structure &amp; Purpose <button class="btn-outline" data-lesson="l-structure">Practice</button>' },
       { tx:'Both Daily Minis <button class="btn-outline" data-start-daily="math">Math</button> <button class="btn-outline" data-start-daily="rw">Verbal</button>' }
     ]},
-  { d:'2026-08-21', when:'Fri Aug 21', title:'Light day — 30 minutes MAX', focus:'Cramming today LOWERS tomorrow’s score. Trust the week.',
+  { off:1, title:'Light day — 30 minutes MAX', focus:'Cramming today LOWERS tomorrow’s score. Trust the week.',
     tasks:[
       { tx:'Reread the 📋 Playbook (below): pacing checkpoints + Desmos plays + sacrifice strategy' },
       { tx:'Skim the Grammar cheat sheet (the “Rules” button inside any drill)' },
       { tx:'Prep: laptop charged + Bluebook installed &amp; logged in + ID + snacks + water' },
       { tx:'No new topics. In bed by ~10pm. (Two nights of 8h beat one.)' }
     ]},
-  { d:'2026-08-22', when:'Sat Aug 22 · 7:45 AM', title:'TEST DAY 🎯', focus:'You did the work. Execute the plan, nothing new.',
+  { off:0, title:'TEST DAY 🎯', focus:'You did the work. Execute the plan, nothing new.',
     tasks:[
       { tx:'Wake 2–2.5h before · protein+carb breakfast · only your usual caffeine' },
       { tx:'Warm-up: 6 easy questions ~1h before leaving <button class="btn-primary" data-warmup>Warm up</button>' },
@@ -2478,16 +2609,38 @@ var FW_PLAN = [
     ]}
 ];
 function fwKey(){ return 'satapp_fw_v1__' + (window.currentUser && currentUser.id ? currentUser.id : 'guest'); }
-function fwLoad(){ try{ var d = JSON.parse(localStorage.getItem(fwKey()) || '{}'); d.done = d.done || {}; return d; }catch(e){ return { done:{} }; } }
-function fwSave(d){ try{ localStorage.setItem(fwKey(), JSON.stringify(d)); }catch(e){} }
+function fwLoad(){ var d = store.get(fwKey(), {}) || {}; d.done = d.done || {}; return d; }
+function fwSave(d){ store.set(fwKey(), d); }
 function fwDateStr(dt){ dt = dt || new Date(); return dt.getFullYear() + '-' + ('0' + (dt.getMonth() + 1)).slice(-2) + '-' + ('0' + dt.getDate()).slice(-2); }
-function fwDaysLeft(){ var t = new Date(); var a = new Date(t.getFullYear(), t.getMonth(), t.getDate()); var p = FW_EXAM_DATE.split('-'); var b = new Date(+p[0], +p[1] - 1, +p[2]); return Math.round((b - a) / 86400000); }
+function fwDaysLeft(){
+  var ed = FW_EXAM_DATE_GET(); if(!ed) return null;
+  var t = new Date(); var a = new Date(t.getFullYear(), t.getMonth(), t.getDate());
+  var p = ed.split('-'); var b = new Date(+p[0], +p[1] - 1, +p[2]);
+  return Math.round((b - a) / 86400000);
+}
+/* Fecha (YYYY-MM-DD) del dia que cae `off` dias antes del examen. */
+function fwDayDate(off){
+  var ed = FW_EXAM_DATE_GET(); if(!ed) return '';
+  var p = ed.split('-'); var b = new Date(+p[0], +p[1] - 1, +p[2]);
+  b.setDate(b.getDate() - off);
+  return fwDateStr(b);
+}
+var FW_DIAS = ['domingo','lunes','martes','miércoles','jueves','viernes','sábado'];
+var FW_MESES = ['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];
+function fwBonito(iso){
+  if(!iso) return '';
+  var p = iso.split('-'), d = new Date(+p[0], +p[1] - 1, +p[2]);
+  return FW_DIAS[d.getDay()] + ' ' + d.getDate() + ' ' + FW_MESES[d.getMonth()];
+}
 function fwPlanHTML(){
-  var st = fwLoad(), today = fwDateStr(), dl = fwDaysLeft();
-  var html = '<div class="fw-head">📅 <b>Saturday, August 22 · 7:45 AM</b> — ' + (dl > 0 ? '<b>' + dl + ' day' + (dl === 1 ? '' : 's') + ' left</b>' : dl === 0 ? '<b>TODAY. Go get it.</b>' : 'done — scores out Sept 4') + '.<br>' +
-    'Targets: <b>Math 700</b> · <b>Verbal 600+</b>. To unlock the hard Module 2 (the 700 door): <b>17/27</b> R&amp;W · <b>16/22</b> Math in Module 1.</div>' +
-    '<div class="fw-goal"><b>What August takers report:</b> hard Math M2 = circle+line systems, function transformations, applied exponential problems; hard Verbal M2 = abstract vocab + tricky transitions. Every one of those is drilled in this plan.</div>';
+  var st = fwLoad(), today = fwDateStr(), dl = fwDaysLeft(), ed = FW_EXAM_DATE_GET();
+  var html = '<div class="fw-head">📅 <b>Tu examen: ' + fwBonito(ed) + '</b> — ' +
+    (dl > 0 ? '<b>faltan ' + dl + ' día' + (dl === 1 ? '' : 's') + '</b>' : dl === 0 ? '<b>ES HOY. A darle.</b>' : 'ya pasó — mucha suerte con el resultado') + '.<br>' +
+    'Para abrir el Módulo 2 difícil (la puerta a los 700 puntos) necesitas <b>17/27</b> en R&amp;W y <b>16/22</b> en Math en el Módulo 1.</div>' +
+    '<div class="fw-goal">Esta es la última semana: no es para aprender temas nuevos, es para <b>afilar lo que ya sabes</b> y llegar descansado. Marca cada tarea al terminarla.</div>';
   FW_PLAN.forEach(function(day, i){
+    day.d = fwDayDate(day.off);
+    day.when = fwBonito(day.d) + (day.off === 0 ? ' · día del examen' : '');
     var cls = 'fw-day' + (day.d === today ? ' today' : (day.d < today ? ' past' : '')) + (i === FW_PLAN.length - 1 ? ' exam' : '');
     var doneN = 0;
     var rows = day.tasks.map(function(t, j){
@@ -2499,7 +2652,7 @@ function fwPlanHTML(){
       '<div class="fw-focus">' + day.focus + '</div>' + rows +
       '<div style="text-align:right;margin-top:7px"><span class="fw-daycount">' + doneN + '/' + day.tasks.length + '</span></div></div>';
   });
-  var badge = dl > 0 ? dl + 'd left' : dl === 0 ? 'TODAY' : '✓';
+  var badge = dl > 0 ? 'faltan ' + dl + 'd' : dl === 0 ? 'HOY' : '✓';
   return { html: html, badge: badge };
 }
 function fwToggle(k, btn){
@@ -2626,7 +2779,7 @@ function lessonPool(key){
 function startLessonDrill(key){
   var L = LESSONS.filter(function(x){ return x.key === key; })[0];
   var pool = lessonPool(key);
-  if(!L || pool.length < 3){ alert('Not enough practice questions for this skill yet.'); return; }
+  if(!L || pool.length < 3){ toast('Todavía no hay suficientes preguntas de esa destreza en el banco.', true); return; }
   var seen = _seenCounts();
   // Practice at the REAL test level: hard + extreme items rank together on top (a real hard module is
   // mostly hard with a brutal tail), then least-seen — challenging but not an all-brutal wall.
@@ -2735,7 +2888,7 @@ function spacedQueue(){
 }
 function startSpacedReview(){
   var q = spacedQueue().due;
-  if(!q.length){ alert('Nothing due for review right now — nice work.'); return; }
+  if(!q.length){ toast('No hay nada pendiente de repaso ahora mismo. Bien ahí.'); return; }
   _beginSession({ id:'spaced-review', title:'Spaced Review', section:'mixed', minutes: Math.max(6, Math.ceil(Math.min(q.length,12) * 1.3)), questions: _shuffle(q).slice(0, 12) }, 'drill');
 }
 function spacedReviewHTML(){
@@ -2756,7 +2909,7 @@ function startWarmup(){
   var rw = _shuffle(all.filter(function(q){ return q._section !== 'math' && q.difficulty === 'Fácil' && !q.extreme; })).slice(0, 3);
   var m = _shuffle(all.filter(function(q){ return q._section === 'math' && q.difficulty === 'Fácil' && !q.extreme; })).slice(0, 3);
   var qs = _shuffle(rw.concat(m));
-  if(qs.length < 4){ alert('Not enough easy questions loaded yet.'); return; }
+  if(qs.length < 4){ toast('Todavía no hay suficientes preguntas fáciles cargadas.', true); return; }
   _beginSession({ id:'warmup', title:'Test-Day Warm-Up', section:'mixed', minutes: 10, questions: qs }, 'drill');
 }
 function lessonCardHTML(L){
@@ -2845,7 +2998,7 @@ function _seenCounts(){
 function startStudyRound(key){
   var t = STUDY_TOPICS.filter(function(x){ return x.key === key; })[0];
   var pool = studyPools()[key] || [];
-  if(!t || pool.length < 4){ alert('Not enough questions for this topic yet.'); return; }
+  if(!t || pool.length < 4){ toast('Todavía no hay suficientes preguntas de ese tema.', true); return; }
   var seen = _seenCounts();
   var order = _shuffle(pool).sort(function(a, b){ return (seen[a.id] || 0) - (seen[b.id] || 0); });
   _beginSession({ id:'study-' + key, title: t.title + ' — Round of 4', section: t.sec, minutes: t.sec === 'math' ? 8 : 6, questions: order.slice(0, 4) }, 'drill');
@@ -2862,12 +3015,29 @@ function startStudyFinal(sc){
   });
   _beginSession({ id:'study-final-' + sc, title: (sc === 'math' ? 'Math' : 'English') + ' Final — 100%', section: sc, minutes: sc === 'math' ? 22 : 16, questions: _shuffle(qs) }, 'exam');
 }
+/* El "por que" de cada tema sale de las respuestas del estudiante que esta
+   mirando, no de un diagnostico escrito a mano para una sola persona. */
+var STUDY_A_PLAN = { circles:'circles', poly:'poly', probstat:'prob', expo:'expo', percents:'percent',
+  solids:'solids', trig:'trig', possagree:'pronouns', punct:'punct', transitions:'transit',
+  evidence:'evidence', structure:'structure', wic:'wic', synth:'synth', verbs:'verbs' };
+function studyPorQue(t){
+  var k = STUDY_A_PLAN[t.key];
+  var st = k ? planStats()[k] : null;
+  if(!st) return 'Tema del examen.';
+  if(st.hechas >= PLAN_MIN_MEDIDO){
+    return 'Llevas <b>' + st.bien + '/' + st.hechas + '</b> (' + Math.round(st.acc * 100) + '%) en este tema · ' +
+      st.peso + '% del examen.';
+  }
+  return st.hechas
+    ? 'Solo ' + st.hechas + ' pregunta' + (st.hechas === 1 ? '' : 's') + ' hasta ahora — todavía no se puede medir · ' + st.peso + '% del examen.'
+    : 'Todavía no lo has practicado · ' + st.peso + '% del examen.';
+}
 function studyTopicCard(t, ts){
   var state = ts.mastered ? '<span class="study-badge done">✓ Mastered</span>'
             : ts.tries ? '<span class="study-badge prog">best ' + ts.best + '/4 · ' + ts.tries + ' round' + (ts.tries > 1 ? 's' : '') + '</span>'
             : '<span class="study-badge">not started</span>';
   return '<div class="set-card study-card' + (ts.mastered ? ' mastered' : '') + '"><div class="set-info">' + state +
-    '<h3>' + t.title + '</h3><div class="set-desc">' + t.why + '</div></div>' +
+    '<h3>' + t.title + '</h3><div class="set-desc">' + studyPorQue(t) + '</div></div>' +
     '<div class="set-actions"><button class="btn-primary" data-study-round="' + t.key + '">' + (ts.mastered ? 'Extra round' : 'Round of 4') + '</button></div></div>';
 }
 function studyFinalCard(sc, st){
@@ -3223,7 +3393,7 @@ function finishSession(expired){
   $('#view-app').classList.add('hidden');
   $('#view-results').classList.remove('hidden');
   renderResults(g);
-  try { window.scrollTo(0,0); } catch(e){}
+  intenta(function(){ window.scrollTo(0,0); }, 'scroll');
 }
 function buildSummary(g){
   var lines = [];
@@ -3341,7 +3511,7 @@ function goHome(){
   $('#view-home').classList.remove('hidden');
   closeLineReader();
   renderHome();
-  try { window.scrollTo(0,0); } catch(e){}
+  intenta(function(){ window.scrollTo(0,0); }, 'scroll');
 }
 
 /* ================= LAYOUT TOGGLE ================= */
@@ -3431,7 +3601,7 @@ function loadDesmos(){
       desmosLoading = false;
       $('#calc-status').classList.add('hidden');
       if(typeof ResizeObserver !== 'undefined'){
-        try { new ResizeObserver(function(){ if(desmosCalc) desmosCalc.resize(); }).observe($('#calc-panel').querySelector('.float-body')); } catch(e){}
+        intenta(function(){ new ResizeObserver(function(){ if(desmosCalc) desmosCalc.resize(); }).observe($('#calc-panel').querySelector('.float-body')); }, 'observer de la calculadora');
       }
     } catch(e){ desmosFail(); }
   };
@@ -3454,7 +3624,9 @@ function openDesmosWith(exprs){
         desmosCalc.setBlank();
         (exprs || []).forEach(function(l, i){ if(l) desmosCalc.setExpression({ id: 'sat' + i, latex: l }); });
         desmosCalc.resize();
-      } catch(e){}
+      } catch(e){
+        toast('No se pudo abrir la calculadora con la expresión cargada. Ábrela y escríbela a mano.', true);
+      }
     } else if(tries > 0){ setTimeout(function(){ apply(tries - 1); }, 300); }
   };
   apply(25);
@@ -3472,13 +3644,13 @@ function setCalcMode(mode){
   if(mode === 'sci'){
     var mk = function(tries){
       if(window.Desmos && !sciCalc){
-        try { sciCalc = window.Desmos.ScientificCalculator($('#desmos-sci-root'), { keypad: true }); } catch(e){}
+        intenta(function(){ sciCalc = window.Desmos.ScientificCalculator($('#desmos-sci-root'), { keypad: true }); }, 'calculadora científica');
       }
-      if(sciCalc){ try { sciCalc.resize(); } catch(e){} }
+      if(sciCalc){ intenta(function(){ sciCalc.resize(); }, 'resize calculadora'); }
       else if(tries > 0){ setTimeout(function(){ mk(tries - 1); }, 300); }
     };
     mk(25);
-  } else if(desmosCalc){ try { desmosCalc.resize(); } catch(e){} }
+  } else if(desmosCalc){ intenta(function(){ desmosCalc.resize(); }, 'resize calculadora'); }
 }
 function escAttr(s){ return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 // "In Desmos" help block shown under a Math explanation (uses q.desmos text + optional q.desmosLatex[]).
@@ -3726,7 +3898,7 @@ function showAnnotPop(x, y, existingMark){
              '<button class="an-p" data-hl="hl-p" title="Rosa">A</button>' +
              '<button class="an-u" data-hl="hl-u" title="Subrayar">U</button>' +
              '<button class="an-note" id="an-note-btn" title="Nota">📝 Nota</button>' +
-             (existingMark ? '<button class="an-x" id="an-remove" title="Quitar">✕</button>' : '');
+             (existingMark ? '<button class="an-x" id="an-remove" title="Quitar">×</button>' : '');
   pop.innerHTML = html;
   pop.classList.remove('hidden');
   var vw = window.innerWidth || 1000;
@@ -3742,7 +3914,7 @@ function showAnnotPop(x, y, existingMark){
     var inp = $('#an-note-input');
     var prev = activeMark ? (activeMark.getAttribute('data-note') || '') : '';
     inp.value = prev;
-    try { inp.focus(); } catch(e){}
+    intenta(function(){ inp.focus(); }, 'foco');
     $('#an-note-save').addEventListener('click', function(ev2){
       ev2.stopPropagation();
       applyHighlight('hl-y', inp.value.trim() || 'Nota');
@@ -3774,7 +3946,7 @@ function wireAnnotations(){
       if(area && String(selObj.toString()).trim().length){
         pendingRange = range.cloneRange();
         var rect = null;
-        try { rect = range.getBoundingClientRect(); } catch(err){}
+        rect = intenta(function(){ return range.getBoundingClientRect(); }, 'posición de la selección') || null;
         var x = rect && rect.left ? rect.left : (e.clientX || 60);
         var y = rect && rect.top ? rect.top : (e.clientY || 60);
         showAnnotPop(x, y, null);
@@ -3919,7 +4091,7 @@ function setUserChip(){
   var chip = $('#user-chip'); if(!chip) return;
   if(currentUser){
     var name = (currentUser.user_metadata && currentUser.user_metadata.name) || currentUser.email || 'Mi cuenta';
-    var adminBtn = (currentUser.app_metadata && currentUser.app_metadata.role === 'admin') ? '<button class="uc-admin" id="btn-admin">📊 Admin</button>' : '';
+    var adminBtn = (currentUser.app_metadata && currentUser.app_metadata.role === 'admin') ? '<button class="uc-admin" id="btn-admin">Admin</button>' : '';
     chip.innerHTML = '<span class="uc-name">☁️ ' + name + '</span>' + adminBtn + '<button class="uc-out" id="btn-logout">Sign out</button>';
     chip.classList.remove('hidden');
     var b = $('#btn-logout'); if(b) b.addEventListener('click', doLogout);
@@ -4087,7 +4259,7 @@ function buildDailyMini(sec, di){
 }
 function startDailyMini(sec){
   var set = buildDailyMini(sec);
-  if(!set){ alert('Not enough questions loaded yet for the daily mini.'); return; }
+  if(!set){ toast('Todavía no cargaron suficientes preguntas para el mini de hoy.', true); return; }
   if(MOCK){ MOCK.active = false; MOCK = null; }   // never let a stale mock hijack finishSession
   _beginSession(set, 'exam');
 }
@@ -4177,7 +4349,7 @@ function ensureMockView(){
 function mockScreen(html){
   ['view-auth','view-home','view-admin','view-app','view-results'].forEach(function(id){ var el=$('#'+id); if(el) el.classList.add('hidden'); });
   var v = ensureMockView(); v.innerHTML = html; v.classList.remove('hidden');
-  try{ window.scrollTo(0,0); }catch(e){}
+  intenta(function(){ window.scrollTo(0,0); }, 'scroll');
 }
 function mockRnd(code){ return (MOCK && MOCK.seed != null) ? mulberry32(MOCK.seed * 97 + code) : null; }
 function startMock(kind, num, seedArg, hardMode){
@@ -4192,7 +4364,7 @@ function startMock(kind, num, seedArg, hardMode){
   var real = hardMode === 'real';   // realistic hard form: tough M1, EARNED routing into a real-composition hard M2
   var m1tier = extreme ? 'extreme' : real ? 'tough' : (hardMode ? 'hard' : 'mixed');
   var first = assembleModule(section, m1tier, count, used, rnd);
-  if(first.length < 12){ alert('Not enough questions loaded yet for this test.'); return; }
+  if(first.length < 12){ toast('Todavía no cargaron suficientes preguntas para este examen.', true); return; }
   MOCK = { active:true, kind:kind, hard:hardMode === true, extreme:extreme, real:real, num:(typeof num === 'number' ? num : null), seed:seed, stage:firstKey, used:used, results:{}, paths:{}, time:0, mods:{} };
   MOCK.mods[firstKey] = makeModuleSet(section, first, 'Module 1');
   mockScreen(mockIntroHTML(kind, first.length));
@@ -4365,11 +4537,13 @@ function authBoot(){
     renderHome();
     return;
   }
+  var invitado = function(){ return !!store.get('satapp_invitado', 0); };
   SB.auth.getSession().then(function(res){
     var session = res && res.data ? res.data.session : null;
     if(session && session.user){ if(!currentUser){ currentUser = session.user; afterLogin(); } }
+    else if(invitado()){ entrarComoInvitado(); }
     else { if(!currentUser) showAuthGate(); }
-  }).catch(function(){ if(!currentUser) showAuthGate(); });
+  }).catch(function(){ if(!currentUser){ if(invitado()) entrarComoInvitado(); else showAuthGate(); } });
   SB.auth.onAuthStateChange(function(_event, session){
     var u = session && session.user ? session.user : null;
     if(u && (!currentUser || currentUser.id !== u.id)){ currentUser = u; afterLogin(); }
@@ -4378,9 +4552,20 @@ function authBoot(){
 }
 
 function afterLogin(){
-  return migrateLegacy().catch(function(){}).then(function(){
-    return cloudPull().catch(function(){});
-  }).then(function(){ enterApp(); });
+  return migrateLegacy()
+    .catch(function(e){
+      console.warn('SAT Studio · no se pudo adoptar el historial de invitado:', e);
+      toast('No se pudo pasar a tu cuenta lo que jugaste sin cuenta. Sigue guardado en este navegador: ' +
+            'descárgalo desde Session History si vas a cambiar de dispositivo.', true);
+    })
+    .then(function(){ return cloudPull(); })
+    .catch(function(e){
+      // Nunca dejar a alguien mirando una cuenta vacia sin saber por que.
+      var m = (e && e.message) || 'sin conexión';
+      toast('No se pudo traer tu historial de la nube (' + m + '). Lo que ves es lo que hay guardado en este ' +
+            'navegador; nada se perdió y se reintenta solo cuando vuelva el internet.', true);
+    })
+    .then(function(){ enterApp(); });
 }
 
 /* Trae la nube y la FUSIONA con lo local. Nunca descarta una sesion local:
@@ -4509,7 +4694,10 @@ function doSignup(){
 function doLogout(){
   if(!authAvailable()){ return; }
   var salir = function(){
-    SB.auth.signOut().catch(function(e){ console.warn('signOut:', e); });
+    SB.auth.signOut().catch(function(e){
+      console.warn('signOut:', e);
+      toast('No se pudo cerrar sesión en el servidor. Cierra la pestaña para asegurarte.', true);
+    });
     currentUser = null;
     showAuthGate();
   };
@@ -4532,7 +4720,19 @@ function traducirAuthError(m){
   return m;
 }
 
+/* Entrar sin cuenta. Existe porque la app se reparte por link: obligar a crear
+   cuenta antes de ver nada hace que la mayoria no entre nunca. Lo que juegue
+   como invitado se adopta solo cuando decida crear su cuenta (migrateLegacy). */
+function entrarComoInvitado(){
+  store.set('satapp_invitado', 1);
+  $('#view-auth').classList.add('hidden');
+  $('#view-home').classList.remove('hidden');
+  setUserChip();
+  renderHome();
+  intenta(function(){ window.scrollTo(0,0); }, 'scroll');
+}
 function wireAuth(){
+  var gb = $('#auth-guest-btn'); if(gb) gb.addEventListener('click', entrarComoInvitado);
   var lb = $('#auth-login-btn'); if(lb) lb.addEventListener('click', doLogin);
   var sub = $('#auth-signup-btn'); if(sub) sub.addEventListener('click', doSignup);
   var pass = $('#auth-pass'); if(pass) pass.addEventListener('keydown', function(e){ if(e.key === 'Enter') doLogin(); });
@@ -4661,7 +4861,11 @@ function init(){
   var abr = $('#btn-admin-refresh'); if(abr) abr.addEventListener('click', loadAdmin);
   authBoot();
 }
-init();
+/* Los sets se cargan con `defer`: descargan en paralelo sin bloquear el pintado,
+   pero se ejecutan DESPUES de parsear el documento. Por eso init() no puede
+   correr aqui mismo — a esta altura window.SAT_SETS todavia estaria vacio. */
+if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init);
+else init();
 
 /* test hooks */
 window.SATAPP = {
