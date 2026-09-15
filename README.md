@@ -8,7 +8,9 @@ Plataforma de práctica para el Digital SAT con interfaz estilo **Bluebook**, he
 
 _(also mirrored at https://tommyhanono.github.io/sat-studio/)_
 
-Cada estudiante crea su cuenta (correo + contraseña) y su historial se guarda en la nube — se ve desde cualquier dispositivo.
+Entra **sin cuenta** y practica todo (el historial se guarda en ese navegador), o **crea tu cuenta** con correo y
+contraseña y el historial te sigue a cualquier dispositivo. Lo que juegues sin cuenta se pasa solo a tu cuenta
+cuando la crees.
 
 ## Cómo usarla
 
@@ -25,6 +27,21 @@ Descomprime la carpeta y abre `index.html` en Chrome/Edge/Safari. Listo. Todo fu
 
 > Con cuenta, tu historial y dashboard se guardan **en la nube** (Supabase) y te siguen en cualquier dispositivo. Sin conexión se guardan localmente y se sincronizan al reconectar.
 
+## 🧭 Mi plan de mejora
+
+La sección con la que arranca el home. Lee **tu** historial y te arma un test a tu medida en tres pasos:
+
+1. **Propone temas con los números a la vista**, separados en dos grupos que no significan lo mismo:
+   *donde estás fallando* (medido con tus respuestas) y *puntos ciegos* (pesa mucho en el examen y todavía no
+   hay datos tuyos). Si aún no has practicado, **no inventa un diagnóstico: lo dice.** Marcas y desmarcas lo
+   que quieras, y hay buscador para pedir un tema que no te propuso.
+2. **Te hace tres preguntas**: cuánto tiempo tienes, con o sin reloj, y qué tan difícil.
+3. **Arma el test**: dentro de cada tema van primero las preguntas que ya fallaste y después las que nunca
+   has visto.
+
+Son 28 temas que cubren 783 de las 786 preguntas del banco. La prioridad sale del peso oficial de cada dominio
+en el examen multiplicado por lo mal que vas. **La app propone; la decisión final es tuya.**
+
 ## Qué incluye
 
 - **2 modos**: Exam (cronometrado, se califica al final, con Check Your Work) y Drill (sin timer, feedback + explicación inmediata en cada pregunta).
@@ -32,10 +49,15 @@ Descomprime la carpeta y abre `index.html` en Chrome/Edge/Safari. Listo. Todo fu
 - **Math real**: multiple choice centrado + preguntas SPR (respuesta escrita) con las reglas de entrada oficiales (5 caracteres, 6 con negativo, fracciones equivalentes, decimales con precisión completa).
 - **Dashboard**: accuracy por dominio y skill, historial, estimación de score 200–800, y **Redo my mistakes**.
 - **Resumen copiable** al final de cada sesión → pégaselo a Claude para mantener el error log y recibir sets nuevos enfocados en tus debilidades.
+- **Tu historial es tuyo**: se descarga en `.json` cuando quieras y se vuelve a importar sin pisar nada.
 
 ## Cuentas y sincronización en la nube
 
-- Cada estudiante entra con **correo + contraseña**. Cada quien ve **solo su** historial.
+- Se puede entrar **sin cuenta**: todo funciona y el historial vive en ese navegador.
+- Con **correo + contraseña**, el historial te sigue a cualquier dispositivo. Cada quien ve **solo su** historial.
+- **Nada de lo que juegues se pierde por quedarte sin internet.** La sesión se guarda primero en tu dispositivo,
+  queda en una cola que sobrevive cerrar el navegador, y se sube sola cuando vuelve la conexión. Si algo está
+  sin subir, la pantalla te lo dice — nunca te promete "sincronizado" cuando no lo está.
 - **Aislamiento:** los datos viven en un **schema `sat` propio** (separado de los otros proyectos que comparten el mismo Supabase); el acceso va únicamente por **funciones RPC** en `public` que filtran por el usuario autenticado. La info de SAT nunca se cruza con la de otros proyectos.
 - El esquema (schema `sat` + tabla + funciones RPC) está en [`supabase/schema.sql`](supabase/schema.sql).
 
