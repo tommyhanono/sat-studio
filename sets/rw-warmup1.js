@@ -179,9 +179,9 @@ window.SAT_SETS.push({
       correct:'A',
       expCorrect:'The goal is to explain WHAT the mechanism could DO. Option A delivers exactly that function according to the notes: predicting the positions of the sun and the moon. It meets the goal and is supported.',
       expWrong:{
-        B:'Cuenta dónde y cuándo lo encontraron, no lo que el aparato podía hacer.',
-        C:'Describe de qué está hecho (engranajes de bronce) y qué es, no su función.',
-        D:'Da la fecha aproximada, no una capacidad del mecanismo.'
+        B:'It tells where and when it was found, not what the device could do.',
+        C:'It describes what it is made of (bronze gears) and what it is, not its function.',
+        D:'It gives the approximate date, not a capability of the mechanism.'
       },
       tip:'The goal rules. If it asks what the object "could do", look for the verb of action or capability in the notes ("could predict…"), not facts about origin, material or date.'
     },
@@ -194,9 +194,9 @@ window.SAT_SETS.push({
       correct:'D',
       expCorrect:'The context contrasts what was expected (a bitter clash) with what happened: they shook hands and even shared a laugh. That describes warmth and good treatment, so "cordiality" is the precise word.',
       expWrong:{
-        A:'“acrimony” (amargura, aspereza) es lo OPUESTO a darse la mano y reír juntos.',
-        B:'“reluctance” (desgana) no encaja: negociaron con gusto, no a regañadientes.',
-        C:'“bewilderment” (desconcierto) no calza con un trato cálido y amistoso; nada indica confusión.'
+        A:'"acrimony" is the OPPOSITE of shaking hands and laughing together.',
+        B:'"reluctance" does not fit: they negotiated gladly, not grudgingly.',
+        C:'"bewilderment" does not match a warm, friendly exchange; nothing suggests confusion.'
       },
       tip:'In WORDS IN CONTEXT let the clues rule. "Shaking hands and even sharing a laugh" points to warmth → cordiality, not bitterness or confusion.'
     },
@@ -210,7 +210,7 @@ window.SAT_SETS.push({
       expCorrect:'The clue after the colon defines the word: "nothing exaggerated or softened, every detail drawn from reality". That is a portrayal true to life, so "faithful" is the precise word.',
       expWrong:{
         A:'“whimsical” (caprichoso, fantasioso) choca con “sacado directamente de la realidad”.',
-        B:'“nostalgic” (nostálgico) añade una emoción que el texto no menciona; el foco es la exactitud, no la añoranza.',
+        B:'"nostalgic" adds an emotion the text never mentions; the focus is accuracy, not longing.',
         D:'“ambiguous” (ambiguo) contradice la pista: si nada se exagera ni suaviza y todo viene de la realidad, no hay ambigüedad.'
       },
       tip:'When there is a colon, what follows almost always DEFINES the blank. Here "nothing exaggerated… drawn from reality" = true to life → "faithful".'

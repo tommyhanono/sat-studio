@@ -14,11 +14,11 @@
         stem:'The polynomial p is defined by p(x) = (x − 3)²(x + 1)(x − 5). At how many distinct values of x does the graph of y = p(x) touch the x-axis without crossing it?',
         choices:{A:'1', B:'2', C:'3', D:'0'},
         correct:'A',
-        expCorrect:'Un cero con multiplicidad PAR hace que la gráfica toque el eje x y rebote (no lo cruza); uno con multiplicidad IMPAR lo cruza. Los ceros son x = 3 (multiplicidad 2, par → toca), x = −1 (multiplicidad 1, cruza) y x = 5 (multiplicidad 1, cruza). Solo x = 3 toca sin cruzar, así que la respuesta es 1.',
+        expCorrect:'A zero with EVEN multiplicity makes the graph touch the x-axis and bounce back (it does not cross it); one with ODD multiplicity crosses. The zeros are x = 3 (multiplicity 2, even → touches), x = −1 (multiplicity 1, crosses) and x = 5 (multiplicity 1, crosses). Only x = 3 touches without crossing, so the answer is 1.',
         expWrong:{
-          B:'2 contaría dos ceros que rebotan, pero solo (x − 3)² tiene multiplicidad par. Los factores (x + 1) y (x − 5) cruzan el eje.',
-          C:'3 es el total de ceros distintos, no cuántos rebotan. Solo el de multiplicidad par toca sin cruzar.',
-          D:'0 diría que la gráfica nunca toca el eje, pero (x − 3)² sí lo toca en x = 3.'
+          B:'2 would count two bouncing zeros, but only (x − 3)² has even multiplicity. The factors (x + 1) and (x − 5) cross the axis.',
+          C:'3 is the total number of distinct zeros, not how many bounce. Only the one with even multiplicity touches without crossing.',
+          D:'0 would say the graph never touches the axis, but (x − 3)² does touch it at x = 3.'
         },
         tip:'Multiplicidad PAR → toca y rebota (no cruza). Multiplicidad IMPAR → cruza el eje. Cuenta solo los factores elevados a potencia par.'
       },
@@ -33,13 +33,13 @@
           D:'As x → −∞, f(x) → +∞; and as x → +∞, f(x) → −∞'
         },
         correct:'D',
-        expCorrect:'El comportamiento en los extremos lo manda el término de mayor grado, −2x³. El grado es impar y el coeficiente principal es negativo, así que los extremos van en sentidos opuestos y con signo invertido: cuando x → −∞, −2x³ → +∞; cuando x → +∞, −2x³ → −∞.',
+        expCorrect:'End behavior is governed by the highest-degree term, −2x³. The degree is odd and the leading coefficient is negative, so the ends go in opposite directions with the sign flipped: as x → −∞, −2x³ → +∞; as x → +∞, −2x³ → −∞.',
         expWrong:{
-          A:'Esto describe un cúbico con coeficiente principal POSITIVO. El −2 invierte los dos extremos.',
-          B:'Los dos extremos hacia +∞ corresponden a un grado PAR (como x²), no a un cúbico. Un grado impar da extremos opuestos.',
-          C:'Los dos extremos hacia −∞ también son de grado par (con coeficiente negativo). Un cúbico nunca manda ambos extremos al mismo lado.'
+          A:'This describes a cubic with a POSITIVE leading coefficient. The −2 flips both ends.',
+          B:'Both ends heading to +∞ belongs to an EVEN degree (like x²), not a cubic. An odd degree gives opposite ends.',
+          C:'Both ends heading to −∞ is also even degree (with a negative coefficient). A cubic never sends both ends the same way.'
         },
-        tip:'Solo importa el término principal. Grado impar → extremos opuestos; grado par → extremos iguales. Coeficiente negativo invierte todo. Aquí −2x³: sube a la izquierda, baja a la derecha.'
+        tip:'Only the leading term matters. Odd degree → opposite ends; even degree → matching ends. A negative coefficient flips everything. Here −2x³: up on the left, down on the right.'
       },
       {
         id:'HMP-03', type:'mc', domain:'Advanced Math', difficulty:'Difícil',
@@ -47,13 +47,13 @@
         stem:'When the polynomial p(x) = 2x³ − 3x² + kx − 5 is divided by (x − 2), the remainder is 7. What is the value of the constant k?',
         choices:{A:'2', B:'3', C:'4', D:'6'},
         correct:'C',
-        expCorrect:'Por el teorema del residuo, el residuo al dividir entre (x − 2) es p(2). Entonces p(2) = 2(8) − 3(4) + 2k − 5 = 16 − 12 + 2k − 5 = 2k − 1. Igualas a 7: 2k − 1 = 7 → 2k = 8 → k = 4. (Comprobación: 16 − 12 + 8 − 5 = 7 ✓.)',
+        expCorrect:'By the remainder theorem, the remainder when dividing by (x − 2) is p(2). So p(2) = 2(8) − 3(4) + 2k − 5 = 16 − 12 + 2k − 5 = 2k − 1. Set it equal to 7: 2k − 1 = 7 → 2k = 8 → k = 4. (Check: 16 − 12 + 8 − 5 = 7 ✓.)',
         expWrong:{
           A:'2 es el valor que sustituyes (x = 2), no el resultado de despejar k.',
-          B:'3 sale de un error aritmético; al sustituir bien, 2k − 1 = 7 obliga a k = 4.',
-          D:'6 probablemente viene de olvidar el −1 (poner 2k = 12). El término independiente deja 2k − 1, no 2k.'
+          B:'3 comes from an arithmetic slip; substituting correctly, 2k − 1 = 7 forces k = 4.',
+          D:'6 probably comes from dropping the −1 (writing 2k = 12). The constant term leaves 2k − 1, not 2k.'
         },
-        tip:'Teorema del residuo: el residuo al dividir p(x) entre (x − a) es p(a). Evalúa p(2), iguálalo al residuo dado y despeja. Nada de división larga.'
+        tip:'Remainder theorem: the remainder when dividing p(x) by (x − a) is p(a). Evaluate p(2), set it equal to the given remainder and solve. No long division needed.'
       },
       {
         id:'HMP-04', type:'mc', domain:'Advanced Math', difficulty:'Difícil',
@@ -61,13 +61,13 @@
         stem:'The expression (x + 3) is a factor of the polynomial p(x) = x³ + 2x² − 5x + c, where c is a constant. What is the value of c?',
         choices:{A:'6', B:'12', C:'−3', D:'−6'},
         correct:'D',
-        expCorrect:'Por el teorema del factor, si (x + 3) es factor entonces p(−3) = 0. Sustituye: (−3)³ + 2(−3)² − 5(−3) + c = −27 + 18 + 15 + c = 6 + c. Igualas a 0: 6 + c = 0 → c = −6. (Comprobación: −27 + 18 + 15 − 6 = 0 ✓.)',
+        expCorrect:'By the factor theorem, if (x + 3) is a factor then p(−3) = 0. Substitute: (−3)³ + 2(−3)² − 5(−3) + c = −27 + 18 + 15 + c = 6 + c. Set it equal to 0: 6 + c = 0 → c = −6. (Check: −27 + 18 + 15 − 6 = 0 ✓.)',
         expWrong:{
-          A:'6 es el resultado de la parte numérica (−27 + 18 + 15) antes de despejar; c debe cancelar ese 6, así que c = −6.',
+          A:'6 is the result of the numeric part (−27 + 18 + 15) before solving; c has to cancel that 6, so c = −6.',
           B:'12 no cumple p(−3) = 0. Al sustituir x = −3 queda 6 + c, y solo c = −6 lo anula.',
-          C:'−3 es el valor de x que usas (la raíz), no el valor de c.'
+          C:'−3 is the value of x you use (the root), not the value of c.'
         },
-        tip:'Teorema del factor: (x − a) es factor ⇔ p(a) = 0. Aquí el factor es (x + 3), así que a = −3. Evalúa p(−3), iguala a 0 y despeja c.'
+        tip:'Factor theorem: (x − a) is a factor ⇔ p(a) = 0. Here the factor is (x + 3), so a = −3. Evaluate p(−3), set it to 0 and solve for c.'
       },
       {
         id:'HMP-05', type:'mc', domain:'Advanced Math', difficulty:'Difícil',
@@ -75,27 +75,27 @@
         stem:'Which of the following is equivalent to (x² − 9) / (x² − x − 6), where x ≠ 3 and x ≠ −2?',
         choices:{A:'(x − 3)/(x + 2)', B:'(x − 3)/(x − 2)', C:'(x + 3)/(x + 2)', D:'(x + 3)/(x − 2)'},
         correct:'C',
-        expCorrect:'Factoriza arriba y abajo: x² − 9 = (x − 3)(x + 3) y x² − x − 6 = (x − 3)(x + 2). El factor común (x − 3) se cancela, quedando (x + 3)/(x + 2). (Comprobación con x = 0: original = −9/−6 = 3/2; simplificado = 3/2 ✓.)',
+        expCorrect:'Factor the top and the bottom: x² − 9 = (x − 3)(x + 3) and x² − x − 6 = (x − 3)(x + 2). The common factor (x − 3) cancels, leaving (x + 3)/(x + 2). (Check with x = 0: original = −9/−6 = 3/2; simplified = 3/2 ✓.)',
         expWrong:{
           A:'(x − 3)/(x + 2) cancela el factor equivocado: se cancela (x − 3), no (x + 3). Arriba queda (x + 3).',
           B:'(x − 3)/(x − 2) factoriza mal el denominador; x² − x − 6 = (x − 3)(x + 2), no (x − 2)(algo).',
-          D:'(x + 3)/(x − 2) tiene el denominador equivocado: el factor que sobra abajo es (x + 2), no (x − 2).'
+          D:'(x + 3)/(x − 2) has the wrong denominator: the factor left on the bottom is (x + 2), not (x − 2).'
         },
-        tip:'Factoriza numerador y denominador por separado, cancela SOLO factores idénticos. Diferencia de cuadrados: x² − 9 = (x − 3)(x + 3).'
+        tip:'Factor the numerator and denominator separately, and cancel ONLY identical factors. Difference of squares: x² − 9 = (x − 3)(x + 3).'
       },
       {
         id:'HMP-06', type:'mc', domain:'Advanced Math', difficulty:'Difícil',
-        skill:'Ecuaciones racionales (soluciones extrañas)',
+        skill:'Rational equations (extraneous solutions)',
         stem:'What are all real solutions to the equation  12/(x² − 4) + 1 = 3/(x − 2) ?',
         choices:{A:'x = 1 only', B:'x = 2 only', C:'x = 1 and x = 2', D:'There is no real solution'},
         correct:'A',
-        expCorrect:'Como x² − 4 = (x − 2)(x + 2), multiplica todo por (x − 2)(x + 2): 12 + (x² − 4) = 3(x + 2) → x² + 8 = 3x + 6 → x² − 3x + 2 = 0 → (x − 1)(x − 2) = 0 → x = 1 o x = 2. Pero x = 2 anula los denominadores, así que es una solución EXTRAÑA y se descarta. Queda solo x = 1. (Comprobación x = 1: 12/(−3) + 1 = −3, y 3/(−1) = −3 ✓.)',
+        expCorrect:'Since x² − 4 = (x − 2)(x + 2), multiply everything by (x − 2)(x + 2): 12 + (x² − 4) = 3(x + 2) → x² + 8 = 3x + 6 → x² − 3x + 2 = 0 → (x − 1)(x − 2) = 0 → x = 1 or x = 2. But x = 2 zeroes the denominators, so it is an EXTRANEOUS solution and gets discarded. Only x = 1 is left. (Check x = 1: 12/(−3) + 1 = −3, and 3/(−1) = −3 ✓.)',
         expWrong:{
-          B:'x = 2 hace cero los denominadores (x − 2 y x² − 4), así que no está en el dominio: es solución extraña, no válida.',
-          C:'x = 1 y x = 2 incluye la raíz extraña. Siempre revisa que ninguna solución anule un denominador.',
-          D:'Sí hay solución: x = 1 funciona perfectamente. Solo x = 2 se descarta.'
+          B:'x = 2 zeroes the denominators (x − 2 and x² − 4), so it is not in the domain: it is an extraneous solution, not a valid one.',
+          C:'x = 1 and x = 2 includes the extraneous root. Always check that no solution zeroes a denominator.',
+          D:'There is a solution: x = 1 works perfectly. Only x = 2 gets discarded.'
         },
-        tip:'En ecuaciones racionales, resuelve normal PERO descarta cualquier valor que anule un denominador. Esas son soluciones extrañas. Aquí x = 2 se cae.'
+        tip:'In rational equations, solve as usual BUT discard any value that zeroes a denominator. Those are extraneous solutions. Here x = 2 falls out.'
       },
       {
         id:'HMP-07', type:'mc', domain:'Advanced Math', difficulty:'Difícil',
@@ -103,13 +103,13 @@
         stem:'Which of the following is equivalent to (27x⁶)^(2/3), where x > 0?',
         choices:{A:'729x⁴', B:'18x⁴', C:'9x⁹', D:'9x⁴'},
         correct:'D',
-        expCorrect:'Reparte el exponente 2/3 a cada factor: 27^(2/3) · (x⁶)^(2/3). Como 27 = 3³, tenemos 27^(2/3) = (3³)^(2/3) = 3² = 9. Y (x⁶)^(2/3) = x^(6·2/3) = x⁴. El resultado es 9x⁴. (Comprobación con x = 1: (27)^(2/3) = 9 ✓.)',
+        expCorrect:'Distribute the exponent 2/3 to each factor: 27^(2/3) · (x⁶)^(2/3). Since 27 = 3³, we get 27^(2/3) = (3³)^(2/3) = 3² = 9. And (x⁶)^(2/3) = x^(6·2/3) = x⁴. The result is 9x⁴. (Check with x = 1: (27)^(2/3) = 9 ✓.)',
         expWrong:{
-          A:'729x⁴ eleva 27 al cuadrado (27² = 729) sin sacar antes la raíz cúbica. El 2/3 es raíz cúbica y luego cuadrado: 27^(2/3) = 9.',
-          B:'18x⁴ multiplica 27 · (2/3) = 18, tratando el exponente como si fuera un factor. Los exponentes no se multiplican con la base así.',
+          A:'729x⁴ squares 27 (27² = 729) without taking the cube root first. The 2/3 is a cube root and then a square: 27^(2/3) = 9.',
+          B:'18x⁴ multiplies 27 · (2/3) = 18, treating the exponent as a factor. Exponents do not multiply the base like that.',
           C:'9x⁹ multiplica los exponentes de x mal: 6 · (2/3) = 4, no 9.'
         },
-        tip:'a^(m/n) = raíz n-ésima de a, elevada a m. Reparte el exponente a cada factor. Con potencias de x, multiplica los exponentes: (x⁶)^(2/3) = x⁴.'
+        tip:'a^(m/n) = the nth root of a, raised to m. Distribute the exponent to each factor. With powers of x, multiply the exponents: (x⁶)^(2/3) = x⁴.'
       },
       {
         id:'HMP-08', type:'mc', domain:'Advanced Math', difficulty:'Difícil',
@@ -117,17 +117,17 @@
         stem:'Which of the following is equivalent to (x⁻³ y²) / (x⁻⁵ y⁻¹), where x > 0 and y > 0?',
         choices:{A:'x⁸y', B:'x²y³', C:'y³/x⁸', D:'x²y'},
         correct:'B',
-        expCorrect:'Al dividir potencias de la misma base se restan los exponentes. Para x: −3 − (−5) = −3 + 5 = 2, así que x². Para y: 2 − (−1) = 3, así que y³. El resultado es x²y³. (Comprobación con x = y = 2: arriba 2⁻³·2² = 2⁻¹ = 1/2; abajo 2⁻⁵·2⁻¹ = 2⁻⁶ = 1/64; cociente = 64/2 = 32 = 2⁵ = x²y³ con 2²·2³ = 2⁵ ✓.)',
+        expCorrect:'When dividing powers of the same base you subtract exponents. For x: −3 − (−5) = −3 + 5 = 2, so x². For y: 2 − (−1) = 3, so y³. The result is x²y³. (Check with x = y = 2: top 2⁻³·2² = 2⁻¹ = 1/2; bottom 2⁻⁵·2⁻¹ = 2⁻⁶ = 1/64; quotient = 64/2 = 32 = 2⁵ = x²y³ since 2²·2³ = 2⁵ ✓.)',
         expWrong:{
           A:'x⁸y suma los exponentes de x (−3 + 5 = ... da 2, no 8) y maneja mal la y. Al dividir se RESTAN: −3 − (−5) = 2.',
-          C:'y³/x⁸ deja la x en el denominador con exponente 8; pero −3 − (−5) = +2, así que x sube al numerador como x².',
-          D:'x²y olvida el signo del exponente de y: 2 − (−1) = 3, así que es y³, no y.'
+          C:'y³/x⁸ leaves the x in the denominator with exponent 8; but −3 − (−5) = +2, so the x moves up to the numerator as x².',
+          D:'x²y drops the sign on the y exponent: 2 − (−1) = 3, so it is y³, not y.'
         },
-        tip:'Al dividir bases iguales, RESTA exponentes: base^(arriba − abajo). Cuidado con los dobles negativos: restar un negativo suma.'
+        tip:'When dividing equal bases, SUBTRACT exponents: base^(top − bottom). Careful with double negatives: subtracting a negative adds.'
       },
       {
         id:'HMP-09', type:'mc', domain:'Advanced Math', difficulty:'Difícil',
-        skill:'Modelo exponencial vs. polinómico',
+        skill:'Exponential vs. polynomial model',
         stem:'The functions f and g are defined by f(x) = 100x and g(x) = 2^x, for x > 0. Which statement best describes how the values of f and g compare as x increases?',
         choices:{
           A:'f(x) is greater than g(x) for every value of x > 0',
@@ -136,21 +136,21 @@
           D:'g(x) is greater than f(x) for every value of x > 0'
         },
         correct:'B',
-        expCorrect:'f crece de forma LINEAL (constante 100 por unidad) y g crece de forma EXPONENCIAL (se duplica cada unidad). Al principio la lineal gana: en x = 5, f = 500 pero g = 32. Sin embargo, un modelo exponencial siempre termina superando a uno lineal: en x = 10, g = 1024 > f = 1000, y de ahí en adelante g se queda por encima. Por eso g eventualmente supera y se mantiene mayor.',
+        expCorrect:'f grows LINEARLY (a constant 100 per unit) and g grows EXPONENTIALLY (doubling every unit). At first the linear one wins: at x = 5, f = 500 but g = 32. However, an exponential model always ends up overtaking a linear one: at x = 10, g = 1024 > f = 1000, and from there on g stays above. That is why g eventually overtakes and stays greater.',
         expWrong:{
-          A:'Falso: aunque f gana al inicio, g la supera para x grande (por ejemplo en x = 10). La exponencial no se queda atrás para siempre.',
-          C:'No son iguales para todo x; sus valores solo se cruzan en un punto, no coinciden en todos lados.',
+          A:'False: even though f wins at first, g overtakes it for large x (at x = 10, for instance). The exponential does not stay behind forever.',
+          C:'They are not equal for every x; their values only cross at one point, they do not coincide everywhere.',
           D:'Falso al inicio: en x = 1, f = 100 pero g = 2, así que f empieza mucho más grande. g no es mayor "siempre".'
         },
-        tip:'Regla clave del SAT: una función exponencial creciente SIEMPRE termina superando a cualquier lineal o polinómica, aunque arranque más abajo. "Eventualmente" es la palabra que delata la respuesta.'
+        tip:'Key SAT rule: a growing exponential function ALWAYS ends up overtaking any linear or polynomial one, even if it starts out lower. "Eventually" is the word that gives the answer away.'
       },
       {
         id:'HMP-10', type:'mc', domain:'Advanced Math', difficulty:'Difícil',
-        skill:'Composición de funciones',
+        skill:'Composition of functions',
         stem:'The functions f and g are defined by f(x) = 3x − 4 and g(x) = x² + 2. What is the value of g(f(3))?',
         choices:{A:'11', B:'29', C:'27', D:'23'},
         correct:'C',
-        expCorrect:'Trabaja de adentro hacia afuera. Primero f(3) = 3(3) − 4 = 5. Luego g(5) = 5² + 2 = 25 + 2 = 27. Entonces g(f(3)) = 27.',
+        expCorrect:'Work from the inside out. First f(3) = 3(3) − 4 = 5. Then g(5) = 5² + 2 = 25 + 2 = 27. So g(f(3)) = 27.',
         expWrong:{
           A:'11 es g(3) = 3² + 2, es decir, aplicaste solo g al 3 y olvidaste evaluar f primero.',
           B:'29 es f(g(3)) = 3(11) − 4, o sea invertiste el orden. g(f(3)) aplica f primero, luego g.',
@@ -163,18 +163,18 @@
         skill:'Ceros de un polinomio (forma factorizada)',
         stem:'The polynomial p is defined by p(x) = x³ − 7x² + 10x. What is the greatest value of x for which p(x) = 0?',
         answer:'5',
-        expCorrect:'Factoriza sacando x común: p(x) = x(x² − 7x + 10) = x(x − 2)(x − 5). Un producto es cero cuando algún factor es cero, así que los ceros son x = 0, x = 2 y x = 5. El mayor es 5. (Comprobación: p(5) = 125 − 175 + 50 = 0 ✓.) Respuesta: 5.',
+        expCorrect:'Factor out the common x: p(x) = x(x² − 7x + 10) = x(x − 2)(x − 5). A product is zero when some factor is zero, so the zeros are x = 0, x = 2 and x = 5. The largest is 5. (Check: p(5) = 125 − 175 + 50 = 0 ✓.) Answer: 5.',
         expWrong:{},
-        tip:'Primero saca el factor común (aquí x), luego factoriza la cuadrática que sobra. Cada factor da un cero. Piden el MAYOR, así que compara: 0, 2, 5 → 5.'
+        tip:'First factor out the common term (here x), then factor the quadratic that is left. Each factor gives a zero. They want the LARGEST, so compare: 0, 2, 5 → 5.'
       },
       {
         id:'HMP-12', type:'spr', domain:'Advanced Math', difficulty:'Difícil',
-        skill:'Teorema del factor con parámetro',
+        skill:'Factor theorem with a parameter',
         stem:'The polynomial p is defined by p(x) = x³ + ax² − 4x − 12, where a is a constant. If (x − 2) is a factor of p(x), what is the value of a?',
         answer:'3',
-        expCorrect:'Por el teorema del factor, si (x − 2) es factor entonces p(2) = 0. Sustituye: (2)³ + a(2)² − 4(2) − 12 = 8 + 4a − 8 − 12 = 4a − 12. Igualas a 0: 4a − 12 = 0 → 4a = 12 → a = 3. (Comprobación: 8 + 3(4) − 8 − 12 = 8 + 12 − 8 − 12 = 0 ✓.) Respuesta: 3.',
+        expCorrect:'By the factor theorem, if (x − 2) is a factor then p(2) = 0. Substitute: (2)³ + a(2)² − 4(2) − 12 = 8 + 4a − 8 − 12 = 4a − 12. Set it equal to 0: 4a − 12 = 0 → 4a = 12 → a = 3. (Check: 8 + 3(4) − 8 − 12 = 8 + 12 − 8 − 12 = 0 ✓.) Answer: 3.',
         expWrong:{},
-        tip:'(x − a) es factor ⇔ p(a) = 0. Aquí evalúa p(2), iguala a 0 y despeja el parámetro. Sustituir es más rápido que dividir.'
+        tip:'(x − a) is a factor ⇔ p(a) = 0. Here evaluate p(2), set it to 0 and solve for the parameter. Substituting is faster than dividing.'
       }
     ]
   });
