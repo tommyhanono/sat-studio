@@ -245,6 +245,36 @@
   .spr-preview b{color:var(--ink);font-size:1.1rem}
 
   /* drill feedback */
+  .m2-box{background:#fff;border:1px solid #e3e6ef;border-radius:14px;padding:20px 22px;margin:22px 0;box-shadow:var(--sombra)}
+  .m2-box h3{font-family:var(--serif);font-size:1.15rem;font-weight:700;color:var(--navy);margin-bottom:8px}
+  .m2-box .prog-hint{font-size:.85rem;color:var(--gray-mid);line-height:1.6;margin-bottom:16px}
+  .m2-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding:10px 0;border-top:1px solid var(--gray-strip)}
+  .m2-row:first-of-type{border-top:none}
+  .m2-sec{flex:0 0 150px;font-weight:700;font-size:.9rem}
+  .m2-pct{flex:0 0 52px;font-family:var(--serif);font-size:1.15rem;font-weight:700;color:var(--navy);font-variant-numeric:tabular-nums}
+  .m2-bar{position:relative;flex:1 1 160px;display:block;height:10px;background:#e8eaf2;border-radius:999px;overflow:visible}
+  .m2-fill{display:block;height:100%;background:var(--amber);border-radius:999px}
+  .m2-row.ok .m2-fill{background:var(--green)}
+  .m2-mark{position:absolute;top:-4px;width:2px;height:18px;background:var(--navy);border-radius:1px}
+  .m2-note{flex:1 1 100%;font-size:.82rem;color:var(--gray-mid);line-height:1.55}
+  .m2-row.ok .m2-note{color:var(--green)}
+  @media(max-width:620px){ .m2-sec{flex:1 1 100%} .m2-bar{flex:1 1 100%} }
+  .res-conf-box{background:#fff;border:1px solid #e3e6ef;border-left:4px solid var(--gold);border-radius:12px;
+    padding:16px 20px;margin:18px 0;box-shadow:var(--sombra)}
+  .res-conf-box.clean{border-left-color:var(--green)}
+  .res-conf-box h4{font-family:var(--serif);font-size:1.05rem;font-weight:700;color:var(--navy);margin-bottom:9px}
+  .res-conf-box ul{margin:0;padding-left:20px}
+  .res-conf-box li{font-size:.9rem;line-height:1.65;margin-bottom:7px}
+  .res-conf-box p{font-size:.9rem;line-height:1.65}
+  .conf-box{border:1px solid var(--gold);background:var(--gold-soft);border-radius:12px;padding:16px 18px;margin-top:18px}
+  .conf-q{font-size:.95rem;color:#5c4212;margin-bottom:12px}
+  .conf-btns{display:flex;gap:10px;flex-wrap:wrap}
+  .conf-b{min-height:44px;flex:1 1 120px;border-radius:999px;padding:10px 18px;font-size:.92rem;font-weight:700;
+    font-family:var(--sans);cursor:pointer;border:1px solid var(--gray-line);background:#fff;color:var(--ink)}
+  .conf-b:hover{border-color:var(--navy);background:#fff}
+  .conf-g:hover{border-color:var(--red);color:var(--red)}
+  .conf-s:hover{border-color:var(--green);color:var(--green)}
+  .conf-why{font-size:.8rem;color:#6b5220;margin-top:12px;line-height:1.55}
   .drill-card{max-width:640px;border-radius:12px;border:1px solid var(--gray-line);border-left:6px solid var(--green);padding:16px 18px;margin:8px 0 20px;font-size:.94rem;line-height:1.6;background:#fff}
   .drill-card.bad{border-left-color:var(--red)}
   .drill-card h4{font-size:.85rem;margin:10px 0 4px}
@@ -1183,6 +1213,7 @@
       <textarea id="summary-text" readonly aria-label="Session summary to copy"></textarea>
       <button class="copy-btn" id="btn-copy">Copy summary</button>
     </div>
+    <div id="res-conf"></div>
     <div id="res-list"></div>
   </div>
 </div>
@@ -1758,11 +1789,19 @@ function latestResults(){ // qid -> {ok, ...} from most recent attempt
   });
   return map;
 }
+/* La bolsa de repaso: lo que falló, MÁS lo que acertó adivinando.
+   Acertar una que adivinaste no es saberla, y la pantalla de resultados le
+   promete al estudiante que esas vuelven. Esto es lo que cumple la promesa.
+   Una respuesta sin `conf` (de antes de que existiera la pregunta de confianza,
+   o de un examen cronometrado donde no se pregunta) cuenta como acierto normal:
+   no se inventa un dato que no se tomó. */
 function missedPool(){
   var map = latestResults();
   var pool = [];
   Object.keys(map).forEach(function(qid){
-    if(!map[qid].ok && QINDEX[qid]) pool.push(QINDEX[qid]);
+    var r = map[qid];
+    if(!QINDEX[qid]) return;
+    if(!r.ok || r.conf === 'guess') pool.push(QINDEX[qid]);
   });
   return pool;
 }
@@ -1982,6 +2021,33 @@ function planBuildSet(keys, opts){
       });
     });
   }
+  /* INTERCALADO. Hasta acá las preguntas salen agrupadas por tema: doce de
+     círculos, después doce de comas. Ese orden se SIENTE mejor y funciona peor,
+     porque el estudiante entra en piloto automático y resuelve sin decidir qué
+     método usa — y decidir el método es justo la parte difícil del examen real.
+     Se mezcla en zig-zag entre los temas elegidos, conservando dentro de cada
+     tema el orden pedagógico de arriba (primero lo fallado).
+     Ojo: esto baja el porcentaje de la sesión. Es esperado, y la pantalla se lo
+     dice al estudiante para que no lo lea como retroceso. */
+  if(keys.length > 1){
+    var porK = {};
+    elegidas.forEach(function(q){
+      var t = planTopicOf(q).filter(function(x){ return keys.indexOf(x.key) >= 0; })[0];
+      var k = t ? t.key : '_';
+      (porK[k] = porK[k] || []).push(q);
+    });
+    var cubos = Object.keys(porK).map(function(k){ return porK[k]; });
+    var zig = [];
+    for(var r = 0; zig.length < elegidas.length; r++){
+      var metio = false;
+      for(var c = 0; c < cubos.length; c++){
+        if(cubos[c][r]){ zig.push(cubos[c][r]); metio = true; }
+      }
+      if(!metio) break;   // seguro contra bucle infinito
+    }
+    if(zig.length === elegidas.length) elegidas = zig;
+  }
+
   var titulos = keys.map(function(k){
     var t = PLAN_TOPICS.filter(function(x){ return x.key === k; })[0];
     return t ? t.t : k;
@@ -2093,7 +2159,12 @@ function planHTML(){
         '<div class="plan-sum-n"><b>' + prev.questions.length + '</b> questions · ~' + prev.minutes + ' min · ' +
           (p.modo === 'drill' ? 'no timer' : 'timed') + '</div>' +
         '<div class="plan-chips">' + chips + '</div>' +
-        '<p class="plan-note">Questions you already missed come first, then ones you have never seen.</p>' +
+        '<p class="plan-note">Questions you already missed come first, then ones you have never seen.' +
+          (p.elegidos.length > 1
+            ? ' Your topics are <b>mixed together on purpose</b>, not one block each — it feels harder and it is ' +
+              'what makes it stick, because you have to decide which method to use before you can use it. ' +
+              'Expect a lower percentage than a single-topic set. That is the point.'
+            : '') + '</p>' +
         '<button class="btn-primary plan-go" id="plan-crear" type="button">Build my test →</button>' +
       '</div>';
   }
@@ -3828,7 +3899,14 @@ function _beginSession(set, mode){
     answers: {}, marked: {}, struck: {}, elim: {}, checked: {},
     annot: {}, secondsLeft: set.minutes * 60, elapsed: 0,
     timerId: null, timerHidden: false, expired: false, timeUsed: 0,
-    stacked: false, saved: false, elimGlobal: false
+    stacked: false, saved: false, elimGlobal: false,
+    /* conf: qué tan seguro estaba el estudiante ANTES de ver la respuesta.
+       Sin esto, una adivinada con suerte cuenta igual que una sabida, y el plan
+       de mejora cree que domina algo que no domina — que es el error de
+       diagnóstico más caro que puede tener una app de práctica.
+       tiempos: milisegundos por pregunta. En un examen con reloj, "la sé pero
+       tardo tres minutos" es un error que todavía no ocurrió. */
+    conf: {}, pendienteConf: false, tiempos: {}, tqDesde: Date.now()
   };
   mostrarSolo('view-app');
   $('#hdr-title').textContent = set.title + (mode === 'drill' ? ' — Drill' : '') + (MOCK && MOCK.active ? '' : '');
@@ -3949,6 +4027,23 @@ function renderQuestion(){
     html += '</ul>';
   }
 
+  /* Antes de revelar, una pregunta: ¿qué tan seguro estabas?
+     Es el momento en que la respuesta importa (después de decidir, antes de
+     saber) y es el dato que separa "lo sé" de "le atiné". Solo en Drill: en el
+     examen cronometrado preguntarlo rompería la simulación. */
+  if(S.mode === 'drill' && !checked && S.pendienteConf && S.answers[q.id]){
+    html += '<div class="conf-box" role="group" aria-label="How sure are you?">' +
+      '<p class="conf-q">Before you see the answer — <b>how sure are you?</b></p>' +
+      '<div class="conf-btns">' +
+        '<button type="button" class="conf-b conf-g" data-conf="guess">Guessed</button>' +
+        '<button type="button" class="conf-b conf-u" data-conf="unsure">Not sure</button>' +
+        '<button type="button" class="conf-b conf-s" data-conf="sure">Sure</button>' +
+      '</div>' +
+      '<p class="conf-why">This is what tells your plan the difference between a topic you know ' +
+        'and one you got lucky on.</p>' +
+    '</div>';
+  }
+
   if(S.mode === 'drill' && checked){
     html += drillCardHTML(q);
   }
@@ -3997,6 +4092,15 @@ function drillCardHTML(q){
   return body;
 }
 function wireQuestion(q, kind){
+  Array.prototype.forEach.call(document.querySelectorAll('#pane-question [data-conf]'), function(b){
+    b.addEventListener('click', function(){
+      S.conf[q.id] = b.getAttribute('data-conf');
+      S.pendienteConf = false;
+      S.checked[q.id] = true;
+      cerrarTiempoQ();
+      renderQuestion();
+    });
+  });
   $('#btn-mark').addEventListener('click', function(){
     S.marked[q.id] = !S.marked[q.id];
     if(!S.marked[q.id]) delete S.marked[q.id];
@@ -4056,7 +4160,10 @@ function renderFooter(){
   var q = S.set.questions[S.idx];
   if(S.screen === 'review'){ next.textContent = 'Submit Test'; next.disabled = false; }
   else if(S.mode === 'drill'){
-    if(!S.checked[q.id]){ next.textContent = 'Check'; next.disabled = !S.answers[q.id]; }
+    if(!S.checked[q.id]){
+      next.textContent = S.pendienteConf ? 'Pick one above' : 'Check';
+      next.disabled = !S.answers[q.id] || S.pendienteConf;
+    }
     else { next.textContent = (S.idx === n - 1) ? 'Finish' : 'Next'; next.disabled = false; }
   } else {
     next.textContent = (S.idx === n - 1) ? 'Review' : 'Next';
@@ -4080,8 +4187,23 @@ function renderNavGrid(sel){
     btn.addEventListener('click', function(){ goToQuestion(parseInt(btn.getAttribute('data-goto'),10)); });
   });
 }
+/* Cierra el reloj de la pregunta que se está dejando y abre el de la siguiente.
+   Se llama en cada cambio de pregunta y al terminar. */
+function cerrarTiempoQ(){
+  if(!S || !S.set) return;
+  var q = S.set.questions[S.idx];
+  if(!q) return;
+  var ms = Date.now() - (S.tqDesde || Date.now());
+  // Un salto absurdo es alguien que dejó la pestaña abierta y se fue a almorzar:
+  // se corta a 5 minutos para que no contamine el promedio.
+  if(ms > 0) S.tiempos[q.id] = (S.tiempos[q.id] || 0) + Math.min(ms, 300000);
+  S.tqDesde = Date.now();
+}
+
 function goToQuestion(i){
+  cerrarTiempoQ();
   S.idx = i;
+  S.pendienteConf = false;
   closeNav();
   showTestPanes();
   renderQuestion();
@@ -4124,6 +4246,7 @@ function finishSession(expired){
   if(!S || S.screen === 'results') return;
   if(S.timerId){ clearInterval(S.timerId); S.timerId = null; }
   S.expired = !!expired;
+  cerrarTiempoQ();
   S.timeUsed = S.mode === 'exam' ? (S.set.minutes * 60 - S.secondsLeft) : S.elapsed;
   S.screen = 'results';
   var g = grade();
@@ -4135,7 +4258,9 @@ function finishSession(expired){
       score: g.correct, total: S.set.questions.length, timeUsed: S.timeUsed, expired: S.expired,
       perQuestion: g.results.map(function(r){
         return { qid: r.q.id, setId: r.q._setId || S.set.id, domain: r.q.domain, skill: r.q.skill,
-                 difficulty: r.q.difficulty, ok: r.ok, user: r.user, correct: r.q.type === 'spr' ? r.q.answer : r.q.correct };
+                 difficulty: r.q.difficulty, ok: r.ok, user: r.user, correct: r.q.type === 'spr' ? r.q.answer : r.q.correct,
+                 conf: S.conf[r.q.id] || null,
+                 ms: S.tiempos[r.q.id] || null };
       })
     });
   }
@@ -4164,6 +4289,45 @@ function renderResults(g){
   DIFFS.forEach(function(d){
     if(g.byDiff[d][1]) meta += '<span class="chip">' + nivelLabel(d) + ': ' + g.byDiff[d][0] + '/' + g.byDiff[d][1] + '</span>';
   });
+  /* Lo que la confianza destapa, y que el porcentaje solo esconde:
+     · acertaste pero adivinaste → el plan NO puede contarlo como dominio
+     · estabas seguro y fallaste → es el error más caro y el que más enseña
+     · acertaste pero tardaste mucho → en un examen con reloj, eso es un error
+       que todavía no ocurrió
+     Solo aparece si hay algo que decir. Un panel que siempre dice "0 de 0" es
+     ruido que el estudiante aprende a saltarse. */
+  if(S.mode === 'drill'){
+    var adiv = 0, segFallo = 0, lentas = 0, conConf = 0, sumaMs = 0, nMs = 0;
+    g.results.forEach(function(r){
+      var c = S.conf[r.q.id], ms = S.tiempos[r.q.id] || 0;
+      if(c) conConf++;
+      if(r.ok && (c === 'guess' || c === 'unsure')) adiv++;
+      if(!r.ok && c === 'sure') segFallo++;
+      if(ms){ sumaMs += ms; nMs++; }
+    });
+    var prom = nMs ? sumaMs / nMs : 0;
+    g.results.forEach(function(r){
+      var ms = S.tiempos[r.q.id] || 0;
+      // "lenta" = correcta y al menos 75 % por encima del promedio de la sesión
+      if(r.ok && prom && ms > prom * 1.75 && ms > 60000) lentas++;
+    });
+    var avisos = [];
+    if(adiv) avisos.push('<li>' + (adiv === g.correct
+        ? (g.correct === 1 ? 'The one you got right was a guess' : 'All <b>' + adiv + '</b> you got right were guesses')
+        : '<b>' + adiv + '</b> of the ' + g.correct + ' you got right ' + (adiv === 1 ? 'was a guess' : 'were guesses')) +
+      '. Those do not count as mastered — they are back in your review pool.</li>');
+    if(segFallo) avisos.push('<li><b>' + segFallo + '</b> you were <b>sure</b> about and still missed. ' +
+      'Read those explanations first: a confident mistake is the one worth the most.</li>');
+    if(lentas) avisos.push('<li><b>' + lentas + '</b> you got right but took far longer than your own average. ' +
+      'On a timed test, “I know it but it takes me three minutes” is a mistake that has not happened yet.</li>');
+    $('#res-conf').innerHTML = avisos.length
+      ? '<div class="res-conf-box"><h4>What the percentage hides</h4><ul>' + avisos.join('') + '</ul></div>'
+      : (conConf ? '<div class="res-conf-box clean"><h4>Clean run</h4><p>No lucky guesses, no confident mistakes, ' +
+          'nothing that took you much longer than usual. That is what solid looks like.</p></div>' : '');
+  } else {
+    $('#res-conf').innerHTML = '';
+  }
+
   $('#res-meta').innerHTML = meta;
   var est = estimateScore(g.results);
   if(est !== null && S.set.section !== 'mixed'){
@@ -4757,6 +4921,47 @@ function renderProgress(){
         '<div class="s">' + (dl === null ? 'no date set' : fwBonito(examDateStr())) + '</div></div>' +
     '</div>';
 
+  /* ---- ¿Entras al Módulo 2 difícil? ----
+     Es la única métrica accionable de este examen y la app no la estaba diciendo.
+     El Digital SAT rutea según el Módulo 1, y el módulo fácil TECHA el puntaje
+     por ahí de 560-600 por sección: no importa lo perfecto que se conteste, el
+     techo ya está puesto. El umbral real no es público; la app usa 17/27 en
+     verbal y 16/22 en matemática, que es donde lo ubican las estimaciones
+     públicas (~70 %). Se mide sobre las preguntas de nivel Módulo 1 —Warm-up y
+     Test Level—, que es de lo que está hecho ese módulo. */
+  var M1 = { math: [0, 0], rw: [0, 0] };
+  allPQ.forEach(function(p){
+    var d = p.difficulty;
+    if(d !== 'Fácil' && d !== 'Media') return;          // el M1 no trae el tier difícil
+    var esMath = /Algebra|Advanced|Problem-Solving|Geometry|Data|Functions/.test(p.domain || '');
+    var cubo = esMath ? M1.math : M1.rw;
+    cubo[1]++; if(p.ok) cubo[0]++;
+  });
+  var UMBRAL = { math: Math.round(100 * 16 / 22), rw: Math.round(100 * 17 / 27) };   // 73 % y 63 %
+  var rutaHTML = ['math', 'rw'].map(function(sec){
+    var c = M1[sec], nom = sec === 'math' ? 'Math' : 'Reading &amp; Writing';
+    if(c[1] < 8){
+      return '<div class="m2-row"><span class="m2-sec">' + nom + '</span>' +
+        '<span class="m2-note">Answer at least 8 questions at Warm-up or Test Level to get a read.</span></div>';
+    }
+    var pct = Math.round(100 * c[0] / c[1]), u = UMBRAL[sec], dentro = pct >= u;
+    return '<div class="m2-row' + (dentro ? ' ok' : '') + '">' +
+      '<span class="m2-sec">' + nom + '</span>' +
+      '<span class="m2-pct">' + pct + '%</span>' +
+      '<span class="m2-bar"><span class="m2-fill" style="width:' + Math.min(100, pct) + '%"></span>' +
+        '<span class="m2-mark" style="left:' + u + '%" title="the hard Module 2 opens around here"></span></span>' +
+      '<span class="m2-note">' + (dentro
+        ? 'On track for the hard Module 2 — that is where 700+ lives.'
+        : 'The hard Module 2 opens around <b>' + u + '%</b>. You are ' + (u - pct) + ' points under.') +
+      '</span></div>';
+  }).join('');
+  var rutaBloque =
+    '<section class="prog-sec m2-box"><h3>Which Module 2 are you heading for?</h3>' +
+    '<p class="prog-hint">Your Module 1 decides whether Module 2 is the easy or the hard one, and the easy one ' +
+      '<b>caps your score</b> around 560–600 for that section no matter how well you answer it. This is measured ' +
+      'on your Warm-up and Test Level questions, which is what Module 1 is made of.</p>' +
+    rutaHTML + '</section>';
+
   // barras por dominio
   var porDom = {};
   allPQ.forEach(function(p){
@@ -4782,7 +4987,7 @@ function renderProgress(){
       '<td class="num">' + x.peso + '%</td><td class="num">' + x.banco + '</td></tr>';
   }).join('');
 
-  body.innerHTML = tarjetas +
+  body.innerHTML = tarjetas + rutaBloque +
     '<h3 class="prog-h">By domain</h3>' + barras +
     '<h3 class="prog-h">Every topic</h3>' +
     '<div class="prog-table-wrap"><table class="prog-table"><thead><tr><th>Topic</th><th class="num">Yours</th>' +
@@ -5835,7 +6040,11 @@ function init(){
     if(S.mode === 'drill'){
       if(!S.checked[q.id]){
         if(!S.answers[q.id]) return;
+        // Un toque más, y es el toque que crea el dato: primero la confianza,
+        // después la respuesta. Si ya la dio (volvió atrás), se revela directo.
+        if(!S.conf[q.id]){ S.pendienteConf = true; renderQuestion(); return; }
         S.checked[q.id] = true;
+        cerrarTiempoQ();
         renderQuestion();
       } else if(S.idx < n - 1) goToQuestion(S.idx + 1);
       else finishSession(false);

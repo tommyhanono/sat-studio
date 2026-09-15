@@ -13,17 +13,17 @@ window.SAT_SETS.push({
       passage:"For centuries, sailors dreaded the doldrums, a belt of ocean near the equator where the winds die away. A sailing ship that drifted into these calm waters could sit motionless for days or even weeks, its sails hanging limp. Crews rationed food and fresh water carefully, uncertain when a breeze might finally return to carry them onward.",
       stem:'Which choice best states the main idea of the text?',
       choices:{
-        A:'Sailors near the equator suffered mainly from a shortage of fresh drinking water.',
-        B:'Modern ships no longer fear the doldrums the way older sailing vessels did.',
-        C:'The equator is the most dangerous place in the ocean for any type of ship.',
+        A:'Crews caught in the doldrums had to ration their food and fresh water carefully, never knowing when a breeze would return.',
+        B:'A sailing ship that drifted into the doldrums was certain to be trapped there for several weeks.',
+        C:'The waters near the equator are the most dangerous stretch of ocean for any kind of vessel.',
         D:'The doldrums were a hazardous region for sailing ships because the lack of wind could strand them for long periods.'
       },
       correct:'D',
       expCorrect:'The text explains WHAT the doldrums are (a windless belt) and WHY sailors feared them (a ship could sit still for days or weeks). Option D joins those two ideas: the danger came from the lack of wind. That is the central idea.',
       expWrong:{
-        A:'Detail, not central idea: water and food are mentioned as an effect of the problem, not as the main topic. The focus is being stranded without wind.',
-        B:'Not supported: the text never compares them with modern ships or says the doldrums are not feared today.',
-        C:'Too broad and too extreme: the text is only about sailing ships and the lack of wind, not about the equator being “the most dangerous” place for any ship.'
+        A:'True, but a detail rather than the central idea: the rationing is one consequence the text mentions. The paragraph as a whole is about why a windless belt of ocean was dangerous.',
+        B:'It pushes a real idea into an absolute: a becalmed ship "could sit motionless for days or even weeks". The text gives a risk and a range, not a certainty of weeks.',
+        C:'Too broad and too extreme: the text covers sailing ships and the loss of wind only. It never compares the doldrums with other waters or with the risks other kinds of vessel face.'
       },
       tip:'The central idea covers the WHOLE text, not one sentence. Ask yourself: what is the entire paragraph about? Here: why the doldrums were dangerous.'
     },
@@ -33,17 +33,17 @@ window.SAT_SETS.push({
       passage:"The tuatara, a reptile found only in New Zealand, is often called a \"living fossil.\" Its body plan has changed remarkably little since the age of the dinosaurs, and it belongs to an order of reptiles whose other members died out long ago. Studying the tuatara therefore offers biologists a rare window into an ancient branch of reptile life.",
       stem:'Which choice best describes the main purpose of the text?',
       choices:{
-        A:'To argue that the tuatara is the oldest reptile currently living on Earth.',
+        A:'To argue that the tuatara is the oldest reptile now alive on Earth.',
         B:'To explain why the tuatara is valuable to scientists as a link to ancient reptiles.',
-        C:'To describe the physical appearance of the tuatara in detail.',
-        D:'To warn that the tuatara is in danger of dying out like its relatives.'
+        C:'To describe the tuatara’s body plan and how little it has changed.',
+        D:'To warn that the tuatara now faces extinction as its relatives did.'
       },
       correct:'B',
       expCorrect:'The text introduces the tuatara, says it has barely changed since the dinosaurs and that its relatives went extinct, and ends with “therefore” biologists see it as a window into an ancient lineage. The purpose is to explain why it is valuable to science.',
       expWrong:{
         A:'Not supported: it is called a “living fossil”, but the text never claims it is the OLDEST reptile alive today. That is an exaggeration.',
-        C:'The text barely describes what it looks like; it focuses on its age and its scientific value, not its appearance.',
-        D:'It contradicts the text: it says its RELATIVES went extinct, not that the tuatara is in danger of going extinct.'
+        C:'True but it answers a different question: the unchanged body plan is the premise, and the text raises it to reach the "therefore" — why biologists value the animal.',
+        D:'It contradicts the text: the other members of its ORDER died out long ago. Nothing says the tuatara itself is at risk, and warning is not the purpose here.'
       },
       tip:'“Main purpose” = why the author wrote this. The key word “therefore” at the end shows you where everything is pointing: its value to biologists.'
     },
@@ -54,16 +54,16 @@ window.SAT_SETS.push({
       stem:'Based on the text, which statement is the most reasonable inference?',
       choices:{
         A:'Planting trees along city streets can help reduce the heat people feel in urban areas.',
-        B:'Trees are the only effective way to cool down a city during hot weather.',
-        C:'Pedestrians dislike walking on any street that has no shade at all.',
-        D:'Cities with more trees have fewer residents than cities with fewer trees.'
+        B:'Planting mature trees is the only effective way to lower the temperature of a city street.',
+        C:'Pedestrians refuse to walk along any city street that offers them no shade at all.',
+        D:'Streets without trees attract far fewer pedestrians than streets lined with mature trees.'
       },
       correct:'A',
       expCorrect:'The text shows that tree-lined streets were cooler, shaded pavement absorbed less heat and people felt more comfortable. From that it reasonably follows that planting trees can lower the heat people feel in the city.',
       expWrong:{
-        B:'Too extreme: “the ONLY way” goes beyond the text. The study shows trees help, not that they are the only possible method.',
-        C:'Too broad: people reported feeling more comfortable in shade, but the text does not say they HATE any street without it.',
-        D:'Not supported: the text says nothing about how many residents cities have. That is outside information.'
+        B:'It pushes a real idea into an absolute: the study shows that shade helps, never that nothing else can cool a street. “The only way” claims more than the evidence allows.',
+        C:'Too extreme: walkers “reported feeling more comfortable” in the shade, which is a preference. Nothing says they will not use an unshaded street.',
+        D:'Not supported: the text reports how comfortable the walkers felt, not how many of them chose one street over another. Pedestrian counts are outside information.'
       },
       tip:'A good inference takes ONE small logical step from the text. Watch out for words like “only”, “always” or “never”: they are almost always traps.'
     },
@@ -93,17 +93,17 @@ window.SAT_SETS.push({
       passage:"The Arctic tern makes one of the longest migrations of any animal, flying from the Arctic to the Antarctic and back each year. Because it chases summer in both hemispheres, this small bird sees more daylight over its lifetime than almost any other creature. To complete such a journey, the tern must locate reliable feeding grounds along the way. If a key stopover is disrupted,",
       stem:'Which choice most logically completes the text?',
       choices:{
-        A:'the tern will simply stop migrating and remain in the Arctic year-round.',
+        A:'the tern will abandon the journey and remain in the Arctic all year.',
         B:'the tern may struggle to gather the energy it needs to finish its long journey.',
-        C:'the tern will experience far less daylight than other birds.',
-        D:'the tern will lay more eggs to make up for the lost distance.'
+        C:'the tern will see less daylight over its lifetime than most other birds.',
+        D:'the tern will fly a longer route the next year to compensate.'
       },
       correct:'B',
       expCorrect:'The text says the tern MUST find reliable feeding grounds to complete its journey. If a key stopover is disrupted, it follows that it would struggle to gather the energy to finish such a long trip. Option B follows directly from that idea.',
       expWrong:{
         A:'Not supported: the text gives no hint that it would stop migrating; its migration is its defining trait. That is an assumption with no basis.',
-        C:'Illogical here: the daylight comes from chasing summer in both hemispheres, not from one particular stop. Losing a stopover affects food, not hours of sun.',
-        D:'Not supported: the text never mentions eggs or breeding; laying more eggs does not “make up for” lost distance.'
+        C:'It reverses the text and answers the wrong question: the tern sees MORE daylight than almost any creature, and that comes from chasing summer in both hemispheres. A lost stopover costs food, not hours of sun.',
+        D:'Not supported: no distance is lost when a stopover fails; what is lost is the food along the way. Flying farther the next year appears nowhere in the text.'
       },
       tip:'On “complete the text”, follow the thread of the last sentence. The text tied the stopovers to the ENERGY for the journey; the answer has to close that same idea.'
     },
@@ -134,16 +134,16 @@ window.SAT_SETS.push({
       stem:'Which choice best describes the main purpose of the text?',
       choices:{
         A:'To explain how honeybees use the waggle dance to share the location of food.',
-        B:'To prove that honeybees are more intelligent than other insects.',
-        C:'To describe the shape of a honeycomb inside a beehive.',
-        D:'To argue that bees should be protected from human activity.'
+        B:'To prove that the waggle dance makes honeybees more intelligent than other insects.',
+        C:'To describe the figure-eight pattern a returning bee traces on the honeycomb.',
+        D:'To argue that beehives should be protected from the spread of human activity.'
       },
       correct:'A',
       expCorrect:'The text defines the waggle dance and details how it conveys direction (the angle) and distance (the duration) of the flowers to the other bees. The purpose is to explain how they use that dance to share where food is.',
       expWrong:{
-        B:'Not supported: the text describes the dance, but never compares bee intelligence with that of other insects.',
-        C:'Secondary detail: the honeycomb is mentioned only as the surface they dance on, not as the topic. The focus is the dance and its message.',
-        D:'Off topic: there is no mention of protecting them from human activity. That is outside information.'
+        B:'Not supported: the text lays out what the dance communicates and never compares honeybees with other insects or claims anything about intelligence.',
+        C:'True but it answers a different question: the figure-eight is one feature of the dance. The text describes it in order to explain how direction and distance reach the other bees.',
+        D:'Off topic: nothing in the text mentions protecting bees or their hives from anything. That is outside information.'
       },
       tip:'If a text DEFINES something and then says how it works, its purpose is almost always to “explain” that, not to argue or compare.'
     },
@@ -153,17 +153,17 @@ window.SAT_SETS.push({
       passage:"In her later poems, the writer returned again and again to the image of a lighthouse. Sometimes it stood for guidance, a steady beam in confusing times; other times it suggested loneliness, a single tower cut off from the shore. Rather than settling on one meaning, she let the same image carry different feelings from poem to poem.",
       stem:'Which choice best states the main idea of the text?',
       choices:{
-        A:'The writer believed a lighthouse was the most beautiful thing she had ever seen.',
+        A:'The writer returned to the lighthouse because it was the most beautiful thing she had ever seen.',
         B:'The writer used the lighthouse image to express several different meanings across her poems.',
-        C:'The writer wrote poems only about the sea and the objects found near it.',
-        D:'The writer eventually decided that the lighthouse stood for loneliness alone.'
+        C:'In her later poems the writer wrote only about the sea and the objects found along the shore.',
+        D:'The writer eventually settled on loneliness as what the lighthouse stood for.'
       },
       correct:'B',
       expCorrect:'The text says the lighthouse sometimes meant guidance and other times loneliness, and that the writer did NOT settle on a single meaning, but let the same image carry different feelings. That is the central idea: one image, several meanings.',
       expWrong:{
-        A:'Not supported: the text is about the MEANINGS of the lighthouse, not about it being the prettiest thing she saw. That is outside information.',
-        C:'Too broad: the text is about one image (the lighthouse) in her poems; it does not claim she wrote ONLY about the sea and its objects.',
-        D:'It contradicts the text: it says explicitly that she did NOT settle on a single meaning, so “loneliness alone” runs against what you read.'
+        A:'Not supported: the text says she returned to the image “again and again”, but never gives beauty as the reason. Why the image drew her is outside information.',
+        C:'Too broad: the text follows one recurring image through her later poems. It never claims the sea and the things beside it were her only subject.',
+        D:'It contradicts the text: “rather than settling on one meaning”, she let the image carry different feelings. Loneliness is one of those feelings, not a final choice.'
       },
       tip:'Watch for the trap that takes one real detail (loneliness) and turns it into “the” answer. The central idea here is the range of meanings, not a single one.'
     },
@@ -174,15 +174,15 @@ window.SAT_SETS.push({
       stem:'Which choice most logically completes the text?',
       choices:{
         A:'traits that depend on light may fade while other senses grow more important.',
-        B:'fish quickly learn to find their way back toward the sunlit rivers.',
-        C:'all animals will eventually grow larger and stronger over time.',
-        D:'the ability to see becomes the most valuable trait a fish can have.'
+        B:'fish keep their eyesight in case they return to the sunlit rivers.',
+        C:'every sense an animal has grows sharper with each generation.',
+        D:'the ability to see becomes the most valuable trait a fish can possess.'
       },
       correct:'A',
       expCorrect:'The text shows that in total darkness sight gave no advantage, so the fish lost it while sharpening touch and vibration. The logical completion is: in an environment with no light, traits that depend on light can disappear while other senses become more important. That is exactly the pattern the text describes.',
       expWrong:{
-        B:'Not supported: the text does not say the fish return to rivers; it describes their adaptation to darkness, not a return to light.',
-        C:'Too broad: the text is about sight, touch and vibration, not size or strength, and certainly not about “all animals”.',
+        B:'It contradicts the text: the fish lost their sight over many generations in the dark. Nothing is kept in reserve for a return that the text never mentions.',
+        C:'It pushes a real idea into an absolute: touch and vibration sharpened because darkness made them useful. Sight went the other way, so not EVERY sense improves.',
         D:'It contradicts the text: if sight were the MOST valuable sense, they would not have lost it. The text says the opposite: with no light, seeing gave no advantage.'
       },
       tip:'The conclusion has to generalize what the example already showed. The concrete case (lost sight, gained touch) points to the rule in option A.'

@@ -486,6 +486,77 @@ const BOTONES_MUERTOS = function () {
     }
     check(`P12 ninguna barra de progreso se pinta vacía (${barras.length})`, barras.length === 0, barras.slice(0, 4));
 
+    /* --- P14. la pregunta de confianza ---
+       Cuatro promesas: se pregunta ANTES de revelar, solo en Drill, se guarda en
+       el historial, y una acertada por adivinanza vuelve a la bolsa de repaso.
+       La última es la que el estudiante lee en pantalla, así que tiene que ser
+       verdad y no una frase bonita. */
+    const conf = await page.evaluate(async () => {
+      const r = {};
+      const set = (window.SAT_SETS || []).find(s => (s.questions || []).length >= 3 && s.questions[0].type !== 'spr');
+      if (!set) return { sinSet: true };
+
+      // --- drill: pregunta antes de revelar ---
+      startSession(set.id, 'drill');
+      await new Promise(x => setTimeout(x, 250));
+      document.querySelector('#view-app .choice').click();
+      document.getElementById('btn-next').click();
+      r.tiraAntesDeRevelar = !!document.querySelector('.conf-box');
+      r.explicacionTodaviaNo = !document.querySelector('.drill-card');
+      r.botonBloqueado = document.getElementById('btn-next').disabled;
+
+      document.querySelector('[data-conf="guess"]').click();
+      await new Promise(x => setTimeout(x, 200));
+      r.explicacionTrasElegir = !!document.querySelector('.drill-card');
+      const st = window.SATAPP.getS();
+      const q0 = st.set.questions[0];
+      r.confGuardada = st.conf[q0.id];
+      r.tiempoMedido = (st.tiempos[q0.id] || 0) > 0;
+
+      // se contesta el resto bien y se termina, para mirar el historial
+      st.set.questions.forEach((q, i) => {
+        if (i === 0) return;
+        st.answers[q.id] = q.type === 'spr' ? String(q.answer) : q.correct;
+        st.conf[q.id] = 'sure';
+        st.checked[q.id] = true;
+      });
+      // la primera se deja ACERTADA pero adivinada
+      st.answers[q0.id] = q0.type === 'spr' ? String(q0.answer) : q0.correct;
+      finishSession(false);
+      await new Promise(x => setTimeout(x, 400));
+
+      const h = window.SATAPP.store.get('satapp_history_v1__u-pantallas', []);
+      const ult = h[h.length - 1] || {};
+      const pq = (ult.perQuestion || []).find(p => p.qid === q0.id) || {};
+      r.confEnHistorial = pq.conf;
+      r.msEnHistorial = (pq.ms || 0) > 0;
+      r.acertoAdivinando = pq.ok === true && pq.conf === 'guess';
+      r.vuelveAlRepaso = (window.SATAPP.missedPool() || []).some(q => q.id === q0.id);
+      r.cajaResultados = !!document.querySelector('#res-conf .res-conf-box');
+
+      // --- examen: NO se pregunta, no se rompe la simulación ---
+      goHome();
+      await new Promise(x => setTimeout(x, 200));
+      startSession(set.id, 'exam');
+      await new Promise(x => setTimeout(x, 250));
+      document.querySelector('#view-app .choice').click();
+      document.getElementById('btn-next').click();
+      await new Promise(x => setTimeout(x, 200));
+      r.examenNoPregunta = !document.querySelector('.conf-box');
+      goHome();
+      return r;
+    });
+    check('P14 en Drill se pregunta la confianza ANTES de revelar',
+      conf.tiraAntesDeRevelar && conf.explicacionTodaviaNo && conf.botonBloqueado, conf);
+    check('P14b al elegirla aparece la explicación', conf.explicacionTrasElegir && conf.confGuardada === 'guess', conf);
+    check('P14c se mide el tiempo de la pregunta', conf.tiempoMedido, conf);
+    check('P14d confianza y tiempo quedan en el historial',
+      conf.confEnHistorial === 'guess' && conf.msEnHistorial, conf);
+    check('P14e una acertada por adivinanza VUELVE a la bolsa de repaso',
+      conf.acertoAdivinando && conf.vuelveAlRepaso, conf);
+    check('P14f los resultados dicen lo que el porcentaje esconde', conf.cajaResultados, conf);
+    check('P14g en Examen NO se pregunta (no rompe la simulación)', conf.examenNoPregunta, conf);
+
     check('P9 ninguna pantalla lanzó un error de JavaScript', errs.length === 0, errs.slice(0, 4));
 
     // --- 8. móvil: nada de scroll horizontal ---
