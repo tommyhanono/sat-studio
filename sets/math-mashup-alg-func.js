@@ -28,13 +28,13 @@
         stem:'A function f is defined as f(x) = 2x + 1 if x ≤ 2, and f(x) = x² − 3 if x > 2. What is the value of f(3) − f(0)?',
         choices:{A:'4', B:'5', C:'6', D:'7'},
         correct:'B',
-        expCorrect:'Para f(3): como 3 > 2, usa x² − 3 → f(3) = 9 − 3 = 6. Para f(0): como 0 ≤ 2, usa 2x + 1 → f(0) = 2(0) + 1 = 1. Entonces f(3) − f(0) = 6 − 1 = 5.',
+        expCorrect:'For f(3): since 3 > 2, use x² − 3 → f(3) = 9 − 3 = 6. For f(0): since 0 ≤ 2, use 2x + 1 → f(0) = 2(0) + 1 = 1. So f(3) − f(0) = 6 − 1 = 5.',
         expWrong:{
           A:'4 sale de tomar f(0) = 2 (calculando 2(0 + 1) en vez de 2(0) + 1 = 1): 6 − 2 = 4.',
-          C:'6 es solo f(3); te faltó restar f(0).',
-          D:'7 sale de usar la pieza equivocada para f(3): 2(3) + 1 = 7. Como 3 > 2, la pieza correcta es x² − 3.'
+          C:'6 is only f(3); you forgot to subtract f(0).',
+          D:'7 comes from using the wrong piece for f(3): 2(3) + 1 = 7. Since 3 > 2, the right piece is x² − 3.'
         },
-        tip:'En funciones a trozos, revisa la condición (≤ o >) para CADA entrada antes de elegir la fórmula. No mezcles las piezas entre dominios.'
+        tip:'In piecewise functions, check the condition (≤ or >) for EACH input before you pick the formula. Do not mix the pieces across domains.'
       },
       {
         id:'MASH-03', type:'mc', domain:'Algebra + Functions', difficulty:'Difícil',
@@ -70,10 +70,10 @@
         stem:'Two functions are f(x) = 3x − 4 and g(x) = x² − 2. If f(a) = g(a) and a > 1, what is the value of a² − a?',
         choices:{A:'0', B:'2', C:'4', D:'6'},
         correct:'B',
-        expCorrect:'Iguala: 3a − 4 = a² − 2 → a² − 3a + 2 = 0 → (a − 1)(a − 2) = 0 → a = 1 o a = 2. Como a > 1, queda a = 2. Entonces a² − a = 4 − 2 = 2.',
+        expCorrect:'Set them equal: 3a − 4 = a² − 2 → a² − 3a + 2 = 0 → (a − 1)(a − 2) = 0 → a = 1 or a = 2. Since a > 1, that leaves a = 2. Then a² − a = 4 − 2 = 2.',
         expWrong:{
-          A:'0 es a² − a cuando a = 1, pero la condición a > 1 descarta esa raíz.',
-          C:'4 es a² con a = 2; te faltó restar a.',
+          A:'0 is a² − a when a = 1, but the condition a > 1 rules that root out.',
+          C:'4 is a² with a = 2; you forgot to subtract a.',
           D:'6 sale de calcular a² + a = 4 + 2 en vez de a² − a.'
         },
         tip:'When two functions are equal at a point, set them equal, solve for the x-value, apply any given condition to pick the right root, then evaluate the requested expression.'
@@ -99,7 +99,7 @@
         answer:'14/3',
         expCorrect:'Add the two equations: (2x + y) + (x − y) = 10 + 4 → 3x = 14 → x = 14/3 ≈ 4.67. (Alternative: from x − y = 4, get y = x − 4. Substitute into 2x + y = 10: 2x + (x − 4) = 10 → 3x = 14 → x = 14/3.) Respuesta: 14/3.',
         expWrong:{},
-        tip:'Truco SPR: si la respuesta es una fracción, escríbela tal cual (14/3). Como decimal debes llenar el cuadro completo: 4.666 o 4.667. Un decimal corto como 4.67 no se acepta.'
+        tip:'SPR trick: if the answer is a fraction, write it as is (14/3). As a decimal you have to fill the whole box: 4.666 or 4.667. A short decimal like 4.67 is not accepted.'
       },
       {
         id:'MASH-08', type:'mc', domain:'Algebra + Functions', difficulty:'Difícil',
@@ -148,9 +148,9 @@
         skill:'Solving for a parameter in a quadratic',
         stem:'The quadratic y = x² + bx + 8 passes through the point (2, 4). What is the value of b?',
         answer:'-4',
-        expCorrect:'Sustituye el punto (2, 4): 4 = 2² + b(2) + 8 → 4 = 4 + 2b + 8 → 4 = 12 + 2b → 2b = −8 → b = −4. (Comprobación: y = x² − 4x + 8 en x = 2 da 4 − 8 + 8 = 4 ✓.) Respuesta: -4.',
+        expCorrect:'Substitute the point (2, 4): 4 = 2² + b(2) + 8 → 4 = 4 + 2b + 8 → 4 = 12 + 2b → 2b = −8 → b = −4. (Check: y = x² − 4x + 8 at x = 2 gives 4 − 8 + 8 = 4 ✓.) Answer: -4.',
         expWrong:{},
-        tip:'Para hallar un parámetro, sustituye el punto conocido (x, y) en la ecuación y despeja. En el SPR sí puedes escribir respuestas negativas: -4.'
+        tip:'To find a parameter, substitute the known point (x, y) into the equation and solve. On SPR you can write negative answers: -4.'
       },
       {
         id:'MASH-12', type:'mc', domain:'Algebra + Functions', difficulty:'Difícil',

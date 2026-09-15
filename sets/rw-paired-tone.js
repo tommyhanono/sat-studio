@@ -47,7 +47,7 @@
         stem:'Both authors would likely agree that:',
         choices:{A:'Art must emerge from human experience to be valuable', B:'The question of what gives art its value deserves serious examination', C:'Computers are incapable of creating meaningful art', D:'Emotion and suffering are required for artistic creation'},
         correct:'B',
-        expCorrect:'El pasaje A defiende su postura con cuidado ("This is not dismissal; it is precision") y el pasaje B propone criterios concretos (coherencia, innovación, originalidad). Los dos tratan la pregunta de qué le da valor al arte como algo serio que merece examinarse; solo discrepan en la respuesta. Ese es el único terreno común entre las cuatro opciones.',
+        expCorrect:'Passage A defends its position carefully ("This is not dismissal; it is precision") and passage B proposes concrete criteria (coherence, innovation, originality). Both treat the question of what gives art its value as something serious and worth examining; they only disagree on the answer. That is the only common ground among the four options.',
         expWrong:{
           A:'Passage B explicitly rejects this; emotion is not required.',
           C:'Passage B does not concede that computers are incapable.',
@@ -122,10 +122,10 @@
         stem:'Which of the following would both authors likely support as a research question for future study?',
         choices:{A:'"How can we ensure that AI art is indistinguishable from human art?"', B:'"What standards should we use to judge whether a work of art has merit?"', C:'"Why do humans respond emotionally to certain artworks?"', D:'"Is suffering necessary for understanding beauty?"'},
         correct:'B',
-        expCorrect:'Los dos autores ya están debatiendo justamente eso: A sostiene que el mérito nace de la experiencia humana y B propone criterios del objeto (coherencia, innovación, originalidad). Una investigación sobre qué estándares usar para juzgar el mérito artístico les interesa a ambos, cada uno desde su ángulo.',
+        expCorrect:'The two authors are already debating exactly that: A holds that merit comes from human experience and B proposes criteria from the object (coherence, innovation, originality). An investigation into what standards to use in judging artistic merit interests both, each from their own angle.',
         expWrong:{
           A:'Not aligned with either author\'s goal.',
-          C:'Le interesa sobre todo al autor A, que liga el arte a la emoción humana; B centra su criterio en el objeto, no en la reacción emocional del público.',
+          C:'It interests mainly author A, who ties art to human emotion; B centers his criterion on the object, not on the audience’s emotional reaction.',
           D:'Passage B explicitly argues suffering is not necessary.'
         },
         tip:'Synthesis questions: find the meta-level concern both authors share, even if they disagree on details.'
@@ -184,7 +184,7 @@
         correct:'A',
         expCorrect:'A shifts the question: instead of "Where does meaning originate?" (creation), B asks "What makes something art?" (evaluation). Different subject, different frame. A is correct.',
         expWrong:{
-          B:'El pasaje B sostiene lo contrario: defiende el mérito del arte generado por máquinas, así que no concede que las máquinas no puedan igualar la creatividad humana.',
+          B:'Passage B holds the opposite: it defends the merit of machine-generated art, so it does not concede that machines cannot match human creativity.',
           C:'These are opposing views, not progressive steps.',
           D:'B doesn\'t concede A\'s correctness; it sidesteps A\'s premise.'
         },

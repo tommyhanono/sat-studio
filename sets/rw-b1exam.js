@@ -23,7 +23,7 @@ window.SAT_SETS.push({
       expWrong:{
         A:'55 s is the painted frog’s time (the slowest), not the clawed frog’s, and "the longest" contradicts it having been the fastest.',
         C:'31 s is the marsh frog’s time, not the clawed frog’s; the figure is assigned to the wrong species.',
-        D:'42 s es el tiempo de la green tree frog; además la clawed frog no fue “ligeramente” más rápida que la painted frog, sino mucho más rápida.'
+        D:'42 s is the green tree frog’s time; besides, the clawed frog was not "slightly" faster than the painted frog, it was far faster.'
       },
       tip:'First pin down the claim ("the fastest"), then find in the table the number belonging to THAT species. Watch out for options citing the time from another row.'
     },
@@ -41,9 +41,9 @@ window.SAT_SETS.push({
       correct:'A',
       expCorrect:'The conclusion contrasts a big increase in some neighborhoods with a small change in others. Bellview rose from 4.0 to 7.2 (a big jump) and Oakhill only from 2.5 to 2.8 (a minimal change). Option A cites both extremes and backs up exactly that conclusion.',
       expWrong:{
-        B:'Falso según la tabla: los tres barrios reportan valores DISTINTOS después de los senderos (5.4, 2.8, 7.2).',
-        C:'Invierte los datos: Riverside SUBIÓ de 3.0 a 5.4, no bajó de 5.4 a 3.0.',
-        D:'Oakhill tuvo el aumento MÁS PEQUEÑO (0.3 h), no el más grande; el mayor fue Bellview (+3.2 h).'
+        B:'False according to the table: the three neighborhoods report DIFFERENT values after the trails (5.4, 2.8, 7.2).',
+        C:'It reverses the data: Riverside ROSE from 3.0 to 5.4, it did not fall from 5.4 to 3.0.',
+        D:'Oakhill had the SMALLEST increase (0.3 h), not the largest; the biggest was Bellview (+3.2 h).'
       },
       tip:'When the conclusion says "large in some, small in others", the best option shows BOTH cases. Verify that the direction (rose/fell) matches the table.'
     },
@@ -56,9 +56,9 @@ window.SAT_SETS.push({
       correct:'B',
       expCorrect:'The text explains that every subplot, however minor it seemed, ended up fitting in service of the larger story. That describes an "intricate" structure (complex but well articulated), exactly what readers admired.',
       expWrong:{
-        A:'“Chaotic” (caótica) choca con la idea de que todo encaja en su lugar; no habría orden que admirar.',
-        C:'“Careless” (descuidada) es negativa y contradice que los lectores la ADMIRARAN.',
-        D:'“Plain” (simple) contradice que los primeros críticos la hallaran difícil y que cada subtrama aportara al conjunto.'
+        A:'"Chaotic" clashes with the idea that everything fits into place; there would be no order to admire.',
+        C:'"Careless" is negative and contradicts the fact that readers ADMIRED it.',
+        D:'"Plain" contradicts early critics finding it difficult and every subplot contributing to the whole.'
       },
       tip:'Look for the clue after the colon: if everything "fits in service of the story", the word has to mean complex and well woven, not messy or simple.'
     },
@@ -71,9 +71,9 @@ window.SAT_SETS.push({
       correct:'A',
       expCorrect:'The report does not criticize openly and is evident only to someone looking past the polite surface. That disapproval is suggested without being stated = "implicit".',
       expWrong:{
-        B:'“Explicit” es lo opuesto: significa dicho abiertamente, pero el texto dice que NO critica de forma abierta.',
-        C:'“Exaggerated” no encaja: el problema es que la desaprobación está oculta, no inflada.',
-        D:'“Accidental” contradice el tono: la desaprobación se disfraza a propósito con elogios “muy matizados”, no por accidente.'
+        B:'"Explicit" is the opposite: it means stated openly, but the text says it does NOT criticize openly.',
+        C:'"Exaggerated" does not fit: the problem is that the disapproval is hidden, not inflated.',
+        D:'"Accidental" clashes with the tone: the disapproval is deliberately dressed up in "heavily qualified" praise, not accidental.'
       },
       tip:'"Did not openly… evident only to readers who looked past the surface" points to something hinted at. Implicit = implied; explicit = stated outright. Pick the opposite of "open".'
     },
@@ -86,9 +86,9 @@ window.SAT_SETS.push({
       correct:'C',
       expCorrect:'Before the blank there is a complete sentence ("The museum’s newest wing houses a single, breathtaking exhibit") and what follows describes and names that exhibit. The colon introduces that clarification after a complete sentence.',
       expWrong:{
-        A:'Una coma sola no puede introducir así la aclaración; deja la frase suelta “a 12-meter skeleton…” mal conectada.',
-        B:'Sin puntuación, “exhibit a 12-meter skeleton…” se fusiona y se lee mal.',
-        D:'El punto y coma exige una oración independiente después, y “a 12-meter skeleton… suspended…” no es una oración completa.'
+        A:'A lone comma cannot introduce the clarification this way; it leaves the loose phrase "a 12-meter skeleton…" badly connected.',
+        B:'With no punctuation, "exhibit a 12-meter skeleton…" fuses and reads wrong.',
+        D:'A semicolon demands an independent sentence after it, and "a 12-meter skeleton… suspended…" is not a complete sentence.'
       },
       tip:'Colon = after a COMPLETE sentence that announces what follows. Here what comes before can end in a period, so the colon fits.'
     },
@@ -101,9 +101,9 @@ window.SAT_SETS.push({
       correct:'D',
       expCorrect:'On both sides of the blank there are complete sentences: "Dr. Alvarez had spent a decade studying volcanic soil" and "that background made her the first to recognize…". To join two independent clauses with no conjunction, the semicolon is what you want.',
       expWrong:{
-        A:'Una coma sola entre dos oraciones completas es un comma splice.',
-        B:'Sin puntuación, las dos oraciones se fusionan (run-on).',
-        C:'El colon uniría dos independientes solo si la segunda EXPLICA o ejemplifica la primera; aquí la segunda añade una consecuencia narrativa, así que no encaja mejor que el punto y coma.'
+        A:'A single comma between two complete sentences is a comma splice.',
+        B:'With no punctuation, the two sentences fuse (run-on).',
+        C:'A colon would join two independent clauses only if the second EXPLAINED or illustrated the first; here the second adds a narrative consequence, so it does not fit better than the semicolon.'
       },
       tip:'The period test: if both sides of the blank are complete sentences and there is no conjunction, the semicolon is the safe join.'
     },
@@ -117,8 +117,8 @@ window.SAT_SETS.push({
       expCorrect:'El sujeto es “Each of the volunteers”, y “each” es singular. El pronombre posesivo singular que concuerda es “his or her”: “bring his or her own gloves”.',
       expWrong:{
         A:'“Their” es plural; no concuerda con el sujeto singular “each”.',
-        B:'“They’re” = “they are”, una contracción, no un posesivo; no puede modificar “gloves”.',
-        D:'“Its” se usa para cosas o animales, no para personas voluntarias.'
+        B:'"They’re" = "they are", a contraction, not a possessive; it cannot modify "gloves".',
+        D:'"Its" is used for things or animals, not for volunteers, who are people.'
       },
       tip:'"Each / every / one of…" are SINGULAR even with a plural after them. For people, the singular possessive is "his or her".'
     },
@@ -131,8 +131,8 @@ window.SAT_SETS.push({
       correct:'B',
       expCorrect:'El sujeto es “The collection” (singular); “of rare butterfly specimens… expeditions” es solo un modificador. El verbo singular en presente que concuerda es “is”: “The collection… is now displayed”.',
       expWrong:{
-        A:'“Are” es plural y concuerda con “specimens”, pero ese no es el sujeto; el sujeto es “collection”, singular.',
-        C:'“Were” es plural y además pasado; el marcador “now” pide presente singular.',
+        A:'"Are" is plural and agrees with "specimens", but that is not the subject; the subject is "collection", singular.',
+        C:'"Were" is plural and past tense on top of that; the marker "now" calls for the singular present.',
         D:'“Have been” es plural; no concuerda con el sujeto singular “collection”.'
       },
       tip:'Ignore the phrase between the subject and the verb ("of… specimens…"). Ask: what is displayed? The COLLECTION → singular → "is".'
@@ -151,9 +151,9 @@ window.SAT_SETS.push({
       correct:'A',
       expCorrect:'The text opens with what historians "once assumed" (a sudden abandonment) and then presents recent excavations whose layers show a gradual decline. It is the structure of old belief → evidence that corrects it.',
       expWrong:{
-        B:'No es una lista de teorías neutrales: el texto SÍ toma partido por la versión gradual apoyada en la nueva evidencia.',
-        C:'No predice ningún evento futuro; contrasta pasado súbito vs. declive gradual, sin proyectar nada.',
-        D:'Solo se habla de UNA ciudad; no hay comparación entre dos ciudades.'
+        B:'It is not a neutral list of theories: the text DOES take a side, backing the gradual version supported by the new evidence.',
+        C:'It predicts no future event; it contrasts a sudden past with a gradual decline, projecting nothing.',
+        D:'Only ONE city is discussed; there is no comparison between two cities.'
       },
       tip:'Spot the turn: "once assumed… Recent excavations tell a more gradual story". That "it used to be believed / now the evidence shows" is the revision structure.'
     },
@@ -171,9 +171,9 @@ window.SAT_SETS.push({
       correct:'A',
       expCorrect:'The text points out that the author does NOT describe the storm directly, but uses small unsettling details so the reader senses the danger. The purpose is to explain how she builds that sense of danger indirectly.',
       expWrong:{
-        B:'No opina que el capítulo sea lento ni que deba recortarse; describe una técnica, no la critica.',
-        C:'No resume la trama de la novela; se centra solo en el efecto del capítulo inicial.',
-        D:'No explica causas científicas de tormentas; la tormenta es un recurso narrativo, no un tema físico.'
+        B:'It does not claim the chapter is slow or that it should be cut; it describes a technique, it does not criticize it.',
+        C:'It does not summarize the plot of the novel; it focuses only on the effect of the opening chapter.',
+        D:'It does not explain the scientific causes of storms; the storm is a narrative device, not a physical topic.'
       },
       tip:'"Main purpose" = why this was written. Here everything points to one thing: how the author suggests danger with details instead of describing it.'
     },
@@ -191,8 +191,8 @@ window.SAT_SETS.push({
       correct:'C',
       expCorrect:'The goal is to close by highlighting the BROAD benefit to the neighborhood. Option C gathers the three notes (it feeds families, it teaches children, it brings neighbors together) and presents them as a resource the whole community depends on. Exactly what was asked.',
       expWrong:{
-        A:'Es un detalle sobre tomates; no transmite el beneficio amplio para el barrio.',
-        B:'Habla de una necesidad (voluntarios), no del beneficio que el jardín aporta; cambia el enfoque.',
+        A:'It is a detail about tomatoes; it does not convey the broad benefit to the neighborhood.',
+        B:'It is about a need (volunteers), not about the benefit the garden brings; it shifts the focus.',
         D:'Da un dato menor (el horario de las clases) en lugar de resumir el impacto general.'
       },
       tip:'When they ask for a conclusion that "emphasizes the broad benefit", pick the option that pulls SEVERAL notes into one general idea, not the one giving a single detail.'
@@ -207,8 +207,8 @@ window.SAT_SETS.push({
       expCorrect:'The first sentence praises the panels (electricity without burning fuel); the second presents a downside (their manufacture has environmental costs). That contrast calls for "however".',
       expWrong:{
         A:'“Therefore” marca consecuencia, pero la segunda idea no es un resultado de la primera; es un contrapunto.',
-        C:'“For example” anuncia un ejemplo de lo anterior, y el costo de fabricación no ejemplifica lo bueno del panel: lo contradice.',
-        D:'“Likewise” suma algo similar, pero aquí las ideas se OPONEN, no se parecen.'
+        C:'"For example" announces an example of what came before, and the manufacturing cost does not exemplify what is good about the panel: it contradicts it.',
+        D:'"Likewise" adds something similar, but here the ideas CLASH, they are not alike.'
       },
       tip:'Praise first, then a problem → a contrast signal. "However" marks that "yes, but on the other hand".'
     },
@@ -221,9 +221,9 @@ window.SAT_SETS.push({
       correct:'D',
       expCorrect:'The first sentence gives the causes (a very steep trail and cold rain); the second is the consequence (they decided to turn back). That cause→effect relationship calls for "as a result".',
       expWrong:{
-        A:'“Nevertheless” marca contraste, pero devolverse es la reacción ESPERADA ante esas condiciones, no algo a pesar de ellas.',
-        B:'“For instance” introduce un ejemplo; la segunda oración no ejemplifica la primera, es su resultado.',
-        C:'“In contrast” opone ideas, pero aquí la segunda oración SIGUE lógicamente de la primera, no la contradice.'
+        A:'"Nevertheless" marks contrast, but turning back is the EXPECTED reaction to those conditions, not something in spite of them.',
+        B:'"For instance" introduces an example; the second sentence does not exemplify the first, it is its result.',
+        C:'"In contrast" sets ideas against each other, but here the second sentence FOLLOWS logically from the first, it does not contradict it.'
       },
       tip:'If the first thing is the reason and the second is what happened because of it, the connection is result-based: "as a result" / "therefore".'
     },
@@ -241,9 +241,9 @@ window.SAT_SETS.push({
       correct:'B',
       expCorrect:'The text says that without its pollinating wasp the tree grows tall and healthy but never produces viable seeds: a biological "dead end". The central idea is that it can LOOK thriving and at the same time be unable to reproduce.',
       expWrong:{
-        A:'Contradice el texto: el árbol SÍ sobrevive y crece sano; lo que no puede es reproducirse.',
-        C:'No está apoyado: el texto no compara la preferencia de los jardineros por unas plantas u otras.',
-        D:'Distorsiona: el texto habla del papel biológico de la avispa, no de qué le importa más al jardinero.'
+        A:'It contradicts the text: the tree DOES survive and grows healthy; what it cannot do is reproduce.',
+        C:'Not supported: the text does not compare gardeners’ preference for one plant over another.',
+        D:'It distorts it: the text is about the wasp’s biological role, not about what matters most to a gardener.'
       },
       tip:'The central idea reconciles the two halves of the text: it looks healthy BUT produces no seeds. Rule out options that take only half ("it does not survive").'
     },
@@ -261,9 +261,9 @@ window.SAT_SETS.push({
       correct:'A',
       expCorrect:'The team expected to restore the wildlife through direct human effort alone, but it was the beavers who, with their dams, brought fish and insects back. You infer that beavers can drive the recovery that was thought to require direct human intervention.',
       expWrong:{
-        B:'Demasiado extremo: el río estaba canalizado, pero el texto no dice que NUNCA pueda haber peces o insectos; de hecho regresaron.',
-        C:'Contradice el texto: la reintroducción funcionó, no hay señal de arrepentimiento.',
-        D:'Ilógico: los castores construyen represas por su propio comportamiento; el beneficio a los investigadores no es su “propósito”.'
+        B:'Too extreme: the river was channelized, but the text does not say fish or insects can NEVER be there; in fact they returned.',
+        C:'It contradicts the text: the reintroduction worked, there is no sign of regret.',
+        D:'Illogical: beavers build dams because of their own behavior; the benefit to researchers is not their "purpose".'
       },
       tip:'Notice the clash between what the team EXPECTED (human effort alone) and what HAPPENED (the beavers pulled it off). The inference captures that surprise.'
     }

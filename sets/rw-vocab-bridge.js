@@ -98,11 +98,11 @@
         stem:'Which choice completes the text with the most logical and precise word or phrase?\n\n"The museum\'s new exhibition was thoughtfully %BLANK%: each work was chosen from thousands of pieces in storage so that the objects on display would together tell a coherent story."\n',
         choices:{A:'sparse', B:'limited', C:'curated', D:'austere'},
         correct:'C',
-        expCorrect:'La clave es "each work was chosen... to tell a coherent story": hubo una selección intencional y cuidadosa de las piezas. Eso es exactamente "curated" (seleccionado con criterio).',
+        expCorrect:'The key is "each work was chosen... to tell a coherent story": there was a deliberate, careful selection of the pieces. That is exactly "curated".',
         expWrong:{
-          A:'Sparse = escaso, con pocos elementos. El texto no dice que haya pocas obras, sino que fueron ELEGIDAS con intención.',
-          B:'Limited = restringido en cantidad. Igual que A, habla de número, no de la selección cuidadosa que describe el texto.',
-          D:'Austere = sobrio, desnudo, severo. No captura la idea de escoger piezas para contar una historia.'
+          A:'Sparse = scant, with few elements. The text does not say there are few works, but that they were CHOSEN deliberately.',
+          B:'Limited = restricted in quantity. Like A, it is about number, not about the careful selection the text describes.',
+          D:'Austere = plain, bare, severe. It does not capture the idea of picking pieces to tell a story.'
         },
         tip:'Curated = thoughtfully selected. Sparse/Limited = just fewer items. Austere = coldly bare. Curated emphasizes the intentionality.'
       },
@@ -126,9 +126,9 @@
         stem:'Which choice completes the text with the most logical and precise word or phrase?\n\n"Critics found the novel\'s central character %BLANK%: while intended to be complex, she instead came across as internally inconsistent, her motives shifting from chapter to chapter without any logic connecting them."\n',
         choices:{A:'unconvincing', B:'unlikeable', C:'incoherent', D:'underdeveloped'},
         correct:'C',
-        expCorrect:'"Internally inconsistent" y "without any logic connecting them" → al personaje le falta unidad lógica interna = incoherent.',
+        expCorrect:'"Internally inconsistent" and "without any logic connecting them" → the character lacks internal logical unity = incoherent.',
         expWrong:{
-          A:'Unconvincing = poco creíble en general; no captura el defecto específico que describe el texto: la falta de lógica interna.',
+          A:'Unconvincing = not credible in general; it does not capture the specific flaw the text describes: the lack of internal logic.',
           B:'Unlikeable = not sympathetic; irrelevant to inconsistency.',
           D:'Underdeveloped = lacking depth; inconsistent ≠ shallow.'
         },

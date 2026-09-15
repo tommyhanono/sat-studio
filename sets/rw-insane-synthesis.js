@@ -59,9 +59,9 @@
         correct:'A',
         expCorrect:'The core flaw is inferring causation from correlation without controlling for confounds. Other factors (population, infrastructure investment, implementation speed) could explain the wait times.',
         expWrong:{
-          B:'Es un detalle de precisión, no una falla lógica: aunque se definiera "largo" con un número exacto, el salto de correlación a causa seguiría siendo inválido.',
+          B:'That is a matter of precision, not a logical flaw: even if "long" were defined with an exact number, the leap from correlation to cause would still be invalid.',
           C:'Wait time increases are generally regarded as negative; this isn\'t the logical flaw.',
-          D:'"Inherently" no es informal, y el nivel de formalidad de una palabra no es una falla de razonamiento. El problema es lógico, no de estilo.'
+          D:'"Inherently" is not informal, and how formal a word is is not a flaw in reasoning. The problem is logical, not stylistic.'
         },
         tip:'Causation fallacies: "X happened, then Y happened" doesn\'t mean X caused Y. Always look for confounding variables or alternative explanations.'
       },

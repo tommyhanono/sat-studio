@@ -28,13 +28,13 @@
         stem:'A committee must select 3 officers (president, vice-president, secretary) from a group of 8 people, with the constraint that no two officers can be from the same department. If there are 3 departments with 3, 3, and 2 people respectively, how many valid selections are possible?',
         choices:{A:'18', B:'108', C:'336', D:'648'},
         correct:'B',
-        expCorrect:'Como hay exactamente 3 cargos y 3 departamentos, y dos cargos no pueden repetir departamento, cada cargo viene de un departamento distinto. Elegir una persona de cada departamento: 3 × 3 × 2 = 18. Repartir los 3 cargos distintos entre esas 3 personas: 3! = 6. Total: 18 × 6 = 108.',
+        expCorrect:'Since there are exactly 3 posts and 3 departments, and no two posts can repeat a department, each post comes from a different department. Choosing one person from each department: 3 × 3 × 2 = 18. Handing the 3 distinct posts to those 3 people: 3! = 6. Total: 18 × 6 = 108.',
         expWrong:{
-          A:'18 solo cuenta las formas de elegir a las 3 personas (3 × 3 × 2) y olvida repartir los 3 cargos distintos entre ellas (× 3! = 6).',
-          C:'336 = 8 × 7 × 6 ignora por completo la restricción: cuenta todas las asignaciones de 3 cargos entre las 8 personas sin importar el departamento.',
-          D:'648 aplica el factor 3! dos veces (18 × 6 × 6); los cargos se reparten una sola vez.'
+          A:'18 counts only the ways of choosing the 3 people (3 × 3 × 2) and forgets to hand the 3 distinct posts out among them (× 3! = 6).',
+          C:'336 = 8 × 7 × 6 ignores the constraint entirely: it counts every assignment of 3 posts among the 8 people regardless of department.',
+          D:'648 applies the 3! factor twice (18 × 6 × 6); the posts are handed out only once.'
         },
-        tip:'Combinatoria con restricciones: divide en etapas (elegir a las personas, luego asignar los cargos), calcula cada etapa y multiplica. Verifica siempre que la restricción quede aplicada.'
+        tip:'Combinatorics with constraints: split it into stages (choose the people, then assign the posts), compute each stage and multiply. Always verify the constraint has actually been applied.'
       },
       {
         id:'INS-PROB-03', type:'mc', domain:'Problem-Solving & Data Analysis', difficulty:'Difícil',
@@ -44,11 +44,11 @@
         correct:'D',
         expCorrect:'P(exactamente uno) = P(A)·(1 − P(B)) + (1 − P(A))·P(B) = (2/5)(4/7) + (3/5)(3/7) = 8/35 + 9/35 = 17/35.',
         expWrong:{
-          A:'6/35 = (2/5)(3/7) = P(A y B): que ocurran LOS DOS, no exactamente uno.',
-          B:'11/35 no sale de ningún cálculo correcto; los dos sumandos correctos son 8/35 y 9/35.',
+          A:'6/35 = (2/5)(3/7) = P(A and B): that BOTH happen, not exactly one.',
+          B:'11/35 does not come from any correct computation; the two correct addends are 8/35 and 9/35.',
           C:'12/35 = (3/5)(4/7) = P(ninguno de los dos), no "exactamente uno".'
         },
-        tip:'"Exactamente uno" = P(A)(1−P(B)) + P(B)(1−P(A)). Equivalente: P(A o B) − P(A y B). No lo confundas con "al menos uno" ni con "ninguno".'
+        tip:'"Exactly one" = P(A)(1−P(B)) + P(B)(1−P(A)). Equivalently: P(A or B) − P(A and B). Do not confuse it with "at least one" or with "neither".'
       },
       {
         id:'INS-PROB-04', type:'spr', domain:'Problem-Solving & Data Analysis', difficulty:'Difícil',
@@ -70,7 +70,7 @@
           C:'35/84 sobrecuenta los favorables; el conteo correcto es C(5,2) × C(3,1) = 30.',
           D:'40/84 sobrecuenta (10 × 4 usa 4 azules, pero solo hay 3: C(3,1) = 3).'
         },
-        tip:'Hipergeométrica (sin reemplazo): P = [producto de combinaciones favorables] / C(total, n). El numerador es C de cada color pedido; el denominador es elegir n del total.'
+        tip:'Hypergeometric (without replacement): P = [product of the favorable combinations] / C(total, n). The numerator is the C of each color wanted; the denominator is choosing n from the total.'
       },
       {
         id:'INS-PROB-06', type:'mc', domain:'Problem-Solving & Data Analysis', difficulty:'Difícil',
@@ -94,11 +94,11 @@
         correct:'A',
         expCorrect:'P(primera de corazones) = 13/52. P(segunda de corazones | primera de corazones) = 12/51. P(ambas) = (13/52) × (12/51) = 156/2652 = 1/17.',
         expWrong:{
-          B:'13/169 = 1/13 no corresponde: con reemplazo sería (13/52)² = 1/16, y sin reemplazo es 1/17.',
+          B:'13/169 = 1/13 does not fit: with replacement it would be (13/52)² = 1/16, and without replacement it is 1/17.',
           C:'1/26 = 2/52 divide mal el producto (13 × 12)/(52 × 51).',
-          D:'12/221 simplifica mal 156/2652; la fracción reducida correcta es 1/17.'
+          D:'12/221 simplifies 156/2652 wrong; the correctly reduced fraction is 1/17.'
         },
-        tip:'Sin reemplazo las probabilidades cambian en cada extracción: P(dos corazones) = (13/52) × (12/51). Simplifica cancelando factores comunes.'
+        tip:'Without replacement the probabilities change on every draw: P(two hearts) = (13/52) × (12/51). Simplify by cancelling common factors.'
       },
       {
         id:'INS-PROB-08', type:'mc', domain:'Problem-Solving & Data Analysis', difficulty:'Difícil',

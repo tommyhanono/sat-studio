@@ -19,13 +19,13 @@ window.SAT_SETS.push({
         D:'It defines a technical term and then illustrates it with a series of examples.'
       },
       correct:'B',
-      expCorrect:'El texto primero da un consejo común (“elimina todas las pausas”) y luego trae investigadores que lo contradicen (las pausas bien puestas ayudan y dan seguridad). Ese es el movimiento: consejo aceptado → evidencia que lo refuta. La opción B lo describe.',
+      expCorrect:'The text first gives a common piece of advice ("cut out every pause") and then brings in researchers who contradict it (well-placed pauses help and convey confidence). That is the movement: accepted advice → evidence that refutes it. Option B describes it.',
       expWrong:{
-        A:'No está apoyado: el texto no hace un recorrido histórico por siglos; contrasta un consejo con evidencia actual.',
-        C:'Malinterpreta la estructura: no hay una experiencia personal ni una anécdota; se habla de consejos y hallazgos de investigadores.',
-        D:'Describe una parte, no el todo: no se limita a definir un término con ejemplos; plantea un consejo y lo pone en duda.'
+        A:'Not supported: the text does not walk through centuries of history; it sets a piece of advice against current evidence.',
+        C:'It misreads the structure: there is no personal experience or anecdote; it is about advice and researchers’ findings.',
+        D:'It describes a part, not the whole: it does not merely define a term with examples; it raises a piece of advice and calls it into question.'
       },
-      tip:'Para STRUCTURE traza el MOVIMIENTO del texto. Cuando aparece “challenge this advice / find that…”, casi siempre es idea aceptada primero y evidencia en contra después.'
+      tip:'For STRUCTURE, trace the MOVEMENT of the text. When "challenge this advice / find that…" shows up, it is almost always accepted idea first and counter-evidence after.'
     },
     {
       id:'VW1-02', type:'mc', domain:'Craft and Structure', difficulty:'Difícil',
@@ -39,13 +39,13 @@ window.SAT_SETS.push({
         D:'To criticize the relatives who left the manuscripts in an abandoned house for so long.'
       },
       correct:'A',
-      expCorrect:'El texto cuenta que los manuscritos de Price estuvieron perdidos por décadas, que al reaparecer se pudieron tocar por fin, y cierra diciendo que los musicólogos lo ven como recordatorio de cuánta música sobrevive solo por casualidad. El propósito es usar ESE caso para mostrar cómo la supervivencia de la música pasada depende del azar.',
+      expCorrect:'The text tells us Price’s manuscripts were lost for decades, that when they resurfaced they could finally be performed, and closes by saying musicologists see it as a reminder of how much music survives only by chance. The purpose is to use THAT case to show how the survival of past music depends on luck.',
       expWrong:{
-        B:'No está apoyado: nunca dice que Price fuera “la más importante” de su generación; usa su caso como ejemplo, no como ranking.',
-        C:'Describe una parte, no el todo: menciona que las orquestas pudieron tocarla, pero no explica el proceso de preparar una sinfonía.',
-        D:'Malinterpreta el tono: el texto no reprocha a los familiares; usa el hallazgo para hablar del azar en la supervivencia de la música.'
+        B:'Not supported: it never says Price was "the most important" of her generation; it uses her case as an example, not as a ranking.',
+        C:'It describes a part, not the whole: it mentions that orchestras could perform it, but does not explain the process of preparing a symphony.',
+        D:'It misreads the tone: the text does not blame the relatives; it uses the discovery to talk about chance in the survival of music.'
       },
-      tip:'Para PURPOSE resume la idea que sostiene TODO el texto. La última oración (“a reminder of how much… survive only by chance”) suele entregar el propósito en bandeja.'
+      tip:'For PURPOSE, sum up the idea holding the WHOLE text together. The last sentence ("a reminder of how much… survive only by chance") usually hands you the purpose on a plate.'
     },
     {
       id:'VW1-03', type:'mc', domain:'Information and Ideas', difficulty:'Media',
@@ -59,13 +59,13 @@ window.SAT_SETS.push({
         D:'Wells far from any beaver dam showed no change at all over the same period.'
       },
       correct:'C',
-      expCorrect:'La predicción es específica: si las represas frenan el flujo, los pozos JUSTO río abajo de las represas deberían subir en pocos años. La opción C reporta exactamente eso (pozos río abajo suben en tres años), así que apoya la hipótesis de forma directa.',
+      expCorrect:'The prediction is specific: if the dams slow the flow, the wells JUST downstream of the dams should rise within a few years. Option C reports exactly that (downstream wells rise within three years), so it supports the hypothesis directly.',
       expWrong:{
-        A:'No apoya la subida del agua: cuántas represas hicieron los castores no dice nada sobre si el nivel del agua subió.',
-        B:'Se sale del tema: plantas “no relacionadas con el nivel del agua” no dan evidencia sobre la napa freática.',
-        D:'Solo es un control, no apoyo directo: que pozos LEJOS de las represas no cambien es consistente, pero no confirma que las represas HAGAN SUBIR el agua cerca de ellas, que es lo que ella predijo.'
+        A:'It does not support the water rising: how many dams the beavers built says nothing about whether the water level rose.',
+        B:'It wanders off topic: plants "unrelated to the water level" give no evidence about the water table.',
+        D:'It is only a control, not direct support: wells FAR from the dams not changing is consistent, but it does not confirm the dams MAKE the water rise near them, which is what she predicted.'
       },
-      tip:'En COMMAND OF EVIDENCE, la mejor opción calca la predicción. Aquí la hipótesis nombra “pozos río abajo de las represas”: busca la opción que mide justo eso, no un dato lateral.'
+      tip:'In COMMAND OF EVIDENCE, the best option traces the prediction. Here the hypothesis names "wells downstream of the dams": look for the option measuring exactly that, not a side fact.'
     },
     {
       id:'VW1-04', type:'mc', domain:'Information and Ideas', difficulty:'Difícil',
@@ -79,28 +79,28 @@ window.SAT_SETS.push({
         D:'Even now, Amara could name every crooked fence and recall the exact shade of the evening light on her old street.'
       },
       correct:'D',
-      expCorrect:'La afirmación del estudiante es que el texto DESMIENTE en voz baja la indiferencia de Amara. La opción D muestra justo eso: pese a decir que no le importa, recuerda con ternura cada cerca torcida y la luz exacta del atardecer de su calle. Ese detalle cariñoso contradice su indiferencia declarada.',
+      expCorrect:'The student’s claim is that the text quietly belies Amara’s indifference. Option D shows exactly that: despite saying she does not care, she recalls with tenderness every crooked fence and the exact evening light of her street. That fond detail contradicts her stated indifference.',
       expWrong:{
-        A:'Refuerza la indiferencia, no la contradice: “se fue y rara vez pensó en volver” confirma justo lo que ella dice sentir.',
-        B:'Es neutral: describir una estación concurrida no revela nada sobre el apego de Amara al pueblo.',
-        C:'Va en la misma línea de la indiferencia: “nunca entendí por qué alguien se quedaría” suena a rechazo, no a apego oculto.'
+        A:'It reinforces the indifference rather than contradicting it: "she left and rarely thought of returning" confirms exactly what she claims to feel.',
+        B:'It is neutral: describing a busy station reveals nothing about Amara’s attachment to the town.',
+        C:'It runs along the same line of indifference: "I never understood why anyone would stay" sounds like rejection, not hidden attachment.'
       },
-      tip:'Para “which quote best supports”, primero fija QUÉ se quiere probar (aquí: que sí le importa). Descarta las citas que dicen lo contrario o que son neutras; la buena muestra el sentimiento escondido.'
+      tip:'For "which quote best supports", first pin down WHAT is to be proved (here: that she does care). Rule out quotes saying the opposite or that are neutral; the good one shows the hidden feeling.'
     },
     {
       id:'VW1-05', type:'mc', domain:'Standard English Conventions', difficulty:'Media',
-      skill:'Punctuation (dos puntos para introducir una lista)',
+      skill:'Punctuation (colon introducing a list)',
       passage:"To reproduce the medieval recipe faithfully, the food historian had to track down three nearly forgotten %BLANK% verjuice, grains of paradise, and long pepper.",
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'ingredients', B:'ingredients,', C:'ingredients:', D:'ingredients;'},
       correct:'C',
-      expCorrect:'Antes del blank hay una oración completa (“the food historian had to track down three nearly forgotten ingredients”) y lo que sigue es la lista que la detalla. Introducir una lista después de una oración completa es justo el trabajo de los dos puntos.',
+      expCorrect:'Before the blank there is a complete sentence ("the food historian had to track down three nearly forgotten ingredients") and what follows is the list that spells it out. Introducing a list after a complete sentence is exactly the job of the colon.',
       expWrong:{
-        A:'Sin puntuación, “ingredients verjuice, grains…” se fusiona: la lista queda pegada al sustantivo.',
-        B:'La coma haría que “ingredients” parezca el primer elemento de la serie, no lo que la lista describe; no introduce la lista correctamente.',
-        D:'El punto y coma exige una oración independiente después, y una lista de nombres no lo es.'
+        A:'With no punctuation, "ingredients verjuice, grains…" fuses: the list runs straight into the noun.',
+        B:'The comma would make "ingredients" look like the first item in the series, not the thing the list describes; it does not introduce the list correctly.',
+        D:'A semicolon demands an independent sentence after it, and a list of names is not one.'
       },
-      tip:'Colon = solo después de una oración COMPLETA que anuncia una lista o explicación. Tápalo: lo de antes debe poder cerrar con punto.'
+      tip:'Colon = only after a COMPLETE sentence announcing a list or explanation. Cover it up: what comes before has to be able to close with a period.'
     },
     {
       id:'VW1-06', type:'mc', domain:'Standard English Conventions', difficulty:'Media',
@@ -109,13 +109,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'1977', B:'1977,', C:'1977;', D:'1977:'},
       correct:'B',
-      expCorrect:'“launched in 1977” es un inciso NO esencial que describe al sujeto “The Voyager 1 probe”. Debe ir entre DOS comas; como ya hay coma de apertura antes de “launched”, falta la coma de cierre antes de “is”.',
+      expCorrect:'"launched in 1977" is a NON-essential aside describing the subject "The Voyager 1 probe". It has to sit between TWO commas; since the opening comma is already there before "launched", the closing comma before "is" is missing.',
       expWrong:{
-        A:'Sin la coma de cierre, el inciso abre pero no cierra → queda desbalanceado.',
-        C:'El punto y coma no cierra un inciso y exige una oración independiente después; “is now the most distant…” no lo es.',
-        D:'El colon no cierra un inciso y separaría al sujeto de su verbo (“is”).'
+        A:'Without the closing comma, the aside opens but never closes → it is left unbalanced.',
+        C:'A semicolon does not close an aside and it demands an independent sentence after it; "is now the most distant…" is not one.',
+        D:'A colon does not close an aside and it would split the subject from its verb ("is").'
       },
-      tip:'Apertura y cierre GEMELOS: coma–coma. Si ves una coma “huérfana” abriendo el inciso, la respuesta suele ser la coma que lo cierra.'
+      tip:'Opening and closing are TWINS: comma–comma. If you spot an "orphan" comma opening the aside, the answer is usually the comma that closes it.'
     },
     {
       id:'VW1-07', type:'mc', domain:'Standard English Conventions', difficulty:'Difícil',
@@ -124,13 +124,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'is', B:'are', C:'were', D:'have been'},
       correct:'A',
-      expCorrect:'El sujeto es “The collection” (singular); “of rare stamps” es solo una frase preposicional que no cambia el número. Un sujeto singular pide un verbo singular: “The collection… is now available”.',
+      expCorrect:'The subject is "The collection" (singular); "of rare stamps" is only a prepositional phrase that does not change the number. A singular subject calls for a singular verb: "The collection… is now available".',
       expWrong:{
-        B:'“are” es plural y concuerda con “stamps”, pero “stamps” está dentro de la frase preposicional, no es el sujeto.',
-        C:'“were” es plural y además pasado; el sujeto singular “collection” y el sentido presente piden “is”.',
+        B:'"are" is plural and agrees with "stamps", but "stamps" sits inside the prepositional phrase, it is not the subject.',
+        C:'"were" is plural and past tense on top of that; the singular subject "collection" and the present sense call for "is".',
         D:'“have been” es plural; no concuerda con el sujeto singular “collection”.'
       },
-      tip:'Tapa la frase entre el sujeto y el verbo (“of rare stamps that…last spring”). Queda “The collection ___ now available” → singular “is”.'
+      tip:'Cover the phrase between the subject and the verb ("of rare stamps that… last spring"). What is left is "The collection ___ now available" → singular "is".'
     },
     {
       id:'VW1-08', type:'mc', domain:'Standard English Conventions', difficulty:'Difícil',
@@ -139,13 +139,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'test,', B:'test', C:'test; yet,', D:'test, yet'},
       correct:'D',
-      expCorrect:'Hay dos oraciones independientes: “The startup’s first prototype failed every stress test” y “the engineers refused to abandon the design…”. Para unirlas con contraste se usa una coma + la conjunción coordinante “yet”: “…stress test, yet the engineers refused…”.',
+      expCorrect:'There are two independent sentences: "The startup’s first prototype failed every stress test" and "the engineers refused to abandon the design…". To join them with contrast you use a comma + the coordinating conjunction "yet": "…stress test, yet the engineers refused…".',
       expWrong:{
-        A:'Solo una coma entre dos oraciones completas es un comma splice.',
+        A:'A single comma between two complete sentences is a comma splice.',
         B:'Sin nada, las dos oraciones se fusionan en un run-on (“…stress test the engineers refused…”).',
-        C:'El punto y coma ya une las dos oraciones, así que sumarle “yet” es redundante, y la coma después de “yet” sobra.'
+        C:'The semicolon already joins the two sentences, so adding "yet" is redundant, and the comma after "yet" is wrong too.'
       },
-      tip:'Dos oraciones completas + contraste → coma justo ANTES de and/but/or/yet/so. No mezcles “;” con la conjunción: uno u otro, no los dos.'
+      tip:'Two complete sentences + contrast → a comma right BEFORE and/but/or/yet/so. Do not mix ";" with the conjunction: one or the other, not both.'
     },
     {
       id:'VW1-09', type:'mc', domain:'Expression of Ideas', difficulty:'Media',
@@ -158,13 +158,13 @@ window.SAT_SETS.push({
         D:'Native to Sumatra, Rafflesia arnoldii is a plant that many curious travelers hope one day to see.'
       },
       correct:'B',
-      expCorrect:'La meta es RESALTAR el tamaño inusual de la flor. La opción B usa justo los dos datos de tamaño de las notas: “la flor individual más grande de la Tierra” y “una sola flor de hasta 1 metro de ancho”. Cumple la meta y está apoyada por las notas.',
+      expCorrect:'The goal is to HIGHLIGHT the flower’s unusual size. Option B uses exactly the two size facts from the notes: "the largest individual flower on Earth" and "a single bloom up to 1 meter across". It meets the goal and is supported by the notes.',
       expWrong:{
-        A:'Usa datos de las notas, pero habla de que no tiene hojas, tallos ni raíces: no dice nada del tamaño.',
-        C:'Se enfoca en el olor a carne podrida, no en el tamaño de la flor.',
-        D:'Habla del interés de los viajeros, un dato que ni siquiera está en las notas y que no toca el tamaño.'
+        A:'It uses facts from the notes, but it is about having no leaves, stems or roots: it says nothing about size.',
+        C:'It focuses on the smell of rotting meat, not on the size of the flower.',
+        D:'It is about travelers’ interest, a fact that is not even in the notes and that does not touch the size.'
       },
-      tip:'En SYNTHESIS, primero subraya la META (aquí: el tamaño). La respuesta debe cumplirla Y salir de las notas: elige la opción con los datos de tamaño, ignora las demás aunque sean ciertas.'
+      tip:'In SYNTHESIS, underline the GOAL first (here: the size). The answer has to meet it AND come from the notes: pick the option with the size facts, ignore the rest even if they are true.'
     },
     {
       id:'VW1-10', type:'mc', domain:'Expression of Ideas', difficulty:'Media',
@@ -177,13 +177,13 @@ window.SAT_SETS.push({
         D:'Researchers date the Antikythera mechanism to around 100 BCE.'
       },
       correct:'A',
-      expCorrect:'La meta es explicar QUÉ podía HACER el mecanismo. La opción A entrega exactamente esa función según las notas: predecir las posiciones del sol y la luna. Cumple la meta y está apoyada.',
+      expCorrect:'The goal is to explain WHAT the mechanism could DO. Option A delivers exactly that function according to the notes: predicting the positions of the sun and the moon. It meets the goal and is supported.',
       expWrong:{
         B:'Cuenta dónde y cuándo lo encontraron, no lo que el aparato podía hacer.',
         C:'Describe de qué está hecho (engranajes de bronce) y qué es, no su función.',
         D:'Da la fecha aproximada, no una capacidad del mecanismo.'
       },
-      tip:'La meta manda. Si pide lo que el objeto “podía hacer”, busca el verbo de acción/capacidad en las notas (“could predict…”), no datos de origen, material o fecha.'
+      tip:'The goal rules. If it asks what the object "could do", look for the verb of action or capability in the notes ("could predict…"), not facts about origin, material or date.'
     },
     {
       id:'VW1-11', type:'mc', domain:'Craft and Structure', difficulty:'Media',
@@ -192,13 +192,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text with the most logical and precise word or phrase?',
       choices:{A:'acrimony', B:'reluctance', C:'bewilderment', D:'cordiality'},
       correct:'D',
-      expCorrect:'El contexto contrasta lo esperado (un choque amargo) con lo que pasó: se dieron la mano y hasta rieron. Eso describe calidez y buen trato, así que “cordiality” (cordialidad) es la palabra precisa.',
+      expCorrect:'The context contrasts what was expected (a bitter clash) with what happened: they shook hands and even shared a laugh. That describes warmth and good treatment, so "cordiality" is the precise word.',
       expWrong:{
         A:'“acrimony” (amargura, aspereza) es lo OPUESTO a darse la mano y reír juntos.',
         B:'“reluctance” (desgana) no encaja: negociaron con gusto, no a regañadientes.',
         C:'“bewilderment” (desconcierto) no calza con un trato cálido y amistoso; nada indica confusión.'
       },
-      tip:'En WORDS IN CONTEXT deja que las pistas manden. “Shaking hands and even sharing a laugh” apunta a calidez → cordialidad, no a amargura ni confusión.'
+      tip:'In WORDS IN CONTEXT let the clues rule. "Shaking hands and even sharing a laugh" points to warmth → cordiality, not bitterness or confusion.'
     },
     {
       id:'VW1-12', type:'mc', domain:'Craft and Structure', difficulty:'Difícil',
@@ -207,13 +207,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text with the most logical and precise word or phrase?',
       choices:{A:'whimsical', B:'nostalgic', C:'faithful', D:'ambiguous'},
       correct:'C',
-      expCorrect:'La pista tras los dos puntos define la palabra: “nada exagerado ni suavizado, cada detalle sacado de la realidad”. Eso es una representación fiel a lo real, así que “faithful” (fiel) es la palabra precisa.',
+      expCorrect:'The clue after the colon defines the word: "nothing exaggerated or softened, every detail drawn from reality". That is a portrayal true to life, so "faithful" is the precise word.',
       expWrong:{
         A:'“whimsical” (caprichoso, fantasioso) choca con “sacado directamente de la realidad”.',
         B:'“nostalgic” (nostálgico) añade una emoción que el texto no menciona; el foco es la exactitud, no la añoranza.',
         D:'“ambiguous” (ambiguo) contradice la pista: si nada se exagera ni suaviza y todo viene de la realidad, no hay ambigüedad.'
       },
-      tip:'Cuando hay dos puntos, lo que sigue casi siempre DEFINE el blank. Aquí “nothing exaggerated… drawn from reality” = fiel a lo real → “faithful”.'
+      tip:'When there is a colon, what follows almost always DEFINES the blank. Here "nothing exaggerated… drawn from reality" = true to life → "faithful".'
     }
   ]
 });
