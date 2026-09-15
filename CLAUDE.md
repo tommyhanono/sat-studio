@@ -32,7 +32,7 @@ Corre las cuatro y sale con código 1 si algo falla:
 |---|---|---|
 | `auditar-banco.js` | el contenido: dominios contra los pesos oficiales, dificultad, formato, integridad, duplicados | — |
 | `test-humo.js` | que la app **se juega**: los tres formatos de pregunta, la calificación, y que el backend de cuentas quede vivo | 13 |
-| `test-datos.js` | que **una sesión jugada no se pierde**, con un Supabase falso al que se le corta la red | 44 |
+| `test-datos.js` | que **una sesión jugada no se pierde**, con un Supabase falso al que se le corta la red | 48 |
 | `test-plan.js` | que "Mi plan de mejora" recomienda desde los datos del estudiante y arma el test que prometió | 30 |
 
 Necesitan Chrome y `puppeteer-core` (se toma de `~/jarvis/app`); si no están, se **saltan** con código 0 para
@@ -53,6 +53,16 @@ que el repo siga siendo clonable sin instalar nada.
 - Feature nueva → probarla **sin cuenta** también.
 - Los sets van con `defer`; el CDN de Supabase **no** (el script en línea crea el cliente al parsear, y con
   defer `window.supabase` todavía no existe: la app se queda sin cuentas y sin un solo error). Lo cubre H13.
+
+## Antes de abrirlo a una escuela (pendientes de operación)
+
+- **SMTP propio en Supabase** (Auth → SMTP Settings). El correo de recuperación de contraseña lo manda
+  Supabase, y su servicio por defecto está limitado a unos pocos envíos por hora: con 100 estudiantes, el
+  "olvidé mi contraseña" deja de funcionar el primer día.
+- **Protección de contraseñas filtradas** (Auth → Passwords → HaveIBeenPwned). Hoy está apagada; es un
+  interruptor y lo pide el advisor de seguridad de Supabase.
+- **Quién puede registrarse.** Hoy cualquiera con el link crea cuenta con cualquier correo. Para un colegio
+  hay que decidir: abierto, restringido a un dominio (`@iae.edu`), o con código de clase.
 
 ## Lanzamiento
 
