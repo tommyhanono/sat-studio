@@ -3,7 +3,7 @@
 #
 #     tools/verificar.sh
 #
-# Corre las cuatro verificaciones en orden de costo: el banco (datos), el humo
+# Corre las verificaciones en orden de costo: el banco (datos), el humo
 # (la app se juega), la integridad (los datos del estudiante no se pierden) y el
 # plan de mejora. Sale con código 1 si algo falla, así que sirve antes de
 # publicar y dentro de cualquier hook.
@@ -25,7 +25,9 @@ corre "Banco de preguntas (contenido e integridad)" node tools/auditar-banco.js
 corre "Humo (la app se juega de verdad)"            node tools/test-humo.js
 corre "Integridad de datos del estudiante"          node tools/test-datos.js
 corre "Mi plan de mejora"                           node tools/test-plan.js
-corre "Todo en inglés (banco + interfaz)"           node tools/test-idioma.js
+corre "Banco en inglés"                             node tools/test-idioma.js
+corre "Recorrido de pantallas (lo que se ve)"       node tools/test-pantallas.js
+corre "Huella estructural del banco"                node tools/huella-banco.js
 
 printf '\n'
 if [ "$fallos" -eq 0 ]; then

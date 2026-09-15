@@ -603,6 +603,9 @@
   .pd-t{font-size:.88rem;font-weight:600;display:flex;justify-content:space-between;gap:8px}
   .pd-t span{color:var(--gray-mid);font-weight:400}
   .pd-n{text-align:right;font-weight:700;font-size:.9rem}
+  .draft-note{background:var(--gold-soft);border:1px solid #e6d3a8;border-left:4px solid var(--gold);
+    border-radius:10px;padding:13px 16px;margin-bottom:18px;font-size:.87rem;line-height:1.6;color:#5c4212}
+  .draft-note b{color:#3f2c07}
   .prog-table-wrap{background:#fff;border:1px solid var(--gray-line);border-radius:12px;overflow-x:auto}
   .prog-table{width:100%;border-collapse:collapse;font-size:.86rem}
   .prog-table th{text-align:left;padding:12px 14px;border-bottom:1px solid var(--gray-line);font-size:.76rem;text-transform:uppercase;letter-spacing:.05em;color:var(--gray-mid)}
@@ -874,6 +877,29 @@
     </div>
     <div class="atable-wrap"><h3>Groups</h3><div id="admin-groups"></div></div>
     <div class="atable-wrap"><h3>Students</h3><div id="admin-table"></div></div>
+  </div>
+</div>
+
+<!-- ============ TEACHER (DRAFT) ============ -->
+<div id="view-teacher" class="hidden">
+  <div class="admin-wrap">
+    <div class="admin-head">
+      <div>
+        <p class="brand-h admin-h">Class view</p>
+        <span class="admin-sub">SAT Studio · <span id="teacher-group">your group</span></span>
+      </div>
+      <div class="admin-actions">
+        <button class="btn-outline" id="btn-teacher-refresh">↻ Refresh</button>
+        <button class="btn-primary" id="btn-teacher-back">← Back</button>
+      </div>
+    </div>
+    <p class="draft-note"><b>Draft.</b> This view is not official yet — the layout and the
+      numbers it shows can still change. It only ever shows totals: how much each student has
+      practiced and how the group is doing by domain. It never shows anyone&rsquo;s individual answers.</p>
+    <div id="teacher-status" class="admin-status"></div>
+    <div class="akpi-row" id="teacher-kpis"></div>
+    <div class="atable-wrap"><h3>Where the group is losing points</h3><div id="teacher-domains"></div></div>
+    <div class="atable-wrap"><h3>Students</h3><div id="teacher-table"></div></div>
   </div>
 </div>
 
@@ -1499,35 +1525,46 @@ var PLAN_DOMW = {   // peso oficial de cada dominio en el examen (College Board)
   'Algebra':35, 'Advanced Math':35, 'Problem-Solving & Data Analysis':15, 'Geometry & Trigonometry':15,
   'Craft and Structure':28, 'Information and Ideas':26, 'Standard English Conventions':26, 'Expression of Ideas':20
 };
+/* Los 28 temas del plan. `key` es lo que se guarda en las preferencias del
+   estudiante, así que NO se renombra nunca; `m` es el regex que decide a qué
+   tema pertenece una pregunta, y se aplica sobre su `skill`.
+
+   Estos regex eran bilingües mientras el banco estaba en español. Al traducirlo
+   las alternativas en español quedaron muertas y, peor, se destaparon huecos:
+   46 preguntas dejaron de caer en ningún tema (casi todas de círculos) porque
+   el patrón decía `circunferenc` y el skill ahora dice "circle". El plan no las
+   podía recomendar ni contar. Por eso ahora son de inglés y cubren el
+   vocabulario real del banco. Si se agrega un skill nuevo, `test-plan.js`
+   (P1c) falla si la cobertura baja del 95 %. */
 var PLAN_TOPICS = [
-  { key:'lineq',    sec:'math', dom:'Algebra', t:'Linear equations & inequalities', m:/ecuaci[óo]n(es)? lineal|inecuaci|desigualdad|linear equation|inequalit/i },
-  { key:'systems',  sec:'math', dom:'Algebra', t:'Systems of equations', m:/sistema|system/i },
-  { key:'lines',    sec:'math', dom:'Algebra', t:'Lines: slope & intercept', m:/pendiente|recta|slope|intercept|línea recta|linear function|funci[óo]n lineal/i },
-  { key:'translate',sec:'math', dom:'Algebra', t:'Word problems into algebra', m:/traducci[óo]n|modelo lineal|word problem|translat|plantear/i },
-  { key:'expr',     sec:'math', dom:'Algebra', t:'Equivalent expressions & absolute value', m:/expresi[óo]n(es)? equivalente|binomio|valor absoluto|absolute value|equivalent expression|fracci[óo]n o decimal|diferencia de cuadrados/i },
-  { key:'quad',     sec:'math', dom:'Advanced Math', t:'Quadratics', m:/cuadr[áa]tic|quadratic|par[áa]bola|discriminante|v[ée]rtice/i },
-  { key:'expo',     sec:'math', dom:'Advanced Math', t:'Exponents & exponentials', m:/exponen|semivida|decaimiento|crecimiento exponencial|logar[íi]tm|logarithm/i },
-  { key:'poly',     sec:'math', dom:'Advanced Math', t:'Polynomials & rational functions', m:/polin[óo]m|racional|rational|factor|residuo|ceros|as[íi]ntot/i },
-  { key:'funcs',    sec:'math', dom:'Advanced Math', t:'Functions: notation & transformations', m:/funci[óo]n|function|composit|composici|inversa|inverse|transformaci|traslaci|piecewise|por partes|dominio|domain|rango|end behavior|comportamiento en los extremos|constraint|modular|cubic/i },
-  { key:'percent',  sec:'math', dom:'Problem-Solving & Data Analysis', t:'Percents', m:/porcentaje|percent|descuento|inter[ée]s/i },
-  { key:'prob',     sec:'math', dom:'Problem-Solving & Data Analysis', t:'Probability & two-way tables', m:/probabilidad|probabilit|tabla de doble entrada|two-way|valor esperado|expected value|mutuamente|independien|permutaci|combinatoria|counting/i },
-  { key:'stats',    sec:'math', dom:'Problem-Solving & Data Analysis', t:'Statistics & reading data', m:/media|mediana|moda|promedio|desviaci|dispersi|estad[íi]stic|margen de error|muestra|mean|median|standard deviation|gr[áa]fic|diagrama|scatter|histograma|graph|plot|l[íi]nea de mejor ajuste|best fit|dos variables|predicci/i },
-  { key:'rates',    sec:'math', dom:'Problem-Solving & Data Analysis', t:'Ratios, proportions & units', m:/raz[óo]n|proporci|tasa|unidad|densidad|escala|ratio|rate|unit/i },
-  { key:'circles',  sec:'math', dom:'Geometry & Trigonometry', t:'Circles', m:/c[íi]rcul|circunferenc|arco|sector|tangen|radio/i },
-  { key:'trig',     sec:'math', dom:'Geometry & Trigonometry', t:'Triangles & trigonometry', m:/tri[áa]ngulo|trigonometr|pit[áa]goras|sohcahtoa|semejan|congruen|seno|coseno|triangle|angle|[áa]ngulo|distancia|punto medio|midpoint|altura|hipotenusa/i },
-  { key:'solids',   sec:'math', dom:'Geometry & Trigonometry', t:'Volume & solids', m:/volumen|s[óo]lido|cilindro|cono|esfera|prisma|[áa]rea superficial|volume|surface/i },
-  { key:'punct',    sec:'rw', dom:'Standard English Conventions', t:'Punctuation & sentence boundaries', m:/puntuaci|punctuation|coma|comma|punto y coma|semicolon|dos puntos|colon|raya|dash|boundar|l[íi]mites|coordinaci|coordination|par[ée]ntesis|interruptor|gui[óo]n|inciso/i },
-  { key:'verbs',    sec:'rw', dom:'Standard English Conventions', t:'Verbs: agreement & tense', m:/verb|concordancia|agreement|tiempo verbal|tense|sujeto-verbo/i },
-  { key:'pronouns', sec:'rw', dom:'Standard English Conventions', t:'Pronouns & possessives', m:/pronombre|pronoun|posesiv|possessive|ap[óo]strof|antecedent/i },
-  { key:'modif',    sec:'rw', dom:'Standard English Conventions', t:'Modifiers & sentence structure', m:/modificador|modifier|form, structure|estructura|sense|paralel|parallel|fragment|aposici|apositiv|sujeto pospuesto|comparaci[óo]n l[óo]gica|participial/i },
-  { key:'transit',  sec:'rw', dom:'Expression of Ideas', t:'Transitions', m:/transici|transition/i },
-  { key:'synth',    sec:'rw', dom:'Expression of Ideas', t:'Rhetorical synthesis (the notes)', m:/synthesis|s[íi]ntesis|conclusion|notas/i },
-  { key:'wic',      sec:'rw', dom:'Craft and Structure', t:'Words in context', m:/words in context|word choice|vocabulario|palabra|significado|word in context|tone|tono|synonym|sin[óo]nim|meaning|irony|sarcas|attitude|actitud|context clue|nuance|matiz|academic vocab/i },
-  { key:'structure',sec:'rw', dom:'Craft and Structure', t:'Text structure & purpose', m:/structure|purpose|prop[óo]sito|estructura|function of|l[óo]gica|premise|counterargument|rhetoric|ret[óo]ric|stance|persuasion|shift/i },
-  { key:'crosstext',sec:'rw', dom:'Craft and Structure', dom2:'Information and Ideas', t:'Paired passages', m:/cross-text|paired|pareado|dos textos|both texts|passage a|perspective|compromise|across passages|agreement across|unstated disagreement/i },
-  { key:'evidence', sec:'rw', dom:'Information and Ideas', t:'Evidence (text & data)', m:/evidence|evidencia|quotation|cita|data in context|interpreting data|gr[áa]fic/i },
-  { key:'infer',    sec:'rw', dom:'Information and Ideas', t:'Inference & reasoning', m:/inferen|inferir|implicat|fallacy|conditional|contradictor|complementar|reasoning|claim|synthesiz|position/i },
-  { key:'central',  sec:'rw', dom:'Information and Ideas', t:'Central ideas & details', m:/central|main idea|idea principal|details|detalle|summar|resum/i }
+  { key:'lineq',    sec:'math', dom:'Algebra', t:'Linear equations & inequalities', m:/linear equation|inequalit|one variable|two variables|solving for/i },
+  { key:'systems',  sec:'math', dom:'Algebra', t:'Systems of equations', m:/system|elimination|substitution method|no solution|infinitely many/i },
+  { key:'lines',    sec:'math', dom:'Algebra', t:'Lines: slope & intercept', m:/slope|intercept|linear function|parallel line|perpendicular line|line through/i },
+  { key:'translate',sec:'math', dom:'Algebra', t:'Word problems into algebra', m:/word problem|translat|linear model|in context|model from|unit trap/i },
+  { key:'expr',     sec:'math', dom:'Algebra', t:'Equivalent expressions & absolute value', m:/equivalent expression|absolute value|binomial|difference of squares|fraction or decimal|structural shortcut/i },
+  { key:'quad',     sec:'math', dom:'Advanced Math', t:'Quadratics', m:/quadratic|parabola|discriminant|vertex|completing the square|roots?\b|real solutions?/i },
+  { key:'expo',     sec:'math', dom:'Advanced Math', t:'Exponents & exponentials', m:/exponent|exponential|half-life|decay|growth|logarithm|power(s)? of/i },
+  { key:'poly',     sec:'math', dom:'Advanced Math', t:'Polynomials & rational functions', m:/polynomial|rational|factor|remainder|zeros?\b|multiplicity|asymptot|end behavior/i },
+  { key:'funcs',    sec:'math', dom:'Advanced Math', t:'Functions: notation & transformations', m:/function|composit|inverse|transformation|translation|piecewise|domain|range|constraint|modular|cubic|evaluating/i },
+  { key:'percent',  sec:'math', dom:'Problem-Solving & Data Analysis', t:'Percents', m:/percent|discount|interest|markup|increase|decrease/i },
+  { key:'prob',     sec:'math', dom:'Problem-Solving & Data Analysis', t:'Probability & two-way tables', m:/probabilit|two-way|expected value|mutually|independent|conditional|condition(ing)? on|permutat|combinator|counting|events?\b/i },
+  { key:'stats',    sec:'math', dom:'Problem-Solving & Data Analysis', t:'Statistics & reading data', m:/mean\b|median|mode\b|average|standard deviation|spread|statistic|margin of error|sample|scatter|histogram|graph|plot|best fit|box plot|one-variable|two-variable|predict/i },
+  { key:'rates',    sec:'math', dom:'Problem-Solving & Data Analysis', t:'Ratios, proportions & units', m:/ratio|proportion|\brate|unit|density|scale factor|per hour|conversion/i },
+  { key:'circles',  sec:'math', dom:'Geometry & Trigonometry', t:'Circles', m:/circle|circumference|\barc\b|arc length|sector|tangent|radius|radii|diameter|central angle/i },
+  { key:'trig',     sec:'math', dom:'Geometry & Trigonometry', t:'Triangles & trigonometry', m:/triangle|trigonometr|pythagor|sohcahtoa|similar|congruen|sine|cosine|tangent ratio|angle|distance|midpoint|height|hypotenuse|leg\b|30-60-90|45-45-90/i },
+  { key:'solids',   sec:'math', dom:'Geometry & Trigonometry', t:'Volume & solids', m:/volume|solid|cylinder|cone|sphere|hemisphere|prism|pyramid|surface area|scaling|dimension/i },
+  { key:'punct',    sec:'rw', dom:'Standard English Conventions', t:'Punctuation & sentence boundaries', m:/punctuat|comma|semicolon|colon|dash|boundar|clause|joining|coordination|parenthes|non-?essential|nonessential|restrictive|appositive|title/i },
+  { key:'verbs',    sec:'rw', dom:'Standard English Conventions', t:'Verbs: agreement & tense', m:/verb|agreement|tense|subject.verb|plural|singular/i },
+  { key:'pronouns', sec:'rw', dom:'Standard English Conventions', t:'Pronouns & possessives', m:/pronoun|possessive|apostroph|antecedent|its\b|their\b/i },
+  { key:'modif',    sec:'rw', dom:'Standard English Conventions', t:'Modifiers & sentence structure', m:/modifier|form, structure|structure and sense|parallel|fragment|apposit|postponed subject|logical comparison|comparison|participial|dangling/i },
+  { key:'transit',  sec:'rw', dom:'Expression of Ideas', t:'Transitions', m:/transition|however|therefore|contrast|consequence/i },
+  { key:'synth',    sec:'rw', dom:'Expression of Ideas', t:'Rhetorical synthesis (the notes)', m:/synthes|conclusion|the notes|rhetorical synthesis|bullet/i },
+  { key:'wic',      sec:'rw', dom:'Craft and Structure', t:'Words in context', m:/words? in context|word choice|vocabulary|vocab|meaning|tone|synonym|irony|sarcas|attitude|context clue|nuance|similar (?:negative |positive )?words/i },
+  { key:'structure',sec:'rw', dom:'Craft and Structure', t:'Text structure & purpose', m:/structure|purpose|function of|logic|premise|counterargument|rhetoric|stance|persuasion|shift|overall/i },
+  { key:'crosstext',sec:'rw', dom:'Craft and Structure', dom2:'Information and Ideas', t:'Paired passages', m:/cross-?text|paired|both (?:texts|passages|authors)|passage a|perspective|compromise|across passages|agreement across|unstated disagreement/i },
+  { key:'evidence', sec:'rw', dom:'Information and Ideas', t:'Evidence (text & data)', m:/evidence|quotation|\bquote|data in context|interpreting data|graph|table|figure|supports?\b|weakens?\b|undermine/i },
+  { key:'infer',    sec:'rw', dom:'Information and Ideas', t:'Inference & reasoning', m:/inferen|infer\b|implicat|fallacy|conditional|contradictor|complementar|reasoning|claim|synthes|position|logic/i },
+  { key:'central',  sec:'rw', dom:'Information and Ideas', t:'Central ideas & details', m:/central|main idea|details?\b|summar|gist|overall point/i }
 ];
 function planTopicOf(q){
   var sec = (q._section === 'math') ? 'math' : 'rw';
@@ -2234,7 +2271,7 @@ function renderSavedReview(e, results){
     mockScreen('<div class="mock-card"><div class="mock-kicker">' + e.setTitle + '</div><h1>' + e.score + ' / ' + e.total + '</h1>' +
       '<p>The question-by-question review isn\'t available for this older session.</p>' +
       '<div class="mock-btns"><button class="btn-primary" id="mres-home">← Back to Home</button></div></div>');
-    $('#mres-home').addEventListener('click', function(){ ensureMockView().classList.add('hidden'); $('#view-home').classList.remove('hidden'); renderHome(); });
+    $('#mres-home').addEventListener('click', function(){ mostrarSolo('view-home'); renderHome(); });
     return;
   }
   var isMath = results.every(function(r){ return r.q._section === 'math'; });
@@ -2256,7 +2293,7 @@ function renderSavedReview(e, results){
     '<h3 class="mres-h">Every question with your answer &amp; explanation</h3>' +
     '<div id="mres-list">' + review + '</div></div>';
   mockScreen(html);
-  $('#mres-home').addEventListener('click', function(){ MOCK=null; ensureMockView().classList.add('hidden'); $('#view-home').classList.remove('hidden'); renderHome(); });
+  $('#mres-home').addEventListener('click', function(){ MOCK=null; mostrarSolo('view-home'); renderHome(); });
   $('#mres-redo').addEventListener('click', function(){ MOCK=null; ensureMockView().classList.add('hidden'); startSession('redo','drill'); });
 }
 
@@ -3195,10 +3232,7 @@ function _beginSession(set, mode){
     timerId: null, timerHidden: false, expired: false, timeUsed: 0,
     stacked: false, saved: false, elimGlobal: false
   };
-  $('#view-home').classList.add('hidden');
-  $('#view-results').classList.add('hidden');
-  var _vm = $('#view-mock'); if(_vm) _vm.classList.add('hidden');
-  $('#view-app').classList.remove('hidden');
+  mostrarSolo('view-app');
   $('#hdr-title').textContent = set.title + (mode === 'drill' ? ' — Drill' : '') + (MOCK && MOCK.active ? '' : '');
   $('#dir-panel').innerHTML = (set.section === 'math' ? DIR_MATH : DIR_RW) + '<br><button class="btn-primary" id="btn-dirs-close">Close</button>';
   $('#btn-dirs-close').addEventListener('click', function(){ $('#dir-panel').classList.add('hidden'); });
@@ -3507,10 +3541,8 @@ function finishSession(expired){
       })
     });
   }
-  $('#view-app').classList.add('hidden');
-  $('#view-results').classList.remove('hidden');
+  mostrarSolo('view-results');
   renderResults(g);
-  intenta(function(){ window.scrollTo(0,0); }, 'scroll');
 }
 function buildSummary(g){
   var lines = [];
@@ -3621,11 +3653,7 @@ function goHome(){
   if(S && S.timerId){ clearInterval(S.timerId); S.timerId = null; }
   S = null;
   if(MOCK){ MOCK.active = false; MOCK = null; }
-  $('#view-app').classList.add('hidden');
-  $('#view-results').classList.add('hidden');
-  var _vm = $('#view-mock'); if(_vm) _vm.classList.add('hidden');
-  var _vc = $('#view-class'); if(_vc) _vc.classList.add('hidden');
-  $('#view-home').classList.remove('hidden');
+  mostrarSolo('view-home');
   closeLineReader();
   renderHome();
   intenta(function(){ window.scrollTo(0,0); }, 'scroll');
@@ -3770,6 +3798,11 @@ function setCalcMode(mode){
   } else if(desmosCalc){ intenta(function(){ desmosCalc.resize(); }, 'calculator resize'); }
 }
 function escAttr(s){ return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+/* Todo lo que escribió una persona y termina en innerHTML pasa por aquí. El
+   nombre de la cuenta lo elige el estudiante al registrarse, así que un nombre
+   como <img src=x onerror=...> se ejecutaba en el panel del profesor y en el
+   del admin, que es justo donde peor cae. */
+function escHtml(s){ return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;').replace(/'/g,'&#39;'); }
 // "In Desmos" help block shown under a Math explanation (uses q.desmos text + optional q.desmosLatex[]).
 function desmosBlockHTML(q){
   if(!q || !q.desmos) return '';
@@ -4081,16 +4114,11 @@ var adminCharts = {};
    Todo el detalle vive acá y no en el home: el plan de mejora tiene que poder
    leerse en diez segundos, y el que quiera los números entra a verlos. */
 function openProgress(){
-  ['view-home','view-auth','view-app','view-results','view-admin'].forEach(function(id){
-    var el = $('#' + id); if(el) el.classList.add('hidden');
-  });
-  $('#view-progress').classList.remove('hidden');
+  mostrarSolo('view-progress');
   renderProgress();
-  intenta(function(){ window.scrollTo(0,0); }, 'scroll');
 }
 function closeProgress(){
-  $('#view-progress').classList.add('hidden');
-  $('#view-home').classList.remove('hidden');
+  mostrarSolo('view-home');
   renderHome();
 }
 function targetScore(){ return store.get('sat_target_score', null); }
@@ -4166,18 +4194,103 @@ function renderProgress(){
 
 function openAdmin(){
   if(!authAvailable() || !currentUser) return;
-  $('#view-home').classList.add('hidden');
-  $('#view-auth').classList.add('hidden');
-  $('#view-app').classList.add('hidden');
-  $('#view-results').classList.add('hidden');
-  $('#view-admin').classList.remove('hidden');
-  window.scrollTo(0,0);
+  mostrarSolo('view-admin');
   loadAdmin();
 }
 function closeAdmin(){
-  $('#view-admin').classList.add('hidden');
-  $('#view-home').classList.remove('hidden');
+  mostrarSolo('view-home');
+  renderHome();
 }
+/* ================= VISTA DE PROFESOR (BORRADOR) =================
+   La pidió Tommy como borrador, no como algo oficial. La regla de diseño es
+   una sola y está puesta a propósito en el servidor, no acá: la RPC
+   sat_teacher_overview solo devuelve AGREGADOS y solo del mismo dominio de
+   correo del profesor. Nunca la respuesta de una pregunta de un estudiante.
+   Que la pantalla no pueda pedir el detalle es la mitad del punto. */
+function esProfe(){
+  var r = currentUser && currentUser.app_metadata && currentUser.app_metadata.role;
+  return r === 'teacher' || r === 'admin';
+}
+function openTeacher(){
+  if(!authAvailable() || !currentUser || !esProfe()) return;
+  mostrarSolo('view-teacher');
+  loadTeacher();
+}
+function closeTeacher(){
+  mostrarSolo('view-home');
+  renderHome();
+}
+function loadTeacher(){
+  var st = $('#teacher-status'); if(st) st.textContent = 'Loading…';
+  SB.rpc('sat_teacher_overview').then(function(r){
+    if(r.error){
+      if(st) st.textContent = 'Could not load: ' + (r.error.message || 'not authorized') + '.';
+      return;
+    }
+    if(st) st.textContent = '';
+    // Si renderTeacher falla, el problema NO es la red: decirle "revisa tu
+    // conexión" a alguien que sí tiene conexión lo manda a buscar donde no es.
+    try { renderTeacher(r.data || {}); }
+    catch(e){
+      console.error('renderTeacher:', e);
+      if(st) st.textContent = 'Loaded the data but could not draw the table. Reload the page; if it keeps happening, tell Tommy.';
+    }
+  }).catch(function(){
+    if(st) st.textContent = 'Could not load. Check your connection.';
+  });
+}
+function renderTeacher(d){
+  var alumnos = d.students || [], doms = d.by_domain || [];
+  var g = $('#teacher-group'); if(g) g.textContent = d.group || 'your group';
+
+  var activos = alumnos.filter(function(a){ return (a.sessions || 0) > 0; }).length;
+  var preguntas = alumnos.reduce(function(a, b){ return a + (b.questions || 0); }, 0);
+  var sesiones = alumnos.reduce(function(a, b){ return a + (b.sessions || 0); }, 0);
+  var totalOk = doms.reduce(function(a, b){ return a + (b.correct || 0); }, 0);
+  var totalQ = doms.reduce(function(a, b){ return a + (b.total || 0); }, 0);
+  var kpi = function(k, v, sub){ return '<div class="akpi"><div class="k">' + k + '</div><div class="v">' + v + '</div>' + (sub ? '<div class="s">' + sub + '</div>' : '') + '</div>'; };
+  $('#teacher-kpis').innerHTML =
+    kpi('Students', alumnos.length, activos + ' have started') +
+    kpi('Sessions', sesiones, 'all time') +
+    kpi('Questions', preguntas, 'answered by the group') +
+    kpi('Group accuracy', totalQ ? (Math.round(1000 * totalOk / totalQ) / 10) + '%' : '—', totalQ ? totalQ + ' graded' : 'no data yet');
+
+  if(!doms.length){
+    $('#teacher-domains').innerHTML = '<p class="empty-note">No one in the group has finished a session yet.</p>';
+  } else {
+    var peor = doms.slice().sort(function(a, b){
+      return (a.correct / (a.total || 1)) - (b.correct / (b.total || 1));
+    });
+    $('#teacher-domains').innerHTML = peor.map(function(x){
+      var pct = x.total ? Math.round(100 * x.correct / x.total) : 0;
+      var cls = pct < 60 ? ' bad' : (pct < 80 ? ' mid' : '');
+      return '<div class="bar-row"><span class="lbl">' + escHtml(x.domain) + '</span>' +
+        '<span class="bar-track"><span class="bar-fill' + cls + '" style="width:' + pct + '%"></span></span>' +
+        '<span class="pct">' + pct + '% · ' + x.total + '</span></div>';
+    }).join('');
+  }
+
+  if(!alumnos.length){
+    $('#teacher-table').innerHTML = '<p class="empty-note">No students in this group yet.</p>';
+    return;
+  }
+  var filas = alumnos.map(function(a){
+    return '<tr><td>' + escHtml(a.name || '—') + '</td>' +
+      '<td>' + escHtml(a.email || '') + '</td>' +
+      '<td class="num">' + escHtml(a.target || '—') + '</td>' +
+      '<td>' + escHtml(a.exam_date || '—') + '</td>' +
+      '<td class="num">' + (a.sessions || 0) + '</td>' +
+      '<td class="num">' + (a.questions || 0) + '</td>' +
+      '<td class="num">' + (a.accuracy != null ? a.accuracy + '%' : '—') + '</td>' +
+      '<td>' + (a.last_active || 'never') + '</td></tr>';
+  }).join('');
+  $('#teacher-table').innerHTML =
+    '<div class="prog-table-wrap"><table class="prog-table"><thead><tr>' +
+      '<th>Name</th><th>Email</th><th class="num">Goal</th><th>Test date</th>' +
+      '<th class="num">Sessions</th><th class="num">Questions</th><th class="num">Accuracy</th><th>Last active</th>' +
+    '</tr></thead><tbody>' + filas + '</tbody></table></div>';
+}
+
 function loadAdmin(){
   var st = $('#admin-status'); if(st) st.textContent = 'Loading…';
   Promise.all([ SB.rpc('sat_admin_overview'), SB.rpc('sat_admin_students') ]).then(function(rs){
@@ -4235,7 +4348,7 @@ function renderAdminGroups(grupos){
     '<th>Sessions</th><th>Accuracy</th></tr></thead><tbody>' +
     grupos.map(function(g){
       var act = g.active || 0, tot = g.students || 0;
-      return '<tr><td><span class="gtag">' + (g.group || '—') + '</span></td>' +
+      return '<tr><td><span class="gtag">' + escHtml(g.group || '—') + '</span></td>' +
         '<td>' + tot + '</td>' +
         '<td>' + act + (tot ? ' <span class="gpct">(' + Math.round(100 * act / tot) + '%)</span>' : '') + '</td>' +
         '<td>' + (g.sessions || 0) + '</td>' +
@@ -4265,7 +4378,8 @@ function renderAdminTable(students){
         var v = r[c.f];
         if(c.f === 'accuracy') v = (v == null ? '—' : v + '%');
         if(v == null || v === '') v = '—';
-        if(c.f === 'role') v = '<span class="rtag ' + (r.role === 'admin' ? 'radm' : '') + '">' + (v === 'estudiante' ? 'student' : v) + '</span>';
+        v = escHtml(v);
+        if(c.f === 'role') v = '<span class="rtag ' + (r.role === 'admin' ? 'radm' : '') + '">' + v + '</span>';
         if(c.f === 'group' && v !== '—') v = '<span class="gtag">' + v + '</span>';
         return '<td>' + v + '</td>';
       }).join('') + '</tr>';
@@ -4297,16 +4411,10 @@ function setAuthBusy(busy){
 }
 
 function showAuthGate(){
-  $('#view-home').classList.add('hidden');
-  $('#view-app').classList.add('hidden');
-  $('#view-results').classList.add('hidden');
-  $('#view-auth').classList.remove('hidden');
+  mostrarSolo('view-auth');
 }
 function enterApp(){
-  $('#view-auth').classList.add('hidden');
-  $('#view-results').classList.add('hidden');
-  $('#view-app').classList.add('hidden');
-  $('#view-home').classList.remove('hidden');
+  mostrarSolo('view-home');
   setUserChip();
   renderHome();
 }
@@ -4315,10 +4423,12 @@ function setUserChip(){
   if(currentUser){
     var name = (currentUser.user_metadata && currentUser.user_metadata.name) || currentUser.email || 'My account';
     var adminBtn = (currentUser.app_metadata && currentUser.app_metadata.role === 'admin') ? '<button class="uc-admin" id="btn-admin">Admin</button>' : '';
-    chip.innerHTML = '<span class="uc-name">☁️ ' + name + '</span>' + adminBtn + '<button class="uc-out" id="btn-logout">Sign out</button>';
+    var teacherBtn = esProfe() ? '<button class="uc-admin" id="btn-teacher">Class</button>' : '';
+    chip.innerHTML = '<span class="uc-name">☁️ ' + escHtml(name) + '</span>' + teacherBtn + adminBtn + '<button class="uc-out" id="btn-logout">Sign out</button>';
     chip.classList.remove('hidden');
     var b = $('#btn-logout'); if(b) b.addEventListener('click', doLogout);
     var ab = $('#btn-admin'); if(ab) ab.addEventListener('click', openAdmin);
+    var tb = $('#btn-teacher'); if(tb) tb.addEventListener('click', openTeacher);
   } else {
     chip.classList.add('hidden'); chip.innerHTML = '';
   }
@@ -4563,6 +4673,20 @@ function sectionScaled(m1, m2, hardPath){
   var raw = hardPath ? (200 + 600*p) : Math.min(600, 200 + 400*p);
   return Math.max(200, Math.min(800, Math.round(raw/10)*10));
 }
+/* Una sola lista de pantallas y una sola función para cambiar de una a otra.
+   Antes cada pantalla apagaba a mano SU propia lista, y ninguna incluía a todas:
+   openAdmin no apagaba progreso, mockScreen no apagaba profesor. El síntoma era
+   silencioso —dos vistas encendidas a la vez— y salía como scroll horizontal en
+   móvil, porque la tabla de la vista de abajo seguía midiendo. */
+var VISTAS = ['view-auth','view-home','view-progress','view-admin','view-teacher','view-app','view-results','view-mock','view-class'];
+function mostrarSolo(id){
+  VISTAS.forEach(function(v){
+    var el = document.getElementById(v);
+    if(el) el.classList.toggle('hidden', v !== id);
+  });
+  intenta(function(){ window.scrollTo(0,0); }, 'scroll');
+}
+
 function ensureMockView(){
   var vm = $('#view-mock');
   if(!vm){ vm = document.createElement('div'); vm.id='view-mock'; vm.className='hidden';
@@ -4570,9 +4694,8 @@ function ensureMockView(){
   return vm;
 }
 function mockScreen(html){
-  ['view-auth','view-home','view-admin','view-app','view-results'].forEach(function(id){ var el=$('#'+id); if(el) el.classList.add('hidden'); });
-  var v = ensureMockView(); v.innerHTML = html; v.classList.remove('hidden');
-  intenta(function(){ window.scrollTo(0,0); }, 'scroll');
+  var v = ensureMockView(); v.innerHTML = html;
+  mostrarSolo('view-mock');
 }
 function mockRnd(code){ return (MOCK && MOCK.seed != null) ? mulberry32(MOCK.seed * 97 + code) : null; }
 function startMock(kind, num, seedArg, hardMode){
@@ -4592,7 +4715,7 @@ function startMock(kind, num, seedArg, hardMode){
   MOCK.mods[firstKey] = makeModuleSet(section, first, 'Module 1');
   mockScreen(mockIntroHTML(kind, first.length));
   $('#mock-next').addEventListener('click', function(){ _beginSession(MOCK.mods[firstKey], 'exam'); });
-  $('#mock-cancel').addEventListener('click', function(){ MOCK=null; ensureMockView().classList.add('hidden'); $('#view-home').classList.remove('hidden'); });
+  $('#mock-cancel').addEventListener('click', function(){ MOCK=null; mostrarSolo('view-home'); });
 }
 function mockIntroHTML(kind, n1){
   if(kind === 'full'){
@@ -4735,7 +4858,7 @@ function renderMockResults(o){
     '<div id="mres-list">'+review+'</div>'+
   '</div>';
   mockScreen(html);
-  $('#mres-home').addEventListener('click', function(){ MOCK=null; ensureMockView().classList.add('hidden'); $('#view-home').classList.remove('hidden'); renderHome(); });
+  $('#mres-home').addEventListener('click', function(){ MOCK=null; mostrarSolo('view-home'); renderHome(); });
   $('#mres-redo').addEventListener('click', function(){ MOCK=null; ensureMockView().classList.add('hidden'); startSession('redo','drill'); });
 }
 function reviewMock(sid){
@@ -4755,8 +4878,7 @@ function reviewMock(sid){
 function authBoot(){
   if(!authAvailable()){
     // Sin backend configurado → modo local (funciona igual, guarda en este navegador)
-    $('#view-auth').classList.add('hidden');
-    $('#view-home').classList.remove('hidden');
+    mostrarSolo('view-home');
     renderHome();
     return;
   }
@@ -5001,8 +5123,7 @@ function doForgot(){
 }
 function mostrarNuevaContrasena(){
   var box = $('#auth-newpass'); if(!box) return;
-  $('#view-auth').classList.remove('hidden');
-  $('#view-home').classList.add('hidden');
+  mostrarSolo('view-auth');
   box.classList.remove('hidden');
   setAuthMsg('You opened the recovery link. Choose your new password below.', false);
   intenta(function(){ $('#auth-pass2').focus(); }, 'focus');
@@ -5166,6 +5287,8 @@ function init(){
   wireAuth();
   var pbk = $('#btn-prog-back'); if(pbk) pbk.addEventListener('click', closeProgress);
   var abk = $('#btn-admin-back'); if(abk) abk.addEventListener('click', closeAdmin);
+  var tbk = $('#btn-teacher-back'); if(tbk) tbk.addEventListener('click', closeTeacher);
+  var trf = $('#btn-teacher-refresh'); if(trf) trf.addEventListener('click', loadTeacher);
   var abr = $('#btn-admin-refresh'); if(abr) abr.addEventListener('click', loadAdmin);
   authBoot();
 }

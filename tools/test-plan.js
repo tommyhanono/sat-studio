@@ -173,7 +173,7 @@ const sleep = ms => new Promise(r => setTimeout(r, ms));
       };
     });
     check('P8 la sección existe', ui.existe, ui);
-    check('P8b es la primera del home', /plan de mejora/i.test(ui.primera), ui.primera);
+    check('P8b es la primera del home', /improvement plan/i.test(ui.primera), ui.primera);
     check('P8c muestra temas con sus números', ui.filas >= 6, ui);
     check('P8d tiene las 3 preguntas (8 opciones)', ui.opciones === 8, ui);
     check('P8e tiene el botón de crear', ui.boton, ui);
