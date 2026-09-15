@@ -11,138 +11,138 @@ window.SAT_SETS.push({
   questions: [
     {
       id:'PCU-01', type:'mc', domain:'Standard English Conventions', difficulty:'Fácil',
-      skill:'Puntuación: coma introductoria', cheat:'comma-intro',
+      skill:'Punctuation: introductory comma', cheat:'comma-intro',
       passage:"To keep the mural’s colors from fading in direct %BLANK% the restorers coated the wall with a transparent mineral glaze.",
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'sunlight', B:'sunlight,', C:'sunlight;', D:'sunlight:'},
       correct:'B',
-      expCorrect:'“To keep the mural’s colors from fading in direct sunlight” es una frase introductoria (indica el propósito). Cuando una frase así abre la oración, se separa de la cláusula principal (“the restorers coated…”) con una coma.',
+      expCorrect:'"To keep the mural’s colors from fading in direct sunlight" is an introductory phrase (it states the purpose). When a phrase like that opens the sentence, it is separated from the main clause ("the restorers coated…") with a comma.',
       expWrong:{
-        A:'Sin coma, la frase introductoria se estrella contra el sujeto “the restorers”; la coma después del elemento introductorio es obligatoria.',
-        C:'El punto y coma exige una oración independiente a CADA lado, y “To keep… sunlight” no es una oración completa.',
-        D:'Los dos puntos solo van después de una oración COMPLETA; una frase introductoria no puede sostenerlos.'
+        A:'With no comma, the introductory phrase crashes into the subject "the restorers"; the comma after an introductory element is mandatory.',
+        C:'A semicolon demands an independent sentence on EACH side, and "To keep… sunlight" is not a complete sentence.',
+        D:'A colon goes only after a COMPLETE sentence; an introductory phrase cannot support one.'
       },
-      tip:'¿La oración abre con To/After/When/Because/Although…? Marca dónde termina esa parte introductoria y pon la coma justo ahí.'
+      tip:'Does the sentence open with To/After/When/Because/Although…? Mark where that introductory part ends and put the comma right there.'
     },
     {
       id:'PCU-02', type:'mc', domain:'Standard English Conventions', difficulty:'Media',
-      skill:'Puntuación: elemento no esencial', cheat:'comma-nonessential',
+      skill:'Punctuation: non-essential element', cheat:'comma-nonessential',
       passage:"Katherine Johnson, whose orbital calculations helped guide the first American crewed %BLANK% worked at NASA and its predecessor for more than three decades.",
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'spaceflights', B:'spaceflights;', C:'spaceflights—', D:'spaceflights,'},
       correct:'D',
-      expCorrect:'“whose orbital calculations… spaceflights” es un inciso NO esencial que se abrió con una coma después de “Johnson”. Los incisos van entre signos gemelos: debe cerrarse con OTRA coma antes del verbo principal “worked”.',
+      expCorrect:'"whose orbital calculations… spaceflights" is a NON-essential aside opened with a comma after "Johnson". Asides sit between twin marks: it has to close with ANOTHER comma before the main verb "worked".',
       expWrong:{
-        A:'Sin puntuación, el inciso nunca se cierra y el sujeto “Katherine Johnson” choca de frente con su verbo “worked”.',
-        B:'El punto y coma pide oraciones independientes a ambos lados; no puede cerrar un inciso abierto con coma.',
-        C:'La raya no puede cerrar un inciso que se abrió con coma: apertura y cierre deben coincidir (coma–coma o raya–raya).'
+        A:'With no punctuation, the aside never closes and the subject "Katherine Johnson" crashes straight into its verb "worked".',
+        B:'A semicolon calls for independent sentences on both sides; it cannot close an aside opened with a comma.',
+        C:'A dash cannot close an aside that opened with a comma: opening and closing have to match (comma–comma or dash–dash).'
       },
-      tip:'Inciso = signos GEMELOS. Si abrió con coma, cierra con coma; si abrió con raya, cierra con raya. Nunca los mezcles.'
+      tip:'An aside takes TWIN marks. If it opened with a comma, close with a comma; if it opened with a dash, close with a dash. Never mix them.'
     },
     {
       id:'PCU-03', type:'mc', domain:'Standard English Conventions', difficulty:'Fácil',
-      skill:'Puntuación: coma + FANBOYS', cheat:'comma-fanboys',
+      skill:'Punctuation: comma + FANBOYS', cheat:'comma-fanboys',
       passage:"Hand-pulled noodles call for nothing more than flour, water, and %BLANK% the pulling technique itself can take a cook years to master.",
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'salt, but', B:'salt but', C:'salt, but,', D:'salt; but'},
       correct:'A',
-      expCorrect:'Hay dos oraciones independientes (“Hand-pulled noodles call for…” y “the pulling technique… can take…”) unidas por el FANBOYS “but”. El patrón correcto es coma + conjunción: “…salt, but the pulling technique…”.',
+      expCorrect:'There are two independent sentences ("Hand-pulled noodles call for…" and "the pulling technique… can take…") joined by the FANBOYS "but". The correct pattern is comma + conjunction: "…salt, but the pulling technique…".',
       expWrong:{
         B:'Falta la coma antes de “but”: cuando un FANBOYS une dos oraciones completas, esa coma es obligatoria en el SAT.',
-        C:'La coma después de “but” sobra: la coma va ANTES de la conjunción, nunca después.',
-        D:'El punto y coma REEMPLAZA a la conjunción, no la acompaña: “; but” es redundante.'
+        C:'The comma after "but" is wrong: the comma goes BEFORE the conjunction, never after.',
+        D:'The semicolon REPLACES the conjunction, it does not accompany it: "; but" is redundant.'
       },
-      tip:'FANBOYS = for, and, nor, but, or, yet, so. Dos oraciones completas + FANBOYS → coma justo antes de la conjunción.'
+      tip:'FANBOYS = for, and, nor, but, or, yet, so. Two complete sentences + FANBOYS → a comma right before the conjunction.'
     },
     {
       id:'PCU-04', type:'mc', domain:'Standard English Conventions', difficulty:'Difícil',
-      skill:'Puntuación: coma innecesaria', cheat:'comma-unnecessary',
+      skill:'Punctuation: unnecessary comma', cheat:'comma-unnecessary',
       passage:"A network of irrigation canals dug across the desert more than a thousand years ago by Hohokam %BLANK% still determines the routes of several waterways in modern Phoenix.",
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'farmers,', B:'farmers—', C:'farmers', D:'farmers;'},
       correct:'C',
-      expCorrect:'El sujeto completo es “A network of irrigation canals… by Hohokam farmers” y su verbo es “still determines”. Por largo que sea el sujeto, entre él y su verbo NO va ninguna puntuación.',
+      expCorrect:'The full subject is "A network of irrigation canals… by Hohokam farmers" and its verb is "still determines". However long the subject is, NO punctuation goes between it and its verb.',
       expWrong:{
-        A:'La coma separa ilegalmente el sujeto de su verbo; la pausa que “sientes” al leer no justifica una coma.',
-        B:'Una raya suelta aquí también corta el sujeto de su verbo; las rayas de inciso van en pareja.',
-        D:'El punto y coma exige una oración independiente a cada lado, y “still determines…” no lo es.'
+        A:'The comma illegally separates the subject from its verb; the pause you "feel" while reading does not justify a comma.',
+        B:'A lone dash here also cuts the subject off from its verb; aside dashes come in pairs.',
+        D:'A semicolon demands an independent sentence on each side, and "still determines…" is not one.'
       },
-      tip:'Sujeto largo ≠ coma. Encuentra el núcleo y el verbo (network… determines) y verifica que nada los separe.'
+      tip:'A long subject ≠ a comma. Find the head and the verb (network… determines) and check that nothing separates them.'
     },
     {
       id:'PCU-05', type:'mc', domain:'Standard English Conventions', difficulty:'Media',
-      skill:'Puntuación: punto y coma', cheat:'semicolon',
+      skill:'Punctuation: semicolon', cheat:'semicolon',
       passage:"High-wheel bicycles of the 1880s look almost comical to modern %BLANK% in their own day, riding one at full speed was considered a daring athletic feat.",
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'eyes,', B:'eyes;', C:'eyes', D:'eyes:'},
       correct:'B',
-      expCorrect:'Hay dos oraciones completas: “High-wheel bicycles… look almost comical to modern eyes” y “in their own day, riding one… was considered a daring athletic feat”. Para unirlas sin conjunción, el punto y coma es la opción correcta.',
+      expCorrect:'There are two complete sentences: "High-wheel bicycles… look almost comical to modern eyes" and "in their own day, riding one… was considered a daring athletic feat". To join them with no conjunction, the semicolon is the right choice.',
       expWrong:{
-        A:'Una coma sola entre dos oraciones completas crea un comma splice.',
-        C:'Sin puntuación, las dos oraciones se fusionan en un run-on.',
-        D:'Los dos puntos unen dos independientes solo cuando la segunda EXPLICA la primera; aquí la segunda CONTRASTA (cómicas hoy, serias en su época).'
+        A:'A single comma between two complete sentences creates a comma splice.',
+        C:'With no punctuation, the two sentences fuse into a run-on.',
+        D:'A colon joins two independent clauses only when the second EXPLAINS the first; here the second CONTRASTS (comical today, serious in their day).'
       },
-      tip:'Prueba del punto: si en el blank podrías poner un punto y quedan dos oraciones completas, el “;” funciona.'
+      tip:'The period test: if you could drop a period into the blank and be left with two complete sentences, ";" works.'
     },
     {
       id:'PCU-06', type:'mc', domain:'Standard English Conventions', difficulty:'Difícil',
-      skill:'Puntuación: punto y coma + adverbio', cheat:'semicolon-adverb',
+      skill:'Punctuation: semicolon + adverb', cheat:'semicolon-adverb',
       passage:"City planners braced for fierce resistance to the new bike %BLANK% the proposal cleared the council without a single dissenting vote.",
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'lanes, however,', B:'lanes; however', C:'lanes however,', D:'lanes; however,'},
       correct:'D',
-      expCorrect:'Son dos oraciones independientes y la segunda arranca con el adverbio conjuntivo “however”. El patrón es: oración 1 + punto y coma + however + coma + oración 2 → “…bike lanes; however, the proposal…”.',
+      expCorrect:'These are two independent sentences and the second opens with the conjunctive adverb "however". The pattern is: sentence 1 + semicolon + however + comma + sentence 2 → "…bike lanes; however, the proposal…".',
       expWrong:{
-        A:'“, however,” entre dos oraciones completas sigue siendo un comma splice: however no es conjunción.',
-        B:'Falta la coma DESPUÉS de “however”.',
-        C:'Falta el punto y coma antes de “however”; sin él, las dos oraciones se fusionan.'
+        A:'", however," between two complete sentences is still a comma splice: however is not a conjunction.',
+        B:'The comma AFTER "however" is missing.',
+        C:'The semicolon before "however" is missing; without it, the two sentences fuse.'
       },
-      tip:'however/therefore/moreover NO son FANBOYS: no unen oraciones con una simple coma. Entre dos independientes: “; however,”.'
+      tip:'however/therefore/moreover are NOT FANBOYS: they do not join sentences with a plain comma. Between two independent clauses: "; however,".'
     },
     {
       id:'PCU-07', type:'mc', domain:'Standard English Conventions', difficulty:'Fácil',
-      skill:'Puntuación: dos puntos', cheat:'colon',
+      skill:'Punctuation: colon', cheat:'colon',
       passage:"Before dawn, the balloon crew ran through a final inspection of three critical %BLANK% the burner, the envelope fabric, and the fuel lines.",
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'systems:', B:'systems,', C:'systems;', D:'systems'},
       correct:'A',
-      expCorrect:'Antes del blank hay una oración completa (“Before dawn, the balloon crew ran through a final inspection of three critical systems”) y lo que sigue es la lista que la detalla. Ese es exactamente el trabajo de los dos puntos.',
+      expCorrect:'Before the blank there is a complete sentence ("Before dawn, the balloon crew ran through a final inspection of three critical systems") and what follows is the list spelling it out. That is exactly the job of the colon.',
       expWrong:{
-        B:'Después de una oración completa, la coma no puede presentar así la lista.',
-        C:'El punto y coma exigiría una oración independiente después, y una lista no lo es.',
-        D:'Sin puntuación, “systems the burner…” se amontona sin sentido.'
+        B:'After a complete sentence, a comma cannot introduce the list this way.',
+        C:'A semicolon would demand an independent sentence after it, and a list is not one.',
+        D:'With no punctuation, "systems the burner…" piles up into nonsense.'
       },
-      tip:'Dos puntos = solo después de una oración COMPLETA. Tapa lo que sigue: lo de antes debe poder terminar en punto.'
+      tip:'Colon = only after a COMPLETE sentence. Cover what follows: what comes before has to be able to end in a period.'
     },
     {
       id:'PCU-08', type:'mc', domain:'Standard English Conventions', difficulty:'Media',
-      skill:'Puntuación: rayas', cheat:'dash',
+      skill:'Punctuation: dashes', cheat:'dash',
       passage:"The tuatara—a reptile whose lineage split from snakes and lizards more than 200 million years %BLANK% now survives mainly on small islands off the coast of New Zealand.",
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'ago,', B:'ago;', C:'ago—', D:'ago:'},
       correct:'C',
-      expCorrect:'El inciso “a reptile whose lineage… years ago” se abrió con una raya después de “tuatara”, así que debe CERRARSE con otra raya antes de “now survives”. Raya abre → raya cierra.',
+      expCorrect:'The aside "a reptile whose lineage… years ago" opened with a dash after "tuatara", so it has to CLOSE with another dash before "now survives". Dash opens → dash closes.',
       expWrong:{
         A:'Mezcla raya de apertura con coma de cierre; los signos que encierran un inciso deben coincidir.',
         B:'El punto y coma no cierra incisos y no hay oración independiente antes del blank.',
         D:'Los dos puntos no cierran un inciso abierto con raya.'
       },
-      tip:'Raya “huérfana” antes del blank → busca la opción que la empareja con otra raya.'
+      tip:'An "orphan" dash before the blank → look for the option that pairs it with another dash.'
     },
     {
       id:'PCU-09', type:'mc', domain:'Standard English Conventions', difficulty:'Difícil',
-      skill:'Límites de oración', cheat:'boundaries',
+      skill:'Sentence boundaries', cheat:'boundaries',
       passage:"Wind farms now generate a third of the region’s %BLANK% plants supplied nearly all of it just fifteen years ago.",
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'electricity, coal', B:'electricity. Coal', C:'electricity coal', D:'electricity: coal'},
       correct:'B',
-      expCorrect:'“Wind farms now generate…” y “coal plants supplied…” son dos oraciones completas. Sin conjunción que las una, la reparación correcta entre las opciones es cerrar con punto y arrancar oración nueva: “…electricity. Coal plants…”.',
+      expCorrect:'"Wind farms now generate…" and "coal plants supplied…" are two complete sentences. With no conjunction joining them, the correct repair among the options is to close with a period and start a new sentence: "…electricity. Coal plants…".',
       expWrong:{
         A:'Una coma sola entre dos oraciones completas es un comma splice.',
         C:'Sin puntuación queda un run-on: dos oraciones fusionadas.',
         D:'Los dos puntos pedirían que la segunda oración explique o desarrolle la primera; aquí solo contrasta el pasado con el presente.'
       },
-      tip:'Un comma splice se repara con punto, con “;”, o con coma + FANBOYS. Revisa cuál de esas reparaciones aparece entre las opciones.'
+      tip:'A comma splice is repaired with a period, with ";", or with a comma + FANBOYS. Check which of those repairs appears among the options.'
     },
     {
       id:'PCU-10', type:'mc', domain:'Standard English Conventions', difficulty:'Media',
@@ -151,13 +151,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'families’', B:'family’s', C:'families', D:'familys’'},
       correct:'A',
-      expCorrect:'Son cuarenta familias (plural: families) y los presupuestos les pertenecen. Para un plural terminado en -s, el posesivo se forma con el apóstrofo DESPUÉS de la s: “the families’ grocery budgets”.',
+      expCorrect:'It is forty families (plural: families) and the budgets belong to them. For a plural ending in -s, the possessive is formed with the apostrophe AFTER the s: "the families’ grocery budgets".',
       expWrong:{
         B:'“family’s” es el posesivo SINGULAR (de una sola familia), pero el texto habla de cuarenta.',
         C:'Sin apóstrofo no se marca posesión: “the families grocery budgets” queda mal formado.',
         D:'El plural de family es families (con -ies); la forma “familys” no existe.'
       },
-      tip:'Dos pasos: (1) forma bien el plural (family → families); (2) plural en -s → apóstrofo después de la s. Y recuerda: its = posesivo, it’s = “it is”.'
+      tip:'Two steps: (1) form the plural correctly (family → families); (2) a plural in -s → apostrophe after the s. And remember: its = possessive, it’s = "it is".'
     }
   ]
 });

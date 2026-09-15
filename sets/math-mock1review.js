@@ -66,7 +66,7 @@
     questions: [
       {
         id:'M1M-01', type:'mc', domain:'Geometry & Trigonometry', difficulty:'Media',
-        skill:'Ecuación de la circunferencia (completar cuadrados)',
+        skill:'Equation of a circle (completing the square)',
         stem:'In the xy-plane, the equation x² + y² − 6x + 8y − 11 = 0 represents a circle. What are the coordinates of the center of the circle?',
         choices:{
           A:'(−3, 4)',
@@ -77,27 +77,27 @@
         correct:'B',
         expCorrect:'Completa cuadrados. En x: x² − 6x = (x − 3)² − 9. En y: y² + 8y = (y + 4)² − 16. Sustituyendo: (x − 3)² − 9 + (y + 4)² − 16 − 11 = 0 → (x − 3)² + (y + 4)² = 36. El centro es (h, k) = (3, −4) y el radio es 6.',
         expWrong:{
-          A:'(−3, 4) invierte los signos. Ojo: (x − 3)² viene de h = +3, y (y + 4)² viene de k = −4. El signo del centro es opuesto al que ves dentro del paréntesis.',
-          C:'(6, −8) usa los coeficientes lineales completos (−6 y 8) sin dividirlos entre 2. Al completar cuadrados tomas la MITAD de cada coeficiente.',
-          D:'(−6, 8) usa los coeficientes tal cual y además con el signo equivocado. Debes tomar la mitad Y cambiar el signo.'
+          A:'(−3, 4) flips the signs. Careful: (x − 3)² comes from h = +3, and (y + 4)² comes from k = −4. The sign of the center is the opposite of what you see inside the parentheses.',
+          C:'(6, −8) uses the full linear coefficients (−6 and 8) without halving them. When you complete the square you take HALF of each coefficient.',
+          D:'(−6, 8) uses the coefficients as they are and with the wrong sign on top of that. You have to halve them AND flip the sign.'
         },
-        tip:'De la forma general a la estándar: toma la MITAD de cada coeficiente lineal y cámbiale el signo. Mitad de −6 es −3 → h = 3; mitad de 8 es 4 → k = −4. Centro (3, −4).',
+        tip:'From general to standard form: take HALF of each linear coefficient and flip its sign. Half of −6 is −3 → h = 3; half of 8 is 4 → k = −4. Center (3, −4).',
         desmos:'Grafica la ecuación tal cual: escribe x^2+y^2-6x+8y-11=0 y Desmos dibuja la circunferencia. Su centro está en (3, -4). Si prefieres, escribe la forma estándar (x-3)^2+(y+4)^2=36 y verás el mismo círculo.',
         desmosLatex:['x^2+y^2-6x+8y-11=0', '(x-3)^2+(y+4)^2=36']
       },
       {
         id:'M1M-02', type:'mc', domain:'Geometry & Trigonometry', difficulty:'Media',
-        skill:'Área de sector (grados)',
+        skill:'Sector area (degrees)',
         stem:'A sector of a circle has a radius of 8 and a central angle measuring 135°. What is the area of the sector?',
         choices:{A:'24π', B:'6π', C:'3π', D:'64π'},
         correct:'A',
-        expCorrect:'Un ángulo de 135° cubre 135/360 = 3/8 del círculo. Área del sector = (3/8) · área del círculo = (3/8) · π · 8² = (3/8) · 64π = 24π. (Comprobación: (135/360) · π · 64 ≈ 75.4 = 24π ✓.)',
+        expCorrect:'A 135° angle covers 135/360 = 3/8 of the circle. Sector area = (3/8) · area of the circle = (3/8) · π · 8² = (3/8) · 64π = 24π. (Check: (135/360) · π · 64 ≈ 75.4 = 24π ✓.)',
         expWrong:{
-          B:'6π es la LONGITUD DEL ARCO, (3/8) · 2π · 8 = 6π, no el área. El área usa π·r², no 2π·r.',
-          C:'3π olvida elevar el radio al cuadrado: (3/8) · π · 8 = 3π. La fórmula pide r AL CUADRADO.',
-          D:'64π es el área del círculo COMPLETO (π·8²). Solo quieres la fracción 3/8 de esa área.'
+          B:'6π is the ARC LENGTH, (3/8) · 2π · 8 = 6π, not the area. Area uses π·r², not 2π·r.',
+          C:'3π forgets to square the radius: (3/8) · π · 8 = 3π. The formula calls for r SQUARED.',
+          D:'64π is the area of the WHOLE circle (π·8²). You only want the 3/8 fraction of that area.'
         },
-        tip:'Con el ángulo en grados, el sector es (θ/360) del círculo. Área = (θ/360) · π · r². No olvides elevar el radio al cuadrado (π·r²), y no lo confundas con el arco (2·π·r).',
+        tip:'With the angle in degrees, the sector is (θ/360) of the circle. Area = (θ/360) · π · r². Do not forget to square the radius (π·r²), and do not confuse it with the arc (2·π·r).',
         desmos:'Un sector de 135° es 135/360 del círculo. Usa Desmos como calculadora: escribe (135/360)*pi*8^2 y te da ≈75.4, que es 24π. Ojo: va π·r² (radio al cuadrado), no π·r.',
         desmosLatex:['(135/360)*pi*8^2', '24*pi']
       },
@@ -108,13 +108,13 @@
         stem:'A circle in the xy-plane is centered at the origin with a radius of 13. A line is tangent to the circle at the point (5, 12), as shown. What is the slope of the tangent line?',
         choices:{A:'12/5', B:'5/12', C:'−12/5', D:'−5/12'},
         correct:'D',
-        expCorrect:'El radio que llega al punto de tangencia va del origen (0, 0) a (5, 12), con pendiente 12/5. La tangente es PERPENDICULAR al radio en ese punto, así que su pendiente es el recíproco negativo: −5/12.',
+        expCorrect:'The radius reaching the point of tangency runs from the origin (0, 0) to (5, 12), with slope 12/5. The tangent is PERPENDICULAR to the radius at that point, so its slope is the negative reciprocal: −5/12.',
         expWrong:{
           A:'12/5 es la pendiente del RADIO, no de la tangente. La tangente es perpendicular al radio, no paralela.',
-          B:'5/12 es el recíproco pero le falta el signo negativo. Perpendicular = recíproco NEGATIVO.',
-          C:'−12/5 solo le cambió el signo a la pendiente del radio, sin invertir la fracción. Para perpendicular tienes que hacer las dos cosas.'
+          B:'5/12 is the reciprocal but it is missing the negative sign. Perpendicular = NEGATIVE reciprocal.',
+          C:'−12/5 only flipped the sign of the radius slope, without inverting the fraction. For perpendicular you have to do both.'
         },
-        tip:'La tangente es perpendicular al radio en el punto de contacto. Saca la pendiente del radio (Δy/Δx) y aplícale el recíproco negativo: invierte la fracción y cámbiale el signo.',
+        tip:'The tangent is perpendicular to the radius at the point of contact. Get the slope of the radius (Δy/Δx) and take its negative reciprocal: flip the fraction and change the sign.',
         desmos:'Grafica x^2+y^2=169 y marca el punto (5,12). El radio a ese punto tiene pendiente 12/5, así que la tangente (perpendicular) tiene pendiente -5/12. Grafica y=-5(x-5)/12+12 y verás que roza el círculo justo en (5,12).',
         desmosLatex:['x^2+y^2=169', '(5,12)', 'y=-5(x-5)/12+12']
       },
@@ -124,13 +124,13 @@
         stem:'The polynomial p is defined by p(x) = (x + 2)³(x − 1)²(x − 4). At how many distinct values of x does the graph of y = p(x) cross the x-axis?',
         choices:{A:'1', B:'3', C:'2', D:'6'},
         correct:'C',
-        expCorrect:'Un cero de multiplicidad IMPAR cruza el eje; uno de multiplicidad PAR solo lo toca y rebota. Los ceros son x = −2 (mult. 3, impar → cruza), x = 1 (mult. 2, par → toca) y x = 4 (mult. 1, impar → cruza). Cruza en 2 valores: x = −2 y x = 4.',
+        expCorrect:'A zero of ODD multiplicity crosses the axis; one of EVEN multiplicity only touches it and bounces. The zeros are x = −2 (mult. 3, odd → crosses), x = 1 (mult. 2, even → touches) and x = 4 (mult. 1, odd → crosses). It crosses at 2 values: x = −2 and x = 4.',
         expWrong:{
           A:'1 cuenta un solo cruce, pero hay dos factores de multiplicidad impar: (x + 2)³ y (x − 4). Ambos cruzan.',
-          B:'3 es el total de ceros DISTINTOS, no cuántos cruzan. En x = 1 la gráfica solo toca (multiplicidad par).',
-          D:'6 es el grado del polinomio (3 + 2 + 1), no el número de cruces.'
+          B:'3 is the total number of DISTINCT zeros, not how many cross. At x = 1 the graph only touches (even multiplicity).',
+          D:'6 is the degree of the polynomial (3 + 2 + 1), not the number of crossings.'
         },
-        tip:'Multiplicidad IMPAR → cruza el eje; multiplicidad PAR → toca y rebota. Cuenta solo los factores con exponente impar para saber cuántas veces cruza.',
+        tip:'ODD multiplicity → crosses the axis; EVEN multiplicity → touches and bounces. Count only the factors with odd exponents to know how many times it crosses.',
         desmos:'Grafica y=(x+2)^3(x-1)^2(x-4). Fíjate: en x=-2 y en x=4 la curva CRUZA el eje (multiplicidad impar), y en x=1 solo lo toca y rebota (multiplicidad par). Cruza en 2 valores.',
         desmosLatex:['y=(x+2)^3(x-1)^2(x-4)']
       },
@@ -145,29 +145,29 @@
           D:'As x → −∞, f(x) → +∞; and as x → +∞, f(x) → −∞'
         },
         correct:'B',
-        expCorrect:'El comportamiento en los extremos lo manda el término principal, −3x⁴. El grado es PAR (4) y el coeficiente principal es negativo, así que ambos extremos van hacia −∞: cuando x → −∞, f(x) → −∞; y cuando x → +∞, f(x) → −∞.',
+        expCorrect:'End behavior is governed by the leading term, −3x⁴. The degree is EVEN (4) and the leading coefficient is negative, so both ends head to −∞: as x → −∞, f(x) → −∞; and as x → +∞, f(x) → −∞.',
         expWrong:{
-          A:'Ambos extremos hacia +∞ sería un grado PAR con coeficiente POSITIVO. El −3 invierte los dos extremos hacia abajo.',
-          C:'Extremos opuestos (uno baja, otro sube) corresponden a un grado IMPAR, no a un cuártico. Un grado par manda ambos extremos al mismo lado.',
-          D:'También son extremos opuestos, propios de un grado impar. Un cuártico nunca manda los extremos en sentidos contrarios.'
+          A:'Both ends heading to +∞ would be an EVEN degree with a POSITIVE coefficient. The −3 flips both ends downward.',
+          C:'Opposite ends (one down, one up) belong to an ODD degree, not a quartic. An even degree sends both ends the same way.',
+          D:'These are also opposite ends, typical of an odd degree. A quartic never sends its ends in opposite directions.'
         },
-        tip:'Solo manda el término de mayor grado. Grado PAR → los dos extremos van al mismo lado; coeficiente negativo → ambos hacia abajo. Aquí −3x⁴: abajo y abajo.',
+        tip:'Only the highest-degree term matters. EVEN degree → both ends go the same way; negative coefficient → both downward. Here −3x⁴: down and down.',
         desmos:'Grafica y=-3x^4+2x^3-x+5 y haz zoom out. Las dos ramas se van hacia abajo (hacia -∞): grado par + coeficiente principal negativo = ambos extremos hacia abajo.',
         desmosLatex:['y=-3x^4+2x^3-x+5']
       },
       {
         id:'M1M-06', type:'mc', domain:'Advanced Math', difficulty:'Difícil',
-        skill:'Ecuaciones racionales (soluciones extrañas)',
+        skill:'Rational equations (extraneous solutions)',
         stem:'What are all real solutions to the equation  24/(x² − 9) + 1 = 4/(x − 3) ?',
         choices:{A:'x = 1 only', B:'x = 3 only', C:'x = 1 and x = 3', D:'There is no real solution'},
         correct:'A',
-        expCorrect:'Como x² − 9 = (x − 3)(x + 3), multiplica todo por (x − 3)(x + 3): 24 + (x² − 9) = 4(x + 3) → x² + 15 = 4x + 12 → x² − 4x + 3 = 0 → (x − 1)(x − 3) = 0 → x = 1 o x = 3. Pero x = 3 anula los denominadores, así que es una solución EXTRAÑA y se descarta. Queda solo x = 1. (Comprobación x = 1: 24/(−8) + 1 = −2, y 4/(−2) = −2 ✓.)',
+        expCorrect:'Since x² − 9 = (x − 3)(x + 3), multiply everything by (x − 3)(x + 3): 24 + (x² − 9) = 4(x + 3) → x² + 15 = 4x + 12 → x² − 4x + 3 = 0 → (x − 1)(x − 3) = 0 → x = 1 or x = 3. But x = 3 zeroes the denominators, so it is an EXTRANEOUS solution and gets discarded. Only x = 1 is left. (Check x = 1: 24/(−8) + 1 = −2, and 4/(−2) = −2 ✓.)',
         expWrong:{
-          B:'x = 3 hace cero los denominadores (x − 3 y x² − 9), así que no está en el dominio: es extraña, no válida.',
-          C:'x = 1 y x = 3 incluye la raíz extraña. Siempre revisa que ninguna solución anule un denominador.',
-          D:'Sí hay solución: x = 1 funciona perfectamente. Solo x = 3 se descarta.'
+          B:'x = 3 zeroes the denominators (x − 3 and x² − 9), so it is not in the domain: it is extraneous, not valid.',
+          C:'x = 1 and x = 3 includes the extraneous root. Always check that no solution zeroes a denominator.',
+          D:'There is a solution: x = 1 works perfectly. Only x = 3 gets discarded.'
         },
-        tip:'Resuelve la ecuación racional normal, pero DESCARTA cualquier valor que haga cero un denominador. Esas son soluciones extrañas. Aquí x = 3 se cae.',
+        tip:'Solve the rational equation as usual, but DISCARD any value that makes a denominator zero. Those are extraneous solutions. Here x = 3 falls out.',
         desmos:'Grafica y=24/(x^2-9)+1 y y=4/(x-3); se cruzan en x=1. En x=3 los denominadores se hacen 0, así que esa raíz es extraña y se descarta. Queda solo x=1.',
         desmosLatex:['y=24/(x^2-9)+1', 'y=4/(x-3)']
       },
@@ -177,13 +177,13 @@
         stem:'A group of 100 people at a conference were asked whether they prefer coffee or tea. The results are shown in the two-way table below, organized by role.<br><br>Students — Coffee: 48, Tea: 27, Total: 75<br>Teachers — Coffee: 12, Tea: 13, Total: 25<br>Total — Coffee: 60, Tea: 40, Total: 100<br><br>If one of the 100 people is selected at random and that person prefers coffee, what is the probability that the person is a teacher?',
         choices:{A:'12/25', B:'3/25', C:'1/4', D:'1/5'},
         correct:'D',
-        expCorrect:'Es P(profesor | café). Te dan que la persona toma café, así que el universo son los 60 que toman café. De esos, 12 son profesores. P = 12/60 = 1/5.',
+        expCorrect:'This is P(teacher | coffee). You are told the person drinks coffee, so the universe is the 60 coffee drinkers. Of those, 12 are teachers. P = 12/60 = 1/5.',
         expWrong:{
-          A:'12/25 invierte la condición: eso es P(café | profesor), dividir entre los 25 profesores. Aquí el grupo dado es "café", no "profesor".',
-          B:'3/25 es 12/100, la probabilidad CONJUNTA (profesor y café). El denominador debe ser la columna de café (60), no el total.',
-          C:'1/4 es 25/100, la probabilidad MARGINAL de ser profesor, ignorando la condición de café.'
+          A:'12/25 flips the condition: that is P(coffee | teacher), dividing by the 25 teachers. Here the given group is "coffee", not "teacher".',
+          B:'3/25 is 12/100, the JOINT probability (teacher and coffee). The denominator has to be the coffee column (60), not the total.',
+          C:'1/4 is 25/100, the MARGINAL probability of being a teacher, ignoring the coffee condition.'
         },
-        tip:'Condicional "dado que A": el denominador es el total de A, no el gran total. "Dado que toma café" → divides entre los 60 de café, no entre 100.',
+        tip:'Conditional "given that A": the denominator is the total for A, not the grand total. "Given that they drink coffee" → divide by the 60 coffee drinkers, not by 100.',
         desmos:'Probabilidad condicional: "dado que toma café". El denominador es solo la columna de café (60), no el total. Escribe 12/60 en Desmos y te da 0.2, o sea 1/5.',
         desmosLatex:['12/60']
       },
@@ -193,13 +193,13 @@
         stem:'At a clinic, 80 patients were given an allergy test. The two-way table below shows the results, organized by age group.<br><br>Under 30 — Positive: 18, Negative: 22, Total: 40<br>30 or older — Positive: 12, Negative: 28, Total: 40<br>Total — Positive: 30, Negative: 50, Total: 80<br><br>If one of the patients who tested negative is selected at random, what is the probability that the patient is under 30?',
         choices:{A:'11/20', B:'11/40', C:'11/25', D:'1/2'},
         correct:'C',
-        expCorrect:'Es P(menor de 30 | negativo). El grupo dado son los 50 que salieron negativos. De esos, 22 son menores de 30. P = 22/50 = 11/25.',
+        expCorrect:'This is P(under 30 | negative). The given group is the 50 who tested negative. Of those, 22 are under 30. P = 22/50 = 11/25.',
         expWrong:{
           A:'11/20 es 22/40: condicionaste sobre la fila "menor de 30" en vez de la columna "negativo". El grupo dado es negativo (50).',
-          B:'11/40 es 22/80, la probabilidad CONJUNTA. El denominador debe ser los 50 que dieron negativo, no el total.',
-          D:'1/2 es 40/80, la probabilidad MARGINAL de ser menor de 30, ignorando la condición de "negativo".'
+          B:'11/40 is 22/80, the JOINT probability. The denominator has to be the 50 who tested negative, not the total.',
+          D:'1/2 is 40/80, the MARGINAL probability of being under 30, ignoring the "negative" condition.'
         },
-        tip:'La palabra clave es "dado que": fija el grupo (columna de negativos = 50) y ese es tu denominador. Luego cuentas cuántos de ese grupo cumplen la otra condición.',
+        tip:'The key words are "given that": they fix the group (the negative column = 50) and that is your denominator. Then you count how many of that group meet the other condition.',
         desmos:'Te dicen "dado que salió negativo", así que el denominador es la columna de negativos (50). Escribe 22/50 en Desmos y te da 0.44, que es 11/25.',
         desmosLatex:['22/50']
       },
@@ -208,9 +208,9 @@
         skill:'Mediana a partir de una tabla de frecuencias',
         stem:'The frequency table below shows the number of siblings reported by each of 20 students.<br><br>0 siblings: 4 students<br>1 sibling: 6 students<br>2 siblings: 5 students<br>3 siblings: 3 students<br>4 siblings: 2 students<br><br>What is the median number of siblings for these 20 students?',
         answer:'1.5',
-        expCorrect:'Con 20 datos, la mediana es el promedio del 10.º y 11.º valores ordenados. Frecuencias acumuladas: cuatro 0 (posiciones 1–4), seis 1 (posiciones 5–10), cinco 2 (posiciones 11–15). El 10.º valor es 1 y el 11.º es 2, así que la mediana es (1 + 2)/2 = 1.5.',
+        expCorrect:'With 20 data points, the median is the average of the 10th and 11th ordered values. Cumulative frequencies: four 0s (positions 1–4), six 1s (positions 5–10), five 2s (positions 11–15). The 10th value is 1 and the 11th is 2, so the median is (1 + 2)/2 = 1.5.',
         expWrong:{},
-        tip:'Con n par, la mediana es el promedio de los dos valores centrales (posiciones n/2 y n/2 + 1). Con 20 datos: promedio del 10.º y 11.º. Usa las frecuencias acumuladas para ubicarlos.',
+        tip:'With n even, the median is the average of the two middle values (positions n/2 and n/2 + 1). With 20 data points: the average of the 10th and 11th. Use cumulative frequencies to locate them.',
         desmos:'Con 20 datos, la mediana es el promedio del 10.º y 11.º valores ordenados. Escribe median(0,0,0,0,1,1,1,1,1,1,2,2,2,2,2,3,3,3,4,4) y Desmos te da 1.5. También sale de (1+2)/2.',
         desmosLatex:['median(0,0,0,0,1,1,1,1,1,1,2,2,2,2,2,3,3,3,4,4)', '(1+2)/2']
       },
@@ -220,13 +220,13 @@
         stem:'Which of the following is equivalent to (16x⁸)^(3/4), where x > 0?',
         choices:{A:'8x⁶', B:'12x⁶', C:'64x⁶', D:'2x⁶'},
         correct:'A',
-        expCorrect:'Reparte el exponente 3/4 a cada factor: 16^(3/4) · (x⁸)^(3/4). Como 16 = 2⁴, tenemos 16^(3/4) = (2⁴)^(3/4) = 2³ = 8. Y (x⁸)^(3/4) = x^(8·3/4) = x⁶. El resultado es 8x⁶. (Comprobación con x = 1: 16^(3/4) = 8 ✓.)',
+        expCorrect:'Distribute the exponent 3/4 to each factor: 16^(3/4) · (x⁸)^(3/4). Since 16 = 2⁴, we get 16^(3/4) = (2⁴)^(3/4) = 2³ = 8. And (x⁸)^(3/4) = x^(8·3/4) = x⁶. The result is 8x⁶. (Check with x = 1: 16^(3/4) = 8 ✓.)',
         expWrong:{
-          B:'12x⁶ multiplica 16 · (3/4) = 12, tratando el exponente como un factor. El 3/4 es raíz cuarta y luego cubo, no una multiplicación.',
-          C:'64x⁶ saca la raíz CUADRADA de 16 (=4) y la eleva al cubo (=64). El denominador 4 pide raíz CUARTA: 2³ = 8.',
-          D:'2x⁶ saca bien la raíz cuarta de 16 (=2) pero olvida elevarla al cubo. Falta el numerador 3 del exponente.'
+          B:'12x⁶ multiplies 16 · (3/4) = 12, treating the exponent as a factor. The 3/4 is a fourth root and then a cube, not a multiplication.',
+          C:'64x⁶ takes the SQUARE root of 16 (=4) and cubes it (=64). The denominator 4 calls for the FOURTH root: 2³ = 8.',
+          D:'2x⁶ takes the fourth root of 16 correctly (=2) but forgets to cube it. The numerator 3 of the exponent is missing.'
         },
-        tip:'a^(m/n) = (raíz n de a)^m. Reparte el exponente a cada factor y, con potencias de x, multiplica exponentes: (x⁸)^(3/4) = x⁶.',
+        tip:'a^(m/n) = (nth root of a)^m. Distribute the exponent to each factor and, with powers of x, multiply exponents: (x⁸)^(3/4) = x⁶.',
         desmos:'El exponente 3/4 es raíz cuarta y luego al cubo. Escribe 16^(3/4) en Desmos y te da 8; con la x, (x^8)^(3/4)=x^6. Resultado 8x^6.',
         desmosLatex:['16^(3/4)']
       },
@@ -235,41 +235,41 @@
         skill:'Exponentes fraccionarios (evaluar)',
         stem:'What is the value of 81^(3/4) − 16^(1/2) ?',
         answer:'23',
-        expCorrect:'81^(3/4) es la raíz cuarta de 81 elevada al cubo: (81^(1/4))³ = 3³ = 27. Y 16^(1/2) = √16 = 4. Entonces 27 − 4 = 23. (Comprobación en Desmos: 81^(3/4) − 16^(1/2) = 23 ✓.) Respuesta: 23.',
+        expCorrect:'81^(3/4) is the fourth root of 81 raised to the cube: (81^(1/4))³ = 3³ = 27. And 16^(1/2) = √16 = 4. So 27 − 4 = 23. (Check in Desmos: 81^(3/4) − 16^(1/2) = 23 ✓.) Answer: 23.',
         expWrong:{},
-        tip:'Denominador del exponente = raíz; numerador = potencia. 81^(3/4): raíz cuarta (3) al cubo (27). Un exponente 1/2 es solo raíz cuadrada.',
+        tip:'Denominator of the exponent = the root; numerator = the power. 81^(3/4): fourth root (3) cubed (27). An exponent of 1/2 is just a square root.',
         desmos:'Desmos como calculadora: escribe 81^(3/4)-16^(1/2) y te da 23. Recuerda: 81^(3/4) es la raíz cuarta de 81 (=3) al cubo (=27), y 16^(1/2)=4.',
         desmosLatex:['81^(3/4)-16^(1/2)']
       },
       {
         id:'M1M-12', type:'mc', domain:'Geometry & Trigonometry', difficulty:'Media',
-        skill:'Trigonometría del triángulo rectángulo (SOH-CAH-TOA)',
+        skill:'Right-triangle trigonometry (SOH-CAH-TOA)',
         figure: FIG_RIGHT,
         stem:'In right triangle ABC, the right angle is at B. The side lengths are AB = 15, BC = 8, and AC = 17, as shown. What is the value of cos A?',
         choices:{A:'8/17', B:'8/15', C:'15/8', D:'15/17'},
         correct:'D',
-        expCorrect:'Respecto al ángulo A, el lado adyacente es AB = 15 y la hipotenusa es AC = 17. Coseno = adyacente/hipotenusa = 15/17. (Nota: BC = 8 es el lado opuesto a A; 8-15-17 es una terna pitagórica.)',
+        expCorrect:'Relative to angle A, the adjacent side is AB = 15 and the hypotenuse is AC = 17. Cosine = adjacent/hypotenuse = 15/17. (Note: BC = 8 is the side opposite A; 8-15-17 is a Pythagorean triple.)',
         expWrong:{
           A:'8/17 es sin A (opuesto/hipotenusa), no el coseno. El opuesto a A es BC = 8.',
           B:'8/15 es tan A (opuesto/adyacente). El coseno usa la hipotenusa, no el cateto opuesto.',
-          C:'15/8 es el recíproco de tan A (adyacente/opuesto), es decir la cotangente, no el coseno.'
+          C:'15/8 is the reciprocal of tan A (adjacent/opposite), that is, the cotangent, not the cosine.'
         },
-        tip:'SOH-CAH-TOA. Identifica, respecto al ángulo dado, cuál lado es opuesto, adyacente e hipotenusa. Coseno = adyacente/hipotenusa.',
+        tip:'SOH-CAH-TOA. Work out, relative to the given angle, which side is opposite, adjacent and hypotenuse. Cosine = adjacent/hypotenuse.',
         desmos:'SOH-CAH-TOA: cos A = adyacente/hipotenusa = 15/17. Escribe 15/17 en Desmos y te da ≈0.882. (Si usas \\cos en Desmos trabaja en radianes, pero aquí solo necesitas la razón de los lados.)',
         desmosLatex:['15/17']
       },
       {
         id:'M1M-13', type:'mc', domain:'Geometry & Trigonometry', difficulty:'Difícil',
-        skill:'Triángulos especiales (30-60-90)',
+        skill:'Special triangles (30-60-90)',
         figure: FIG_306090,
         stem:'In the right triangle shown, the hypotenuse has length 12 and the acute angles measure 30° and 60°. What is the value of x, the length of the side opposite the 60° angle?',
         choices:{A:'6', B:'6√3', C:'12√3', D:'4√3'},
         correct:'B',
-        expCorrect:'En un triángulo 30-60-90 los lados están en razón 1 : √3 : 2 (opuestos a 30°, 60° y 90°). La hipotenusa (frente a 90°) es 12, así que la razón base es 6. El lado opuesto a 60° = 6 · √3 = 6√3. (Comprobación: 6² + (6√3)² = 36 + 108 = 144 = 12² ✓.)',
+        expCorrect:'In a 30-60-90 triangle the sides are in the ratio 1 : √3 : 2 (opposite 30°, 60° and 90°). The hypotenuse (opposite 90°) is 12, so the base ratio is 6. The side opposite 60° = 6 · √3 = 6√3. (Check: 6² + (6√3)² = 36 + 108 = 144 = 12² ✓.)',
         expWrong:{
           A:'6 es el lado opuesto a 30° (el cateto corto = hipotenusa/2), no el opuesto a 60°.',
-          C:'12√3 multiplica la hipotenusa por √3 pero olvida dividir entre 2. El lado opuesto a 60° es hipotenusa · (√3/2).',
-          D:'4√3 sale de dividir 12 entre √3 (12/√3 = 4√3) en vez de multiplicar por √3/2.'
+          C:'12√3 multiplies the hypotenuse by √3 but forgets to divide by 2. The side opposite 60° is hypotenuse · (√3/2).',
+          D:'4√3 comes from dividing 12 by √3 (12/√3 = 4√3) instead of multiplying by √3/2.'
         },
         tip:'Memoriza 30-60-90 → 1 : √3 : 2 (opuestos a 30°, 60°, 90°). El lado frente a 60° es el mediano: hipotenusa · (√3/2).',
         desmos:'En un 30-60-90 los lados van en razón 1 : √3 : 2. El lado opuesto a 60° = hipotenusa·(√3/2) = 12*√3/2. Escribe 12*\\sqrt{3}/2 en Desmos y te da ≈10.39, que es 6√3.',
@@ -277,18 +277,18 @@
       },
       {
         id:'M1M-14', type:'mc', domain:'Geometry & Trigonometry', difficulty:'Media',
-        skill:'Triángulos semejantes',
+        skill:'Similar triangles',
         figure: FIG_SIMILAR,
         stem:'Triangle ABC is similar to triangle DEF, with vertex A corresponding to D, B to E, and C to F. If AB = 6, BC = 9, and DE = 10, what is the length of EF?',
         choices:{A:'5.4', B:'10', C:'15', D:'13'},
         correct:'C',
-        expCorrect:'Como △ABC ~ △DEF, los lados correspondientes son proporcionales: AB/DE = BC/EF. Sustituye: 6/10 = 9/EF → EF = 9 · 10/6 = 15. (Comprobación: la razón es 6/10 = 0.6 y 9/15 = 0.6 ✓.)',
+        expCorrect:'Since △ABC ~ △DEF, corresponding sides are proportional: AB/DE = BC/EF. Substitute: 6/10 = 9/EF → EF = 9 · 10/6 = 15. (Check: the ratio is 6/10 = 0.6 and 9/15 = 0.6 ✓.)',
         expWrong:{
-          A:'5.4 invierte la razón (9 · 6/10 en vez de 9 · 10/6). El triángulo DEF es más grande, así que EF debe ser MAYOR que BC.',
-          B:'10 es la longitud de DE (un dato dado), no EF. EF corresponde a BC, así que se escala con 9, no se copia DE.',
+          A:'5.4 flips the ratio (9 · 6/10 instead of 9 · 10/6). Triangle DEF is the bigger one, so EF has to be GREATER than BC.',
+          B:'10 is the length of DE (a given figure), not EF. EF corresponds to BC, so it scales from 9; you do not copy DE.',
           D:'13 suma la diferencia (DE − AB = 4) a BC: 9 + 4 = 13. La semejanza MULTIPLICA por un factor de escala, no suma.'
         },
-        tip:'En figuras semejantes, arma una proporción con lados CORRESPONDIENTES: la misma razón para todos. Empareja bien A↔D, B↔E, C↔F antes de despejar.',
+        tip:'In similar figures, set up a proportion with CORRESPONDING sides: the same ratio for all of them. Match A↔D, B↔E, C↔F correctly before solving.',
         desmos:'Semejantes: lados correspondientes en la misma razón. AB va con DE y BC va con EF, así que 6/10 = 9/EF. Despeja: escribe 9*10/6 en Desmos y te da 15.',
         desmosLatex:['9*10/6']
       }

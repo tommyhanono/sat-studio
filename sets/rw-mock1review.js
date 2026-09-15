@@ -21,11 +21,11 @@ window.SAT_SETS.push({
       correct:'B',
       expCorrect:'The text moves in three stages: first the old practice (flushing rainwater away through pipes), then "however" introduces the new, opposing approach (treating rain as a resource), and finally it notes the results (cleaner rivers, cooler streets). Option B captures that movement: old practice → a new one that contrasts → results.',
       expWrong:{
-        A:'No está apoyado: el texto menciona tecnologías (jardines de lluvia, pavimento permeable), pero nunca las ordena por costo.',
-        C:'Malinterpreta el propósito: el texto describe un cambio de enfoque, no “argumenta” que se prohíban las tuberías. El verbo importa.',
-        D:'Describe una parte, no el todo: no se centra en definir un término ni en el origen de una palabra; narra el paso de una práctica a otra.'
+        A:'Not supported: the text mentions technologies (rain gardens, permeable pavement), but never ranks them by cost.',
+        C:'It misreads the purpose: the text describes a change of approach, it does not "argue" for banning pipes. The verb matters.',
+        D:'It describes a part, not the whole: it does not focus on defining a term or the origin of a word; it narrates the shift from one practice to another.'
       },
-      tip:'Para STRUCTURE traza el MOVIMIENTO completo del texto. Palabras como “however” marcan el giro entre la parte vieja y la nueva; fíjate si al final hay resultados.'
+      tip:'For STRUCTURE, trace the WHOLE movement of the text. Words like "however" mark the turn between the old part and the new one; check whether results come at the end.'
     },
     {
       id:'M1V-02', type:'mc', domain:'Craft and Structure', difficulty:'Difícil',
@@ -41,11 +41,11 @@ window.SAT_SETS.push({
       correct:'A',
       expCorrect:'Just before, it explains that the maps distort the polar regions (Greenland looks enormous). The underlined sentence says why cartographers ACCEPT that distortion: because the same projection keeps compass directions exact. Its function is to give the reason the flaw is tolerated.',
       expWrong:{
-        B:'Malinterpreta la función: el tema (la distorsión de los mapas) ya se presentó en la primera oración, no en la subrayada.',
-        C:'Contradice el texto: la oración no niega la distorsión; la da por cierta y explica por qué se acepta.',
-        D:'Ubica mal la evidencia: el dato numérico (“catorce veces”) está en la oración anterior, no en la subrayada.'
+        B:'It misreads the function: the topic (map distortion) was already introduced in the first sentence, not in the underlined one.',
+        C:'It contradicts the text: the sentence does not deny the distortion; it takes it as given and explains why it is accepted.',
+        D:'It misplaces the evidence: the numerical fact ("fourteen times") is in the previous sentence, not in the underlined one.'
       },
-      tip:'Para FUNCTION mira qué HACE la oración dentro del texto. La palabra “because” suele señalar que la oración da una razón, no que presenta el tema ni aporta datos nuevos.'
+      tip:'For FUNCTION, look at what the sentence DOES within the text. The word "because" usually signals that the sentence gives a reason, not that it introduces the topic or adds new data.'
     },
     {
       id:'M1V-03', type:'mc', domain:'Craft and Structure', difficulty:'Difícil',
@@ -61,11 +61,11 @@ window.SAT_SETS.push({
       correct:'C',
       expCorrect:'The text tells two things joined by "Yet": the historic milestone (the first African American woman with a symphony performed by a major orchestra) and the long neglect that followed (manuscripts abandoned until 2009). The purpose covers both: to recount the achievement and the neglect that came after.',
       expWrong:{
-        A:'No está apoyado: el texto no compara ni “argumenta” que su sinfonía sea superior a la de otros. No hay juicio de valor.',
-        B:'No está apoyado: nunca se analiza la estructura técnica de la sinfonía movimiento por movimiento.',
-        D:'Describe una parte, no el todo: la casa abandonada es un detalle del redescubrimiento, no el propósito del texto.'
+        A:'Not supported: the text does not compare or "argue" that her symphony is superior to anyone else’s. There is no value judgment.',
+        B:'Not supported: the technical structure of the symphony is never analyzed movement by movement.',
+        D:'It describes a part, not the whole: the abandoned house is a detail of the rediscovery, not the purpose of the text.'
       },
-      tip:'Para PURPOSE busca la idea que cubra TODO el texto. Si hay un giro con “Yet”, la respuesta correcta suele abarcar las dos partes (aquí: el logro Y el olvido), no solo una.'
+      tip:'For PURPOSE, look for the idea covering the WHOLE text. If there is a turn with "Yet", the right answer usually covers both halves (here: the achievement AND the neglect), not just one.'
     },
     {
       id:'M1V-04', type:'mc', domain:'Standard English Conventions', difficulty:'Media',
@@ -76,11 +76,11 @@ window.SAT_SETS.push({
       correct:'B',
       expCorrect:'There are two complete sentences: "Marine biologists once believed the deep sea was nearly lifeless" and "recent expeditions have revealed thriving communities…". To join two independent clauses with no conjunction, the semicolon is what you want.',
       expWrong:{
-        A:'Una coma sola entre dos oraciones completas es un comma splice.',
-        C:'Sin puntuación, las dos oraciones se fusionan (run-on).',
-        D:'El colon pide que la segunda parte EXPLIQUE o ejemplifique la primera; aquí la segunda CONTRASTA (antes se creía sin vida, ahora se ve llena de vida), así que no encaja.'
+        A:'A single comma between two complete sentences is a comma splice.',
+        C:'With no punctuation, the two sentences fuse (run-on).',
+        D:'The colon demands that the second part EXPLAIN or illustrate the first; here the second CONTRASTS (once believed lifeless, now seen teeming with life), so it does not fit.'
       },
-      tip:'Prueba del punto: si a ambos lados del blank quedan oraciones completas, el “;” sirve. Pide el colon solo cuando la 2ª parte aclara la 1ª.'
+      tip:'The period test: if both sides of the blank are complete sentences, ";" works. Reach for the colon only when the 2nd part clarifies the 1st.'
     },
     {
       id:'M1V-05', type:'mc', domain:'Standard English Conventions', difficulty:'Media',
@@ -91,11 +91,11 @@ window.SAT_SETS.push({
       correct:'C',
       expCorrect:'"a device that measures atmospheric pressure" is a NON-essential appositive renaming "The barometer". It goes between TWO commas; since the closing comma is already there before "gave", the opening one after "barometer" is missing.',
       expWrong:{
-        A:'Sin la coma de apertura, el inciso cierra pero no abre → queda desbalanceado.',
-        B:'El colon no abre un inciso y, además, separaría el sujeto (“The barometer”) de su verbo (“gave”).',
-        D:'El punto y coma no encierra apositivos y no hay una oración independiente antes de él.'
+        A:'Without the opening comma, the aside closes but never opens → it is left unbalanced.',
+        B:'A colon does not open an aside and, on top of that, it would split the subject ("The barometer") from its verb ("gave").',
+        D:'A semicolon does not fence off appositives and there is no independent sentence before it.'
       },
-      tip:'Apertura y cierre GEMELOS: coma–coma. Si ves una coma “huérfana” cerrando el inciso, la respuesta suele ser la coma que lo abre.'
+      tip:'Opening and closing are TWINS: comma–comma. If you spot an "orphan" comma closing the aside, the answer is usually the comma that opens it.'
     },
     {
       id:'M1V-06', type:'mc', domain:'Standard English Conventions', difficulty:'Difícil',
@@ -106,11 +106,11 @@ window.SAT_SETS.push({
       correct:'A',
       expCorrect:'Before the blank there is a complete sentence ("The expedition’s survival depended on three things the porters could not afford to lose") and what follows is the list that spells it out. That is exactly the job of the colon.',
       expWrong:{
-        B:'La coma no puede introducir así una lista después de una oración completa.',
-        C:'El punto y coma exige una oración independiente después, y una lista no lo es.',
-        D:'Sin puntuación, “lose a dependable compass…” se fusiona con la lista.'
+        B:'A comma cannot introduce a list this way after a complete sentence.',
+        C:'A semicolon demands an independent sentence after it, and a list is not one.',
+        D:'With no punctuation, "lose a dependable compass…" fuses into the list.'
       },
-      tip:'Colon = solo después de una oración COMPLETA. Tápalo con la mano: lo de antes debe poder terminar en punto.'
+      tip:'Colon = only after a COMPLETE sentence. Cover it with your hand: what comes before has to be able to end in a period.'
     },
     {
       id:'M1V-07', type:'mc', domain:'Information and Ideas', difficulty:'Media',
@@ -126,11 +126,11 @@ window.SAT_SETS.push({
       correct:'D',
       expCorrect:'The text opens with "it was not always a desert", shows evidence of a green, watered landscape (hippos, cattle, fishing) and explains how it dried out over time. The central idea joins all of that: the Sahara, a desert today, was once green and wet and dried out gradually. Option D covers it.',
       expWrong:{
-        A:'Detalle exagerado: las pinturas son evidencia en el texto, pero nunca se dice que sean la forma “más confiable” de conocer climas antiguos. Es información de afuera.',
-        B:'Demasiado extremo: el cambio de órbita explica el caso del Sahara, no la formación de “todos” los desiertos del planeta.',
-        C:'Detalle, no idea central: la pesca en canoas es un ejemplo del paisaje antiguo, no el punto principal del párrafo.'
+        A:'An overstated detail: the paintings are evidence in the text, but it never says they are the "most reliable" way of knowing ancient climates. That is outside information.',
+        B:'Too extreme: the orbital shift explains the Sahara case, not the formation of "all" the deserts on the planet.',
+        C:'Detail, not central idea: fishing from canoes is an example of the ancient landscape, not the main point of the paragraph.'
       },
-      tip:'La idea central cubre TODO el párrafo. Aquí une el antes (verde y con agua) con el después (desierto). Cuidado con distractores “extremos” como “todos” o “el más confiable”.'
+      tip:'The central idea covers the WHOLE paragraph. Here it joins the before (green and watered) with the after (desert). Watch for "extreme" distractors like "all" or "the most reliable".'
     },
     {
       id:'M1V-08', type:'mc', domain:'Information and Ideas', difficulty:'Difícil',
@@ -144,13 +144,13 @@ window.SAT_SETS.push({
         D:'A forest could not survive for even a single season without fungi.'
       },
       correct:'C',
-      expCorrect:'El texto contrasta a los hongos con las plantas (no fabrican comida con luz), explica cómo comen (descomponen materia muerta y absorben nutrientes) y cierra con su papel: reciclan los nutrientes del bosque. La opción C junta las tres cosas y cubre todo el párrafo.',
+      expCorrect:'The text contrasts fungi with plants (they do not make food from light), explains how they eat (breaking down dead matter and absorbing nutrients) and closes with their role: recycling the forest’s nutrients. Option C joins the three things and covers the whole paragraph.',
       expWrong:{
-        A:'No está apoyado: el texto dice que se confunden con plantas, pero nunca los compara con los animales. Es información de afuera.',
-        B:'Detalle no mencionado: el texto no habla del tamaño de los filamentos ni de microscopios.',
-        D:'Demasiado extremo: dice que reciclan “gran parte” de la materia caída, no que el bosque moriría en una sola temporada sin ellos.'
+        A:'Not supported: the text says they are mistaken for plants, but it never compares them with animals. That is outside information.',
+        B:'A detail never mentioned: the text says nothing about the size of the filaments or about microscopes.',
+        D:'Too extreme: it says they recycle "much" of the fallen matter, not that the forest would die within a single season without them.'
       },
-      tip:'La idea central resume el arco completo: qué NO hacen (comer como plantas), qué SÍ hacen (descomponer) y para qué sirve (reciclar). Evita los extremos (“ni una sola temporada”).'
+      tip:'The central idea sums up the whole arc: what they do NOT do (eat like plants), what they DO (break things down) and what it is for (recycling). Avoid the extremes ("not a single season").'
     },
     {
       id:'M1V-09', type:'mc', domain:'Information and Ideas', difficulty:'Media',
@@ -164,18 +164,18 @@ window.SAT_SETS.push({
         D:'“Visitors sometimes called the tower a lonely place, and Mara would only nod and say nothing.”'
       },
       correct:'B',
-      expCorrect:'La afirmación es que Mara está a gusto con la soledad. La cita B lo muestra directo: sonríe y está “contenta de que ningún bote llegara a su roca por semanas”, es decir, disfruta estar sola. Esa es la evidencia que ilustra el reclamo.',
+      expCorrect:'The claim is that Mara is at ease with solitude. Quote B shows it directly: she smiles and is "glad no boat had reached her rock in weeks", that is, she enjoys being alone. That is the evidence illustrating the claim.',
       expWrong:{
-        A:'Va en contra: contar los días para la llegada del barco sugiere que ESPERA el contacto, no que prefiera la soledad.',
-        C:'Fuera de tema: dar cuerda a la lámpara habla de su responsabilidad en el trabajo, no de que esté a gusto sola.',
-        D:'Ambigua: asentir sin hablar no muestra claramente contento; hasta podría leerse como tristeza. No ilustra la afirmación tan bien como B.'
+        A:'It runs the other way: counting the days until the boat arrives suggests she is WAITING for contact, not that she prefers solitude.',
+        C:'Off topic: winding the lamp is about her diligence at work, not about being at ease alone.',
+        D:'Ambiguous: nodding without speaking does not clearly show contentment; it could even read as sadness. It does not illustrate the claim as well as B.'
       },
-      tip:'En “which quotation illustrates the claim”, primero fija el reclamo (aquí: está a gusto sola) y busca la cita que lo muestre DIRECTO. Descarta las que hablan de otra cosa (el trabajo) o que apuntan al lado contrario.'
+      tip:'On "which quotation illustrates the claim", first pin down the claim (here: she is at ease alone) and look for the quote showing it DIRECTLY. Rule out ones about something else (her work) or pointing the other way.'
     },
     {
       id:'M1V-10', type:'mc', domain:'Information and Ideas', difficulty:'Difícil',
       skill:'Command of Evidence (textual)',
-      passage:"In the novel 'The Cartographer’s Daughter,' the young mapmaker Inés is portrayed as distrustful of any information she has not confirmed for herself. A student argues that the novel shows Inés relying on her own direct observation rather than on the accounts of other people.",
+      passage:"In the novel “The Cartographer’s Daughter,” the young mapmaker Inés is portrayed as distrustful of any information she has not confirmed for herself. A student argues that the novel shows Inés relying on her own direct observation rather than on the accounts of other people.",
       stem:'Which quotation from "The Cartographer’s Daughter" most effectively illustrates the student’s claim?',
       choices:{
         A:'“Inés loved the old sailors’ tales of golden coasts and would repeat them to anyone who stopped to listen.”',
@@ -184,13 +184,13 @@ window.SAT_SETS.push({
         D:'“Though the merchants swore the mountain pass was impassable, Inés resolved to walk its full length before drawing a single line.”'
       },
       correct:'D',
-      expCorrect:'El reclamo es que Inés confía en lo que observa ella misma, no en lo que le cuentan. La cita D lo muestra: aunque los mercaderes juraban que el paso era intransitable (el testimonio de otros), Inés decide recorrerlo ella misma antes de trazar una sola línea. Esa es la evidencia exacta.',
+      expCorrect:'The claim is that Inés trusts what she observes herself, not what she is told. Quote D shows it: even though the merchants swore the pass was impassable (other people’s testimony), Inés resolves to walk it herself before drawing a single line. That is the exact evidence.',
       expWrong:{
-        A:'Va en contra: repetir con gusto los cuentos de los marineros muestra que SÍ acepta los relatos ajenos, lo opuesto al reclamo.',
-        B:'Fuera de tema: heredar y pulir los instrumentos de su padre no dice nada sobre confiar solo en su propia observación.',
-        C:'Apunta a otros, no a ella: describe que los aldeanos confían en Inés y le traen rumores; no muestra a Inés verificando las cosas por sí misma.'
+        A:'It runs the other way: gladly repeating the sailors’ tales shows she DOES accept other people’s accounts, the opposite of the claim.',
+        B:'Off topic: inheriting and polishing her father’s instruments says nothing about trusting only her own observation.',
+        C:'It points at others, not at her: it describes villagers trusting Inés and bringing her rumors; it does not show Inés verifying things herself.'
       },
-      tip:'Empareja el reclamo con la cita: “observación propia vs. relatos ajenos” exige una cita donde el personaje IGNORA lo que dicen otros y lo comprueba en persona. La D contrasta “merchants swore” con recorrerlo ella misma.'
+      tip:'Match the claim to the quote: "her own observation vs. other people’s accounts" demands a quote where the character IGNORES what others say and checks in person. D contrasts "merchants swore" with walking it herself.'
     },
     {
       id:'M1V-11', type:'mc', domain:'Standard English Conventions', difficulty:'Media',
@@ -199,13 +199,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'queen’s', B:'queens', C:'queens’', D:'queen'},
       correct:'A',
-      expCorrect:'“a single” deja claro que es UNA reina (singular), y la supervivencia le pertenece a ella. Posesivo singular = nombre + ’s: “a single queen’s survival”.',
+      expCorrect:'"a single" makes clear it is ONE queen (singular), and the survival belongs to her. Singular possessive = noun + ’s: "a single queen’s survival".',
       expWrong:{
-        B:'Plural sin posesivo: no marca que la supervivencia sea “de la reina” y choca con “a single”.',
-        C:'Posesivo plural (“de las reinas”), pero el texto dice “a single”, una sola.',
-        D:'Sin apóstrofo, “queen survival” no expresa la posesión que pide la frase.'
+        B:'A plural with no possessive: it does not mark the survival as "the queen’s" and it clashes with "a single".',
+        C:'A plural possessive ("of the queens"), but the text says "a single", just one.',
+        D:'With no apostrophe, "queen survival" does not express the possession the phrase calls for.'
       },
-      tip:'Dos preguntas: ¿singular o plural? ¿posee algo? “A single” + posesión → singular + ’s.'
+      tip:'Two questions: singular or plural? does it own something? "A single" + ownership → singular + ’s.'
     },
     {
       id:'M1V-12', type:'mc', domain:'Standard English Conventions', difficulty:'Difícil',
@@ -214,13 +214,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'are', B:'were', C:'have been', D:'is'},
       correct:'D',
-      expCorrect:'El sujeto es “The collection” (singular); todo lo demás (“of rare stamps that the two brothers inherited…”) solo lo describe. Un sujeto singular pide un verbo singular, y con “now” el tiempo es presente: “The collection… is now worth…”.',
+      expCorrect:'The subject is "The collection" (singular); everything else ("of rare stamps that the two brothers inherited…") only describes it. A singular subject calls for a singular verb, and with "now" the tense is present: "The collection… is now worth…".',
       expWrong:{
-        A:'“are” es plural; concuerda con “stamps” o “brothers”, no con el verdadero sujeto singular “collection”.',
-        B:'“were” es plural y además pasado; el sujeto es singular y “now” pide presente.',
-        C:'“have been” es plural (el singular sería “has been”), así que no concuerda con “collection”.'
+        A:'"are" is plural; it agrees with "stamps" or "brothers", not with the real singular subject "collection".',
+        B:'"were" is plural and past tense on top of that; the subject is singular and "now" calls for the present.',
+        C:'"have been" is plural (the singular would be "has been"), so it does not agree with "collection".'
       },
-      tip:'Tapa la frase intermedia (“of rare stamps… grandfather”) y quédate con sujeto + verbo: “The collection … is”. Los sustantivos plurales de en medio son trampas.'
+      tip:'Cover the intervening phrase ("of rare stamps… grandfather") and keep subject + verb: "The collection … is". The plural nouns in between are traps.'
     },
     {
       id:'M1V-13', type:'mc', domain:'Craft and Structure', difficulty:'Media',
@@ -229,13 +229,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text with the most logical and precise word?',
       choices:{A:'careless', B:'imaginary', C:'meticulous', D:'ordinary'},
       correct:'C',
-      expCorrect:'El texto contrasta lo que PARECE (“splashes” al azar, caótico) con lo que realmente había: un sistema que el artista trabajó con calma “página tras página” en sus cuadernos. La palabra debe indicar algo muy cuidadoso y preciso: “meticulous” encaja perfecto.',
+      expCorrect:'The text contrasts what it LOOKS like (random "splashes", chaotic) with what was really there: a system the artist worked out calmly "page after page" in his notebooks. The word has to signal something very careful and precise: "meticulous" fits perfectly.',
       expWrong:{
         A:'“careless” (descuidado) es lo contrario de un sistema trabajado con cuidado en cuadernos.',
-        B:'“imaginary” no sirve: el sistema es real, está escrito en sus cuadernos.',
-        D:'“ordinary” (común) no recoge el contraste; el punto es que era preciso y propio, no corriente, y por eso los críticos no lo vieron.'
+        B:'"imaginary" does not work: the system is real, written out in his notebooks.',
+        D:'"ordinary" does not capture the contrast; the point is that it was precise and his own, not commonplace, which is why critics missed it.'
       },
-      tip:'En Words in Context, deja que el propio texto te dé la pista. Aquí el contraste “parece al azar, pero…” pide una palabra de orden y cuidado: precisa, no genérica.'
+      tip:'In Words in Context, let the text itself hand you the clue. Here the contrast "looks random, but…" calls for a word of order and care: precise, not generic.'
     },
     {
       id:'M1V-14', type:'mc', domain:'Craft and Structure', difficulty:'Difícil',
@@ -244,13 +244,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text with the most logical and precise word?',
       choices:{A:'succinct', B:'lengthy', C:'evasive', D:'monotonous'},
       correct:'A',
-      expCorrect:'La pista está después de los dos puntos: “compress a tangled budget debate into a single sentence” (resumir algo enredado en UNA sola frase memorable). Eso describe un discurso breve y al grano: “succinct” es la palabra precisa.',
+      expCorrect:'The clue comes after the colon: "compress a tangled budget debate into a single sentence" (boiling something tangled down to ONE memorable line). That describes a speech that is brief and to the point: "succinct" is the precise word.',
       expWrong:{
-        B:'“lengthy” (largo) es lo opuesto a comprimir todo en una sola oración.',
-        C:'“evasive” (evasivo) no cuadra: ella aclara el debate, por eso hasta sus rivales toman nota; no lo esquiva.',
-        D:'“monotonous” (monótono) choca con “remembered for years”; nada indica un tono aburrido o repetitivo.'
+        B:'"lengthy" is the opposite of compressing everything into a single sentence.',
+        C:'"evasive" does not fit: she clarifies the debate, which is why even her rivals took notes; she does not dodge it.',
+        D:'"monotonous" clashes with "remembered for years"; nothing suggests a dull or repetitive tone.'
       },
-      tip:'La pista suele venir junto al blank. Aquí “una sola frase que recordaban por años” apunta a breve y con impacto: por eso “succinct”, no “largo” ni “evasivo”.'
+      tip:'The clue usually sits right next to the blank. Here "a single sentence they remembered for years" points to brief and striking: hence "succinct", not "lengthy" or "evasive".'
     }
   ]
 });
