@@ -73,17 +73,19 @@ for (const f of Object.keys(porArchivo)) {
     if (src.slice(ini, fin) !== it.es) {
       // El offset se corrió porque otra traducción del mismo archivo entró antes.
       // Se busca el texto tal cual: si aparece UNA sola vez, no hay ambigüedad.
-      const primero = src.indexOf(it.es);
-      const ultimo = src.lastIndexOf(it.es);
-      if (primero < 0 || primero !== ultimo) {
+      // Todas las apariciones, y se elige la MÁS CERCANA al offset original.
+      // Hay textos idénticos repetidos en un mismo archivo (la misma pista en dos
+      // preguntas), así que "que aparezca una sola vez" no alcanza como criterio.
+      const posiciones = [];
+      for (let k = src.indexOf(it.es); k >= 0; k = src.indexOf(it.es, k + 1)) posiciones.push(k);
+      if (!posiciones.length) {
         console.error(`\n✗ ${f} · ${it.qid} · ${it.campo}`);
-        console.error(primero < 0
-          ? '  Ese texto ya no está en el archivo (¿se tradujo dos veces?).'
-          : '  Ese texto aparece más de una vez: no se puede decidir cuál es.');
+        console.error('  Ese texto ya no está en el archivo (¿se tradujo dos veces?).');
         console.error('  esperaba: ' + JSON.stringify(it.es.slice(0, 70)));
         process.exit(1);
       }
-      ini = primero; fin = primero + it.es.length;
+      posiciones.sort((a, b) => Math.abs(a - it.ini) - Math.abs(b - it.ini));
+      ini = posiciones[0]; fin = ini + it.es.length;
     }
     src = src.slice(0, ini) + it.en + src.slice(fin);
     aplicados++;

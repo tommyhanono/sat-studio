@@ -14,41 +14,41 @@
         stem:'If 5^(x + 2) = 5^7, what is the value of x?',
         choices:{A:'2', B:'5', C:'7', D:'9'},
         correct:'B',
-        expCorrect:'Con la misma base, los exponentes deben ser iguales: x + 2 = 7 → x = 5. (Comprobación: 5^(5+2) = 5^7 ✓.)',
+        expCorrect:'With the same base, the exponents have to be equal: x + 2 = 7 → x = 5. (Check: 5^(5+2) = 5^7 ✓.)',
         expWrong:{
-          A:'2 es el número que se suma al exponente, no el valor de x. Te confundiste el término con la incógnita.',
-          C:'7 es el exponente del lado derecho; todavía te falta restar el 2.',
-          D:'9 sale de sumar 7 + 2 en lugar de restar: la ecuación es x + 2 = 7, así que despejas restando.'
+          A:'2 is the number added to the exponent, not the value of x. You mixed up the term with the unknown.',
+          C:'7 is the exponent on the right-hand side; you still have to subtract the 2.',
+          D:'9 comes from adding 7 + 2 instead of subtracting: the equation is x + 2 = 7, so you solve it by subtracting.'
         },
-        tip:'Si a^m = a^n con la misma base a, entonces m = n. Iguala exponentes y resuelve la lineal — nada de logaritmos.'
+        tip:'If a^m = a^n with the same base a, then m = n. Set the exponents equal and solve the linear equation — no logarithms needed.'
       },
       {
         id:'ADV-02', type:'mc', domain:'Advanced Math', difficulty:'Fácil',
-        skill:'Cuadráticas: factorización (raíces)',
+        skill:'Quadratics: factoring (roots)',
         stem:'What is the positive solution to the equation x² − x − 12 = 0?',
         choices:{A:'2', B:'3', C:'4', D:'6'},
         correct:'C',
-        expCorrect:'Busca dos números que multipliquen −12 y sumen −1: son −4 y +3. Factorizas (x − 4)(x + 3) = 0, así que x = 4 o x = −3. La solución positiva es 4. (Comprobación: 16 − 4 − 12 = 0 ✓.)',
+        expCorrect:'Look for two numbers that multiply to −12 and add to −1: they are −4 and +3. You factor (x − 4)(x + 3) = 0, so x = 4 or x = −3. The positive solution is 4. (Check: 16 − 4 − 12 = 0 ✓.)',
         expWrong:{
-          A:'2 no es raíz: 4 − 2 − 12 = −10 ≠ 0. Ningún par que multiplique −12 y sume −1 da 2.',
-          B:'3 es el valor absoluto de la raíz NEGATIVA (−3), no la positiva. Ojo con el signo.',
-          D:'6 multiplica −12 con −2, pero −2 + 6 = 4, no −1. No cumple la suma del término del medio.'
+          A:'2 is not a root: 4 − 2 − 12 = −10 ≠ 0. No pair multiplying to −12 and adding to −1 gives 2.',
+          B:'3 is the absolute value of the NEGATIVE root (−3), not the positive one. Watch the sign.',
+          D:'6 multiplies to −12 with −2, but −2 + 6 = 4, not −1. It does not match the middle term sum.'
         },
-        tip:'Para x² + bx + c: dos números que MULTIPLIQUEN c y SUMEN b. Aquí producto −12, suma −1 → −4 y 3. Las raíces son los opuestos: 4 y −3.'
+        tip:'For x² + bx + c: two numbers that MULTIPLY to c and ADD to b. Here product −12, sum −1 → −4 and 3. The roots are their opposites: 4 and −3.'
       },
       {
         id:'ADV-03', type:'mc', domain:'Advanced Math', difficulty:'Media',
-        skill:'Cuadráticas: vértice (valor mínimo)',
+        skill:'Quadratics: vertex (minimum value)',
         stem:'The function f is defined by f(x) = x² − 6x + 5. What is the minimum value of f(x)?',
         choices:{A:'−4', B:'−3', C:'3', D:'5'},
         correct:'A',
-        expCorrect:'El vértice está en x = −b/(2a) = −(−6)/(2·1) = 3. El valor mínimo es f(3) = 9 − 18 + 5 = −4. Como a > 0, la parábola abre hacia arriba y ese es el mínimo.',
+        expCorrect:'The vertex sits at x = −b/(2a) = −(−6)/(2·1) = 3. The minimum value is f(3) = 9 − 18 + 5 = −4. Since a > 0, the parabola opens upward and that is the minimum.',
         expWrong:{
-          B:'−3 es −b/2 sin dividir bien, o un error aritmético al evaluar f(3). El mínimo correcto es −4.',
-          C:'3 es la coordenada x del vértice, no el valor mínimo de la función (que es la coordenada y).',
-          D:'5 es f(0), el término constante (intersección con el eje y), no el mínimo.'
+          B:'−3 is −b/2 without dividing correctly, or an arithmetic slip evaluating f(3). The correct minimum is −4.',
+          C:'3 is the x-coordinate of the vertex, not the minimum value of the function (which is the y-coordinate).',
+          D:'5 is f(0), the constant term (the y-intercept), not the minimum.'
         },
-        tip:'Valor mínimo/máximo = coordenada y del vértice. Primero x = −b/(2a), luego EVALÚA f en ese x. No confundas la x del vértice con el valor de la función.'
+        tip:'Minimum or maximum value = the y-coordinate of the vertex. First x = −b/(2a), then EVALUATE f at that x. Do not confuse the vertex x with the value of the function.'
       },
       {
         id:'ADV-04', type:'mc', domain:'Advanced Math', difficulty:'Media',
@@ -56,13 +56,13 @@
         stem:'A colony of bacteria has a population of 300, and the population increases by 12% each hour. Which function P models the population after t hours?',
         choices:{A:'P(t) = 300 + 0.12t', B:'P(t) = 300(0.12)^t', C:'P(t) = 300(0.88)^t', D:'P(t) = 300(1.12)^t'},
         correct:'D',
-        expCorrect:'Crecer 12% cada hora multiplica por (1 + 0.12) = 1.12 en cada paso. El modelo es P(t) = 300(1.12)^t. (Comprobación: en t = 1, P = 300·1.12 = 336, que es 300 más 12%.)',
+        expCorrect:'Growing 12% each hour multiplies by (1 + 0.12) = 1.12 at every step. The model is P(t) = 300(1.12)^t. (Check: at t = 1, P = 300·1.12 = 336, which is 300 plus 12%.)',
         expWrong:{
-          A:'Este modelo es LINEAL (suma 0.12 por hora). Un porcentaje que se repite cada hora es multiplicativo, no aditivo.',
-          B:'Multiplicar por 0.12 haría que la población casi desaparezca cada hora; ese factor no representa crecer 12%.',
+          A:'This model is LINEAR (it adds 0.12 per hour). A percentage repeating every hour is multiplicative, not additive.',
+          B:'Multiplying by 0.12 would make the population nearly vanish every hour; that factor does not represent 12% growth.',
           C:'0.88 = 1 − 0.12 modela un DECRECIMIENTO del 12%, no un crecimiento.'
         },
-        tip:'Crecimiento de r% → factor (1 + r/100)^t. Decrecimiento → (1 − r/100)^t. "Increases by 12%" es ×1.12 por período, no +0.12.'
+        tip:'Growth of r% → factor (1 + r/100)^t. Decay → (1 − r/100)^t. "Increases by 12%" is ×1.12 per period, not +0.12.'
       },
       {
         id:'ADV-05', type:'mc', domain:'Advanced Math', difficulty:'Media',
@@ -72,62 +72,62 @@
         correct:'B',
         expCorrect:'Usa FOIL: (2x)(x) + (2x)(−4) + (3)(x) + (3)(−4) = 2x² − 8x + 3x − 12 = 2x² − 5x − 12.',
         expWrong:{
-          A:'2x² − 12 sale de multiplicar solo los primeros y los últimos términos, olvidando los productos cruzados (−8x y +3x).',
-          C:'2x² + 5x − 12 tiene el signo del medio equivocado: −8x + 3x = −5x, no +5x.',
-          D:'2x² − 11x − 12 sale de multiplicar mal los cruzados (por ejemplo −8x − 3x en vez de −8x + 3x).'
+          A:'2x² − 12 comes from multiplying only the first and last terms, forgetting the cross products (−8x and +3x).',
+          C:'2x² + 5x − 12 has the wrong sign in the middle: −8x + 3x = −5x, not +5x.',
+          D:'2x² − 11x − 12 comes from multiplying the cross terms wrong (for example −8x − 3x instead of −8x + 3x).'
         },
-        tip:'FOIL: First, Outer, Inner, Last. El término del medio suma los DOS productos cruzados con su signo: −8x + 3x = −5x. Cuida los signos ahí.'
+        tip:'FOIL: First, Outer, Inner, Last. The middle term adds the TWO cross products with their signs: −8x + 3x = −5x. Watch the signs there.'
       },
       {
         id:'ADV-06', type:'mc', domain:'Advanced Math', difficulty:'Media',
-        skill:'Funciones polinómicas (ceros y factores)',
+        skill:'Polynomial functions (zeros and factors)',
         stem:'The polynomial p is defined by p(x) = (x + 4)(x − 2)(x − 5). For how many values of x does p(x) = 0?',
         choices:{A:'0', B:'1', C:'2', D:'3'},
         correct:'D',
-        expCorrect:'Un producto es cero cuando algún factor es cero. Cada factor da una raíz: x = −4, x = 2 y x = 5. Son tres valores distintos, así que p(x) = 0 en 3 valores de x.',
+        expCorrect:'A product is zero when some factor is zero. Each factor gives a root: x = −4, x = 2 and x = 5. Those are three different values, so p(x) = 0 at 3 values of x.',
         expWrong:{
-          A:'0 diría que nunca se anula, pero cada factor lineal aporta una raíz real.',
-          B:'1 cuenta solo una raíz; hay tres factores lineales distintos, cada uno con su propio cero.',
+          A:'0 would say it never equals zero, but each linear factor contributes a real root.',
+          B:'1 counts only one root; there are three distinct linear factors, each with its own zero.',
           C:'2 se te olvida un factor. Cuenta los tres: (x + 4), (x − 2) y (x − 5).'
         },
-        tip:'Propiedad del producto cero: cada factor lineal distinto = un cero (una intersección con el eje x). Cuenta los factores distintos para saber cuántas raíces reales hay.'
+        tip:'Zero product property: each distinct linear factor = one zero (one crossing of the x-axis). Count the distinct factors to know how many real roots there are.'
       },
       {
         id:'ADV-07', type:'spr', domain:'Advanced Math', difficulty:'Media',
-        skill:'Sistemas no lineales (parábola y recta)',
+        skill:'Nonlinear systems (parabola and line)',
         stem:'The system of equations below has two solutions.<br><br>y = x²<br>y = x + 6<br><br>What is the greatest value of y among the solutions to the system?',
         answer:'9',
-        expCorrect:'Iguala: x² = x + 6 → x² − x − 6 = 0 → (x − 3)(x + 2) = 0 → x = 3 o x = −2. Los valores de y son y = 3² = 9 y y = (−2)² = 4. El mayor valor de y es 9. (Comprobación: (3, 9) cumple 9 = 3 + 6 ✓.) Respuesta: 9.',
+        expCorrect:'Set them equal: x² = x + 6 → x² − x − 6 = 0 → (x − 3)(x + 2) = 0 → x = 3 or x = −2. The y values are y = 3² = 9 and y = (−2)² = 4. The greater y value is 9. (Check: (3, 9) satisfies 9 = 3 + 6 ✓.) Answer: 9.',
         expWrong:{},
         tip:'Truco Desmos: grafica y = x² y y = x + 6, toca los dos puntos de corte: (−2, 4) y (3, 9). Ojo: piden el mayor VALOR DE y (9), no el mayor valor de x.'
       },
       {
         id:'ADV-08', type:'mc', domain:'Advanced Math', difficulty:'Difícil',
-        skill:'Cuadráticas: discriminante (una solución)',
+        skill:'Quadratics: discriminant (one solution)',
         stem:'In the equation x² + 12x + c = 0, c is a constant. If the equation has exactly one real solution, what is the value of c?',
         choices:{A:'6', B:'12', C:'36', D:'144'},
         correct:'C',
-        expCorrect:'Exactamente una solución real ⇔ discriminante cero: b² − 4ac = 0 → 12² − 4(1)(c) = 0 → 144 − 4c = 0 → c = 36. (Comprobación: x² + 12x + 36 = (x + 6)², raíz doble x = −6.)',
+        expCorrect:'Exactly one real solution ⇔ discriminant zero: b² − 4ac = 0 → 12² − 4(1)(c) = 0 → 144 − 4c = 0 → c = 36. (Check: x² + 12x + 36 = (x + 6)², double root x = −6.)',
         expWrong:{
-          A:'6 es la raíz doble (x = −6 en valor absoluto), no el valor de c. c = 6² = 36.',
+          A:'6 is the double root (x = −6 in absolute value), not the value of c. c = 6² = 36.',
           B:'12 es el coeficiente b, no c.',
-          D:'144 es b², pero olvidaste dividir entre 4: c = 144/4 = 36.'
+          D:'144 is b², but you forgot to divide by 4: c = 144/4 = 36.'
         },
-        tip:'Una sola solución real → discriminante = 0. Resuelve b² = 4ac. Aquí 144 = 4c → c = 36. Verifica: debe quedar un cuadrado perfecto (x + 6)².'
+        tip:'A single real solution → discriminant = 0. Solve b² = 4ac. Here 144 = 4c → c = 36. Verify: it has to leave a perfect square (x + 6)².'
       },
       {
         id:'ADV-09', type:'mc', domain:'Advanced Math', difficulty:'Difícil',
-        skill:'Cuadráticas: suma y producto de raíces',
+        skill:'Quadratics: sum and product of roots',
         stem:'The solutions to the equation 2x² − 16x + 24 = 0 are r and s. What is the value of r + s?',
         choices:{A:'−8', B:'6', C:'8', D:'12'},
         correct:'C',
-        expCorrect:'Divide todo entre 2: x² − 8x + 12 = 0 → (x − 2)(x − 6) = 0 → raíces 2 y 6. Su suma es 2 + 6 = 8. (Atajo: para ax² + bx + c, la suma de raíces es −b/a = −(−16)/2 = 8.)',
+        expCorrect:'Divide everything by 2: x² − 8x + 12 = 0 → (x − 2)(x − 6) = 0 → roots 2 and 6. Their sum is 2 + 6 = 8. (Shortcut: for ax² + bx + c, the sum of the roots is −b/a = −(−16)/2 = 8.)',
         expWrong:{
-          A:'−8 tiene el signo cambiado: la suma de raíces es −b/a = −(−16)/2 = +8, no −8.',
-          B:'6 es solo una de las raíces, no la suma de ambas.',
-          D:'12 es el PRODUCTO de las raíces (c/a = 24/2 = 12), no la suma.'
+          A:'−8 has the sign flipped: the sum of the roots is −b/a = −(−16)/2 = +8, not −8.',
+          B:'6 is only one of the roots, not the sum of both.',
+          D:'12 is the PRODUCT of the roots (c/a = 24/2 = 12), not the sum.'
         },
-        tip:'Fórmulas de Vieta: para ax² + bx + c = 0, suma de raíces = −b/a y producto = c/a. Aquí −(−16)/2 = 8, sin siquiera factorizar.'
+        tip:'Vieta formulas: for ax² + bx + c = 0, the sum of the roots is −b/a and the product is c/a. Here −(−16)/2 = 8, without factoring at all.'
       },
       {
         id:'ADV-10', type:'mc', domain:'Advanced Math', difficulty:'Difícil',
@@ -135,36 +135,36 @@
         stem:'A radioactive sample has an initial mass of 80 grams and its mass is halved every 6 years. Which function m gives the mass, in grams, remaining after t years?',
         choices:{A:'m(t) = 80(1/2)^(6t)', B:'m(t) = 80(1/2)^(t/6)', C:'m(t) = 80(1/2)^(t−6)', D:'m(t) = 80(6)^(t/2)'},
         correct:'B',
-        expCorrect:'Cada 6 años la masa se multiplica por 1/2, así que el número de veces que se reduce a la mitad es t/6. El modelo es m(t) = 80(1/2)^(t/6). (Comprobación: en t = 6, m = 80(1/2)^1 = 40; en t = 12, m = 80(1/2)^2 = 20.)',
+        expCorrect:'Every 6 years the mass is multiplied by 1/2, so the number of halvings is t/6. The model is m(t) = 80(1/2)^(t/6). (Check: at t = 6, m = 80(1/2)^1 = 40; at t = 12, m = 80(1/2)^2 = 20.)',
         expWrong:{
-          A:'El exponente 6t haría que la masa se reduzca a la mitad SEIS veces por año, no una vez cada 6 años. El período va DIVIDIENDO: t/6.',
-          C:'Restar en el exponente (t − 6) no representa períodos de semivida; el exponente debe ser el número de períodos, t/6.',
-          D:'Base 6 y crecimiento no tienen sentido para algo que se reduce a la mitad; además desaparece el factor 1/2.'
+          A:'The exponent 6t would halve the mass SIX times per year, not once every 6 years. The period DIVIDES: t/6.',
+          C:'Subtracting in the exponent (t − 6) does not represent half-life periods; the exponent has to be the number of periods, t/6.',
+          D:'Base 6 and growth make no sense for something that halves; on top of that the 1/2 factor disappears.'
         },
-        tip:'Semivida: cantidad = inicial · (1/2)^(t / período). El período va DIVIDIENDO al tiempo en el exponente. "Cada 6 años" → t/6.'
+        tip:'Half-life: amount = initial · (1/2)^(t / period). The period DIVIDES the time in the exponent. "Every 6 years" → t/6.'
       },
       {
         id:'ADV-11', type:'mc', domain:'Advanced Math', difficulty:'Difícil',
-        skill:'Cuadráticas: forma de vértice',
+        skill:'Quadratics: vertex form',
         stem:'The graph of y = (x − 4)² − 9 in the xy-plane is a parabola. What are the coordinates of its vertex?',
         choices:{A:'(−4, −9)', B:'(4, −9)', C:'(4, 9)', D:'(−4, 9)'},
         correct:'B',
-        expCorrect:'En la forma de vértice y = a(x − h)² + k, el vértice es (h, k). Aquí (x − 4)² − 9 tiene h = 4 y k = −9, así que el vértice es (4, −9). Ojo: el signo de h se invierte respecto al de dentro del paréntesis.',
+        expCorrect:'In vertex form y = a(x − h)² + k, the vertex is (h, k). Here (x − 4)² − 9 has h = 4 and k = −9, so the vertex is (4, −9). Careful: the sign of h flips relative to what is inside the parentheses.',
         expWrong:{
-          A:'(−4, −9) toma el 4 con el signo de dentro del paréntesis, pero en y = a(x − h)² + k el vértice usa h = +4.',
-          C:'(4, 9) cambia el signo de k: el término es − 9, así que k = −9, no +9.',
-          D:'(−4, 9) tiene los dos signos equivocados: h = 4 (no −4) y k = −9 (no 9).'
+          A:'(−4, −9) takes the 4 with the sign inside the parentheses, but in y = a(x − h)² + k the vertex uses h = +4.',
+          C:'(4, 9) flips the sign of k: the term is − 9, so k = −9, not +9.',
+          D:'(−4, 9) has both signs wrong: h = 4 (not −4) and k = −9 (not 9).'
         },
-        tip:'Forma de vértice y = a(x − h)² + k → vértice (h, k). El (x − h) INVIERTE el signo (x − 4 → h = 4), pero + k se toma tal cual (− 9 → k = −9).'
+        tip:'Vertex form y = a(x − h)² + k → vertex (h, k). The (x − h) FLIPS the sign (x − 4 → h = 4), but + k is taken as is (− 9 → k = −9).'
       },
       {
         id:'ADV-12', type:'spr', domain:'Advanced Math', difficulty:'Difícil',
-        skill:'Cuadráticas: discriminante con parámetro',
+        skill:'Quadratics: discriminant with a parameter',
         stem:'In the equation 9x² + bx + 4 = 0, b is a positive constant. If the equation has exactly one real solution, what is the value of b?',
         answer:'12',
-        expCorrect:'Exactamente una solución real ⇔ discriminante cero: b² − 4ac = 0 → b² − 4(9)(4) = 0 → b² = 144 → b = ±12. Como b es positivo, b = 12. (Comprobación: 9x² + 12x + 4 = (3x + 2)², raíz doble.) Respuesta: 12.',
+        expCorrect:'Exactly one real solution ⇔ discriminant zero: b² − 4ac = 0 → b² − 4(9)(4) = 0 → b² = 144 → b = ±12. Since b is positive, b = 12. (Check: 9x² + 12x + 4 = (3x + 2)², double root.) Answer: 12.',
         expWrong:{},
-        tip:'Una sola solución → discriminante = 0 → b² = 4ac = 4(9)(4) = 144 → b = 12 (tomas el positivo). Debe quedar un cuadrado perfecto: (3x + 2)².'
+        tip:'A single solution → discriminant = 0 → b² = 4ac = 4(9)(4) = 144 → b = 12 (take the positive one). It has to leave a perfect square: (3x + 2)².'
       }
     ]
   });

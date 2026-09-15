@@ -19,13 +19,13 @@ window.SAT_SETS.push({
         D:'Both teams measured the age of the same ancient volcanic ash layer in Kenya.'
       },
       correct:'A',
-      expCorrect:'La meta pide una diferencia en el MÉTODO, no en el resultado. La A contrasta las dos técnicas: argon-argon con potasio (Team A) vs. uranium-lead con zircón (Team B). Es diferencia de método puro, con notas exactas.',
+      expCorrect:'The goal calls for a difference in METHOD, not in the result. A contrasts the two techniques: argon-argon with potassium (Team A) vs. uranium-lead with zircon (Team B). It is pure method difference, with accurate notes.',
       expWrong:{
-        B:'Contrasta los RESULTADOS (1.87 vs. 1.86 millones), justo lo que la meta te pide evitar.',
-        C:'Menciona que los métodos difieren, pero su énfasis cae en que los resultados coinciden (within 1%): eso es resultado, no método.',
-        D:'Dice qué midieron ambos, pero es lo que tienen en común, no una diferencia de método.'
+        B:'It contrasts the RESULTS (1.87 vs. 1.86 million), exactly what the goal tells you to avoid.',
+        C:'It mentions that the methods differ, but its emphasis falls on the results agreeing (within 1%): that is result, not method.',
+        D:'It says what both measured, but that is what they have in common, not a difference in method.'
       },
-      tip:'Cuando la meta separa "método" de "resultado", descarta cualquier opción con números/edades. Busca la que contrasta CÓMO lo hicieron.'
+      tip:'When the goal separates "method" from "result", rule out any option with numbers or ages. Look for the one contrasting HOW they did it.'
     },
     {
       id:'RHD-02', type:'mc', domain:'Expression of Ideas', difficulty:'Difícil',
@@ -39,13 +39,13 @@ window.SAT_SETS.push({
         D:'The partnership between mycorrhizal fungi and plants is an example of mutualism.'
       },
       correct:'A',
-      expCorrect:'La meta es PRESENTAR la relación a un público nuevo. La A da el panorama completo y básico: quiénes se asocian y qué intercambian (agua y fósforo por azúcares). Es la mejor introducción con notas exactas.',
+      expCorrect:'The goal is to INTRODUCE the relationship to a new audience. A gives the full, basic picture: who partners up and what they trade (water and phosphorus for sugars). It is the best introduction, with accurate notes.',
       expWrong:{
-        B:'Da una excepción (las orquídeas que no dan nada); es un detalle avanzado, no una presentación general.',
-        C:'Describe solo un lado (lo que hacen los filamentos); no presenta el intercambio completo.',
-        D:'Nombra el término "mutualism" sin explicar en qué consiste la relación; un público nuevo queda sin entenderla.'
+        B:'It gives an exception (the orchids that give nothing back); that is an advanced detail, not a general introduction.',
+        C:'It describes only one side (what the filaments do); it does not present the full exchange.',
+        D:'It names the term "mutualism" without explaining what the relationship consists of; a new audience is left without understanding it.'
       },
-      tip:'"Introducir a un público que no conoce" = elige el panorama general con lo esencial, no una excepción ni un término técnico suelto.'
+      tip:'"Introduce to an audience unfamiliar with it" = pick the general picture with the essentials, not an exception or a loose technical term.'
     },
     {
       id:'RHD-03', type:'mc', domain:'Expression of Ideas', difficulty:'Difícil',
@@ -59,13 +59,13 @@ window.SAT_SETS.push({
         D:'Encouraged by the results, the company plans to run further trials in other regions.'
       },
       correct:'B',
-      expCorrect:'La meta pide señalar una LIMITACIÓN del estudio. La B la nombra: como todos los buses operaron en un solo clima templado, los resultados podrían no valer en climas muy calientes o muy fríos. Eso restringe el alcance del estudio, con notas exactas.',
+      expCorrect:'The goal calls for pointing out a LIMITATION of the study. B names it: since every bus ran in a single temperate climate, the results might not hold in very hot or very cold ones. That narrows the scope of the study, with accurate notes.',
       expWrong:{
-        A:'Reporta el resultado positivo (92% vs. 70%); es un logro, no una limitación.',
-        C:'Describe el montaje del estudio (200 buses, cinco años), sin señalar ninguna debilidad.',
-        D:'Habla de planes futuros; menciona que faltan pruebas, pero su énfasis es optimista, no la limitación actual.'
+        A:'It reports the positive result (92% vs. 70%); that is an achievement, not a limitation.',
+        C:'It describes the study setup (200 buses, five years), without pointing out any weakness.',
+        D:'It is about future plans; it mentions that testing is still needed, but its emphasis is optimistic, not the present limitation.'
       },
-      tip:'"Limitación" = busca la opción que diga por qué los resultados podrían NO aplicar en general (aquí: un solo clima), no el dato bueno ni el plan futuro.'
+      tip:'"Limitation" = look for the option saying why the results might NOT apply generally (here: a single climate), not the good result or the future plan.'
     },
     {
       id:'RHD-04', type:'mc', domain:'Expression of Ideas', difficulty:'Difícil',
@@ -79,13 +79,13 @@ window.SAT_SETS.push({
         D:'Gearing as complex as the Antikythera mechanism’s would not reappear for over a thousand years, in medieval European clocks.'
       },
       correct:'D',
-      expCorrect:'La meta es resaltar lo INESPERADAMENTE avanzado para su época. La D lo logra al mostrar que un mecanismo así de complejo no reaparece hasta más de mil años después: eso deja claro que estaba muy adelantado a su tiempo. Notas exactas.',
+      expCorrect:'The goal is to highlight how UNEXPECTEDLY advanced it was for its era. D pulls it off by showing that a mechanism this complex does not reappear for more than a thousand years: that makes clear it was far ahead of its time. Accurate notes.',
       expWrong:{
-        A:'Da fecha y origen; ubica el objeto pero no muestra que fuera adelantado a su época.',
-        B:'Describe lo que hacía (predecir Sol, Luna y eclipses), pero sin el punto de comparación temporal que lo hace sorprendente.',
-        C:'Cuenta los engranajes; es un dato de complejidad, pero por sí solo no muestra el desfase de mil años.'
+        A:'It gives the date and the origin; it places the object but does not show it was ahead of its era.',
+        B:'It describes what it did (predicting Sun, Moon and eclipses), but without the point of comparison in time that makes it astonishing.',
+        C:'It counts the gears; that is a fact about complexity, but on its own it does not show the thousand-year gap.'
       },
-      tip:'"Adelantado a su tiempo" pide una COMPARACIÓN temporal. Busca la opción que contrasta con lo que vino mucho después, no la que solo describe el objeto.'
+      tip:'"Ahead of its time" calls for a COMPARISON across time. Look for the option contrasting it with what came much later, not the one that only describes the object.'
     },
     {
       id:'RHD-05', type:'mc', domain:'Expression of Ideas', difficulty:'Media',
@@ -99,13 +99,13 @@ window.SAT_SETS.push({
         D:'Both orchestras recorded the same symphony for a listening study.'
       },
       correct:'C',
-      expCorrect:'La meta pide cómo PERCIBIERON los oyentes la diferencia de TONO. La C junta las dos percepciones: Orchestra Y sonó "warmer/softer" y Orchestra X "brighter/louder". Es exactamente la diferencia de tono descrita por los oyentes.',
+      expCorrect:'The goal asks how listeners PERCEIVED the difference in TONE. C pairs the two perceptions: Orchestra Y sounded "warmer/softer" and Orchestra X "brighter/louder". That is exactly the tonal difference the listeners described.',
       expWrong:{
         A:'Reporta que gustaron igual (enjoyment), no la diferencia de tono.',
-        B:'Contrasta los instrumentos (steel vs. gut), no cómo los oyentes percibieron el tono.',
-        D:'Da el montaje del estudio; no menciona ninguna percepción de tono.'
+        B:'It contrasts the instruments (steel vs. gut), not how listeners perceived the tone.',
+        D:'It gives the study setup; it never mentions any perception of tone.'
       },
-      tip:'Fíjate en el sustantivo exacto de la meta: aquí es "tono percibido". Descarta las opciones sobre instrumentos o sobre cuánto gustó.'
+      tip:'Watch the exact noun in the goal: here it is "perceived tone". Rule out options about instruments or about how much people liked it.'
     },
     {
       id:'RHD-06', type:'mc', domain:'Expression of Ideas', difficulty:'Difícil',
@@ -119,13 +119,13 @@ window.SAT_SETS.push({
         D:'Cordyceps is a fungus that infects certain ants and takes over their behavior.'
       },
       correct:'C',
-      expCorrect:'La meta pide POR QUÉ el hongo hace subir a la hormiga antes de morir. La C da la razón: esa posición elevada permite que el tallo esparza las esporas sobre las hormigas de abajo (maximiza la dispersión). Es causa + propósito con notas exactas.',
+      expCorrect:'The goal asks WHY the fungus drives the ant upward before it dies. C gives the reason: that raised position lets the stalk scatter the spores over the ants below (it maximizes dispersal). It is cause plus purpose, with accurate notes.',
       expWrong:{
-        A:'Dice que altera la conducta, pero no explica el propósito de hacerla subir.',
-        B:'Describe lo que pasa después (crece el tallo, suelta esporas), sin conectar la subida con la razón.',
-        D:'Presenta al hongo y menciona que controla a la hormiga, pero no explica el porqué de subir.'
+        A:'It says it alters the behavior, but does not explain the purpose of driving it upward.',
+        B:'It describes what happens afterward (the stalk grows, it releases spores), without connecting the climb to the reason.',
+        D:'It introduces the fungus and mentions that it controls the ant, but does not explain why the climb.'
       },
-      tip:'"Explicar por qué" pide la opción que une la acción con su PROPÓSITO. Aquí es la subida ligada a maximizar la dispersión de esporas.'
+      tip:'"Explain why" calls for the option tying the action to its PURPOSE. Here it is the climb linked to maximizing spore dispersal.'
     },
     {
       id:'RHD-07', type:'mc', domain:'Expression of Ideas', difficulty:'Difícil',
@@ -139,13 +139,13 @@ window.SAT_SETS.push({
         D:'The two groups were the same size and age range and took the same recall test, so only the presence of music differed between them.'
       },
       correct:'D',
-      expCorrect:'La meta pide explicar cómo se DISEÑÓ el estudio para que la música fuera la única diferencia. La D nombra los controles: mismo tamaño, misma edad y misma prueba, de modo que solo cambiaba la música. Describe el diseño con notas exactas.',
+      expCorrect:'The goal calls for explaining how the study was DESIGNED so that music was the only difference. D names the controls: same size, same age and same test, so that only the music varied. It describes the design, with accurate notes.',
       expWrong:{
-        A:'Da los resultados (18 vs. 12), no cómo se controló el diseño.',
-        B:'Enuncia la pregunta de investigación, no cómo aislaron la variable música.',
-        C:'Describe qué hizo cada grupo (silencio vs. música), pero no menciona los controles que igualan todo lo demás.'
+        A:'It gives the results (18 vs. 12), not how the design was controlled.',
+        B:'It states the research question, not how they isolated the music variable.',
+        C:'It describes what each group did (silence vs. music), but never mentions the controls that hold everything else equal.'
       },
-      tip:'"La música como única diferencia" pide los CONTROLES (mismo tamaño, edad, prueba), no lo que cambió ni los resultados.'
+      tip:'"Music as the only difference" calls for the CONTROLS (same size, age, test), not what changed or what the results were.'
     },
     {
       id:'RHD-08', type:'mc', domain:'Expression of Ideas', difficulty:'Difícil',
@@ -159,13 +159,13 @@ window.SAT_SETS.push({
         D:'Scientists study Venus to learn how similar planets can end up so different.'
       },
       correct:'A',
-      expCorrect:'La meta pide enfatizar en qué se PARECEN Venus y la Tierra (el paso previo al contraste). La A junta las semejanzas: tamaño y masa casi idénticos y misma región de formación. Es puro parecido, con notas exactas.',
+      expCorrect:'The goal calls for emphasizing how ALIKE Venus and Earth are (the step before the contrast). A pairs the similarities: nearly identical size and mass, and the same region of formation. It is pure likeness, with accurate notes.',
       expWrong:{
-        B:'Contrasta las temperaturas (465°C vs. 15°C): eso es la DIFERENCIA, justo lo que se dejaría para después.',
-        C:'Da otra diferencia (atmósfera 90 veces más densa), no las semejanzas.',
-        D:'Explica por qué se estudia Venus; alude a que son distintos, pero no enumera los parecidos.'
+        B:'It contrasts the temperatures (465°C vs. 15°C): that is the DIFFERENCE, exactly what would be saved for later.',
+        C:'It gives another difference (an atmosphere 90 times denser), not the similarities.',
+        D:'It explains why Venus is studied; it hints that they are different, but does not list what they have in common.'
       },
-      tip:'Cuando la meta dice "cuán parecidos... antes de contrastar", elige solo las SEMEJANZAS. Toda opción con temperaturas o densidad es el contraste, no el parecido.'
+      tip:'When the goal says "how alike… before contrasting", pick only the SIMILARITIES. Any option with temperatures or density is the contrast, not the likeness.'
     },
     {
       id:'RHD-09', type:'mc', domain:'Expression of Ideas', difficulty:'Media',
@@ -179,13 +179,13 @@ window.SAT_SETS.push({
         D:'Visitors said the restored painting looked reborn.'
       },
       correct:'B',
-      expCorrect:'La meta pide transmitir lo METICULOSO del proceso. La B lo muestra: bajo lupa, limpiando un centímetro cuadrado a la vez, durante casi dos años. El detalle y la lentitud comunican el esfuerzo, con notas exactas.',
+      expCorrect:'The goal calls for conveying how METICULOUS the process was. B shows it: under a magnifier, cleaning one square centimeter at a time, for nearly two years. The detail and the slowness convey the effort, with accurate notes.',
       expWrong:{
-        A:'Da un resultado (colores que coinciden con las muestras), no lo laborioso del proceso.',
-        C:'Resume qué se hizo, pero sin el detalle que muestra cuán minucioso fue.',
-        D:'Reporta la reacción del público, no el trabajo meticuloso.'
+        A:'It gives a result (colors matching the samples), not how laborious the process was.',
+        C:'It sums up what was done, but without the detail showing how painstaking it was.',
+        D:'It reports the public reaction, not the meticulous work.'
       },
-      tip:'"Painstaking / meticuloso" pide detalles de esfuerzo y lentitud (un cm² a la vez, dos años), no el resultado ni la reacción.'
+      tip:'"Painstaking / meticulous" calls for details of effort and slowness (one cm² at a time, two years), not the result or the reaction.'
     },
     {
       id:'RHD-10', type:'mc', domain:'Expression of Ideas', difficulty:'Difícil',
@@ -199,13 +199,13 @@ window.SAT_SETS.push({
         D:'Farm A’s sensor-based system cut water use by 40%, slightly more than Farm B’s 38%.'
       },
       correct:'B',
-      expCorrect:'La meta pide destacar que la diferencia principal fue el uso de SENSORES, no el ahorro de agua. La B contrasta ese punto: ambas usaron riego por goteo, pero Farm A añadió sensores y Farm B regó con horario fijo. Es diferencia de método, sin números de ahorro.',
+      expCorrect:'The goal calls for highlighting that the main difference was the use of SENSORS, not the water savings. B contrasts exactly that: both used drip irrigation, but Farm A added sensors and Farm B watered on a fixed schedule. It is a method difference, with no savings figures.',
       expWrong:{
         A:'Contrasta el AHORRO (40% vs. 38%), justo lo que la meta pide no enfatizar.',
-        C:'Habla del rendimiento (yields), que fue igual; no toca la diferencia de sensores.',
-        D:'Mete a los sensores, pero su énfasis recae en comparar los porcentajes de ahorro, que la meta quiere evitar.'
+        C:'It is about the yields, which were the same; it does not touch the sensor difference.',
+        D:'It brings in the sensors, but its emphasis falls on comparing the savings percentages, which the goal wants you to avoid.'
       },
-      tip:'Si la meta dice "difieren en X, no en Y", descarta toda opción cuyo foco sea Y (aquí, los porcentajes de ahorro). Busca la que aísla X (los sensores).'
+      tip:'If the goal says "differ in X, not in Y", rule out every option focused on Y (here, the savings percentages). Look for the one isolating X (the sensors).'
     }
   ]
 });

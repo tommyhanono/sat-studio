@@ -21,11 +21,11 @@ window.SAT_SETS.push({
       correct:'A',
       expCorrect:'The goal calls for explaining HOW the illusion of motion is created. A describes the full mechanism: as the cylinder spins, the viewer looks through the moving slits and those rapid glimpses make the still drawings appear to move. It meets the goal with accurate notes.',
       expWrong:{
-        B:'Describe la forma del aparato, pero no explica cómo produce el movimiento.',
-        C:'Da un detalle de dónde van los dibujos; no explica el efecto de movimiento.',
-        D:'Es una afirmación general sin datos de las notas; no explica el mecanismo.'
+        B:'It describes the shape of the device, but does not explain how it produces the motion.',
+        C:'It gives one detail about where the drawings go; it does not explain the motion effect.',
+        D:'It is a general claim with no data from the notes; it does not explain the mechanism.'
       },
-      tip:'"Explicar cómo" = busca la opción con el MECANISMO paso a paso, no la que solo describe el objeto.'
+      tip:'"Explain how" = look for the option with the step-by-step MECHANISM, not the one that only describes the object.'
     },
     {
       id:'RHM-02', type:'mc', domain:'Expression of Ideas', difficulty:'Media',
@@ -42,10 +42,10 @@ window.SAT_SETS.push({
       expCorrect:'The goal calls for COMPARING when each one can be listened to. B puts the two sides face to face: radio forces you to tune in at broadcast time, whereas a podcast is heard whenever you like. It compares both, with accurate notes.',
       expWrong:{
         A:'Solo describe el podcast; falta el lado de la radio para comparar.',
-        C:'Solo habla de la radio; no menciona el podcast, así que no compara.',
-        D:'Da un detalle de la suscripción; no compara los dos medios en cuanto al momento de escuchar.'
+        C:'It is only about radio; it never mentions the podcast, so it does not compare.',
+        D:'It gives a detail about subscribing; it does not compare the two media on when you can listen.'
       },
-      tip:'"Comparar dos cosas" = la opción correcta debe mencionar AMBAS, no solo una.'
+      tip:'"Compare two things" = the right option has to mention BOTH, not just one.'
     },
     {
       id:'RHM-03', type:'mc', domain:'Expression of Ideas', difficulty:'Media',
@@ -61,11 +61,11 @@ window.SAT_SETS.push({
       correct:'C',
       expCorrect:'The goal calls for a specific FINDING. C gives the study’s concrete numbers: 82% for those who read on paper against 71% for those who read on a phone. It is a measurable, exact result.',
       expWrong:{
-        A:'Describe el montaje del estudio, no lo que se descubrió.',
-        B:'Explica cómo se dividieron los grupos, pero no reporta ningún resultado con datos.',
-        D:'Es una conclusión general y vaga; no presenta el hallazgo específico con cifras.'
+        A:'It describes the study setup, not what was discovered.',
+        B:'It explains how the groups were split, but reports no result with data.',
+        D:'It is a general, vague conclusion; it does not present the specific finding with figures.'
       },
-      tip:'"Hallazgo específico" = busca la opción con los DATOS/números concretos, no la que describe el diseño.'
+      tip:'"Specific finding" = look for the option with concrete DATA or numbers, not the one describing the design.'
     },
     {
       id:'RHM-04', type:'mc', domain:'Expression of Ideas', difficulty:'Media',
@@ -79,13 +79,13 @@ window.SAT_SETS.push({
         D:'Emoji were invented by Shigetaka Kurita, a Japanese designer.'
       },
       correct:'C',
-      expCorrect:'La meta pide explicar POR QUÉ los emoji se ven igual en distintas marcas. La C da la causa: como el Unicode Consortium los estandariza, un emoji aparece correctamente en teléfonos de marcas diferentes. Cumple la meta con notas exactas.',
+      expCorrect:'The goal calls for explaining WHY emoji look the same across different brands. C gives the cause: because the Unicode Consortium standardizes them, an emoji shows up correctly on phones from different makers. It meets the goal with accurate notes.',
       expWrong:{
-        A:'Da la historia y el número original de iconos; no explica la consistencia entre marcas.',
-        B:'Define qué son los emoji, pero no dice por qué se ven igual en todos lados.',
-        D:'Nombra al creador; es un dato histórico, no la causa de la estandarización.'
+        A:'It gives the history and the original number of icons; it does not explain the consistency across brands.',
+        B:'It defines what emoji are, but does not say why they look the same everywhere.',
+        D:'It names the creator; that is a historical fact, not the cause of the standardization.'
       },
-      tip:'"Explicar por qué" = busca la opción que da la CAUSA (aquí: la estandarización), no la historia ni la definición.'
+      tip:'"Explain why" = look for the option giving the CAUSE (here: the standardization), not the history or the definition.'
     },
     {
       id:'RHM-05', type:'mc', domain:'Expression of Ideas', difficulty:'Media',
@@ -99,13 +99,13 @@ window.SAT_SETS.push({
         D:'Both stop-motion and computer animation are used to make animated films.'
       },
       correct:'A',
-      expCorrect:'La meta pide CONTRASTAR el esfuerzo de cada técnica. La A usa "While" para oponer los dos lados: el stop-motion exige mover modelos a mano decenas de miles de veces, mientras que la computadora genera muchos cuadros automáticamente. Cumple la meta con notas exactas.',
+      expCorrect:'The goal calls for CONTRASTING the effort each technique takes. A uses "While" to set the two sides against each other: stop-motion demands moving models by hand tens of thousands of times, whereas the computer generates many frames automatically. It meets the goal with accurate notes.',
       expWrong:{
-        B:'Solo describe cómo funciona el stop-motion; falta el contraste con la animación por computadora.',
-        C:'Solo describe la animación por computadora; falta el otro lado del contraste.',
-        D:'Junta ambas técnicas, pero solo dice que comparten un uso; no contrasta el esfuerzo.'
+        B:'It only describes how stop-motion works; the contrast with computer animation is missing.',
+        C:'It only describes computer animation; the other side of the contrast is missing.',
+        D:'It brings both techniques together, but only says they share a use; it does not contrast the effort.'
       },
-      tip:'"Contrastar" = busca la palabra de oposición (While, Whereas, Although) que junte los DOS lados.'
+      tip:'"Contrast" = look for the opposition word (While, Whereas, Although) that brings BOTH sides together.'
     },
     {
       id:'RHM-06', type:'mc', domain:'Expression of Ideas', difficulty:'Media',
@@ -119,13 +119,13 @@ window.SAT_SETS.push({
         D:'Braille is now used for dozens of languages around the world.'
       },
       correct:'B',
-      expCorrect:'La meta es PRESENTAR el Braille a alguien que no lo conoce. La B da lo esencial: qué es (un sistema de escritura que se lee con el tacto) y cómo funciona (puntos en relieve en celdas de hasta seis). Es la mejor introducción con notas exactas.',
+      expCorrect:'The goal is to INTRODUCE Braille to someone who does not know it. B gives the essentials: what it is (a writing system read by touch) and how it works (raised dots in cells of up to six). It is the best introduction, with accurate notes.',
       expWrong:{
-        A:'Habla de la vida del inventor; es un detalle biográfico, no una presentación del sistema.',
-        C:'Da la fecha y la edad del inventor; es un dato histórico, no una introducción general.',
-        D:'Menciona el alcance actual, pero no explica qué es ni cómo funciona el Braille.'
+        A:'It is about the inventor’s life; that is a biographical detail, not an introduction to the system.',
+        C:'It gives the date and the inventor’s age; that is a historical fact, not a general introduction.',
+        D:'It mentions the current reach, but does not explain what Braille is or how it works.'
       },
-      tip:'"Introducir a un público que no conoce" = elige lo más básico (qué es y cómo funciona), no un detalle histórico.'
+      tip:'"Introduce to an audience unfamiliar with it" = pick the most basic (what it is and how it works), not a historical detail.'
     },
     {
       id:'RHM-07', type:'mc', domain:'Expression of Ideas', difficulty:'Media',
@@ -139,13 +139,13 @@ window.SAT_SETS.push({
         D:'After years of decline, vinyl records became popular again.'
       },
       correct:'C',
-      expCorrect:'La meta es enfatizar cuán DRAMÁTICO fue el crecimiento. La C junta las dos cifras clave: de unos 900,000 discos en 2005 a más de 41 millones en 2022. El salto en números subraya el crecimiento. Cumple la meta con notas exactas.',
+      expCorrect:'The goal is to emphasize how DRAMATIC the growth was. C pairs the two key figures: from about 900,000 records in 2005 to more than 41 million in 2022. The jump in the numbers underlines the growth. It meets the goal with accurate notes.',
       expWrong:{
         A:'Describe el punto bajo, pero no muestra el crecimiento posterior.',
-        B:'Explica por qué la gente compra vinilos; no muestra el aumento de ventas.',
-        D:'Dice que volvió a ser popular, pero es vago; no cuantifica el crecimiento.'
+        B:'It explains why people buy vinyl; it does not show the rise in sales.',
+        D:'It says it became popular again, but it is vague; it does not quantify the growth.'
       },
-      tip:'"Enfatizar cuánto creció" = escoge la opción con los DOS números (antes vs. después), no una afirmación vaga.'
+      tip:'"Emphasize how much it grew" = choose the option with BOTH numbers (before vs. after), not a vague claim.'
     },
     {
       id:'RHM-08', type:'mc', domain:'Expression of Ideas', difficulty:'Media',
@@ -159,13 +159,13 @@ window.SAT_SETS.push({
         D:'Subtitles let viewers hear the actors’ original voices, whereas dubbing lets viewers watch without reading text.'
       },
       correct:'D',
-      expCorrect:'La meta pide COMPARAR subtítulos y doblaje. La D pone ambos lados frente a frente: los subtítulos dejan oír las voces originales, mientras que el doblaje deja ver sin leer. Compara los dos métodos con notas exactas.',
+      expCorrect:'The goal calls for COMPARING subtitles and dubbing. D puts both sides face to face: subtitles let you hear the original voices, whereas dubbing lets you watch without reading. It compares the two methods, with accurate notes.',
       expWrong:{
-        A:'Solo define qué son los subtítulos; falta el doblaje para comparar.',
-        B:'Da una queja sobre los subtítulos; no compara con el doblaje.',
-        C:'Solo describe el doblaje; no menciona los subtítulos, así que no compara.'
+        A:'It only defines what subtitles are; dubbing is missing, so there is nothing to compare.',
+        B:'It gives a complaint about subtitles; it does not compare them with dubbing.',
+        C:'It only describes dubbing; it never mentions subtitles, so it does not compare.'
       },
-      tip:'"Comparar dos cosas" = la opción correcta debe mencionar AMBAS, no solo una.'
+      tip:'"Compare two things" = the right option has to mention BOTH, not just one.'
     },
     {
       id:'RHM-09', type:'mc', domain:'Expression of Ideas', difficulty:'Media',
@@ -179,13 +179,13 @@ window.SAT_SETS.push({
         D:'Thanks to built-in error correction, a QR code can still be read even when part of it is dirty or damaged.'
       },
       correct:'D',
-      expCorrect:'La meta pide explicar POR QUÉ un código QR sigue funcionando dañado. La D da la causa: gracias a la corrección de errores incorporada, el código se lee aunque una parte esté sucia o dañada. Cumple la meta con notas exactas.',
+      expCorrect:'The goal calls for explaining WHY a QR code still works when damaged. D gives the cause: thanks to built-in error correction, the code reads even when part of it is dirty or damaged. It meets the goal with accurate notes.',
       expWrong:{
-        A:'Describe cómo se ve y se escanea el código; no explica por qué resiste el daño.',
-        B:'Dice a qué enlaza el código; no explica su resistencia al daño.',
-        C:'Describe el escaneo con la cámara; no explica la corrección de errores.'
+        A:'It describes how the code looks and is scanned; it does not explain why it survives damage.',
+        B:'It says what the code links to; it does not explain its resistance to damage.',
+        C:'It describes scanning with the camera; it does not explain the error correction.'
       },
-      tip:'"Explicar por qué" = busca la nota que da la RAZÓN (aquí: la corrección de errores), no la que describe el aspecto o el uso.'
+      tip:'"Explain why" = look for the note giving the REASON (here: error correction), not the one describing the look or the use.'
     },
     {
       id:'RHM-10', type:'mc', domain:'Expression of Ideas', difficulty:'Media',
@@ -199,13 +199,13 @@ window.SAT_SETS.push({
         D:'The Rosetta Stone is now displayed at the British Museum in London.'
       },
       correct:'B',
-      expCorrect:'La meta pide explicar CÓMO la piedra ayudó a descifrar los jeroglíficos. La B da el método: como los eruditos ya sabían leer griego, lo compararon con las otras dos escrituras y así descifraron los jeroglíficos. Cumple la meta con notas exactas.',
+      expCorrect:'The goal calls for explaining HOW the stone helped decipher the hieroglyphs. B gives the method: since scholars could already read Greek, they compared it with the other two scripts and cracked the hieroglyphs that way. It meets the goal with accurate notes.',
       expWrong:{
-        A:'Da cuándo y dónde se encontró; es un dato histórico, no el método de descifrado.',
-        C:'Dice que tiene el mismo texto en tres escrituras; es cierto por las notas, pero no explica el proceso de descifrado (persigue otra meta).',
-        D:'Indica dónde está hoy; no explica cómo se descifraron los jeroglíficos.'
+        A:'It gives when and where it was found; that is a historical fact, not the method of decipherment.',
+        C:'It says it carries the same text in three scripts; that is true from the notes, but it does not explain the decipherment process (it chases a different goal).',
+        D:'It says where it is today; it does not explain how the hieroglyphs were deciphered.'
       },
-      tip:'"Explicar cómo" = busca la opción que describe el PROCESO paso a paso (usar el griego para descifrar el resto), no un dato suelto.'
+      tip:'"Explain how" = look for the option describing the step-by-step PROCESS (using the Greek to crack the rest), not an isolated fact.'
     }
   ]
 });

@@ -38,7 +38,7 @@
       },
       {
         id:'DAT-03', type:'mc', domain:'Problem-Solving & Data Analysis', difficulty:'Fácil',
-        skill:'Razones (repartir un total según una razón)',
+        skill:'Ratios (splitting a total by a ratio)',
         stem:'In a club, the ratio of boys to girls is 3 to 5. If there are 240 members in the club, how many of the members are girls?',
         choices:{A:'90', B:'96', C:'144', D:'150'},
         correct:'D',
@@ -66,7 +66,7 @@
       },
       {
         id:'DAT-05', type:'spr', domain:'Problem-Solving & Data Analysis', difficulty:'Fácil',
-        skill:'Estadística de una variable (media/promedio)',
+        skill:'One-variable statistics (mean/average)',
         stem:'A student scored 12, 15, 18, 20, and 25 points in five games. What is the mean (average) number of points the student scored per game?',
         answer:'18',
         expCorrect:'Media = suma / cantidad. Suma = 12 + 15 + 18 + 20 + 25 = 90. Media = 90 / 5 = 18. Respuesta: 18.',
@@ -75,7 +75,7 @@
       },
       {
         id:'DAT-06', type:'mc', domain:'Problem-Solving & Data Analysis', difficulty:'Media',
-        skill:'Estadística de una variable (desviación estándar / dispersión)',
+        skill:'One-variable statistics (standard deviation / spread)',
         stem:'Data set X consists of the values 48, 49, 50, 51, and 52. Data set Y consists of the values 10, 30, 50, 70, and 90. Both data sets have a mean of 50. Which of the following correctly compares the standard deviations of the two data sets?',
         choices:{
           A:'The standard deviation of X is greater than the standard deviation of Y.',
@@ -117,7 +117,7 @@
       },
       {
         id:'DAT-09', type:'mc', domain:'Problem-Solving & Data Analysis', difficulty:'Media',
-        skill:'Datos de dos variables (línea de mejor ajuste / predicción)',
+        skill:'Two-variable data (line of best fit / prediction)',
         stem:'A scatterplot shows the relationship between the number of hours studied, x, and a test score, y. The line of best fit for the data is given by y = 2.5x + 60. Based on this line, what is the predicted test score for a student who studies for 8 hours?',
         choices:{A:'68', B:'80', C:'62.5', D:'140'},
         correct:'B',
