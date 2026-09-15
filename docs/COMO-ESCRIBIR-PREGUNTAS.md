@@ -114,6 +114,12 @@ Reglas que el validador exige:
   usa para decidir qué practicar. Se arregla dándole a los distractores el
   razonamiento concreto que los hace tentadores, no rellenando con palabras.
   Medida del banco entero: `node tools/auditar-longitud.js --todos`.
+  **Ojo:** en matemática el número no significa nada. Cuando las cuatro opciones
+  son `4 · 6 · 12 · 18`, "la más larga" es ruido y no una pista: el 79 % de las
+  preguntas de matemática tienen las cuatro opciones en 12 caracteres o menos.
+  El punto vive en Reading, donde las opciones son prosa y el largo sí se ve.
+  Y no hay que empujarlo a 0 %: eso solo invierte el problema, y "nunca marques
+  la más larga" pasa a ser la estrategia ganadora. El objetivo es el azar, ~25 %.
 - **Dos opciones no pueden tener el mismo texto.** El que razona bien puede
   marcar la que no está en `correct`.
 - **Ojo con `<`**: todo esto se inyecta con `innerHTML`, y un `<` seguido de letra

@@ -13,13 +13,13 @@
         skill:'Multi-clause synthesis (AND/BUT logic)',
         passage:'<b>Text 1 (Author A)</b><br>While social media facilitates rapid information sharing, the lack of editorial oversight creates a vector for misinformation. Crucially, the incentive structures reward sensationalism over accuracy, eroding public discourse.<br><br><b>Text 2 (Author B)</b><br>Yet even with these challenges, the alternative—centralized gatekeeping—suppresses minority voices. The democratization of publishing, despite its flaws, has empowered previously marginalized communities to participate directly in public conversation.',
         stem:'Which statement best captures the fundamental disagreement between the two authors?',
-        choices:{A:'Author A believes social media spreads misinformation; Author B denies this.', B:'Author A prioritizes accuracy over access; Author B prioritizes access even if it sacrifices some accuracy.', C:'Author A thinks misinformation is the primary problem; Author B thinks censorship is worse.', D:'Author A wants to eliminate social media; Author B wants to improve it.'},
+        choices:{A:'Author A believes the absence of editorial oversight spreads misinformation; Author B denies that it does.', B:'Author A prioritizes accuracy over access; Author B prioritizes access even if it sacrifices some accuracy.', C:'Author A thinks misinformation is the primary problem; Author B thinks censorship is worse.', D:'Author A wants publishing returned to centralized gatekeepers; Author B wants the open platforms left exactly as they are.'},
         correct:'B',
         expCorrect:'A focuses on the *cost* (misinformation, sensationalism). B acknowledges the cost but argues the *benefit* (access, democratization) outweighs it. The disagreement is about trade-offs: accuracy vs. access.',
         expWrong:{
-          A:'B doesn\'t deny misinformation exists; B acknowledges it.',
+          A:'Author B never denies the problem — "even with these challenges" concedes it outright; the disagreement is over what that cost buys, not over whether it exists.',
           C:'Oversimplifies; both acknowledge the trade-off, but weight it differently.',
-          D:'Neither author proposes elimination; this is a false dichotomy.'
+          D:'Neither remedy is proposed: A only diagnoses the incentive problem, and B calls the open system flawed ("despite its flaws") rather than fine as it stands.'
         },
         tip:'Synthesis disagreements often aren\'t black-and-white. Look for authors who agree on the problem but disagree on priorities or solutions.'
       },
@@ -41,13 +41,13 @@
         id:'INS-RW-03', type:'mc', domain:'Craft and Structure', difficulty:'Difícil',
         skill:'Rhetorical intent (implicit persuasion)',
         stem:'An author writes: "Some might argue that strict regulations stifle innovation. But every major industry breakthrough has occurred within regulatory frameworks that balanced safety and progress."\n\nThe author\'s primary rhetorical goal is to:',
-        choices:{A:'Acknowledge a legitimate counterargument and then dismiss it with evidence.', B:'Propose a compromise between innovation and regulation.', C:'Argue that regulation is irrelevant to innovation.', D:'Suggest that critics of regulation are uninformed.'},
+        choices:{A:'Acknowledge a legitimate counterargument and then dismiss it with evidence.', B:'Propose a compromise in which safety rules are traded for faster progress.', C:'Argue that regulation has had no bearing on where breakthroughs occur.', D:'Suggest that critics of regulation are too uninformed to be answered.'},
         correct:'A',
         expCorrect:'"Some might argue" acknowledges the opposing view. "But...within regulatory frameworks" rebuts it with evidence. This is classic refutation structure.',
         expWrong:{
-          B:'No compromise is proposed; the author defends regulation.',
-          C:'Author implies regulation is important, not irrelevant.',
-          D:'Attack on critics\' intelligence is not the primary move; the argument is evidence-based.'
+          B:'No bargain is offered: the author defends the frameworks that already exist rather than proposing to trade safety away for speed.',
+          C:'The author claims the reverse — every breakthrough happened *within* a regulatory framework, so regulation is part of the story, not beside the point.',
+          D:'The author does answer the critics, and with evidence; nothing in the sentence questions what they know or waves them off as not worth a reply.'
         },
         tip:'Rhetorical moves: "Some argue...But" = acknowledge and refute. "On one hand...On the other hand" = explore both sides. "Perhaps...However" = concede but correct.'
       },
@@ -55,13 +55,13 @@
         id:'INS-RW-04', type:'mc', domain:'Information and Ideas', difficulty:'Difícil',
         skill:'Identifying a logical fallacy or weakness in reasoning',
         stem:'An author argues: "Countries A and B both implemented universal healthcare and saw wait times increase. Therefore, universal healthcare inherently causes long wait times."\n\nWhich of the following best identifies a flaw in this reasoning?',
-        choices:{A:'The argument confuses correlation with causation and ignores other variables (e.g., population growth, existing infrastructure).', B:'The argument fails to specify exactly how many additional days of waiting count as a "long" wait time.', C:'The argument assumes that wait time increases are negative, which is debatable.', D:'The argument uses the word "inherently," which is too informal for policy analysis.'},
+        choices:{A:'The argument confuses correlation with causation and ignores other variables (e.g., population growth, existing infrastructure).', B:'The argument fails to specify exactly how many additional days of waiting count as a "long" wait time.', C:'The argument assumes that longer waits are always bad, when they may simply reflect more people finally gaining access to the care they need.', D:'The argument uses the word "inherently," which is too vague to carry a policy recommendation.'},
         correct:'A',
         expCorrect:'The core flaw is inferring causation from correlation without controlling for confounds. Other factors (population, infrastructure investment, implementation speed) could explain the wait times.',
         expWrong:{
           B:'That is a matter of precision, not a logical flaw: even if "long" were defined with an exact number, the leap from correlation to cause would still be invalid.',
-          C:'Wait time increases are generally regarded as negative; this isn\'t the logical flaw.',
-          D:'"Inherently" is not informal, and how formal a word is is not a flaw in reasoning. The problem is logical, not stylistic.'
+          C:'That quarrels with the argument’s values, not with its logic: even if longer waits were welcome, inferring an inherent cause from two cases would still be invalid.',
+          D:'How precise one word is has no bearing on whether the inference holds; the problem is the jump from two cases to an inherent cause, not the vocabulary.'
         },
         tip:'Causation fallacies: "X happened, then Y happened" doesn\'t mean X caused Y. Always look for confounding variables or alternative explanations.'
       },
@@ -83,13 +83,13 @@
         id:'INS-RW-06', type:'mc', domain:'Information and Ideas', difficulty:'Difícil',
         skill:'Evaluating a conditional claim',
         stem:'An author writes: "If policymakers prioritize short-term fiscal gains over environmental protection, irreversible ecological damage will inevitably follow."\n\nWhich statement most accurately reflects what the author actually claims?',
-        choices:{A:'Short-term fiscal gains always cause ecological damage.', B:'Prioritizing fiscal gains over environmental protection guarantees irreversible damage.', C:'If a certain condition (prioritizing fiscal gains) is met, then a specific consequence (ecological damage) follows.', D:'Environmental protection is more important than fiscal gains.'},
+        choices:{A:'Short-term fiscal gains always cause irreversible ecological damage, whatever else policymakers may choose to protect.', B:'Prioritizing fiscal gains over environmental protection has already set irreversible damage in motion.', C:'If a certain condition (prioritizing fiscal gains) is met, then a specific consequence (ecological damage) follows.', D:'Environmental protection matters more than any short-term fiscal gain a government might capture.'},
         correct:'C',
         expCorrect:'The author makes a conditional statement: "If X, then Y." The claim is about the logical relationship, not about absolute truths. C accurately paraphrases this.',
         expWrong:{
-          A:'Overstates; the claim is conditional, not universal.',
-          B:'Effectively the same as A; both overstate certainty.',
-          D:'Inferred but not explicitly stated; the passage is about consequences, not values.'
+          A:'Turns a conditional into a universal law: the author’s claim depends on those gains being prioritized *over* environmental protection, not on their occurring at all.',
+          B:'The author states a condition; he never says it has been met. Reporting the damage as already under way asserts the "if" instead of leaving it hypothetical.',
+          D:'A ranking of values the author may well share but never states: the sentence predicts a consequence rather than declaring which goal is worthier.'
         },
         tip:'Conditional claims: "If X, then Y" does NOT mean "X always causes Y" or "X is bad." It means a specific logical relationship under a specific condition.'
       },
@@ -139,13 +139,13 @@
         id:'INS-RW-10', type:'mc', domain:'Information and Ideas', difficulty:'Difícil',
         skill:'Evaluating whether evidence supports a claim',
         stem:'An author claims: "Remote work has revolutionized productivity." The supporting evidence: "A survey of 500 tech workers showed 70% reported higher productivity at home."\n\nWhich criticism most directly challenges the evidence\'s relevance?',
-        choices:{A:'Surveys are less reliable than experimental studies.', B:'Self-reported productivity is subjective and may not reflect actual output.', C:'The sample size of 500 is too small.', D:'Not all workers are in the tech industry.'},
+        choices:{A:'Surveys are less reliable than experiments that assign workers to home or office at random.', B:'Self-reported productivity is subjective and may not reflect actual output.', C:'The sample of 500 workers is too small to support a claim about a revolution.', D:'Tech workers are not representative of the workforce the claim describes.'},
         correct:'B',
         expCorrect:'"Higher productivity" based on subjective self-reports is weaker evidence than objective metrics (lines of code, projects completed, etc.). This directly undermines the evidence\'s ability to support the claim.',
         expWrong:{
-          A:'True but methodological; B is more fundamental—the *type* of data is questionable.',
-          C:'500 is generally adequate for surveys; sample size is less the issue than measurement validity.',
-          D:'Relevant to generalization, but doesn\'t undermine the evidence\'s support for the specific claim tested.'
+          A:'A ranking of methods in the abstract; it never says what is wrong with *this* measurement, which is the relevance the question asks you to judge.',
+          C:'500 responses is ample for a survey estimate, and no sample size fixes the deeper trouble: the workers graded themselves.',
+          D:'That limits how far the finding travels, but the claim is about knowledge workers in the first place; the evidence fails them before it fails anyone else.'
         },
         tip:'Evidence criticism: distinguish between sample size (how many), methodology (how measured), and generalization (to whom). B targets the measurement itself, which is most direct.'
       },
@@ -153,13 +153,13 @@
         id:'INS-RW-11', type:'mc', domain:'Craft and Structure', difficulty:'Difícil',
         skill:'Implicit stance within neutral reporting',
         stem:'An author writes: "Proponents of the policy argue it will reduce poverty. Critics point out that similar programs in other nations have been widely criticized for creating dependency."\n\nWhich implicit stance does the author reveal through word choice?',
-        choices:{A:'Unqualified support for the policy.', B:'Unqualified opposition to the policy.', C:'Skepticism toward optimistic claims, giving weight to cautionary evidence.', D:'Genuine neutrality with no leaning toward either side.'},
+        choices:{A:'Unqualified support for the policy and its promise to reduce poverty.', B:'Unqualified opposition to the policy as a breeder of dependency.', C:'Skepticism toward optimistic claims, giving weight to cautionary evidence.', D:'Genuine neutrality, since the author only reports what each side says.'},
         correct:'C',
         expCorrect:'"Critics point out" + "similar programs...have been criticized" elevates the counterargument through framing ("point out" = discovered/revealed). The author implicitly weighs doubt heavily.',
         expWrong:{
-          A:'Giving weight to criticism suggests skepticism, not support.',
-          B:'The author acknowledges the proponents\' argument; not pure opposition.',
-          D:'Word choice ("point out," "criticized") reveals subtle skepticism, not true neutrality.'
+          A:'Handing the critics the stronger verb is not support; the author never endorses the promise to reduce poverty.',
+          B:'The author reports the dependency charge rather than making it, and still gives the proponents their argument; the leaning is a tilt, not a verdict.',
+          D:'Reporting both sides is not weighting them equally: "argue" leaves the proponents with an assertion, while "point out" grants the critics a finding.'
         },
         tip:'Neutral reporting is impossible; word choice always reveals stance. "Proponents claim" vs. "Critics point out" suggests different weights, even without explicit judgment.'
       },
@@ -167,13 +167,13 @@
         id:'INS-RW-12', type:'mc', domain:'Information and Ideas', difficulty:'Difícil',
         skill:'Recognizing when claims are contradictory vs. complementary',
         stem:'Claim 1: "Climate change is primarily driven by human CO₂ emissions."\n\nClaim 2: "Natural climate variability (e.g., solar cycles) plays a significant role in observed warming."\n\nHow do these claims relate?',
-        choices:{A:'Contradictory; both cannot be true.', B:'Complementary; both can be true if properly contextualized (e.g., human emissions dominate but natural factors also contribute).', C:'Unrelated; they address different phenomena.', D:'Claim 2 disproves Claim 1.'},
+        choices:{A:'Contradictory; if human emissions are the primary driver of the warming, then natural variability cannot also be playing a significant role in it.', B:'Complementary; both can be true if properly contextualized (e.g., human emissions dominate but natural factors also contribute).', C:'Unrelated; Claim 1 is about emissions policy while Claim 2 is about the physics of the sun.', D:'Claim 2 disproves Claim 1, since any natural contribution rules out a human cause.'},
         correct:'B',
         expCorrect:'Claim 1 emphasizes dominant driver; Claim 2 acknowledges contributing factors. Modern climate science accepts both: humans dominate current warming, but natural variability exists. Complementary, not contradictory.',
         expWrong:{
-          A:'Both can coexist if one is the major factor and the other contributory.',
-          C:'They address the same phenomenon (climate warming); they interact.',
-          D:'Claim 2 doesn\'t disprove 1; it adds nuance to the causal story.'
+          A:'A primary driver leaves room for lesser ones: "primarily" ranks causes rather than excluding them, so both statements can hold at the same time.',
+          C:'Both claims are about what is warming the same climate; they name competing contributions to one phenomenon, not two separate subjects.',
+          D:'Only if causes were exclusive: Claim 2 says natural variability "plays a significant role", which adds a contributor instead of removing one.'
         },
         tip:'Complementary vs. contradictory: if one emphasizes degree/dominance and the other acknowledges contributing factors, they can both be true. Look for "primarily," "significantly," "plays a role"—these signal degree, not contradiction.'
       }

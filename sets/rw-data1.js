@@ -360,12 +360,12 @@
         stem:'Which choice most effectively uses data from the table to complete the researcher’s recommendation?',
         choices:{
           A:'Design Y, at 31 s per order, was the fastest of the four designs, cutting 21 s off Design W’s average.',
-          B:'Design X, at 40 s per order, was faster than W, Z, and the baseline while keeping items per order at 2.4, matching the highest-item designs.',
+          B:'Design X cut the average order time to 40 s, faster than any other design that kept items per order at 2.4 or above.',
           C:'Design Z had the highest items per order of the four, at 2.5, though its order time of 44 s was slower than X’s 40 s.',
           D:'Design W was the slowest design tested, at 52 s per order, even though its 2.4 items per order matched Design X’s.'
         },
         correct:'B',
-        expCorrect:'The goal has TWO conditions: faster WITHOUT lowering items per order. Design Y is the fastest (31 s) but its items drop to 1.6, so it is ruled out. Among those keeping items high (2.4–2.5), X is the fastest (40 s) and holds 2.4. B is the only one meeting both conditions.',
+        expCorrect:'The goal has TWO conditions: faster WITHOUT lowering items per order. Design Y is the fastest overall (31 s) but its items fall to 1.6, so it is ruled out. Of the three that hold items at 2.4 or above — W (52 s), Z (44 s) and X (40 s) — X is the fastest. B is the only choice that satisfies both conditions.',
         expWrong:{
           A:'Y wins on speed by a wide margin, which is what makes it tempting, but its items per order fall to 1.6, the lowest in the table. The recommendation requires speed WITHOUT lowering items, and Y fails that half outright.',
           C:'Z does lead on items, but it buys that extra 0.1 item with 4 more seconds per order than X. The goal is the fastest design that holds items steady, and X holds 2.4 while ordering faster.',

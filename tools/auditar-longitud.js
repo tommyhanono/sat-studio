@@ -58,7 +58,9 @@ for (const rel of archivos) {
 }
 
 filas.sort((a, b) => b.pct - a.pct);
-console.log('¿la correcta es la opción MÁS LARGA?  (al azar ~25 %, tope aceptable ' + TOPE + ' %)\n');
+console.log('¿la correcta es la opción MÁS LARGA?  (al azar ~25 %, tope aceptable ' + TOPE + ' %)');
+console.log('En matemática el número no significa nada: cuando las cuatro opciones son «4 · 6 · 12 · 18»,');
+console.log('«la más larga» es ruido, no una pista. El punto vive en Reading, donde las opciones son prosa.\n');
 let malos = 0;
 for (const f of filas) {
   const alerta = f.pct > TOPE;

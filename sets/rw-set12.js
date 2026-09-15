@@ -15,15 +15,15 @@ window.SAT_SETS.push({
       choices:{
         A:'While Team A used argon-argon dating based on radioactive potassium, Team B used uranium-lead dating on zircon crystals.',
         B:'Team A reported an age of 1.87 million years, whereas Team B reported an age of 1.86 million years.',
-        C:'Although the two teams used different techniques, their ages agree to within 1%.',
-        D:'Both teams measured the age of the same ancient volcanic ash layer in Kenya.'
+        C:'Although the two teams used different dating techniques, their reported ages agree with each other to within 1%.',
+        D:'Both teams set out to measure the age of the same ancient volcanic ash layer in Kenya.'
       },
       correct:'A',
       expCorrect:'The goal calls for a difference in METHOD, not in the result. A contrasts the two techniques: argon-argon with potassium (Team A) vs. uranium-lead with zircon (Team B). It is pure method difference, with accurate notes.',
       expWrong:{
         B:'It contrasts the RESULTS (1.87 vs. 1.86 million), exactly what the goal tells you to avoid.',
-        C:'It mentions that the methods differ, but its emphasis falls on the results agreeing (within 1%): that is result, not method.',
-        D:'It says what both measured, but that is what they have in common, not a difference in method.'
+        C:'It does say the techniques differed, but the sentence is built to land on the agreement between the two ages. That emphasis falls on the result, which is what the goal rules out.',
+        D:'It names what the two teams share, the same ash layer in Kenya, rather than anything that separates them. The goal asks for a difference, and specifically a difference in method.'
       },
       tip:'When the goal separates "method" from "result", rule out any option with numbers or ages. Look for the one contrasting HOW they did it.'
     },
@@ -34,16 +34,16 @@ window.SAT_SETS.push({
       stem:"While researching a topic, a student has taken the following notes:<ul><li>Mycorrhizal fungi form partnerships with the roots of most land plants.</li><li>The fungi extend thread-like filaments far into the soil.</li><li>These filaments deliver water and phosphorus to the plant.</li><li>In return, the plant supplies the fungi with sugars it makes through photosynthesis.</li><li>The relationship is an example of mutualism.</li><li>Some orchids, however, take sugars from the fungi without giving anything back.</li></ul>The student wants to introduce the fungi-plant relationship to an audience unfamiliar with the topic. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
       choices:{
         A:'Mycorrhizal fungi partner with the roots of most land plants, trading soil water and phosphorus for sugars the plant makes by photosynthesis.',
-        B:'Some orchids take sugars from mycorrhizal fungi without supplying anything in return.',
-        C:'The thread-like filaments of mycorrhizal fungi extend far into the soil to gather water and phosphorus.',
-        D:'The partnership between mycorrhizal fungi and plants is an example of mutualism.'
+        B:'Some orchids take sugars from mycorrhizal fungi without supplying anything in return, an exception to the exchange the partnership normally involves.',
+        C:'The thread-like filaments of mycorrhizal fungi extend far into the soil, where they take up the water and phosphorus they deliver to the plant.',
+        D:'The partnership between mycorrhizal fungi and the roots of most land plants is an example of mutualism.'
       },
       correct:'A',
       expCorrect:'The goal is to INTRODUCE the relationship to a new audience. A gives the full, basic picture: who partners up and what they trade (water and phosphorus for sugars). It is the best introduction, with accurate notes.',
       expWrong:{
-        B:'It gives an exception (the orchids that give nothing back); that is an advanced detail, not a general introduction.',
-        C:'It describes only one side (what the filaments do); it does not present the full exchange.',
-        D:'It names the term "mutualism" without explaining what the relationship consists of; a new audience is left without understanding it.'
+        B:'It leads with the exception: the orchids that give nothing back are a qualification of the relationship, and an audience meeting the topic for the first time has no general picture to hang it on.',
+        C:'It gives one direction of the exchange only, what the fungi bring to the plant. An introduction has to include what the plant sends back, or the partnership reads as one-sided rather than mutual.',
+        D:'It names the term without unpacking it: an audience new to the topic learns the label "mutualism" but not what gets traded, which is exactly what an introduction has to supply.'
       },
       tip:'"Introduce to an audience unfamiliar with it" = pick the general picture with the essentials, not an exception or a loose technical term.'
     },
@@ -113,17 +113,17 @@ window.SAT_SETS.push({
       passage:"",
       stem:"While researching a topic, a student has taken the following notes:<ul><li>Cordyceps is a fungus that infects certain ants.</li><li>The fungus grows inside the ant's body.</li><li>It alters the ant's behavior, driving it to climb a plant stem.</li><li>The ant clamps its jaws onto the stem and dies there.</li><li>From the dead ant, a fungal stalk grows and releases spores onto ants below.</li><li>This position maximizes the spread of the spores.</li></ul>The student wants to explain why the fungus drives the ant to climb before it dies. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
       choices:{
-        A:'The fungus grows inside the ant’s body and alters its behavior.',
-        B:'After the ant dies, a fungal stalk grows from its body and releases spores.',
+        A:'The fungus grows inside the ant’s body and alters its behavior, driving the infected insect to climb a plant stem and clamp its jaws onto it.',
+        B:'After the ant clamps its jaws onto the stem and dies, a fungal stalk grows from its body and releases spores onto the ants below.',
         C:'The fungus drives the ant to climb and die on a stem because that raised position lets the emerging stalk spread its spores over ants below.',
-        D:'Cordyceps is a fungus that infects certain ants and takes over their behavior.'
+        D:'Cordyceps is a fungus that infects certain ants, grows inside their bodies and takes over the behavior of its hosts.'
       },
       correct:'C',
       expCorrect:'The goal asks WHY the fungus drives the ant upward before it dies. C gives the reason: that raised position lets the stalk scatter the spores over the ants below (it maximizes dispersal). It is cause plus purpose, with accurate notes.',
       expWrong:{
-        A:'It says it alters the behavior, but does not explain the purpose of driving it upward.',
-        B:'It describes what happens afterward (the stalk grows, it releases spores), without connecting the climb to the reason.',
-        D:'It introduces the fungus and mentions that it controls the ant, but does not explain why the climb.'
+        A:'It traces the takeover all the way to the stem without ever giving its purpose. The notes say the raised position maximizes the spread of the spores, and that is the reason the goal asks for.',
+        B:'It reports what happens after the climb but never links the two: the answer has to say that the height is what lets the spores fall on the ants below.',
+        D:'It introduces the fungus and its control of the host, which would serve a different goal. It says nothing about why the ant is driven upward before it dies.'
       },
       tip:'"Explain why" calls for the option tying the action to its PURPOSE. Here it is the climb linked to maximizing spore dispersal.'
     },
@@ -133,17 +133,17 @@ window.SAT_SETS.push({
       passage:"",
       stem:"While researching a topic, a student has taken the following notes:<ul><li>Researchers wanted to test whether background music affects memory.</li><li>Group 1 studied a word list in silence.</li><li>Group 2 studied the same list with instrumental music playing.</li><li>The two groups were the same size and age range.</li><li>Both groups then took the same recall test.</li><li>Group 1 recalled 18 words on average; Group 2 recalled 12.</li></ul>The student wants to explain how the researchers designed the study so that music was the only difference between the groups. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
       choices:{
-        A:'Group 1 recalled 18 words on average, while Group 2 recalled only 12.',
-        B:'The researchers wanted to test whether background music affects memory.',
-        C:'Group 1 studied the word list in silence, while Group 2 studied it with instrumental music playing.',
+        A:'Group 1, which studied in silence, recalled 18 words on average, while Group 2, which studied with instrumental music playing, recalled only 12.',
+        B:'The researchers wanted to test whether background music affects the memory of people studying a word list.',
+        C:'Group 1 studied the word list in silence, while Group 2 studied that same list with instrumental music playing in the background.',
         D:'The two groups were the same size and age range and took the same recall test, so only the presence of music differed between them.'
       },
       correct:'D',
       expCorrect:'The goal calls for explaining how the study was DESIGNED so that music was the only difference. D names the controls: same size, same age and same test, so that only the music varied. It describes the design, with accurate notes.',
       expWrong:{
-        A:'It gives the results (18 vs. 12), not how the design was controlled.',
-        B:'It states the research question, not how they isolated the music variable.',
-        C:'It describes what each group did (silence vs. music), but never mentions the controls that hold everything else equal.'
+        A:'It reports the outcome, and naming how each group studied makes it look like design. The goal asks what the researchers held equal, and a difference in scores is not a control.',
+        B:'It states the question the study set out to answer, not the steps taken to make music the only thing that differed between the two groups.',
+        C:'It names the one thing that deliberately differed, but the goal asks for what was held constant — same size, same age range, same test — so that the music stood alone as the difference.'
       },
       tip:'"Music as the only difference" calls for the CONTROLS (same size, age, test), not what changed or what the results were.'
     },
@@ -154,16 +154,16 @@ window.SAT_SETS.push({
       stem:"While researching a topic, a student has taken the following notes:<ul><li>Venus and Earth are almost the same size and mass.</li><li>Both formed in the same region of the early solar system.</li><li>Venus's atmosphere is over 90 times denser than Earth's.</li><li>A runaway greenhouse effect raised Venus's surface to about 465°C.</li><li>Earth's surface averages about 15°C.</li><li>Scientists study Venus to understand how similar planets can end up so different.</li></ul>The student wants to emphasize how alike Venus and Earth are, before contrasting them. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
       choices:{
         A:'Venus and Earth are nearly identical in size and mass and formed in the same region of the early solar system.',
-        B:'Venus’s surface reaches about 465°C, while Earth’s averages about 15°C.',
-        C:'A runaway greenhouse effect made Venus’s atmosphere over 90 times denser than Earth’s.',
-        D:'Scientists study Venus to learn how similar planets can end up so different.'
+        B:'A runaway greenhouse effect has raised Venus’s surface to about 465°C, while Earth’s surface averages only about 15°C.',
+        C:'Venus’s atmosphere is over 90 times denser than Earth’s, a gap scientists trace to a runaway greenhouse effect.',
+        D:'Scientists study Venus in order to understand how planets so similar to one another can end up so different.'
       },
       correct:'A',
       expCorrect:'The goal calls for emphasizing how ALIKE Venus and Earth are (the step before the contrast). A pairs the similarities: nearly identical size and mass, and the same region of formation. It is pure likeness, with accurate notes.',
       expWrong:{
-        B:'It contrasts the temperatures (465°C vs. 15°C): that is the DIFFERENCE, exactly what would be saved for later.',
-        C:'It gives another difference (an atmosphere 90 times denser), not the similarities.',
-        D:'It explains why Venus is studied; it hints that they are different, but does not list what they have in common.'
+        B:'It leads with the contrast: the two surface temperatures are the difference the paragraph would build toward, and the goal asks for the likeness that has to come first.',
+        C:'It gives a second difference, the density of the two atmospheres, rather than the traits the two planets share.',
+        D:'It explains why Venus is studied and gestures at both halves at once. It never names the similarities — size, mass and place of formation — that the goal asks you to emphasize.'
       },
       tip:'When the goal says "how alike… before contrasting", pick only the SIMILARITIES. Any option with temperatures or density is the contrast, not the likeness.'
     },
@@ -173,17 +173,17 @@ window.SAT_SETS.push({
       passage:"",
       stem:"While researching a topic, a student has taken the following notes:<ul><li>A museum restored a faded 17th-century painting.</li><li>Conservators used a mild solvent to remove yellowed varnish.</li><li>They worked under magnification, cleaning one square centimeter at a time.</li><li>The whole process took nearly two years.</li><li>The restored colors matched pigment samples hidden under the frame.</li><li>Visitors said the painting looked \"reborn.\"</li></ul>The student wants to convey how painstaking the restoration process was. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
       choices:{
-        A:'After restoration, the painting’s colors matched pigment samples hidden under the frame.',
+        A:'After the varnish was removed, the painting’s restored colors matched the pigment samples that had been hidden under the frame.',
         B:'Working under magnification, conservators cleaned one square centimeter at a time, a process that took nearly two years.',
-        C:'A museum restored a faded 17th-century painting by removing its yellowed varnish.',
-        D:'Visitors said the restored painting looked reborn.'
+        C:'A museum restored a faded 17th-century painting by using a mild solvent to remove its yellowed varnish.',
+        D:'Visitors to the museum said that the restored painting looked reborn.'
       },
       correct:'B',
       expCorrect:'The goal calls for conveying how METICULOUS the process was. B shows it: under a magnifier, cleaning one square centimeter at a time, for nearly two years. The detail and the slowness convey the effort, with accurate notes.',
       expWrong:{
-        A:'It gives a result (colors matching the samples), not how laborious the process was.',
-        C:'It sums up what was done, but without the detail showing how painstaking it was.',
-        D:'It reports the public reaction, not the meticulous work.'
+        A:'It reports how accurate the result was, which is a different kind of praise. The goal asks what made the work painstaking: the magnification, the square centimeter, the two years.',
+        C:'It names the method in a single line but leaves out the scale and the pace of the work, and it is the scale and the pace that convey how painstaking it was.',
+        D:'It reports how the finished painting struck the public, not what the conservators did to get there.'
       },
       tip:'"Painstaking / meticulous" calls for details of effort and slowness (one cm² at a time, two years), not the result or the reaction.'
     },
@@ -193,17 +193,17 @@ window.SAT_SETS.push({
       passage:"",
       stem:"While researching a topic, a student has taken the following notes:<ul><li>Two farms tested a new method for reducing water use in tomato crops.</li><li>Farm A installed drip irrigation with soil-moisture sensors.</li><li>Farm B used the same drip irrigation but without sensors, watering on a fixed schedule.</li><li>Farm A cut water use by 40% compared with its previous season.</li><li>Farm B cut water use by 38% compared with its previous season.</li><li>Both farms kept their tomato yields roughly the same as before.</li></ul>The student wants to emphasize that the two farms differed mainly in whether they used sensors, not in how much water they saved. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
       choices:{
-        A:'Farm A cut its water use by 40%, while Farm B cut its use by 38%.',
+        A:'Farm A cut its water use by 40% compared with its previous season, while Farm B cut its own use by 38%.',
         B:'Both farms used drip irrigation, but Farm A added soil-moisture sensors while Farm B watered on a fixed schedule.',
-        C:'Both farms kept their tomato yields roughly the same as in previous seasons.',
-        D:'Farm A’s sensor-based system cut water use by 40%, slightly more than Farm B’s 38%.'
+        C:'Both farms kept their tomato yields roughly the same as in previous seasons despite using less water.',
+        D:'Farm A’s sensor-based system cut water use by 40%, only slightly more than the 38% Farm B reached on a fixed schedule.'
       },
       correct:'B',
       expCorrect:'The goal calls for highlighting that the main difference was the use of SENSORS, not the water savings. B contrasts exactly that: both used drip irrigation, but Farm A added sensors and Farm B watered on a fixed schedule. It is a method difference, with no savings figures.',
       expWrong:{
-        A:'It contrasts the SAVINGS (40% vs. 38%), exactly what the goal tells you not to emphasize.',
-        C:'It is about the yields, which were the same; it does not touch the sensor difference.',
-        D:'It brings in the sensors, but its emphasis falls on comparing the savings percentages, which the goal wants you to avoid.'
+        A:'It contrasts the savings, 40% against 38%, which is precisely the comparison the goal tells you not to emphasize.',
+        C:'It reports that yields held steady, a result both farms shared. It draws no distinction between them at all, least of all the sensors.',
+        D:'It does name the sensors, but the sentence is built around the two savings figures, and comparing how much water each farm saved is exactly what the goal rules out.'
       },
       tip:'If the goal says "differ in X, not in Y", rule out every option focused on Y (here, the savings percentages). Look for the one isolating X (the sensors).'
     }

@@ -13,17 +13,17 @@ window.SAT_SETS.push({
       passage:"A biologist compared how quickly four species of frog reached the far side of a 10-meter test channel. She recorded the average crossing time for each species during trials held at the same water temperature.<br><br><table border=\"1\" cellpadding=\"6\" style=\"border-collapse:collapse\"><tr><th>Species</th><th>Avg. crossing time (seconds)</th></tr><tr><td>Green tree frog</td><td>42</td></tr><tr><td>Marsh frog</td><td>31</td></tr><tr><td>Clawed frog</td><td>19</td></tr><tr><td>Painted frog</td><td>55</td></tr></table><br>The biologist noted that the clawed frog, whose webbed feet are unusually large, crossed the channel faster than any other species tested. To support her observation with the data, she might point out that the clawed frog completed the crossing ______",
       stem:'Which choice most effectively uses data from the table to complete the example?',
       choices:{
-        A:'in 55 seconds, the longest time of any species.',
+        A:'in 55 seconds, the longest crossing time of all four species.',
         B:'in 19 seconds, less time than each of the other three species.',
-        C:'in 31 seconds, faster than the green tree frog.',
-        D:'in 42 seconds, slightly faster than the painted frog.'
+        C:'in 31 seconds, quicker than the painted frog by 24 seconds.',
+        D:'in 42 seconds, a shorter time than the painted frog needed.'
       },
       correct:'B',
       expCorrect:'The biologist says the clawed frog was the FASTEST. In the table its time is 19 s, the lowest of the four, so it took less than each of the other three species. Option B uses the right figure and backs up her observation.',
       expWrong:{
         A:'55 s is the painted frog’s time (the slowest), not the clawed frog’s, and "the longest" contradicts it having been the fastest.',
-        C:'31 s is the marsh frog’s time, not the clawed frog’s; the figure is assigned to the wrong species.',
-        D:'42 s is the green tree frog’s time; besides, the clawed frog was not "slightly" faster than the painted frog, it was far faster.'
+        C:'31 s is the marsh frog’s row, not the clawed frog’s; the subtraction is right but the species is wrong, and beating only the slowest frog would not show it was fastest.',
+        D:'42 s is the green tree frog’s row, not the clawed frog’s; and being quicker than the single slowest species would not support "faster than any other species tested".'
       },
       tip:'First pin down the claim ("the fastest"), then find in the table the number belonging to THAT species. Watch out for options citing the time from another row.'
     },
@@ -36,14 +36,14 @@ window.SAT_SETS.push({
         A:'Bellview’s park use rose from 4.0 to 7.2 hours, while Oakhill’s rose only from 2.5 to 2.8 hours.',
         B:'all three neighborhoods reported exactly the same park use after the trails were installed.',
         C:'Riverside’s park use fell from 5.4 to 3.0 hours after the trails were added.',
-        D:'Oakhill showed the largest increase in park use of the three neighborhoods.'
+        D:'Oakhill’s park use climbed from 2.5 to 2.8 hours, the largest increase of the three neighborhoods.'
       },
       correct:'A',
       expCorrect:'The conclusion contrasts a big increase in some neighborhoods with a small change in others. Bellview rose from 4.0 to 7.2 (a big jump) and Oakhill only from 2.5 to 2.8 (a minimal change). Option A cites both extremes and backs up exactly that conclusion.',
       expWrong:{
         B:'False according to the table: the three neighborhoods report DIFFERENT values after the trails (5.4, 2.8, 7.2).',
         C:'It reverses the data: Riverside ROSE from 3.0 to 5.4, it did not fall from 5.4 to 3.0.',
-        D:'Oakhill had the SMALLEST increase (0.3 h), not the largest; the biggest was Bellview (+3.2 h).'
+        D:'The figures are Oakhill’s, but +0.3 h is the SMALLEST gain of the three; the largest is Bellview’s +3.2 h, so the label contradicts the table.'
       },
       tip:'When the conclusion says "large in some, small in others", the best option shows BOTH cases. Verify that the direction (rose/fell) matches the table.'
     },
@@ -164,16 +164,16 @@ window.SAT_SETS.push({
       stem:'Which choice best states the main purpose of the text?',
       choices:{
         A:'To explain how the author builds a sense of danger through indirect, telling details.',
-        B:'To argue that the novel’s opening chapter is too slow and should be cut.',
-        C:'To summarize the entire plot of the novel for new readers.',
-        D:'To describe the scientific causes of severe storms.'
+        B:'To argue that the opening chapter withholds the storm for too long and should be rewritten.',
+        C:'To summarize the novel’s plot for readers who have not yet opened it.',
+        D:'To explain the meteorological causes of sudden coastal storms.'
       },
       correct:'A',
       expCorrect:'The text points out that the author does NOT describe the storm directly, but uses small unsettling details so the reader senses the danger. The purpose is to explain how she builds that sense of danger indirectly.',
       expWrong:{
-        B:'It does not claim the chapter is slow or that it should be cut; it describes a technique, it does not criticize it.',
-        C:'It does not summarize the plot of the novel; it focuses only on the effect of the opening chapter.',
-        D:'It does not explain the scientific causes of storms; the storm is a narrative device, not a physical topic.'
+        B:'The text presents the withholding approvingly ("only through these uneasy images"); it never judges the chapter’s pacing or asks for a rewrite.',
+        C:'No plot is told: the text reports only what the opening chapter leaves out and the effect of the details used in its place.',
+        D:'No cause of any storm is explained; the storm here is a narrative device, and the text is about how the author keeps it offstage.'
       },
       tip:'"Main purpose" = why this was written. Here everything points to one thing: how the author suggests danger with details instead of describing it.'
     },
@@ -183,17 +183,17 @@ window.SAT_SETS.push({
       passage:"A student is writing about a community garden. She wants to conclude her paragraph by emphasizing the garden’s broad benefit to the neighborhood. She has noted the following: the garden supplies fresh vegetables to nearby families; it hosts weekend classes for children; and it has become a gathering spot where longtime and new residents meet.",
       stem:'Which choice most effectively uses the notes to accomplish this goal?',
       choices:{
-        A:'The garden grows several kinds of tomatoes that ripen in late summer.',
-        B:'More than anything, the garden needs additional volunteers to weed its beds.',
+        A:'The garden supplies several kinds of tomatoes that ripen in late summer and go to the families living nearest to it.',
+        B:'More than anything, the garden needs additional volunteers to weed its beds, since the families who rely on its vegetables cannot keep up with the summer growth alone.',
         C:'By feeding families, teaching children, and bringing neighbors together, the garden has become a resource the whole community relies on.',
-        D:'The weekend classes for children are held on Saturday mornings.'
+        D:'The weekend classes for children are held on Saturday mornings, when the youngest volunteers water the beds nearest the gate.'
       },
       correct:'C',
       expCorrect:'The goal is to close by highlighting the BROAD benefit to the neighborhood. Option C gathers the three notes (it feeds families, it teaches children, it brings neighbors together) and presents them as a resource the whole community depends on. Exactly what was asked.',
       expWrong:{
-        A:'It is a detail about tomatoes; it does not convey the broad benefit to the neighborhood.',
-        B:'It is about a need (volunteers), not about the benefit the garden brings; it shifts the focus.',
-        D:'It gives a minor fact (the class schedule) instead of summing up the overall impact.'
+        A:'It uses only one of the three notes and then narrows it further, to a single crop and the closest households — the opposite of a broad benefit.',
+        B:'It closes on an appeal for help; naming who depends on the vegetables does not turn a request for volunteers into a statement of what the garden gives the neighborhood.',
+        D:'It stays on one note and adds scheduling detail; a class time and a watering chore do not add up to the garden’s impact on the neighborhood.'
       },
       tip:'When they ask for a conclusion that "emphasizes the broad benefit", pick the option that pulls SEVERAL notes into one general idea, not the one giving a single detail.'
     },
@@ -233,16 +233,16 @@ window.SAT_SETS.push({
       passage:"When a species of fig tree is introduced to a new region without the specific wasp that pollinates it, the tree may grow tall and healthy yet never produce viable seeds. Gardeners admiring its glossy leaves often have no idea that, biologically speaking, the transplanted tree has reached a dead end.",
       stem:'Which choice best states the main idea of the text?',
       choices:{
-        A:'Fig trees cannot survive at all outside their native region.',
+        A:'Fig trees transplanted without their pollinating wasp cannot survive outside their native region.',
         B:'A fig tree can appear thriving while being unable to reproduce without its pollinating wasp.',
-        C:'Gardeners generally prefer fig trees to any other ornamental plant.',
+        C:'Gardeners admire the fig tree’s glossy leaves more than they value its fruit.',
         D:'The pollinating wasp is more important to gardeners than the fig tree itself.'
       },
       correct:'B',
       expCorrect:'The text says that without its pollinating wasp the tree grows tall and healthy but never produces viable seeds: a biological "dead end". The central idea is that it can LOOK thriving and at the same time be unable to reproduce.',
       expWrong:{
         A:'It contradicts the text: the tree DOES survive and grows healthy; what it cannot do is reproduce.',
-        C:'Not supported: the text does not compare gardeners’ preference for one plant over another.',
+        C:'Not supported: the glossy leaves are mentioned only to explain why the failure goes unnoticed, and the text never weighs leaves against fruit.',
         D:'It distorts it: the text is about the wasp’s biological role, not about what matters most to a gardener.'
       },
       tip:'The central idea reconciles the two halves of the text: it looks healthy BUT produces no seeds. Rule out options that take only half ("it does not survive").'
@@ -254,15 +254,15 @@ window.SAT_SETS.push({
       stem:'Based on the text, which statement is the most reasonable inference?',
       choices:{
         A:'Beavers can drive ecological recovery that people had assumed would require direct human intervention.',
-        B:'Straightened rivers can never support any fish or insect life.',
-        C:'The conservation team regretted reintroducing the beavers to the river.',
+        B:'Straightened and channelized rivers can never support fish or insects unless people rebuild them by hand.',
+        C:'The conservation team regretted relying on beavers rather than on the direct effort it had planned.',
         D:'Beavers build dams mainly to provide habitats for human researchers.'
       },
       correct:'A',
       expCorrect:'The team expected to restore the wildlife through direct human effort alone, but it was the beavers who, with their dams, brought fish and insects back. You infer that beavers can drive the recovery that was thought to require direct human intervention.',
       expWrong:{
-        B:'Too extreme: the river was channelized, but the text does not say fish or insects can NEVER be there; in fact they returned.',
-        C:'It contradicts the text: the reintroduction worked, there is no sign of regret.',
+        B:'Too extreme, and the text refutes it: fish and insects returned once the dams spread the water, with nothing rebuilt by hand.',
+        C:'Nothing signals regret: the beavers did what the team had expected to do itself, which exceeds the plan rather than spoiling it.',
         D:'Illogical: beavers build dams because of their own behavior; the benefit to researchers is not their "purpose".'
       },
       tip:'Notice the clash between what the team EXPECTED (human effort alone) and what HAPPENED (the beavers pulled it off). The inference captures that surprise.'

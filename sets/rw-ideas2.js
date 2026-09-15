@@ -203,7 +203,7 @@ window.SAT_SETS.push({
       expWrong:{
         A:'It contradicts the text: children already apply grammatical rules to brand-new words on their own, well before any formal instruction.',
         C:'It contradicts the evidence: the point is that children routinely produce sentences they have NEVER heard an adult say.',
-        D:'Too extreme and too broad: the text qualifies the role of imitation in language, it does not say imitation is useless for ANY skill.'
+        D:'Too extreme and too broad: the text qualifies how much imitation explains about language; it never rules imitation out of language or of any other skill.'
       },
       tip:'The main idea embraces the whole contrast: old idea (imitating) against the new one (building rules). An option that denies everything (“no role at all”) usually overreaches.'
     },
@@ -243,7 +243,7 @@ window.SAT_SETS.push({
       expWrong:{
         A:'It contradicts the text: the vine DID stabilize the slopes “as intended”; the trouble came from everywhere else it spread.',
         B:'Too extreme: the vine smothered the natives in one setting, which is not the same as being weaker in every possible respect.',
-        D:'Off topic: the text uses erosion as a starting point, but never claims controlling it is “the most important” thing in managing any forest.'
+        D:'Off topic: erosion control is where the story starts, and the text never calls it “the single most important” goal in managing any forest.'
       },
       tip:'The main idea spans the whole arc: a solution that half works and then becomes a bigger problem. An option denying the first half (“never stabilized”) contradicts the text.'
     }

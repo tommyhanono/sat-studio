@@ -35,7 +35,7 @@ window.SAT_SETS.push({
       choices:{
         A:'To argue that the tuatara is the oldest reptile now alive on Earth.',
         B:'To explain why the tuatara is valuable to scientists as a link to ancient reptiles.',
-        C:'To describe the tuatara’s body plan and how little it has changed.',
+        C:'To describe the tuatara’s body plan and how little of it has changed over time.',
         D:'To warn that the tuatara now faces extinction as its relatives did.'
       },
       correct:'B',
@@ -193,17 +193,17 @@ window.SAT_SETS.push({
       passage:"A team testing a new bridge design built a small-scale model and placed it in a wind tunnel. At low wind speeds, the model held steady, but as the engineers increased the airflow, the deck began to twist and sway. They halted the test and adjusted the shape of the deck before any full-size version was ever built.",
       stem:'Based on the text, which statement is the most reasonable inference?',
       choices:{
-        A:'The new bridge design was completely useless and had to be abandoned.',
-        B:'Wind tunnels are the only tool engineers use to test any structure.',
-        C:'Full-size bridges never sway or twist once they are built correctly.',
+        A:'The twisting in the wind tunnel showed that the new deck design had to be abandoned entirely.',
+        B:'A wind tunnel is the only tool that can reveal how a structure behaves in strong wind.',
+        C:'A full-size bridge will not sway or twist so long as its deck has been shaped correctly.',
         D:'Testing a model beforehand can reveal problems that might affect a full-size bridge.'
       },
       correct:'D',
       expCorrect:'The engineers tested a scale model, saw the deck twist in strong wind and adjusted the design BEFORE building the real version. From that it follows that testing a model first can reveal problems that would affect the full-size bridge.',
       expWrong:{
-        A:'Too extreme: they did not abandon it, they ADJUSTED it. Calling it “completely useless” contradicts the fact that they kept improving it.',
-        B:'Too broad: the text uses a wind tunnel in this case, but never says it is the ONLY tool for testing any structure.',
-        C:'Not supported / contradicts: the model itself shook; the text does not promise that real bridges “never” move.'
+        A:'Too extreme, and it contradicts the text: the engineers “adjusted the shape of the deck” instead of dropping the design. They halted one test, not the project.',
+        B:'It pushes a real idea into an absolute: a wind tunnel is the tool used in this case. The text never claims it is the only way to learn how a structure answers the wind.',
+        C:'Too extreme: the deck was reshaped so the problem would not appear at full size, but the text promises nothing about finished bridges. “Will not sway” goes past the evidence.'
       },
       tip:'Notice the word “before”: the test served to catch the problem in time. The right inference captures that value of testing first.'
     }

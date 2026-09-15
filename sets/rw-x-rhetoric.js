@@ -105,17 +105,17 @@ window.SAT_SETS.push({
       skill:'Rhetorical Synthesis',
       stem:"While researching a topic, a student has taken the following notes:<ul><li>Letterpress printing presses inked, raised metal type directly onto the paper.</li><li>It leaves a slight indentation you can feel on the page.</li><li>Offset printing transfers ink from a plate to a rubber roller and then to the paper.</li><li>Offset leaves a completely flat, smooth image.</li><li>Offset can print thousands of pages per hour; letterpress is far slower.</li></ul>The student wants to emphasize a difference between the two methods while introducing letterpress printing to an audience unfamiliar with it. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
       choices:{
-        A:'Letterpress printing presses inked, raised metal type directly onto the paper.',
-        B:'Letterpress leaves a tactile indentation on the page, while offset leaves a perfectly flat image.',
+        A:'Letterpress printing, a method in which inked, raised metal type is pressed directly onto the page, leaves a slight indentation that a reader can feel with a fingertip.',
+        B:'Letterpress leaves a tactile indentation on the page, while offset printing leaves a perfectly flat, smooth image.',
         C:'Letterpress printing, which presses raised metal type directly onto paper, leaves an indentation you can feel—unlike offset printing, whose image is perfectly flat.',
-        D:'Offset printing can produce thousands of pages an hour, far more than letterpress can.'
+        D:'Offset printing transfers ink from a plate to a rubber roller and then to the paper, and it can turn out thousands of pages an hour, far more than letterpress can.'
       },
       correct:'C',
       expCorrect:'It meets BOTH goals. It introduces what letterpress is for someone who does not know it (“presses raised metal type into the paper”) AND marks the difference from offset (it leaves an impression vs. a completely flat image).',
       expWrong:{
-        A:'It fails the DIFFERENCE goal: it defines letterpress well for a new audience, but never contrasts it with offset.',
+        A:'It fails the DIFFERENCE goal: it introduces letterpress thoroughly and even names the indentation, but never sets that against offset’s perfectly flat image.',
         B:'It fails the INTRODUCE goal: it does contrast letterpress and offset, but it assumes you already know what letterpress is; it never explains it to someone unfamiliar.',
-        D:'It fails the goal of INTRODUCING letterpress: the sentence is about offset and its speed, without saying what letterpress is or defining it.'
+        D:'It fails the goal of INTRODUCING letterpress: the sentence explains how offset works and how fast it is, and names letterpress only as the slower thing it beats.'
       },
       tip:'With double goals, tick both boxes in your head: (1) does it introduce what the term is to someone who does not know it? (2) does it contrast with the other thing? Only the option ticking BOTH works.'
     },
@@ -124,17 +124,17 @@ window.SAT_SETS.push({
       skill:'Rhetorical Synthesis',
       stem:"While researching a topic, a student has taken the following notes:<ul><li>A regressive tax takes a larger share of income from people who earn less.</li><li>A progressive tax takes a larger share from people who earn more.</li><li>Sales taxes are usually regressive.</li><li>Income taxes in many countries are progressive.</li></ul>The student wants to emphasize a difference between the two kinds of tax while introducing the term \"regressive tax\" to an audience unfamiliar with it. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
       choices:{
-        A:'A regressive tax takes a larger share of income from people who earn less.',
-        B:'A regressive tax and a progressive tax pull in opposite directions.',
-        C:'Income taxes in many countries are progressive, while sales taxes are usually regressive.',
+        A:'A regressive tax takes a larger share of income from people who earn less, which is why a sales tax can weigh more heavily on a cashier than on the store owner who pays the same rate.',
+        B:'A regressive tax and a progressive tax pull in opposite directions, and most tax systems contain both.',
+        C:'Income taxes in many countries are progressive, taking a larger share from higher earners, while sales taxes are usually regressive.',
         D:'A regressive tax, one that takes a bigger share of income from lower earners, works in the opposite direction from a progressive tax, which takes more from higher earners.'
       },
       correct:'D',
       expCorrect:'It meets BOTH goals. It defines the term “regressive tax” within the same sentence (“takes a larger share of income from those who earn less”) AND contrasts it with a progressive tax (the opposite direction). It introduces and differentiates at once.',
       expWrong:{
-        A:'It fails the DIFFERENCE goal: it defines a regressive tax well, but does not compare it with a progressive one.',
+        A:'It fails the DIFFERENCE goal: it defines a regressive tax and illustrates it, but the only contrast it draws is between two shoppers, never between the two kinds of tax.',
         B:'It fails the INTRODUCE goal: it states that they run in opposite directions (the difference), but never explains what “regressive tax” means to someone unfamiliar with the term.',
-        C:'It fails the goal of INTRODUCING the term: it gives examples (sales taxes vs. income taxes), but does not define what “regressive” means for a new audience.'
+        C:'It fails the goal of INTRODUCING the term: it explains what a progressive tax does, but leaves “regressive” as a bare label, so an unfamiliar reader still does not learn it.'
       },
       tip:'When the goal asks you to “introduce the term X”, the right option usually defines it right there (“X, which is…”). If it only names it without explaining, it does not introduce.'
     },
@@ -144,16 +144,16 @@ window.SAT_SETS.push({
       stem:"While researching a topic, a student has taken the following notes:<ul><li>The maned wolf lives on the grasslands of central South America.</li><li>It has very long, thin legs and a reddish coat.</li><li>Despite its name, it is not a true wolf.</li><li>True wolves hunt in packs.</li><li>The maned wolf lives and hunts entirely alone.</li></ul>The student wants to introduce the maned wolf to an audience unfamiliar with the animal while emphasizing a difference between it and true wolves. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
       choices:{
         A:'The maned wolf, a long-legged, reddish animal of central South America’s grasslands, differs from true wolves in that it lives and hunts entirely alone rather than in a pack.',
-        B:'The maned wolf is a long-legged, reddish animal native to the grasslands of central South America.',
+        B:'The maned wolf is a long-legged, reddish animal native to the grasslands of central South America, where it stalks small prey through grass that grows taller than a person.',
         C:'Unlike true wolves, which hunt in packs, the maned wolf lives and hunts entirely alone.',
-        D:'Despite its name, the maned wolf is not actually a true wolf.'
+        D:'Despite its name, the maned wolf is not actually a true wolf but a species all its own.'
       },
       correct:'A',
       expCorrect:'It meets BOTH goals. It introduces the animal for someone who does not know it (long legs, reddish coat, South American grasslands) AND marks the difference from true wolves (it hunts alone, not in packs).',
       expWrong:{
-        B:'It fails the DIFFERENCE goal: it describes the animal well for a new audience, but does not compare it with true wolves.',
+        B:'It fails the DIFFERENCE goal: it describes the animal, its habitat and even its hunting fully, but never sets any of that against true wolves.',
         C:'It fails the INTRODUCE goal: it does contrast (hunting alone vs. in packs), but it does not say what a maned wolf is or what it looks like to someone unfamiliar.',
-        D:'It fails both almost entirely: it gives an isolated fact (that it is not a true wolf) without introducing the animal or marking how its way of living or hunting differs.'
+        D:'It fails both goals: saying what the animal is NOT neither describes it for a newcomer nor names the difference in the way it lives and hunts.'
       },
       tip:'“Introduce to someone unfamiliar” calls for the overview (what it is, what it is like, where it is from). Add the contrast the goal asks for and you will see only one option carries both.'
     },
@@ -162,15 +162,15 @@ window.SAT_SETS.push({
       skill:'Rhetorical Synthesis',
       stem:"While researching a topic, a student has taken the following notes:<ul><li>The theremin is an electronic musical instrument.</li><li>A performer moves both hands near two metal antennas to control pitch and volume.</li><li>The player never actually touches the instrument.</li><li>Most instruments make sound only when a player presses, strikes, or blows into them.</li></ul>The student wants to introduce the theremin to an audience unfamiliar with it while emphasizing a difference between it and most instruments. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
       choices:{
-        A:'The theremin is an electronic musical instrument that was first demonstrated in the early twentieth century.',
+        A:'The theremin is an electronic musical instrument that was first demonstrated in the early twentieth century and has since been heard in film scores, concert halls, and rock records alike.',
         B:'The theremin is an electronic instrument that, unlike ones a musician strikes or blows into, is played by moving the hands near two metal antennas without any physical contact.',
-        C:'Unlike most instruments, the theremin makes its sound without ever being touched.',
-        D:'A theremin player moves both hands near two metal antennas to control pitch and volume.'
+        C:'Unlike most instruments, which make sound only when a player presses, strikes, or blows into them, the theremin is never touched at all.',
+        D:'A theremin player moves both hands near two metal antennas, one controlling pitch and the other volume.'
       },
       correct:'B',
       expCorrect:'It meets BOTH goals. It introduces what a theremin is (an electronic instrument played by moving your hands near two antennas) AND differentiates it from most instruments (which are struck or blown; this one is never touched).',
       expWrong:{
-        A:'It fails the DIFFERENCE goal: it introduces the theremin, but only adds its date; it does not contrast it with how other instruments are played.',
+        A:'It fails the DIFFERENCE goal: it introduces the theremin and tells you where it has been heard, but never contrasts it with instruments a player presses, strikes, or blows into.',
         C:'It fails the INTRODUCE goal: it marks the difference (it is never touched), but does not explain what a theremin is or how it works for a new audience.',
         D:'It fails the DIFFERENCE goal: it describes how it is played (introducing it), but does not compare it with other instruments.'
       },
@@ -181,17 +181,17 @@ window.SAT_SETS.push({
       skill:'Rhetorical Synthesis',
       stem:"While researching a topic, a student has taken the following notes:<ul><li>Tidal power plants generate electricity from the ocean's daily rise and fall.</li><li>Their output can be predicted years in advance from tide tables.</li><li>Wind and solar plants depend on weather.</li><li>Weather cannot be forecast far in advance.</li></ul>The student wants to introduce tidal power to an audience unfamiliar with it while emphasizing a difference between it and wind and solar power. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
       choices:{
-        A:'Tidal power plants generate electricity from the daily rise and fall of the ocean’s tides.',
-        B:'Unlike wind and solar, tidal power can be predicted years in advance.',
+        A:'Tidal power plants generate electricity from the daily rise and fall of the ocean’s tides, whose timing is set by the moon and printed in tide tables years ahead.',
+        B:'Unlike wind and solar plants, whose weather cannot be forecast far ahead, tidal power can be predicted years in advance.',
         C:'Tidal power plants, which draw electricity from the ocean’s daily rise and fall, differ from wind and solar in that their output can be forecast years ahead.',
-        D:'Wind and solar plants depend on weather that cannot be forecast far in advance.'
+        D:'Wind and solar plants depend on weather, and weather cannot be forecast far enough in advance to schedule their output.'
       },
       correct:'C',
       expCorrect:'It meets BOTH goals. It introduces what tidal power is (it draws electricity from the daily rise and fall of the sea) AND differentiates it from wind and solar (its output can be predicted years in advance).',
       expWrong:{
-        A:'It fails the DIFFERENCE goal: it introduces tidal power well, but does not compare it with wind or solar.',
-        B:'It fails the INTRODUCE goal: it marks the difference (it can be predicted), but does not explain what tidal power is to someone unfamiliar.',
-        D:'It fails the goal of INTRODUCING tidal power: the sentence is about wind and solar, without saying what tidal power is.'
+        A:'It fails the DIFFERENCE goal: it introduces tidal power thoroughly and even notes the tide tables, but never sets any of it against wind or solar.',
+        B:'It fails the INTRODUCE goal: it sharpens the contrast with wind and solar, but still never says what a tidal plant is or where its electricity comes from.',
+        D:'It fails the goal of INTRODUCING tidal power: the whole sentence is about wind and solar, and tidal power is never mentioned, let alone explained.'
       },
       tip:'If the sentence is only about the OTHER side of the comparison, it is not introducing the subject being asked about. The right one defines the subject and contrasts it too.'
     },
@@ -200,17 +200,17 @@ window.SAT_SETS.push({
       skill:'Rhetorical Synthesis',
       stem:"While researching a topic, a student has taken the following notes:<ul><li>Bamboo is a type of grass, not a tree.</li><li>Some species can grow nearly a meter in a single day.</li><li>Most trees add only a few centimeters of height per year.</li><li>Bamboo is found in many parts of the world.</li></ul>The student wants to introduce bamboo to an audience unfamiliar with it while emphasizing a difference between its growth and that of trees. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
       choices:{
-        A:'Bamboo is a fast-growing plant found in many parts of the world.',
-        B:'Bamboo can grow nearly a meter in a single day, while most trees add only a few centimeters a year.',
-        C:'Bamboo is a type of grass rather than a tree.',
+        A:'Bamboo is a fast-growing plant found in many parts of the world, from mountain slopes to river valleys.',
+        B:'Bamboo can grow nearly a meter in a single day, while most trees add only a few centimeters of height over an entire year of growth.',
+        C:'Bamboo is a type of grass rather than a tree, despite the woody stems that make it look like one.',
         D:'Bamboo, a giant grass rather than a tree, can shoot up nearly a meter in a single day—far faster than the few centimeters most trees add in a year.'
       },
       correct:'D',
       expCorrect:'It meets BOTH goals. It introduces what bamboo is (a giant grass, not a tree) AND marks the difference in growth (nearly a meter a day against the few centimeters a year of trees).',
       expWrong:{
-        A:'It fails the DIFFERENCE goal: it introduces bamboo vaguely, but does not compare it with trees or give the growth figures.',
+        A:'It fails the DIFFERENCE goal: it introduces bamboo and where it grows, but "fast-growing" is a label, not a comparison with the few centimeters a tree adds in a year.',
         B:'It fails the INTRODUCE goal: it gives the growth difference with numbers, but does not say what bamboo is (a grass, not a tree) to someone unfamiliar.',
-        C:'It fails the GROWTH DIFFERENCE goal: it classifies bamboo (a grass, not a tree), but never mentions its speed compared with trees.'
+        C:'It fails the GROWTH DIFFERENCE goal: it classifies bamboo and explains why it is mistaken for a tree, but never mentions how fast it grows compared with one.'
       },
       tip:'When the difference asked for is specific (here, the GROWTH), any old contrast will not do: the right one introduces the subject and hits exactly that difference with the data.'
     }

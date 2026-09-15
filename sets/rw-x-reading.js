@@ -95,17 +95,17 @@ window.SAT_SETS.push({
       passage:"Certain desert shrubs release chemicals from their roots that inhibit the germination of seeds nearby. Researchers hypothesize that this suppression is not merely a byproduct of the shrub’s metabolism but an adaptation that reduces competition for scarce water by keeping the soil immediately around each shrub relatively bare. They caution, however, that a bare zone could also arise simply because the shrub’s own roots deplete the local water first.",
       stem:'Which finding, if true, would most directly support the researchers’ hypothesis?',
       choices:{
-        A:'The chemicals released by the shrubs break down rapidly once they enter the surrounding soil.',
-        B:'In well-watered plots, the shrubs continue to release the germination-inhibiting chemicals at the same rate as in dry plots.',
+        A:'The chemicals released by the shrubs break down within hours of entering the soil, long before most desert seeds would germinate.',
+        B:'In plots watered generously all season, the shrubs release the germination-inhibiting chemicals at exactly the same rate as shrubs in dry plots.',
         C:'Seedlings of species that compete with the shrub for water are suppressed far more strongly than seedlings that draw water from deeper layers the shrub does not use.',
-        D:'The bare zone around each shrub is roughly the same width as the spread of the shrub’s own root system.'
+        D:'The bare zone around each shrub matches the spread of that shrub’s own root system almost exactly, so that a shrub with a wider root system is ringed by a wider bare zone.'
       },
       correct:'C',
       expCorrect:'The hypothesis is that the suppression is an ADAPTATION for reducing competition for water, not a mere byproduct. C supports it precisely: the chemical hits far harder the seedlings that DO compete for water and barely touches those using deep water the shrub cannot reach. That selective targeting is exactly what you would expect from an anti-competitor adaptation, not from a blind effect.',
       expWrong:{
-        A:'The chemical degrading quickly is a fact about soil chemistry; it says nothing about whether its function is reducing competition for water. True but irrelevant.',
-        B:'Being released the same with or without water touches the mechanism (it is constitutive), but it does not distinguish “anti-competition adaptation” from “metabolic byproduct”; in fact a byproduct would also come out the same. It does not support THE claim.',
-        D:'The bare patch matching the width of the roots supports the text’s RIVAL explanation (the shrub dries the local water first), not the chemical-adaptation hypothesis. It supports the wrong neighboring claim.'
+        A:'True, and it sounds like a mechanism, but it bears on how long the compounds last rather than on what they are for. Both the adaptation and the byproduct explanation survive it untouched.',
+        B:'It fits the hypothesis and its rival equally well: a mere byproduct of the shrub’s metabolism would also come out at the same rate no matter how much water there is. Evidence that cannot tell two explanations apart supports neither.',
+        D:'It supports the rival explanation the researchers themselves raise: a bare zone that tracks the roots plant by plant is exactly what you would see if the shrub simply drank the local water first. It strengthens the alternative, not the hypothesis.'
       },
       tip:'The hypothesis distinguishes “purposeful adaptation” from “byproduct”. Support it with evidence of selectivity aimed at competitors (C), not with data that would equally fit the rival explanation.'
     },
@@ -115,17 +115,17 @@ window.SAT_SETS.push({
       passage:"A team studying a songbird found that males raised in isolation still produce a rough version of the species’ song. They propose that the basic template of the song is innate rather than learned, though they note that the isolated males’ songs remain abnormal in pitch and timing, and that only exposure to adult tutors yields a fully typical song.",
       stem:'Which finding, if true, would most directly weaken the team’s proposal?',
       choices:{
-        A:'Isolated males that are later exposed to adult tutors go on to sing fully typical songs.',
+        A:'Isolated males that are later exposed to adult tutors go on to sing fully typical songs, indistinguishable from those of birds raised normally.',
         B:'Males raised in isolation but able to hear their own vocalizations develop the rough song, whereas males also deafened early produce no recognizable song at all.',
-        C:'The abnormal pitch of isolated males’ songs disappears completely once the birds mature.',
-        D:'Different populations of the species sing dialects that differ noticeably in their fine details.'
+        C:'The abnormal pitch and timing of isolated males’ songs disappear completely once the birds reach full maturity, with no tutor ever present.',
+        D:'Different populations of the species sing dialects that differ noticeably in their fine details, and young males reared among a neighboring population grow up singing that population’s dialect.'
       },
       correct:'B',
       expCorrect:'The proposal is that the basic TEMPLATE of the song is innate (not learned). B weakens it: if isolated birds only manage the rough song when they can HEAR themselves, and birds deafened early produce nothing recognizable, then even that “basic” song depends on learning through auditory feedback — it is not purely innate. It attacks the core of the claim.',
       expWrong:{
-        A:'Singing normally with tutors is what the text ALREADY grants and fits its proposal (only the template is innate). It does not weaken it; it is consistent.',
-        C:'The abnormal tone fading with maturity touches the maturation of the song, not whether the template is innate or learned. True but irrelevant to the claim.',
-        D:'Dialects between populations affect the fine details — which the text already attributes to learning from a tutor — not the innate basic template. It weakens a neighboring claim, not THE claim.'
+        A:'It restates what the team already grants — “only exposure to adult tutors yields a fully typical song” — so it sits comfortably inside the proposal. A finding that a claim predicts cannot weaken that claim.',
+        C:'It looks damaging because it makes the isolated song normal after all, but read it again: a song that corrects itself with no tutor at all is evidence FOR an innate template, not against one.',
+        D:'It weakens a claim the team never made: the text already credits adult tutors with everything beyond the rough song, so learned dialects touch the fine details, not the basic template said to be innate.'
       },
       tip:'To weaken “X is innate”, look for evidence that X actually requires experience or learning (here, hearing oneself). Anything affecting only the “fine details” does not touch the basic template.'
     },
@@ -135,17 +135,17 @@ window.SAT_SETS.push({
       passage:"Analyzing sediment cores from a lake, geologists found a layer rich in charcoal dating to about 1,200 years ago. They hypothesize that the charcoal records a single large wildfire, rather than the gradual accumulation of soot from many small fires, since such a blaze would explain the abrupt shift in vegetation seen in pollen from the same layer. They acknowledge that wind could carry charcoal from distant fires into the lake.",
       stem:'Which finding, if true, would most directly support the geologists’ hypothesis?',
       choices:{
-        A:'Charcoal appears in smaller amounts in several layers both above and below the charcoal-rich layer.',
-        B:'The pollen in layers just above the charcoal-rich layer indicates vegetation typical of a cooler, wetter climate.',
-        C:'Lakes elsewhere in the region contain charcoal layers dating to a variety of different centuries.',
+        A:'Charcoal appears in smaller but steady amounts in several layers both above and below the charcoal-rich layer.',
+        B:'The pollen in the layers just above the charcoal-rich band indicates a vegetation typical of a cooler, wetter climate than the pollen below it does.',
+        C:'Lakes elsewhere in the region contain charcoal layers of their own, dating to a variety of different centuries.',
         D:'The charcoal-rich layer contains large, angular charcoal fragments of a size that wind cannot transport far, concentrated in a single thin band.'
       },
       correct:'D',
       expCorrect:'The hypothesis: the charcoal records ONE large, local fire, not the buildup of many distant ones. D supports it directly: large, angular fragments that wind CANNOT carry far, concentrated in a single thin band → one big nearby fire at a single moment, ruling out the wind alternative and the many-small-fires one.',
       expWrong:{
-        A:'Charcoal in layers above and below suggests recurring fires or gradual soot — that runs AGAINST the idea of a single event. If anything, it weakens it.',
-        C:'Other lakes having layers from varied centuries is regional context; it says nothing about whether THIS layer is a single fire. True but irrelevant.',
-        B:'Pollen from a colder, wetter climate describes what happened to the vegetation AFTERWARD, not whether the charcoal came from one big fire. It supports a neighboring claim (the vegetation change), not the one about the charcoal’s origin.'
+        A:'It cuts the other way: a steady background of charcoal through the neighboring layers is what the gradual-accumulation explanation predicts. It weakens the single-fire hypothesis rather than supporting it.',
+        C:'True, but about the wrong lakes: that fires happened across the region at many different times says nothing about whether THIS band records one blaze or a slow accumulation of soot.',
+        B:'True, and genuinely interesting, but it describes what the vegetation did afterward. The hypothesis at issue is about the charcoal’s ORIGIN — one local blaze against soot drifting in from many distant ones — and later pollen cannot settle that.'
       },
       tip:'“A single local event” is supported by showing the material could not have come from far away or piled up slowly (large fragments, one single band). Data about what came afterward do not touch the origin.'
     },
@@ -175,17 +175,17 @@ window.SAT_SETS.push({
       passage:"Marine biologists observed that a species of cleaner fish removes parasites from larger “client” fish. They hypothesize that the cleaners deliberately provide good service to clients that can easily swim to a rival cleaning station, reserving cheating—biting the client’s healthy mucus—for clients with no nearby alternative. They note that clients also differ in size and temperament.",
       stem:'Which finding, if true, would most directly support the biologists’ hypothesis?',
       choices:{
-        A:'Cleaners bite the mucus of large and small clients at roughly equal rates.',
-        B:'Clients frequently return to the same cleaning station over many days.',
+        A:'Cleaners bite the mucus of large clients and of small clients at roughly equal rates, and clients of every temperament are cheated about equally often.',
+        B:'Clients frequently return to the same cleaning station day after day rather than sampling the other stations available to them.',
         C:'When a rival cleaning station is experimentally placed nearby, cleaners noticeably reduce how often they bite the same clients they had been cheating.',
-        D:'Cleaners spend more total time servicing large clients than small ones.'
+        D:'Cleaners spend more total time servicing large clients than small ones, and bold clients are attended to longer than timid ones.'
       },
       correct:'C',
       expCorrect:'The hypothesis: the cleaners give good service (no cheating) precisely when the client CAN leave for a rival station, and cheat when there is no alternative. C is a direct test: placing a rival station nearby makes the cleaners bite those same clients less → the behavior changes with the availability of an alternative, exactly as the hypothesis predicts.',
       expWrong:{
-        A:'Biting large and small clients equally is about size, which the text mentions separately; it says nothing about the key variable: whether a rival station is nearby. True but irrelevant.',
-        B:'Clients returning to the same station shows loyalty, not that the cleaner adjusts its cheating according to whether alternatives exist. It does not support the proposed mechanism.',
-        D:'Spending more time with large clients touches size and temperament, a neighboring claim the text sets aside; it is not the claim about the client’s escape option.'
+        A:'True of the two variables the biologists explicitly set aside, size and temperament, so it answers a question they did not ask. The hypothesis turns on whether a rival station is within reach, which this never touches.',
+        B:'Loyalty is easy to mistake for good service, but the hypothesis is about what a cleaner does when the client COULD leave. How often clients actually leave is a different claim, and this one runs the wrong way for it.',
+        D:'It elaborates the difference in size and temperament that the text raises only to set aside. Time spent servicing is not the behavior in question either; the hypothesis is about when a cleaner chooses to cheat.'
       },
       tip:'The hypothesis ties the behavior to ONE variable (is there a rival station nearby?). Support it with the experiment that manipulates that variable (C), not with data about size or loyalty.'
     },
@@ -197,16 +197,16 @@ window.SAT_SETS.push({
       stem:'Based on the texts, how would Dr. Ibáñez (Text 2) most likely respond to the conclusion in Text 1?',
       choices:{
         A:'By accepting the survey data but questioning whether remote work itself, rather than the type of employee granted it, caused the higher satisfaction.',
-        B:'By disputing the survey’s finding that remote workers reported higher satisfaction than in-office peers.',
-        C:'By agreeing that firms should expand remote work broadly in order to retain their most talented employees.',
-        D:'By arguing that in-office employees are, in general, more satisfied than the survey was able to detect.'
+        B:'By disputing the survey’s central finding and arguing that remote workers were not, in fact, more satisfied than their in-office peers.',
+        C:'By agreeing that firms should expand remote work broadly, since the survey shows the arrangement keeps the most senior and autonomous staff from leaving.',
+        D:'By arguing that in-office employees are generally more satisfied than the survey managed to detect, because the firm never asked the right ones.'
       },
       correct:'A',
       expCorrect:'Ibáñez “does not dispute the survey’s numbers” (she accepts the data), but points out that remote work went mainly to the most senior, autonomous staff. That is why she doubts Text 1’s causal INFERENCE: the satisfaction could reflect WHO was chosen, not the arrangement itself. A says exactly that: accept the data, question the cause.',
       expWrong:{
-        B:'A total-disagreement trap: the text says explicitly that it does NOT dispute the numbers (“truly were more satisfied”). She does not deny the finding, she denies the cause.',
-        C:'A total-agreement trap: agreeing to expand remote work is Text 1’s conclusion, the one she calls into question. Ibáñez does not endorse it.',
-        D:'It invents a claim she never makes: she does not hold that in-office workers are more satisfied “in general”. She only questions the cause behind the existing data.'
+        B:'A total-disagreement trap: Text 2 says plainly that the remote workers in the survey “truly were more satisfied”. She accepts the numbers; what she rejects is the causal reading placed on them.',
+        C:'A total-agreement trap built from her own words: she does note that remote work went to the most senior, autonomous staff, but she raises that fact to question Text 1’s conclusion, not to endorse expanding the policy.',
+        D:'It invents a claim she never makes. Nothing in Text 2 says in-office workers are happier than they appear, and her objection is not that the wrong people were surveyed but that remote work was granted to a particular kind of employee.'
       },
       tip:'When Text 2 “does not dispute the numbers” but talks about non-random selection or assignment, its objection is to the CAUSE (correlation ≠ causation), not to the data. Avoid the traps of total agreement or total disagreement.'
     },
@@ -236,17 +236,17 @@ window.SAT_SETS.push({
       passage:"<b>Text 1</b><br>Archaeologists discovered fine imported pottery in the ruins of an ancient inland town far from any coast. They argue this proves the town’s residents were wealthy, since only prosperous people could afford goods carried over such long distances.<br><br><b>Text 2</b><br>Dr. Petrova finds the pottery genuine and agrees imported goods often signal wealth. But she observes that the pieces were all concentrated in a single building beside the town gate—plausibly a waystation where passing traders stored goods, not homes where residents used them. The pottery, she suggests, may reveal the town’s location on a trade route more than the purchasing power of its people.",
       stem:'Which choice best describes the relationship between the two texts?',
       choices:{
-        A:'Text 2 rejects Text 1’s evidence as forged and therefore dismisses its conclusion about the town’s wealth.',
-        B:'Text 2 and Text 1 disagree about whether the pottery was actually imported from a distant region.',
-        C:'Text 2 endorses Text 1’s conclusion while adding that the town also lay on an important trade route.',
+        A:'Text 2 rejects Text 1’s evidence as forged and therefore dismisses the conclusion that the town’s residents were wealthy.',
+        B:'Text 1 and Text 2 disagree about whether the pottery was imported from a distant region or produced by local potters.',
+        C:'Text 2 endorses Text 1’s conclusion about the residents’ wealth and adds that the town must also have stood on an important trade route.',
         D:'Text 2 accepts Text 1’s evidence but offers an alternative explanation that undercuts the specific inference Text 1 draws from it.'
       },
       correct:'D',
       expCorrect:'Petrova accepts the evidence (“finds the pottery genuine”) and even grants that imported goods usually indicate wealth. But she offers a different explanation: the pottery was all in one building by the gate, perhaps a traders’ way station, not homes. That undercuts Text 1’s specific INFERENCE (wealthy residents) by offering an alternative (a location on a trade route). That is D.',
       expWrong:{
-        A:'False: she says the pottery is “genuine”, not forged. She does not reject the evidence; she rejects the interpretation.',
-        C:'An agreement trap: she does NOT endorse the wealthy-residents conclusion; she replaces it with the trade-route one. “Endorses… conclusion” is incorrect.',
-        B:'There is no disagreement about whether the pottery is imported; both accept that. The clash is about what she INFERS from it, not about its origin.'
+        A:'It contradicts Text 2 in its first clause: Petrova “finds the pottery genuine”. She never questions the objects themselves, only what they are taken to prove.',
+        C:'An agreement trap that sounds generous: Petrova does grant that imported goods often signal wealth, but she offers the trade route INSTEAD of wealthy residents, not alongside them. She replaces the conclusion rather than extending it.',
+        B:'There is no such disagreement: Petrova treats the pieces as imported goods, exactly as Text 1 does. Their dispute starts after that point, over what the pottery’s position inside the town implies.'
       },
       tip:'Accepting the evidence but relocating its meaning (a way station, not homes) is “same data, different inference”. Rule out options saying she denies the evidence or endorses the conclusion.'
     }

@@ -30,13 +30,13 @@
         skill:'Identifying tone shifts across passages',
         passage:PASSAGE,
         stem:'The tone of Passage A can be described as:',
-        choices:{A:'Dismissive and hostile toward AI', B:'Defensive yet respectful of the boundary between human and machine', C:'Uncertain and wavering in its position', D:'Condescending toward other art forms'},
+        choices:{A:'Openly hostile toward machine-made images and toward those who defend them', B:'Defensive yet respectful of the boundary between human and machine', C:'Uncertain and wavering, unsettled by the question it raises', D:'Condescending toward the digital artists whose work it judges'},
         correct:'B',
         expCorrect:'Passage A says "This is not dismissal; it is precision," explicitly rejecting harsh criticism while maintaining a clear position. The author respects the distinction but doesn\'t attack AI outright. B captures this nuance.',
         expWrong:{
-          A:'"Dismissive" misses the author\'s explicit claim "This is not dismissal."',
-          C:'No evidence of wavering; the curator is clear and consistent.',
-          D:'The passage doesn\'t compare art forms dismissively.'
+          A:'The curator refuses that label outright — "This is not dismissal; it is precision" — and never turns on the people who make or defend AI images.',
+          C:'The question ("can a machine truly create?") is rhetorical: the curator answers it in the next breath with "Art emerges from the human condition", and never wavers.',
+          D:'The passage sets a rendered image beside a carved sculpture, but it judges the works rather than the people who make them, and looks down on no one.'
         },
         tip:'Tone questions require attention to modifiers and explicit disclaimers. "Not dismissal; it is precision" signals a specific, non-hostile tone.'
       },
@@ -45,13 +45,13 @@
         skill:'Recognizing implied agreement across passages',
         passage:PASSAGE,
         stem:'Both authors would likely agree that:',
-        choices:{A:'Art must emerge from human experience to be valuable', B:'The question of what gives art its value deserves serious examination', C:'Computers are incapable of creating meaningful art', D:'Emotion and suffering are required for artistic creation'},
+        choices:{A:'Art must emerge from human experience—memory, failure, doubt—to be valuable', B:'The question of what gives art its value deserves serious examination', C:'Computers, which follow algorithms without struggling or questioning, cannot make real art', D:'Emotion and suffering are required before a work can count as art'},
         correct:'B',
         expCorrect:'Passage A defends its position carefully ("This is not dismissal; it is precision") and passage B proposes concrete criteria (coherence, innovation, originality). Both treat the question of what gives art its value as something serious and worth examining; they only disagree on the answer. That is the only common ground among the four options.',
         expWrong:{
-          A:'Passage B explicitly rejects this; emotion is not required.',
-          C:'Passage B does not concede that computers are incapable.',
-          D:'Passage B denies this; it argues emotion is not necessary.'
+          A:'This is Passage A alone: Passage B opens by calling the idea that emotion is a prerequisite for art a misunderstanding of both emotion and art.',
+          C:'It is Passage A’s conclusion and the exact claim Passage B sets out to deny: for B a rendered painting has merit regardless of its origin.',
+          D:'Passage B says the opposite in so many words — the question is not whether the creator suffers — so suffering cannot be common ground.'
         },
         tip:'For "both would agree" questions, find the safest common ground, not the most obvious shared word.'
       },
@@ -60,13 +60,13 @@
         skill:'Using evidence from one passage to evaluate claims in another',
         passage:PASSAGE,
         stem:'Passage B\'s reference to "human artists often work mechanically, copying styles without understanding" primarily serves to:',
-        choices:{A:'Admit that humans are also capable of unthinking labor', B:'Undermine Passage A\'s assumption that human creation guarantees authenticity', C:'Prove that machines are superior to humans', D:'Show that Passage A\'s criteria are too broad'},
+        choices:{A:'Admit that human artists, too, can copy styles without understanding them', B:'Undermine Passage A\'s assumption that human creation guarantees authenticity', C:'Prove that machines now produce more original work than human imitators', D:'Show that Passage A\'s criteria for authenticity are too broad to sort good art from bad'},
         correct:'B',
         expCorrect:'This example directly contradicts Passage A\'s implicit claim: humans create authentically because they feel, so human work is inherently authentic. By showing humans can work mechanically, Passage B undermines that assumption.',
         expWrong:{
-          A:'True but doesn\'t capture the *rhetorical purpose* (it\'s not just admitting, it\'s using this to attack A\'s logic).',
-          C:'Too extreme; Passage B doesn\'t claim superiority, just parity in potential.',
-          D:'Close, but B isn\'t arguing the criteria are "too broad"—B is arguing they\'re misdirected.'
+          A:'True to the words but not to the purpose: the clause is not a concession about humans, it is a weapon against A\'s equation of human origin with authenticity.',
+          C:'Too extreme: B never ranks machines above people; it refuses to rank by maker at all and judges the artifact instead.',
+          D:'Close, but the complaint is not width: B says A\'s criteria point at the wrong thing—the maker rather than the work—not that they admit too much.'
         },
         tip:'Purpose questions: identify what the statement *does to* the opposing argument, not just what it says.'
       },
@@ -90,13 +90,13 @@
         skill:'Inferring unstated disagreement',
         passage:PASSAGE,
         stem:'The passages suggest that Passage A\'s author would most likely view Passage B\'s emphasis on the artifact\'s "coherence, innovation, originality" as:',
-        choices:{A:'A reasonable alternative to measuring artistic merit', B:'An evasion of the deeper question: where meaning originates', C:'A technically sound but emotionally hollow framework', D:'A valid supplement to the human experience requirement'},
+        choices:{A:'A reasonable alternative to the human-experience standard', B:'An evasion of the deeper question: where meaning originates', C:'A technically sound but emotionally hollow test of merit', D:'A valid supplement to the requirement of human experience'},
         correct:'B',
         expCorrect:'Passage A grounds art in the human condition and emotional origin. Passage B shifts focus to properties of the work itself. The curator would likely see this as dodging the fundamental question of *meaning\'s source*. B captures this philosophical gulf.',
         expWrong:{
-          A:'Passage A doesn\'t treat B\'s approach as "reasonable alternative"—it implies it\'s insufficient.',
-          C:'Close in tone, but "emotionally hollow" is too blunt for the curator\'s measured stance.',
-          D:'Passage A doesn\'t view B\'s framework as a "supplement"; the passages are in fundamental tension.'
+          A:'The curator grounds art in the human condition, so a standard that leaves it out is not one he would call reasonable; he implies it is insufficient.',
+          C:'"Emotionally hollow" is too blunt for a curator who insists "This is not dismissal", and his objection is to what the test measures, not to how it feels.',
+          D:'For Passage A meaning originates in human experience, so B\'s object-based test replaces that requirement rather than adding to it.'
         },
         tip:'Inference questions across paired passages: identify the *deep* disagreement, not just surface differences.'
       },
@@ -135,13 +135,13 @@
         skill:'Identifying word choice and its effect',
         passage:PASSAGE,
         stem:'In Passage A, the phrase "a hand that trembles with doubt" primarily conveys:',
-        choices:{A:'Physical weakness in the artist', B:'The emotional vulnerability embedded in the creative act', C:'A criticism of imprecise craftsmanship', D:'A preference for sculpture over other art forms'},
+        choices:{A:'Physical frailty in a sculptor whose hands can no longer hold steady', B:'The emotional vulnerability embedded in the creative act', C:'A criticism of the imprecise craftsmanship of hand-carving', D:'A preference for sculpture over rendered digital images'},
         correct:'B',
         expCorrect:'"Trembles with doubt" is emotional, not literal. It illustrates the curator\'s point: authentic art embodies the creator\'s inner struggle. B captures this.',
         expWrong:{
-          A:'Trembling is metaphorical, not literal weakness.',
-          C:'"Doubt" is not a criticism of craft quality; it\'s a sign of authenticity.',
-          D:'No comparison of art forms here.'
+          A:'The trembling is figurative: nothing describes a failing body, only "the weight of memory, failure, and emotion" carried into the work.',
+          C:'The curator offers the trembling hand as proof of authentic meaning, not as a fault in craft; doubt is what he admires, not what he faults.',
+          D:'The sculpture illustrates human making rather than ranking media; a hand-drawn image would serve the curator\'s point just as well.'
         },
         tip:'Word choice questions: distinguish between literal and figurative meaning. "Trembles" is emotional, not physical.'
       },

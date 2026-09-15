@@ -113,7 +113,7 @@ window.SAT_SETS.push({
       passage:"",
       stem:"While researching a topic, a student has taken the following notes:<ul><li>Braille is a writing system read by touch.</li><li>It uses raised dots arranged in cells of up to six dots.</li><li>Louis Braille invented it in 1824, when he was fifteen years old.</li><li>Braille had lost his sight in a childhood accident.</li><li>The system is now used for dozens of languages worldwide.</li></ul>The student wants to introduce Braille to an audience unfamiliar with it. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
       choices:{
-        A:'Louis Braille lost his sight in a childhood accident and invented the system in 1824, when he was fifteen years old.',
+        A:'Louis Braille, who had lost his sight in a childhood accident, invented the system in 1824 while he was still a teenager.',
         B:'Braille is a writing system read by touch that uses raised dots arranged in cells of up to six dots.',
         C:'Louis Braille invented the system in 1824, when he was only fifteen.',
         D:'Braille is now used for dozens of languages worldwide.'
@@ -122,7 +122,7 @@ window.SAT_SETS.push({
       expCorrect:'The goal is to INTRODUCE Braille to someone who does not know it. B gives the essentials: what it is (a writing system read by touch) and how it works (raised dots in cells of up to six). It is the best introduction, with accurate notes.',
       expWrong:{
         A:'Two accurate notes, and the fullest sentence on offer — but both are biography. An audience meeting Braille for the first time still would not know that it is read by touch or that it uses raised dots.',
-        C:'A date and an age: memorable, and a subset of what A already says. Neither word describes the system itself.',
+        C:'A date and an exact age. Memorable, but neither number says what the system is or how a reader uses it.',
         D:'Reach, not definition. It tells the audience how far the system has spread without ever saying what it is.'
       },
       tip:'"Introduce to an audience unfamiliar with it" = pick the most basic (what it is and how it works), not a historical detail.'
