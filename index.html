@@ -540,6 +540,21 @@
   .fw-daycount{font-size:.75rem;font-weight:800;color:var(--gray-mid);background:#eef0f5;border-radius:999px;padding:2px 9px}
   .fw-day.today .fw-daycount{background:#dbe2fb;color:var(--blue-dark)}
   @media(max-width:560px){ .cc-title{font-size:1.42rem} #view-class{padding:16px 12px 96px} .cc-sec{padding:15px 15px} }
+
+  /* ---- estado de sincronizacion y respaldo ---- */
+  .sync-state{display:inline-block}
+  .sync-state.pend{color:var(--amber);font-weight:600}
+  .hist-tools{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:10px;padding-top:10px;border-top:1px solid var(--gray-line)}
+  .hist-tools .mini{background:#fff;border:1px solid var(--gray-line);border-radius:999px;padding:7px 14px;font-size:.82rem;font-weight:600;color:var(--ink);min-height:44px}
+  .hist-tools .mini:hover{background:var(--blue-soft);border-color:var(--blue)}
+  .hist-tools .sep{flex:1}
+  .hist-note{font-size:.78rem;color:var(--gray-mid);margin-top:8px;line-height:1.5}
+  /* ---- avisos (reemplazan alert() como feedback) ---- */
+  #toast-wrap{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:9999;display:flex;flex-direction:column;gap:8px;align-items:center;pointer-events:none;width:min(92vw,520px)}
+  .toast{background:#132a4d;color:#fff;border-radius:10px;padding:12px 18px;font-size:.9rem;line-height:1.45;box-shadow:0 8px 28px rgba(11,31,58,.28);pointer-events:auto;animation:toast-in .18s ease-out}
+  .toast.err{background:#8d1f2f}
+  @keyframes toast-in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  @media (prefers-reduced-motion:reduce){ .toast{animation:none} }
 </style>
 </head>
 <body>
@@ -593,7 +608,14 @@
         <div class="panel">
           <p class="hist-hint">Everything you've done — sets, drills, and tests. Tap <strong>Review →</strong> on any row to reopen it and see your answers (right / wrong) with explanations.</p>
           <div id="hist-list"><div class="empty-note">No sessions yet.</div></div>
-          <button class="danger-link" id="btn-clear-history">Clear history</button>
+          <div class="hist-tools">
+            <button class="mini" id="btn-download-history" type="button">⬇️ Download my history (.json)</button>
+            <button class="mini" id="btn-import-history" type="button">⬆️ Import a backup</button>
+            <input type="file" id="import-file" accept="application/json,.json" class="hidden" aria-label="Import a history backup file">
+            <span class="sep"></span>
+            <button class="danger-link" id="btn-clear-history" type="button">Clear history</button>
+          </div>
+          <p class="hist-note">Your history lives in your account and follows you to any device. The download is your own copy — importing it never overwrites anything, it only adds back what is missing.</p>
         </div>
       </div>
     </details>
@@ -911,10 +933,26 @@ var store = (function(){
       } catch(e){ return fallback; }
     },
     set: function(k, v){
+      var raw;
+      try { raw = JSON.stringify(v); } catch(e){ return false; }
       try {
-        var raw = JSON.stringify(v);
         if(ok) window.localStorage.setItem(k, raw); else mem[k] = raw;
-      } catch(e){}
+        return true;
+      } catch(e){
+        // Cuota llena o modo privado. Guardar en memoria es mejor que perderlo,
+        // pero el estudiante TIENE que enterarse: si no, cree que quedo guardado.
+        mem[k] = raw;
+        try {
+          if(!window.__quotaAvisada){
+            window.__quotaAvisada = true;
+            if(typeof toast === 'function'){
+              toast('\u26a0\ufe0f Este navegador ya no tiene espacio para guardar. ' +
+                    'Descarga tu historial desde Session History y libera espacio.', true);
+            }
+          }
+        } catch(e2){}
+        return false;
+      }
     },
     remove: function(k){
       try { if(ok) window.localStorage.removeItem(k); else delete mem[k]; } catch(e){}
@@ -1068,15 +1106,116 @@ function estimateScore(results){
   return Math.round(est / 10) * 10;
 }
 
+/* Aviso no bloqueante. Reemplaza alert() como feedback de exito/error. */
+function toast(msg, isErr){
+  try {
+    var wrap = document.getElementById('toast-wrap');
+    if(!wrap){ console.log(msg); return; }
+    var d = document.createElement('div');
+    d.className = 'toast' + (isErr ? ' err' : '');
+    d.textContent = msg;
+    wrap.appendChild(d);
+    setTimeout(function(){ d.style.opacity = '0'; setTimeout(function(){ d.remove(); }, 250); }, isErr ? 7000 : 3800);
+  } catch(e){ console.log(msg); }
+}
+
 /* ================= HISTORY ================= */
-function getHistory(){ return store.get(histKey(), []); }
+function getHistory(){ var h = store.get(histKey(), []); return Array.isArray(h) ? h : []; }
+
+/* Guardar una sesion NUNCA puede perder datos. El orden importa:
+   1) se escribe local (sincrono, no falla por red)
+   2) se encola para la nube (la cola sobrevive recargas y cierres)
+   3) se intenta subir; si falla, la cola reintenta sola y se ve en pantalla. */
 function saveSession(entry){
   if(!entry.sid) entry.sid = genSid();
   if(!entry.savedAt) entry.savedAt = new Date().toISOString();
-  var h = getHistory();
-  h.push(entry);
+  var h = getHistory(), i = -1;
+  for(var j = 0; j < h.length; j++){ if(h[j].sid === entry.sid){ i = j; break; } }
+  if(i >= 0) h[i] = entry; else h.push(entry);
   store.set(histKey(), h);
-  cloudUpsert(entry);
+  syncQueueAdd(entry);
+  syncFlush();
+}
+
+/* ================= COLA DE SINCRONIZACION DURABLE ================= */
+var SYNC = { busy:false, lastError:'', lastOkAt:null };
+function syncKey(){ return 'satapp_syncq_v1__' + (currentUser ? currentUser.id : 'guest'); }
+function syncQueue(){ var q = store.get(syncKey(), []); return Array.isArray(q) ? q : []; }
+function syncQueueSet(q){ store.set(syncKey(), q); }
+function syncPendingCount(){ return syncQueue().length; }
+function syncQueueAdd(entry){
+  if(!entry || !entry.sid) return;
+  var q = syncQueue(), found = false;
+  for(var i = 0; i < q.length; i++){ if(q[i].sid === entry.sid){ q[i] = entry; found = true; break; } }
+  if(!found) q.push(entry);
+  syncQueueSet(q);
+  updateSyncBadge();
+}
+function syncFlush(){
+  if(SYNC.busy) return Promise.resolve();
+  if(!authAvailable() || !currentUser) return Promise.resolve();  // invitado: local es lo correcto
+  var q = syncQueue();
+  if(!q.length){ SYNC.lastError = ''; updateSyncBadge(); return Promise.resolve(); }
+  SYNC.busy = true; updateSyncBadge();
+  var quedan = [], err = '';
+  return q.reduce(function(p, entry){
+    return p.then(function(){
+      return cloudUpsert(entry).then(function(r){
+        if(r && r.error){ err = r.error.message || 'error del servidor'; quedan.push(entry); }
+      }).catch(function(e){ err = (e && e.message) || 'sin conexion'; quedan.push(entry); });
+    });
+  }, Promise.resolve()).then(function(){
+    syncQueueSet(quedan);
+    SYNC.busy = false;
+    SYNC.lastError = quedan.length ? err : '';
+    if(!quedan.length) SYNC.lastOkAt = new Date().toISOString();
+    updateSyncBadge();
+    return quedan.length;
+  });
+}
+function syncLabel(){
+  if(!currentUser) return store.persistent ? 'saved in this browser' : '\u26a0 temporary history (this environment won\'t save)';
+  if(SYNC.busy) return '\u23f3 saving to the cloud\u2026';
+  var n = syncPendingCount();
+  if(n) return '\u26a0\ufe0f ' + n + ' not uploaded yet \u2014 retrying automatically';
+  return '\u2601\ufe0f synced to the cloud';
+}
+function updateSyncBadge(){
+  var el = document.getElementById('sync-state');
+  if(el){ el.textContent = syncLabel(); el.className = 'sync-state' + (syncPendingCount() ? ' pend' : ''); }
+}
+/* Descarga el historial completo como .json — red de seguridad del estudiante. */
+function downloadHistory(){
+  var h = getHistory();
+  var payload = { app:'sat-studio', exported_at:new Date().toISOString(),
+    account: currentUser ? (currentUser.email || currentUser.id) : 'guest', sessions:h };
+  try {
+    var blob = new Blob([JSON.stringify(payload, null, 1)], { type:'application/json' });
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'sat-studio-historial-' + new Date().toISOString().slice(0,10) + '.json';
+    document.body.appendChild(a); a.click();
+    setTimeout(function(){ URL.revokeObjectURL(a.href); a.remove(); }, 1000);
+    return true;
+  } catch(e){ return false; }
+}
+/* Importa un .json exportado antes. Nunca pisa: solo agrega lo que falta. */
+function importHistory(json){
+  var data; try { data = JSON.parse(json); } catch(e){ return { ok:false, msg:'El archivo no es un .json valido.' }; }
+  var arr = data && data.sessions ? data.sessions : (Array.isArray(data) ? data : null);
+  if(!arr) return { ok:false, msg:'El archivo no tiene sesiones adentro.' };
+  var h = getHistory(), seen = {}, add = 0;
+  h.forEach(function(e){ if(e.sid) seen[e.sid] = 1; });
+  arr.forEach(function(e){
+    if(!e || typeof e !== 'object') return;
+    if(!e.sid) e.sid = genSid();
+    if(seen[e.sid]) return;
+    seen[e.sid] = 1; h.push(e); add++; syncQueueAdd(e);
+  });
+  h.sort(function(a,b){ return ((a.savedAt||a.date||'') < (b.savedAt||b.date||'')) ? -1 : 1; });
+  store.set(histKey(), h);
+  syncFlush();
+  return { ok:true, msg:'Se agregaron ' + add + ' sesion(es). Ninguna se sobrescribio.', added:add };
 }
 function latestResults(){ // qid -> {ok, ...} from most recent attempt
   var map = {};
@@ -1105,7 +1244,7 @@ function renderHome(){
   var last = h.length ? h[h.length-1] : null;
 
   $('#dash-cards').innerHTML =
-    '<div class="dash-card"><div class="k">Sessions</div><div class="v">' + h.length + '</div><div class="s">' + (currentUser ? '☁️ synced to the cloud' : (store.persistent ? 'saved in this browser' : '⚠ temporary history (this environment won\'t save)')) + '</div></div>' +
+    '<div class="dash-card"><div class="k">Sessions</div><div class="v">' + h.length + '</div><div class="s"><span id="sync-state" class="sync-state">' + syncLabel() + '</span></div></div>' +
     '<div class="dash-card"><div class="k">Overall accuracy</div><div class="v">' + (totalQ ? Math.round(100*okQ/totalQ) + '%' : '—') + '</div><div class="s">' + okQ + '/' + totalQ + ' questions</div></div>' +
     '<div class="dash-card"><div class="k">To review</div><div class="v">' + pool.length + '</div><div class="s">pending missed questions</div></div>' +
     '<div class="dash-card"><div class="k">Last session</div><div class="v">' + (last ? last.score + '/' + last.total : '—') + '</div><div class="s">' + (last ? (last.setTitle + ' · ' + last.mode) : 'nothing yet') + '</div></div>';
@@ -3836,24 +3975,40 @@ function afterLogin(){
   }).then(function(){ enterApp(); });
 }
 
+/* Trae la nube y la FUSIONA con lo local. Nunca descarta una sesion local:
+   sin sid se le asigna uno, y si la copia local es mas nueva, gana la local. */
 function cloudPull(){
   if(!authAvailable() || !currentUser) return Promise.resolve();
   return SB.rpc('sat_list_sessions').then(function(r){
     if(r.error) throw r.error;
-    var cloud = (r.data || []).map(function(row){ var e = Object.assign({}, row.data || {}); e.sid = row.sid; return e; });
-    var seen = {}; cloud.forEach(function(e){ seen[e.sid] = 1; });
-    var local = getHistory();
-    var localOnly = local.filter(function(e){ return e.sid && !seen[e.sid]; });
-    // Sube al backend las sesiones locales de este usuario que aún no están en la nube (creadas offline)
-    localOnly.forEach(function(e){ cloudUpsert(e, true); });
-    var merged = cloud.concat(localOnly);
+    var byId = {};
+    (r.data || []).forEach(function(row){
+      var e = Object.assign({}, row.data || {});
+      e.sid = row.sid;
+      if(!e.savedAt) e.savedAt = row.played_at;
+      byId[e.sid] = e;
+    });
+    var subir = [];
+    getHistory().forEach(function(e){
+      if(!e || typeof e !== 'object') return;
+      if(!e.sid){ e.sid = genSid(); }              // historial viejo sin sid: se adopta, no se tira
+      var prev = byId[e.sid];
+      if(!prev){ byId[e.sid] = e; subir.push(e); return; }
+      var a = e.savedAt || e.date || '', b = prev.savedAt || prev.date || '';
+      if(a > b){ byId[e.sid] = e; subir.push(e); }  // gana la copia mas reciente
+    });
+    var merged = Object.keys(byId).map(function(k){ return byId[k]; });
     merged.sort(function(a,b){ return ((a.savedAt||a.date||'') < (b.savedAt||b.date||'')) ? -1 : 1; });
     store.set(histKey(), merged);
+    subir.forEach(function(e){ syncQueueAdd(e); });
+    return syncFlush();
   });
 }
 
-function cloudUpsert(entry, silent){
-  if(!authAvailable() || !currentUser) return Promise.resolve();
+/* Devuelve la respuesta cruda del RPC (o rechaza). Quien llama decide que hacer
+   con el error: aqui NO se traga nada, porque tragarselo es perder la sesion. */
+function cloudUpsert(entry){
+  if(!authAvailable() || !currentUser) return Promise.reject(new Error('sin sesion iniciada'));
   if(!entry.sid) entry.sid = genSid();
   return SB.rpc('sat_upsert_session', {
     p_sid: entry.sid,
@@ -3861,15 +4016,15 @@ function cloudUpsert(entry, silent){
     p_mode: entry.mode, p_set_id: entry.setId, p_set_title: entry.setTitle,
     p_score: entry.score, p_total: entry.total, p_time_used: entry.timeUsed,
     p_data: entry
-  }).then(function(r){
-    if(r.error && !silent) console.warn('cloudUpsert:', r.error.message);
-    return r;
-  }).catch(function(e){ if(!silent) console.warn('cloudUpsert:', e); });
+  });
 }
 
 function cloudDeleteAll(){
-  if(!authAvailable() || !currentUser) return Promise.resolve();
-  return SB.rpc('sat_delete_all_sessions').then(function(){}).catch(function(){});
+  if(!authAvailable() || !currentUser) return Promise.reject(new Error('sin sesion iniciada'));
+  return SB.rpc('sat_delete_all_sessions').then(function(r){
+    if(r && r.error) throw r.error;
+    return true;
+  });
 }
 
 function migrateLegacy(){
@@ -3877,15 +4032,41 @@ function migrateLegacy(){
   if(!currentUser) return Promise.resolve();
   var legacy = store.get(HKEY, []);
   if(!legacy || !legacy.length) return Promise.resolve();
-  var mine = store.get(histKey(), []);
+  var mine = getHistory();
   var seen = {}; mine.forEach(function(e){ if(e.sid) seen[e.sid] = 1; });
   legacy.forEach(function(e){
+    if(!e || typeof e !== 'object') return;
     if(!e.sid) e.sid = genSid();
-    if(!seen[e.sid]){ mine.push(e); seen[e.sid] = 1; cloudUpsert(e, true); }
+    if(!seen[e.sid]){ mine.push(e); seen[e.sid] = 1; syncQueueAdd(e); }
   });
   store.set(histKey(), mine);
-  store.remove(HKEY);
+  store.remove(HKEY);   // ya estan a salvo en el historial de la cuenta + en la cola
   return Promise.resolve();
+}
+
+/* Borrado seguro: respalda primero, exige escribir BORRAR, y VERIFICA que el
+   servidor realmente borro antes de decir que borro. */
+function safeClearHistory(){
+  var h = getHistory();
+  if(!h.length){ toast('No hay historial que borrar.'); return; }
+  downloadHistory();
+  var w = window.prompt('Esto borra tu historial (' + h.length + ' sesiones)' +
+    (currentUser ? ' en TODOS tus dispositivos' : ' de este navegador') + '.\n' +
+    'Ya se descargo un respaldo .json que puedes volver a importar.\n\n' +
+    'Escribe BORRAR para confirmar:');
+  if((w || '').trim().toUpperCase() !== 'BORRAR'){ toast('Cancelado. No se borro nada.'); return; }
+  if(!currentUser){
+    store.remove(histKey()); store.remove(syncKey()); renderHome();
+    toast('Historial borrado de este navegador.');
+    return;
+  }
+  cloudDeleteAll().then(function(){
+    store.remove(histKey()); store.remove(syncKey());
+    renderHome(); toast('Historial borrado en todos tus dispositivos.');
+  }).catch(function(e){
+    toast('\u26a0\ufe0f No se pudo borrar en el servidor (' + ((e && e.message) || 'sin conexion') +
+          '). NO se borro nada, para no dejarte a medias. Intenta de nuevo con internet.', true);
+  });
 }
 
 function doLogin(){
@@ -3919,9 +4100,18 @@ function doSignup(){
 
 function doLogout(){
   if(!authAvailable()){ return; }
-  SB.auth.signOut().then(function(){}).catch(function(){});
-  currentUser = null;
-  showAuthGate();
+  var salir = function(){
+    SB.auth.signOut().catch(function(e){ console.warn('signOut:', e); });
+    currentUser = null;
+    showAuthGate();
+  };
+  if(!syncPendingCount()) return salir();
+  // Hay sesiones sin subir: se intenta una ultima vez antes de soltar la cuenta.
+  syncFlush().then(function(quedan){
+    if(quedan && !window.confirm('Quedan ' + quedan + ' sesion(es) sin subir a la nube.\n' +
+      'Si cierras sesion ahora se quedan solo en este navegador.\n\n\u00bfCerrar sesion igual?')) return;
+    salir();
+  });
 }
 
 function traducirAuthError(m){
@@ -4025,13 +4215,22 @@ function init(){
 
   $('#btn-copy').addEventListener('click', copySummary);
   $('#btn-home').addEventListener('click', goHome);
-  $('#btn-clear-history').addEventListener('click', function(){
-    if(window.confirm('Clear all session history? This cannot be undone.')){
-      store.remove(histKey());
-      cloudDeleteAll();
-      renderHome();
-    }
+  $('#btn-clear-history').addEventListener('click', safeClearHistory);
+  var _dl = $('#btn-download-history'); if(_dl) _dl.addEventListener('click', function(){
+    if(downloadHistory()) toast('Respaldo descargado.'); else toast('No se pudo descargar.', true);
   });
+  var _imp = $('#btn-import-history'); if(_imp) _imp.addEventListener('click', function(){ var f = $('#import-file'); if(f) f.click(); });
+  var _impf = $('#import-file'); if(_impf) _impf.addEventListener('change', function(){
+    var file = this.files && this.files[0]; if(!file) return;
+    var rd = new FileReader();
+    rd.onload = function(){ var r = importHistory(String(rd.result)); renderHome(); toast(r.msg, !r.ok); };
+    rd.onerror = function(){ toast('No se pudo leer el archivo.', true); };
+    rd.readAsText(file);
+    this.value = '';
+  });
+  window.addEventListener('online', function(){ syncFlush(); });
+  document.addEventListener('visibilitychange', function(){ if(!document.hidden) syncFlush(); });
+  setInterval(function(){ if(syncPendingCount()) syncFlush(); }, 30000);
 
   document.addEventListener('keydown', function(e){
     if(!S || S.screen !== 'test') return;
@@ -4043,7 +4242,8 @@ function init(){
     if(e.key === 'ArrowLeft' && S.idx > 0) goToQuestion(S.idx - 1);
   });
   window.addEventListener('beforeunload', function(e){
-    if(S && (S.screen === 'test' || S.screen === 'review')){ e.preventDefault(); e.returnValue = ''; }
+    var enExamen = S && (S.screen === 'test' || S.screen === 'review');
+    if(enExamen || syncPendingCount()){ e.preventDefault(); e.returnValue = ''; }
   });
   window.addEventListener('resize', function(){
     if(!$('#line-reader').classList.contains('hidden')) layoutLineReader();
@@ -4061,8 +4261,13 @@ window.SATAPP = {
   gradeSPR: gradeSPR, sanitizeSPR: sanitizeSPR, parseRational: parseRational,
   estimateScore: estimateScore, startSession: startSession, goHome: goHome,
   store: store, missedPool: missedPool, wrapRange: wrapRange, saveAnnotations: saveAnnotations,
+  saveSession: saveSession, getHistory: getHistory, syncFlush: syncFlush, syncQueue: syncQueue,
+  syncPendingCount: syncPendingCount, cloudPull: cloudPull, importHistory: importHistory,
+  migrateLegacy: migrateLegacy, histKey: function(){ return histKey(); }, syncLabel: syncLabel,
+  safeClearHistory: safeClearHistory, downloadHistory: downloadHistory, toast: toast,
   toggleLineReader: toggleLineReader, toggleRef: toggleRef, SETS: function(){ return SETS; }, QINDEX: QINDEX
 };
 </script>
+<div id="toast-wrap" role="status" aria-live="polite"></div>
 </body>
 </html>
