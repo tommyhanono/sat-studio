@@ -14,7 +14,7 @@
         stem:'If 2^(3x) = 2^12, what is the value of x?',
         choices:{A:'3', B:'4', C:'9', D:'36'},
         correct:'B',
-        expCorrect:'Con la misma base, los exponentes deben ser iguales: 3x = 12 → x = 4. (Comprobación: 2^(3·4) = 2^12 ✓.)',
+        expCorrect:'With the same base, the exponents have to be equal: 3x = 12 → x = 4. (Check: 2^(3·4) = 2^12 ✓.)',
         expWrong:{
           A:'3 es el coeficiente del exponente, no el valor de x. Todavía te falta dividir 12 entre 3.',
           C:'9 sale de restar 12 − 3 en vez de dividir. La ecuación es 3x = 12, así que divides.',
@@ -24,11 +24,11 @@
       },
       {
         id:'AV2-02', type:'mc', domain:'Advanced Math', difficulty:'Fácil',
-        skill:'Cuadráticas: factorización (raíces)',
+        skill:'Quadratics: factoring (roots)',
         stem:'What is the positive solution to the equation x² + 2x − 15 = 0?',
         choices:{A:'3', B:'5', C:'6', D:'15'},
         correct:'A',
-        expCorrect:'Busca dos números que multipliquen −15 y sumen +2: son +5 y −3. Factorizas (x + 5)(x − 3) = 0, así que x = −5 o x = 3. La solución positiva es 3. (Comprobación: 9 + 6 − 15 = 0 ✓.)',
+        expCorrect:'Look for two numbers that multiply to −15 and add to +2: they are +5 and −3. You factor (x + 5)(x − 3) = 0, so x = −5 or x = 3. The positive solution is 3. (Check: 9 + 6 − 15 = 0 ✓.)',
         expWrong:{
           B:'5 es el valor absoluto de la raíz NEGATIVA (−5), no la positiva. Ojo con el signo.',
           C:'6 no es raíz: 36 + 12 − 15 = 33 ≠ 0. No cumple la ecuación.',
@@ -38,7 +38,7 @@
       },
       {
         id:'AV2-03', type:'mc', domain:'Advanced Math', difficulty:'Media',
-        skill:'Notación de funciones (evaluar)',
+        skill:'Function notation (evaluating)',
         stem:'The function f is defined by f(x) = 2x² − 3x + 1. What is the value of f(−2)?',
         choices:{A:'−1', B:'3', C:'11', D:'15'},
         correct:'D',
@@ -56,7 +56,7 @@
         stem:'A car is worth $400 (in hundreds of dollars) and its value decreases by 15% each year. Which function V models the value after t years?',
         choices:{A:'V(t) = 400 − 0.15t', B:'V(t) = 400(0.15)^t', C:'V(t) = 400(0.85)^t', D:'V(t) = 400(1.15)^t'},
         correct:'C',
-        expCorrect:'Perder 15% cada año multiplica por (1 − 0.15) = 0.85 en cada paso. El modelo es V(t) = 400(0.85)^t. (Comprobación: en t = 1, V = 400·0.85 = 340, que es 400 menos 15%.)',
+        expCorrect:'Losing 15% each year multiplies by (1 − 0.15) = 0.85 at every step. The model is V(t) = 400(0.85)^t. (Check: at t = 1, V = 400·0.85 = 340, which is 400 minus 15%.)',
         expWrong:{
           A:'Este modelo es LINEAL (resta 0.15 por año). Un porcentaje que se repite cada año es multiplicativo, no aditivo.',
           B:'Multiplicar por 0.15 haría que el valor caiga al 15% cada año (una pérdida del 85%), no del 15%.',
@@ -66,11 +66,11 @@
       },
       {
         id:'AV2-05', type:'mc', domain:'Advanced Math', difficulty:'Media',
-        skill:'Cuadráticas: vértice (valor mínimo)',
+        skill:'Quadratics: vertex (minimum value)',
         stem:'The function f is defined by f(x) = x² − 8x + 11. What is the minimum value of f(x)?',
         choices:{A:'−5', B:'−4', C:'4', D:'11'},
         correct:'A',
-        expCorrect:'El vértice está en x = −b/(2a) = −(−8)/(2·1) = 4. El valor mínimo es f(4) = 16 − 32 + 11 = −5. Como a > 0, la parábola abre hacia arriba y ese es el mínimo.',
+        expCorrect:'The vertex sits at x = −b/(2a) = −(−8)/(2·1) = 4. The minimum value is f(4) = 16 − 32 + 11 = −5. Since a > 0, the parabola opens upward and that is the minimum.',
         expWrong:{
           B:'−4 confunde −b/2 con el valor mínimo. El mínimo es f(4) = −5, no −4.',
           C:'4 es la coordenada x del vértice, no el valor mínimo de la función (que es la coordenada y).',
@@ -80,11 +80,11 @@
       },
       {
         id:'AV2-06', type:'mc', domain:'Advanced Math', difficulty:'Media',
-        skill:'Funciones polinómicas (ceros distintos)',
+        skill:'Polynomial functions (distinct zeros)',
         stem:'The polynomial p is defined by p(x) = (x − 1)(x + 3)²(x − 6). For how many distinct values of x does p(x) = 0?',
         choices:{A:'2', B:'3', C:'4', D:'6'},
         correct:'B',
-        expCorrect:'Un producto es cero cuando algún factor es cero: x = 1, x = −3 y x = 6. Aunque (x + 3) aparece al cuadrado, x = −3 es UN solo valor distinto. Son 3 valores distintos.',
+        expCorrect:'A product is zero when some factor is zero: x = 1, x = −3 and x = 6. Even though (x + 3) appears squared, x = −3 is ONE distinct value. That makes 3 distinct values.',
         expWrong:{
           A:'2 se te olvida un factor. Los ceros distintos son 1, −3 y 6: son tres.',
           C:'4 cuenta el factor (x + 3)² dos veces, pero da un único valor x = −3. Los valores DISTINTOS son 3.',
@@ -94,7 +94,7 @@
       },
       {
         id:'AV2-07', type:'spr', domain:'Advanced Math', difficulty:'Media',
-        skill:'Cuadráticas: producto de raíces / factorización',
+        skill:'Quadratics: product of roots / factoring',
         stem:'The equation x² − 14x + 40 = 0 has two solutions, r and s. What is the value of the product r · s?',
         answer:'40',
         expCorrect:'Factoriza: dos números que multipliquen 40 y sumen −14 son −4 y −10 → (x − 4)(x − 10) = 0 → raíces 4 y 10. Su producto es 4 · 10 = 40. (Atajo: para ax² + bx + c, el producto de raíces es c/a = 40/1 = 40.) Respuesta: 40.',
@@ -103,7 +103,7 @@
       },
       {
         id:'AV2-08', type:'mc', domain:'Advanced Math', difficulty:'Difícil',
-        skill:'Cuadráticas: discriminante (una solución)',
+        skill:'Quadratics: discriminant (one solution)',
         stem:'In the equation x² + 10x + c = 0, c is a constant. If the equation has exactly one real solution, what is the value of c?',
         choices:{A:'5', B:'20', C:'25', D:'100'},
         correct:'C',
@@ -117,7 +117,7 @@
       },
       {
         id:'AV2-09', type:'mc', domain:'Advanced Math', difficulty:'Difícil',
-        skill:'Cuadráticas: suma de raíces',
+        skill:'Quadratics: sum of roots',
         stem:'The solutions to the equation 3x² − 18x + 15 = 0 are r and s. What is the value of r + s?',
         choices:{A:'−6', B:'5', C:'6', D:'15'},
         correct:'C',
@@ -131,7 +131,7 @@
       },
       {
         id:'AV2-10', type:'mc', domain:'Advanced Math', difficulty:'Difícil',
-        skill:'Cuadráticas: forma de vértice',
+        skill:'Quadratics: vertex form',
         stem:'The graph of y = (x + 2)² − 7 in the xy-plane is a parabola. What are the coordinates of its vertex?',
         choices:{A:'(2, −7)', B:'(−2, −7)', C:'(−2, 7)', D:'(2, 7)'},
         correct:'B',
@@ -145,7 +145,7 @@
       },
       {
         id:'AV2-11', type:'mc', domain:'Advanced Math', difficulty:'Difícil',
-        skill:'Sistemas no lineales (parábola y recta)',
+        skill:'Nonlinear systems (parabola and line)',
         stem:'The system of equations below has two solutions.<br><br>y = x² − 3<br>y = 2x + 5<br><br>What is the greatest value of x among the solutions to the system?',
         choices:{A:'−2', B:'2', C:'5', D:'4'},
         correct:'D',
@@ -159,7 +159,7 @@
       },
       {
         id:'AV2-12', type:'spr', domain:'Advanced Math', difficulty:'Difícil',
-        skill:'Cuadráticas: discriminante con parámetro',
+        skill:'Quadratics: discriminant with a parameter',
         stem:'In the equation 4x² + bx + 25 = 0, b is a positive constant. If the equation has exactly one real solution, what is the value of b?',
         answer:'20',
         expCorrect:'Exactamente una solución real ⇔ discriminante cero: b² − 4ac = 0 → b² − 4(4)(25) = 0 → b² = 400 → b = ±20. Como b es positivo, b = 20. (Comprobación: 4x² + 20x + 25 = (2x + 5)², raíz doble.) Respuesta: 20.',
