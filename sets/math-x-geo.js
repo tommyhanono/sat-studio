@@ -52,7 +52,7 @@
           D:'−2 uses the distance to the y-axis (|3| = 3, r² = 9): that would be tangent to the Y-axis. They asked for tangent to the x-axis, which depends on the y-coordinate of the center.'
         },
         tip:'With a leading coefficient ≠ 1, the FIRST step is always dividing the whole equation. Tangent to the x-axis → radius = |the y-coordinate of the center|. Tangent to the y-axis → radius = |h|. And remember: the right-hand side of standard form is r², not r.',
-        desmos:'Grafica 2x^2+2y^2-12x+4y=-18 en Desmos y vas a ver la circunferencia tocando el eje x en un solo punto, (3, 0). Cambia el −18 por −36 y verás que la tangencia se pierde.',
+        desmos:'Graph 2x^2+2y^2-12x+4y=-18 in Desmos and you will see the circle touching the x-axis at a single point, (3, 0). Change the −18 to −36 and the tangency disappears.',
         desmosLatex:['2x^2+2y^2-12x+4y=-18', '(x-3)^2+(y+1)^2=1']
       },
       {
@@ -68,7 +68,7 @@
           D:'18 doubles r² (2 × 9) instead of doubling the radius (2 × 3). Root first, double after.'
         },
         tip:'The full chain: divide by the coefficient → complete the square → r² → square root → r → did they ask for the radius or the diameter? Underline the word “diameter” in the stem: the test ALWAYS plants the radius as a distractor.',
-        desmos:'Grafica 2x^2+2y^2+16x-8y=-22 en Desmos: círculo con centro (−4, 2). De x=−7 a x=−1 pasando por el centro hay 6 unidades: ese es el diámetro.',
+        desmos:'Graph 2x^2+2y^2+16x-8y=-22 in Desmos: a circle centered at (−4, 2). From x=−7 to x=−1 through the center is 6 units: that is the diameter.',
         desmosLatex:['2x^2+2y^2+16x-8y=-22', '(x+4)^2+(y-2)^2=9']
       },
       {
@@ -84,7 +84,7 @@
           D:'Infinitely many solutions only happen when the two equations describe the SAME curve. A line and a circle never coincide.'
         },
         tip:'Circle + line system: substitute, build the quadratic and look at the DISCRIMINANT: positive → 2 solutions, zero → 1 (tangent), negative → 0. Geometric shortcut: compare the distance from the center to the line against the radius. Do not forget to divide 3x² + 3y² = 48 first: the radius is 4, not √48.',
-        desmos:'Grafica x^2+y^2=16 y y=x+6 en Desmos: la recta pasa completa por fuera del círculo sin tocarlo. Cero intersecciones a la vista.',
+        desmos:'Graph x^2+y^2=16 and y=x+6 in Desmos: the line passes entirely outside the circle without touching it. Zero intersections, plain to see.',
         desmosLatex:['x^2+y^2=16', 'y=x+6']
       },
       {
@@ -100,7 +100,7 @@
           C:'2 is the value of k/2, not of k. You solved correctly up to k/2 = 2 but forgot the last step: multiply by 2.'
         },
         tip:'Three traps stacked in one problem: (1) divide by the coefficient BEFORE completing the square, (2) set it equal to r² = 36 and not to r = 6, (3) solve for the full k, do not stop at k/2. Write out every step.',
-        desmos:'Grafica 2x^2+2y^2-20x+12y=4 en Desmos y encima (x-5)^2+(y+3)^2=36: coinciden exactamente. Círculo con centro (5, −3) y radio 6.',
+        desmos:'Graph 2x^2+2y^2-20x+12y=4 in Desmos and then (x-5)^2+(y+3)^2=36 on top: they match exactly. A circle centered at (5, −3) with radius 6.',
         desmosLatex:['2x^2+2y^2-20x+12y=4', '(x-5)^2+(y+3)^2=36']
       },
       {
@@ -117,7 +117,7 @@
           C:'36 is CD², the product 4 × 9. You forgot to take the square root: CD = √36 = 6.'
         },
         tip:'Memorize the altitude-to-hypotenuse relations: altitude² = (segment)(segment); leg² = (the adjacent segment)(the whole hypotenuse). The altitude uses BOTH pieces; each leg uses its own piece and the whole.',
-        desmos:'En Desmos como calculadora: sqrt(4*9) da 6. Compara con sqrt(4*13) ≈ 7.21 — eso es el cateto AC, no la altura. Son dos relaciones distintas.',
+        desmos:'In Desmos as a calculator: sqrt(4*9) gives 6. Compare with sqrt(4*13) ≈ 7.21 — that is leg AC, not the altitude. They are two different relations.',
         desmosLatex:['sqrt(4*9)', 'sqrt(4*13)']
       },
       {
@@ -133,7 +133,7 @@
           D:'36 is 6², the square of the altitude (and the product of the segments). It is not any length in the triangle.'
         },
         tip:'When they give you the segments as expressions: set up altitude² = (seg1)(seg2), solve the quadratic, DISCARD the negative root and reread what they asked for. It is almost never x: usually it is a sum or a whole side.',
-        desmos:'Grafica y=x^2+5x-36 en Desmos: cruza el eje x en x=4 y x=−9. Solo x=4 sirve (longitud positiva). Luego 4+(4+5) da 13.',
+        desmos:'Graph y=x^2+5x-36 in Desmos: it crosses the x-axis at x=4 and x=−9. Only x=4 works (a length has to be positive). Then 4+(4+5) gives 13.',
         desmosLatex:['y=x^2+5x-36', '4+(4+5)']
       },
       {
@@ -145,7 +145,7 @@
         expCorrect:'A tangent is PERPENDICULAR to the radius at the point of tangency, so triangle OTP is right-angled at T, with hypotenuse OP = 13 and leg OT = 5. By Pythagoras: PT = √(13² − 5²) = √(169 − 25) = √144 = 12. (It is the 5-12-13 Pythagorean triple ✓.) Answer: 12.',
         expWrong:{},
         tip:'Radius + tangent = a right angle AT the point of tangency, always. That turns almost every tangent problem into a hidden Pythagoras with OP as the hypotenuse. Bonus: the TWO tangents drawn from the same external point are equal in length.',
-        desmos:'En Desmos: sqrt(13^2-5^2) da 12. Si quieres verlo, grafica x^2+y^2=25 y marca el punto (13, 0): la tangente desde ahí forma un triángulo 5-12-13 con el radio.',
+        desmos:'In Desmos: sqrt(13^2-5^2) gives 12. To see it, graph x^2+y^2=25 and mark the point (13, 0): the tangent from there forms a 5-12-13 triangle with the radius.',
         desmosLatex:['sqrt(13^2-5^2)', 'x^2+y^2=25']
       },
       {
@@ -161,7 +161,7 @@
           D:'65 is the value of 5x, not of x. You skipped the last step: divide by 5.'
         },
         tip:'Golden rule of the Digital SAT: sin A = cos B (with A and B acute) ⟺ A + B = 90°. Never set the angles equal to each other. Set up the sum, solve, and VERIFY that both angles come out acute and complementary.',
-        desmos:'En Desmos (modo grados): sin(22) y cos(68) dan exactamente lo mismo, ≈0.3746. Prueba con x=59 (sin(160) vs cos(160)) y verás que no coinciden.',
+        desmos:'In Desmos (degree mode): sin(22) and cos(68) give exactly the same value, ≈0.3746. Try x=59 (sin(160) vs cos(160)) and you will see they do not match.',
         desmosLatex:['sin(22)', 'cos(68)']
       },
       {
@@ -177,7 +177,7 @@
           C:'15/17 is cos J (or sin L). Once again the hypotenuse shows up, and the tangent does not use it.'
         },
         tip:'Complementary angles in a right triangle: sin J = cos L, and tan J and tan L are RECIPROCALS (their product is 1). If they give you the tangent of one and want the tangent of the other, just flip the fraction. Draw the triangle if you are unsure.',
-        desmos:'En Desmos: (8/15)*(15/8) da 1, confirmando que son recíprocos. Y en modo grados, arctan(8/15)+arctan(15/8) da 90: los dos ángulos son complementarios.',
+        desmos:'In Desmos: (8/15)*(15/8) gives 1, confirming they are reciprocals. And in degree mode, arctan(8/15)+arctan(15/8) gives 90: the two angles are complementary.',
         desmosLatex:['(8/15)*(15/8)', '15/8']
       },
       {
@@ -188,7 +188,7 @@
         expCorrect:'The central angle is the same FRACTION of a full turn as the arc is of the circumference. A full turn = 2π radians, so the angle = (3/8)(2π) = 6π/8 = 3π/4 radians. Since the angle is kπ, k = 3/4 (or 0.75). (Check: (3π/4)/(2π) = 3/8 ✓.)',
         expWrong:{},
         tip:'Radians by proportion: fraction of the circle × 2π. Typical errors: multiplying by π instead of 2π (that would give 3/8) or by 360 (those are degrees). If the SPR wants the k in “kπ radians”, your answer does NOT carry the π: write only the number. 3/4 or .75 are both accepted.',
-        desmos:'En Desmos: (3/8)*2 da 3/4, que es el k de kπ. Si quieres el ángulo completo, (3/8)*2*pi da ≈2.356 = 3π/4 radianes.',
+        desmos:'In Desmos: (3/8)*2 gives 3/4, which is the k in kπ. If you want the full angle, (3/8)*2*pi gives ≈2.356 = 3π/4 radians.',
         desmosLatex:['(3/8)*2', '(3/8)*2*pi']
       },
       {
@@ -204,7 +204,7 @@
           D:'23,562 is 90,000π/12 WITHOUT converting cm³ to liters: you are dividing cubic centimeters by liters per minute. The units have to match before you divide.'
         },
         tip:'Filling problems: (1) volume in cm³, (2) CONVERT to liters (÷1,000) — this is the buried trap, (3) divide by the rate. Sanity check: a ~283 L tank at 12 L/min should take twenty-odd minutes, not thousands.',
-        desmos:'En Desmos: pi*30^2*100/1000 da ≈282.7 litros. Luego 282.7/12 da ≈23.6 → 24 minutos. Todo en una línea: pi*30^2*100/1000/12.',
+        desmos:'In Desmos: pi*30^2*100/1000 gives ≈282.7 liters. Then 282.7/12 gives ≈23.6 → 24 minutes. All on one line: pi*30^2*100/1000/12.',
         desmosLatex:['pi*30^2*100/1000/12', 'pi*30^2*100/1000']
       },
       {
@@ -215,7 +215,7 @@
         expCorrect:'Careful: the water reaches a depth of 27 cm, NOT the tank’s 30 cm. Volume of water = 50 × 40 × 27 = 54,000 cm³. Conversion: 54,000 ÷ 1,000 = 54 liters. Time = 54 ÷ 2.4 = 22.5 minutes. (Check: 2.4 × 22.5 = 54 L = 54,000 cm³ ✓. With the full height of 30 you would get 60 L ÷ 2.4 = 25: that is the trap answer.) Answer: 22.5 (or 45/2).',
         expWrong:{},
         tip:'Two buried traps: (1) use the DEPTH of the water (27), not the height of the tank (30) — the volume that matters is the water’s; (2) convert cm³ to liters before dividing by the rate. In the grid-in you can write 22.5 or 45/2.',
-        desmos:'En Desmos: 50*40*27/1000 da 54 litros de agua. Luego 54/2.4 da 22.5 minutos. Todo junto: 50*40*27/1000/2.4.',
+        desmos:'In Desmos: 50*40*27/1000 gives 54 liters of water. Then 54/2.4 gives 22.5 minutes. All together: 50*40*27/1000/2.4.',
         desmosLatex:['50*40*27/1000/2.4', '50*40*27/1000']
       }
     ]

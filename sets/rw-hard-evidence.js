@@ -79,7 +79,7 @@ window.SAT_SETS.push({
         D:'Several rival towns eventually built water-powered mills of their own in the following century.'
       },
       correct:'B',
-      expCorrect:'Her thesis is that the prosperity came from the unique MILL, not from the fair (which others had too). B supports it directly: the wealth rose only AFTER the mill, and rival towns with a fair but no mill did not grow the same way. That isolates the mill as the cause that sets it apart.',
+      expCorrect:'His thesis is that the prosperity came from the unique MILL, not from the fair (which others had too). B supports it directly: the wealth rose only AFTER the mill, and rival towns with a fair but no mill did not grow the same way. That isolates the mill as the cause that sets it apart.',
       expWrong:{
         A:'That the fair drew merchants does not separate the causes: since several towns had a fair, it does not explain why THIS one pulled ahead.',
         C:'That the population grew BEFORE the mill is earlier context; it does not show the mill caused the jump in prosperity.',

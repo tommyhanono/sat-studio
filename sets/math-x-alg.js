@@ -21,7 +21,7 @@
           D:'7 comes from using the ratio of the constants: (k/2)/5 = 7/10. For “no solution” the constants stay OUT of the proportion; only the x and y coefficients are matched.'
         },
         tip:'“No solution” = proportional coefficients, constants not: a₁/a₂ = b₁/b₂ ≠ c₁/c₂. Watch the signs: (−3)/(−9/4) is POSITIVE 4/3.',
-        desmos:'Grafica las dos rectas con un deslizador k: cuando k = 40/3 quedan paralelas (nunca se cruzan). Con cualquier otro valor de k, sí se cortan.',
+        desmos:'Graph the two lines with a slider for k: when k = 40/3 they come out parallel (they never cross). With any other value of k, they do intersect.',
         desmosLatex:['y=((k/2)x-7)/3','y=(5x-10)/(9/4)','k=40/3']
       },
       {
@@ -37,7 +37,7 @@
           D:'−45/2 comes from inverting the proportion: you used 9/6 = 3/2 instead of 6/9 = 2/3. The order has to be consistent in both fractions (first equation on top in each).'
         },
         tip:'ALWAYS build the proportion in the same order: (x coefficient of eq. 1)/(x coefficient of eq. 2) = (y coefficient of eq. 1)/(y coefficient of eq. 2). Mixing the order inverts the ratio and produces distractors like −45/2.',
-        desmos:'Con el deslizador k mira cómo gira la primera recta. En k = −10 se pone paralela a la segunda: cero intersecciones. Muévelo un poquito y la intersección reaparece lejísimos.',
+        desmos:'With the k slider, watch the first line rotate. At k = −10 it turns parallel to the second: zero intersections. Nudge it a little and the intersection reappears way off screen.',
         desmosLatex:['y=(7-6x)/(k/3)','y=(9x-12)/5','k=-10']
       },
       {
@@ -53,7 +53,7 @@
           C:'6/5 is c/k upside down: you did k/c or divided the wrong way. (15/2) ÷ 9 = 15/18 = 5/6, not 18/15.'
         },
         tip:'“Infinitely many solutions” = the WHOLE equation is proportional, constants included: a₁/a₂ = b₁/b₂ = c₁/c₂. Pull out the factor (here 3/4, from 6/8) and multiply the entire second equation by it. And underline what they want: c/k, not k and not c.',
-        desmos:'Grafica ambas rectas con deslizadores k y c. Cuando k = 9 y c = 7.5 las dos rectas se superponen en una sola (infinitos puntos en común).',
+        desmos:'Graph both lines with sliders for k and c. When k = 9 and c = 7.5 the two lines lie on top of each other as one (infinitely many points in common).',
         desmosLatex:['y=(c-(k/4)x)/6','y=(10-3x)/8','k=9','c=7.5']
       },
       {
@@ -63,12 +63,12 @@
         answer:'-5/8',
         expCorrect:'No solution ⇒ parallel lines ⇒ same slope. From the first: y = (2/3)kx − 10/3, slope (2/3)k. From the second: y = −(5/12)x + 9/2, slope −5/12. Set them equal: (2/3)k = −5/12 ⇒ k = (−5/12)(3/2) = −15/24 = −5/8. Check by proportion: k/(5/6) = (−3/2)/2 = −3/4 ⇒ k = (5/6)(−3/4) = −5/8 ✓. The constants 5 and 9 do not follow that ratio, so it is genuine parallelism (not infinitely many solutions). Answer: −5/8.',
         tip:'When the fractions pile up, convert each equation to y = mx + b and set the slopes equal: it is mechanical and avoids proportion errors. In the grid-in you can write -5/8 or -.625.',
-        desmos:'Escribe ambas rectas con deslizador k. Ajusta k hasta que queden paralelas: pasa exactamente en k = −5/8 = −0.625. Así confirmas tu álgebra en 10 segundos.',
+        desmos:'Enter both lines with a k slider. Adjust k until they are parallel: it happens exactly at k = −5/8 = −0.625. That confirms your algebra in 10 seconds.',
         desmosLatex:['y=(kx-5)/(3/2)','y=(9-(5/6)x)/2','k=-5/8']
       },
       {
         id:'XA-05', type:'mc', domain:'Algebra', difficulty:'Difícil', extreme:true,
-        skill:'Modelo lineal (trampa de unidades)',
+        skill:'Linear model (unit trap)',
         stem:'The number of liters L of water remaining in an industrial tank t minutes after a pump is turned on is modeled by L = 840 − 0.4t. At this rate, how many liters of water does the pump remove from the tank each hour?',
         choices:{A:'0.4', B:'24', C:'14', D:'840'},
         correct:'B',
@@ -79,7 +79,7 @@
           D:'840 is the initial amount of water (the intercept), not a rate. Rates always come from the slope.'
         },
         tip:'Underline the model’s units (t in minutes) and the question’s units (per hour). If they do not match, a conversion is mandatory: ×60. College Board hides the trap unit in the LAST word of the prompt.',
-        desmos:'Grafica L = 840 − 0.4t y evalúa en t = 0 y t = 60: pasa de 840 a 816. La caída en una hora es 840 − 816 = 24, que confirma 0.4 × 60.',
+        desmos:'Graph L = 840 − 0.4t and evaluate at t = 0 and t = 60: it goes from 840 to 816. The drop in one hour is 840 − 816 = 24, which confirms 0.4 × 60.',
         desmosLatex:['y=840-0.4x','840-(840-0.4\\cdot60)','0.4*60']
       },
       {
@@ -95,7 +95,7 @@
           D:'13,100 subtracts only one year of 350: 13,450 − 350. The shift is 3 years: you have to subtract 3 × 350 = 1,050.'
         },
         tip:'“x years after 2015” ⇒ 2015 is x = 0, ALWAYS. If the model comes in shifted form like 350(x − 3) + 13,450, the visible constant is NOT the initial value: evaluate at x = 0 with no shortcuts.',
-        desmos:'Grafica y = 350(x − 3) + 13450 y toca el punto con x = 0: verás (0, 12400). También verás que (3, 13450) es el punto "ancla" del modelo, que es 2018, no 2015.',
+        desmos:'Graph y = 350(x − 3) + 13450 and tap the point at x = 0: you will see (0, 12400). You will also see that (3, 13450) is the model’s "anchor" point, which is 2018, not 2015.',
         desmosLatex:['y=350(x-3)+13450','(0,12400)','(3,13450)']
       },
       {
@@ -111,7 +111,7 @@
           C:'684 comes from forgetting the flat fee: 85.50 ÷ 7.50 = 11.4 hours, × 60 = 684. You have to SUBTRACT the $18 flat fee before dividing by the hourly rate.'
         },
         tip:'In a hard Module 2, the number you just computed (9) is almost never the answer: it is the bait. Circle the unit the question wants (minutes) BEFORE solving, and leave the conversion as a mandatory last step.',
-        desmos:'Grafica y = 18 + 7.5x junto con y = 85.5: se cruzan en x = 9 (horas). Luego calcula 9 × 60 = 540 en la misma pantalla. Desmos te da la intersección exacta sin despejar a mano.',
+        desmos:'Graph y = 18 + 7.5x together with y = 85.5: they cross at x = 9 (hours). Then compute 9 × 60 = 540 on the same screen. Desmos gives you the exact intersection without solving by hand.',
         desmosLatex:['y=18+7.5x','y=85.5','9*60']
       },
       {
@@ -121,7 +121,7 @@
         answer:'180',
         expCorrect:'The rate is the slope between (2, 96) and (7, 81): (81 − 96)/(7 − 2) = −15/5 = −3 gallons per MINUTE. The question asks per hour: 3 × 60 = 180 gallons per hour. Answer: 180. (Answering 3, the per-minute rate, is the designed error of this question.)',
         tip:'Two points ⇒ slope first, interpretation after. And mark the units: the data come in minutes but they want per hour, so the ×60 is not optional.',
-        desmos:'Mete los puntos (2, 96) y (7, 81) y la recta y = −3x + 102: pasa por ambos. La caída por minuto es 3; en la misma pantalla escribe 3*60 = 180 para la tasa por hora.',
+        desmos:'Enter the points (2, 96) and (7, 81) and the line y = −3x + 102: it passes through both. The drop per minute is 3; on the same screen type 3*60 = 180 for the hourly rate.',
         desmosLatex:['(2,96)','(7,81)','y=-3x+102','3*60']
       },
       {
@@ -137,7 +137,7 @@
           D:'With c = 5 the right-hand side is 2 > 0 and the equation would have TWO solutions (x = 7/2 and x = 3/2), not exactly one.'
         },
         tip:'Think graphically: y = |2x − 5| is a V with its vertex at (5/2, 0). The horizontal line y = c − 3 touches it at a single point only when it passes through the vertex, that is, at height 0. “One solution” with absolute value almost always means “right-hand side = 0”.',
-        desmos:'Grafica y = |2x − 5| y la horizontal y = c − 3 con deslizador c. Con c > 3 hay dos cortes, con c < 3 ninguno, y justo en c = 3 la recta toca la V en un solo punto (el vértice).',
+        desmos:'Graph y = |2x − 5| and the horizontal line y = c − 3 with a c slider. With c > 3 there are two crossings, with c < 3 none, and exactly at c = 3 the line touches the V at a single point (the vertex).',
         desmosLatex:['y=\\left|2x-5\\right|','y=c-3','c=3']
       },
       {
@@ -147,7 +147,7 @@
         answer:'7',
         expCorrect:'|3x − 7| < 11 opens up as −11 < 3x − 7 < 11. Add 7 to all three sides: −4 < 3x < 18, and divide by 3: −4/3 < x < 6. The integers strictly between −1.33… and 6 are: −1, 0, 1, 2, 3, 4, 5. That is 7 integers. A double catch: −1 DOES count (−1 > −4/3) and 6 does NOT (the inequality is strict). Answer: 7.',
         tip:'With |expression| < a, open the sandwich −a < expression < a and operate on ALL THREE sides at once. When counting integers, check each boundary separately: the fractional boundary (−4/3) lets the next integer (−1) through, and the strict boundary (< 6) excludes 6. Counting on your fingers is fine.',
-        desmos:'Grafica y = |3x − 7| y y = 11: los cortes están en x = −4/3 y x = 6. Los valores enteros de x donde la V queda DEBAJO de la recta son exactamente 7 (de x = −1 a x = 5).',
+        desmos:'Graph y = |3x − 7| and y = 11: the crossings are at x = −4/3 and x = 6. The integer values of x where the V sits BELOW the line are exactly 7 (from x = −1 to x = 5).',
         desmosLatex:['y=\\left|3x-7\\right|','y=11','\\left|3x-7\\right|<11']
       },
       {
@@ -163,7 +163,7 @@
           D:'75 comes from ADDING the equations (41 + 34), which gives 11x + 8y, an expression that is no use. Before you operate, check which combination produces the target expression.'
         },
         tip:'When they want an EXPRESSION (3x − 2y) and not the variables, first try adding or subtracting the equations without solving anything: on the SAT the direct combination almost always produces exactly what they asked for. Individual solutions coming out ugly (103/23) is the sign the test expected the shortcut.',
-        desmos:'Comprobación: grafica 7x + 3y = 41 y 4x + 5y = 34, toca la intersección (≈4.478, ≈3.217) y evalúa 3x − 2y con esos valores: da 7 clavado. Pero el atajo de restar ecuaciones es más rápido que abrir la calculadora.',
+        desmos:'Check it: graph 7x + 3y = 41 and 4x + 5y = 34, tap the intersection (≈4.478, ≈3.217) and evaluate 3x − 2y at those values: it comes out to exactly 7. But subtracting the equations is faster than opening the calculator.',
         desmosLatex:['7x+3y=41','4x+5y=34','3\\cdot\\frac{103}{23}-2\\cdot\\frac{74}{23}']
       },
       {
@@ -179,7 +179,7 @@
           C:'9 is x + y, the figure from the prompt. Neither variable equals 9 on its own.'
         },
         tip:'Seeing x² − y² next to x + y (or x − y) is an alarm bell: factor it as (x + y)(x − y) BEFORE you think about substituting. Divide, get the second linear equation, and add or subtract. The intermediate values (6 and 9) are always among the options waiting to catch you.',
-        desmos:'Grafica la recta x + y = 9 y la curva x² − y² = 54: se cortan en (7.5, 1.5). Ahí ves de una que x = 15/2, y que el 6 y el 3/2 de las opciones son otras cosas (x − y y el valor de y).',
+        desmos:'Graph the line x + y = 9 and the curve x² − y² = 54: they meet at (7.5, 1.5). Right there you see that x = 15/2, and that the 6 and the 3/2 among the options are other things (x − y and the value of y).',
         desmosLatex:['x+y=9','x^2-y^2=54','(7.5,1.5)']
       }
     ]

@@ -1,4 +1,4 @@
-/* SAT Studio question set — Reading & Writing: Rhetorical Synthesis (RHD-01 a RHD-10) */
+/* SAT Studio question set — Reading & Writing: Rhetorical Synthesis (RHD-01 to RHD-10) */
 window.SAT_SETS.push({
   id: 'rw-set12',
   title: 'Rhetorical Synthesis — Hard (2)',

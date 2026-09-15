@@ -1,4 +1,4 @@
-/* SAT Studio question set — Reading & Writing: Words in Context — Hard (WIC-H-01 a WIC-H-10) */
+/* SAT Studio question set — Reading & Writing: Words in Context — Hard (WIC-H-01 to WIC-H-10) */
 window.SAT_SETS.push({
   id: 'rw-set4',
   title: 'Words in Context — Hard',
@@ -18,7 +18,7 @@ window.SAT_SETS.push({
       expWrong:{
         A:'“Lucrative” means “highly profitable”, but the text is not about how much money it made — it is about the VARIETY of its functions.',
         C:'“Ambiguous” (unclear, murky) does not fit: the examples are clear and concrete, not vague.',
-        D:'“Ceremonial” describes only one of the facets (the religious processions), but leaves out the economy, the charity and the justice; it is too narrow.'
+        D:'“Ceremonial” describes only one of the facets (the religious pageants), but leaves out the economic, charitable, and judicial roles; it is too narrow.'
       },
       tip:'When a text contrasts “purely X” with a list of VERY different things, look for the word meaning “varied / many-sided”, not the one describing only one side.'
     },
@@ -44,7 +44,7 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text with the most logical and precise word or phrase?',
       choices:{A:'resolved', B:'summarized', C:'inflamed', D:'postponed'},
       correct:'C',
-      expCorrect:'“Far from settling” warns you that the fossil did NOT calm anything down; and the ending says the disagreement grew sharper. “Inflamed” means to “fan or ignite” a conflict, precisely that rise in tension.',
+      expCorrect:'“Far from settling” warns you that the fossil did NOT calm anything down; and the ending says the disagreement grew sharper. “Inflamed” means to fan or ignite a conflict, which is exactly that rise in tension.',
       expWrong:{
         A:'“Resolved” is the opposite: “Far from settling” already denies that anything was resolved.',
         B:'“Summarized” does not fit: a fossil does not summarize a debate, and the effect described is intensifying it.',
@@ -61,7 +61,7 @@ window.SAT_SETS.push({
       correct:'B',
       expCorrect:'What is being praised is that it makes a tangled argument CLEAR, so that anyone gets it instantly. “Lucidity” is precisely the quality of being clear and easy to understand.',
       expWrong:{
-        A:'“Erudition” (great learning) is not the point; in fact the text says he is admired “less for his ideas” and more for HOW he expresses them.',
+        A:'“Erudition” (great learning) is not the point; in fact the text says she is admired “less for the originality of her ideas” and more for HOW she expresses them.',
         C:'“Brevity” is tempting because of “single sentence”, but the key is not that it is short — it is that it is UNDERSTOOD (“a general reader grasps at once”). Something brief can still be murky.',
         D:'“Candor” is a moral trait the text never mentions.'
       },
@@ -91,11 +91,11 @@ window.SAT_SETS.push({
       correct:'A',
       expCorrect:'The authors dress up their own judgment and hide their mistakes out of loyalties and grudges: they are not neutral. “Partisan” means “biased, taking a side”, exactly that lack of impartiality.',
       expWrong:{
-        B:'“Exhaustive” (complete in every detail) contradicts the text: they OMIT his mistakes, so they are not telling all of it.',
+        B:'“Exhaustive” (complete in every detail) contradicts the text: they OMIT their miscalculations, so they are not telling the whole story.',
         C:'“Tedious” judges the style, but the text is about BIAS, not about whether they are boring.',
         D:'“Speculative” (based on guesswork) does not fit: the problem is not that they guess, but that they hide facts to look good.'
       },
-      tip:'If the text says someone hides their failures and plays up their own out of loyalties, aim for “partisan / biased”, not a style flaw like “tedious”.'
+      tip:'If the text says writers hide their failures and burnish their own judgment out of loyalty, aim for “partisan / biased”, not a style flaw like “tedious”.'
     },
     {
       id:'WIC-H-07', type:'mc', domain:'Craft and Structure', difficulty:'Difícil',

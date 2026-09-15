@@ -9,7 +9,7 @@ window.SAT_SETS.push({
   questions: [
     {
       id:'CI2-01', type:'mc', domain:'Information and Ideas', difficulty:'Fácil',
-      skill:'Ideas centrales',
+      skill:'Central Ideas',
       passage:"Coral reefs occupy a tiny fraction of the ocean floor, yet they shelter roughly a quarter of all marine species. Fish, crabs, sea turtles, and countless smaller creatures depend on the reef for food and protection. Because so many organisms rely on this single habitat, the health of a reef affects a remarkably large share of ocean life.",
       stem:'Which choice best states the main idea of the text?',
       choices:{
@@ -29,7 +29,7 @@ window.SAT_SETS.push({
     },
     {
       id:'CI2-02', type:'mc', domain:'Information and Ideas', difficulty:'Fácil',
-      skill:'Ideas centrales',
+      skill:'Central Ideas',
       passage:"For years, the ruins of an ancient city were thought to be purely ceremonial, visited only during festivals. But recent excavations uncovered kitchens, storage pits, and everyday tools scattered throughout the site. These findings suggest that ordinary people actually lived there year-round, not just during special occasions.",
       stem:'Which choice best describes the main purpose of the text?',
       choices:{
@@ -49,7 +49,7 @@ window.SAT_SETS.push({
     },
     {
       id:'CI2-03', type:'mc', domain:'Information and Ideas', difficulty:'Fácil',
-      skill:'Inferencias',
+      skill:'Inferences',
       passage:"A librarian noticed that the novels most often checked out were also the ones with the most worn covers and creased spines. The pristine books, by contrast, tended to be titles that patrons rarely borrowed. She used this pattern to decide which older books to repair first.",
       stem:'Based on the text, which statement is the most reasonable inference?',
       choices:{
@@ -69,7 +69,7 @@ window.SAT_SETS.push({
     },
     {
       id:'CI2-04', type:'mc', domain:'Information and Ideas', difficulty:'Media',
-      skill:'Ideas centrales',
+      skill:'Central Ideas',
       passage:"The composer Clara Wieck Schumann was celebrated in her lifetime as one of Europe’s finest pianists, performing for enthusiastic audiences across the continent. Yet her own compositions were often overshadowed by those of the men around her. Only in recent decades have scholars begun to study her music seriously and recognize its originality.",
       stem:'Which choice best states the main idea of the text?',
       choices:{
@@ -89,7 +89,7 @@ window.SAT_SETS.push({
     },
     {
       id:'CI2-05', type:'mc', domain:'Information and Ideas', difficulty:'Media',
-      skill:'Inferencias',
+      skill:'Inferences',
       passage:"Some desert plants open the tiny pores on their leaves only at night, taking in the carbon dioxide they need while the air is cool. During the scorching daytime, they keep these pores tightly shut. Because so little water can escape while the pores are closed,",
       stem:'Which choice most logically completes the text?',
       choices:{
@@ -109,7 +109,7 @@ window.SAT_SETS.push({
     },
     {
       id:'CI2-06', type:'mc', domain:'Information and Ideas', difficulty:'Media',
-      skill:'Ideas centrales',
+      skill:'Central Ideas',
       passage:"When a volcano erupts underwater, the sudden burst of minerals can act like fertilizer for the sea. In the weeks after one such eruption, satellites recorded a vast bloom of microscopic algae spreading across the surface above the vent. The algae fed on the freshly released nutrients, turning a patch of open ocean unexpectedly green.",
       stem:'Which choice best states the main idea of the text?',
       choices:{
@@ -129,7 +129,7 @@ window.SAT_SETS.push({
     },
     {
       id:'CI2-07', type:'mc', domain:'Information and Ideas', difficulty:'Media',
-      skill:'Inferencias',
+      skill:'Inferences',
       passage:"A team of economists compared two neighboring towns. In one, a new commuter rail line had opened five years earlier; in the other, no rail service existed. They found that home values near the new stations had climbed far faster than homes in the town without rail. The pattern held even after accounting for differences in school quality and local incomes.",
       stem:'Based on the text, which statement is the most reasonable inference?',
       choices:{
@@ -149,7 +149,7 @@ window.SAT_SETS.push({
     },
     {
       id:'CI2-08', type:'mc', domain:'Information and Ideas', difficulty:'Media',
-      skill:'Ideas centrales',
+      skill:'Central Ideas',
       passage:"In the short story, the narrator describes a garden that once bloomed with color but now lies tangled and gray. As she walks its overgrown paths, she recalls the grandmother who tended it and the afternoons they spent there together. The neglected garden becomes less a place than a reminder of everything she has lost.",
       stem:'Which choice best states the main idea of the text?',
       choices:{
@@ -169,7 +169,7 @@ window.SAT_SETS.push({
     },
     {
       id:'CI2-09', type:'mc', domain:'Information and Ideas', difficulty:'Difícil',
-      skill:'Inferencias',
+      skill:'Inferences',
       passage:"Historians once assumed that a certain medieval trade route had faded into disuse by the 1300s, since written records from that century barely mention it. But archaeologists have since unearthed coins, pottery, and foreign goods along the route dated firmly to that same period. Taken together, this physical evidence suggests that",
       stem:'Which choice most logically completes the text?',
       choices:{
@@ -189,7 +189,7 @@ window.SAT_SETS.push({
     },
     {
       id:'CI2-10', type:'mc', domain:'Information and Ideas', difficulty:'Difícil',
-      skill:'Ideas centrales',
+      skill:'Central Ideas',
       passage:"Early theories held that infants learn language purely by imitating the words they hear. Yet young children routinely produce sentences they have never heard an adult say, and they apply grammatical rules to brand-new words. Many linguists now argue that children do not merely copy speech but actively construct the rules of their language for themselves.",
       stem:'Which choice best states the main idea of the text?',
       choices:{
@@ -209,7 +209,7 @@ window.SAT_SETS.push({
     },
     {
       id:'CI2-11', type:'mc', domain:'Information and Ideas', difficulty:'Difícil',
-      skill:'Inferencias',
+      skill:'Inferences',
       passage:"A group of volunteers was asked to recall a list of words either in a quiet room or with soft instrumental music playing. Those in silence remembered slightly more words on average. But when the volunteers were later tested on their overall enjoyment of the task, those who had heard music reported a far more pleasant experience. Given these results,",
       stem:'Which choice most logically completes the text?',
       choices:{
@@ -221,7 +221,7 @@ window.SAT_SETS.push({
       correct:'A',
       expCorrect:'The study shows two different results: silence helped recall slightly more, but music made the task more enjoyable. The logical conclusion is that each condition offers a different advantage. Option A captures both findings without overstating either.',
       expWrong:{
-        B:'Too extreme: “always” hurts goes beyond the text, which only saw a SLIGHT difference in favor of silence in one experiment.',
+        B:'Too extreme: “always harms” goes beyond the text, which only saw a SLIGHT difference in favor of silence in one experiment.',
         C:'Not supported: the text does not say nobody enjoys tasks in silence; only that the music group enjoyed them more.',
         D:'It contradicts the text: silence, not music, produced slightly MORE recall. Saying music makes you remember far more runs against the data.'
       },
@@ -229,7 +229,7 @@ window.SAT_SETS.push({
     },
     {
       id:'CI2-12', type:'mc', domain:'Information and Ideas', difficulty:'Difícil',
-      skill:'Ideas centrales',
+      skill:'Central Ideas',
       passage:"An invasive vine introduced to control soil erosion did stabilize the hillsides as intended. But with no natural predators in its new home, the vine spread far beyond the slopes, smothering native trees and shrubs across entire forests. What began as a practical solution became one of the region’s most stubborn ecological problems.",
       stem:'Which choice best describes the main idea of the text?',
       choices:{

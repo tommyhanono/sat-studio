@@ -1,30 +1,30 @@
-/* SAT Studio — Math: Simulacro del MÓDULO 1 (M1-01 a M1-22)
+/* SAT Studio — Math: MODULE 1 Simulation (M1-01 to M1-22)
  *
- * El set que faltaba. Auditoría del 26-jul-2026: el banco entero está calibrado
- * para el segundo módulo difícil (59 % de dificultad alta, 11 % fácil) y **no
- * existía nada que se pareciera al primero**.
+ * The set that was missing. Audit of 26-jul-2026: the whole bank is calibrated
+ * for the hard second module (59 % high difficulty, 11 % easy) and **nothing
+ * existed that looked like the first one**.
  *
- * Por qué importa: el Digital SAT es adaptativo POR MÓDULO. El primero trae una
- * mezcla amplia y su resultado decide si el segundo es la versión difícil o la
- * fácil — o sea que **fija el techo de puntaje** al que se puede aspirar en la
- * sección. Entrenar solo en dificultad máxima construye resistencia pero no
- * VELOCIDAD en las preguntas fáciles, que son las que hay que despachar rápido
- * para que sobre tiempo.
+ * Why it matters: the Digital SAT is adaptive PER MODULE. The first one brings a
+ * broad mix and its result decides whether the second is the hard version or the
+ * easy one — that is, it **sets the score ceiling** you can aim for in the
+ * section. Training only at maximum difficulty builds stamina but not
+ * SPEED on the easy questions, which are the ones you have to clear fast
+ * so that time is left over.
  *
- * Composición, calcada de las especificaciones oficiales (Assessment Framework,
- * tabla 19, p. 85) para un módulo de 22 preguntas:
+ * Composition, copied from the official specifications (Assessment Framework,
+ * table 19, p. 85) for a 22-question module:
  *
- *   Dominio                            este set   oficial
+ *   Domain                             this set   official
  *   Algebra                              8 (36%)    ≈35 %
  *   Advanced Math                        8 (36%)    ≈35 %
  *   Problem-Solving and Data Analysis    3 (14%)    ≈15 %
  *   Geometry and Trigonometry            3 (14%)    ≈15 %
- *   SPR (respuesta propia)               5 (23%)    ≈25 %
+ *   SPR (student-produced)               5 (23%)    ≈25 %
  *
- * Dificultad 5 Fácil / 13 Media / 4 Difícil: la mezcla amplia de un módulo 1
- * real, no la del segundo.
+ * Difficulty 5 Fácil / 13 Media / 4 Difícil: the broad mix of a real module 1,
+ * not that of the second one.
  *
- * Se usa CON RELOJ. 22 preguntas en 35 minutos son ~95 segundos cada una.
+ * Use it WITH A CLOCK. 22 questions in 35 minutes is ~95 seconds each.
  */
 (function(){
   window.SAT_SETS.push({
@@ -49,7 +49,7 @@
           D:'36 is the value of 6x, not of x. The last step is missing, dividing by 6.'
         },
         tip:'A warm-up one: do not think about it, just do it. In Module 1 these are worth as much as the hard ones and they have to take 30 seconds so you have time left at the end.',
-        desmos:'y=6x-9 y y=27 se cruzan en x=6.',
+        desmos:'y=6x-9 and y=27 cross at x=6.',
         desmosLatex:['y=6x-9','y=27']
       },
       {
@@ -65,7 +65,7 @@
           D:'7 is 5 + 2: it ignores that the 5 multiplies x.'
         },
         tip:'Evaluating a function is substituting and computing, nothing more. Respect the order of operations: multiplication first, then addition.',
-        desmos:'Grafica y=5x+2 y escribe (4,22): el punto cae sobre la recta.',
+        desmos:'Graph y=5x+2 and type (4,22): the point lands on the line.',
         desmosLatex:['y=5x+2','(4,22)']
       },
       {
@@ -81,7 +81,7 @@
           D:'−3 has the sign flipped. If y rises from −2 to 10 as x grows, the slope is positive.'
         },
         tip:'The double negative in the numerator or the denominator is the only real error on this question. Write the subtraction with parentheses and it does not get lost.',
-        desmos:'Escribe (1,-2) y (5,10), y grafica y=3x-5 para confirmar que pasa por los dos.',
+        desmos:'Type (1,-2) and (5,10), then graph y=3x-5 to confirm it passes through both.',
         desmosLatex:['(1,-2)','(5,10)','y=3x-5']
       },
       {
@@ -97,7 +97,7 @@
           D:'12 is the right-hand side of the first equation, not a solution.'
         },
         tip:'When the coefficients are already opposites, adding solves it in one line. It is one of the fastest in the module: do not solve it by substitution.',
-        desmos:'x+y=12 y x-y=4 se cruzan en (8,4).',
+        desmos:'x+y=12 and x-y=4 cross at (8,4).',
         desmosLatex:['x+y=12','x-y=4']
       },
       {
@@ -113,12 +113,12 @@
           D:'x < 29/3 added the 7 instead of subtracting it: (22 + 7)/3.'
         },
         tip:'The flip-the-sign rule only applies with negatives. There are none here, and that option is planted for whoever applies it from memory without looking.',
-        desmos:'Escribe 3x+7<22 y Desmos sombrea todo lo que está a la izquierda de 5.',
+        desmos:'Type 3x+7<22 and Desmos shades everything to the left of 5.',
         desmosLatex:['3x+7<22']
       },
       {
         id:'M1-06', type:'mc', domain:'Algebra', difficulty:'Media',
-        skill:'Modelo lineal en contexto (despejar el tiempo)',
+        skill:'Linear model in context (solving for time)',
         stem:'A plumber charges $75 for a house visit plus $45 for each hour of work. If a job cost $255 in total, how many hours did the plumber work?',
         choices:{A:'4', B:'5.67', C:'7.33', D:'180'},
         correct:'A',
@@ -129,7 +129,7 @@
           D:'180 is the DOLLARS of labor, not the hours. It is the intermediate step; it still needs dividing by the rate.'
         },
         tip:'Fixed charge + hourly rate: ALWAYS subtract the fixed part before dividing. And check the unit the answer wants — dollars and hours are both among the options.',
-        desmos:'y=75+45x y y=255 se cruzan en x=4.',
+        desmos:'y=75+45x and y=255 cross at x=4.',
         desmosLatex:['y=75+45x','y=255']
       },
       {
@@ -139,7 +139,7 @@
         answer:'5',
         expCorrect:'Distribute: 2x + 12 = 5x − 3. Move the x terms to one side and the numbers to the other: 12 + 3 = 5x − 2x ⇒ 15 = 3x ⇒ x = 5. (Check: 2(5 + 6) = 22 and 5(5) − 3 = 22 ✓.)',
         tip:'Move the x terms to whichever side keeps them POSITIVE (here, to the right): it saves you a negative sign and an error. On SPR always check by substituting.',
-        desmos:'y=2(x+6) y y=5x-3 se cruzan en x=5.',
+        desmos:'y=2(x+6) and y=5x-3 cross at x=5.',
         desmosLatex:['y=2(x+6)','y=5x-3']
       },
       {
@@ -155,7 +155,7 @@
           D:'14 is the constant left after scaling the second equation, not the y coefficient.'
         },
         tip:'"No solution" = parallel. "Infinitely many solutions" = the same line. It is the same computation; all that changes is whether the constant matches. The SAT asks both versions equally often.',
-        desmos:'Grafica 6x+8y=10 y 3x+4y=7: paralelas, nunca se tocan.',
+        desmos:'Graph 6x+8y=10 and 3x+4y=7: parallel, they never touch.',
         desmosLatex:['6x+8y=10','3x+4y=7']
       },
 
@@ -173,7 +173,7 @@
           D:'−10 has the final sign inverted; the absolute value is right, so the slip was at the close.'
         },
         tip:'Substitute with parentheses: (−2)² − 3(−2). Almost every error of this kind is a sign that evaporates because they were left out.',
-        desmos:'Grafica y=x^2-3x y escribe (-2,10).',
+        desmos:'Graph y=x^2-3x and type (-2,10).',
         desmosLatex:['y=x^2-3x','(-2,10)']
       },
       {
@@ -189,7 +189,7 @@
           D:'x = −7 and x = −2 give a product of +14 and a sum of −9. Neither the product nor the sum matches.'
         },
         tip:'Two-second check: the sum of the solutions has to be −b (=5) and the product c (=−14). 7 + (−2) = 5 ✓ and 7(−2) = −14 ✓. It rules out three options without factoring.',
-        desmos:'Grafica y=x^2-5x-14 y mirá dónde corta el eje x: en -2 y en 7.',
+        desmos:'Graph y=x^2-5x-14 and look at where it crosses the x-axis: at -2 and at 7.',
         desmosLatex:['y=x^2-5x-14']
       },
       {
@@ -199,12 +199,12 @@
         answer:'4000',
         expCorrect:'In 9 hours there are 9/3 = 3 doublings. Each one multiplies by 2, so the total is 500 × 2³ = 500 × 8 = 4000. (Step by step: 500 → 1000 → 2000 → 4000.)',
         tip:'Count DOUBLINGS, not hours. The classic error is multiplying by 2 once per hour (which would give 500 × 2⁹) or multiplying by 9. With small numbers it is best to double by hand: it is faster than the formula and leaves no room for confusion.',
-        desmos:'Grafica y=500*2^(x/3) y evaluá en x=9: da 4000.',
+        desmos:'Graph y=500*2^(x/3) and evaluate at x=9: it gives 4000.',
         desmosLatex:['y=500\\cdot 2^{\\frac{x}{3}}','500\\cdot 2^{3}']
       },
       {
         id:'M1-12', type:'mc', domain:'Advanced Math', difficulty:'Media',
-        skill:'Expresiones equivalentes (cuadrado de un binomio)',
+        skill:'Equivalent expressions (square of a binomial)',
         stem:'Which expression is equivalent to (3x + 2)² ?',
         choices:{A:'9x² + 12x + 4', B:'9x² + 6x + 4', C:'9x² + 4', D:'6x² + 12x + 4'},
         correct:'A',
@@ -215,7 +215,7 @@
           D:'6x² + 12x + 4 computes (3x)² as 6x². Squaring means multiplying by itself, not by 2: 3² = 9.'
         },
         tip:'Check with x = 1: the sum of the coefficients has to equal the value of the parenthesis squared. Five seconds, and it catches all four possible errors.',
-        desmos:'Grafica y=(3x+2)^2 y y=9x^2+12x+4: se superponen.',
+        desmos:'Graph y=(3x+2)^2 and y=9x^2+12x+4: they overlap.',
         desmosLatex:['y=(3x+2)^2','y=9x^2+12x+4']
       },
       {
@@ -231,7 +231,7 @@
           D:'3 is the constant term, which shifts the parabola vertically. It does not affect where the vertex is.'
         },
         tip:'x = −b/(2a) comes free and answers half a dozen question types: vertex, axis of symmetry, maximum, minimum. Memorize that **b goes in with its own sign**.',
-        desmos:'Grafica y=x^2-8x+3 y tocá el punto más bajo: (4, -13).',
+        desmos:'Graph y=x^2-8x+3 and tap the lowest point: (4, -13).',
         desmosLatex:['y=x^2-8x+3','(4,-13)']
       },
       {
@@ -241,7 +241,7 @@
         answer:'2',
         expCorrect:'Move everything to one side: x² + 6x − 16 = 0. Factor by looking for two numbers with product −16 and sum +6: they are +8 and −2, so (x + 8)(x − 2) = 0 and the solutions are x = −8 and x = 2. The condition x > 0 leaves **x = 2**. (Check: 4 + 12 = 16 ✓.)',
         tip:'The condition "x > 0" is there because there are TWO solutions and the SPR takes only one. When you see a restriction like that, solve it completely and only discard at the end — do not assume which one it is before you have both.',
-        desmos:'Grafica y=x^2+6x y y=16: se cruzan en x=-8 y x=2.',
+        desmos:'Graph y=x^2+6x and y=16: they cross at x=-8 and x=2.',
         desmosLatex:['y=x^2+6x','y=16']
       },
       {
@@ -257,7 +257,7 @@
           D:'8.5 comes from dividing before subtracting: 19/2 − 1. You have to isolate the x² term first.'
         },
         tip:'Undo in the reverse order of how it was built: first what is added, then what multiplies, and last the power. The option “x²” is always among the answers.',
-        desmos:'Grafica y=2x^2+1 y y=19: se cruzan en x=-3 y x=3.',
+        desmos:'Graph y=2x^2+1 and y=19: they cross at x=-3 and x=3.',
         desmosLatex:['y=2x^2+1','y=19']
       },
       {
@@ -273,14 +273,14 @@
           D:'48 is 12 × 4: it multiplied where it had to divide. If 12 divided by something gives 4, that something is 3, not 48.'
         },
         tip:'In a rational equation, look at the denominator BEFORE you operate: any solution that zeroes it (here x = 2) has to be discarded. And always check by substituting, which is what exposes the "one step early" error.',
-        desmos:'Grafica y=12/(x-2) y y=4: se cruzan en x=5.',
+        desmos:'Graph y=12/(x-2) and y=4: they cross at x=5.',
         desmosLatex:['y=\\frac{12}{x-2}','y=4']
       },
 
       // ---------------- PROBLEM-SOLVING AND DATA ANALYSIS (3) ----------------
       {
         id:'M1-17', type:'mc', domain:'Problem-Solving & Data Analysis', difficulty:'Fácil',
-        skill:'Porcentajes (descuento)',
+        skill:'Percentages (discount)',
         stem:'A jacket originally priced at $80 is on sale for 25% off. What is the sale price of the jacket?',
         choices:{A:'$60', B:'$20', C:'$55', D:'$100'},
         correct:'A',
@@ -291,7 +291,7 @@
           D:'$100 adds the 25% instead of subtracting it. “Off” means a discount.'
         },
         tip:'A shortcut that saves a step: to take 25% off, multiply by 0.75 directly. It works for any percentage — and it avoids the error of keeping the discount instead of the price.',
-        desmos:'Escribí 0.75*80 y Desmos te da 60 al toque.',
+        desmos:'Type 0.75*80 and Desmos gives you 60 instantly.',
         desmosLatex:['0.75\\cdot 80']
       },
       {
@@ -307,7 +307,7 @@
           D:'60 is 15 × 4: it multiplied by the milk without first dividing by the 3 cups of flour in the original recipe.'
         },
         tip:'Before computing, decide whether the answer has to be bigger or smaller than the given figure. Here the recipe has more milk than flour, so 20 > 15 makes sense and 11.25 is ruled out with no arithmetic.',
-        desmos:'Escribí 15/3*4 y te da 20.',
+        desmos:'Type 15/3*4 and it gives you 20.',
         desmosLatex:['\\frac{15}{3}\\cdot 4']
       },
       {
@@ -317,7 +317,7 @@
         answer:'12',
         expCorrect:'If the mean of five numbers is 14, the SUM of the five is 5 × 14 = 70. The four known ones add to 10 + 12 + 16 + 20 = 58. The fifth is 70 − 58 = **12**. (Check: 70/5 = 14 ✓.)',
         tip:'The mean is almost never used as a formula here: it is used backwards, to rebuild the SUM. The moment you read "the average is", write sum = average × count and the rest is arithmetic.',
-        desmos:'Escribí 5*14-(10+12+16+20) y da 12.',
+        desmos:'Type 5*14-(10+12+16+20) and it gives 12.',
         desmosLatex:['5\\cdot 14-(10+12+16+20)']
       },
 
@@ -335,7 +335,7 @@
           D:'75° repeats angle B, which is given in the problem. Nothing says the triangle is isosceles.'
         },
         tip:'A rule that never changes: 180° in a triangle, 360° in a quadrilateral. These questions exist to be solved in fifteen seconds and buy you time for the hard ones.',
-        desmos:'No hace falta calculadora: 180-40-75.',
+        desmos:'No calculator needed: 180-40-75.',
         desmosLatex:['180-40-75']
       },
       {
@@ -345,7 +345,7 @@
         answer:'7',
         expCorrect:'The area of a circle is πr². Set it equal: πr² = 49π ⇒ r² = 49 ⇒ r = **7**. The π cancels on both sides, so there is nothing to approximate.',
         tip:'When the area comes “in terms of π”, cancel it and work with the number: the problem turns into arithmetic. And do not confuse r² with r — the 49 is the square, the answer is its root.',
-        desmos:'Escribí sqrt(49) o graficá y=pi*x^2 con y=49pi.',
+        desmos:'Type sqrt(49), or graph y=pi*x^2 together with y=49pi.',
         desmosLatex:['\\sqrt{49}']
       },
       {
@@ -361,7 +361,7 @@
           D:'√21 takes the root of the sum of the legs instead of the sum of their SQUARES. On top of that it would give ≈4.6, smaller than the legs, which is impossible.'
         },
         tip:'Learn the triples 3-4-5, 5-12-13 and 8-15-17 and their multiples: 9-12-15 is 3-4-5 times 3 and it comes out from memory. And a sanity check: the hypotenuse is always between the longer leg and the sum of the two.',
-        desmos:'Escribí sqrt(9^2+12^2) y da 15.',
+        desmos:'Type sqrt(9^2+12^2) and it gives 15.',
         desmosLatex:['\\sqrt{9^2+12^2}']
       }
     ]

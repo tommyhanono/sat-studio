@@ -1,4 +1,4 @@
-/* SAT Studio question set — Reading & Writing: Transitions Media (TRN-01 a TRN-10) */
+/* SAT Studio question set — Reading & Writing: Transitions — Medium (TRN-01 to TRN-10) */
 window.SAT_SETS.push({
   id: 'rw-set5',
   title: 'Transitions — Medium',
@@ -14,7 +14,7 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text with the most logical transition?',
       choices:{A:'Eventually,', B:'For example,', C:'However,', D:'Similarly,'},
       correct:'A',
-      expCorrect:'The two ideas are in time order: first he threw the tips out “for years” and then he started drying and selling them. “Eventually” marks that sequence in time.',
+      expCorrect:'The two ideas are in time order: “for years” she threw the crusty ends away, and then she began drying and selling them. “Eventually” marks that sequence in time.',
       expWrong:{
         B:'“For example” announces an example of something said before, but the 2nd idea does not exemplify the 1st, it follows it in time.',
         C:'“However” marks contrast, but there is no opposition here: it is a change that happens AFTERWARD, not against.',
@@ -89,7 +89,7 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text with the most logical transition?',
       choices:{A:'Likewise,', B:'In summary,', C:'Instead,', D:'As a result,'},
       correct:'C',
-      expCorrect:'Critics predicted the theaters would sit empty, but the opposite happened: attendance rose. “Instead” marks that reality replaced what was expected, a strong contrast.',
+      expCorrect:'Critics predicted the galleries would sit empty, but the opposite happened: attendance rose. “Instead” marks that reality replaced what was expected, a strong contrast.',
       expWrong:{
         A:'“Likewise” marks similarity, but what happened is the OPPOSITE of what was predicted, not something alike.',
         B:'“In summary” closes or sums up several ideas, and nothing is being summed up here — the expectation is being set against the reality.',
@@ -119,7 +119,7 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text with the most logical transition?',
       choices:{A:'Therefore,', B:'For instance,', C:'By contrast,', D:'In other words,'},
       correct:'C',
-      expCorrect:'Solar panels do NOT produce at night; wind turbines, the other way around, spin more at night. The two ideas oppose each other, so “By contrast” is what you want.',
+      expCorrect:'Solar panels produce NO power at night; wind turbines, on the other hand, spin fastest after dark. The two ideas oppose each other, so “By contrast” is what you want.',
       expWrong:{
         A:'“Therefore” marks consequence, but the wind fact is not an effect of the sun fact, it is its opposite.',
         B:'“For instance” would give an example of the 1st idea, but wind does not exemplify solar panels.',

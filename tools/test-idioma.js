@@ -34,20 +34,27 @@ const RAIZ = path.resolve(__dirname, '..');
    evita que vuelva a entrar español sin que nadie se dé cuenta. */
 
 /* Nombres propios y notación que llevan acento o parecen españoles y no lo son. */
-const PERMITIDOS = /Inés|Ibáñez|Bogotá|café|Perú|México|Nicolás|Ada Rourke|naïve|résumé|Zaha|José|García|Amara|Petrova|Los Angeles|Las Vegas|La Niña|El Niño|\bLos\b(?=\s+[A-Z])|\bLas\b(?=\s+[A-Z])|\b(?:sin|cos|tan|sec|csc|cot)\s*[²³]?\s*[(θA-Za-z0-9]|\b(?:sin|cos|tan)\s*[²³]|\bet\s+al\b|SOHCAHTOA/g;
+/* OJO con esto: la lista se APLICA BORRANDO, así que un patrón que muerda media
+   palabra inventa una palabra que no estaba. Pasó de verdad: `tan` seguido de
+   cualquier letra se comía el "tang" de "tangles" y dejaba "les", que sí es
+   español. Por eso todo va con \\b a los dos lados y la notación trigonométrica
+   exige que después venga un paréntesis, un dígito, θ, o una letra MAYÚSCULA
+   suelta (sin A, cos B). Y se reemplaza por un espacio, no por nada, para no
+   pegar dos trozos y formar otra palabra. */
+const PERMITIDOS = /(?<![A-Za-zÀ-ÿ])(?:Inés|Ibáñez|Bogotá|café|Perú|México|Nicolás|naïve|résumé|Zaha|José|García|Amara|Petrova|Ada Rourke|Los Angeles|Las Vegas|La Niña|El Niño)(?![A-Za-zÀ-ÿ])|\bLos\b(?=\s+[A-Z])|\bLas\b(?=\s+[A-Z])|\b(?:sin|cos|tan|sec|csc|cot)\s*[²³]?\s*(?:[(θ0-9]|[A-Z]\b)|\b(?:sin|cos|tan)\s*[²³]|\bet\s+al\b|SOHCAHTOA/g;
 
 /* Palabras que NO existen en inglés. Cada una se verificó una por una: las que
    son homógrafas del inglés están fuera a propósito y se listan arriba. */
 const ES_PALABRAS = /\b(los|las|una|unos|unas|del|que|por|para|como|cuando|donde|porque|entre|desde|hasta|hacia|durante|mientras|aunque|tampoco|siempre|nunca|toda|todo|todos|todas|otra|otro|otros|otras|mismo|misma|tanto|tiene|tienen|puede|pueden|hace|hacen|dicen|queda|quedan|salen|fue|pero|esto|eso|este|esta|ese|esa|estos|estas|esos|esas|sus|les|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|primero|primera|segundo|segunda|tercero|tercera|alguien|nadie|ninguno|ninguna|cual|cuyo|cuya|ambos|ambas|varios|varias|mucho|mucha|muchos|muchas|poco|poca|pocos|pocas|menos|muy|cada|nada|hay|siguiente|siguientes)\b/i;
 
 /* Vocabulario del banco en español, sin acentos (con acento ya cae por la otra regla). */
-const ES_VOCAB = /\b(ecuacion\w*|ecuaciones|exponencial\w*|iguales|cuadratic\w*|raices|despeje|pendiente|recta|rectas|circunferencia|triangul\w*|volumen|posesiv\w*|verbo|verbos|oraciones|palabra|palabras|pregunta|preguntas|respuesta|respuestas|nivel|niveles|facil|dificil|dificultad|simulacro|nucleo|banco|sujeto|sujetos|signo|signos|valores|numeros|suma|resta|multiplica|elevar|elevado|entero|enteros|cateto|catetos|hipotenusa|angulo|angulos|lado|lados|altura|diametro|grafica|graficas|tabla|texto|opcion|opciones|dominio|correcto|correcta|correctas|incorrect[ao]|resuelve|resolver|calcula|calcular|sustituye|sustituir|factoriza|simplifica|verifica|ejemplo|ejemplos|cuenta|cuentas|errores|servidor|correo|guardar|cargar|secciones|seccion|estudiante|estudiantes|puntaje|examen|prueba|pruebas|semana|semanas|meta|fecha|fechas|repaso|practica|practicar)\b/i;
+const ES_VOCAB = /\b(ecuacion\w*|ecuaciones|exponencial\w*|iguales|cuadratic\w*|raices|despeje|pendiente|recta|rectas|circunferencia|triangul\w*|volumen|posesiv\w*|verbo|verbos|oraciones|palabra|palabras|pregunta|preguntas|respuesta|respuestas|nivel|niveles|facil|dificil|dificultad|simulacro|nucleo|banco|sujeto|sujetos|signo|signos|valores|numeros|suma|resta|multiplica|elevar|elevado|entero|enteros|cateto|catetos|hipotenusa|angulo|angulos|lado|lados|altura|diametro|grafica|graficas|tabla|texto|opcion|opciones|dominio|correcto|correcta|correctas|incorrect[ao]|resuelve|resolver|calcula|calcular|sustituye|sustituir|factoriza|simplifica|verifica|ejemplo|ejemplos|cuenta|cuentas|errores|servidor|correo|guardar|cargar|secciones|seccion|estudiante|estudiantes|puntaje|examen|prueba|pruebas|semana|semanas|fecha|fechas|repaso|practica|practicar)\b/i;
 
 /* Terminaciones que no chocan con ninguna palabra inglesa. */
 const ES_SUFIJOS = /\b\w{2,}(ciones|idad|edad|miento|mientos|encia|ancia)\b|\b\w{3,}mente\b|\b\w{3,}aje\b/i;
 
 function esEspanol(t) {
-  const limpio = String(t).replace(PERMITIDOS, '');
+  const limpio = String(t).replace(PERMITIDOS, ' ');
   if (/[áéíóúñ¿¡]/i.test(limpio)) return true;
   return ES_PALABRAS.test(limpio) || ES_VOCAB.test(limpio) || ES_SUFIJOS.test(limpio);
 }
@@ -73,8 +80,13 @@ g.SAT_SETS.forEach(s => {
   });
   (s.questions || []).forEach(q => {
     nPreguntas++;
+    // desmos y figure también los lee el estudiante: `desmos` sale en la pantalla
+    // de resultados bajo "📈 In Desmos", y `figure` es un SVG cuyo aria-label es lo
+    // único que oye quien usa lector de pantalla. Faltaban en la primera versión y
+    // ahí se había quedado escondido el bolsón más grande de español del banco.
     const campos = [['skill', q.skill], ['stem', q.stem], ['passage', q.passage],
-      ['expCorrect', q.expCorrect], ['tip', q.tip]];
+      ['expCorrect', q.expCorrect], ['tip', q.tip],
+      ['desmos', q.desmos], ['figure', q.figure]];
     Object.entries(q.expWrong || {}).forEach(([k, v]) => campos.push(['expWrong.' + k, v]));
     Object.entries(q.choices || {}).forEach(([k, v]) => campos.push(['choices.' + k, v]));
     campos.forEach(([c, v]) => {
@@ -85,11 +97,28 @@ g.SAT_SETS.forEach(s => {
   });
 });
 
+/* Las pistas de Desmos viven en sets/desmos-*.js y se mezclan en q.desmos al
+   arrancar la app, así que hay que mirarlas en su propio archivo. */
+Object.keys(g.SAT_DESMOS || {}).forEach(qid => {
+  const h = g.SAT_DESMOS[qid];
+  const nota = h && h.note;
+  if (typeof nota !== 'string' || !nota) return;
+  nCampos++;
+  if (esEspanol(nota)) fallos.push(`${qid} · desmos.note: ${nota.slice(0, 70)}`);
+});
+
 /* ---------- 2. la interfaz ---------- */
 const soloJS = html.replace(/\/\*[\s\S]*?\*\//g, '').replace(/^\s*\/\/.*$/gm, '');
+/* Los nombres de clase e id no son texto que alguien lea (.set-meta, #res-meta,
+   .home-nav): se quitan antes de mirar, o cada clase con una palabra parecida al
+   español sale como falso positivo. aria-label y placeholder SÍ se miran: eso lo
+   lee el estudiante o su lector de pantalla. */
+const limpiar = t => String(t)
+  .replace(/\b(?:class|id|data-[\w-]+)\s*=\s*(?:"[^"]*"|'[^']*')/g, '')
+  .replace(/^[#.][\w-]+$/, '');
 const cadenas = [...soloJS.matchAll(/'((?:[^'\\\n]|\\.)*)'/g)].map(m => m[1])
   .concat([...soloJS.matchAll(/>([^<>{}]{12,})</g)].map(m => m[1].trim()));
-const uiFallos = [...new Set(cadenas.filter(t => t.length > 8 && esEspanol(t)))];
+const uiFallos = [...new Set(cadenas.filter(t => t.length > 8 && esEspanol(limpiar(t))))];
 
 /* ---------- veredicto ---------- */
 console.log(`banco      : ${nPreguntas} preguntas · ${nCampos} campos de texto revisados`);

@@ -19,7 +19,7 @@ window.SAT_SETS.push({
         D:'The lullaby is considered one of the most beautiful songs in the region.'
       },
       correct:'C',
-      expCorrect:'Her argument is that the song has NO single author, but grew as singers kept adding verses. C supports it directly: recordings from different decades preserve different verses → the song kept changing from mouth to mouth, exactly as she says.',
+      expCorrect:'Her argument is that the song has NO single author, but grew as singers kept adding verses. C supports it directly: recordings from different decades preserve different verses → the song kept changing by word of mouth, exactly as she says.',
       expWrong:{
         A:'That it is sung at weddings and harvests says it is popular today, but says nothing about HOW it was composed or whether it had a single author.',
         B:'The song from another village is a different thing; it tells you nothing about the collective origin of THIS song.',
@@ -242,7 +242,7 @@ window.SAT_SETS.push({
       expCorrect:'The goal is to recommend the snack that keeps you full the LONGEST. D uses the right figure: almonds, at 4.0 hours, beat them all. Being the highest satiety number, it completes the recommendation the way the team wants.',
       expWrong:{
         A:'The apple (2.5 h) fills you up quite a bit, but less than the almonds; it is not the maximum, so it does not complete the recommendation well.',
-        B:'The cookies (1.8 h) barely beat the chips; they are among the LEAST filling. A misreading of the goal.',
+        B:'The crackers (1.8 h) barely beat the chips; they are among the LEAST filling. A misreading of the goal.',
         C:'The chips (1.5 h) are the ones that fill you for the SHORTEST time; exactly the opposite of what is meant to be recommended.'
       },
       tip:'Go back to the exact CLAIM (fills you up LONGER) and find the LARGEST number of hours: 4.0 (almonds). The right one cites that maximum; the rest confuse the goal with smaller values or the minimum.'

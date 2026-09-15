@@ -1,6 +1,6 @@
-/* SAT Studio question set — Reading & Writing: Punctuation Check-Up (PCU-01 a PCU-10)
-   Una pregunta por regla de puntuación; cada pregunta trae su clave `cheat`
-   para el cheat sheet adaptativo (CHEAT_RULES en index.html). */
+/* SAT Studio question set — Reading & Writing: Punctuation Check-Up (PCU-01 to PCU-10)
+   One question per punctuation rule; each question carries its `cheat` key
+   for the adaptive cheat sheet (CHEAT_RULES in index.html). */
 window.SAT_SETS.push({
   id: 'rw-punct-checkup',
   title: 'Punctuation Check-Up',

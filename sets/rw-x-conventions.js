@@ -1,4 +1,4 @@
-/* SAT Studio question set — Reading & Writing EXTREME: Conventions (XC-01 a XC-12) */
+/* SAT Studio question set — Reading & Writing EXTREME: Conventions (XC-01 to XC-12) */
 window.SAT_SETS.push({
   id: 'rw-x-conventions',
   title: 'Extreme — Conventions',
@@ -77,7 +77,7 @@ window.SAT_SETS.push({
       expCorrect:'Peel the layers: “distributed to the volunteers…” is a reduced relative clause (= “that was distributed…”) and “who staffed… stations” describes the volunteers, not the subject. The head of the subject is “The set”, singular. “The set… was revised twice” is the only combination that agrees and keeps the past tense.',
       expWrong:{
         B:'“Were” agrees with “instructions”, “volunteers” or “stations”: pure plural magnets sitting inside modifiers, not in the head of the subject.',
-        C:'“Have been” es plural, y el marco temporal (“before election day”, “had flagged”) pide pasado simple, no presente perfecto.',
+        C:'“Have been” is plural, and the time frame (“before election day”, “had flagged”) calls for the simple past, not the present perfect.',
         D:'“Are being” is plural and present progressive; the revision already happened.'
       },
       tip:'Cross out anything starting with a participle (“distributed…”, “collected…”) or with “who/that”: whatever survives on the left is the real subject.'

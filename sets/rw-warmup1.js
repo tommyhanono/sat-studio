@@ -1,4 +1,4 @@
-/* SAT Studio question set — Reading & Writing: Verbal Pre-Mock Warmup (VW1-01 a VW1-12) */
+/* SAT Studio question set — Reading & Writing: Verbal Pre-Mock Warmup (VW1-01 to VW1-12) */
 window.SAT_SETS.push({
   id: 'rw-warmup1',
   title: 'Verbal Pre-Mock Warmup',

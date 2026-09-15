@@ -1,4 +1,4 @@
-/* SAT Studio question set — Math: Mixed Practice Set 1 (M-001 a M-010) */
+/* SAT Studio question set — Math: Mixed Practice Set 1 (M-001 to M-010) */
 (function(){
   var FIG_TRIANGLE =
     '<svg viewBox="0 0 240 160" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Right triangle with legs 15 and 8 and hypotenuse x">' +
@@ -56,11 +56,11 @@
       },
       {
         id:'M-002', type:'mc', domain:'Problem-Solving & Data Analysis', difficulty:'Fácil',
-        skill:'Porcentajes (descuento)',
+        skill:'Percentages (discount)',
         stem:'A jacket has an original price of $80. During a sale, the price of the jacket is reduced by 35%. What is the sale price of the jacket?',
         choices:{A:'$28', B:'$45', C:'$52', D:'$55'},
         correct:'C',
-        expCorrect:'Reducir 35% = pagar el 65%. Precio de oferta = 0.65 \u00d7 80 = $52.',
+        expCorrect:'Reducing by 35% means paying 65%. Sale price = 0.65 \u00d7 80 = $52.',
         expWrong:{
           A:'$28 is the DISCOUNT (0.35 \u00d7 80), not the final price. A classic distractor.',
           B:'$45 comes from subtracting 35 directly (80 \u2212 35), treating the percent as dollars.',
@@ -133,7 +133,7 @@
       },
       {
         id:'M-008', type:'mc', domain:'Problem-Solving & Data Analysis', difficulty:'Difícil',
-        skill:'Media (efecto de agregar un dato)',
+        skill:'Mean (effect of adding one value)',
         stem:'The mean of a list of 5 numbers is 14. When a 6th number is added to the list, the mean of the 6 numbers is 16. What is the value of the 6th number?',
         choices:{A:'16', B:'18', C:'24', D:'26'},
         correct:'D',

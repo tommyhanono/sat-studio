@@ -74,11 +74,11 @@
       },
       {
         id:'HMC-03', type:'mc', domain:'Geometry & Trigonometry', difficulty:'Difícil',
-        skill:'Longitud de arco (radianes)',
+        skill:'Arc length (radians)',
         stem:'In a circle with a radius of 10, an arc is intercepted by a central angle measuring 3π/5 radians. What is the length of the arc?',
         choices:{A:'3π', B:'6π', C:'30π', D:'12π'},
         correct:'B',
-        expCorrect:'La longitud de arco en radianes es s = rθ. Con r = 10 y θ = 3π/5: s = 10 · (3π/5) = 30π/5 = 6π.',
+        expCorrect:'Arc length in radians is s = rθ. With r = 10 and θ = 3π/5: s = 10 · (3π/5) = 30π/5 = 6π.',
         expWrong:{
           A:'3π comes from multiplying by 1/2 for no reason: (1/2)(10)(3π/5) = 3π. Arc length does NOT carry the 1/2 factor (that belongs to the sector area).',
           C:'30π is the sector AREA, (1/2)r²θ = (1/2)(100)(3π/5) = 30π, not the arc length.',
@@ -164,7 +164,7 @@
       },
       {
         id:'HMC-09', type:'mc', domain:'Geometry & Trigonometry', difficulty:'Difícil',
-        skill:'Punto medio (hallar el extremo)',
+        skill:'Midpoint (finding an endpoint)',
         stem:'In the xy-plane, M is the midpoint of segment AB. Point A has coordinates (1, −4) and M has coordinates (5, 2). What are the coordinates of point B?',
         choices:{
           A:'(9, 8)',

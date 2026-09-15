@@ -50,7 +50,7 @@
       },
       {
         id:'SPR-06', type:'spr', domain:'Problem-Solving & Data Analysis', difficulty:'Media',
-        skill:'Porcentajes (hallar el total)',
+        skill:'Percents (finding the whole)',
         stem:'If 25% of a number is 15, what is the number? (Grid in your answer.)',
         answer:'60',
         expCorrect:'Let n be the number: 0.25n = 15 → n = 15 / 0.25 = 60. (Or faster: if 25% is 15, then 100% is 4 × 15 = 60.)',
@@ -90,7 +90,7 @@
       },
       {
         id:'SPR-11', type:'spr', domain:'Algebra', difficulty:'Difícil',
-        skill:'Exponentes (potencias de 2)',
+        skill:'Exponents (powers of 2)',
         stem:'If 2^a = 64, what is the value of a? (Grid in your answer.)',
         answer:'6',
         expCorrect:'64 = 2 × 2 × 2 × 2 × 2 × 2 = 2⁶, so a = 6.',

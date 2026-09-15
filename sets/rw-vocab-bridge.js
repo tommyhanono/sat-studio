@@ -5,7 +5,7 @@
     title: 'R&W — Vocabulary: Medium-Hard Bridge',
     section: 'rw',
     level: 'Difícil',
-    description: 'Vocabulary in context: multiple-meaning words, nuanced synonyms, academic context clues. Bridge from Media to Hard.',
+    description: 'Vocabulary in context: multiple-meaning words, nuanced synonyms, academic context clues. Bridge from Medium to Hard.',
     minutes: 14,
     questions: [
       {

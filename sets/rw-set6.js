@@ -1,4 +1,4 @@
-/* SAT Studio question set — Reading & Writing: Central Ideas & Inferences (RDG-01 a RDG-10) */
+/* SAT Studio question set — Reading & Writing: Central Ideas & Inferences (RDG-01 to RDG-10) */
 window.SAT_SETS.push({
   id: 'rw-set6',
   title: 'Central Ideas & Inferences — Medium',
@@ -142,7 +142,7 @@ window.SAT_SETS.push({
       expCorrect:'The text defines the waggle dance and details how it conveys direction (the angle) and distance (the duration) of the flowers to the other bees. The purpose is to explain how they use that dance to share where food is.',
       expWrong:{
         B:'Not supported: the text describes the dance, but never compares bee intelligence with that of other insects.',
-        C:'Secondary detail: the hive is mentioned only as the place where they dance, not as the topic. The focus is the dance and its message.',
+        C:'Secondary detail: the honeycomb is mentioned only as the surface they dance on, not as the topic. The focus is the dance and its message.',
         D:'Off topic: there is no mention of protecting them from human activity. That is outside information.'
       },
       tip:'If a text DEFINES something and then says how it works, its purpose is almost always to “explain” that, not to argue or compare.'
@@ -159,13 +159,13 @@ window.SAT_SETS.push({
         D:'The writer eventually decided that the lighthouse stood for loneliness alone.'
       },
       correct:'B',
-      expCorrect:'The text says the lighthouse sometimes meant guidance and other times solitude, and that the writer did NOT settle on a single meaning, but let the same image carry different feelings. That is the central idea: one image, several meanings.',
+      expCorrect:'The text says the lighthouse sometimes meant guidance and other times loneliness, and that the writer did NOT settle on a single meaning, but let the same image carry different feelings. That is the central idea: one image, several meanings.',
       expWrong:{
         A:'Not supported: the text is about the MEANINGS of the lighthouse, not about it being the prettiest thing she saw. That is outside information.',
         C:'Too broad: the text is about one image (the lighthouse) in her poems; it does not claim she wrote ONLY about the sea and its objects.',
-        D:'It contradicts the text: it says explicitly that she did NOT settle on a single meaning, so “only solitude” runs against what you read.'
+        D:'It contradicts the text: it says explicitly that she did NOT settle on a single meaning, so “loneliness alone” runs against what you read.'
       },
-      tip:'Watch for the trap that takes one real detail (solitude) and turns it into “the” answer. The central idea here is the range of meanings, not a single one.'
+      tip:'Watch for the trap that takes one real detail (loneliness) and turns it into “the” answer. The central idea here is the range of meanings, not a single one.'
     },
     {
       id:'RDG-09', type:'mc', domain:'Information and Ideas', difficulty:'Difícil',

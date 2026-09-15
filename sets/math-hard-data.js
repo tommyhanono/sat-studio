@@ -1,4 +1,4 @@
-/* SAT Studio question set — Math: Percents, Data & Systems — Hard (HMD-01 a HMD-12) */
+/* SAT Studio question set — Math: Percents, Data & Systems — Hard (HMD-01 to HMD-12) */
 (function(){
   window.SAT_SETS.push({
     id: 'math-hard-data',
@@ -151,7 +151,7 @@
       },
       {
         id:'HMD-10', type:'mc', domain:'Problem-Solving & Data Analysis', difficulty:'Difícil',
-        skill:'Porcentajes (aumento y descuento sucesivos)',
+        skill:'Percentages (successive increase and discount)',
         stem:'A store first increases the price of an item by 40%. It then offers a coupon that takes 25% off the increased price. The final price is what percent of the original price?',
         choices:{A:'115%', B:'105%', C:'100%', D:'75%'},
         correct:'B',

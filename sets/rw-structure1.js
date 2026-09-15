@@ -1,4 +1,4 @@
-/* SAT Studio question set — Reading & Writing: Text Structure & Purpose + Conclusions (STR-01 a STR-12) */
+/* SAT Studio question set — Reading & Writing: Text Structure & Purpose + Conclusions (STR-01 to STR-12) */
 window.SAT_SETS.push({
   id: 'rw-structure1',
   title: 'Text Structure & Purpose — Set 1',
@@ -83,7 +83,7 @@ window.SAT_SETS.push({
       expWrong:{
         B:'It describes a part, not the whole: the small size is only the starting point; the focus is how much life they support and what happens if they are damaged.',
         C:'Detail, not central idea: crabs and sponges are examples in a list, not the main point of the paragraph.',
-        D:'It contradicts the text: it says the damage "spreads" through the whole community, not that it recovers easily.'
+        D:'It contradicts the text: it says the damage ripples outward through the whole marine community, not that it recovers easily.'
       },
       tip:'The central idea covers the WHOLE paragraph, not one sentence. Here the word "Because" connects the two parts: a lot of life + damage that spreads. The answer has to join both.'
     },
@@ -145,7 +145,7 @@ window.SAT_SETS.push({
         B:'It describes a part, not the whole: no specific actor is celebrated; it is about stars in general (some struggled, others adapted).',
         C:'Not supported: it does not explain the technology of sound; it explains its EFFECT on the actors.'
       },
-      tip:'For PURPOSE, watch for the right verb: here the author "explains" a change, he does not "argue" or "celebrate". Picking the right verb usually decides the answer.'
+      tip:'For PURPOSE, watch for the right verb: here the author "explains" a change rather than "arguing" or "celebrating" one. Picking the right verb usually decides the answer.'
     },
     {
       id:'STR-08', type:'mc', domain:'Information and Ideas', difficulty:'Media',
@@ -221,7 +221,7 @@ window.SAT_SETS.push({
       correct:'C',
       expCorrect:'The text piles up benefits: plants and birds returned, the water got cleaner, it cost less than feared and there was less flooding. The conclusion has to gather all of that: letting the wetland work on its own brought ecological and practical benefits beyond what was expected. Option C covers the whole set.',
       expWrong:{
-        A:'It contradicts the text: they removed the concrete channel and it went WELL (less flooding), so saying concrete "is still necessary" runs against the evidence.',
+        A:'It contradicts the text: they removed the concrete channel and it went WELL (less flooding), so saying concrete channels "are still necessary" runs against the evidence.',
         B:'An unsupported detail, not a conclusion: the text does not say they are the SAME species as before, and even if they were, that is a detail, not the main point.',
         D:'It drifts from the focus: the engineers’ experience does not close the story; the conclusion is about the results of the restoration.'
       },
@@ -239,13 +239,13 @@ window.SAT_SETS.push({
         D:'To recount the biography of a single historian and her academic career.'
       },
       correct:'A',
-      expCorrect:'The text shows that official records told only of victories and great works, and that by adding physical remains (middens, tools, houses) the historian reconstructed the daily life the documents ignored. The purpose is to show how physical evidence reveals what written records leave out.',
+      expCorrect:'The text shows that official records told only of victories and grand building projects, and that by adding physical remains (garbage pits, worn tools, ordinary homes) the historian reconstructed the daily life the documents ignored. The purpose is to show how physical evidence reveals what written records leave out.',
       expWrong:{
-        B:'It describes a part, not the whole: the tools and middens are examples; the point is what they reveal, not an inventory of what was found.',
-        C:'It exaggerates and misreads: the text says the remains give a MORE complete picture, not that written records are "completely useless". Far too extreme.',
+        B:'It describes a part, not the whole: the tools and garbage pits are examples; the point is what they reveal, not an inventory of what was found.',
+        C:'It exaggerates and misreads: the text says the remains give a MORE complete picture, not that written records are "entirely worthless". Far too extreme.',
         D:'It shifts the focus: this is not the historian’s biography; she is the vehicle for showing the value of physical evidence.'
       },
-      tip:'For PURPOSE, sum up the idea holding the WHOLE text together, not one example. Watch for "extreme" distractors (like "completely useless"): the text adds evidence, it does not throw out the other side entirely.'
+      tip:'For PURPOSE, sum up the idea holding the WHOLE text together, not one example. Watch for "extreme" distractors (like "entirely worthless"): the text adds evidence, it does not throw out the other side entirely.'
     }
   ]
 });

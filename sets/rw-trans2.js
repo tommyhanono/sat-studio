@@ -1,4 +1,4 @@
-/* SAT Studio question set — Reading & Writing: Transitions — Set 2 (TR2-01 a TR2-12) */
+/* SAT Studio question set — Reading & Writing: Transitions — Set 2 (TR2-01 to TR2-12) */
 window.SAT_SETS.push({
   id: 'rw-trans2',
   title: 'Transitions — Set 2',
@@ -14,7 +14,7 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text with the most logical transition?',
       choices:{A:'However,', B:'For example,', C:'Therefore,', D:'In summary,'},
       correct:'A',
-      expCorrect:'Before you look at the options, read the relationship: the garden ALWAYS grew only vegetables, but this year he planted flowers. Predict your transition: it is a change breaking the habit, that is, contrast. “However” marks that opposition between what always happened and what is new.',
+      expCorrect:'Before you look at the options, read the relationship: the garden ALWAYS grew only vegetables, but this year the volunteers planted flowers. Predict your transition: it is a change breaking the habit, that is, contrast. “However” marks that opposition between what always happened and what is new.',
       expWrong:{
         B:'“For example” announces an example of the 1st idea, but the flowers are not a case of “only vegetables”: they contradict it.',
         C:'“Therefore” marks consequence, and planting flowers is not an effect of having grown only vegetables, it is a turn against that habit.',

@@ -1,4 +1,4 @@
-/* SAT Studio question set — Reading & Writing: Words in Context — Easy (WIC-E-01 a WIC-E-10) */
+/* SAT Studio question set — Reading & Writing: Words in Context — Easy (WIC-E-01 to WIC-E-10) */
 window.SAT_SETS.push({
   id: 'rw-set3',
   title: 'Words in Context — Easy',
@@ -14,13 +14,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text with the most logical and precise word or phrase?',
       choices:{A:'accurate', B:'mistaken', C:'popular', D:'ancient'},
       correct:'B',
-      expCorrect:'La segunda oración corrige la creencia: NO solo las abejas polinizan, sino también escarabajos y moscas. Así que la idea está equivocada. "Mistaken" (equivocada) encaja perfecto.',
+      expCorrect:'The second sentence corrects the belief: bees are NOT the only pollinators — beetles and flies carry pollen too. So the idea is wrong. "Mistaken" fits perfectly.',
       expWrong:{
-        A:'"Accurate" (correcta) es lo opuesto: el texto muestra que la idea está mal, no bien.',
-        C:'"Popular" describe cuánta gente cree la idea, no si es verdadera; el texto trata de si es cierta.',
-        D:'"Ancient" (antigua) habla del tiempo, pero el punto es que la idea es falsa, no vieja.'
+        A:'"Accurate" is the opposite: the text shows the idea is wrong, not right.',
+        C:'"Popular" describes how many people believe the idea, not whether it is true; the text is about its truth.',
+        D:'"Ancient" is about age, but the point is that the idea is false, not old.'
       },
-      tip:'Busca la señal "In fact" seguida de una corrección. Si la oración desmiente la creencia anterior, la palabra debe significar "equivocada".'
+      tip:'Look for the signal "In fact" followed by a correction. If the sentence contradicts the earlier belief, the word must mean "mistaken".'
     },
     {
       id:'WIC-E-02', type:'mc', domain:'Craft and Structure', difficulty:'Fácil',
@@ -29,13 +29,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text with the most logical and precise word or phrase?',
       choices:{A:'ignore', B:'create', C:'solve', D:'hide'},
       correct:'C',
-      expCorrect:'El consejo actúa PARA arreglar el problema: extiende el horario para que los estudiantes tengan dónde estudiar. "Solve" (resolver) es exactamente lo que hacen.',
+      expCorrect:'The council acts IN ORDER TO fix the problem: it extends the hours so students have somewhere to study. "Solve" is exactly what they do.',
       expWrong:{
-        A:'"Ignore" (ignorar) es lo contrario: ellos sí actuaron, no dejaron pasar el problema.',
-        B:'"Create" (crear) no tiene sentido: no querían hacer más problemas, sino quitarlos.',
-        D:'"Hide" (esconder) no encaja: no ocultan el problema, lo enfrentan con una solución real.'
+        A:'"Ignore" is the opposite: they did act; they did not let the problem slide.',
+        B:'"Create" makes no sense: they did not want more problems, they wanted to remove them.',
+        D:'"Hide" does not fit: they do not conceal the problem, they face it with a real solution.'
       },
-      tip:'La frase "To ___ this problem" pide una palabra de acción positiva. Si la gente toma medidas útiles, la respuesta suele ser "solve" o "address".'
+      tip:'The phrase "To ___ this problem" calls for a positive action word. When people take useful steps, the answer is usually "solve" or "address".'
     },
     {
       id:'WIC-E-03', type:'mc', domain:'Craft and Structure', difficulty:'Fácil',
@@ -44,13 +44,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text with the most logical and precise word or phrase?',
       choices:{A:'doubt', B:'proof', C:'interest', D:'record'},
       correct:'A',
-      expCorrect:'La jugadora pasa corriendo a todos, así que ya nadie puede dudar de su rapidez. "Leaving no doubt" (sin dejar duda) es la expresión natural y correcta.',
+      expCorrect:'The player sprints past everyone, so no one can question her speed anymore. "Leaving no doubt" is the natural, correct phrase.',
       expWrong:{
-        B:'"Proof" (prueba) va al revés: ella SÍ dio prueba de su velocidad, no la quitó.',
-        C:'"Interest" (interés) no encaja: el tema es si es rápida, no si alguien está interesado.',
-        D:'"Record" (registro/récord) suena a deporte, pero "leaving no record" cambiaría el sentido a que no queda constancia, que no es la idea.'
+        B:'"Proof" runs backward: she DID give proof of her speed; she did not take it away.',
+        C:'"Interest" does not fit: the issue is whether she is fast, not whether anyone is interested.',
+        D:'"Record" sounds athletic, but "leaving no record" would shift the meaning to nothing being written down, which is not the point.'
       },
-      tip:'Fíjate en "however": la duda inicial desaparece. La expresión fija "leave no doubt" significa que algo quedó totalmente claro.'
+      tip:'Notice "however": the initial doubt disappears. The set phrase "leave no doubt" means something was made completely clear.'
     },
     {
       id:'WIC-E-04', type:'mc', domain:'Craft and Structure', difficulty:'Fácil',
@@ -59,13 +59,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text with the most logical and precise word or phrase?',
       choices:{A:'confusing', B:'expensive', C:'short', D:'clear'},
       correct:'D',
-      expCorrect:'Los pasos están numerados, dibujados y en lenguaje simple, y cualquiera puede seguirlos. Eso describe instrucciones "clear" (claras).',
+      expCorrect:'The steps are numbered, illustrated, and written in plain language, and anyone can follow them. That describes "clear" instructions.',
       expWrong:{
-        A:'"Confusing" (confusas) es lo opuesto: si un principiante las sigue solo, no son confusas.',
-        B:'"Expensive" (caras) habla del precio, pero el texto describe lo fáciles de entender que son.',
-        C:'"Short" (cortas) no encaja: el texto no dice cuántos pasos hay, sino que son fáciles de seguir.'
+        A:'"Confusing" is the opposite: if a beginner can follow them alone, they are not confusing.',
+        B:'"Expensive" is about price, but the text describes how easy they are to understand.',
+        C:'"Short" does not fit: the text never says how many steps there are, only that they are easy to follow.'
       },
-      tip:'Cuando lo que sigue al blank son ejemplos de algo bien hecho y fácil, la palabra debe ser positiva. "Clear" describe algo fácil de entender.'
+      tip:'When the examples after the blank show something well made and easy, the word must be positive. "Clear" describes something easy to understand.'
     },
     {
       id:'WIC-E-05', type:'mc', domain:'Craft and Structure', difficulty:'Media',
@@ -74,13 +74,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text with the most logical and precise word or phrase?',
       choices:{A:'careless', B:'generous', C:'thrifty', D:'wealthy'},
       correct:'C',
-      expCorrect:'Diana ahorra casi todo y casi no compra cosas que no necesita. Eso es ser "thrifty" (ahorrativa). Además, "Unlike her sister" que gasta todo confirma el contraste.',
+      expCorrect:'Diana saves almost all of her pay and rarely buys things she does not need. That is being "thrifty". On top of that, "Unlike her older sister", who spends it all, confirms the contrast.',
       expWrong:{
-        A:'"Careless" (descuidada) es lo opuesto: alguien que ahorra con cuidado no es descuidada con el dinero.',
-        B:'"Generous" (generosa) trata de dar a otros; aquí el tema es que guarda su propio dinero.',
-        D:'"Wealthy" (rica) habla de cuánto dinero tiene, no de cómo lo cuida; el texto describe su hábito de ahorrar.'
+        A:'"Careless" is the opposite: someone who saves carefully is not careless with money.',
+        B:'"Generous" is about giving to others; here the point is that she keeps her own money.',
+        D:'"Wealthy" is about how much money she has, not how she handles it; the text describes her saving habit.'
       },
-      tip:'La palabra "Unlike" anuncia un contraste con la hermana que gasta todo. La respuesta debe describir a alguien que hace lo contrario: cuidar el dinero.'
+      tip:'The word "Unlike" announces a contrast with the sister who spends everything. The answer must describe someone who does the opposite: guards her money.'
     },
     {
       id:'WIC-E-06', type:'mc', domain:'Craft and Structure', difficulty:'Fácil',
@@ -89,13 +89,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text with the most logical and precise word or phrase?',
       choices:{A:'confirm', B:'doubt', C:'forget', D:'delay'},
       correct:'A',
-      expCorrect:'Repite el experimento muchas veces para asegurarse de que el resultado es confiable. "Confirm" (confirmar) es justo lo que busca al repetirlo tantas veces.',
+      expCorrect:'She repeats the experiment many times to make sure the result is reliable. "Confirm" is exactly what she is after by running it so often.',
       expWrong:{
-        B:'"Doubt" (dudar) va al revés: repetirlo tantas veces es para estar segura, no para dudar más.',
-        C:'"Forget" (olvidar) no tiene lógica con un método científico cuidadoso.',
-        D:'"Delay" (retrasar) no encaja: ella hace el trabajo, no lo pospone.'
+        B:'"Doubt" runs backward: repeating it so many times builds certainty, it does not create more doubt.',
+        C:'"Forget" makes no sense alongside a careful scientific method.',
+        D:'"Delay" does not fit: she does the work, she does not put it off.'
       },
-      tip:'"Instead" muestra que ella busca certeza, no descartar el resultado. Repetir una prueba sirve para "confirm" (confirmar) algo.'
+      tip:'"Instead" shows that she wants certainty, not to throw the result out. Repeating a test serves to "confirm" something.'
     },
     {
       id:'WIC-E-07', type:'mc', domain:'Craft and Structure', difficulty:'Media',
@@ -104,13 +104,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text with the most logical and precise word or phrase?',
       choices:{A:'crowded', B:'fragile', C:'modern', D:'famous'},
       correct:'B',
-      expCorrect:'El óxido comió las vigas y hay grietas grandes, así que el puente ya no aguanta ni un carro. "Fragile" (frágil) describe algo débil que se puede romper.',
+      expCorrect:'Rust ate through the beams and large cracks appeared, so the bridge cannot hold even one car. "Fragile" describes something weak enough to break.',
       expWrong:{
-        A:'"Crowded" (lleno de gente) no explica por qué lo cerraron: el problema es el daño, no el tráfico.',
-        C:'"Modern" (moderno) es lo contrario: es un puente viejo y dañado, no nuevo.',
-        D:'"Famous" (famoso) no viene al caso; lo cerraron por peligroso, no por conocido.'
+        A:'"Crowded" does not explain the closing: the problem is the damage, not the traffic.',
+        C:'"Modern" is the opposite: this is an old, damaged bridge, not a new one.',
+        D:'"Famous" is beside the point; they closed it because it was dangerous, not because it was well known.'
       },
-      tip:'Las oraciones siguientes explican el blank: óxido y grietas = daño. Elige la palabra que signifique "débil o dañado", como "fragile".'
+      tip:'The sentences that follow explain the blank: rust and cracks = damage. Pick the word that means "weak or damaged", like "fragile".'
     },
     {
       id:'WIC-E-08', type:'mc', domain:'Craft and Structure', difficulty:'Fácil',
@@ -119,13 +119,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text with the most logical and precise word or phrase?',
       choices:{A:'argument', B:'lesson', C:'applause', D:'silence'},
       correct:'D',
-      expCorrect:'Nadie habló, y eso se vuelve incómodo hasta que por fin uno confiesa. Cuando nadie dice nada, hay "silence" (silencio). Es la palabra exacta.',
+      expCorrect:'No one spoke, and that grows uncomfortable until someone finally confesses. When nobody says anything, there is "silence". It is the exact word.',
       expWrong:{
-        A:'"Argument" (discusión) necesita gente hablando o peleando, pero el texto dice que nadie habló.',
-        B:'"Lesson" (lección) no encaja: lo que crece incómodo es la falta de respuesta, no una clase.',
-        C:'"Applause" (aplausos) es positivo y ruidoso, lo opuesto a un momento tenso sin palabras.'
+        A:'"Argument" requires people talking or fighting, but the text says no one spoke.',
+        B:'"Lesson" does not fit: what grows uncomfortable is the lack of an answer, not a class.',
+        C:'"Applause" is positive and loud, the opposite of a tense, wordless moment.'
       },
-      tip:'Si el texto dice "no one spoke" (nadie habló), lo que llena el aire es "silence". Deja que los detalles te digan qué palabra encaja.'
+      tip:'If the text says "no one spoke", what fills the air is "silence". Let the details tell you which word fits.'
     },
     {
       id:'WIC-E-09', type:'mc', domain:'Craft and Structure', difficulty:'Media',
@@ -134,13 +134,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text with the most logical and precise word or phrase?',
       choices:{A:'biased', B:'boring', C:'fair', D:'brief'},
       correct:'C',
-      expCorrect:'No favorece a ningún lado y da tiempo igual a ambos partidos. Eso es ser "fair" (justo/imparcial). El texto explica el blank justo después.',
+      expCorrect:'It favors neither side and gives both parties equal time. That is being "fair". The text explains the blank right afterward.',
       expWrong:{
-        A:'"Biased" (parcial) es lo opuesto: dar tiempo igual a ambos lados es NO tomar partido.',
-        B:'"Boring" (aburrido) sería una crítica, pero al documental lo elogian ("praised").',
-        D:'"Brief" (breve) habla de la duración, no de tratar a ambos lados por igual.'
+        A:'"Biased" is the opposite: giving both sides equal time is NOT taking a side.',
+        B:'"Boring" would be a criticism, but the documentary is praised.',
+        D:'"Brief" is about length, not about treating both sides equally.'
       },
-      tip:'"Praised for" pide una palabra positiva, y "did not favor either side" la define: alguien imparcial es "fair".'
+      tip:'"Praised for" calls for a positive word, and "did not favor either side" defines it: someone impartial is "fair".'
     },
     {
       id:'WIC-E-10', type:'mc', domain:'Craft and Structure', difficulty:'Fácil',
@@ -149,13 +149,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text with the most logical and precise word or phrase?',
       choices:{A:'luck', B:'dedication', C:'silence', D:'wealth'},
       correct:'B',
-      expCorrect:'El texto contrasta a quien se rinde en una semana con el esfuerzo diario por años. Mejorar de verdad pide "dedication" (dedicación): compromiso constante.',
+      expCorrect:'The text contrasts someone who quits after a week with years of daily effort. Real improvement demands "dedication": steady commitment.',
       expWrong:{
-        A:'"Luck" (suerte) no encaja: el texto insiste en el esfuerzo diario, no en el azar.',
-        C:'"Silence" (silencio) no tiene relación con aprender un instrumento con constancia.',
-        D:'"Wealth" (riqueza) no es el punto: se habla de práctica constante, no de dinero.'
+        A:'"Luck" does not fit: the text stresses daily effort, not chance.',
+        C:'"Silence" has nothing to do with learning an instrument steadily.',
+        D:'"Wealth" is not the point: the text is about constant practice, not money.'
       },
-      tip:'Une las pistas: "daily effort" y "over a long time" apuntan a compromiso sostenido. Esa palabra es "dedication".'
+      tip:'Put the clues together: "daily effort" and "over a long time" point to sustained commitment. That word is "dedication".'
     }
   ]
 });

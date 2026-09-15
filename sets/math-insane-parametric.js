@@ -30,7 +30,7 @@
         correct:'C',
         expCorrect:'First build the composite: h(x) = f(g(x)) = 2(x² − 3) + 1 = 2x² − 5. Finding h⁻¹(13) means solving h(x) = 13: 2x² − 5 = 13 → 2x² = 18 → x² = 9 → x = 3 (take the positive root because of the domain x ≥ 0). Check: h(3) = 2(9) − 5 = 13 ✓.',
         expWrong:{
-          A:'h(1) = 2(1) − 5 = −3, no 13.',
+          A:'h(1) = 2(1) − 5 = −3, not 13.',
           B:'h(2) = 2(4) − 5 = 3, not 13. Careful: h(2) = 3 is not the same as h⁻¹(13) = 3.',
           D:'h(4) = 2(16) − 5 = 27, not 13. Check your work: 2x² = 18, not 32.'
         },
@@ -82,7 +82,7 @@
         expCorrect:'Use cos(2θ) = 1 − 2sin²(θ), which depends only on sin²(θ): cos(2θ) = 1 − 2(9/25) = 1 − 18/25 = 7/25. Verification another way: in Q2, cos(θ) = −4/5, and cos²θ − sin²θ = 16/25 − 9/25 = 7/25 ✓. Even though θ is in the second quadrant, cos(2θ) comes out positive.',
         expWrong:{
           A:'−7/25 comes from forcing the negative sign "because θ is in Q2", but cos(2θ) = 1 − 2sin²θ uses sin² and the result here is positive.',
-          B:'−24/25 es sin(2θ) = 2·sin(θ)·cos(θ) = 2(3/5)(−4/5), no cos(2θ).',
+          B:'−24/25 is sin(2θ) = 2·sin(θ)·cos(θ) = 2(3/5)(−4/5), not cos(2θ).',
           C:'−1/5 does not come from any correct double-angle identity; review cos(2θ) = 1 − 2sin²θ.'
         },
         tip:'Double angle: cos(2θ) = cos²θ − sin²θ = 2cos²θ − 1 = 1 − 2sin²θ. Pick the form that uses the data you have (here only sin θ) and mind the sign of cos θ by quadrant if you need it.'
@@ -92,9 +92,9 @@
         skill:'Solving a cubic with constraint',
         stem:'If x³ − 6x² + 11x − 6 = 0, what is the sum of all real solutions? (Grid in your answer.)',
         answer:'6',
-        expCorrect:'By Vieta formulas, in ax³ + bx² + cx + d = 0 the sum of the roots is −b/a = −(−6)/1 = 6. (You can also factor: x = 1 is a root because 1 − 6 + 11 − 6 = 0; dividing leaves (x − 1)(x − 2)(x − 3) = 0, with roots 1, 2 and 3, and 1 + 2 + 3 = 6.) Answer: 6.',
+        expCorrect:'By Vieta’s formulas, in ax³ + bx² + cx + d = 0 the sum of the roots is −b/a = −(−6)/1 = 6. (You can also factor: x = 1 is a root because 1 − 6 + 11 − 6 = 0; dividing leaves (x − 1)(x − 2)(x − 3) = 0, with roots 1, 2 and 3, and 1 + 2 + 3 = 6.) Answer: 6.',
         expWrong:{},
-        tip:'Vieta formulas for cubics: sum of roots = −b/a, sum of pairwise products = c/a, product = −d/a. Here you do not even need to factor.'
+        tip:'Vieta’s formulas for cubics: sum of roots = −b/a, sum of pairwise products = c/a, product = −d/a. Here you do not even need to factor.'
       },
       {
         id:'INS-PM-09', type:'mc', domain:'Advanced Math', difficulty:'Difícil',

@@ -1,4 +1,4 @@
-/* SAT Studio question set — Reading & Writing: Rhetorical Synthesis (RHS-01 a RHS-10) */
+/* SAT Studio question set — Reading & Writing: Rhetorical Synthesis (RHS-01 to RHS-10) */
 window.SAT_SETS.push({
   id: 'rw-set9',
   title: 'Rhetorical Synthesis — Hard',
@@ -23,7 +23,7 @@ window.SAT_SETS.push({
       expWrong:{
         A:'It only describes what they are and where they live; it never mentions the extraordinary abilities, so there is no contrast.',
         C:'It explains the process of cryptobiosis, but does not contrast the ordinary habitat with the abilities. It chases a different goal.',
-        D:'It pairs two habitat facts with no contrast at all against the survival capabilities.'
+        D:'It pairs two habitat facts and draws no contrast at all with the survival abilities.'
       },
       tip:'Read the GOAL first. If it asks for "contrast", look for the option with an opposition word (Although, but, while) that brings BOTH sides together.'
     },
@@ -79,7 +79,7 @@ window.SAT_SETS.push({
         D:'Former fishing towns around the Aral Sea now sit in a dry, salty desert.'
       },
       correct:'A',
-      expCorrect:'The goal calls for explaining the CAUSE of the shrinking. A names the reason: engineers diverted the two rivers in the 60s to irrigate cotton, and that is why the lake began to shrink. It is cause plus effect, with accurate notes.',
+      expCorrect:'The goal calls for explaining the CAUSE of the shrinking. A names the reason: engineers diverted the two feeder rivers in the 60s to irrigate cotton, and that is why the lake began to shrink. It is cause plus effect, with accurate notes.',
       expWrong:{
         B:'It gives the result (it lost 90% of its volume), not the cause of why it happened.',
         C:'It contrasts past and present, but does not explain what caused the shrinking.',
@@ -161,7 +161,7 @@ window.SAT_SETS.push({
       correct:'B',
       expCorrect:'The goal is to emphasize the DISTANCE covered. B pairs the two distance notes: more than 24 billion km and a radio signal that takes more than 22 hours to arrive. Both underline how far away it is. It meets the goal with accurate notes.',
       expWrong:{
-        A:'It is about the launch and the golden record; it does not emphasize the distance.',
+        A:'It is about the launch and the gold-plated record; it does not emphasize the distance.',
         C:'It mentions a milestone (interstellar space), but not how far it has traveled in distance.',
         D:'It describes the probe’s payload, not the distance traveled.'
       },

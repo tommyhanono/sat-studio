@@ -21,7 +21,7 @@
           D:'A negative exponent does NOT make the result negative: it means a reciprocal (2⁻³ = 1/8, which is positive). 2² = 4, positive.'
         },
         tip:'a^m · a^n = a^(m+n): with the same base, add exponents WITH THEIR SIGNS. And remember: a negative exponent means a reciprocal, never a negative result.',
-        desmos:'Escribe 2^{-3}*2^5 en Desmos y te da 4 directo. Compara con 2^2: da lo mismo, porque −3 + 5 = 2.',
+        desmos:'Type 2^{-3}*2^5 into Desmos and it gives 4 right away. Compare with 2^2: same result, because −3 + 5 = 2.',
         desmosLatex:['2^{-3}*2^5', '2^2']
       },
       {
@@ -37,12 +37,12 @@
           D:'x²⁴ multiplies EVERYTHING (4·3·2): the final x² enters as a factor, so its exponent gets ADDED, not multiplied.'
         },
         tip:'Two different rules: (a^m)^n = a^(mn) — multiply; a^m · a^n = a^(m+n) — add. Resolve the parentheses first and the product after.',
-        desmos:'Pruébalo con un número: escribe (2^4)^3*2^2 en Desmos y te da 16384. Luego escribe 2^{14}: da igual, así que la expresión es x¹⁴.',
+        desmos:'Try it with a number: type (2^4)^3*2^2 into Desmos and it gives 16384. Then type 2^{14}: the same value, so the expression is x¹⁴.',
         desmosLatex:['(2^4)^3*2^2', '2^{14}']
       },
       {
         id:'EXF-03', type:'mc', domain:'Advanced Math', difficulty:'Media',
-        skill:'Exponentes negativos (cociente)',
+        skill:'Negative exponents (quotient)',
         stem:'Which expression is equivalent to 6x⁵y⁻² / (2x²y³), where x > 0 and y > 0?',
         choices:{A:'3x³/y⁵', B:'3x³y⁵', C:'4x³/y⁵', D:'3x⁷/y⁵'},
         correct:'A',
@@ -53,12 +53,12 @@
           D:'x⁷ comes from ADDING 5 + 2. When dividing powers of the same base the exponents are SUBTRACTED: 5 − 2 = 3.'
         },
         tip:'a^m / a^n = a^(m−n): when dividing, SUBTRACT exponents (top minus bottom). If you are left with a negative exponent, move that factor to the other side of the fraction and flip its sign.',
-        desmos:'Chequea con x = 2, y = 2: escribe (6*2^5*2^{-2})/(2*2^2*2^3) y te da 0.75. Luego 3*2^3/2^5 también da 0.75: son equivalentes.',
+        desmos:'Check with x = 2, y = 2: type (6*2^5*2^{-2})/(2*2^2*2^3) and it gives 0.75. Then 3*2^3/2^5 also gives 0.75: they are equivalent.',
         desmosLatex:['(6*2^5*2^{-2})/(2*2^2*2^3)', '3*2^3/2^5']
       },
       {
         id:'EXF-04', type:'mc', domain:'Advanced Math', difficulty:'Fácil',
-        skill:'Exponentes fraccionarios (evaluar)',
+        skill:'Fractional exponents (evaluating)',
         stem:'What is the value of 27^(2/3)?',
         choices:{A:'3', B:'9', C:'18', D:'729'},
         correct:'B',
@@ -69,12 +69,12 @@
           D:'729 is 27²: you squared it but forgot the cube root (the 3 in the denominator).'
         },
         tip:'a^(m/n) = (ⁿ√a)^m: denominator = index of the root, numerator = the power. Trick: root FIRST, power after — 27 → 3 → 9, with no giant numbers.',
-        desmos:'Escribe 27^{2/3} en Desmos y te da 9 directo. Compara con 27^{1/3} (da 3): el numerador 2 eleva ese 3 al cuadrado.',
+        desmos:'Type 27^{2/3} into Desmos and it gives 9 right away. Compare with 27^{1/3} (gives 3): the numerator 2 squares that 3.',
         desmosLatex:['27^{2/3}', '27^{1/3}']
       },
       {
         id:'EXF-05', type:'mc', domain:'Advanced Math', difficulty:'Media',
-        skill:'Exponentes fraccionarios (radical ↔ exponente)',
+        skill:'Fractional exponents (radical ↔ exponent)',
         stem:'Which of the following is equivalent to x^(3/4), where x > 0?',
         choices:{A:'⁴√(x³)', B:'³√(x⁴)', C:'(√x)³', D:'(x³)⁴'},
         correct:'A',
@@ -85,7 +85,7 @@
           D:'(x³)⁴ = x¹²: that is power of a power (multiply exponents); it has nothing to do with a fractional exponent.'
         },
         tip:'x^(m/n) = ⁿ√(x^m): the fraction reads “power m, root n”. The BOTTOM one is the root — memorize “the denominator hides in the root”.',
-        desmos:'Grafica y=x^{3/4} y encima la raíz cuarta de x³: las dos curvas quedan una sobre la otra para x ≥ 0, o sea que son la misma expresión.',
+        desmos:'Graph y=x^{3/4} and the fourth root of x³ on top: the two curves lie one on the other for x ≥ 0, so they are the same expression.',
         desmosLatex:['y=x^{3/4}', 'y=\\sqrt[4]{x^3}']
       },
       {
@@ -96,7 +96,7 @@
         expCorrect:'To solve for a, raise both sides to the RECIPROCAL exponent (2/3): (a^(3/2))^(2/3) = a¹ = a, and 27^(2/3) = (∛27)² = 3² = 9. So a = 9. (Check: 9^(3/2) = (√9)³ = 3³ = 27 ✓.) Answer: 9.',
         expWrong:{},
         tip:'To undo a fractional exponent, raise to the reciprocal: (a^(m/n))^(n/m) = a. Here the reciprocal of 3/2 is 2/3. Always verify by plugging your answer back into the original equation.',
-        desmos:'Escribe 27^{2/3} en Desmos y te da 9: esa es a. Verifica con 9^{3/2}, que da 27, exactamente el lado derecho de la ecuación.',
+        desmos:'Type 27^{2/3} into Desmos and it gives 9: that is a. Check with 9^{3/2}, which gives 27, exactly the right-hand side of the equation.',
         desmosLatex:['27^{2/3}', '9^{3/2}']
       },
       {
@@ -112,7 +112,7 @@
           D:'−3 is a sign error while distributing: 3(x − 1) = 3x − 3, so 2x = 3x − 3 gives x = 3, not 2x = 3x + 3.'
         },
         tip:'When the bases are not equal but are powers of the same number (4 = 2², 8 = 2³), convert them to that common base and distribute the exponent CAREFULLY. Then set the exponents equal.',
-        desmos:'Grafica y=4^x y y=8^{x-1}: se cruzan en (3, 64). La coordenada x del punto de cruce es la solución de la ecuación.',
+        desmos:'Graph y=4^x and y=8^{x-1}: they cross at (3, 64). The x-coordinate of the crossing point is the solution of the equation.',
         desmosLatex:['y=4^x', 'y=8^{x-1}']
       },
       {
@@ -128,7 +128,7 @@
           D:'36 comes from multiplying 12 × 3 instead of dividing: if 3x = 12, then x = 12/3 = 4.'
         },
         tip:'a^m = a^n with the same base ⇒ m = n. Set the exponents equal and solve the linear equation left: 3x = 12 → x = 4.',
-        desmos:'Resuelve 3x = 12: escribe 12/3 en Desmos y te da 4. Verifica que 2^{3*4} y 2^{12} dan el mismo número (4096).',
+        desmos:'Solve 3x = 12: type 12/3 into Desmos and it gives 4. Check that 2^{3*4} and 2^{12} give the same number (4096).',
         desmosLatex:['12/3', '2^{3*4}']
       },
       {
@@ -144,7 +144,7 @@
           C:'1.5 would be 50% growth per year. 5% = 0.05, so the factor is 1.05, not 1.5. Careful converting the percentage to a decimal.'
         },
         tip:'Growth of r% per period → y = initial · (1 + r/100)^t. “Increases by 5%” is ×1.05 each year. Always verify with t = 1: it has to give the initial plus the percentage.',
-        desmos:'Grafica y=2000*1.05^x y toca el punto en x = 1: da 2100 (2000 más el 5%). Compara con la lineal y=2000+100x: al principio van parecidas, pero la exponencial despega.',
+        desmos:'Graph y=2000*1.05^x and tap the point at x = 1: it gives 2100 (2000 plus 5%). Compare with the linear y=2000+100x: they track closely at first, but the exponential takes off.',
         desmosLatex:['y=2000*1.05^x', 'y=2000+100x']
       },
       {
@@ -160,18 +160,18 @@
           C:'This model is linear and on top of that it subtracts cents (0.15 dollars per year). A repeated annual percentage is multiplicative → exponential.'
         },
         tip:'Decay of r% → factor (1 − r/100)^t: the base is what is LEFT, not what is lost. Quick rule: growth base > 1, decay base between 0 and 1.',
-        desmos:'Grafica y=24000*0.85^x: en x = 1 da 20400 (perdió el 15%) y la curva baja cada vez más lento, la firma clásica del decaimiento exponencial.',
+        desmos:'Graph y=24000*0.85^x: at x = 1 it gives 20400 (down 15%) and the curve falls more and more slowly, the classic signature of exponential decay.',
         desmosLatex:['y=24000*0.85^x']
       },
       {
         id:'EXF-11', type:'spr', domain:'Advanced Math', difficulty:'Difícil',
-        skill:'Semivida (evaluar el modelo)',
+        skill:'Half-life (evaluating the model)',
         stem:'A scientist has a 400-milligram sample of a substance. The mass of the sample is halved every 3 hours. How many milligrams of the sample remain after 12 hours?',
         answer:'25',
         expCorrect:'Half-life model: m(t) = 400 · (1/2)^(t/3). At t = 12 hours there are 12/3 = 4 half-lives: m = 400 · (1/2)⁴ = 400/16 = 25 milligrams. (Step by step: 400 → 200 → 100 → 50 → 25 ✓.) Answer: 25.',
         expWrong:{},
         tip:'Half-life: amount = initial · (1/2)^(t/period). First count how many times it halves (t ÷ period = 12/3 = 4) and then halve that many times.',
-        desmos:'Escribe 400*(1/2)^{12/3} en Desmos y te da 25. También puedes graficar y=400*(1/2)^{x/3} y tocar el punto en x = 12.',
+        desmos:'Type 400*(1/2)^{12/3} into Desmos and it gives 25. You can also graph y=400*(1/2)^{x/3} and tap the point at x = 12.',
         desmosLatex:['400*(1/2)^{12/3}', 'y=400*(1/2)^{x/3}']
       },
       {
@@ -192,7 +192,7 @@
           D:'Draining 30 gallons every minute subtracts a constant amount per minute → linear decreasing, not exponential.'
         },
         tip:'The key test: does it change by a fixed AMOUNT (adding/subtracting) or by a fixed FACTOR/percentage (multiplying)? Fixed amount → linear. Percentage or factor → exponential. Look for the “%” word.',
-        desmos:'Grafica y=50000*1.04^x junto a y=40000+2000x: la recta sube parejo, pero la exponencial se curva y a la larga la deja atrás. Ese "multiplicar cada período" es la firma exponencial.',
+        desmos:'Graph y=50000*1.04^x next to y=40000+2000x: the line rises steadily, but the exponential curves upward and eventually leaves it behind. That "multiply every period" is the exponential signature.',
         desmosLatex:['y=50000*1.04^x', 'y=40000+2000x']
       }
     ]

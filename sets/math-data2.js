@@ -14,7 +14,7 @@
         stem:'A store received a shipment of 250 shirts. If 36% of the shirts were size medium, how many of the shirts were size medium?',
         choices:{A:'36', B:'72', C:'90', D:'160'},
         correct:'C',
-        expCorrect:'36% de 250 = 0.36 × 250 = 90 camisas medianas.',
+        expCorrect:'36% of 250 = 0.36 × 250 = 90 medium shirts.',
         expWrong:{
           A:'36 is the percent itself, not the quantity. You have to multiply it by the total of 250.',
           B:'72 would be 36% of 200, but the total is 250, not 200.',
@@ -80,7 +80,7 @@
       },
       {
         id:'DT2-06', type:'spr', domain:'Problem-Solving & Data Analysis', difficulty:'Media',
-        skill:'Tasas y unidades (tasa unitaria)',
+        skill:'Rates and units (unit rate)',
         stem:'A printer produces pages at a constant rate. It printed 210 pages in 6 minutes. At this rate, how many pages does the printer produce in 10 minutes?',
         answer:'350',
         expCorrect:'Rate = 210 / 6 = 35 pages per minute. In 10 minutes: 35 × 10 = 350 pages. Answer: 350.',

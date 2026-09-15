@@ -17,7 +17,7 @@
         expCorrect:'Gather the x terms on one side and the numbers on the other: 6x − 2x = 15 + 9 → 4x = 24 → x = 6. (Check: 6(6)−9 = 27 and 2(6)+15 = 27 ✓.)',
         expWrong:{
           A:'4 comes from subtracting the numbers wrong: 15 − 9 = 6 instead of adding 15 + 9 = 24. The −9 moves to the other side as an addition.',
-          B:'3 sale de dividir 6/2 o de agrupar mal; el resultado correcto de 4x = 24 es 6, no 3.',
+          B:'3 comes from dividing 6/2, or from grouping the terms wrong; the correct result of 4x = 24 is 6, not 3.',
           C:'24 is the value of 4x, not of x. You skipped the last step: divide by 4.'
         },
         tip:'Variables on one side, constants on the other. Watch the signs as they move: −9 becomes +9. Do not stop at 4x = 24 — that is NOT x.'
@@ -140,7 +140,7 @@
         stem:'A gym charges a one-time sign-up fee of $30 plus a monthly membership of $45. Another gym has no sign-up fee but charges $55 per month. After how many months will the two gyms cost the same total amount?',
         choices:{A:'2', B:'3', C:'4', D:'5'},
         correct:'B',
-        expCorrect:'Costo gym 1: 30 + 45m. Costo gym 2: 55m. Iguala: 30 + 45m = 55m → 30 = 10m → m = 3. (Comprueba: 30 + 45(3) = 165 y 55(3) = 165 ✓.)',
+        expCorrect:'Cost of gym 1: 30 + 45m. Cost of gym 2: 55m. Set them equal: 30 + 45m = 55m → 30 = 10m → m = 3. (Check: 30 + 45(3) = 165 and 55(3) = 165 ✓.)',
         expWrong:{
           A:'2 comes from setting it up wrong, or from dividing 30 by something other than 10 (the difference in monthly rates).',
           C:'4 comes from an arithmetic slip: 30/10 = 3, not 4.',

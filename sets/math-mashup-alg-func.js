@@ -74,7 +74,7 @@
         expWrong:{
           A:'0 is a² − a when a = 1, but the condition a > 1 rules that root out.',
           C:'4 is a² with a = 2; you forgot to subtract a.',
-          D:'6 sale de calcular a² + a = 4 + 2 en vez de a² − a.'
+          D:'6 comes from computing a² + a = 4 + 2 instead of a² − a.'
         },
         tip:'When two functions are equal at a point, set them equal, solve for the x-value, apply any given condition to pick the right root, then evaluate the requested expression.'
       },

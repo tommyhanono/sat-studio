@@ -1,46 +1,46 @@
-/* SAT Studio — Reading and Writing: Simulacro del MÓDULO 1 (RWM1-01 a RWM1-27)
+/* SAT Studio — Reading and Writing: MODULE 1 simulation (RWM1-01 to RWM1-27)
  *
- * El equivalente de math-mod1-sim para la otra mitad del examen. Era el último
- * hueco estructural del banco: había un simulacro de módulo de matemática y
- * ninguno de Reading, cuando Reading es la mitad del puntaje.
+ * The counterpart of math-mod1-sim for the other half of the exam. It was the last
+ * structural gap in the bank: there was a simulation of the math module and
+ * none for Reading, when Reading is half the score.
  *
- * Todo lo de abajo sale del Assessment Framework for the Digital SAT Suite de
- * College Board (PDF oficial, 227 pp.), no de una aproximación:
+ * Everything below comes from College Board's Assessment Framework for the
+ * Digital SAT Suite (official PDF, 227 pp.), not from an approximation:
  *
- *   · 27 preguntas en 32 minutos (25 operativas + 2 de prueba). p. 51
- *   · Promedio 1,19 minutos por pregunta. p. 50
- *   · Pasajes de 25 a 150 palabras, uno por pregunta. p. 50
- *   · Áreas: literatura, historia y ciencias sociales, humanidades, ciencia. p. 50
- *   · ORDEN DE DOMINIOS (tabla 9, p. 50), el mismo en los dos módulos:
+ *   · 27 questions in 32 minutes (25 operational + 2 pretest). p. 51
+ *   · Average of 1.19 minutes per question. p. 50
+ *   · Passages of 25 to 150 words, one per question. p. 50
+ *   · Subject areas: literature, history and social studies, humanities, science. p. 50
+ *   · DOMAIN ORDER (table 9, p. 50), the same in both modules:
  *       Craft and Structure → Information and Ideas →
  *       Standard English Conventions → Expression of Ideas
- *   · Dentro de cada dominio se ordena primero por habilidad y después de
- *     MÁS FÁCIL A MÁS DIFÍCIL. La excepción es Standard English Conventions,
- *     que va de fácil a difícil sin agrupar por habilidad. p. 51
- *   · El primer módulo trae "una mezcla amplia de preguntas fáciles, medias y
- *     difíciles" y su resultado determina la dificultad del segundo. p. 50
+ *   · Within a domain, questions are ordered first by skill and then from
+ *     EASIEST TO HARDEST. The exception is Standard English Conventions,
+ *     which runs easy to hard without grouping by skill. p. 51
+ *   · The first module carries "a broad mix of easy, medium and
+ *     hard questions" and its result sets the difficulty of the second. p. 50
  *
- * Composición de este set:
+ * Composition of this set:
  *
- *   Dominio                        preguntas   este set   oficial
- *   Craft and Structure                8         29,6 %     ≈28 %
- *   Information and Ideas              7         25,9 %     ≈26 %
- *   Standard English Conventions       7         25,9 %     ≈26 %
- *   Expression of Ideas                5         18,5 %     ≈20 %
+ *   Domain                         questions   this set   official
+ *   Craft and Structure                8         29.6%      ≈28%
+ *   Information and Ideas              7         25.9%      ≈26%
+ *   Standard English Conventions       7         25.9%      ≈26%
+ *   Expression of Ideas                5         18.5%      ≈20%
  *
- *   Dificultad: 8 Fácil / 13 Media / 6 Difícil.
+ *   Difficulty: 8 Easy / 13 Medium / 6 Hard.
  *
- * Ese reparto de dificultad es deliberado y corrige un sesgo medido: el resto
- * del banco de Reading tiene apenas 9,8 % de preguntas fáciles y 59 % difíciles,
- * porque la expansión anterior apuntó al segundo módulo. El primer módulo NO es
- * el difícil — es el que fija el techo de puntaje, y hace falta velocidad ahí.
+ * That difficulty split is deliberate and corrects a measured bias: the rest
+ * of the Reading bank has barely 9.8% easy questions and 59% hard ones,
+ * because the previous expansion aimed at the second module. The first module is NOT
+ * the hard one — it is the one that sets the score ceiling, and speed matters there.
  *
- * Se usa CON RELOJ. Navegar libremente entre preguntas y marcar para volver es
- * parte del examen real (p. 51): conviene practicarlo, no solo responder en orden.
+ * Use it WITH A CLOCK. Moving freely between questions and flagging them to come back
+ * is part of the real exam (p. 51): worth practicing, not just answering in order.
  */
 (function(){
 
-  // Pasaje pareado para Cross-Text Connections (la única pregunta que lo necesita).
+  // Paired passage for Cross-Text Connections (the only question that needs one).
   var PAREADO =
     '<b>Text 1</b><br>The naturalist Mary Kingsley argued that a species should be studied only in the place where it lives. ' +
     'Specimens shipped to European museums arrived stripped of everything that gave them meaning: the water they swam in, ' +
@@ -50,28 +50,28 @@
     'A preserved specimen, by contrast, could be examined by a hundred researchers over a century, and each could verify what ' +
     'the previous one claimed to have seen.';
 
-  // Tabla para la pregunta cuantitativa de Command of Evidence. El examen real
-  // usa tablas y gráficos de barras o de líneas; acá va una tabla simple porque
-  // lo que se evalúa es leer el dato correcto, no interpretar un gráfico bonito.
+  // Table for the quantitative Command of Evidence question. The real exam
+  // uses tables and bar or line graphs; a plain table does the job here because
+  // what is tested is reading the right value, not interpreting a pretty chart.
   var TABLA_ANFIBIOS =
     '<div style="overflow-x:auto"><table style="border-collapse:collapse;font-size:.92em;margin:6px 0">' +
     '<caption style="text-align:left;font-weight:600;padding-bottom:6px">' +
-    'Ranas encontradas por hora de búsqueda en cuatro tramos del arroyo Verde (2024)</caption>' +
-    '<tr><th style="border:1px solid #ccc;padding:5px 10px;text-align:left">Tramo</th>' +
-    '<th style="border:1px solid #ccc;padding:5px 10px">Cobertura de árboles</th>' +
-    '<th style="border:1px solid #ccc;padding:5px 10px">Ranas por hora</th></tr>' +
-    '<tr><td style="border:1px solid #ccc;padding:5px 10px">Norte</td>' +
-    '<td style="border:1px solid #ccc;padding:5px 10px;text-align:center">85 %</td>' +
-    '<td style="border:1px solid #ccc;padding:5px 10px;text-align:center">14,2</td></tr>' +
-    '<tr><td style="border:1px solid #ccc;padding:5px 10px">Centro</td>' +
-    '<td style="border:1px solid #ccc;padding:5px 10px;text-align:center">60 %</td>' +
-    '<td style="border:1px solid #ccc;padding:5px 10px;text-align:center">9,8</td></tr>' +
-    '<tr><td style="border:1px solid #ccc;padding:5px 10px">Sur</td>' +
-    '<td style="border:1px solid #ccc;padding:5px 10px;text-align:center">35 %</td>' +
-    '<td style="border:1px solid #ccc;padding:5px 10px;text-align:center">5,1</td></tr>' +
-    '<tr><td style="border:1px solid #ccc;padding:5px 10px">Este</td>' +
-    '<td style="border:1px solid #ccc;padding:5px 10px;text-align:center">12 %</td>' +
-    '<td style="border:1px solid #ccc;padding:5px 10px;text-align:center">2,4</td></tr>' +
+    'Frogs found per hour of searching in four stretches of Verde Creek (2024)</caption>' +
+    '<tr><th style="border:1px solid #ccc;padding:5px 10px;text-align:left">Stretch</th>' +
+    '<th style="border:1px solid #ccc;padding:5px 10px">Tree cover</th>' +
+    '<th style="border:1px solid #ccc;padding:5px 10px">Frogs per hour</th></tr>' +
+    '<tr><td style="border:1px solid #ccc;padding:5px 10px">North</td>' +
+    '<td style="border:1px solid #ccc;padding:5px 10px;text-align:center">85%</td>' +
+    '<td style="border:1px solid #ccc;padding:5px 10px;text-align:center">14.2</td></tr>' +
+    '<tr><td style="border:1px solid #ccc;padding:5px 10px">Central</td>' +
+    '<td style="border:1px solid #ccc;padding:5px 10px;text-align:center">60%</td>' +
+    '<td style="border:1px solid #ccc;padding:5px 10px;text-align:center">9.8</td></tr>' +
+    '<tr><td style="border:1px solid #ccc;padding:5px 10px">South</td>' +
+    '<td style="border:1px solid #ccc;padding:5px 10px;text-align:center">35%</td>' +
+    '<td style="border:1px solid #ccc;padding:5px 10px;text-align:center">5.1</td></tr>' +
+    '<tr><td style="border:1px solid #ccc;padding:5px 10px">East</td>' +
+    '<td style="border:1px solid #ccc;padding:5px 10px;text-align:center">12%</td>' +
+    '<td style="border:1px solid #ccc;padding:5px 10px;text-align:center">2.4</td></tr>' +
     '</table></div>';
 
   window.SAT_SETS.push({
@@ -85,7 +85,7 @@
 
       /* ═══════════ CRAFT AND STRUCTURE (8) ═══════════
          Words in Context → Text Structure and Purpose → Cross-Text Connections,
-         y dentro de cada habilidad, de más fácil a más difícil. */
+         and within each skill, from easiest to hardest. */
 
       {
         id:'RWM1-01', type:'mc', domain:'Craft and Structure', difficulty:'Fácil',
@@ -363,8 +363,8 @@
       },
 
       /* ═══════════ STANDARD ENGLISH CONVENTIONS (7) ═══════════
-         De más fácil a más difícil, SIN agrupar por habilidad — así lo especifica
-         el marco oficial (p. 51) para este dominio y solo para este. */
+         From easiest to hardest, WITHOUT grouping by skill — that is what the
+         official framework (p. 51) specifies for this domain and only for this one. */
 
       {
         id:'RWM1-16', type:'mc', domain:'Standard English Conventions', difficulty:'Fácil',
@@ -477,8 +477,8 @@
       },
 
       /* ═══════════ EXPRESSION OF IDEAS (5) ═══════════
-         Rhetorical Synthesis → Transitions, según el orden de habilidades del
-         marco oficial (tabla 10). */
+         Rhetorical Synthesis → Transitions, following the skill order in the
+         official framework (table 10). */
 
       {
         id:'RWM1-23', type:'mc', domain:'Expression of Ideas', difficulty:'Media',

@@ -1,4 +1,4 @@
-/* SAT Studio question set — Reading & Writing: Punctuation & Boundaries Set 3 (PB2-01 a PB2-12) */
+/* SAT Studio question set — Reading & Writing: Punctuation & Boundaries Set 3 (PB2-01 to PB2-12) */
 window.SAT_SETS.push({
   id: 'rw-punct2',
   title: 'Punctuation & Boundaries — Set 3',
@@ -69,7 +69,7 @@ window.SAT_SETS.push({
     },
     {
       id:'PB2-05', type:'mc', domain:'Standard English Conventions', difficulty:'Media',
-      skill:'Rayas en pareja (elemento no esencial)',
+      skill:'Paired dashes (non-essential element)',
       passage:"The first commercial photograph—an image that required an exposure of several %BLANK% was taken from a rooftop in France in 1826.",
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'hours,', B:'hours;', C:'hours:', D:'hours—'},

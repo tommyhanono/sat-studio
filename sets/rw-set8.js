@@ -1,4 +1,4 @@
-/* SAT Studio question set — Reading & Writing: Gramática (Concordancia y Coordinación) Set 8 (GRM-01 a GRM-12) */
+/* SAT Studio question set — Reading & Writing: Grammar (Agreement & Coordination) Set 8 (GRM-01 to GRM-12) */
 window.SAT_SETS.push({
   id: 'rw-set8',
   title: 'Grammar: Agreement & Coordination — Hard',
@@ -54,7 +54,7 @@ window.SAT_SETS.push({
     },
     {
       id:'GRM-04', type:'mc', domain:'Standard English Conventions', difficulty:'Difícil',
-      skill:'Formas y tiempos verbales',
+      skill:'Verb forms and tenses',
       passage:"By the time the volunteers arrived at the coast to help with the cleanup, the storm %BLANK% most of the fragile nesting sites along the shoreline.",
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'has already destroyed', B:'already destroys', C:'is already destroying', D:'had already destroyed'},
@@ -69,7 +69,7 @@ window.SAT_SETS.push({
     },
     {
       id:'GRM-05', type:'mc', domain:'Standard English Conventions', difficulty:'Media',
-      skill:'Formas y tiempos verbales',
+      skill:'Verb forms and tenses',
       passage:"The committee reviewed the proposal for weeks and, after countless revisions, finally %BLANK% it to the board with a unanimous recommendation.",
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'submits', B:'has submitted', C:'submitted', D:'submitting'},
@@ -77,7 +77,7 @@ window.SAT_SETS.push({
       expCorrect:'The sentence is already in the past (“reviewed”). The verb joined by “and” has to keep the same tense: simple past “submitted”.',
       expWrong:{
         A:'“submits” is present tense; it breaks with the past “reviewed”.',
-        B:'“has submitted” es presente perfecto; no combina con la secuencia en pasado simple.',
+        B:'“has submitted” is present perfect; it does not fit the simple-past sequence of the sentence.',
         D:'“submitting” is not a finite verb; with no main verb the sentence is incomplete.'
       },
       tip:'If the sentence already started in the past (“reviewed”), the verb joined by “and” goes in the past too.'

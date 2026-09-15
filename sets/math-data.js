@@ -14,7 +14,7 @@
         stem:'A school has 350 students. If 40% of the students are in the band, how many students are in the band?',
         choices:{A:'40', B:'140', C:'210', D:'245'},
         correct:'B',
-        expCorrect:'40% de 350 = 0.40 × 350 = 140 estudiantes.',
+        expCorrect:'40% of 350 = 0.40 × 350 = 140 students.',
         expWrong:{
           A:'40 is the percent itself, not the number of students. You have to multiply it by the total.',
           C:'210 is 60% (the ones NOT in the band). They are asking for the 40%.',

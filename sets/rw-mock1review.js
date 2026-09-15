@@ -231,7 +231,7 @@ window.SAT_SETS.push({
       correct:'C',
       expCorrect:'The text contrasts what it LOOKS like (random "splashes", chaotic) with what was really there: a system the artist worked out calmly "page after page" in his notebooks. The word has to signal something very careful and precise: "meticulous" fits perfectly.',
       expWrong:{
-        A:'“careless” (descuidado) es lo contrario de un sistema trabajado con cuidado en cuadernos.',
+        A:'“careless” is the opposite of a system worked out with care, page after page, in his notebooks.',
         B:'"imaginary" does not work: the system is real, written out in his notebooks.',
         D:'"ordinary" does not capture the contrast; the point is that it was precise and his own, not commonplace, which is why critics missed it.'
       },

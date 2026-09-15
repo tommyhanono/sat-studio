@@ -1,4 +1,4 @@
-/* SAT Studio question set — Math: Mock 1 Review (targeted) — Hard (M1M-01 a M1M-14) */
+/* SAT Studio question set — Math: Mock 1 Review (targeted) — Hard (M1M-01 to M1M-14) */
 (function(){
   var FIG_TANGENT =
     '<svg viewBox="0 0 240 205" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Circle centered at O with radius 13; a line is tangent to the circle at the point (5, 12)">' +
@@ -82,7 +82,7 @@
           D:'(−6, 8) uses the coefficients as they are and with the wrong sign on top of that. You have to halve them AND flip the sign.'
         },
         tip:'From general to standard form: take HALF of each linear coefficient and flip its sign. Half of −6 is −3 → h = 3; half of 8 is 4 → k = −4. Center (3, −4).',
-        desmos:'Grafica la ecuación tal cual: escribe x^2+y^2-6x+8y-11=0 y Desmos dibuja la circunferencia. Su centro está en (3, -4). Si prefieres, escribe la forma estándar (x-3)^2+(y+4)^2=36 y verás el mismo círculo.',
+        desmos:'Graph the equation exactly as given: type x^2+y^2-6x+8y-11=0 and Desmos draws the circle. Its center is at (3, -4). If you prefer, type the standard form (x-3)^2+(y+4)^2=36 and you will see the same circle.',
         desmosLatex:['x^2+y^2-6x+8y-11=0', '(x-3)^2+(y+4)^2=36']
       },
       {
@@ -98,7 +98,7 @@
           D:'64π is the area of the WHOLE circle (π·8²). You only want the 3/8 fraction of that area.'
         },
         tip:'With the angle in degrees, the sector is (θ/360) of the circle. Area = (θ/360) · π · r². Do not forget to square the radius (π·r²), and do not confuse it with the arc (2·π·r).',
-        desmos:'Un sector de 135° es 135/360 del círculo. Usa Desmos como calculadora: escribe (135/360)*pi*8^2 y te da ≈75.4, que es 24π. Ojo: va π·r² (radio al cuadrado), no π·r.',
+        desmos:'A 135° sector is 135/360 of the circle. Use Desmos as a calculator: type (135/360)*pi*8^2 and it gives ≈75.4, which is 24π. Careful: it is π·r² (radius squared), not π·r.',
         desmosLatex:['(135/360)*pi*8^2', '24*pi']
       },
       {
@@ -115,7 +115,7 @@
           C:'−12/5 only flipped the sign of the radius slope, without inverting the fraction. For perpendicular you have to do both.'
         },
         tip:'The tangent is perpendicular to the radius at the point of contact. Get the slope of the radius (Δy/Δx) and take its negative reciprocal: flip the fraction and change the sign.',
-        desmos:'Grafica x^2+y^2=169 y marca el punto (5,12). El radio a ese punto tiene pendiente 12/5, así que la tangente (perpendicular) tiene pendiente -5/12. Grafica y=-5(x-5)/12+12 y verás que roza el círculo justo en (5,12).',
+        desmos:'Graph x^2+y^2=169 and plot the point (5,12). The radius to that point has slope 12/5, so the tangent (perpendicular) has slope -5/12. Graph y=-5(x-5)/12+12 and you will see it grazes the circle right at (5,12).',
         desmosLatex:['x^2+y^2=169', '(5,12)', 'y=-5(x-5)/12+12']
       },
       {
@@ -131,7 +131,7 @@
           D:'6 is the degree of the polynomial (3 + 2 + 1), not the number of crossings.'
         },
         tip:'ODD multiplicity → crosses the axis; EVEN multiplicity → touches and bounces. Count only the factors with odd exponents to know how many times it crosses.',
-        desmos:'Grafica y=(x+2)^3(x-1)^2(x-4). Fíjate: en x=-2 y en x=4 la curva CRUZA el eje (multiplicidad impar), y en x=1 solo lo toca y rebota (multiplicidad par). Cruza en 2 valores.',
+        desmos:'Graph y=(x+2)^3(x-1)^2(x-4). Notice: at x=-2 and at x=4 the curve CROSSES the axis (odd multiplicity), and at x=1 it only touches it and bounces (even multiplicity). It crosses at 2 values.',
         desmosLatex:['y=(x+2)^3(x-1)^2(x-4)']
       },
       {
@@ -152,7 +152,7 @@
           D:'These are also opposite ends, typical of an odd degree. A quartic never sends its ends in opposite directions.'
         },
         tip:'Only the highest-degree term matters. EVEN degree → both ends go the same way; negative coefficient → both downward. Here −3x⁴: down and down.',
-        desmos:'Grafica y=-3x^4+2x^3-x+5 y haz zoom out. Las dos ramas se van hacia abajo (hacia -∞): grado par + coeficiente principal negativo = ambos extremos hacia abajo.',
+        desmos:'Graph y=-3x^4+2x^3-x+5 and zoom out. Both branches head downward (toward -∞): even degree + negative leading coefficient = both ends downward.',
         desmosLatex:['y=-3x^4+2x^3-x+5']
       },
       {
@@ -168,7 +168,7 @@
           D:'There is a solution: x = 1 works perfectly. Only x = 3 gets discarded.'
         },
         tip:'Solve the rational equation as usual, but DISCARD any value that makes a denominator zero. Those are extraneous solutions. Here x = 3 falls out.',
-        desmos:'Grafica y=24/(x^2-9)+1 y y=4/(x-3); se cruzan en x=1. En x=3 los denominadores se hacen 0, así que esa raíz es extraña y se descarta. Queda solo x=1.',
+        desmos:'Graph y=24/(x^2-9)+1 and y=4/(x-3); they cross at x=1. At x=3 the denominators become 0, so that root is extraneous and gets discarded. Only x=1 is left.',
         desmosLatex:['y=24/(x^2-9)+1', 'y=4/(x-3)']
       },
       {
@@ -184,7 +184,7 @@
           C:'1/4 is 25/100, the MARGINAL probability of being a teacher, ignoring the coffee condition.'
         },
         tip:'Conditional "given that A": the denominator is the total for A, not the grand total. "Given that they drink coffee" → divide by the 60 coffee drinkers, not by 100.',
-        desmos:'Probabilidad condicional: "dado que toma café". El denominador es solo la columna de café (60), no el total. Escribe 12/60 en Desmos y te da 0.2, o sea 1/5.',
+        desmos:'Conditional probability: "given that they drink coffee". The denominator is only the coffee column (60), not the total. Type 12/60 in Desmos and it gives 0.2, that is, 1/5.',
         desmosLatex:['12/60']
       },
       {
@@ -200,7 +200,7 @@
           D:'1/2 is 40/80, the MARGINAL probability of being under 30, ignoring the "negative" condition.'
         },
         tip:'The key words are "given that": they fix the group (the negative column = 50) and that is your denominator. Then you count how many of that group meet the other condition.',
-        desmos:'Te dicen "dado que salió negativo", así que el denominador es la columna de negativos (50). Escribe 22/50 en Desmos y te da 0.44, que es 11/25.',
+        desmos:'You are told "given that the test was negative", so the denominator is the negative column (50). Type 22/50 in Desmos and it gives 0.44, which is 11/25.',
         desmosLatex:['22/50']
       },
       {
@@ -211,12 +211,12 @@
         expCorrect:'With 20 data points, the median is the average of the 10th and 11th ordered values. Cumulative frequencies: four 0s (positions 1–4), six 1s (positions 5–10), five 2s (positions 11–15). The 10th value is 1 and the 11th is 2, so the median is (1 + 2)/2 = 1.5.',
         expWrong:{},
         tip:'With n even, the median is the average of the two middle values (positions n/2 and n/2 + 1). With 20 data points: the average of the 10th and 11th. Use cumulative frequencies to locate them.',
-        desmos:'Con 20 datos, la mediana es el promedio del 10.º y 11.º valores ordenados. Escribe median(0,0,0,0,1,1,1,1,1,1,2,2,2,2,2,3,3,3,4,4) y Desmos te da 1.5. También sale de (1+2)/2.',
+        desmos:'With 20 data points, the median is the average of the 10th and 11th ordered values. Type median(0,0,0,0,1,1,1,1,1,1,2,2,2,2,2,3,3,3,4,4) and Desmos gives you 1.5. It also comes from (1+2)/2.',
         desmosLatex:['median(0,0,0,0,1,1,1,1,1,1,2,2,2,2,2,3,3,3,4,4)', '(1+2)/2']
       },
       {
         id:'M1M-10', type:'mc', domain:'Advanced Math', difficulty:'Media',
-        skill:'Exponentes fraccionarios',
+        skill:'Fractional exponents',
         stem:'Which of the following is equivalent to (16x⁸)^(3/4), where x > 0?',
         choices:{A:'8x⁶', B:'12x⁶', C:'64x⁶', D:'2x⁶'},
         correct:'A',
@@ -227,18 +227,18 @@
           D:'2x⁶ takes the fourth root of 16 correctly (=2) but forgets to cube it. The numerator 3 of the exponent is missing.'
         },
         tip:'a^(m/n) = (nth root of a)^m. Distribute the exponent to each factor and, with powers of x, multiply exponents: (x⁸)^(3/4) = x⁶.',
-        desmos:'El exponente 3/4 es raíz cuarta y luego al cubo. Escribe 16^(3/4) en Desmos y te da 8; con la x, (x^8)^(3/4)=x^6. Resultado 8x^6.',
+        desmos:'The exponent 3/4 is a fourth root and then a cube. Type 16^(3/4) in Desmos and it gives 8; with the x, (x^8)^(3/4)=x^6. Result: 8x^6.',
         desmosLatex:['16^(3/4)']
       },
       {
         id:'M1M-11', type:'spr', domain:'Advanced Math', difficulty:'Difícil',
-        skill:'Exponentes fraccionarios (evaluar)',
+        skill:'Fractional exponents (evaluating)',
         stem:'What is the value of 81^(3/4) − 16^(1/2) ?',
         answer:'23',
         expCorrect:'81^(3/4) is the fourth root of 81 raised to the cube: (81^(1/4))³ = 3³ = 27. And 16^(1/2) = √16 = 4. So 27 − 4 = 23. (Check in Desmos: 81^(3/4) − 16^(1/2) = 23 ✓.) Answer: 23.',
         expWrong:{},
         tip:'Denominator of the exponent = the root; numerator = the power. 81^(3/4): fourth root (3) cubed (27). An exponent of 1/2 is just a square root.',
-        desmos:'Desmos como calculadora: escribe 81^(3/4)-16^(1/2) y te da 23. Recuerda: 81^(3/4) es la raíz cuarta de 81 (=3) al cubo (=27), y 16^(1/2)=4.',
+        desmos:'Desmos as a calculator: type 81^(3/4)-16^(1/2) and it gives 23. Remember: 81^(3/4) is the fourth root of 81 (=3) cubed (=27), and 16^(1/2)=4.',
         desmosLatex:['81^(3/4)-16^(1/2)']
       },
       {
@@ -255,7 +255,7 @@
           C:'15/8 is the reciprocal of tan A (adjacent/opposite), that is, the cotangent, not the cosine.'
         },
         tip:'SOH-CAH-TOA. Work out, relative to the given angle, which side is opposite, adjacent and hypotenuse. Cosine = adjacent/hypotenuse.',
-        desmos:'SOH-CAH-TOA: cos A = adyacente/hipotenusa = 15/17. Escribe 15/17 en Desmos y te da ≈0.882. (Si usas \\cos en Desmos trabaja en radianes, pero aquí solo necesitas la razón de los lados.)',
+        desmos:'SOH-CAH-TOA: cos A = adjacent/hypotenuse = 15/17. Type 15/17 in Desmos and it gives ≈0.882. (If you use \\cos in Desmos it works in radians, but here you only need the ratio of the sides.)',
         desmosLatex:['15/17']
       },
       {
@@ -272,7 +272,7 @@
           D:'4√3 comes from dividing 12 by √3 (12/√3 = 4√3) instead of multiplying by √3/2.'
         },
         tip:'Memorize 30-60-90 → 1 : √3 : 2 (opposite 30°, 60°, 90°). The side facing 60° is the middle one: hypotenuse · (√3/2).',
-        desmos:'En un 30-60-90 los lados van en razón 1 : √3 : 2. El lado opuesto a 60° = hipotenusa·(√3/2) = 12*√3/2. Escribe 12*\\sqrt{3}/2 en Desmos y te da ≈10.39, que es 6√3.',
+        desmos:'In a 30-60-90 the sides are in the ratio 1 : √3 : 2. The side opposite 60° = hypotenuse·(√3/2) = 12*√3/2. Type 12*\\sqrt{3}/2 in Desmos and it gives ≈10.39, which is 6√3.',
         desmosLatex:['12*\\sqrt{3}/2', '6*\\sqrt{3}']
       },
       {
@@ -289,7 +289,7 @@
           D:'13 adds the difference (DE − AB = 4) to BC: 9 + 4 = 13. Similarity MULTIPLIES by a scale factor; it does not add.'
         },
         tip:'In similar figures, set up a proportion with CORRESPONDING sides: the same ratio for all of them. Match A↔D, B↔E, C↔F correctly before solving.',
-        desmos:'Semejantes: lados correspondientes en la misma razón. AB va con DE y BC va con EF, así que 6/10 = 9/EF. Despeja: escribe 9*10/6 en Desmos y te da 15.',
+        desmos:'Similar figures: corresponding sides in the same ratio. AB goes with DE and BC goes with EF, so 6/10 = 9/EF. Solve: type 9*10/6 in Desmos and it gives 15.',
         desmosLatex:['9*10/6']
       }
     ]

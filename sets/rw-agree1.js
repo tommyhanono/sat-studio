@@ -32,7 +32,7 @@ window.SAT_SETS.push({
       expCorrect:'The subject is "Each", which is always singular no matter what phrase follows it. A singular subject calls for a singular verb: "receives".',
       expWrong:{
         A:'"receive" is plural; it agrees with "volunteers", but the real subject is the singular "Each".',
-        C:'“have received” es plural; el singular “Each” pide “has”, no “have”.',
+        C:'“have received” is plural; the singular “Each” needs “has”, not “have”.',
         D:'“are receiving” is plural; the singular subject “Each” needs a singular verb.'
       },
       tip:'"Each" is ALWAYS singular. Ignore "of the volunteers": the verb agrees with "Each".'
@@ -78,7 +78,7 @@ window.SAT_SETS.push({
       expWrong:{
         A:'"are" is plural; "along with…" does not add subjects, so the subject is still the singular "committee".',
         B:'“were” is plural; the singular subject “committee” needs a singular verb.',
-        D:'“have been” es plural; el singular “committee” pide “has been”, no “have been”.'
+        D:'“have been” is plural; the singular “committee” needs “has been”, not “have been”.'
       },
       tip:'Phrases like "along with", "as well as" or "together with" do NOT add to the subject. Agree only with the real subject ("committee").'
     },

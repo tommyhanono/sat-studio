@@ -1,4 +1,4 @@
-/* SAT Studio question set — Reading & Writing: EXTREME — Words in Context (XW-01 a XW-12) */
+/* SAT Studio question set — Reading & Writing: EXTREME — Words in Context (XW-01 to XW-12) */
 window.SAT_SETS.push({
   id: "rw-x-wic",
   title: "Extreme — Words in Context",

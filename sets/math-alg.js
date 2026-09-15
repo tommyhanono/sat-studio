@@ -1,4 +1,4 @@
-/* SAT Studio question set — Math: Algebra (ALG-01 a ALG-12) */
+/* SAT Studio question set — Math: Algebra (ALG-01 to ALG-12) */
 (function(){
   window.SAT_SETS.push({
     id: 'math-alg',
@@ -28,10 +28,10 @@
         stem:'The equation 4x + 3y = 24 relates x and y. If x = 3, what is the value of y?',
         choices:{A:'3', B:'4', C:'7', D:'12'},
         correct:'B',
-        expCorrect:'Sustituye x = 3: 4(3) + 3y = 24 → 12 + 3y = 24 → 3y = 12 → y = 4. (Comprueba: 12 + 12 = 24 ✓.)',
+        expCorrect:'Substitute x = 3: 4(3) + 3y = 24 → 12 + 3y = 24 → 3y = 12 → y = 4. (Check: 12 + 12 = 24 ✓.)',
         expWrong:{
           A:'3 is the value of x they gave you, not of y. Do not copy it as the answer.',
-          C:'7 sale de restar mal: 24 − 12 = 12, no 21; y luego 12/3 = 4, no 7.',
+          C:'7 comes from subtracting wrong: 24 − 12 = 12, not 21; and then 12/3 = 4, not 7.',
           D:'12 is 3y (or the value of 4x). You skipped dividing by 3 to solve for y.'
         },
         tip:'Substituting means replacing and solving. First step, always: multiply out the known value. Here 4×3 = 12 before you touch the y.'
@@ -45,7 +45,7 @@
         expCorrect:'Slope = (change in y)/(change in x) = (17 − 5)/(4 − 1) = 12/3 = 4.',
         expWrong:{
           A:'3 is the change in x (4 − 1), not the slope. It is the denominator, not the result.',
-          B:'6 sale de dividir mal o de promediar; 12/3 = 4, no 6.',
+          B:'6 comes from dividing wrong or from averaging; 12/3 = 4, not 6.',
           D:'12 is only the change in y (17 − 5). You skipped dividing by the change in x.'
         },
         tip:'Slope = rise/run = Δy/Δx. Subtract in the SAME order on top and bottom: (y₂−y₁)/(x₂−x₁). Never leave the Δy on its own.'
@@ -74,7 +74,7 @@
         expWrong:{
           A:'2 is the value of y, not of x. Careful: the question asks for x.',
           C:'5 comes from adding wrong, or from solving x − y = 1 on its own without using the other equation.',
-          D:'8 es 4x sin dividir, o 11 − 3 mal hecho. Recuerda 4x = 12 → x = 3.'
+          D:'8 is 4x without dividing, or 11 − 3 done wrong. Remember 4x = 12 → x = 3.'
         },
         tip:'If one equation has +y and the other has −y, ADD them: the y terms vanish on their own. It is the fastest shortcut in systems. Then check whether they want x or y.'
       },
@@ -114,7 +114,7 @@
         correct:'C',
         expCorrect:'Model: 40 + 25h = 190. Subtract the fixed charge: 25h = 150 → h = 6. (Check: 40 + 25(6) = 40 + 150 = 190 ✓.)',
         expWrong:{
-          A:'5 sale de dividir 190/40 o de restar mal; 150/25 = 6, no 5.',
+          A:'5 comes from dividing 190/40 or from subtracting wrong; 150/25 = 6, not 5.',
           B:'7 comes from forgetting the fixed charge or subtracting it twice.',
           D:'8 comes from dividing 190/25 ≈ 7.6 and rounding, without taking off the fixed $40 first.'
         },

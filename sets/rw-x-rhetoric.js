@@ -1,4 +1,4 @@
-/* SAT Studio question set — Reading & Writing: Extreme Transitions & Synthesis (XT-01 a XT-12) */
+/* SAT Studio question set — Reading & Writing: Extreme Transitions & Synthesis (XT-01 to XT-12) */
 window.SAT_SETS.push({
   id: 'rw-x-rhetoric',
   title: 'Extreme — Transitions & Synthesis',

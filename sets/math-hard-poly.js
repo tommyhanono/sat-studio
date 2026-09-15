@@ -1,4 +1,4 @@
-/* SAT Studio question set — Math: Polynomials & Functions — Hard (HMP-01 a HMP-12) */
+/* SAT Studio question set — Math: Polynomials & Functions — Hard (HMP-01 to HMP-12) */
 (function(){
   window.SAT_SETS.push({
     id: 'math-hard-poly',
@@ -71,7 +71,7 @@
       },
       {
         id:'HMP-05', type:'mc', domain:'Advanced Math', difficulty:'Difícil',
-        skill:'Expresiones racionales (simplificar)',
+        skill:'Rational expressions (simplifying)',
         stem:'Which of the following is equivalent to (x² − 9) / (x² − x − 6), where x ≠ 3 and x ≠ −2?',
         choices:{A:'(x − 3)/(x + 2)', B:'(x − 3)/(x − 2)', C:'(x + 3)/(x + 2)', D:'(x + 3)/(x − 2)'},
         correct:'C',
@@ -99,7 +99,7 @@
       },
       {
         id:'HMP-07', type:'mc', domain:'Advanced Math', difficulty:'Difícil',
-        skill:'Exponentes fraccionarios',
+        skill:'Fractional exponents',
         stem:'Which of the following is equivalent to (27x⁶)^(2/3), where x > 0?',
         choices:{A:'729x⁴', B:'18x⁴', C:'9x⁹', D:'9x⁴'},
         correct:'D',
@@ -113,7 +113,7 @@
       },
       {
         id:'HMP-08', type:'mc', domain:'Advanced Math', difficulty:'Difícil',
-        skill:'Exponentes negativos',
+        skill:'Negative exponents',
         stem:'Which of the following is equivalent to (x⁻³ y²) / (x⁻⁵ y⁻¹), where x > 0 and y > 0?',
         choices:{A:'x⁸y', B:'x²y³', C:'y³/x⁸', D:'x²y'},
         correct:'B',
@@ -154,13 +154,13 @@
         expWrong:{
           A:'11 is g(3) = 3² + 2, that is, you applied only g to the 3 and forgot to evaluate f first.',
           B:'29 is f(g(3)) = 3(11) − 4, that is, you reversed the order. g(f(3)) applies f first, then g.',
-          D:'23 olvida el "+ 2" de g: 5² = 25 y sumas 2 → 27, no 23 (o evaluaste g(3²) mal).'
+          D:'23 forgets the "+ 2" in g: 5² = 25 and you add 2 → 27, not 23 (or you evaluated g(3²) wrong).'
         },
         tip:'g(f(3)) is read from the inside out: compute f(3) first and that result goes into g. Order matters: g(f(x)) ≠ f(g(x)).'
       },
       {
         id:'HMP-11', type:'spr', domain:'Advanced Math', difficulty:'Difícil',
-        skill:'Ceros de un polinomio (forma factorizada)',
+        skill:'Zeros of a polynomial (factored form)',
         stem:'The polynomial p is defined by p(x) = x³ − 7x² + 10x. What is the greatest value of x for which p(x) = 0?',
         answer:'5',
         expCorrect:'Factor out the common x: p(x) = x(x² − 7x + 10) = x(x − 2)(x − 5). A product is zero when some factor is zero, so the zeros are x = 0, x = 2 and x = 5. The largest is 5. (Check: p(5) = 125 − 175 + 50 = 0 ✓.) Answer: 5.',

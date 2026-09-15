@@ -365,7 +365,7 @@
           D:'Design W was the slowest design, at 52 s per order, with 2.4 items per order.'
         },
         correct:'B',
-        expCorrect:'The goal has TWO conditions: faster WITHOUT lowering items per order. And Y is the fastest (31 s) but its items drop to 1.6, so it is ruled out. Among those keeping items high (2.4–2.5), X is the fastest (40 s) and holds 2.4. B is the only one meeting both conditions.',
+        expCorrect:'The goal has TWO conditions: faster WITHOUT lowering items per order. Design Y is the fastest (31 s) but its items drop to 1.6, so it is ruled out. Among those keeping items high (2.4–2.5), X is the fastest (40 s) and holds 2.4. B is the only one meeting both conditions.',
         expWrong:{
           A:'Design Y is the fastest (31 s), but its items per order drop to 1.6; it violates the second condition ("without lowering items"). Fast but it does not meet the full claim.',
           C:'Design Z has the highest items (2.5), but it is slower (44 s) than X; the goal prioritizes speed while holding items, and X achieves both better.',

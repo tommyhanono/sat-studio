@@ -36,7 +36,7 @@
           D:'−3 is the intercept of the first equation, the loose number. It is y only when x = 0, and here x = 4.'
         },
         tip:'If one equation already has a variable solved, substitution always wins: there is nothing to set up. And before you mark, reread which variable they want — x and y are usually both among the options.',
-        desmos:'Grafica y=2x-3 y 4x+y=21 y toca la intersección: (4, 5).',
+        desmos:'Graph y=2x-3 and 4x+y=21 and tap the intersection: (4, 5).',
         desmosLatex:['y=2x-3','4x+y=21']
       },
       {
@@ -52,7 +52,7 @@
           D:'1/3 divides one time too many. Going from 3x − 6y = 12 to x − 2y = 4 you already divided everything by 3; the x coefficient ended up as 1, not 1/3.'
         },
         tip:'Infinitely many solutions = the SAME line (coefficients and constant proportional). No solution = PARALLEL lines (coefficients proportional, constant NOT). It is the same computation and the SAT asks both versions equally often; all that changes is what you do with the constant.',
-        desmos:'Grafica 3x-6y=12 y x-2y=4: se dibujan una encima de la otra. Cambiá el 4 por un 5 y verás dos rectas paralelas — ese sería el caso "sin solución".',
+        desmos:'Graph 3x-6y=12 and x-2y=4: they draw one on top of the other. Change the 4 to a 5 and you see two parallel lines — that would be the "no solution" case.',
         desmosLatex:['3x-6y=12','x-2y=4']
       },
       {
@@ -68,7 +68,7 @@
           D:'(3, 4): 3(3) − 5 = 4, so you need y > 4. y is exactly 4: again on the line, not inside the region.'
         },
         tip:'Two options of this kind usually land EXACTLY on the line. With > or < they do not count; with ≥ or ≤ they do. Look at the symbol before you compute anything — it saves you from ruling out the wrong one.',
-        desmos:'Escribe y>3x-5 y Desmos sombrea la región. Agregá (0,0), (2,1), (1,-3) y (3,4) y verás cuál cae adentro y cuáles justo en el borde.',
+        desmos:'Type y>3x-5 and Desmos shades the region. Add (0,0), (2,1), (1,-3) and (3,4) and you see which one falls inside and which ones land right on the edge.',
         desmosLatex:['y>3x-5','(0,0)','(2,1)','(3,4)']
       },
       {
@@ -84,7 +84,7 @@
           D:'y = −4x − 7 has the right slope but it flipped the sign of the original intercept instead of computing it with the point. Check: −4(2) − 7 = −15, not 1.'
         },
         tip:'Parallel: same m. Perpendicular: reciprocal AND flipped sign (−4 → 1/4). The SAT always plants the perpendicular among the options, so underline which one they want before you solve.',
-        desmos:'Grafica y=-4x+7, y=-4x+9 y el punto (2,1): las dos rectas nunca se cruzan y la segunda pasa por el punto.',
+        desmos:'Graph y=-4x+7, y=-4x+9 and the point (2,1): the two lines never cross and the second one passes through the point.',
         desmosLatex:['y=-4x+7','y=-4x+9','(2,1)']
       },
       {
@@ -100,7 +100,7 @@
           D:'2/3 flipped the sign but did not flip the fraction. (−2/3)(2/3) = −4/9, which is not −1.'
         },
         tip:'The condition is that the product of the slopes is **−1**. It is a one-second check: multiply your answer by the original slope and if it does not give −1, it is wrong. And watch out: the equation comes in general form, so you have to solve for y before reading the slope.',
-        desmos:'Grafica 2x+3y=12 y y=1.5x: se cruzan en ángulo recto.',
+        desmos:'Graph 2x+3y=12 and y=1.5x: they cross at a right angle.',
         desmosLatex:['2x+3y=12','y=1.5x']
       },
       {
@@ -116,7 +116,7 @@
           D:'$13.00 is the total cost of the 4-mile trip, not the fixed charge. It includes the mileage.'
         },
         tip:'"Fixed charge plus a rate per unit" is always y = mx + b with two given points. Compute the slope first, and only then solve for b using EITHER of the two points. Check with the other point: if both give the same thing, you are right.',
-        desmos:'Escribe (4,13) y (9,25.5), grafica y=2.5x+3 y mirá que pase por los dos puntos. El intercepto en y es el cargo fijo.',
+        desmos:'Type (4,13) and (9,25.5), graph y=2.5x+3 and check that it passes through both points. The y-intercept is the flat fee.',
         desmosLatex:['(4,13)','(9,25.5)','y=2.5x+3']
       },
       {
@@ -132,7 +132,7 @@
           D:'3.5 is the midpoint between the two solutions (the center of symmetry, x = 7/2). It is half the answer: the sum is twice the center.'
         },
         tip:'A shortcut that always works: the two solutions of |ax + b| = c are symmetric about x = −b/a, so their sum is 2(−b/a) without solving anything. Here: 2(7/2) = 7. But if you use it, verify at least one solution by hand.',
-        desmos:'Grafica y=abs(2x-7) y y=11: la V corta a la horizontal en x=-2 y x=9.',
+        desmos:'Graph y=abs(2x-7) and y=11: the V crosses the horizontal line at x=-2 and x=9.',
         desmosLatex:['y=\\left|2x-7\\right|','y=11']
       },
       {
@@ -148,7 +148,7 @@
           D:'168 is 12 × 14, the intermediate step. You still have to divide by 7.'
         },
         tip:'Fractions in an equation: multiply everything by the LCD and they vanish in one step. The error of adding denominators shows up when you try to combine the fractions before solving — you do not need to.',
-        desmos:'Grafica y=x/3+x/4 y y=14: se cruzan en x=24.',
+        desmos:'Graph y=x/3+x/4 and y=14: they cross at x=24.',
         desmosLatex:['y=\\frac{x}{3}+\\frac{x}{4}','y=14']
       },
       {
@@ -168,7 +168,7 @@
           D:'The total cost is C, which depends on how many minutes are used. The 0.18 is only one part of the formula.'
         },
         tip:'In y = mx + b: **m** answers "how much does it change per unit?" and **b** answers "how much was there at the start?". Look at which number is multiplying the variable and the interpretation falls out on its own.',
-        desmos:'Grafica y=0.18x+45 y comparalo con y=0.18x+60: la inclinación es la misma y solo cambia dónde arranca.',
+        desmos:'Graph y=0.18x+45 and compare it with y=0.18x+60: the steepness is the same and only the starting point changes.',
         desmosLatex:['y=0.18x+45','y=0.18x+60']
       },
       {
@@ -184,7 +184,7 @@
           D:'7 is the coefficient left after eliminating (the 7 in 7x), not the value of x.'
         },
         tip:'Choose to eliminate the variable whose coefficients match with the smallest multiplication: here 4 and 2 match by multiplying by 2, while 3 and 5 would need 15. And be careful when subtracting: the signs of ALL the terms change.',
-        desmos:'Grafica 3x+4y=10 y 5x+2y=12 y toca la intersección: (2, 1).',
+        desmos:'Graph 3x+4y=10 and 5x+2y=12 and tap the intersection: (2, 1).',
         desmosLatex:['3x+4y=10','5x+2y=12']
       },
       {
@@ -194,12 +194,12 @@
         answer:'11',
         expCorrect:'Distribute on both sides: 4x − 12 = 2x + 10. Gather the x terms on the left and the numbers on the right: 4x − 2x = 10 + 12 ⇒ 2x = 22 ⇒ x = 11. (Check: 4(11 − 3) = 32 and 2(11 + 5) = 32 ✓.)',
         tip:'With parentheses on both sides, distribute both BEFORE moving anything. On an SPR there are no options to expose the error, so plug your answer back into the original equation: if both sides give the same number, you are done.',
-        desmos:'Grafica y=4(x-3) y y=2(x+5): se cruzan en x=11.',
+        desmos:'Graph y=4(x-3) and y=2(x+5): they cross at x=11.',
         desmosLatex:['y=4(x-3)','y=2(x+5)']
       },
       {
         id:'AL4-12', type:'mc', domain:'Algebra', difficulty:'Media',
-        skill:'Sistemas a partir de un enunciado',
+        skill:'Systems from a word problem',
         stem:'At a bakery, 2 muffins and 3 scones cost $16, and 4 muffins and 1 scone cost $22. What is the cost, in dollars, of one muffin?',
         choices:{A:'$5', B:'$2', C:'$8', D:'$5.50'},
         correct:'A',
@@ -210,7 +210,7 @@
           D:'$5.50 comes from dividing $22 by the 4 muffins of the second purchase, ignoring the scone that was paid for too.'
         },
         tip:'Name the variables before you write anything and build one equation per purchase. The two most tempting distractors are always “divide a total by a single quantity” — but each total includes both products.',
-        desmos:'Grafica 2x+3y=16 y 4x+y=22 (x = muffin, y = scone): se cruzan en (5, 2).',
+        desmos:'Graph 2x+3y=16 and 4x+y=22 (x = muffin, y = scone): they cross at (5, 2).',
         desmosLatex:['2x+3y=16','4x+y=22']
       }
     ]

@@ -1,4 +1,4 @@
-/* SAT Studio question set — Math: Solid Geometry & Trigonometry — Hard (HMG-01 a HMG-12) */
+/* SAT Studio question set — Math: Solid Geometry & Trigonometry — Hard (HMG-01 to HMG-12) */
 (function(){
   var FIG_CONE =
     '<svg viewBox="0 0 220 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Right circular cone with height 8 and base radius 6">' +
@@ -80,7 +80,7 @@
         stem:'A solid is formed by placing a hemisphere of radius 3 on top of a right circular cylinder that also has radius 3 and a height of 10. What is the total volume of the solid?',
         choices:{A:'90π', B:'126π', C:'99π', D:'108π'},
         correct:'D',
-        expCorrect:'Cilindro = πr²h = π(3²)(10) = 90π. Hemisferio = (1/2)(4/3)πr³ = (2/3)π(3³) = (2/3)π(27) = 18π. Total = 90π + 18π = 108π.',
+        expCorrect:'Cylinder = πr²h = π(3²)(10) = 90π. Hemisphere = (1/2)(4/3)πr³ = (2/3)π(3³) = (2/3)π(27) = 18π. Total = 90π + 18π = 108π.',
         expWrong:{
           A:'90π is only the cylinder; you forgot to add the hemisphere on top.',
           B:'126π adds a WHOLE sphere ((4/3)π·27 = 36π): 90 + 36 = 126. There is only half a sphere on top, so it is 18π.',
@@ -94,7 +94,7 @@
         stem:'A closed right circular cylinder has a radius of 4 and a height of 10. What is the total surface area of the cylinder?',
         choices:{A:'80π', B:'112π', C:'96π', D:'224π'},
         correct:'B',
-        expCorrect:'Superficie total = 2 tapas + lateral = 2πr² + 2πrh = 2π(4²) + 2π(4)(10) = 32π + 80π = 112π.',
+        expCorrect:'Total surface area = 2 caps + lateral = 2πr² + 2πrh = 2π(4²) + 2π(4)(10) = 32π + 80π = 112π.',
         expWrong:{
           A:'80π is only the lateral area (2πrh). A CLOSED cylinder also has two circular caps.',
           C:'96π adds the lateral (80π) and only ONE cap (16π). The second cap is missing: there are two, 2πr² = 32π.',
@@ -149,7 +149,7 @@
         expCorrect:'cos θ = adjacent / hypotenuse. The leg adjacent to θ is 12 and the hypotenuse is 15, so cos θ = 12/15 = 4/5.',
         expWrong:{
           A:'3/5 is sin θ = opposite/hypotenuse = 9/15. They want the cosine, which uses the ADJACENT leg.',
-          B:'3/4 es tan θ = opuesto/adyacente = 9/12. No es el coseno.',
+          B:'3/4 is tan θ = opposite/adjacent = 9/12. That is not the cosine.',
           C:'5/4 is the reciprocal of 4/5 (that would be sec θ). A cosine in a triangle never goes above 1.'
         },
         tip:'SOHCAHTOA: Cosine = Adjacent / Hypotenuse. First work out which side is opposite and which is adjacent relative to θ. The 9-12-15 triple is a 3-4-5 times 3.'

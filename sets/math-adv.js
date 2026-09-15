@@ -1,4 +1,4 @@
-/* SAT Studio question set — Math: Advanced Math (ADV-01 a ADV-12) */
+/* SAT Studio question set — Math: Advanced Math (ADV-01 to ADV-12) */
 (function(){
   window.SAT_SETS.push({
     id: 'math-adv',
@@ -66,11 +66,11 @@
       },
       {
         id:'ADV-05', type:'mc', domain:'Advanced Math', difficulty:'Media',
-        skill:'Expresiones equivalentes (producto de binomios)',
+        skill:'Equivalent expressions (product of binomials)',
         stem:'Which of the following is equivalent to (2x + 3)(x − 4)?',
         choices:{A:'2x² − 12', B:'2x² − 5x − 12', C:'2x² + 5x − 12', D:'2x² − 11x − 12'},
         correct:'B',
-        expCorrect:'Usa FOIL: (2x)(x) + (2x)(−4) + (3)(x) + (3)(−4) = 2x² − 8x + 3x − 12 = 2x² − 5x − 12.',
+        expCorrect:'Use FOIL: (2x)(x) + (2x)(−4) + (3)(x) + (3)(−4) = 2x² − 8x + 3x − 12 = 2x² − 5x − 12.',
         expWrong:{
           A:'2x² − 12 comes from multiplying only the first and last terms, forgetting the cross products (−8x and +3x).',
           C:'2x² + 5x − 12 has the wrong sign in the middle: −8x + 3x = −5x, not +5x.',
@@ -110,7 +110,7 @@
         expCorrect:'Exactly one real solution ⇔ discriminant zero: b² − 4ac = 0 → 12² − 4(1)(c) = 0 → 144 − 4c = 0 → c = 36. (Check: x² + 12x + 36 = (x + 6)², double root x = −6.)',
         expWrong:{
           A:'6 is the double root (x = −6 in absolute value), not the value of c. c = 6² = 36.',
-          B:'12 es el coeficiente b, no c.',
+          B:'12 is the coefficient b, not c.',
           D:'144 is b², but you forgot to divide by 4: c = 144/4 = 36.'
         },
         tip:'A single real solution → discriminant = 0. Solve b² = 4ac. Here 144 = 4c → c = 36. Verify: it has to leave a perfect square (x + 6)².'

@@ -1,4 +1,4 @@
-/* SAT Studio question set — Reading & Writing: Rhetorical Synthesis (RS2-01 a RS2-12) */
+/* SAT Studio question set — Reading & Writing: Rhetorical Synthesis (RS2-01 to RS2-12) */
 window.SAT_SETS.push({
   id: 'rw-synth2',
   title: 'Rhetorical Synthesis — Set 4',
@@ -170,13 +170,13 @@ window.SAT_SETS.push({
         D:'Both groups spent the same total amount of time studying the facts.'
       },
       correct:'C',
-      expCorrect:'The goal calls for emphasizing that the result was CONSISTENT, not a fluke. C pulls it off: the spaced-study advantage showed up in three different classrooms, not just once. That underlines the consistency, with accurate notes.',
+      expCorrect:'The goal calls for emphasizing that the result was CONSISTENT, not a fluke. C does exactly that: the spaced-study advantage showed up in three different classrooms, not just once. That underlines the consistency, with accurate notes.',
       expWrong:{
         A:'It gives the main result, but does not show that it repeated; it could have been a one-off.',
         B:'It describes how each group studied, not the consistency of the result.',
         D:'It mentions one control (same total time), not that the result repeated.'
       },
-      tip:'"Consistent, not a fluke" calls for the option showing REPETITION (here, three classrooms), not the loose result or the design.'
+      tip:'"Consistent, not a fluke" calls for the option showing REPETITION (here, three classrooms), not the bare result or the design.'
     },
     {
       id:'RS2-10', type:'mc', domain:'Expression of Ideas', difficulty:'Difícil',
@@ -231,7 +231,7 @@ window.SAT_SETS.push({
       expWrong:{
         A:'It gives one concrete case (seed-eaters); that is an example, not the generalization covering them all.',
         B:'It describes the study setup, not a general pattern.',
-        C:'Da otro caso concreto (nectar-feeders); es un ejemplo suelto, no la idea general.'
+        C:'It gives another concrete case (nectar-feeders); it is a single example, not the general idea.'
       },
       tip:'"Broad generalization" calls for the option that SUMS UP the pattern across all the cases in one idea, not a single example or the study design.'
     }

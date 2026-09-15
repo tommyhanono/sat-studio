@@ -13,7 +13,14 @@
     --blue:#324DC7; --blue-dark:#2439a0; --blue-soft:#eef1fd;
     --ink:#1e1e1e; --gray-strip:#f0f0f0; --gray-line:#d9d9d9; --gray-mid:#5b6070;
     --red:#c13145; --green:#166b35; --amber:#8a5600;
-    --serif:Georgia,'Times New Roman',serif;
+    /* La pantalla de examen imita al Bluebook y no se toca. Lo que sí se cuida es
+       el resto de la app: papel en vez de blanco plano, titulares en serif y el
+       navy/dorado de la marca (el mismo del favicon) como acento. */
+    --navy:#0b1f3a; --navy-soft:#243a5e; --gold:#b8862b; --gold-soft:#f6ecd8;
+    --paper:#f3f5fa; --paper-2:#eceff7;
+    --sombra:0 1px 2px rgba(11,31,58,.05), 0 6px 20px -8px rgba(11,31,58,.10);
+    --sombra-alta:0 2px 4px rgba(11,31,58,.06), 0 18px 44px -14px rgba(11,31,58,.18);
+    --serif:Georgia,'Iowan Old Style','Palatino Linotype','Times New Roman',serif;
     --sans:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;
     --zoom:1;
   }
@@ -37,13 +44,16 @@
   .chip{background:var(--blue-soft);color:var(--blue-dark);border-radius:999px;padding:5px 13px;font-size:.82rem;font-weight:600;display:inline-block}
 
   /* ============ HOME ============ */
-  #view-home{min-height:100vh;background:#f7f8fc;padding:34px 20px 80px}
+  #view-home{min-height:100vh;padding:34px 20px 80px;
+    background:var(--paper);
+    background-image:linear-gradient(180deg,#fbfcfe 0,var(--paper) 340px,var(--paper-2) 100%)}
   .home-wrap{max-width:960px;margin:0 auto}
   .brand{display:flex;align-items:baseline;gap:12px;margin-bottom:4px}
-  .brand h1,.brand .brand-h{font-size:1.9rem;font-weight:800}
+  .brand h1,.brand .brand-h{font-family:var(--serif);font-size:2rem;font-weight:700;letter-spacing:-.015em;color:var(--navy)}
+  .brand h1::after,.brand .brand-h::after{content:'';display:block;width:34px;height:3px;margin-top:7px;border-radius:2px;background:var(--gold)}
   .brand-link{color:inherit;text-decoration:none}
   .brand-link:hover{color:var(--blue-dark)}
-  .admin-h{font-size:1.5rem;font-weight:800}
+  .admin-h{font-family:var(--serif);font-size:1.6rem;font-weight:700;color:var(--navy)}
   .brand .tag{color:var(--gray-mid);font-size:.9rem}
   .home-sub{color:var(--gray-mid);margin-bottom:26px}
   .home-foot{margin-top:44px;padding-top:22px;border-top:1px solid var(--gray-line);color:var(--gray-mid);font-size:.82rem;line-height:1.6}
@@ -52,12 +62,14 @@
   .foot-links a:hover{text-decoration:underline}
   .foot-c{font-size:.78rem}
   .dash-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-bottom:26px}
-  .dash-card{background:#fff;border:1px solid var(--gray-line);border-radius:12px;padding:18px 20px}
+  .dash-card{background:#fff;border:1px solid #e3e6ef;border-radius:12px;padding:18px 20px;box-shadow:var(--sombra)}
   .dash-card .k{font-size:.78rem;color:var(--gray-mid);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
-  .dash-card .v{font-size:1.7rem;font-weight:800}
+  .dash-card .v{font-family:var(--serif);font-size:1.85rem;font-weight:700;color:var(--navy);font-variant-numeric:tabular-nums}
   .dash-card .s{font-size:.8rem;color:var(--gray-mid);margin-top:4px}
-  h2.sec-title{font-size:1.15rem;margin:30px 0 12px}
-  .set-card{background:#fff;border:1px solid var(--gray-line);border-radius:14px;padding:22px 24px;margin-bottom:14px;display:flex;gap:18px;align-items:center;flex-wrap:wrap}
+  h2.sec-title{font-family:var(--serif);font-size:1.28rem;font-weight:700;color:var(--navy);margin:30px 0 12px}
+  .set-card{background:#fff;border:1px solid #e3e6ef;border-radius:14px;padding:22px 24px;margin-bottom:14px;display:flex;gap:18px;align-items:center;flex-wrap:wrap;
+    box-shadow:var(--sombra);transition:box-shadow .16s,border-color .16s}
+  .set-card:hover{border-color:#ccd3e6;box-shadow:var(--sombra-alta)}
   .set-info{flex:1;min-width:240px}
   .set-badge{font-size:.7rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;border-radius:6px;padding:3px 9px;display:inline-block;margin-bottom:8px}
   .set-badge.rw{background:#e7ecff;color:var(--blue-dark)}
@@ -67,18 +79,18 @@
   .lvl-badge.lvl-easy{background:#e2f3e8;color:var(--green)}
   .lvl-badge.lvl-med{background:#fdeede;color:var(--amber)}
   .lvl-badge.lvl-hard{background:#fdeaea;color:#c0392b}
-  .set-group{font-size:.8rem;color:var(--gray-mid);text-transform:uppercase;letter-spacing:.05em;font-weight:800;margin:24px 0 10px;padding-bottom:6px;border-bottom:1px solid var(--gray-line)}
+  .set-group{font-size:.8rem;color:var(--navy-soft);text-transform:uppercase;letter-spacing:.09em;font-weight:800;margin:24px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--gold-soft)}
   .set-group:first-child{margin-top:2px}
-  .home-sec{border:1px solid var(--gray-line);border-radius:12px;background:#fff;margin-bottom:14px;overflow:hidden}
-  .home-sec>summary{list-style:none;cursor:pointer;padding:15px 20px;font-size:1.05rem;font-weight:800;display:flex;align-items:center;gap:10px;user-select:none}
+  .home-sec{border:1px solid #e3e6ef;border-radius:12px;background:#fff;margin-bottom:14px;overflow:hidden;box-shadow:var(--sombra)}
+  .home-sec>summary{list-style:none;cursor:pointer;padding:15px 20px;font-family:var(--serif);font-size:1.12rem;font-weight:700;color:var(--navy);display:flex;align-items:center;gap:10px;user-select:none}
   .home-sec>summary::-webkit-details-marker{display:none}
   .home-sec>summary::before{content:'▸';color:var(--gray-mid);font-size:.85rem;transition:transform .15s}
   .home-sec[open]>summary::before{transform:rotate(90deg)}
-  .home-sec>summary:hover{background:#f7f8fc}
+  .home-sec>summary:hover{background:var(--paper)}
   .sec-count{margin-left:auto;font-size:.76rem;font-weight:700;color:var(--gray-mid);background:#eef0f6;border-radius:999px;padding:2px 11px}
   .home-sec-body{padding:2px 20px 18px}
   .home-sec-body .set-card:last-child{margin-bottom:2px}
-  .set-card h3{font-size:1.08rem;margin-bottom:4px}
+  .set-card h3{font-family:var(--serif);font-size:1.16rem;font-weight:700;color:var(--navy);margin-bottom:5px}
   .set-desc{color:var(--gray-mid);font-size:.88rem;margin-bottom:8px}
   .set-meta{font-size:.8rem;color:var(--gray-mid)}
   .set-actions{display:flex;gap:10px;flex-wrap:wrap}
@@ -90,7 +102,7 @@
   .bar-fill.bad{background:var(--red)}
   .bar-fill.mid{background:var(--amber)}
   .bar-row .pct{width:88px;flex:none;text-align:right;font-variant-numeric:tabular-nums;color:var(--gray-mid)}
-  .panel{background:#fff;border:1px solid var(--gray-line);border-radius:14px;padding:20px 24px;margin-bottom:14px}
+  .panel{background:#fff;border:1px solid #e3e6ef;border-radius:14px;padding:20px 24px;margin-bottom:14px;box-shadow:var(--sombra)}
   .hist-row{display:flex;gap:14px;align-items:center;padding:10px 0;border-bottom:1px solid #eee;font-size:.88rem;flex-wrap:wrap}
   .hist-row:last-child{border-bottom:none}
   .hist-review{margin-left:auto;background:var(--blue-soft);color:var(--blue);border:1px solid var(--blue);border-radius:999px;padding:5px 14px;font-size:.8rem;font-weight:700;cursor:pointer;white-space:nowrap}
@@ -375,8 +387,9 @@
   .exam-bar input{border:1px solid var(--gray-line);border-radius:8px;padding:9px 12px;font-family:var(--sans);font-size:16px;min-height:44px}
   .exam-bar input:focus{outline:3px solid #8fa2ef;outline-offset:1px}
   .exam-bar-note{color:var(--gray-mid);flex:1;min-width:220px}
-  #view-auth{min-height:100vh;display:flex;align-items:center;justify-content:center;background:#f7f8fc;padding:28px 18px}
-  .auth-card{width:100%;max-width:400px;background:#fff;border:1px solid var(--gray-line);border-radius:16px;padding:30px 26px;box-shadow:0 10px 40px rgba(20,30,60,.08)}
+  #view-auth{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:28px 18px;
+    background:var(--paper);background-image:radial-gradient(1100px 520px at 50% -10%,#fbfcfe 0,var(--paper) 55%,var(--paper-2) 100%)}
+  .auth-card{width:100%;max-width:400px;background:#fff;border:1px solid #e3e6ef;border-radius:16px;padding:32px 28px;box-shadow:var(--sombra-alta)}
   .auth-card .brand{display:block;margin-bottom:8px}
   .auth-card .brand .brand-h{font-size:1.65rem;line-height:1.05;margin:0}
   .auth-card .brand .tag{display:block;margin-top:5px}
@@ -732,8 +745,8 @@
 <!-- ============ AUTH ============ -->
 <div id="view-auth" class="hidden">
   <div class="auth-card">
-    <div class="brand"><p class="brand-h">SAT Studio</p><span class="tag">Your progress, in the cloud</span></div>
-    <p class="auth-sub">Create your account with your school email. Your history follows you to any device.</p>
+    <div class="brand"><p class="brand-h">SAT Studio</p></div>
+    <p class="auth-sub">Digital SAT practice, Bluebook style. Sign in with your school email — your history follows you to any device.</p>
     <label class="auth-lbl" for="auth-name">Name (optional)</label>
     <input id="auth-name" class="auth-inp" type="text" autocomplete="name" placeholder="Your name">
     <label class="auth-lbl" for="auth-email">School email</label>
@@ -881,7 +894,7 @@
         <button class="zbtn" id="btn-zoom-out" aria-label="Decrease text size">A−</button>
         <button class="zbtn" id="btn-zoom-in" aria-label="Increase text size">A+</button>
       </div>
-      <button class="tool-btn" id="btn-layout" aria-pressed="false" title="Vista lado a lado / apilada">
+      <button class="tool-btn" id="btn-layout" aria-pressed="false" title="Side-by-side / stacked view">
         <svg id="layout-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><line id="layout-line" x1="12" y1="4" x2="12" y2="20"/></svg>
         <span id="layout-label">Layout</span>
       </button>
@@ -933,7 +946,7 @@
   </main>
 
   <footer>
-    <div class="ftr-left">Estudiante</div>
+    <div class="ftr-left">Student</div>
     <div class="ftr-center">
       <button id="nav-toggle">Question 1</button>
       <div id="nav-pop" class="hidden">
@@ -1019,7 +1032,7 @@
     <div class="summary-box">
       <h3>Summary for your error log</h3>
       <p>Copy this block and paste it into a chat to log your results and update your error log.</p>
-      <textarea id="summary-text" readonly aria-label="Resumen de la sesión para copiar"></textarea>
+      <textarea id="summary-text" readonly aria-label="Session summary to copy"></textarea>
       <button class="copy-btn" id="btn-copy">Copy summary</button>
     </div>
     <div id="res-list"></div>
@@ -1125,7 +1138,7 @@ var SB_ERROR = '';
 try {
   if (window.supabase && /^https?:\/\//.test(SUPABASE_URL)) SB = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
   else SB_ERROR = 'the Supabase library did not load';
-} catch(e){ SB_ERROR = (e && e.message) || 'error al crear el cliente'; }
+} catch(e){ SB_ERROR = (e && e.message) || 'error creating the client'; }
 if(SB_ERROR) console.warn('SAT Studio: no accounts, no cloud sync —', SB_ERROR, '· the app still works and saves in this browser.');
 var currentUser = null;
 
@@ -1400,8 +1413,8 @@ function syncFlush(){
   return q.reduce(function(p, entry){
     return p.then(function(){
       return cloudUpsert(entry).then(function(r){
-        if(r && r.error){ err = r.error.message || 'error del servidor'; quedan.push(entry); }
-      }).catch(function(e){ err = (e && e.message) || 'sin conexion'; quedan.push(entry); });
+        if(r && r.error){ err = r.error.message || 'server error'; quedan.push(entry); }
+      }).catch(function(e){ err = (e && e.message) || 'no connection'; quedan.push(entry); });
     });
   }, Promise.resolve()).then(function(){
     syncQueueSet(quedan);
@@ -1432,7 +1445,7 @@ function downloadHistory(){
     var blob = new Blob([JSON.stringify(payload, null, 1)], { type:'application/json' });
     var a = document.createElement('a');
     a.href = URL.createObjectURL(blob);
-    a.download = 'sat-studio-historial-' + new Date().toISOString().slice(0,10) + '.json';
+    a.download = 'sat-studio-history-' + new Date().toISOString().slice(0,10) + '.json';
     document.body.appendChild(a); a.click();
     setTimeout(function(){ URL.revokeObjectURL(a.href); a.remove(); }, 1000);
     return true;
@@ -1920,7 +1933,7 @@ function renderHome(){
 
   var G = { hoy:'', entender:'', practicar:'', examen:'', progreso:'' };
   var _planN = (planState().elegidos || []).length;
-  G.hoy += homeSection('🧭 Mi plan de mejora', planHTML(), _planN ? _planN + ' temas' : null, true);
+  G.hoy += homeSection('🧭 My improvement plan', planHTML(), _planN ? _planN + ' temas' : null, true);
   // La cuenta regresiva aparece sola cuando el estudiante puso su fecha y el
   // examen esta a una semana o menos. Sin fecha no se le muestra a nadie.
   var _dl = fwDaysLeft();
@@ -2090,7 +2103,7 @@ function renderHome(){
     cuerpo += '<section class="home-group" id="g-' + g[0] + '">' +
       '<h2 class="hg-t">' + g[1] + '</h2><p class="hg-s">' + g[2] + '</p>' + G[g[0]] + '</section>';
   });
-  $('#set-sections').innerHTML = '<nav class="home-nav" aria-label="Secciones">' + nav + '</nav>' + cuerpo;
+  $('#set-sections').innerHTML = '<nav class="home-nav" aria-label="Sections">' + nav + '</nav>' + cuerpo;
   planWire();
 
   Array.prototype.forEach.call(document.querySelectorAll('#set-sections [data-start-exam]'), function(b){
@@ -3333,7 +3346,7 @@ function drillCardHTML(q){
   var ok = isCorrect(q, user);
   var isMath = q._section === 'math';
   var body = '<div class="drill-card' + (ok ? '' : ' bad') + '">' +
-    '<div class="verdict ' + (ok ? 'ok' : 'bad') + '">' + (ok ? '✓ Correct!' : '✗ Incorrecta') + '</div>' +
+    '<div class="verdict ' + (ok ? 'ok' : 'bad') + '">' + (ok ? '✓ Correct!' : '✗ Incorrect') + '</div>' +
     '<div class="drill-tags"><span class="res-diff">' + q.difficulty + '</span><span class="res-skill">' + q.domain + ' · ' + q.skill + '</span></div>';
   if(q.type === 'spr'){
     body += '<div class="res-answers">Your answer: <b class="' + (ok?'ok':'bad') + '">' + (user || '(blank)') + '</b> · Correct answer: <b class="ok">' + q.answer + '</b></div>';
@@ -3593,8 +3606,8 @@ function copySummary(){
   var ta = $('#summary-text');
   var done = function(){
     var b = $('#btn-copy');
-    b.textContent = 'Copiado ✓'; b.classList.add('copied');
-    setTimeout(function(){ b.textContent = 'Copiar resumen'; b.classList.remove('copied'); }, 2000);
+    b.textContent = 'Copied ✓'; b.classList.add('copied');
+    setTimeout(function(){ b.textContent = 'Copy summary'; b.classList.remove('copied'); }, 2000);
   };
   if(navigator.clipboard && navigator.clipboard.writeText){
     navigator.clipboard.writeText(ta.value).then(done, function(){ fallbackCopy(ta, done); });
@@ -3817,20 +3830,20 @@ function toggleRef(){
 
 /* ================= PUNCTUATION CHEAT SHEET (adaptive) ================= */
 var CHEAT_RULES = {
-  'comma-intro':        { t:'Coma tras elemento introductorio', r:'When a sentence opens with an introductory phrase or clause, put a comma before the main sentence.', ok:'After the experiment ended, the team analyzed the data.', bad:'After the experiment ended the team analyzed the data.' },
-  'comma-nonessential': { t:'Elemento no esencial → comas EN PAREJA', r:'If you can remove the chunk and the sentence still stands and makes sense, it takes TWO commas — one before, one after.', ok:'The bridge, built in 1902, still carries traffic.', bad:'The bridge, built in 1902 still carries traffic.' },
-  'comma-fanboys':      { t:'Coma + FANBOYS', r:'Two complete sentences join with comma + coordinating conjunction (for, and, nor, but, or, yet, so). The comma goes BEFORE the conjunction.', ok:'The data was incomplete, so the team repeated the trial.', bad:'The data was incomplete, the team repeated the trial.' },
-  'comma-unnecessary':  { t:'SIN coma (coma innecesaria)', r:'Never split a subject from its verb, or a verb from its object, with a single comma. If nothing demands punctuation, the right answer is NO punctuation.', ok:'The results of the study suggest a new pathway.', bad:'The results of the study, suggest a new pathway.' },
-  'semicolon':          { t:'Punto y coma = 2 oraciones completas', r:'A semicolon joins two related INDEPENDENT sentences, with no conjunction. Test it: each side has to stand as its own sentence.', ok:'The first trial failed; the second one succeeded.', bad:'The first trial failed; because of the heavy rain.' },
-  'semicolon-adverb':   { t:'; however, (adverbio conjuntivo)', r:'however, therefore, moreover, meanwhile… between two complete sentences need a SEMICOLON before and a comma after. A comma alone is a comma splice.', ok:'The plan seemed solid; however, the costs doubled.', bad:'The plan seemed solid, however, the costs doubled.' },
-  'colon':              { t:'Dos puntos: presentan algo', r:'A colon comes ONLY after a complete sentence, to introduce a list, an explanation or a quote. What comes before it must be able to end in a period.', ok:'She packed three tools: a map, a rope, and a lamp.', bad:'She packed: a map, a rope, and a lamp.' },
-  'dash':               { t:'Rayas en pareja', r:'Dashes enclose a non-essential element just like commas — but they do NOT mix: open with a dash, close with a dash.', ok:'The reef — once nearly dead — is recovering fast.', bad:'The reef — once nearly dead, is recovering fast.' },
+  'comma-intro':        { t:'Comma after an introductory element', r:'When a sentence opens with an introductory phrase or clause, put a comma before the main sentence.', ok:'After the experiment ended, the team analyzed the data.', bad:'After the experiment ended the team analyzed the data.' },
+  'comma-nonessential': { t:'Nonessential element → commas IN PAIRS', r:'If you can remove the chunk and the sentence still stands and makes sense, it takes TWO commas — one before, one after.', ok:'The bridge, built in 1902, still carries traffic.', bad:'The bridge, built in 1902 still carries traffic.' },
+  'comma-fanboys':      { t:'Comma + FANBOYS', r:'Two complete sentences join with comma + coordinating conjunction (for, and, nor, but, or, yet, so). The comma goes BEFORE the conjunction.', ok:'The data was incomplete, so the team repeated the trial.', bad:'The data was incomplete, the team repeated the trial.' },
+  'comma-unnecessary':  { t:'NO comma (unnecessary comma)', r:'Never split a subject from its verb, or a verb from its object, with a single comma. If nothing demands punctuation, the right answer is NO punctuation.', ok:'The results of the study suggest a new pathway.', bad:'The results of the study, suggest a new pathway.' },
+  'semicolon':          { t:'Semicolon = 2 complete sentences', r:'A semicolon joins two related INDEPENDENT sentences, with no conjunction. Test it: each side has to stand as its own sentence.', ok:'The first trial failed; the second one succeeded.', bad:'The first trial failed; because of the heavy rain.' },
+  'semicolon-adverb':   { t:'; however, (conjunctive adverb)', r:'however, therefore, moreover, meanwhile… between two complete sentences need a SEMICOLON before and a comma after. A comma alone is a comma splice.', ok:'The plan seemed solid; however, the costs doubled.', bad:'The plan seemed solid, however, the costs doubled.' },
+  'colon':              { t:'Colon: it introduces something', r:'A colon comes ONLY after a complete sentence, to introduce a list, an explanation or a quote. What comes before it must be able to end in a period.', ok:'She packed three tools: a map, a rope, and a lamp.', bad:'She packed: a map, a rope, and a lamp.' },
+  'dash':               { t:'Dashes in pairs', r:'Dashes enclose a non-essential element just like commas — but they do NOT mix: open with a dash, close with a dash.', ok:'The reef — once nearly dead — is recovering fast.', bad:'The reef — once nearly dead, is recovering fast.' },
   'boundaries':         { t:'Comma splice / run-on', r:'Two complete sentences do NOT join with just a comma (or with nothing at all). Valid fixes: period · semicolon · comma + FANBOYS · subordinate one of them.', ok:'The tide rose, so the crew moved inland.', bad:'The tide rose, the crew moved inland.' },
   'possessive':         { t:'Possessive apostrophes', r:'Singular: dog’s. Plural ending in -s: dogs’. its = possessive (no apostrophe); it’s = “it is”. A plain plural NEVER takes an apostrophe.', ok:'The two teams’ coaches met after the game.', bad:'The two team’s coaches met after the game.' },
   'coordination':       { t:'Joining clauses', r:'VALID ways to join two clauses: comma + FANBOYS · semicolon · subordinate one (although, because, while…). A subordinate clause NEVER stands alone as a sentence.', ok:'Although the museum was closed, the tour continued outside.', bad:'Although the museum was closed. The tour continued outside.' },
-  'verb-agreement':     { t:'Concordancia sujeto–verbo', r:'The verb agrees with the REAL subject, not the phrase in between (“of the students…”). Cover whatever sits between commas or after “of”. each/either/neither → singular. In inverted order, look for the subject AFTER the verb.', ok:'The collection of rare maps was donated to the library.', bad:'The collection of rare maps were donated to the library.' },
-  'pronoun-agreement':  { t:'Concordancia de pronombres', r:'A pronoun agrees in number with its antecedent: singular antecedent → it/its; plural → they/their. Check WHO the exact antecedent is. who = subject, whom = object.', ok:'Each device saves its settings automatically.', bad:'Each device saves their settings automatically.' },
-  'verb-forms':         { t:'Formas y tiempos verbales', r:'Keep the tense consistent with the context (markers like “in 1990”, “today”, “by next year” rule). After “to” comes the base form; verbs in parallel lists must take the same form.', ok:'In 1962, the lab developed a faster method.', bad:'In 1962, the lab develops a faster method.' }
+  'verb-agreement':     { t:'Subject–verb agreement', r:'The verb agrees with the REAL subject, not the phrase in between (“of the students…”). Cover whatever sits between commas or after “of”. each/either/neither → singular. In inverted order, look for the subject AFTER the verb.', ok:'The collection of rare maps was donated to the library.', bad:'The collection of rare maps were donated to the library.' },
+  'pronoun-agreement':  { t:'Pronoun agreement', r:'A pronoun agrees in number with its antecedent: singular antecedent → it/its; plural → they/their. Check WHO the exact antecedent is. who = subject, whom = object.', ok:'Each device saves its settings automatically.', bad:'Each device saves their settings automatically.' },
+  'verb-forms':         { t:'Verb forms and tenses', r:'Keep the tense consistent with the context (markers like “in 1990”, “today”, “by next year” rule). After “to” comes the base form; verbs in parallel lists must take the same form.', ok:'In 1962, the lab developed a faster method.', bad:'In 1962, the lab develops a faster method.' }
 };
 // Skill → cheat-rule mapping (most specific first) so EVERY conventions question in the
 // bank gets an adaptive cheat sheet in Drill mode, not just the Check-Up set.
@@ -3997,12 +4010,12 @@ function removeMark(mark){
 function showAnnotPop(x, y, existingMark){
   activeMark = existingMark || null;
   var pop = $('#annot-pop');
-  var html = '<button class="an-y" data-hl="hl-y" title="Amarillo">A</button>' +
-             '<button class="an-b" data-hl="hl-b" title="Azul">A</button>' +
-             '<button class="an-p" data-hl="hl-p" title="Rosa">A</button>' +
-             '<button class="an-u" data-hl="hl-u" title="Subrayar">U</button>' +
-             '<button class="an-note" id="an-note-btn" title="Nota">📝 Nota</button>' +
-             (existingMark ? '<button class="an-x" id="an-remove" title="Quitar">×</button>' : '');
+  var html = '<button class="an-y" data-hl="hl-y" title="Yellow">A</button>' +
+             '<button class="an-b" data-hl="hl-b" title="Blue">A</button>' +
+             '<button class="an-p" data-hl="hl-p" title="Pink">A</button>' +
+             '<button class="an-u" data-hl="hl-u" title="Underline">U</button>' +
+             '<button class="an-note" id="an-note-btn" title="Note">📝 Note</button>' +
+             (existingMark ? '<button class="an-x" id="an-remove" title="Remove">×</button>' : '');
   pop.innerHTML = html;
   pop.classList.remove('hidden');
   var vw = window.innerWidth || 1000;
@@ -4014,7 +4027,7 @@ function showAnnotPop(x, y, existingMark){
   var nb = $('#an-note-btn');
   if(nb) nb.addEventListener('click', function(ev){
     ev.stopPropagation();
-    pop.innerHTML = '<input id="an-note-input" placeholder="Escribe tu nota…" maxlength="120"><button class="an-note" id="an-note-save">Guardar</button>';
+    pop.innerHTML = '<input id="an-note-input" placeholder="Write your note…" maxlength="120"><button class="an-note" id="an-note-save">Save</button>';
     var inp = $('#an-note-input');
     var prev = activeMark ? (activeMark.getAttribute('data-note') || '') : '';
     inp.value = prev;
@@ -4300,7 +4313,7 @@ function enterApp(){
 function setUserChip(){
   var chip = $('#user-chip'); if(!chip) return;
   if(currentUser){
-    var name = (currentUser.user_metadata && currentUser.user_metadata.name) || currentUser.email || 'Mi cuenta';
+    var name = (currentUser.user_metadata && currentUser.user_metadata.name) || currentUser.email || 'My account';
     var adminBtn = (currentUser.app_metadata && currentUser.app_metadata.role === 'admin') ? '<button class="uc-admin" id="btn-admin">Admin</button>' : '';
     chip.innerHTML = '<span class="uc-name">☁️ ' + name + '</span>' + adminBtn + '<button class="uc-out" id="btn-logout">Sign out</button>';
     chip.classList.remove('hidden');
@@ -4788,7 +4801,7 @@ function afterLogin(){
   sincronizarPerfil();
   return migrateLegacy()
     .catch(function(e){
-      console.warn('SAT Studio · no se pudo adoptar el historial de invitado:', e);
+      console.warn('SAT Studio · could not adopt the guest history:', e);
       toast('Could not move your earlier local practice into your account. It is still saved in this browser: ' +
             'download it from Session History if you are switching devices.', true);
     })

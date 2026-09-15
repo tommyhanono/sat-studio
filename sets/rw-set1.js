@@ -1,4 +1,4 @@
-/* SAT Studio question set — Reading & Writing: Punctuation Drill Set 1 (RW-001 a RW-010) */
+/* SAT Studio question set — Reading & Writing: Punctuation Drill Set 1 (RW-001 to RW-010) */
 window.SAT_SETS.push({
   id: 'rw-set1',
   title: 'Punctuation Drill — Set 1',
@@ -68,7 +68,7 @@ window.SAT_SETS.push({
     },
     {
       id:'RW-005', type:'mc', domain:'Standard English Conventions', difficulty:'Media',
-      skill:'Rayas en pareja (elemento no esencial)',
+      skill:'Paired dashes (non-essential element)',
       passage:"The city's oldest bridge\u2014built in 1883 and still carrying pedestrian %BLANK% was closed last month after inspectors found cracks in two of its support cables.",
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'traffic,', B:'traffic;', C:'traffic\u2014', D:'traffic:'},
@@ -150,7 +150,7 @@ window.SAT_SETS.push({
       correct:'C',
       expCorrect:'"Although… flood" is an introductory subordinate clause; when it comes first, it is separated from the main clause with a comma.',
       expWrong:{
-        A:'El ";" exige independiente + independiente; "Although… flood" es dependiente.',
+        A:'A ";" requires an independent clause on both sides; "Although… flood" is dependent.',
         B:'The period turns “Although… flood.” into a fragment with no main verb.',
         D:'It is missing the comma required after an introductory clause of this kind.'
       },

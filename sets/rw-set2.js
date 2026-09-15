@@ -1,4 +1,4 @@
-/* SAT Studio question set — Reading & Writing: Punctuation Drill Set 2 (RW-011 a RW-020) */
+/* SAT Studio question set — Reading & Writing: Punctuation Drill Set 2 (RW-011 to RW-020) */
 window.SAT_SETS.push({
   id: 'rw-set2',
   title: 'Punctuation Drill — Set 2',
@@ -98,7 +98,7 @@ window.SAT_SETS.push({
     },
     {
       id:'RW-017', type:'mc', domain:'Standard English Conventions', difficulty:'Media',
-      skill:'Rayas en pareja (elemento no esencial)',
+      skill:'Paired dashes (non-essential element)',
       passage:"Bessie Coleman—the first African American woman to earn a pilot’s %BLANK% trained in France because no U.S. flight school of the era would admit her.",
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'license,', B:'license;', C:'license:', D:'license—'},

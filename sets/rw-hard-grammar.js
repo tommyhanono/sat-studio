@@ -92,7 +92,7 @@ window.SAT_SETS.push({
       expCorrect:'The subject is "The committee", a collective noun treated here as a single unit acting together. A singular subject calls for a singular verb: "reviews". The clause "that oversees… collection" only describes the subject and does not change its number.',
       expWrong:{
         A:'"review" is plural; it agrees with "collection" or "proposals", not with the singular subject "The committee".',
-        C:'“have reviewed” es plural; el singular “committee” pide “has reviewed”.',
+        C:'“have reviewed” is plural; the singular subject “committee” needs “has reviewed”.',
         D:'“are reviewing” is plural; the singular subject “committee” needs a singular verb.'
       },
       tip:'A collective acting as a single unit ("The committee") is singular. Ignore the "that…" clause: the verb agrees with "committee".'

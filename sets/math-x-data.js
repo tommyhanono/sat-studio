@@ -54,7 +54,7 @@
           D:'3/5 = 72/120 is the probability that any student takes the bus or walks. That is not what they want.'
         },
         tip:'In conditional probability, the phrase “from those who…” defines the DENOMINATOR. Always complete the table before computing: the missing cell almost always shows up in the answer or in a distractor.',
-        desmos:'Completa la celda: 60-16-14 da 30. Luego la probabilidad: (16+14)/(40+32) = 30/72 ≈ 0.4167, que es 5/12. Compara con la trampa 30/120 = 0.25.',
+        desmos:'Fill in the cell: 60-16-14 gives 30. Then the probability: (16+14)/(40+32) = 30/72 ≈ 0.4167, which is 5/12. Compare with the trap 30/120 = 0.25.',
         desmosLatex:['60-16-14', '(16+14)/(40+32)', '5/12']
       },
       {
@@ -70,7 +70,7 @@
           D:'2/5 = 80/200 is simply the share of cat owners in the whole sample, with no condition at all.'
         },
         tip:'When the table comes in incomplete, start with the row or column missing only ONE cell and chain from there. Here the route is: the “does not own a cat” column → the dog-without-cat cell → the dog-and-cat cell.',
-        desmos:'Encadena en Desmos: 200-80 = 120 (sin gato); 120-60 = 60 (perro sin gato); 90-60 = 30 (perro y gato). Probabilidad: 30/90 ≈ 0.333, o sea 1/3. La trampa 30/200 da 0.15.',
+        desmos:'Chain it in Desmos: 200-80 = 120 (no cat); 120-60 = 60 (dog without cat); 90-60 = 30 (dog and cat). Probability: 30/90 ≈ 0.333, that is 1/3. The trap 30/200 gives 0.15.',
         desmosLatex:['200-80', '120-60', '90-60', '30/90']
       },
       {
@@ -86,7 +86,7 @@
           D:'5/8 = 25/40 conditions the wrong way: it is P(came from B or C | defective), not P(defective | B or C).'
         },
         tip:'“From the parts produced by B or C” → add those two full rows and use them as the denominator. Before that, fill the missing cell using the column total; without it you cannot build the numerator.',
-        desmos:'Celda faltante: 40-15-12 = 13. Probabilidad: (12+13)/(300+200) = 25/500 = 0.05 = 1/20. La trampa del gran total, 25/1000, da 0.025.',
+        desmos:'Missing cell: 40-15-12 = 13. Probability: (12+13)/(300+200) = 25/500 = 0.05 = 1/20. The grand-total trap, 25/1000, gives 0.025.',
         desmosLatex:['40-15-12', '(12+13)/(300+200)', '1/20']
       },
       {
@@ -102,7 +102,7 @@
           C:'7/10 = 105/150 is the share of satisfied customers in the whole sample, not the probability asked for.'
         },
         tip:'The SAT loves flipping the conditional: they give you rows by age, but condition on the COLUMN (satisfied). The correct denominator is that column’s total, which here you have to compute yourself.',
-        desmos:'Satisfechos de 40+: 80-20 = 60. Total satisfechos: 45+60 = 105. Probabilidad: 45/105 ≈ 0.4286 = 3/7. Compara con la trampa 45/150 = 0.3 y con la inversa 45/70 ≈ 0.643.',
+        desmos:'Satisfied among the 40+ group: 80-20 = 60. Total satisfied: 45+60 = 105. Probability: 45/105 ≈ 0.4286 = 3/7. Compare with the trap 45/150 = 0.3 and with the flipped 45/70 ≈ 0.643.',
         desmosLatex:['80-20', '45/(45+60)', '3/7']
       },
       {
@@ -118,7 +118,7 @@
           D:'20 assumes as many scores were added as there already were. With 20 and 20, the mean would be the midpoint (82 + 94)/2 = 88, not 86.'
         },
         tip:'Bullet method: each 94 sits 8 points ABOVE the final mean (94 − 86) and each old score sat 4 below (86 − 82). Balance: 8n = 4(20) → n = 10. Deviations from the final mean always sum to zero.',
-        desmos:'Resuelve gráficamente (20*82+94n)/(20+n)=86: escribe y=(1640+94x)/(20+x) junto con y=86 y se cruzan en x = 10. Verifica: (1640+94*10)/30 = 86.',
+        desmos:'Solve it graphically: (20*82+94n)/(20+n)=86. Type y=(1640+94x)/(20+x) together with y=86 and they cross at x = 10. Check: (1640+94*10)/30 = 86.',
         desmosLatex:['y=(20*82+94x)/(20+x)', 'y=86', '(20*82+94*10)/(20+10)']
       },
       {
@@ -134,7 +134,7 @@
           D:'2/3 confuses the ratio g:b = 3:2 with the fraction of the total. The fraction of girls is 3/(3+2) = 3/5, not 2/3.'
         },
         tip:'Balance rule (alligation): the quantities are INVERSELY proportional to the distances from the combined mean. Boys are 83 − 74 = 9 away; girls are 89 − 83 = 6 away → b:g = 6:9 = 2:3. Sanity check: the combined mean lands closer to the larger group.',
-        desmos:'Si x es la fracción de niñas, grafica y=74(1-x)+89x junto con y=83: se cruzan en x = 0.6 = 3/5. Verifica: 74*0.4+89*0.6 = 83.',
+        desmos:'If x is the fraction of girls, graph y=74(1-x)+89x together with y=83: they cross at x = 0.6 = 3/5. Check: 74*0.4+89*0.6 = 83.',
         desmosLatex:['y=74(1-x)+89x', 'y=83', '74*0.4+89*0.6']
       },
       {
@@ -145,7 +145,7 @@
         expCorrect:'Original total sum: 15 × 62 = 930. Sum after removing the value: 14 × 59 = 826. The number removed is the difference of the sums: 930 − 826 = 104. It makes sense: removing a value well ABOVE the mean pulls the mean down.',
         expWrong:{},
         tip:'With means, convert everything to SUMS: sum = mean × count. Removed value = (old sum) − (new sum). Sanity check: if the mean dropped, the removed value was larger than the original mean.',
-        desmos:'Escribe 15*62-14*59 en Desmos y te da 104 directo. Para verificar, resuelve gráficamente (930-x)/14 = 59: grafica y=(930-x)/14 y y=59; se cruzan en x = 104.',
+        desmos:'Type 15*62-14*59 in Desmos and it gives 104 straight away. To check, solve graphically (930-x)/14 = 59: graph y=(930-x)/14 and y=59; they cross at x = 104.',
         desmosLatex:['15*62-14*59', 'y=(930-x)/14', 'y=59']
       },
       {
@@ -156,7 +156,7 @@
         expCorrect:'Sum of the first 8: 8 × 76 = 608. Equation with the total sum: (608 + 2x)/10 = 79 → 608 + 2x = 790 → 2x = 182 → x = 91. Check: (608 + 182)/10 = 790/10 = 79 ✓.',
         expWrong:{},
         tip:'The final mean “demands” a total of 10 × 79 = 790 points. The first 8 contribute 608, so the 2 new ones must contribute 790 − 608 = 182 between them → 91 each. Always think in terms of the TOTAL the target mean requires.',
-        desmos:'Resuelve gráficamente (8*76+2x)/10 = 79: grafica y=(608+2x)/10 junto con y=79 y se cruzan en x = 91. O directo: (10*79-8*76)/2 = 91.',
+        desmos:'Solve graphically (8*76+2x)/10 = 79: graph y=(608+2x)/10 together with y=79 and they cross at x = 91. Or straight to it: (10*79-8*76)/2 = 91.',
         desmosLatex:['y=(8*76+2x)/10', 'y=79', '(10*79-8*76)/2']
       },
       {
@@ -177,7 +177,7 @@
           C:'“Exactly 62%” confuses the sample statistic with the population parameter, and on top of that changes the population to the whole district. A double error.'
         },
         tip:'Checklist: (1) does the conclusion stay WITHIN the sampled population? (2) does it use the language of plausibility (“plausible”, “likely”) and not of certainty (“exactly”, “guaranteed”, “will”)? If either fails, rule it out.',
-        desmos:'Calcula el intervalo en Desmos: 62-4.8 = 57.2 y 62+4.8 = 66.8. El rango plausible es [57.2, 66.8], y solo aplica a Riverside High School.',
+        desmos:'Compute the interval in Desmos: 62-4.8 = 57.2 and 62+4.8 = 66.8. The plausible range is [57.2, 66.8], and it applies only to Riverside High School.',
         desmosLatex:['62-4.8', '62+4.8']
       },
       {
@@ -198,12 +198,12 @@
           D:'“Exactly 14.2” is the SAMPLE value. The margin of error exists precisely because the population mean almost never lands exactly on the sample mean.'
         },
         tip:'Three classic MOE traps: (1) applying it to individuals instead of to the mean, (2) stepping outside the sampled population, (3) treating the sample statistic as an exact value. The right one always combines “plausible” + “mean” + the correct population.',
-        desmos:'Intervalo en Desmos: 14.2-0.6 = 13.6 y 14.2+0.6 = 14.8. Ese rango es para la media del envío, no para cada batería individual.',
+        desmos:'Interval in Desmos: 14.2-0.6 = 13.6 and 14.2+0.6 = 14.8. That range is for the mean of the shipment, not for each individual battery.',
         desmosLatex:['14.2-0.6', '14.2+0.6']
       },
       {
         id:'XD-11', type:'mc', domain:'Problem-Solving & Data Analysis', difficulty:'Difícil', extreme:true,
-        skill:'Cadena de porcentajes: revertir cambios sucesivos',
+        skill:'Chain of percentages: reversing successive changes',
         stem:'The price of a jacket was first increased by 20%. The new price was then decreased by 25%, resulting in a final price of $270. What was the original price of the jacket?',
         choices:{A:'$300', B:'$283.50', C:'$337.50', D:'$225'},
         correct:'A',
@@ -214,7 +214,7 @@
           D:'$225 = 270/1.2 only undoes the 20% increase and ignores the 25% discount. You reversed half the story.'
         },
         tip:'Turn each percent change into a multiplier and MULTIPLY them: +20% → 1.2, −25% → 0.75. To work backwards, divide the final value by the product of the multipliers. Never add or subtract successive percentages.',
-        desmos:'Multiplicador neto: 1.2*0.75 = 0.9. Precio original: 270/0.9 = 300. O resuelve gráficamente: y=1.2*0.75x con y=270 se cruzan en x = 300.',
+        desmos:'Net multiplier: 1.2*0.75 = 0.9. Original price: 270/0.9 = 300. Or solve graphically: y=1.2*0.75x and y=270 cross at x = 300.',
         desmosLatex:['1.2*0.75', '270/(1.2*0.75)', 'y=1.2*0.75x', 'y=270']
       },
       {
@@ -225,7 +225,7 @@
         expCorrect:'Multipliers: +25% → 1.25; −20% → 0.80; +10% → 1.10. Product: 1.25 × 0.80 × 1.10 = 1.10. If p is the initial population: 1.10p = 3300 → p = 3300/1.10 = 3000. Check forward: 3000 → 3750 → 3000 → 3300 ✓. Notice that +25% and −20% cancel exactly (1.25 × 0.8 = 1).',
         expWrong:{},
         tip:'Golden fact: +25% followed by −20% cancels out (1.25 × 0.8 = 1). If you spot the cancellation, the problem reduces to undoing the +10% alone: 3300/1.1 = 3000. And careful: adding 25 − 20 + 10 = 15% gives a wrong result.',
-        desmos:'Producto de multiplicadores: 1.25*0.8*1.1 = 1.1. Población inicial: 3300/1.1 = 3000. Verifica la cadena completa: 3000*1.25*0.8*1.1 = 3300.',
+        desmos:'Product of the multipliers: 1.25*0.8*1.1 = 1.1. Initial population: 3300/1.1 = 3000. Check the whole chain: 3000*1.25*0.8*1.1 = 3300.',
         desmosLatex:['1.25*0.8*1.1', '3300/(1.25*0.8*1.1)', '3000*1.25*0.8*1.1']
       }
     ]

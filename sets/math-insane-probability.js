@@ -55,7 +55,7 @@
         skill:'Expected value with multiple scenarios',
         stem:'A game involves rolling a fair die. If you roll 1 or 2, you win $0. If you roll 3 or 4, you win $3. If you roll 5 or 6, you win $8. What is the expected value of your winnings? (Grid in your answer as a decimal or fraction.)',
         answer:'11/3',
-        expCorrect:'E[X] = (1/6)(0) + (1/6)(0) + (1/6)(3) + (1/6)(3) + (1/6)(8) + (1/6)(8) = (1/6)(0 + 0 + 3 + 3 + 8 + 8) = (1/6)(22) = 22/6 = 11/3 ≈ 3.67. En el box valen 11/3, 3.666 o 3.667.',
+        expCorrect:'E[X] = (1/6)(0) + (1/6)(0) + (1/6)(3) + (1/6)(3) + (1/6)(8) + (1/6)(8) = (1/6)(0 + 0 + 3 + 3 + 8 + 8) = (1/6)(22) = 22/6 = 11/3 ≈ 3.67. Valid forms for the box: 11/3, 3.666 or 3.667.',
         tip:'Expected value: E[X] = Σ (outcome × probability). For a fair die, each outcome has prob 1/6.'
       },
       {
@@ -119,7 +119,7 @@
         skill:'Binomial probability',
         stem:'A coin is flipped 5 times. What is the probability of getting exactly 3 heads? (Grid in your answer as a fraction or decimal.)',
         answer:'5/16',
-        expCorrect:'P(exactly 3 heads in 5 flips) = C(5,3) × (1/2)³ × (1/2)² = 10 × (1/32) = 10/32 = 5/16 = 0.3125. En el box valen 5/16 o .3125.',
+        expCorrect:'P(exactly 3 heads in 5 flips) = C(5,3) × (1/2)³ × (1/2)² = 10 × (1/32) = 10/32 = 5/16 = 0.3125. Valid forms for the box: 5/16 or .3125.',
         tip:'Binomial: P(k successes in n trials) = C(n,k) × p^k × (1−p)^(n−k).'
       },
       {
@@ -155,7 +155,7 @@
         skill:'Probability of union (at least one)',
         stem:'The probability of event A is 0.3, and the probability of event B is 0.5. If A and B are independent, what is the probability of at least one occurring? (Grid in your answer as a decimal.)',
         answer:'.65',
-        expCorrect:'P(at least one) = 1 − P(neither) = 1 − (1 − 0.3)(1 − 0.5) = 1 − 0.7 × 0.5 = 1 − 0.35 = 0.65. En el box valen .65 o 0.65.',
+        expCorrect:'P(at least one) = 1 − P(neither) = 1 − (1 − 0.3)(1 − 0.5) = 1 − 0.7 × 0.5 = 1 − 0.35 = 0.65. Valid forms for the box: .65 or 0.65.',
         tip:'P(at least one) = 1 − P(none). For independence: P(at least one) = 1 − (1−P(A))(1−P(B)).'
       }
     ]

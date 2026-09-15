@@ -1,4 +1,4 @@
-/* SAT Studio question set — Math: Advanced Math 2 (AV2-01 a AV2-12) */
+/* SAT Studio question set — Math: Advanced Math 2 (AV2-01 to AV2-12) */
 (function(){
   window.SAT_SETS.push({
     id: 'math-adv2',
@@ -42,7 +42,7 @@
         stem:'The function f is defined by f(x) = 2x² − 3x + 1. What is the value of f(−2)?',
         choices:{A:'−1', B:'3', C:'11', D:'15'},
         correct:'D',
-        expCorrect:'Sustituye x = −2: f(−2) = 2(−2)² − 3(−2) + 1 = 2(4) + 6 + 1 = 8 + 6 + 1 = 15.',
+        expCorrect:'Substitute x = −2: f(−2) = 2(−2)² − 3(−2) + 1 = 2(4) + 6 + 1 = 8 + 6 + 1 = 15.',
         expWrong:{
           A:'−1 comes from treating (−2)² as −4: 2(−4) + 6 + 1 = −1. Remember a square is always positive: (−2)² = 4.',
           B:'3 comes from forgetting the sign in −3x: 2(4) − 6 + 1 = 3. With x = −2, the term −3x becomes +6.',
@@ -110,7 +110,7 @@
         expCorrect:'Exactly one real solution ⇔ discriminant zero: b² − 4ac = 0 → 10² − 4(1)(c) = 0 → 100 − 4c = 0 → c = 25. (Check: x² + 10x + 25 = (x + 5)², double root x = −5.)',
         expWrong:{
           A:'5 is the double root (x = −5 in absolute value), not the value of c. c = 5² = 25.',
-          B:'20 no anula el discriminante: 100 − 4(20) = 20 ≠ 0. Resuelve 100 − 4c = 0.',
+          B:'20 does not make the discriminant zero: 100 − 4(20) = 20 ≠ 0. Solve 100 − 4c = 0.',
           D:'100 is b², but you forgot to divide by 4: c = 100/4 = 25.'
         },
         tip:'A single real solution → discriminant = 0. Solve b² = 4ac. Here 100 = 4c → c = 25. Verify: it has to leave a perfect square (x + 5)².'

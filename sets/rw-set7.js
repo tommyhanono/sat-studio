@@ -1,4 +1,4 @@
-/* SAT Studio question set — Reading & Writing: Command of Evidence — Hard (COE-01 a COE-10) */
+/* SAT Studio question set — Reading & Writing: Command of Evidence — Hard (COE-01 to COE-10) */
 window.SAT_SETS.push({
   id: 'rw-set7',
   title: 'Command of Evidence — Hard',
@@ -65,7 +65,7 @@ window.SAT_SETS.push({
         B:'Feeling more relaxed runs in the SAME direction as the conclusion (it would even support it); it does not weaken it.',
         D:'Whether they enjoy the walks is irrelevant to whether those walks CAUSE the better focus.'
       },
-      tip:'To weaken a cause-and-effect claim, look for a THIRD factor that explains both things at once, or a reversed cause. Careful: an option that supports runs opposite to “weaken”.'
+      tip:'To weaken a cause-and-effect claim, look for a THIRD factor that explains both things at once, or a reversed cause. Careful: an option that SUPPORTS the claim is the opposite of what “weaken” asks for.'
     },
     {
       id:'COE-04', type:'mc', domain:'Information and Ideas', difficulty:'Difícil',
@@ -101,7 +101,7 @@ window.SAT_SETS.push({
       correct:'D',
       expCorrect:'Her proposal is that it survives thanks to water stored in the thick ROOTS, not the leaves. D ties exactly that together: thicker, water-filled roots → far higher survival. It supports the mechanism she points to.',
       expWrong:{
-        A:'Relatives without thick roots surviving short droughts would rather weaken the importance of the roots; it does not support it.',
+        A:'Relatives without thick roots surviving short droughts would, if anything, weaken the importance of the roots; it does not support the proposal.',
         B:'The waxy layer cuts loss through the LEAVES, which is exactly the explanation she RULED OUT. It supports the opposite idea, not hers.',
         C:'Where the plant grows describes its dry habitat, but does not show that the roots (and not the leaves) are what save it.'
       },
@@ -162,10 +162,10 @@ window.SAT_SETS.push({
       expCorrect:'The claim is that narrow, tree-lined streets make people feel SAFER and willing to linger, compared with wide avenues. A shows a resident saying the narrow shaded street invited her to stop, while the wide avenue made her hurry. It illustrates exactly the contrast she defends.',
       expWrong:{
         B:'It tells the HISTORY of why the wide avenues were designed; it says nothing about how pedestrians feel today. Irrelevant to the claim.',
-        C:'Trees being too young to give shade rather works against the benefit of tree-lined streets; it does not illustrate the claim.',
+        C:'Trees being too young to give shade actually works against the benefit of tree-lined streets; it does not illustrate the claim.',
         D:'Cleaning and maintenance costs are a different topic; they do not say whether pedestrians feel safe or want to linger.'
       },
-      tip:'“Illustrates the claim” = stage exactly what it says. Look for the quote where someone LIVES the described effect (here: lingering on the narrow street, hurrying on the wide one), not history or cost data.'
+      tip:'“Illustrates the claim” = show exactly what it says. Look for the quote in which someone actually EXPERIENCES the described effect (here: lingering on the narrow street, hurrying on the wide one), not history or cost data.'
     },
     {
       id:'COE-09', type:'mc', domain:'Information and Ideas', difficulty:'Difícil',
@@ -183,7 +183,7 @@ window.SAT_SETS.push({
       expWrong:{
         A:'Beavers in other, wetter valleys say nothing about what happened in THIS dry one. It does not touch the prediction.',
         B:'Them being the same historical species is background; it does not show the dams raised the water or that the plants returned.',
-        C:'Neighbors enjoying the sight of beavers is irrelevant to water level or vegetation.'
+        C:'Residents enjoying the sight of the beavers is irrelevant to the water table or the vegetation.'
       },
       tip:'The best evidence sets the prediction against a contrast: where the cause happened vs. where it did not. Seeing “with dams it changed, without dams it did not” is what ties cause to effect.'
     },
@@ -203,7 +203,7 @@ window.SAT_SETS.push({
       expWrong:{
         B:'How many hours they spend gardening describes the habit, but does not say whether eating more vegetables comes from growing them or from something else. It does not weaken.',
         C:'What NON-gardeners would do with more space is hypothetical and irrelevant to the cause of vegetable consumption.',
-        D:'Which vegetables they grow is a detail about the harvest; it does not touch whether gardening causes eating more. Too far off to the side.'
+        D:'Which vegetables they grow is a detail about the harvest; it does not touch whether gardening causes people to eat more. It is beside the point.'
       },
       tip:'To weaken “X causes Y”, the strongest move is showing that Y already existed BEFORE X. If they ate more vegetables before having a garden, gardening cannot have been the cause.'
     }

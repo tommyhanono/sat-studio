@@ -90,7 +90,7 @@ window.SAT_SETS.push({
       expCorrect:'The text takes a dismissive stance (too small and scattered to matter) and refutes it with data: even isolated roofs draw bees, and nearby ones share species, working as stepping-stones. The purpose is to show that dismissed habitat does count.',
       expWrong:{
         A:'It does not compare urban threats against rural ones; the focus is the value of the roofs, not a danger exclusive to the city.',
-        C:'No recomienda plantas ni se dirige a jardineros; presenta hallazgos de un estudio.',
+        C:'It does not recommend plants or address gardeners; it presents the findings of a study.',
         D:'It mentions a study, but does not explain its method for identifying species; it uses the result, not the procedure.'
       },
       tip:'Main purpose is why the author wrote the whole text. If it opens by pushing back on an idea (suggests otherwise), the purpose is usually to present evidence against that idea.'
@@ -108,13 +108,13 @@ window.SAT_SETS.push({
         D:'By contending that her prediction overlooks remote workers\' continued desire to live near urban amenities.'
       },
       correct:'D',
-      expCorrect:'Prieto predicts that remote workers will abandon downtown for cheap towns. Vale objects with surveys: most still want to live near theaters, restaurants and parks, and they miss the social contact. She would answer that he ignores that desire to be close to urban amenities.',
+      expCorrect:'Prieto predicts that remote workers will abandon downtown for cheap towns. Vale objects with surveys: most still want to live near theaters, restaurants and parks, and they miss the social contact. He would answer that she overlooks that desire to be close to urban amenities.',
       expWrong:{
-        A:'Vale does not accept that downtown will fall; she doubts that prediction and suggests cities can pull those workers back.',
-        B:'Vale never says remote work is a passing phase; she is arguing about what people want, not whether the trend reverses on its own.',
-        C:'Vale does not limit Prieto’s analysis to small towns; her point is about what draws people to big cities.'
+        A:'Vale does not accept that downtown will fall; he doubts that prediction and suggests cities can pull those workers back.',
+        B:'Vale never says remote work is a passing phase; he is arguing about what people want, not whether the trend reverses on its own.',
+        C:'Vale does not limit Prieto’s analysis to small towns; his point is about what draws people to big cities.'
       },
-      tip:'First pin down each author’s thesis. Vale contradicts Prieto with a fact (people want amenities), so her answer will be that counterargument, not simple agreement.'
+      tip:'First pin down each author’s thesis. Vale contradicts Prieto with a fact (people want amenities), so his answer will be that counterargument, not simple agreement.'
     },
     {
       id:'MK1-07', type:'mc', domain:'Craft and Structure', difficulty:'Difícil',
@@ -379,7 +379,7 @@ window.SAT_SETS.push({
       expWrong:{
         A:'The form its is singular and is used for things, not for musicians (people) or for the nearest plural subject.',
         C:'The form his or her is singular, but the nearest subject (the other musicians) is plural, so it calls for a plural possessive.',
-        D:'La forma one\'s es impersonal y singular; no concuerda con the other musicians.'
+        D:'The form one\'s is impersonal and singular; it does not agree with the other musicians.'
       },
       tip:'With neither…nor…, the verb and the pronoun follow the nearest subject. If that one is plural, use their.'
     },

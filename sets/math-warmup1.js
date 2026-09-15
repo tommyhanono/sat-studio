@@ -137,7 +137,7 @@
         expWrong:{
           A:'$48 applies the discount AGAIN to 60 (60 − 20% = 48). The $60 is already the discounted price; you have to work backwards by dividing.',
           B:'$72 ADDS 20% of 60 (60 + 12 = 72). The 20% is figured on the ORIGINAL price, not on the 60.',
-          D:'$80 sale de un ajuste aproximado incorrecto. La cuenta exacta es 60 / 0.80 = 75, no 80.'
+          D:'$80 comes from a rough, incorrect adjustment. The exact computation is 60 / 0.80 = 75, not 80.'
         },
         tip:'Reverse percent: if something dropped 20%, the final price is 80% of the original. Divide by 0.80 (do not subtract 20% from the final number). Rule: final price = original × (1 − discount).'
       },

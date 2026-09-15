@@ -1,4 +1,4 @@
-/* SAT Studio question set — Reading & Writing: Rhetorical Synthesis (RHF-01 a RHF-10) */
+/* SAT Studio question set — Reading & Writing: Rhetorical Synthesis (RHF-01 to RHF-10) */
 window.SAT_SETS.push({
   id: 'rw-set10',
   title: 'Rhetorical Synthesis — Easy',
@@ -19,13 +19,13 @@ window.SAT_SETS.push({
         D:'The axolotl is a salamander that lives near Mexico City.'
       },
       correct:'C',
-      expCorrect:'La meta pide resaltar una HABILIDAD especial. La C dice que el axolotl puede regenerar partes de su cuerpo, como las patas. Esa es la habilidad, con notas exactas.',
+      expCorrect:'The goal asks you to highlight a special ABILITY. C says the axolotl can regrow parts of its body, such as its legs. That is the ability, using the notes exactly.',
       expWrong:{
-        A:'Solo dice qué es (una salamandra); no menciona ninguna habilidad especial.',
-        B:'Dice dónde vive; es un dato de lugar, no una habilidad.',
-        D:'Junta qué es y dónde vive, pero no habla de la habilidad especial.'
+        A:'It only says what it is (a salamander); it mentions no special ability.',
+        B:'It says where it lives; that is a location fact, not an ability.',
+        D:'It combines what it is and where it lives, but says nothing about the special ability.'
       },
-      tip:'Lee la META primero. Si pide una "habilidad especial", busca la nota que dice algo que el animal PUEDE hacer.'
+      tip:'Read the GOAL first. If it asks for a "special ability," look for the note that says something the animal CAN do.'
     },
     {
       id:'RHF-02', type:'mc', domain:'Expression of Ideas', difficulty:'Fácil',
@@ -39,13 +39,13 @@ window.SAT_SETS.push({
         D:'The tines of the kalimba are thin metal keys.'
       },
       correct:'B',
-      expCorrect:'La meta es PRESENTAR el instrumento a alguien que no lo conoce. La B da lo básico: qué es (un instrumento pequeño), de dónde viene (África) y de qué está hecho (teclas de metal). Es la mejor introducción con notas exactas.',
+      expCorrect:'The goal is to INTRODUCE the instrument to someone who has never heard of it. B gives the basics: what it is (a small instrument), where it comes from (Africa), and what it is made of (metal keys). It is the best introduction, and it uses the notes exactly.',
       expWrong:{
-        A:'Explica cómo se toca; es un detalle, no una presentación general.',
-        C:'Da un apodo, pero no dice qué es el instrumento ni de dónde viene.',
-        D:'Describe solo las tines; es un dato fino, no una introducción completa.'
+        A:'It explains how it is played; that is a detail, not a general introduction.',
+        C:'It gives a nickname, but does not say what the instrument is or where it comes from.',
+        D:'It describes only the tines; that is a fine detail, not a complete introduction.'
       },
-      tip:'"Introducir a quien no lo conoce" = elige lo más general (qué es, de dónde viene), no un detalle fino.'
+      tip:'"Introduce it to someone who has never heard of it" = pick the most general information (what it is, where it comes from), not a fine detail.'
     },
     {
       id:'RHF-03', type:'mc', domain:'Expression of Ideas', difficulty:'Fácil',
@@ -59,13 +59,13 @@ window.SAT_SETS.push({
         D:'The team was interested in how paper airplanes fly.'
       },
       correct:'A',
-      expCorrect:'La meta pide el RESULTADO específico. La A da los números concretos: el Diseño A voló 6 metros y el B voló 11. Eso es un resultado medible y exacto.',
+      expCorrect:'The goal asks for the specific RESULT. A gives the concrete numbers: Design A flew 6 meters and Design B flew 11. That is a measurable, exact result.',
       expWrong:{
-        B:'Es una idea general y vaga; no da el resultado con números.',
-        C:'Describe qué hicieron (probar dos diseños), no lo que encontraron.',
-        D:'Habla del interés del equipo, no del resultado del test.'
+        B:'It is a vague, general idea; it does not give the result with numbers.',
+        C:'It describes what they did (tested two designs), not what they found.',
+        D:'It talks about the team’s interest, not about the result of the test.'
       },
-      tip:'"Resultado específico" = busca la opción con los NÚMEROS concretos, no la que describe el plan.'
+      tip:'"Specific result" = look for the choice with the concrete NUMBERS, not the one that describes the plan.'
     },
     {
       id:'RHF-04', type:'mc', domain:'Expression of Ideas', difficulty:'Fácil',
@@ -79,13 +79,13 @@ window.SAT_SETS.push({
         D:'The rooftop garden was a project started by the community.'
       },
       correct:'A',
-      expCorrect:'La meta pide explicar POR QUÉ murieron las plantas. La A da la causa: sin sombra, el sol secó la tierra, y por eso murieron las plantas jóvenes. Es causa + efecto con notas exactas.',
+      expCorrect:'The goal asks you to explain WHY the plants died. A gives the cause: with no shade, the sun dried out the soil, and that is why the young plants died. It is cause + effect, using the notes exactly.',
       expWrong:{
-        B:'Cuenta que empezaron el jardín; no dice por qué murieron las plantas.',
-        C:'Da el resultado (murieron), pero no la causa de por qué pasó.',
-        D:'Repite que fue un proyecto de la comunidad; no explica la causa.'
+        B:'It reports that they started the garden; it does not say why the plants died.',
+        C:'It gives the result (they died), but not the cause of why it happened.',
+        D:'It repeats that it was a community project; it does not explain the cause.'
       },
-      tip:'"Explicar por qué" = busca la opción que da la CAUSA (aquí: sin sombra, el sol secó la tierra), no la que solo dice el resultado.'
+      tip:'"Explain why" = look for the choice that gives the CAUSE (here: with no shade, the sun dried out the soil), not the one that only states the result.'
     },
     {
       id:'RHF-05', type:'mc', domain:'Expression of Ideas', difficulty:'Fácil',
@@ -99,13 +99,13 @@ window.SAT_SETS.push({
         D:'Honey should be kept sealed in a jar.'
       },
       correct:'C',
-      expCorrect:'La meta pide explicar POR QUÉ la miel sellada no se echa a perder. La C da la razón: tiene poca agua y es muy ácida, así que las bacterias no crecen. Explica la causa con notas exactas.',
+      expCorrect:'The goal asks you to explain WHY sealed honey never spoils. C gives the reason: it is very low in water and very acidic, so bacteria cannot grow. It explains the cause, using the notes exactly.',
       expWrong:{
-        A:'Dice qué es la miel, pero no explica por qué no se daña. (Además, no sale en las notas.)',
-        B:'Habla de cómo la gente la disfruta; no explica la causa.',
-        D:'Da un consejo (mantenerla sellada), no la razón por la que no se echa a perder.'
+        A:'It says what honey is, but does not explain why it does not spoil. (It is also not in the notes.)',
+        B:'It talks about how people enjoy it; it does not explain the cause.',
+        D:'It gives advice (keep it sealed), not the reason it does not spoil.'
       },
-      tip:'"Explicar por qué" = busca la nota que da la RAZÓN (poca agua + muy ácida = sin bacterias).'
+      tip:'"Explain why" = look for the note that gives the REASON (low in water + very acidic = no bacteria).'
     },
     {
       id:'RHF-06', type:'mc', domain:'Expression of Ideas', difficulty:'Media',
@@ -119,13 +119,13 @@ window.SAT_SETS.push({
         D:'Before the lane was added, about 200 people biked downtown each day.'
       },
       correct:'B',
-      expCorrect:'La meta pide enfatizar CUÁNTO subió el uso de bicicletas. La B junta los dos números: de unas 200 personas a unas 850. Ese salto muestra el aumento con notas exactas.',
+      expCorrect:'The goal asks you to emphasize HOW MUCH bike use went up. B puts both numbers together: from about 200 people to about 850. That jump shows the increase, using the notes exactly.',
       expWrong:{
-        A:'Cuenta que agregaron el carril; no muestra el aumento.',
-        C:'Describe el color del carril; no tiene nada que ver con el aumento.',
-        D:'Da solo el número de antes; falta el "después" para mostrar el aumento.'
+        A:'It reports that they added the lane; it does not show the increase.',
+        C:'It describes the color of the lane, which has nothing to do with the increase.',
+        D:'It gives only the "before" number; the "after" is missing, so the increase never shows.'
       },
-      tip:'"Enfatizar cuánto subió" = elige la opción con AMBOS números (antes y después), no uno solo.'
+      tip:'"Emphasize how much it went up" = pick the choice with BOTH numbers (before and after), not just one.'
     },
     {
       id:'RHF-07', type:'mc', domain:'Expression of Ideas', difficulty:'Fácil',
@@ -139,13 +139,13 @@ window.SAT_SETS.push({
         D:'Camels store fat in their humps rather than across their bodies.'
       },
       correct:'A',
-      expCorrect:'La meta pide explicar CÓMO las jorobas ayudan al camello a sobrevivir. La A da el mecanismo: guardan grasa que el cuerpo convierte en energía y agua, y así aguantan días sin beber. Explica el cómo con notas exactas.',
+      expCorrect:'The goal asks you to explain HOW the humps help the camel survive. A gives the mechanism: they store fat that the body turns into energy and water, so the camel can go days without drinking. It explains the how, using the notes exactly.',
       expWrong:{
-        B:'Solo dice que la joroba es conocida; no explica cómo ayuda a sobrevivir.',
-        C:'Dice dónde viven los camellos; no explica cómo ayudan las jorobas. (Además, no sale en las notas.)',
-        D:'Menciona que guardan grasa ahí, pero no explica cómo esa grasa los ayuda a sobrevivir.'
+        B:'It only says the hump is well known; it does not explain how it helps the camel survive.',
+        C:'It says where camels live; it does not explain how the humps help. (It is also not in the notes.)',
+        D:'It mentions that they store fat there, but does not explain how that fat helps them survive.'
       },
-      tip:'"Explicar cómo ayuda" = busca la opción que describe el MECANISMO completo (grasa → energía y agua → días sin beber).'
+      tip:'"Explain how it helps" = look for the choice that describes the full MECHANISM (fat → energy and water → days without drinking).'
     },
     {
       id:'RHF-08', type:'mc', domain:'Expression of Ideas', difficulty:'Fácil',
@@ -159,13 +159,13 @@ window.SAT_SETS.push({
         D:'One example of a pioneer species is moss, which often grows on bare rock.'
       },
       correct:'D',
-      expCorrect:'La meta pide dar un EJEMPLO de especie pionera. La D nombra uno concreto: el musgo, que crece sobre roca desnuda. Es un ejemplo específico con notas exactas.',
+      expCorrect:'The goal asks you to give an EXAMPLE of a pioneer species. D names a concrete one: moss, which grows on bare rock. It is a specific example, using the notes exactly.',
       expWrong:{
-        A:'Define qué es una especie pionera, pero no da un ejemplo concreto.',
-        B:'Habla de lo difícil que es la tierra desnuda; no da un ejemplo de especie.',
-        C:'Solo dice que existe ese nombre; no da ningún ejemplo.'
+        A:'It defines what a pioneer species is, but gives no concrete example.',
+        B:'It talks about how difficult bare land is; it gives no example of a species.',
+        C:'It only says that the name exists; it gives no example at all.'
       },
-      tip:'"Dar un ejemplo" = busca la opción que NOMBRA un caso concreto (aquí: el musgo), no la que solo define.'
+      tip:'"Give an example" = look for the choice that NAMES a concrete case (here: moss), not the one that only defines.'
     },
     {
       id:'RHF-09', type:'mc', domain:'Expression of Ideas', difficulty:'Fácil',
@@ -179,13 +179,13 @@ window.SAT_SETS.push({
         D:'Hummingbirds are active during the day and rest at night.'
       },
       correct:'C',
-      expCorrect:'La meta pide un CONTRASTE entre cuándo están activos los dos. La C usa "While" para oponerlos: los murciélagos cazan de noche y los colibríes están activos de día. Junta los dos lados con notas exactas.',
+      expCorrect:'The goal asks for a CONTRAST between when the two are active. C uses "While" to set them against each other: bats hunt at night and hummingbirds are active during the day. It brings both sides together, using the notes exactly.',
       expWrong:{
-        A:'Dice que ambos son interesantes, pero no contrasta cuándo están activos.',
-        B:'Habla solo de los murciélagos; falta el otro lado para el contraste.',
-        D:'Habla solo de los colibríes; falta el otro lado para el contraste.'
+        A:'It says both are interesting, but it does not contrast when they are active.',
+        B:'It covers only the bats; the other side of the contrast is missing.',
+        D:'It covers only the hummingbirds; the other side of the contrast is missing.'
       },
-      tip:'"Contraste entre dos" = elige la opción con palabra de oposición (While, but) que mencione a AMBOS.'
+      tip:'"Contrast between two" = pick the choice with a contrast word (While, but) that mentions BOTH.'
     },
     {
       id:'RHF-10', type:'mc', domain:'Expression of Ideas', difficulty:'Media',
@@ -199,13 +199,13 @@ window.SAT_SETS.push({
         D:'A student club aimed to collect 500 books but gathered 1,200, far more than its goal.'
       },
       correct:'D',
-      expCorrect:'La meta pide el PUNTO PRINCIPAL de las notas. La D resume lo más importante: buscaban 500 libros y juntaron 1,200, mucho más de la meta. Recoge la idea central con notas exactas.',
+      expCorrect:'The goal asks for the MAIN POINT of the notes. D sums up what matters most: they were aiming for 500 books and collected 1,200, far more than the goal. It captures the central idea, using the notes exactly.',
       expWrong:{
-        A:'Da un detalle final (los estantes), no el punto principal.',
-        B:'Solo cuenta que empezaron; deja fuera el gran resultado.',
-        C:'Da solo la meta (500), sin el resultado que hace importante la historia.'
+        A:'It gives a closing detail (the shelves), not the main point.',
+        B:'It only reports that they started; it leaves out the big result.',
+        C:'It gives only the goal (500), without the result that makes the story matter.'
       },
-      tip:'"Punto principal" = busca la opción que junta la META y el RESULTADO grande, no un detalle suelto.'
+      tip:'"Main point" = look for the choice that joins the GOAL and the big RESULT, not a stray detail.'
     }
   ]
 });

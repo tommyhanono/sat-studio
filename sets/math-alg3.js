@@ -39,7 +39,7 @@
           D:'19/5 comes from adding the x terms instead of subtracting: 3x + 2x = 5x. The 2x is on the other side of the equals sign, so it gets subtracted.'
         },
         tip:'ALWAYS distribute before moving terms. Multiplying only the first term inside the parentheses is the most common error in the whole domain, and there is always an option waiting for it.',
-        desmos:'Grafica y=3(x-4) y y=2x+7 y toca donde se cruzan: x = 19.',
+        desmos:'Graph y=3(x-4) and y=2x+7 and tap where they cross: x = 19.',
         desmosLatex:['y=3(x-4)','y=2x+7']
       },
       {
@@ -55,7 +55,7 @@
           D:'y = (2/5)x − 10 flips the coefficient. Dividing 5x by 2 gives (5/2)x, not (2/5)x — it is a division, not an upside-down fraction.'
         },
         tip:'When you solve, the expensive error is not the algebra: it is dividing by a negative and applying it to only one term. Divide the whole equation at once and check both signs.',
-        desmos:'Grafica 5x-2y=20 y encima y=2.5x-10: se superponen exactamente. Si graficas una opción incorrecta, verás dos rectas distintas.',
+        desmos:'Graph 5x-2y=20 and then y=2.5x-10 on top: they overlap exactly. Graph a wrong option instead and you see two different lines.',
         desmosLatex:['5x-2y=20','y=2.5x-10']
       },
       {
@@ -71,7 +71,7 @@
           D:'−2/3 is the slope upside down: you put the change in x on top. The formula is Δy over Δx, in that order.'
         },
         tip:'Before computing, look at whether the line rises or falls and lock in the sign. After that, the only real trap is the double negative in the denominator.',
-        desmos:'Escribe (-3,8) y (5,-4) para ver los puntos, y y=-1.5x+3.5 para confirmar que la recta pasa por ambos.',
+        desmos:'Type (-3,8) and (5,-4) to see the points, then y=-1.5x+3.5 to confirm the line passes through both.',
         desmosLatex:['(-3,8)','(5,-4)','y=-1.5x+3.5']
       },
       {
@@ -87,7 +87,7 @@
           D:'−10 has the final sign inverted. The absolute value is right, so the slip was at the end; substitute with parentheses and it does not get lost.'
         },
         tip:'ALWAYS write the parentheses when you substitute: f(−2) = 4 − 3(−2). Half of all function-notation errors are a sign that evaporates because they were left out.',
-        desmos:'Grafica y=4-3x y escribe (-2,10): el punto cae justo sobre la recta.',
+        desmos:'Graph y=4-3x and type (-2,10): the point lands right on the line.',
         desmosLatex:['y=4-3x','(-2,10)']
       },
       {
@@ -103,7 +103,7 @@
           D:'2 is the right-hand side of the second equation, not the value of x. x − 3y = 2 does not mean x = 2.'
         },
         tip:'Before solving anything, check whether the coefficients of one variable are already opposites. If they are, adding the equations solves the system in one line.',
-        desmos:'Grafica 2x+3y=16 y x-3y=2 y toca la intersección: (6, 1.333).',
+        desmos:'Graph 2x+3y=16 and x-3y=2 and tap the intersection: (6, 1.333).',
         desmosLatex:['2x+3y=16','x-3y=2']
       },
       {
@@ -119,7 +119,7 @@
           D:'C = 25(m + 40) multiplies the sign-up fee by the monthly rate. With 3 months it would give $1,075 — an absurdity you catch by trying a number.'
         },
         tip:'Fixed rule: whatever says "per month", "per hour" or "each" multiplies the variable; whatever says "one-time", "initial" or "sign-up" is added separately. Try a small value and rule out the absurd ones.',
-        desmos:'Grafica y=25x+40 y las tres opciones incorrectas: se ve de inmediato cuál arranca en 40 y sube de a 25.',
+        desmos:'Graph y=25x+40 along with the three wrong options: you see at once which one starts at 40 and climbs by 25.',
         desmosLatex:['y=25x+40','y=40x+25','y=65x']
       },
       {
@@ -135,7 +135,7 @@
           D:'76 comes from adding instead of subtracting: (500 + 260)/10. If the tank is draining, the amount left goes down.'
         },
         tip:'In models that decrease, write the expression for what is LEFT first (initial − rate × time) and only then set it equal. And check which unit the answer wants: liters and minutes are both among the options.',
-        desmos:'Grafica y=500-10x y y=260, y toca la intersección: x = 24.',
+        desmos:'Graph y=500-10x and y=260, then tap the intersection: x = 24.',
         desmosLatex:['y=500-10x','y=260']
       },
       {
@@ -151,12 +151,12 @@
           D:'x ≥ 4 has both errors at once: neither the sign of the number nor the flip of the symbol.'
         },
         tip:'Multiplying or dividing by a negative FLIPS the symbol. And there is always a free check: try x = 0 in the original inequality and rule out any option that includes or excludes it the wrong way.',
-        desmos:'Escribe -4x+9>=25 y Desmos te sombrea la región: todo lo que está a la izquierda de -4.',
+        desmos:'Type -4x+9>=25 and Desmos shades the region for you: everything to the left of -4.',
         desmosLatex:['-4x+9\\ge 25']
       },
       {
         id:'AL3-09', type:'mc', domain:'Algebra', difficulty:'Media',
-        skill:'Expresiones equivalentes (producto de binomios)',
+        skill:'Equivalent expressions (product of binomials)',
         stem:'Which expression is equivalent to (2x − 5)(3x + 4) ?',
         choices:{A:'6x² − 7x − 20', B:'6x² + 7x − 20', C:'6x² − 7x + 20', D:'6x² − 20'},
         correct:'A',
@@ -167,7 +167,7 @@
           D:'6x² − 20 multiplies only first by first and last by last. The two cross products are missing, and those are what generate the x term.'
         },
         tip:'After expanding, check with x = 1: the sum of the coefficients in your result has to equal the product of the parentheses evaluated at 1. It costs five seconds and catches any sign error.',
-        desmos:'Grafica y=(2x-5)(3x+4) y y=6x^2-7x-20: se superponen. Con una opción incorrecta verás dos curvas.',
+        desmos:'Graph y=(2x-5)(3x+4) and y=6x^2-7x-20: they overlap. With a wrong option you see two curves.',
         desmosLatex:['y=(2x-5)(3x+4)','y=6x^2-7x-20']
       },
       {
@@ -187,7 +187,7 @@
           D:'The model is a line that grows forever; it has no maximum height and no point where it stops. Nothing in the equation represents that.'
         },
         tip:'In y = mx + b: b is "how much there was at the start" and m is "how much it changes per unit". Set x = 0 in your head and the intercept interprets itself.',
-        desmos:'Grafica y=3.5x+18 y mirá dónde corta el eje y: en 18, justo en x=0.',
+        desmos:'Graph y=3.5x+18 and look at where it crosses the y-axis: at 18, exactly at x=0.',
         desmosLatex:['y=3.5x+18','(0,18)']
       },
       {
@@ -197,7 +197,7 @@
         answer:'8',
         expCorrect:'Distribute: 7x + 14 − 3x = 46. Combine the x terms: 4x + 14 = 46 ⇒ 4x = 32 ⇒ x = 8. (Check: 7(8 + 2) − 3(8) = 70 − 24 = 46 ✓.)',
         tip:'On SPR questions there are no options to catch your error, so checking is not optional: plug your answer back into the original equation before you write it. They are one in four questions of the section.',
-        desmos:'Grafica y=7(x+2)-3x y y=46, y toca la intersección: x = 8.',
+        desmos:'Graph y=7(x+2)-3x and y=46, then tap the intersection: x = 8.',
         desmosLatex:['y=7(x+2)-3x','y=46']
       },
       {
@@ -213,7 +213,7 @@
           D:'12 multiplies by 2 instead of dividing. The factor runs from the first to the second, and the second is the smaller one.'
         },
         tip:'"No solution" = parallel = same slope, different intercept. Bring the two equations to the same scale in x and read what the other letter has to be. If the constants matched too, they would be the SAME line and there would be infinitely many solutions — that is the other half of this question, and the SAT asks it just as often.',
-        desmos:'Grafica 4x+6y=12 y 2x+3y=5: son paralelas y nunca se tocan. Cambiá el 3 por otro número y verás que se cruzan.',
+        desmos:'Graph 4x+6y=12 and 2x+3y=5: they are parallel and never touch. Change the 3 to another number and you see them cross.',
         desmosLatex:['4x+6y=12','2x+3y=5']
       }
     ]

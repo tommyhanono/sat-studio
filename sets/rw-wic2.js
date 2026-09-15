@@ -1,4 +1,4 @@
-/* SAT Studio question set — Reading & Writing: Words in Context — Set 3 (WC2-01 a WC2-12) */
+/* SAT Studio question set — Reading & Writing: Words in Context — Set 3 (WC2-01 to WC2-12) */
 window.SAT_SETS.push({
   id: 'rw-wic2',
   title: 'Words in Context — Set 3',
@@ -29,11 +29,11 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text with the most logical and precise word or phrase?',
       choices:{A:'constant', B:'sparing', C:'loud', D:'insincere'},
       correct:'B',
-      expCorrect:'The contrast clue says it: he praised ONLY when they earned it, which is why it was worth so much. “Sparing” means “giving something in small measure”, exactly that scarce praise.',
+      expCorrect:'The contrast clue says it: she praised ONLY when they earned it, which is why it was worth so much. “Sparing” means “giving something in small measure”, exactly that scarce praise.',
       expWrong:{
-        A:'“Constant” (constante) contradice “only when they truly earned it”: no elogiaba todo el tiempo.',
+        A:'“Constant” contradicts “only when they truly earned it”: she did not praise them all the time.',
         C:'“Loud” describes volume, not the rarity of the praise, which is the point of the text.',
-        D:'“Insincere” is the opposite: his praise was worth so much precisely because it was genuine.'
+        D:'“Insincere” is the opposite: her praise was worth so much precisely because it was genuine.'
       },
       tip:'Use the context clues: “only when they truly earned it” signals the praise was rare. Look for a word meaning “scarce, given in small measure”.'
     },
@@ -104,7 +104,7 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text with the most logical and precise word or phrase?',
       choices:{A:'clarified', B:'shortened', C:'complicated', D:'funded'},
       correct:'C',
-      expCorrect:'The “but” signals a turn: he wanted to simplify, but left the accountants MORE confused. Dozens of exceptions “complicated” the process.',
+      expCorrect:'The “but” signals a turn: it aimed to simplify, but left the accountants MORE confused. Dozens of exceptions “complicated” the process.',
       expWrong:{
         A:'“Clarified” contradicts “more confused than before”: it clarified nothing.',
         B:'“Shortened” does not fit: the problem is the confusion, not the length.',
@@ -121,9 +121,9 @@ window.SAT_SETS.push({
       correct:'D',
       expCorrect:'“Rather than rigid commands” marks the contrast: he did not impose, he invited discussion and decision. “Tentative” means “put forward cautiously, not imposed”, exactly that open tone.',
       expWrong:{
-        A:'“Authoritarian” is the opposite of “Rather than rigid commands”: issuing orders is precisely what they did NOT do.',
+        A:'“Authoritarian” is the opposite of “Rather than rigid commands”: issuing orders is precisely what he did NOT do.',
         B:'“Identical” fits nothing in the sentence; there is no comparison of sameness.',
-        C:'“Hostile” (hostil) contradice el tono amable de invitar a pensar juntos.'
+        C:'“Hostile” contradicts the warm tone of inviting students to think together.'
       },
       tip:'“Rather than rigid commands” calls for the opposite of imposing. Predict “open, gently proposed”: that is “tentative”.'
     },
@@ -138,7 +138,7 @@ window.SAT_SETS.push({
       expWrong:{
         B:'“Dock” is the literal sense of “harbor”, but it does not fit a feeling.',
         C:'“Shelter” comes close, but it is used for people or things, not for holding a grudge inside.',
-        D:'“Reveal” (revelar) es lo opuesto: el rencor estaba oculto (“smiling politely”, “quietly”), no mostrado.'
+        D:'“Reveal” is the opposite: the resentment was hidden (“smiling politely”, “quietly”), not shown.'
       },
       tip:'Substitute each option into the sentence. “Harbor a resentment” = hold it inside. The “port” sense does not apply here; pick “hold”.'
     },
@@ -181,7 +181,7 @@ window.SAT_SETS.push({
       correct:'D',
       expCorrect:'The contrast (“looks like disorder… in fact”) reveals exact order: each species has its precise niche and removing one brings it all down. “Calibrated” means “finely adjusted”, exactly that delicate balance.',
       expWrong:{
-        A:'“Random” (al azar) contradice “in fact a finely ___ system” y “each species occupies a precise niche”.',
+        A:'“Random” contradicts “in fact a finely ___ system” and “each species occupies a precise niche”.',
         B:'“Isolated” is the opposite: the species are interconnected, so much so that removing one collapses the system.',
         C:'“Decorative” judges appearance, but the text is about a structure that works with precision, not about ornament.'
       },

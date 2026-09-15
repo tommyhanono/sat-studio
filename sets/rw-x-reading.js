@@ -1,4 +1,4 @@
-/* SAT Studio question set — Reading & Writing: Extreme — Reading (XR-01 a XR-12) */
+/* SAT Studio question set — Reading & Writing: Extreme — Reading (XR-01 to XR-12) */
 window.SAT_SETS.push({
   id: 'rw-x-reading',
   title: 'Extreme — Reading',
@@ -23,7 +23,7 @@ window.SAT_SETS.push({
       expCorrect:'The closing phrase uses words of praise (“admirable kind”) but hollows them out: a generosity that “costs the giver nothing but the trouble of being seen”. That ironically reinterprets everything before it — the calculated sum, the pledge said aloud — as vanity dressed up as virtue. That is its function: to close the portrait by revealing the true motive.',
       expWrong:{
         A:'It falls into the literal trap: it reads “admirable” straight. The text is ironic — “costs the giver nothing but the trouble of being seen” — so it does NOT praise; it unmasks.',
-        B:'It invents a suspense that does not exist: the narrator never doubted whether he would give. In fact he “was the first to pledge”. No uncertainty is resolved.',
+        B:'It invents a suspense that does not exist: the narrator never doubted whether she would give. In fact she “was the first to pledge”. No uncertainty is resolved.',
         D:'The focus never shifts to the lacemakers; they are only the setting. The phrase stays fixed on Mrs. Harmsworth’s character.'
       },
       tip:'When a phrase praises with words that are too perfect (“admirable”, “finest”) and then adds a condition that undoes them, suspect irony. The function is usually to reveal, not to praise.'

@@ -50,7 +50,7 @@
           D:'17 is the sum 8 + 5 + 4. Volume comes from MULTIPLYING the three dimensions, not adding them.'
         },
         tip:'Rectangular prism: V = l·w·h, straight from the Reference Sheet. Check the units: volume always comes in CUBIC units (in³), a sign that you multiplied three lengths.',
-        desmos:'Usa Desmos como calculadora: escribe 8*5*4 y te da 160. El volumen de una caja es largo × ancho × alto, sin nada raro.',
+        desmos:'Use Desmos as a calculator: type 8*5*4 and it gives 160. The volume of a box is length × width × height, nothing tricky.',
         desmosLatex:['8*5*4']
       },
       {
@@ -66,7 +66,7 @@
           D:'576π uses the diameter (8) instead of the radius: π(8)²(9). The formula takes the RADIUS.'
         },
         tip:'V = πr²h. The two classic errors: forgetting to square the radius and plugging in the diameter where the radius goes. Write r² first (4² = 16) and then multiply by h.',
-        desmos:'Escribe pi*4^2*9 en Desmos y te da ≈452.4, que es 144π. Si te da 113.1 (36π), es porque no elevaste el radio al cuadrado.',
+        desmos:'Type pi*4^2*9 in Desmos and it gives ≈452.4, which is 144π. If you get 113.1 (36π), it is because you did not square the radius.',
         desmosLatex:['pi*4^2*9', '144*pi']
       },
       {
@@ -82,7 +82,7 @@
           D:'48π comes from (4/3)π(6)²: you SQUARED instead of cubing. The volume of a sphere uses r³.'
         },
         tip:'Sphere: V = (4/3)πr³ — it is on the Reference Sheet. Check two things: that you used r CUBED and that the 4/3 did not fall out. Quick trick: (4/3)(216) = 4(72) = 288.',
-        desmos:'Escribe (4/3)*pi*6^3 en Desmos y te da ≈904.8, que es 288π. Compara: 4*pi*6^2 da 144π, pero esa es el área superficial, no el volumen.',
+        desmos:'Type (4/3)*pi*6^3 in Desmos and it gives ≈904.8, which is 288π. Compare: 4*pi*6^2 gives 144π, but that is the surface area, not the volume.',
         desmosLatex:['(4/3)*pi*6^3', '288*pi']
       },
       {
@@ -98,7 +98,7 @@
           C:'150π uses 1/2 instead of 1/3. A cone is exactly ONE THIRD of the cylinder, not half.'
         },
         tip:'A cone is one third of the cylinder with the same base and height: V = (1/3)πr²h. Compute the full πr²h (300π) and divide by 3 at the end: 100π.',
-        desmos:'Escribe (1/3)*pi*5^2*12 en Desmos y te da ≈314.2, que es 100π. Si te sale el triple (300π), se te olvidó el 1/3 del cono.',
+        desmos:'Type (1/3)*pi*5^2*12 in Desmos and it gives ≈314.2, which is 100π. If you get triple that (300π), you forgot the cone’s 1/3 factor.',
         desmosLatex:['(1/3)*pi*5^2*12', '100*pi']
       },
       {
@@ -114,7 +114,7 @@
           D:'2 comes from dividing 250 by 125 (r³). There is no cube here: a cylinder uses r².'
         },
         tip:'Working backwards: write the formula, substitute what you are given and solve. The π almost always cancels on its own: 250π/(25π) = 10. At the end verify by plugging your answer into the formula.',
-        desmos:'Despeja h = 250π/(π·5²): los π se cancelan, así que escribe 250/5^2 en Desmos y te da 10. Verifica con pi*5^2*10, que da ≈785.4 = 250π.',
+        desmos:'Solve for h = 250π/(π·5²): the π cancels, so type 250/5^2 in Desmos and it gives 10. Check with pi*5^2*10, which gives ≈785.4 = 250π.',
         desmosLatex:['250/5^2', 'pi*5^2*10']
       },
       {
@@ -125,7 +125,7 @@
         expCorrect:'First the volume of the block: 10 × 4 × 5 = 200 cm³. Then, mass = density × volume = 8 g/cm³ × 200 cm³ = 1600 grams. Answer: 1600.',
         expWrong:{},
         tip:'Density = mass/volume, so mass = density × volume. Step 1: compute the volume of the solid. Step 2: multiply by the density. The units guide you: (g/cm³)·(cm³) = g.',
-        desmos:'Escribe 10*4*5 en Desmos: el volumen es 200 cm³. Luego la masa: 8*200 = 1600 gramos. Todo en una sola línea: 8*(10*4*5).',
+        desmos:'Type 10*4*5 in Desmos: the volume is 200 cm³. Then the mass: 8*200 = 1600 grams. All on one line: 8*(10*4*5).',
         desmosLatex:['8*(10*4*5)', '10*4*5']
       },
       {
@@ -142,7 +142,7 @@
           D:'108π adds the WHOLE sphere (36π) instead of half of it. The dome is half a sphere: 18π.'
         },
         tip:'Composite solid = the sum of simple pieces. Hemisphere = (1/2)·(4/3)πr³ = (2/3)πr³. Compute each piece separately and add at the end.',
-        desmos:'Escribe pi*3^2*8+(2/3)*pi*3^3 en Desmos y te da ≈282.7, que es 90π. El primer término es el cilindro (72π) y el segundo la semiesfera (18π).',
+        desmos:'Type pi*3^2*8+(2/3)*pi*3^3 in Desmos and it gives ≈282.7, which is 90π. The first term is the cylinder (72π) and the second is the hemisphere (18π).',
         desmosLatex:['pi*3^2*8+(2/3)*pi*3^3', '90*pi']
       },
       {
@@ -158,7 +158,7 @@
           D:'81 = 3⁴ corresponds to nothing here: lengths ×3, areas ×9, volumes ×27.'
         },
         tip:'Scale k on the lengths → areas ×k², volumes ×k³. It comes from (3r)³ = 27r³: the factor gets cubed. It applies to ANY solid, not just spheres.',
-        desmos:'El factor de volumen es k³: escribe 3^3 en Desmos y te da 27. Compruébalo con esferas de radio 2 y 6: ((4/3)*pi*6^3)/((4/3)*pi*2^3) también da 27.',
+        desmos:'The volume factor is k³: type 3^3 in Desmos and it gives 27. Check it with spheres of radius 2 and 6: ((4/3)*pi*6^3)/((4/3)*pi*2^3) also gives 27.',
         desmosLatex:['3^3', '((4/3)*pi*6^3)/((4/3)*pi*2^3)']
       },
       {
@@ -174,7 +174,7 @@
           C:'24 comes from 6 × 4: you used the edge without squaring it. Each face measures s² = 16.'
         },
         tip:'The chain: volume → edge (cube root) → area of one face (edge²) → ×6 faces. Do not mix them up: the 64 is a volume and is not used directly in the area.',
-        desmos:'Primero la arista: escribe 64^(1/3) en Desmos y te da 4. Luego el área superficial: 6*4^2 te da 96.',
+        desmos:'First the edge: type 64^(1/3) in Desmos and it gives 4. Then the surface area: 6*4^2 gives 96.',
         desmosLatex:['64^(1/3)', '6*4^2']
       },
       {
@@ -190,7 +190,7 @@
           C:'2√3 is √12: you forgot the cone’s factor of 3 BEFORE taking the root. First multiply 96 by 3.'
         },
         tip:'To solve within a cone, clear the 1/3 in one go by multiplying everything by 3. Then divide by πh and take the square root LAST. The typical error is stopping at r² = 36 and answering 36.',
-        desmos:'Despeja r² = 3·96/8: escribe 3*96/8 en Desmos y te da 36, así que r = 6. Verifica con (1/3)*pi*6^2*8, que da ≈301.6 = 96π.',
+        desmos:'Solve for r² = 3·96/8: type 3*96/8 in Desmos and it gives 36, so r = 6. Check with (1/3)*pi*6^2*8, which gives ≈301.6 = 96π.',
         desmosLatex:['3*96/8', '(1/3)*pi*6^2*8']
       },
       {
@@ -201,7 +201,7 @@
         expCorrect:'V = πr²h. The radius is SQUARED: doubling it multiplies the volume by 2² = 4. The height is linear: halving it multiplies by 1/2. Total effect: 4 × (1/2) = 2. The volume of B is 2 times that of A. Answer: 2.',
         expWrong:{},
         tip:'Combined changes: give each dimension its exponent from the formula. In πr²h the radius counts double (r²) and the height once (h). Multiply the factors: (2)²·(1/2) = 2.',
-        desmos:'Escribe 2^2*(1/2) en Desmos: da 2. Pruébalo con números: cilindro A con r=4, h=10 vs cilindro B con r=8, h=5 → (pi*8^2*5)/(pi*4^2*10) también da 2.',
+        desmos:'Type 2^2*(1/2) in Desmos: it gives 2. Test it with numbers: cylinder A with r=4, h=10 vs cylinder B with r=8, h=5 → (pi*8^2*5)/(pi*4^2*10) also gives 2.',
         desmosLatex:['2^2*(1/2)', '(pi*8^2*5)/(pi*4^2*10)']
       },
       {
@@ -218,7 +218,7 @@
           D:'90π is the volume of the inner HOLLOW, that is, exactly what has to be removed, not the material.'
         },
         tip:'A solid with a hollow = the big volume − the volume of the hollow. And watch the classic trap: a² − b² ≠ (a − b)². Square each radius BEFORE subtracting.',
-        desmos:'Escribe pi*(5^2-3^2)*10 en Desmos y te da ≈502.7, que es 160π. Compara con pi*(5-3)^2*10 (≈125.7 = 40π): restar antes de elevar al cuadrado NO es lo mismo.',
+        desmos:'Type pi*(5^2-3^2)*10 in Desmos and it gives ≈502.7, which is 160π. Compare with pi*(5-3)^2*10 (≈125.7 = 40π): subtracting before squaring is NOT the same.',
         desmosLatex:['pi*(5^2-3^2)*10', '160*pi']
       }
     ]
