@@ -414,6 +414,54 @@ const etiqueta = page => page.evaluate(() => window.SATAPP.syncLabel());
       check('D11c y la cola queda limpia', (await cola(page)) === 0, await cola(page));
       await page.close();
     }
+    /* =====================================================================
+     * D12 · Modo invitado (sin cuenta): la app sirve igual y no inventa cola.
+     * ===================================================================*/
+    {
+      const page = await nuevaPagina(browser);
+      await page.goto(URL_APP(), { waitUntil: 'networkidle2' });
+      // sin login: currentUser es null
+      await guardar(page, 'inv1');
+      await guardar(page, 'inv2');
+      await sleep(300);
+      const h = await hist(page);
+      check('D12 el invitado puede practicar y se le guarda', h.includes('inv1') && h.includes('inv2'), h);
+      check('D12b no se le inventa cola de subida', (await cola(page)) === 0, await cola(page));
+      check('D12c el indicador no le promete la nube', /this browser|temporary/.test(await etiqueta(page)), await etiqueta(page));
+      check('D12d nada se mandó al servidor', (await nube(page)).length === 0, await nube(page));
+      check('D12e sin errores de JS en modo invitado', page.__errs.length === 0, page.__errs);
+
+      // Y al crear cuenta, su práctica se adopta (no se pierde por haber sido invitado)
+      await login(page);
+      await sleep(700);
+      const h2 = await hist(page);
+      check('D12f al crear cuenta conserva lo jugado como invitado', h2.includes('inv1') && h2.includes('inv2'), h2);
+      const n = await nube(page);
+      check('D12g y se sube a su cuenta', n.includes('inv1') && n.includes('inv2'), n);
+      await page.close();
+    }
+
+    /* =====================================================================
+     * D13 · localStorage lleno: se avisa, no se pierde en silencio.
+     * ===================================================================*/
+    {
+      const page = await nuevaPagina(browser);
+      await page.goto(URL_APP(), { waitUntil: 'networkidle2' });
+      await login(page);
+      const r = await page.evaluate(() => {
+        const real = Storage.prototype.setItem;
+        Storage.prototype.setItem = function () { throw new Error('QuotaExceededError'); };
+        const ok = window.SATAPP.store.set('prueba_cuota', { a: 1 });
+        const avisos = document.querySelectorAll('#toast-wrap .toast').length;
+        Storage.prototype.setItem = real;
+        return { ok, avisos, leeMemoria: JSON.stringify(window.SATAPP.store.get('prueba_cuota', null)) };
+      });
+      check('D13 con la cuota llena, store.set devuelve false', r.ok === false, r);
+      check('D13b y avisa al estudiante en pantalla', r.avisos >= 1, r);
+      check('D13c el dato queda al menos en memoria', r.leeMemoria === '{"a":1}', r);
+      await page.close();
+    }
+
   } finally {
     await browser.close();
     srv.kill();

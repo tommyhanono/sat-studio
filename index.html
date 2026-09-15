@@ -928,7 +928,9 @@ var store = (function(){
     persistent: ok,
     get: function(k, fallback){
       try {
-        var raw = ok ? window.localStorage.getItem(k) : (mem[k] || null);
+        // `mem` solo se llena cuando una escritura a disco fallo (cuota) o cuando
+        // no hay localStorage: en los dos casos es la copia MAS nueva, asi que gana.
+        var raw = (mem[k] !== undefined) ? mem[k] : (ok ? window.localStorage.getItem(k) : null);
         return raw ? JSON.parse(raw) : fallback;
       } catch(e){ return fallback; }
     },
@@ -1133,8 +1135,7 @@ function saveSession(entry){
   for(var j = 0; j < h.length; j++){ if(h[j].sid === entry.sid){ i = j; break; } }
   if(i >= 0) h[i] = entry; else h.push(entry);
   store.set(histKey(), h);
-  syncQueueAdd(entry);
-  syncFlush();
+  if(currentUser){ syncQueueAdd(entry); syncFlush(); }
 }
 
 /* ================= COLA DE SINCRONIZACION DURABLE ================= */
@@ -1142,7 +1143,7 @@ var SYNC = { busy:false, lastError:'', lastOkAt:null };
 function syncKey(){ return 'satapp_syncq_v1__' + (currentUser ? currentUser.id : 'guest'); }
 function syncQueue(){ var q = store.get(syncKey(), []); return Array.isArray(q) ? q : []; }
 function syncQueueSet(q){ store.set(syncKey(), q); }
-function syncPendingCount(){ return syncQueue().length; }
+function syncPendingCount(){ return currentUser ? syncQueue().length : 0; }
 function syncQueueAdd(entry){
   if(!entry || !entry.sid) return;
   var q = syncQueue(), found = false;
