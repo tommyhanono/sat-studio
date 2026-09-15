@@ -56,7 +56,7 @@ window.SAT_SETS.push({
       choices:{
         A:'appear in both birds, since each of them stores a comparable mass of seeds.',
         B:'prove that memory alone, and never smell, guides every bird to its stored food.',
-        C:'be strongest in whichever season a bird’s storing work is at its heaviest.',
+        C:'be strongest in whichever season a bird’s storing work is heaviest.',
         D:'show up in the nutcracker and not in the jay, despite their equal stores.'
       },
       correct:'D',
@@ -75,7 +75,7 @@ window.SAT_SETS.push({
       passage:"Textile historian Hana Kowalczyk studies twelve embroidered panels long credited to a single workshop. She agrees with her critics that more than one hand worked on them; what she disputes is where those hands sat. Her critics hold that one workshop employed many embroiderers across several decades. Kowalczyk argues instead that separate workshops in different towns copied the same circulating pattern book. Both accounts predict that the designs will match closely and that the stitching will vary from panel to panel.",
       stem:'Which finding, if true, would most strongly support Kowalczyk’s account over her critics’ account?',
       choices:{
-        A:'The twelve panels repeat the same figures and borders with striking exactness.',
+        A:'The twelve panels repeat the same figures and borders almost exactly.',
         B:'The dyes used on the panels match recipes documented in four separate towns.',
         C:'Workshop records from one town list a dozen embroiderers hired over forty years.',
         D:'The panels prove that pattern books, not workshops, made all embroidery of the era.'
@@ -95,7 +95,7 @@ window.SAT_SETS.push({
       passage:"Since 2011 the water of Lake Verrall has been noticeably clearer. Ecologist Freya Lindqvist attributes the change to a filter-feeding mussel that colonized the lake that year and now blankets its shallows. Her colleague Adem Sarikaya does not deny that the mussels filter enormous volumes of water, nor that they arrived exactly when the water began to clear. He doubts only that they are the reason for the change, since several things about the lake shifted in the same season.",
       stem:'Which finding, if true, would most seriously WEAKEN Lindqvist’s explanation?',
       choices:{
-        A:'Each mussel can filter roughly a liter of lake water in the course of a day.',
+        A:'Each mussel can filter roughly a liter of lake water in a single day.',
         B:'No mussel of this kind had been recorded in the lake at any time before 2011.',
         C:'Filter-feeding mussels always clear any lake they invade, without exception.',
         D:'An upstream fertilizer ban cut the runoff feeding the lake’s algae in 2011.'
@@ -158,7 +158,7 @@ window.SAT_SETS.push({
       choices:{
         A:'A larger share of photography-room visitors came back: 40 percent against 15.',
         B:'About 600 print-room visitors came back, against about 400 from photography.',
-        C:'The print room drew 4,000 visitors in the month and the photography room 1,000.',
+        C:'The print room drew 4,000 visitors and the photography room 1,000.',
         D:'A room with the lower return rate always brings back the smaller number of people.'
       },
       correct:'B',
@@ -217,7 +217,7 @@ window.SAT_SETS.push({
       passage:"Over thirty years the trout of Kestrel Brook have grown smaller, and the brook has grown warmer. Wren Ngo and Arto Halloran agree that the warming is the cause and that the food supply has not changed. They part company on the mechanism. Ngo holds that warm water raises a trout’s metabolism, so that at any given age it has less energy left over for growth. Halloran holds instead that warm water hurries a trout into breeding, and a trout that has begun to breed adds almost nothing to its length.",
       stem:'If Halloran’s explanation is correct, which of the following must also be true?',
       choices:{
-        A:'A trout that has not yet bred is smaller today, at the same age, than it once was.',
+        A:'A trout that has not yet bred is smaller at a given age than it once was.',
         B:'Trout now begin to breed at a smaller body length than they did thirty years ago.',
         C:'The trout of Kestrel Brook are on average smaller than they were thirty years ago.',
         D:'Warmer water is the only thing that could ever reduce the size of a stream’s fish.'

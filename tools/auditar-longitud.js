@@ -31,6 +31,14 @@ const { archivosDeSets, RAIZ } = require('./lib-banco');
 
 const TOPE = 45;   // por encima de esto, el largo delata la respuesta
 
+/* Margen mínimo para que una diferencia CUENTE.
+   Sin esto la medida es ciega al margen y miente: un set con la correcta más
+   corta por UN carácter (81 contra 82/82/82) salía marcado igual que uno donde
+   la correcta mide la mitad que las otras. Nadie ordena cuatro renglones de
+   ochenta caracteres por un carácter de diferencia. Se pide la mayor de dos
+   cosas: 6 caracteres, o el 10 % del largo de la opción correcta. */
+const MARGEN = lc => Math.max(6, Math.round(lc * 0.10));
+
 const args = process.argv.slice(2);
 const detalle = args.includes('--detalle');
 const archivos = args.includes('--todos')
@@ -62,8 +70,9 @@ for (const rel of archivos) {
     const max = Math.max.apply(null, otras);
     const min = Math.min.apply(null, otras);
     sumaMax += Math.max.apply(null, todas);
-    if (lc > max) { larga++; casos.push({ id: q.id, lc, max, min, ventaja: lc - max, tipo: 'larga' }); }
-    if (lc < min) { corta++; casos.push({ id: q.id, lc, max, min, ventaja: min - lc, tipo: 'corta' }); }
+    const m = MARGEN(lc);
+    if (lc - max >= m) { larga++; casos.push({ id: q.id, lc, max, min, ventaja: lc - max, tipo: 'larga' }); }
+    if (min - lc >= m) { corta++; casos.push({ id: q.id, lc, max, min, ventaja: min - lc, tipo: 'corta' }); }
   });
   const promMax = sumaMax / mc.length;
   filas.push({
@@ -78,6 +87,7 @@ const peor = f => Math.max(f.pctL, f.pctC);
 filas.sort((a, b) => peor(b) - peor(a));
 console.log('¿EL LARGO DELATA LA RESPUESTA?  (al azar ~25 % cada columna, tope ' + TOPE + ' %)');
 console.log('Se miden las dos direcciones: arreglar solo "la más larga" crea "la más corta".');
+console.log('Solo cuenta si la diferencia SE VE: 6 caracteres, o el 10 % de la opción correcta.');
 console.log('Los sets marcados con ~ tienen opciones cortas (números, una palabra, un signo):');
 console.log('ahí el largo es ruido y no una pista, así que no se juzgan.\n');
 let malos = 0;
