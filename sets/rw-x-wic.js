@@ -14,13 +14,13 @@ window.SAT_SETS.push({
       stem:"Which choice completes the text with the most logical and precise word or phrase?",
       choices:{A:"appreciate", B:"accumulate", C:"flourish", D:"mature"},
       correct:"A",
-      expCorrect:"Aquí “appreciate” tiene su segundo significado financiero: “subir de valor”. El lote comprado “for almost nothing” terminó valiendo tanto que su venta cubrió las deudas varias veces. Ese aumento de valor es exactamente “appreciate”.",
+      expCorrect:"Here “appreciate” carries its second, financial sense: “to rise in value”. The lot bought “for almost nothing” ended up worth so much that selling it covered the debts several times over. That rise in value is exactly “appreciate”.",
       expWrong:{
-        B:"“Accumulate” significa “acumularse / juntarse en cantidad”. Un solo lote de terreno no se multiplica en número; lo que cambió fue su VALOR, no su cantidad.",
-        C:"“Flourish” (florecer, prosperar) se usa para negocios o seres vivos que se desarrollan con vigor, no para el precio de un terreno que sube. Suena bien de lejos, pero no es el término preciso del valor.",
-        D:"“Mature” en finanzas se aplica a un bono o depósito que “llega a su vencimiento”, no a un terreno que sube de precio. El casual reading (“madurar”) engaña, pero el mecanismo es distinto."
+        B:"“Accumulate” means “to pile up / gather in quantity”. A single lot of land does not multiply in number; what changed was its VALUE, not its quantity.",
+        C:"“Flourish” is used for businesses or living things developing vigorously, not for the price of a plot going up. It sounds right from a distance, but it is not the precise term for value.",
+        D:"“Mature” in finance applies to a bond or a deposit that “reaches its due date”, not to a plot of land rising in price. The casual reading (“to ripen”) misleads, but the mechanism is different."
       },
-      tip:"Cuando algo comprado barato termina valiendo mucho, el verbo técnico es “appreciate” (subir de valor), su segundo sentido. No lo confundas con crecer en cantidad ni con prosperar."
+      tip:"When something bought cheap ends up worth a great deal, the technical verb is “appreciate” (to rise in value), its second sense. Do not confuse it with growing in quantity or with thriving."
     },
     {
       id:"XW-02", type:"mc", domain:"Craft and Structure", skill:"Words in Context",
@@ -29,13 +29,13 @@ window.SAT_SETS.push({
       stem:"Which choice completes the text with the most logical and precise word or phrase?",
       choices:{A:"reluctant", B:"wanting", C:"modest", D:"evasive"},
       correct:"B",
-      expCorrect:"Aquí “wanting” es su segundo sentido: “deficiente, que carece de lo necesario”. El libro es exhaustivo en general, pero en la década clave apenas trae doce páginas mal documentadas: le FALTA sustancia justo ahí. Eso es estar “wanting”.",
+      expCorrect:"Here “wanting” carries its second sense: “deficient, lacking what is needed”. The book is exhaustive in general, but on the key decade it offers barely twelve poorly documented pages: it is LACKING substance right there. That is being “wanting”.",
       expWrong:{
-        A:"“Reluctant” (renuente, que hace algo de mala gana) atribuye una actitud al libro, no una carencia. El texto describe una FALTA de contenido, no una resistencia deliberada.",
-        C:"“Modest” (modesto, escaso) casi encaja por “barely a dozen pages”, pero “modest” sugiere pequeño de forma neutra o incluso digna; el punto crítico del especialista es que ahí el libro FALLA por deficiencia, matiz que “modest” no carga.",
-        D:"“Evasive” (evasivo) implica esquivar el tema a propósito. El texto no dice que el autor rehúya el tema, sino que lo cubre pobremente; es carencia, no maniobra."
+        A:"“Reluctant” attributes an attitude to the book, not a shortcoming. The text describes a LACK of content, not deliberate resistance.",
+        C:"“Modest” almost fits because of “barely a dozen pages”, but “modest” suggests small in a neutral or even dignified way; the specialist’s critical point is that the book FAILS there through deficiency, a shade “modest” does not carry.",
+        D:"“Evasive” implies dodging the subject on purpose. The text does not say the author avoids the topic, only that he covers it poorly; it is a lack, not a maneuver."
       },
-      tip:"“Wanting” = “que carece / es deficiente”, no “que desea”. Si algo falla por faltarle sustancia, ese es el término, más fuerte y evaluativo que el neutro “modest”."
+      tip:"“Wanting” = “lacking / deficient”, not “desiring”. If something fails because it is short on substance, that is the term, stronger and more evaluative than the neutral “modest”."
     },
     {
       id:"XW-03", type:"mc", domain:"Craft and Structure", skill:"Words in Context",
@@ -44,13 +44,13 @@ window.SAT_SETS.push({
       stem:"Which choice completes the text with the most logical and precise word or phrase?",
       choices:{A:"thrift", B:"capacity", C:"economy", D:"productivity"},
       correct:"C",
-      expCorrect:"Aquí “economy” tiene su segundo sentido: “eficiencia en el uso de recursos”. La planta produce lo mismo que las rivales gastando mucha menos agua y energía, casi sin desperdicio. Esa proporción producto/recursos es la “economy” del sistema.",
+      expCorrect:"Here “economy” carries its second sense: “efficiency in the use of resources”. The plant turns out as much as its rivals while using far less water and energy, with almost no waste. That output-to-resources ratio is the “economy” of the system.",
       expWrong:{
-        A:"“Thrift” (frugalidad, ahorro) es un rasgo de personas que gastan poco dinero; aplicado a una planta industrial suena a economía doméstica, no al término técnico de eficiencia de recursos.",
-        B:"“Capacity” (capacidad de producción) es justo lo que el texto DESCARTA con “less by its raw output”: no impresiona por cuánto produce, sino por lo poco que gasta.",
-        D:"“Productivity” apunta a cuánto se produce por unidad de trabajo, pero el texto enfatiza el AHORRO de agua y energía con igual producto: eso es eficiencia (economy), no mayor producción."
+        A:"“Thrift” is a trait of people who spend little money; applied to an industrial plant it sounds like household budgeting, not the technical term for resource efficiency.",
+        B:"“Capacity” (production capacity) is exactly what the text RULES OUT with “less by its raw output”: it impresses not by how much it produces, but by how little it spends.",
+        D:"“Productivity” points to how much is produced per unit of labor, but the text stresses the SAVING of water and energy for the same output: that is efficiency (economy), not greater production."
       },
-      tip:"“Economy” no siempre es “dinero”: su segundo sentido es “eficiencia en el uso de recursos”. Si el mérito es lograr lo mismo gastando menos, esa es la palabra."
+      tip:"“Economy” is not always about money: its second sense is “efficiency in the use of resources”. If the merit is achieving the same thing while spending less, that is the word."
     },
     {
       id:"XW-04", type:"mc", domain:"Craft and Structure", skill:"Words in Context",
@@ -59,13 +59,13 @@ window.SAT_SETS.push({
       stem:"Which choice completes the text with the most logical and precise word or phrase?",
       choices:{A:"conditional", B:"reluctant", C:"tentative", D:"qualified"},
       correct:"D",
-      expCorrect:"Aquí “qualified” es su segundo sentido: “limitado, matizado con reservas”. El apoyo existe, pero cada párrafo trae un “pero” y el voto lo ata a mil condiciones que lo desfiguran. Un respaldo así de recortado es un “qualified endorsement”.",
+      expCorrect:"Here “qualified” carries its second sense: “limited, hedged with reservations”. The support exists, but every paragraph brings a “but” and the vote ties it to so many conditions that it is disfigured. Backing that cut down is a “qualified endorsement”.",
       expWrong:{
-        A:"“Conditional” (condicionado) es tentador por “so many conditions”, pero solo capta las condiciones del voto y deja fuera los caveats de cada párrafo; “qualified” abarca todo el patrón de reservas, no solo las cláusulas.",
-        B:"“Reluctant” describe la ACTITUD (a regañadientes), pero el texto no dice que el comité apoyara de mala gana; dice que el apoyo venía RECORTADO por salvedades. El problema es el alcance, no el ánimo.",
-        C:"“Tentative” (provisional, no definitivo) sugiere que aún no se decidían, pero sí hubo “final vote”: la decisión se tomó; lo que pasa es que salió llena de límites."
+        A:"“Conditional” is tempting because of “so many conditions”, but it captures only the conditions on the vote and leaves out the caveats in every paragraph; “qualified” covers the whole pattern of reservations, not just the clauses.",
+        B:"“Reluctant” describes the ATTITUDE (grudging), but the text does not say the committee backed it unwillingly; it says the support came TRIMMED by caveats. The problem is scope, not mood.",
+        C:"“Tentative” suggests they had not decided yet, but there was a “final vote”: the decision was made; the point is that it came out full of limits."
       },
-      tip:"“Qualified” tiene un segundo sentido: “con reservas, limitado”. Un “qualified yes” es un sí recortado. Distínguelo de la mera actitud (“reluctant”) o de estar sin decidir (“tentative”)."
+      tip:"“Qualified” has a second sense: “hedged, limited”. A “qualified yes” is a trimmed-down yes. Distinguish it from mere attitude (“reluctant”) or from being undecided (“tentative”)."
     },
     {
       id:"XW-05", type:"mc", domain:"Craft and Structure", skill:"Words in Context",
@@ -74,13 +74,13 @@ window.SAT_SETS.push({
       stem:"Which choice completes the text with the most logical and precise word or phrase?",
       choices:{A:"simplistic", B:"derivative", C:"opaque", D:"reckless"},
       correct:"A",
-      expCorrect:"Doble contraste: la palabra debe (1) oponerse al acierto de sus pronósticos —lo que los rivales le CRITICABAN— y (2) alinearse con “a spare handful of assumptions”, frente a modelos “bristling with variables”. “Simplistic” es la crítica exacta a un modelo con pocas suposiciones: “demasiado simple”. Y sin embargo acertaba.",
+      expCorrect:"A double contrast: the word has to (1) oppose the accuracy of his forecasts — what rivals CRITICIZED — and (2) line up with “a spare handful of assumptions”, set against models “bristling with variables”. “Simplistic” is the exact criticism of a model with few assumptions: “too simple”. And yet it kept getting things right.",
       expWrong:{
         B:"“Derivative” (copiado de otros) no se opone a “forecasts turned out right” ni conecta con lo escueto del modelo; el texto lo contrasta por su ESCASEZ de supuestos, no por falta de originalidad.",
         C:"“Opaque” (impenetrable, difícil de entender) choca con la imagen: un modelo de pocos supuestos es transparente, no oscuro. Falla el segundo contraste (el paralelo con “spare”).",
         D:"“Reckless” (temerario, imprudente) sería una crítica, pero no es la que corresponde a la POCA CANTIDAD de supuestos; se critica por simple, no por peligroso."
       },
-      tip:"En doble contraste, la palabra debe cumplir DOS cosas: ser la crítica que se le hace Y encajar con el detalle paralelo (“spare handful of assumptions”). Solo “simplistic” cumple ambas; los demás cumplen a lo sumo una."
+      tip:"In a double contrast, the word has to do TWO things: be the criticism being made AND fit the parallel detail (“spare handful of assumptions”). Only “simplistic” does both; the others manage one at most."
     },
     {
       id:"XW-06", type:"mc", domain:"Craft and Structure", skill:"Words in Context",
@@ -89,13 +89,13 @@ window.SAT_SETS.push({
       stem:"Which choice completes the text with the most logical and precise word or phrase?",
       choices:{A:"garish", B:"busy", C:"somber", D:"derivative"},
       correct:"B",
-      expCorrect:"Doble contraste: la palabra debe oponerse a “restraint / a single gesture” (obra tardía) y a la vez explicar “every inch crowded with incident” (obra temprana). “Busy”, en su sentido visual, describe justo una superficie atiborrada de detalle; es lo contrario de la contención.",
+      expCorrect:"A double contrast: the word has to oppose “restraint / a single gesture” (the late work) and at the same time explain “every inch crowded with incident” (the early work). “Busy”, in its visual sense, describes exactly a surface packed with detail; it is the opposite of restraint.",
       expWrong:{
         A:"“Garish” (chillón, de colores estridentes) habla del COLOR/gusto, no de la cantidad de elementos. No es lo que aclara “crowded with incident”, que es densidad, no estridencia.",
         C:"“Somber” (sombrío, apagado) describe el ánimo o el tono, y no se opone a “restraint”; una obra sobria bien puede ser sombría, así que falla el contraste.",
         D:"“Derivative” (poco original) no tiene relación ni con lo atiborrado ni con la contención; es una crítica de otra dimensión."
       },
-      tip:"“Busy” tiene un sentido visual: “recargado, lleno de detalle”. Cuando el contraste es entre una imagen atiborrada y una contenida, apunta a la densidad, no al color (“garish”) ni al ánimo (“somber”)."
+      tip:"“Busy” has a visual sense: “cluttered, packed with detail”. When the contrast is between a crowded image and a restrained one, aim for density, not color (“garish”) or mood (“somber”)."
     },
     {
       id:"XW-07", type:"mc", domain:"Craft and Structure", skill:"Words in Context",
@@ -104,13 +104,13 @@ window.SAT_SETS.push({
       stem:"Which choice completes the text with the most logical and precise word or phrase?",
       choices:{A:"seditious", B:"mendacious", C:"scandalous", D:"derivative"},
       correct:"C",
-      expCorrect:"Doble contraste: la crítica de los contemporáneos debe (1) oponerse a que solo decía en voz alta lo que todos ya pensaban y (2) encajar con “an indiscretion” (frente a “a fabrication”). “Scandalous” es exactamente la reacción a una indiscreción: escandaliza decir en público lo que se murmuraba en privado, aunque sea verdad.",
+      expCorrect:"A double contrast: the contemporaries’ criticism has to (1) oppose the idea that he merely said aloud what everyone already thought and (2) fit “an indiscretion” (as against “a fabrication”). “Scandalous” is exactly the reaction to an indiscretion: saying in public what was whispered in private shocks people, even when it is true.",
       expWrong:{
         A:"“Seditious” (que incita a la rebelión contra el poder) introduce una amenaza política que el texto no plantea; el problema era el decoro, no la subversión. Suena grave y encaja de lejos, pero no es lo que el pasaje precisa.",
         B:"“Mendacious” (mentiroso) queda descartado por el texto mismo: “hardly a fabrication” niega que mintiera. El escándalo no fue por falsedad.",
         D:"“Derivative” (poco original) no es una denuncia coherente aquí ni se relaciona con “indiscretion”; nada sugiere que copiara a otros."
       },
-      tip:"La pista está en “an indiscretion” y en “hardly a fabrication”: no mintió, solo dijo lo indecible. Eso es “scandalous”, no “mendacious” (mentir) ni “seditious” (rebelión)."
+      tip:"The clue sits in “an indiscretion” and in “hardly a fabrication”: he did not lie, he just said the unsayable. That is “scandalous”, not “mendacious” (lying) or “seditious” (rebellion)."
     },
     {
       id:"XW-08", type:"mc", domain:"Craft and Structure", skill:"Words in Context",
@@ -119,13 +119,13 @@ window.SAT_SETS.push({
       stem:"Which choice completes the text with the most logical and precise word or phrase?",
       choices:{A:"implausible", B:"contrived", C:"tedious", D:"derivative"},
       correct:"D",
-      expCorrect:"Doble contraste: lo que los críticos ESPERABAN debe (1) oponerse a “genuinely unforeseen” y (2) encajar con “merely reworking the first film’s tricks… echoing it”. “Derivative” significa “que solo repite / copia lo anterior sin aportar nada nuevo”: justo lo que la secuela evitó.",
+      expCorrect:"A double contrast: what the critics EXPECTED has to (1) oppose “genuinely unforeseen” and (2) fit “merely reworking the first film’s tricks… echoing it”. “Derivative” means “merely repeating or copying what came before, adding nothing new”: exactly what the sequel avoided.",
       expWrong:{
         A:"“Implausible” (inverosímil) trata de credibilidad, dimensión ajena al contraste “repetir vs. innovar” que arma el texto.",
         B:"“Contrived” (forzado, artificioso) critica que algo se sienta fabricado o poco natural, no que REPITA el original. No se opone directamente a “unforeseen” por la vía del “echoing”.",
         C:"“Tedious” (aburrido) apunta al tedio, no a la falta de novedad; una secuela puede repetir y aun así entretener, así que falla el paralelo con “reworking the tricks”."
       },
-      tip:"Cuando el contraste es “repetir lo anterior vs. hacer algo nuevo”, la palabra de lo repetido es “derivative”. No la cambies por defectos de otra clase (aburrido, forzado, increíble)."
+      tip:"When the contrast is “repeating what came before vs. doing something new”, the word for the repeated thing is “derivative”. Do not swap it for flaws of another kind (dull, forced, implausible)."
     },
     {
       id:"XW-09", type:"mc", domain:"Craft and Structure", skill:"Words in Context",
@@ -134,13 +134,13 @@ window.SAT_SETS.push({
       stem:"Which choice completes the text with the most logical and precise word or phrase?",
       choices:{A:"tendentious", B:"biased", C:"partial", D:"subjective"},
       correct:"A",
-      expCorrect:"El registro histórico se presenta como algo que, por sus silencios e inclusiones, IMPONE las prioridades de quien lo armó: no solo está sesgado, sino que empuja al lector hacia ciertos juicios. “Tendentious” —de registro académico— nombra precisamente eso: un material construido para inclinar hacia una posición.",
+      expCorrect:"The historical record is presented as something that, through its silences and its inclusions, IMPOSES the priorities of whoever assembled it: it is not just biased, it pushes the reader toward certain judgments. “Tendentious” — an academic-register word — names precisely that: material built to tilt you toward a position.",
       expWrong:{
         B:"“Biased” capta el sesgo, pero es la palabra llana y general; en prosa historiográfica densa como esta, y frente a “encode the priorities… inherit their judgments”, el término preciso y de registro es “tendentious”, que añade la idea de propósito orientador.",
         C:"“Partial” es ambiguo (puede leerse como “incompleto”) y no transmite la intención de inclinar el juicio del lector; queda por debajo del matiz activo del pasaje.",
         D:"“Subjective” (dependiente de la percepción individual) desplaza el foco al observador, cuando el texto habla del archivo mismo como algo que YA viene cargado por quienes lo ensamblaron."
       },
-      tip:"En prosa académica, cuando algo no solo está sesgado sino que empuja al lector hacia una conclusión, el término de registro es “tendentious”, no el genérico “biased”."
+      tip:"In academic prose, when something is not merely biased but pushes the reader toward a conclusion, the register-appropriate term is “tendentious”, not the generic “biased”."
     },
     {
       id:"XW-10", type:"mc", domain:"Craft and Structure", skill:"Words in Context",
@@ -149,13 +149,13 @@ window.SAT_SETS.push({
       stem:"Which choice completes the text with the most logical and precise word or phrase?",
       choices:{A:"evasive", B:"circumspect", C:"meticulous", D:"guarded"},
       correct:"B",
-      expCorrect:"La prosa se anticipa a cada objeción y matiza cada afirmación antes de que la ataquen: es cautelosa y previsora, no por miedo sino por rigor, y eso le da autoridad. “Circumspect” —cauteloso, que considera todas las consecuencias antes de afirmar— captura ese tono con el registro exacto.",
+      expCorrect:"The prose anticipates every objection and qualifies every claim before it can be attacked: it is cautious and forward-looking, not out of fear but out of rigor, and that is what gives it authority. “Circumspect” — cautious, weighing every consequence before asserting — captures that tone at exactly the right register.",
       expWrong:{
         A:"“Evasive” (evasivo) tiene carga negativa de esquivar; pero el texto ELOGIA (“authority”): el autor no rehúye, se blinda con previsión. El matiz peyorativo no encaja.",
         C:"“Meticulous” (minucioso) describe cuidado en el detalle, no la anticipación de objeciones; algo meticuloso puede no prever ninguna crítica. Se queda corto respecto a “anticipated every possible dissent”.",
         D:"“Guarded” (reservado, que se guarda cosas) sugiere ocultar o no comprometerse, y suena defensivo; el texto muestra a alguien que sí afirma, pero con todas las salvedades pensadas de antemano. “Circumspect” es la cautela reflexiva, no el recelo."
       },
-      tip:"“Circumspect” es la cautela positiva del que sopesa cada consecuencia antes de hablar. Distínguela de “evasive/guarded” (esquivar, ocultar) y de “meticulous” (detallista), que no implican anticipar objeciones."
+      tip:"“Circumspect” is the positive caution of someone weighing every consequence before speaking. Distinguish it from “evasive/guarded” (dodging, concealing) and from “meticulous” (detail-oriented), neither of which implies anticipating objections."
     },
     {
       id:"XW-11", type:"mc", domain:"Craft and Structure", skill:"Words in Context",
@@ -164,13 +164,13 @@ window.SAT_SETS.push({
       stem:"Which choice completes the text with the most logical and precise word or phrase?",
       choices:{A:"durability", B:"flexibility", C:"resilience", D:"elasticity"},
       correct:"C",
-      expCorrect:"La teoría absorbe anomalías que habrían “destrozado” a una explicación menor y se adapta a cada hallazgo SIN perder su forma esencial. Esa capacidad de encajar golpes y conservar su forma es “resilience”: robustez ante lo que debería quebrarla.",
+      expCorrect:"The theory absorbs anomalies that would have “shattered” a lesser explanation and adapts to each new finding WITHOUT losing its essential shape. That ability to take blows and keep its form is “resilience”: robustness in the face of what should break it.",
       expWrong:{
         A:"“Durability” (durar en el tiempo) habla de longevidad, no de absorber anomalías y conservar la forma bajo presión; el texto no destaca cuánto dura, sino cómo soporta embates.",
         B:"“Flexibility” capta el doblarse para acomodar hallazgos, pero omite lo esencial: RESISTIR lo que “would have shattered a lesser account”. Sin la idea de aguante frente a la ruptura, se queda a medias.",
         D:"“Elasticity” es doblarse y volver, pero connota estirarse sin límite y suena a propiedad física; roza lo peyorativo (una teoría “elástica” se acomoda a todo y no predice nada), lo contrario del elogio del pasaje."
       },
-      tip:"“Resilience” = resistir lo que debería romperte y conservar tu forma. Cuando el texto enfatiza sobrevivir a lo que “would have shattered” a otros, es más preciso que el mero doblarse de “flexibility” o “elasticity”."
+      tip:"“Resilience” = withstanding what should break you and keeping your shape. When the text stresses surviving what “would have shattered” others, it is more precise than the mere bending of “flexibility” or “elasticity”."
     },
     {
       id:"XW-12", type:"mc", domain:"Craft and Structure", skill:"Words in Context",
@@ -179,13 +179,13 @@ window.SAT_SETS.push({
       stem:"Which choice completes the text with the most logical and precise word or phrase?",
       choices:{A:"pervasive", B:"covert", C:"subtle", D:"insidious"},
       correct:"D",
-      expCorrect:"La influencia actúa sin ser notada y termina moldeando a toda una generación que ni siquiera advierte que esas ideas son discutibles: se cuela y opera por debajo de la conciencia crítica. “Insidious” nombra justo esa influencia que avanza de forma imperceptible hasta arraigarse. El “oddly” marca la paradoja de un libro casi olvidado con efecto tan hondo.",
+      expCorrect:"The influence works unnoticed and ends up shaping a whole generation that never realizes those ideas are arguable: it slips in and operates below critical awareness. “Insidious” names exactly that influence advancing imperceptibly until it takes root. The “oddly” marks the paradox of a nearly forgotten book having so deep an effect.",
       expWrong:{
         A:"“Pervasive” (que lo impregna todo) apunta al ALCANCE amplio, no al modo imperceptible en que la idea se vuelve invisible al juicio; además choca un poco con “rarely cited”, que sugiere difusión limitada en la superficie.",
         B:"“Covert” (encubierto, oculto a propósito) implica una intención de esconder; aquí nadie oculta nada: la influencia simplemente pasa inadvertida por cómo se absorbe, no por ocultamiento deliberado.",
         C:"“Subtle” (sutil) describe algo fino o poco aparente, pero es neutro y no captura el efecto de arraigarse hasta volverse incuestionable; se queda corto ante “no longer recognized them as arguable”."
       },
-      tip:"“Insidious” = que avanza de modo imperceptible hasta arraigarse. Cuando una influencia opera sin que nadie la note hasta volverse incuestionable, es más precisa que “subtle” (fino), “covert” (oculto adrede) o “pervasive” (extendido)."
+      tip:"“Insidious” = advancing imperceptibly until it takes root. When an influence works without anyone noticing until it becomes unquestioned, it is more precise than “subtle” (fine), “covert” (deliberately hidden) or “pervasive” (widespread)."
     }
   ]
 });

@@ -123,9 +123,9 @@ window.SAT_SETS.push({
       correct:'C',
       expCorrect:'The aside "a reptile whose lineage… years ago" opened with a dash after "tuatara", so it has to CLOSE with another dash before "now survives". Dash opens → dash closes.',
       expWrong:{
-        A:'Mezcla raya de apertura con coma de cierre; los signos que encierran un inciso deben coincidir.',
-        B:'El punto y coma no cierra incisos y no hay oración independiente antes del blank.',
-        D:'Los dos puntos no cierran un inciso abierto con raya.'
+        A:'It mixes an opening dash with a closing comma; the marks fencing an aside have to match.',
+        B:'A semicolon does not close asides and there is no independent sentence before the blank.',
+        D:'A colon does not close an aside that was opened with a dash.'
       },
       tip:'An "orphan" dash before the blank → look for the option that pairs it with another dash.'
     },
@@ -138,9 +138,9 @@ window.SAT_SETS.push({
       correct:'B',
       expCorrect:'"Wind farms now generate…" and "coal plants supplied…" are two complete sentences. With no conjunction joining them, the correct repair among the options is to close with a period and start a new sentence: "…electricity. Coal plants…".',
       expWrong:{
-        A:'Una coma sola entre dos oraciones completas es un comma splice.',
-        C:'Sin puntuación queda un run-on: dos oraciones fusionadas.',
-        D:'Los dos puntos pedirían que la segunda oración explique o desarrolle la primera; aquí solo contrasta el pasado con el presente.'
+        A:'A single comma between two complete sentences is a comma splice.',
+        C:'With no punctuation you get a run-on: two sentences fused together.',
+        D:'A colon would demand that the second sentence explain or develop the first; here it only contrasts the past with the present.'
       },
       tip:'A comma splice is repaired with a period, with ";", or with a comma + FANBOYS. Check which of those repairs appears among the options.'
     },
@@ -153,8 +153,8 @@ window.SAT_SETS.push({
       correct:'A',
       expCorrect:'It is forty families (plural: families) and the budgets belong to them. For a plural ending in -s, the possessive is formed with the apostrophe AFTER the s: "the families’ grocery budgets".',
       expWrong:{
-        B:'“family’s” es el posesivo SINGULAR (de una sola familia), pero el texto habla de cuarenta.',
-        C:'Sin apóstrofo no se marca posesión: “the families grocery budgets” queda mal formado.',
+        B:'“family’s” is the SINGULAR possessive (of one family), but the text is about forty of them.',
+        C:'With no apostrophe there is no possession marked: “the families grocery budgets” is malformed.',
         D:'El plural de family es families (con -ies); la forma “familys” no existe.'
       },
       tip:'Two steps: (1) form the plural correctly (family → families); (2) a plural in -s → apostrophe after the s. And remember: its = possessive, it’s = "it is".'

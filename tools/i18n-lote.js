@@ -46,8 +46,11 @@ if (modo === 'meter') {
     const en = tr[k];
     if (typeof en !== 'string' || !en.length) { malos.push(k + ': traducción vacía'); continue; }
     // Una comilla simple sin escapar rompe la cadena del archivo destino.
+    // Ni ' ni " sin escapar: los archivos de sets usan las dos formas de comilla,
+    // así que una comilla recta puede cerrar la cadena destino y romper el archivo.
     const sueltas = (en.match(/(^|[^\\])'/g) || []).length;
-    if (sueltas) { malos.push(k + ': comilla simple sin escapar (usa ’)'); continue; }
+    if (sueltas) { malos.push(k + ': comilla simple sin escapar (usa \u2019)'); continue; }
+    if (en.includes('"')) { malos.push(k + ': comilla doble recta (usa \u201c \u201d)'); continue; }
     items[i].en = en; n++;
   }
   fs.writeFileSync(LISTA, JSON.stringify(items, null, 1));

@@ -43,13 +43,13 @@
         stem:'A rectangular storage box has a length of 8 inches, a width of 5 inches, and a height of 4 inches. What is the volume, in cubic inches, of the box?',
         choices:{A:'40', B:'160', C:'184', D:'17'},
         correct:'B',
-        expCorrect:'Volumen del prisma rectangular = largo × ancho × alto = 8 × 5 × 4 = 160 pulgadas cúbicas.',
+        expCorrect:'Volume of a rectangular prism = length × width × height = 8 × 5 × 4 = 160 cubic inches.',
         expWrong:{
-          A:'40 es solo 8 × 5, el área de la base. Te faltó multiplicar por la altura 4.',
-          C:'184 es el ÁREA SUPERFICIAL total: 2(8·5 + 8·4 + 5·4) = 2(92) = 184. Te pidieron volumen, no área.',
-          D:'17 es la suma 8 + 5 + 4. El volumen se obtiene MULTIPLICANDO las tres dimensiones, no sumándolas.'
+          A:'40 is only 8 × 5, the area of the base. You forgot to multiply by the height 4.',
+          C:'184 is the total SURFACE AREA: 2(8·5 + 8·4 + 5·4) = 2(92) = 184. They asked for volume, not area.',
+          D:'17 is the sum 8 + 5 + 4. Volume comes from MULTIPLYING the three dimensions, not adding them.'
         },
-        tip:'Prisma rectangular: V = l·w·h, directo del Reference Sheet. Chequea las unidades: el volumen siempre va en unidades CÚBICAS (in³), señal de que multiplicaste tres longitudes.',
+        tip:'Rectangular prism: V = l·w·h, straight from the Reference Sheet. Check the units: volume always comes in CUBIC units (in³), a sign that you multiplied three lengths.',
         desmos:'Usa Desmos como calculadora: escribe 8*5*4 y te da 160. El volumen de una caja es largo × ancho × alto, sin nada raro.',
         desmosLatex:['8*5*4']
       },
@@ -59,13 +59,13 @@
         stem:'A cylindrical water tank has a base radius of 4 feet and a height of 9 feet. What is the volume, in cubic feet, of the tank?',
         choices:{A:'36π', B:'72π', C:'144π', D:'576π'},
         correct:'C',
-        expCorrect:'Volumen del cilindro = πr²h = π(4)²(9) = π(16)(9) = 144π pies cúbicos.',
+        expCorrect:'Volume of the cylinder = πr²h = π(4)²(9) = π(16)(9) = 144π cubic feet.',
         expWrong:{
-          A:'36π sale de π(4)(9): usaste el radio SIN elevarlo al cuadrado. La fórmula pide r².',
-          B:'72π es el área LATERAL del cilindro, 2πrh = 2π(4)(9). Eso mide superficie, no volumen.',
-          D:'576π usa el diámetro (8) en vez del radio: π(8)²(9). En la fórmula va el RADIO.'
+          A:'36π comes from π(4)(9): you used the radius WITHOUT squaring it. The formula calls for r².',
+          B:'72π is the LATERAL area of the cylinder, 2πrh = 2π(4)(9). That measures surface, not volume.',
+          D:'576π uses the diameter (8) instead of the radius: π(8)²(9). The formula takes the RADIUS.'
         },
-        tip:'V = πr²h. Los dos errores clásicos: olvidar el cuadrado del radio y meter el diámetro donde va el radio. Escribe r² primero (4² = 16) y luego multiplica por h.',
+        tip:'V = πr²h. The two classic errors: forgetting to square the radius and plugging in the diameter where the radius goes. Write r² first (4² = 16) and then multiply by h.',
         desmos:'Escribe pi*4^2*9 en Desmos y te da ≈452.4, que es 144π. Si te da 113.1 (36π), es porque no elevaste el radio al cuadrado.',
         desmosLatex:['pi*4^2*9', '144*pi']
       },
@@ -75,13 +75,13 @@
         stem:'A spherical balloon has a radius of 6 centimeters. What is the volume, in cubic centimeters, of the balloon?',
         choices:{A:'288π', B:'144π', C:'216π', D:'48π'},
         correct:'A',
-        expCorrect:'Volumen de la esfera = (4/3)πr³ = (4/3)π(6)³ = (4/3)π(216) = 288π centímetros cúbicos.',
+        expCorrect:'Volume of the sphere = (4/3)πr³ = (4/3)π(6)³ = (4/3)π(216) = 288π cubic centimeters.',
         expWrong:{
-          B:'144π es el ÁREA SUPERFICIAL de la esfera, 4πr² = 4π(36). Piden volumen, que lleva r³ y el factor 4/3.',
-          C:'216π es πr³ sin el factor 4/3. La fórmula completa es (4/3)πr³.',
+          B:'144π is the SURFACE AREA of the sphere, 4πr² = 4π(36). They want volume, which uses r³ and the 4/3 factor.',
+          C:'216π is πr³ without the 4/3 factor. The full formula is (4/3)πr³.',
           D:'48π sale de (4/3)π(6)²: elevaste al CUADRADO en vez de al cubo. El volumen de la esfera lleva r³.'
         },
-        tip:'Esfera: V = (4/3)πr³ — está en el Reference Sheet. Chequea dos cosas: que usaste r AL CUBO y que no se te cayó el 4/3. Truco rápido: (4/3)(216) = 4(72) = 288.',
+        tip:'Sphere: V = (4/3)πr³ — it is on the Reference Sheet. Check two things: that you used r CUBED and that the 4/3 did not fall out. Quick trick: (4/3)(216) = 4(72) = 288.',
         desmos:'Escribe (4/3)*pi*6^3 en Desmos y te da ≈904.8, que es 288π. Compara: 4*pi*6^2 da 144π, pero esa es el área superficial, no el volumen.',
         desmosLatex:['(4/3)*pi*6^3', '288*pi']
       },
@@ -91,13 +91,13 @@
         stem:'A right circular cone has a base radius of 5 inches and a height of 12 inches. What is the volume, in cubic inches, of the cone?',
         choices:{A:'300π', B:'20π', C:'150π', D:'100π'},
         correct:'D',
-        expCorrect:'Volumen del cono = (1/3)πr²h = (1/3)π(5)²(12) = (1/3)π(25)(12) = (1/3)(300π) = 100π pulgadas cúbicas.',
+        expCorrect:'Volume of the cone = (1/3)πr²h = (1/3)π(5)²(12) = (1/3)π(25)(12) = (1/3)(300π) = 100π cubic inches.',
         expWrong:{
-          A:'300π es el volumen del CILINDRO con la misma base y altura (πr²h). Al cono le falta el factor 1/3.',
+          A:'300π is the volume of the CYLINDER with the same base and height (πr²h). The cone is missing the 1/3 factor.',
           B:'20π sale de (1/3)π(5)(12): olvidaste elevar el radio al cuadrado.',
           C:'150π usa 1/2 en vez de 1/3. El cono es exactamente UN TERCIO del cilindro, no la mitad.'
         },
-        tip:'Cono = un tercio del cilindro con igual base y altura: V = (1/3)πr²h. Calcula πr²h completo (300π) y divide entre 3 al final: 100π.',
+        tip:'A cone is one third of the cylinder with the same base and height: V = (1/3)πr²h. Compute the full πr²h (300π) and divide by 3 at the end: 100π.',
         desmos:'Escribe (1/3)*pi*5^2*12 en Desmos y te da ≈314.2, que es 100π. Si te sale el triple (300π), se te olvidó el 1/3 del cono.',
         desmosLatex:['(1/3)*pi*5^2*12', '100*pi']
       },
@@ -107,13 +107,13 @@
         stem:'The volume of a right circular cylinder is 250π cubic centimeters. If the radius of the base is 5 centimeters, what is the height, in centimeters, of the cylinder?',
         choices:{A:'50', B:'10', C:'25', D:'2'},
         correct:'B',
-        expCorrect:'De V = πr²h despejas h = V/(πr²) = 250π/(π·5²) = 250π/(25π) = 10 centímetros. (Verifica: π(25)(10) = 250π ✓.)',
+        expCorrect:'From V = πr²h you solve h = V/(πr²) = 250π/(π·5²) = 250π/(25π) = 10 centimeters. (Check: π(25)(10) = 250π ✓.)',
         expWrong:{
-          A:'50 sale de dividir 250 entre 5: usaste r en vez de r². El denominador correcto es πr² = 25π.',
-          C:'25 sale de dividir entre 2πr = 10π (eso es de la fórmula del área lateral). Para volumen divides entre πr².',
-          D:'2 sale de dividir 250 entre 125 (r³). Aquí no va ningún cubo: el cilindro usa r².'
+          A:'50 comes from dividing 250 by 5: you used r instead of r². The correct denominator is πr² = 25π.',
+          C:'25 comes from dividing by 2πr = 10π (that belongs to the lateral-area formula). For volume you divide by πr².',
+          D:'2 comes from dividing 250 by 125 (r³). There is no cube here: a cylinder uses r².'
         },
-        tip:'Trabajar al revés: escribe la fórmula, sustituye lo que te dan y despeja. Los π casi siempre se cancelan solos: 250π/(25π) = 10. Al final verifica metiendo tu respuesta en la fórmula.',
+        tip:'Working backwards: write the formula, substitute what you are given and solve. The π almost always cancels on its own: 250π/(25π) = 10. At the end verify by plugging your answer into the formula.',
         desmos:'Despeja h = 250π/(π·5²): los π se cancelan, así que escribe 250/5^2 en Desmos y te da 10. Verifica con pi*5^2*10, que da ≈785.4 = 250π.',
         desmosLatex:['250/5^2', 'pi*5^2*10']
       },
@@ -122,26 +122,26 @@
         skill:'Densidad (masa = densidad × volumen)',
         stem:'A solid rectangular block of metal measures 10 centimeters by 4 centimeters by 5 centimeters. The density of the metal is 8 grams per cubic centimeter. What is the mass, in grams, of the block? (Mass is equal to density times volume.)',
         answer:'1600',
-        expCorrect:'Primero el volumen del bloque: 10 × 4 × 5 = 200 cm³. Después, masa = densidad × volumen = 8 g/cm³ × 200 cm³ = 1600 gramos. Respuesta: 1600.',
+        expCorrect:'First the volume of the block: 10 × 4 × 5 = 200 cm³. Then, mass = density × volume = 8 g/cm³ × 200 cm³ = 1600 grams. Answer: 1600.',
         expWrong:{},
-        tip:'Densidad = masa/volumen, así que masa = densidad × volumen. Paso 1: calcula el volumen del sólido. Paso 2: multiplica por la densidad. Las unidades te guían: (g/cm³)·(cm³) = g.',
+        tip:'Density = mass/volume, so mass = density × volume. Step 1: compute the volume of the solid. Step 2: multiply by the density. The units guide you: (g/cm³)·(cm³) = g.',
         desmos:'Escribe 10*4*5 en Desmos: el volumen es 200 cm³. Luego la masa: 8*200 = 1600 gramos. Todo en una sola línea: 8*(10*4*5).',
         desmosLatex:['8*(10*4*5)', '10*4*5']
       },
       {
         id:'SOL-07', type:'mc', domain:'Geometry & Trigonometry', difficulty:'Media',
-        skill:'Sólidos compuestos (cilindro + semiesfera)',
+        skill:'Composite solids (cylinder + hemisphere)',
         figure: FIG_SILO,
         stem:'The grain silo shown is formed by a right circular cylinder with a radius of 3 meters and a height of 8 meters, topped by a hemisphere with the same radius. What is the total volume, in cubic meters, of the silo?',
         choices:{A:'72π', B:'81π', C:'90π', D:'108π'},
         correct:'C',
-        expCorrect:'Suma las dos piezas. Cilindro: πr²h = π(3)²(8) = 72π. Semiesfera: la mitad de una esfera = (1/2)(4/3)π(3)³ = (2/3)π(27) = 18π. Total: 72π + 18π = 90π metros cúbicos.',
+        expCorrect:'Add the two pieces. Cylinder: πr²h = π(3)²(8) = 72π. Hemisphere: half a sphere = (1/2)(4/3)π(3)³ = (2/3)π(27) = 18π. Total: 72π + 18π = 90π cubic meters.',
         expWrong:{
-          A:'72π es solo el cilindro. Te faltó sumar la semiesfera de arriba, que aporta 18π.',
-          B:'81π sale de tratar el domo como un CONO de altura 3: (1/3)π(9)(3) = 9π. Pero es una semiesfera: (2/3)πr³ = 18π.',
+          A:'72π is only the cylinder. You forgot to add the hemisphere on top, which contributes 18π.',
+          B:'81π comes from treating the dome as a CONE of height 3: (1/3)π(9)(3) = 9π. But it is a hemisphere: (2/3)πr³ = 18π.',
           D:'108π suma la esfera COMPLETA (36π) en vez de la mitad. El domo es media esfera: 18π.'
         },
-        tip:'Sólido compuesto = suma de piezas simples. Semiesfera = (1/2)·(4/3)πr³ = (2/3)πr³. Calcula cada pieza por separado y suma al final.',
+        tip:'Composite solid = the sum of simple pieces. Hemisphere = (1/2)·(4/3)πr³ = (2/3)πr³. Compute each piece separately and add at the end.',
         desmos:'Escribe pi*3^2*8+(2/3)*pi*3^3 en Desmos y te da ≈282.7, que es 90π. El primer término es el cilindro (72π) y el segundo la semiesfera (18π).',
         desmosLatex:['pi*3^2*8+(2/3)*pi*3^3', '90*pi']
       },
@@ -151,29 +151,29 @@
         stem:'The radius of sphere B is 3 times the radius of sphere A. The volume of sphere B is how many times the volume of sphere A?',
         choices:{A:'27', B:'9', C:'3', D:'81'},
         correct:'A',
-        expCorrect:'Si el radio se multiplica por k, el volumen se multiplica por k³. Con k = 3: V_B = (4/3)π(3r)³ = (4/3)π(27r³) = 27·V_A. El volumen queda multiplicado por 27.',
+        expCorrect:'If the radius is multiplied by k, the volume is multiplied by k³. With k = 3: V_B = (4/3)π(3r)³ = (4/3)π(27r³) = 27·V_A. The volume ends up multiplied by 27.',
         expWrong:{
-          B:'9 = 3² es como escala el ÁREA (por ejemplo, la superficial), no el volumen. El volumen es tridimensional: escala con k³.',
-          C:'3 es como escalan las LONGITUDES. El volumen multiplica ese factor tres veces: 3·3·3 = 27.',
-          D:'81 = 3⁴ no corresponde a nada aquí: longitudes ×3, áreas ×9, volúmenes ×27.'
+          B:'9 = 3² is how AREA scales (surface area, for instance), not volume. Volume is three-dimensional: it scales with k³.',
+          C:'3 is how LENGTHS scale. Volume multiplies that factor three times: 3·3·3 = 27.',
+          D:'81 = 3⁴ corresponds to nothing here: lengths ×3, areas ×9, volumes ×27.'
         },
-        tip:'Escala k en las longitudes → áreas ×k², volúmenes ×k³. Viene de que (3r)³ = 27r³: el factor sale al cubo. Aplica para CUALQUIER sólido, no solo esferas.',
+        tip:'Scale k on the lengths → areas ×k², volumes ×k³. It comes from (3r)³ = 27r³: the factor gets cubed. It applies to ANY solid, not just spheres.',
         desmos:'El factor de volumen es k³: escribe 3^3 en Desmos y te da 27. Compruébalo con esferas de radio 2 y 6: ((4/3)*pi*6^3)/((4/3)*pi*2^3) también da 27.',
         desmosLatex:['3^3', '((4/3)*pi*6^3)/((4/3)*pi*2^3)']
       },
       {
         id:'SOL-09', type:'mc', domain:'Geometry & Trigonometry', difficulty:'Media',
-        skill:'Volumen → área superficial (cubo)',
+        skill:'Volume → surface area (cube)',
         stem:'A cube has a volume of 64 cubic inches. What is the total surface area, in square inches, of the cube?',
         choices:{A:'16', B:'384', C:'24', D:'96'},
         correct:'D',
-        expCorrect:'Del volumen sacas la arista: s³ = 64 → s = 4. Cada cara es un cuadrado de área s² = 16, y el cubo tiene 6 caras: 6 × 16 = 96 pulgadas cuadradas.',
+        expCorrect:'From the volume you get the edge: s³ = 64 → s = 4. Each face is a square of area s² = 16, and a cube has 6 faces: 6 × 16 = 96 square inches.',
         expWrong:{
-          A:'16 es el área de UNA sola cara (4²). El cubo tiene 6 caras iguales.',
-          B:'384 sale de 6 × 64: multiplicaste por el VOLUMEN en vez del área de una cara (s² = 16).',
-          C:'24 sale de 6 × 4: usaste la arista sin elevarla al cuadrado. Cada cara mide s² = 16.'
+          A:'16 is the area of ONE face (4²). A cube has 6 identical faces.',
+          B:'384 comes from 6 × 64: you multiplied by the VOLUME instead of the area of one face (s² = 16).',
+          C:'24 comes from 6 × 4: you used the edge without squaring it. Each face measures s² = 16.'
         },
-        tip:'Cadena: volumen → arista (raíz cúbica) → área de una cara (arista²) → ×6 caras. No mezcles: el 64 es volumen y no se usa directo en el área.',
+        tip:'The chain: volume → edge (cube root) → area of one face (edge²) → ×6 faces. Do not mix them up: the 64 is a volume and is not used directly in the area.',
         desmos:'Primero la arista: escribe 64^(1/3) en Desmos y te da 4. Luego el área superficial: 6*4^2 te da 96.',
         desmosLatex:['64^(1/3)', '6*4^2']
       },
@@ -185,11 +185,11 @@
         correct:'D',
         expCorrect:'De V = (1/3)πr²h: 96π = (1/3)πr²(8). Multiplica ambos lados por 3: 288π = 8πr² → r² = 288/8 = 36 → r = 6 pulgadas. (Verifica: (1/3)π(36)(8) = 96π ✓.)',
         expWrong:{
-          A:'36 es r², no r. Te faltó el último paso: sacar la raíz cuadrada.',
-          B:'12 sale de 96/8 sin multiplicar por 3 (eso sería un CILINDRO), y además sería r², no r.',
-          C:'2√3 es √12: olvidaste el factor 3 del cono ANTES de sacar la raíz. Primero multiplica 96 por 3.'
+          A:'36 is r², not r. The last step is missing: take the square root.',
+          B:'12 comes from 96/8 without multiplying by 3 (that would be a CYLINDER), and besides it would be r², not r.',
+          C:'2√3 is √12: you forgot the cone’s factor of 3 BEFORE taking the root. First multiply 96 by 3.'
         },
-        tip:'Para despejar en el cono, quítate el 1/3 de una vez multiplicando todo por 3. Luego divide entre πh y AL FINAL saca la raíz. El error típico es quedarse en r² = 36 y responder 36.',
+        tip:'To solve within a cone, clear the 1/3 in one go by multiplying everything by 3. Then divide by πh and take the square root LAST. The typical error is stopping at r² = 36 and answering 36.',
         desmos:'Despeja r² = 3·96/8: escribe 3*96/8 en Desmos y te da 36, así que r = 6. Verifica con (1/3)*pi*6^2*8, que da ≈301.6 = 96π.',
         desmosLatex:['3*96/8', '(1/3)*pi*6^2*8']
       },
@@ -198,26 +198,26 @@
         skill:'Escala combinada (radio y altura)',
         stem:'Cylinder B is obtained from cylinder A by doubling the radius and halving the height. The volume of cylinder B is how many times the volume of cylinder A?',
         answer:'2',
-        expCorrect:'V = πr²h. El radio va AL CUADRADO: doblarlo multiplica el volumen por 2² = 4. La altura va lineal: reducirla a la mitad multiplica por 1/2. Efecto total: 4 × (1/2) = 2. El volumen de B es 2 veces el de A. Respuesta: 2.',
+        expCorrect:'V = πr²h. The radius is SQUARED: doubling it multiplies the volume by 2² = 4. The height is linear: halving it multiplies by 1/2. Total effect: 4 × (1/2) = 2. The volume of B is 2 times that of A. Answer: 2.',
         expWrong:{},
-        tip:'Cambios combinados: aplícale a cada dimensión su exponente en la fórmula. En πr²h el radio pesa doble (r²) y la altura simple (h). Multiplica los factores: (2)²·(1/2) = 2.',
+        tip:'Combined changes: give each dimension its exponent from the formula. In πr²h the radius counts double (r²) and the height once (h). Multiply the factors: (2)²·(1/2) = 2.',
         desmos:'Escribe 2^2*(1/2) en Desmos: da 2. Pruébalo con números: cilindro A con r=4, h=10 vs cilindro B con r=8, h=5 → (pi*8^2*5)/(pi*4^2*10) también da 2.',
         desmosLatex:['2^2*(1/2)', '(pi*8^2*5)/(pi*4^2*10)']
       },
       {
         id:'SOL-12', type:'mc', domain:'Geometry & Trigonometry', difficulty:'Difícil',
-        skill:'Sólidos compuestos (restar volúmenes)',
+        skill:'Composite solids (subtracting volumes)',
         figure: FIG_PIPE,
         stem:'The figure shows the cross section of a cylindrical pipe that is 10 centimeters long. The outer radius of the pipe is 5 centimeters and the inner radius is 3 centimeters. What is the volume, in cubic centimeters, of the material that forms the pipe?',
         choices:{A:'160π', B:'40π', C:'250π', D:'90π'},
         correct:'A',
-        expCorrect:'Material = cilindro exterior − cilindro interior (el hueco). Exterior: π(5)²(10) = 250π. Interior: π(3)²(10) = 90π. Material: 250π − 90π = 160π centímetros cúbicos. (Equivale a π(5² − 3²)(10) = π(16)(10).)',
+        expCorrect:'Material = outer cylinder − inner cylinder (the hollow). Outer: π(5)²(10) = 250π. Inner: π(3)²(10) = 90π. Material: 250π − 90π = 160π cubic centimeters. (Equivalently π(5² − 3²)(10) = π(16)(10).)',
         expWrong:{
-          B:'40π sale de π(5 − 3)²(10): restaste los radios ANTES de elevar al cuadrado. Ojo: 5² − 3² = 16, pero (5 − 3)² = 4. No es lo mismo.',
-          C:'250π es el cilindro exterior completo, como si el tubo fuera macizo. Hay que restarle el hueco.',
-          D:'90π es el volumen del HUECO interior, o sea justo lo que hay que quitar, no el material.'
+          B:'40π comes from π(5 − 3)²(10): you subtracted the radii BEFORE squaring them. Careful: 5² − 3² = 16, but (5 − 3)² = 4. Not the same.',
+          C:'250π is the full outer cylinder, as if the tube were solid. You still have to subtract the hollow.',
+          D:'90π is the volume of the inner HOLLOW, that is, exactly what has to be removed, not the material.'
         },
-        tip:'Sólido con hueco = volumen grande − volumen del hueco. Y cuidado con la trampa clásica: a² − b² ≠ (a − b)². Eleva al cuadrado cada radio ANTES de restar.',
+        tip:'A solid with a hollow = the big volume − the volume of the hollow. And watch the classic trap: a² − b² ≠ (a − b)². Square each radius BEFORE subtracting.',
         desmos:'Escribe pi*(5^2-3^2)*10 en Desmos y te da ≈502.7, que es 160π. Compara con pi*(5-3)^2*10 (≈125.7 = 40π): restar antes de elevar al cuadrado NO es lo mismo.',
         desmosLatex:['pi*(5^2-3^2)*10', '160*pi']
       }
