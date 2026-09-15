@@ -88,7 +88,7 @@
         expWrong:{
           B:'(x + 2)² + (y − 3)² flips the signs of the center: that would give center (−2, 3), not (2, −3).',
           C:'The center is right, but the right-hand side has to be r² = 25, not r = 5. The radius still needs squaring.',
-          D:'Combina dos errores: signos del centro invertidos Y usa 5 en vez de 25.'
+          D:'It combines two errors: the signs of the center are flipped AND it uses 5 instead of 25.'
         },
         tip:'Two fixed traps: (1) the signs FLIP relative to the center — center (2, −3) gives (x − 2) and (y + 3). (2) the right-hand side is r², not r. Radius 5 → 25.'
       },
@@ -103,7 +103,7 @@
         expWrong:{
           A:'3/5 is sin θ (opposite/hypotenuse = 6/10). They asked for the cosine, which uses the ADJACENT leg.',
           B:'5/4 is the reciprocal of 4/5 (that would be 1/cos, i.e. sec θ). A cosine in a triangle never goes above 1.',
-          C:'3/4 es tan θ (opuesto/adyacente = 6/8). No es lo que piden.'
+          C:'3/4 is tan θ (opposite/adjacent = 6/8). That is not what they are asking for.'
         },
         tip:'SOHCAHTOA: Cosine = Adjacent / Hypotenuse. First work out which side is opposite and which is adjacent relative to the angle. Here the adjacent one was missing: get it with Pythagoras (the 6-8-10 triple).'
       },

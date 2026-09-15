@@ -80,7 +80,7 @@ window.SAT_SETS.push({
         C:'“Criticize” is the opposite of the point: she does not attack him, she just refuses to idealize him.',
         D:'“Abandon” is beside the point; she does write about him, with balance.'
       },
-      tip:'La “polished statue” es la pista: lo opuesto a un retrato equilibrado es uno idealizado. Predice “pintar como perfecto” y elige “idealize”.'
+      tip:'The “polished statue” is the clue: the opposite of a balanced portrait is an idealized one. Predict “paint as perfect” and choose “idealize”.'
     },
     {
       id:'WC2-06', type:'mc', domain:'Craft and Structure', difficulty:'Media',
@@ -121,7 +121,7 @@ window.SAT_SETS.push({
       correct:'D',
       expCorrect:'“Rather than rigid commands” marks the contrast: he did not impose, he invited discussion and decision. “Tentative” means “put forward cautiously, not imposed”, exactly that open tone.',
       expWrong:{
-        A:'“Authoritarian” (autoritario) es lo opuesto de “Rather than rigid commands”: precisamente NO mandaba.',
+        A:'“Authoritarian” is the opposite of “Rather than rigid commands”: issuing orders is precisely what they did NOT do.',
         B:'“Identical” fits nothing in the sentence; there is no comparison of sameness.',
         C:'“Hostile” (hostil) contradice el tono amable de invitar a pensar juntos.'
       },
@@ -151,7 +151,7 @@ window.SAT_SETS.push({
       correct:'B',
       expCorrect:'Predict your word: the sentences get shorter and scenes are suggested with a single detail. “Spare” means “stripped down to the essentials”, exactly that bare style.',
       expWrong:{
-        A:'“Ornate” (recargado) es lo contrario: el texto describe recorte, no adornos.',
+        A:'“Ornate” is the opposite: the text describes trimming down, not adornment.',
         C:'“Chaotic” does not fit: shortening and suggesting with one image is control, not disorder.',
         D:'“Sentimental” judges the emotion, but the clues are about FORM (short sentences), not feeling.'
       },

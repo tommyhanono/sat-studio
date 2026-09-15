@@ -45,13 +45,16 @@ if (modo === 'meter') {
     if (!items[i]) { malos.push(k + ': índice fuera de rango'); continue; }
     const en = tr[k];
     if (typeof en !== 'string' || !en.length) { malos.push(k + ': traducción vacía'); continue; }
-    // Una comilla simple sin escapar rompe la cadena del archivo destino.
-    // Ni ' ni " sin escapar: los archivos de sets usan las dos formas de comilla,
-    // así que una comilla recta puede cerrar la cadena destino y romper el archivo.
-    const sueltas = (en.match(/(^|[^\\])'/g) || []).length;
-    if (sueltas) { malos.push(k + ': comilla simple sin escapar (usa \u2019)'); continue; }
-    const dobles = (en.match(/(^|[^\\])"/g) || []).length;
-    if (dobles) { malos.push(k + ': comilla doble sin escapar (usa \u201c \u201d o \\")'); continue; }
+    // Una comilla recta sin escapar puede cerrar la cadena del archivo destino y
+    // romperlo. Cuál de las dos es peligrosa depende del delimitador que use ese
+    // archivo, y el delimitador se deduce del propio original: si el texto en
+    // español ya traía esa comilla suelta y el archivo cargaba bien, entonces esa
+    // comilla es la segura ahí. La verificación de verdad la hace i18n-aplicar.js,
+    // que reevalúa los archivos y revierte todo si alguno queda roto.
+    const sueltas = t => (String(t).match(/(^|[^\\])'/g) || []).length;
+    const dobles  = t => (String(t).match(/(^|[^\\])"/g) || []).length;
+    if (sueltas(en) && !sueltas(items[i].es)) { malos.push(k + ': comilla simple suelta y el original no la tenía (usa \u2019)'); continue; }
+    if (dobles(en)  && !dobles(items[i].es))  { malos.push(k + ': comilla doble suelta y el original no la tenía (usa \u201c \u201d)'); continue; }
     items[i].en = en; n++;
   }
   fs.writeFileSync(LISTA, JSON.stringify(items, null, 1));

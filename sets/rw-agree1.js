@@ -17,8 +17,8 @@ window.SAT_SETS.push({
       expCorrect:'The real subject is "The box" (singular). The phrase "of antique silver spoons" only describes the subject and does not change its number. A singular subject calls for a singular verb: "is".',
       expWrong:{
         B:'"are" is plural; it agrees with "spoons", not with the real subject "The box" (singular).',
-        C:'“were” es plural; el sujeto singular “box” pide un verbo singular, no plural.',
-        D:'“have been” es plural; el sujeto singular “box” pide “has been”, no “have been”.'
+        C:'“were” is plural; the singular subject “box” needs a singular verb, not a plural one.',
+        D:'“have been” is plural; the singular subject “box” needs “has been”, not “have been”.'
       },
       tip:'Cover the phrase between the subject and the verb ("of antique silver spoons"). What is left is "The box ___": singular calls for a singular verb.'
     },
@@ -33,7 +33,7 @@ window.SAT_SETS.push({
       expWrong:{
         A:'"receive" is plural; it agrees with "volunteers", but the real subject is the singular "Each".',
         C:'“have received” es plural; el singular “Each” pide “has”, no “have”.',
-        D:'“are receiving” es plural; el sujeto singular “Each” pide un verbo singular.'
+        D:'“are receiving” is plural; the singular subject “Each” needs a singular verb.'
       },
       tip:'"Each" is ALWAYS singular. Ignore "of the volunteers": the verb agrees with "Each".'
     },
@@ -46,8 +46,8 @@ window.SAT_SETS.push({
       correct:'B',
       expCorrect:'The sentence is inverted: the subject comes AFTER the verb. The subject is "a small cabin" (singular), so the verb is singular: "stands".',
       expWrong:{
-        A:'“stand” es plural; el sujeto “a small cabin” es singular.',
-        C:'“have stood” es plural; el sujeto singular “a small cabin” pide “has stood”.',
+        A:'“stand” is plural; the subject “a small cabin” is singular.',
+        C:'“have stood” is plural; the singular subject “a small cabin” needs “has stood”.',
         D:'"were standing" is plural; the subject is singular and the rest of the text is in the present.'
       },
       tip:'When the sentence opens with a place ("Beyond the ridge…"), look for the subject AFTER the verb. Here it is "a cabin" (singular).'
@@ -77,7 +77,7 @@ window.SAT_SETS.push({
       expCorrect:'The subject is "The committee" (singular, treated as one unit). The phrase "along with several outside consultants" is not part of the subject: it only accompanies it. A singular subject calls for "is".',
       expWrong:{
         A:'"are" is plural; "along with…" does not add subjects, so the subject is still the singular "committee".',
-        B:'“were” es plural; el sujeto singular “committee” pide un verbo singular.',
+        B:'“were” is plural; the singular subject “committee” needs a singular verb.',
         D:'“have been” es plural; el singular “committee” pide “has been”, no “have been”.'
       },
       tip:'Phrases like "along with", "as well as" or "together with" do NOT add to the subject. Agree only with the real subject ("committee").'
@@ -108,7 +108,7 @@ window.SAT_SETS.push({
       expWrong:{
         A:'"their" is plural; here the text treats the orchestra as a singular unit.',
         C:'"it’s" means "it is"; here you need the possessive "its", with no apostrophe.',
-        D:'“our” es primera persona; el texto habla de la orquesta en tercera persona.'
+        D:'“our” is first person; the text talks about the orchestra in the third person.'
       },
       tip:'A collective noun treated as a unit (“The orchestra”) calls for the singular possessive “its”.'
     },
@@ -137,7 +137,7 @@ window.SAT_SETS.push({
       expCorrect:'The antecedent is “A person” (singular, third person). The matching singular reflexive pronoun is “himself or herself”.',
       expWrong:{
         A:'“themselves” is plural; it does not agree with the singular “A person”.',
-        B:'“yourself” es segunda persona; el texto habla de “A person” en tercera persona.',
+        B:'“yourself” is second person; the text talks about “A person” in the third person.',
         D:'“ourselves” is first person plural; it does not fit the third-person singular “A person”.'
       },
       tip:'A reflexive has to agree in number and person with its antecedent. "A person" (singular, 3rd person) → "himself or herself".'
@@ -185,7 +185,7 @@ window.SAT_SETS.push({
         B:'"they’re" means "they are"; here you need the possessive, not a contraction.',
         D:'"theirs" is a possessive pronoun and stands alone (with no noun after it); here there is a noun ("backpacks"), so "their" is what fits.'
       },
-      tip:'“their” = posesivo (their backpacks); “there” = lugar; “they’re” = they are. Antes de un sustantivo, usa “their”.'
+      tip:'“their” = possessive (their backpacks); “there” = place; “they’re” = they are. Before a noun, use “their”.'
     }
   ]
 });

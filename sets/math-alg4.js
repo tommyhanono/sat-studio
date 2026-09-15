@@ -17,7 +17,7 @@
 (function(){
   window.SAT_SETS.push({
     id: 'math-alg4',
-    title: 'Math — Algebra 4 (sistemas y rectas)',
+    title: 'Math — Algebra 4 (systems and lines)',
     section: 'math',
     level: 'Media',
     description: 'Systems by substitution and elimination, no solution and infinitely many, inequalities in two variables, parallel and perpendicular lines, models with two conditions, and absolute value.',
@@ -41,7 +41,7 @@
       },
       {
         id:'AL4-02', type:'mc', domain:'Algebra', difficulty:'Difícil',
-        skill:'Sistemas con infinitas soluciones',
+        skill:'Systems with infinitely many solutions',
         stem:'3x − 6y = 12\nax − 2y = 4\nIn the system above, a is a constant. If the system has infinitely many solutions, what is the value of a ?',
         choices:{A:'1', B:'3', C:'2', D:'1/3'},
         correct:'A',
@@ -57,7 +57,7 @@
       },
       {
         id:'AL4-03', type:'mc', domain:'Algebra', difficulty:'Media',
-        skill:'Desigualdades en dos variables (verificar un punto)',
+        skill:'Inequalities in two variables (testing a point)',
         stem:'Which of the following ordered pairs (x, y) is a solution to the inequality y > 3x − 5 ?',
         choices:{A:'(0, 0)', B:'(2, 1)', C:'(1, −3)', D:'(3, 4)'},
         correct:'A',
@@ -73,7 +73,7 @@
       },
       {
         id:'AL4-04', type:'mc', domain:'Algebra', difficulty:'Media',
-        skill:'Rectas paralelas (misma pendiente)',
+        skill:'Parallel lines (same slope)',
         stem:'Line k is parallel to the line y = −4x + 7 and passes through the point (2, 1). Which equation represents line k ?',
         choices:{A:'y = −4x + 9', B:'y = −4x + 7', C:'y = (1/4)x + 1/2', D:'y = −4x − 7'},
         correct:'A',
@@ -95,7 +95,7 @@
         correct:'A',
         expCorrect:'First get the slope of the given line by solving for y: 3y = −2x + 12 ⇒ y = −(2/3)x + 4, so its slope is −2/3. The perpendicular one is the reciprocal with the sign flipped: flipping −2/3 gives −3/2, and flipping the sign gives 3/2. (Check: (−2/3)(3/2) = −1 ✓, which is the condition for perpendicularity.)',
         expWrong:{
-          B:'−2/3 es la pendiente de la recta ORIGINAL, no de la perpendicular. Es el paso intermedio.',
+          B:'−2/3 is the slope of the ORIGINAL line, not of the perpendicular one. It is the intermediate step.',
           C:'−3/2 flipped the fraction but forgot to flip the sign. Check it: (−2/3)(−3/2) = +1, and it should give −1.',
           D:'2/3 flipped the sign but did not flip the fraction. (−2/3)(2/3) = −4/9, which is not −1.'
         },
@@ -105,7 +105,7 @@
       },
       {
         id:'AL4-06', type:'mc', domain:'Algebra', difficulty:'Difícil',
-        skill:'Modelo lineal a partir de dos condiciones',
+        skill:'Linear model from two conditions',
         stem:'A taxi service charges a flat fee plus a constant rate per mile. A 4-mile ride costs $13.00 and a 9-mile ride costs $25.50. What is the flat fee, in dollars?',
         choices:{A:'$3.00', B:'$2.50', C:'$10.50', D:'$13.00'},
         correct:'A',
@@ -121,11 +121,11 @@
       },
       {
         id:'AL4-07', type:'mc', domain:'Algebra', difficulty:'Difícil',
-        skill:'Valor absoluto lineal (dos soluciones)',
+        skill:'Linear absolute value (two solutions)',
         stem:'If |2x − 7| = 11, what is the sum of all possible values of x ?',
         choices:{A:'7', B:'9', C:'11', D:'3.5'},
         correct:'A',
-        expCorrect:'El valor absoluto abre en DOS casos. Caso 1: 2x − 7 = 11 ⇒ 2x = 18 ⇒ x = 9. Caso 2: 2x − 7 = −11 ⇒ 2x = −4 ⇒ x = −2. La suma es 9 + (−2) = **7**. (Comprueba: |2(9) − 7| = |11| = 11 ✓ y |2(−2) − 7| = |−11| = 11 ✓.)',
+        expCorrect:'Absolute value opens into TWO cases. Case 1: 2x − 7 = 11 ⇒ 2x = 18 ⇒ x = 9. Case 2: 2x − 7 = −11 ⇒ 2x = −4 ⇒ x = −2. The sum is 9 + (−2) = **7**. (Check: |2(9) − 7| = |11| = 11 ✓ and |2(−2) − 7| = |−11| = 11 ✓.)',
         expWrong:{
           B:'9 is only the first solution. The equation has two and the question asks for the SUM. Forgetting the negative case is the classic error on this topic.',
           C:'11 comes from adding 9 + 2 instead of 9 + (−2). The second solution is negative: x = −2, not 2.',
@@ -137,7 +137,7 @@
       },
       {
         id:'AL4-08', type:'mc', domain:'Algebra', difficulty:'Media',
-        skill:'Ecuaciones lineales con fracciones',
+        skill:'Linear equations with fractions',
         stem:'If x/3 + x/4 = 14, what is the value of x ?',
         choices:{A:'24', B:'98', C:'2', D:'168'},
         correct:'A',
@@ -153,7 +153,7 @@
       },
       {
         id:'AL4-09', type:'mc', domain:'Algebra', difficulty:'Media',
-        skill:'Funciones lineales (interpretar la pendiente en contexto)',
+        skill:'Linear functions (interpreting the slope in context)',
         stem:'The equation C = 0.18m + 45 gives the monthly cost C, in dollars, of a phone plan that includes m minutes of international calling. What does 0.18 represent in this model?',
         choices:{
           A:'The cost, in dollars, of each minute of international calling',
@@ -209,7 +209,7 @@
           C:'$8 comes from dividing $16 by the 2 muffins, ignoring that the total also includes 3 scones.',
           D:'$5.50 comes from dividing $22 by the 4 muffins of the second purchase, ignoring the scone that was paid for too.'
         },
-        tip:'Name the variables before you write anything and build one equation per purchase. The two most tempting distractors are always "divide a total by a single quantity" — but each total includes both products.',
+        tip:'Name the variables before you write anything and build one equation per purchase. The two most tempting distractors are always “divide a total by a single quantity” — but each total includes both products.',
         desmos:'Grafica 2x+3y=16 y 4x+y=22 (x = muffin, y = scone): se cruzan en (5, 2).',
         desmosLatex:['2x+3y=16','4x+y=22']
       }

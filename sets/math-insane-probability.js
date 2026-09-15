@@ -42,11 +42,11 @@
         stem:'Two independent events have probabilities P(A) = 2/5 and P(B) = 3/7. What is the probability that exactly one of them occurs?',
         choices:{A:'6/35', B:'11/35', C:'12/35', D:'17/35'},
         correct:'D',
-        expCorrect:'P(exactamente uno) = P(A)·(1 − P(B)) + (1 − P(A))·P(B) = (2/5)(4/7) + (3/5)(3/7) = 8/35 + 9/35 = 17/35.',
+        expCorrect:'P(exactly one) = P(A)·(1 − P(B)) + (1 − P(A))·P(B) = (2/5)(4/7) + (3/5)(3/7) = 8/35 + 9/35 = 17/35.',
         expWrong:{
           A:'6/35 = (2/5)(3/7) = P(A and B): that BOTH happen, not exactly one.',
           B:'11/35 does not come from any correct computation; the two correct addends are 8/35 and 9/35.',
-          C:'12/35 = (3/5)(4/7) = P(ninguno de los dos), no "exactamente uno".'
+          C:'12/35 = (3/5)(4/7) = P(neither of the two), not "exactly one".'
         },
         tip:'"Exactly one" = P(A)(1−P(B)) + P(B)(1−P(A)). Equivalently: P(A or B) − P(A and B). Do not confuse it with "at least one" or with "neither".'
       },
@@ -64,9 +64,9 @@
         stem:'A bag contains 5 red balls, 3 blue balls, and 1 green ball. If you draw 3 balls without replacement, what is the probability of drawing exactly 2 red balls and 1 blue ball?',
         choices:{A:'25/84', B:'30/84', C:'35/84', D:'40/84'},
         correct:'B',
-        expCorrect:'Total de bolas: 5 + 3 + 1 = 9. Formas de sacar 3 de 9: C(9,3) = 84. Favorables: C(5,2) × C(3,1) = 10 × 3 = 30. Probabilidad = 30/84 = 5/14.',
+        expCorrect:'Total balls: 5 + 3 + 1 = 9. Ways to draw 3 out of 9: C(9,3) = 84. Favorable: C(5,2) × C(3,1) = 10 × 3 = 30. Probability = 30/84 = 5/14.',
         expWrong:{
-          A:'25/84 cuenta mal los favorables (5 × 5 en vez de C(5,2) × C(3,1) = 10 × 3).',
+          A:'25/84 counts the favorable outcomes wrong (5 × 5 instead of C(5,2) × C(3,1) = 10 × 3).',
           C:'35/84 overcounts the favorable cases; the correct count is C(5,2) × C(3,1) = 30.',
           D:'40/84 overcounts (10 × 4 uses 4 blue ones, but there are only 3: C(3,1) = 3).'
         },
@@ -92,10 +92,10 @@
         stem:'A person draws two cards from a standard deck without replacement. What is the probability of drawing two hearts?',
         choices:{A:'1/17', B:'13/169', C:'1/26', D:'12/221'},
         correct:'A',
-        expCorrect:'P(primera de corazones) = 13/52. P(segunda de corazones | primera de corazones) = 12/51. P(ambas) = (13/52) × (12/51) = 156/2652 = 1/17.',
+        expCorrect:'P(first is a heart) = 13/52. P(second is a heart | first is a heart) = 12/51. P(both) = (13/52) × (12/51) = 156/2652 = 1/17.',
         expWrong:{
           B:'13/169 = 1/13 does not fit: with replacement it would be (13/52)² = 1/16, and without replacement it is 1/17.',
-          C:'1/26 = 2/52 divide mal el producto (13 × 12)/(52 × 51).',
+          C:'1/26 = 2/52 handles the product (13 × 12)/(52 × 51) incorrectly.',
           D:'12/221 simplifies 156/2652 wrong; the correctly reduced fraction is 1/17.'
         },
         tip:'Without replacement the probabilities change on every draw: P(two hearts) = (13/52) × (12/51). Simplify by cancelling common factors.'

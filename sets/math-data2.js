@@ -10,7 +10,7 @@
     questions: [
       {
         id:'DT2-01', type:'mc', domain:'Problem-Solving & Data Analysis', difficulty:'Fácil',
-        skill:'Porcentajes (porcentaje de un total)',
+        skill:'Percentages (percent of a total)',
         stem:'A store received a shipment of 250 shirts. If 36% of the shirts were size medium, how many of the shirts were size medium?',
         choices:{A:'36', B:'72', C:'90', D:'160'},
         correct:'C',
@@ -24,11 +24,11 @@
       },
       {
         id:'DT2-02', type:'mc', domain:'Problem-Solving & Data Analysis', difficulty:'Fácil',
-        skill:'Porcentajes (porcentaje de cambio)',
+        skill:'Percentages (percent change)',
         stem:'A monthly gym membership cost $45 last year. This year it costs $54. What was the percent increase in the cost of the membership?',
         choices:{A:'9%', B:'16.7%', C:'20%', D:'54%'},
         correct:'C',
-        expCorrect:'Aumento porcentual = (cambio / valor original) × 100 = (54 − 45)/45 × 100 = 9/45 × 100 = 20%.',
+        expCorrect:'Percent increase = (change / original value) × 100 = (54 − 45)/45 × 100 = 9/45 × 100 = 20%.',
         expWrong:{
           A:'9% confuses the absolute change ($9) with the percent. You have to divide by the original value.',
           B:'16.7% comes from dividing the change by the NEW value (9/54). Percent change is figured on the original value.',
@@ -38,21 +38,21 @@
       },
       {
         id:'DT2-03', type:'mc', domain:'Problem-Solving & Data Analysis', difficulty:'Difícil',
-        skill:'Porcentajes (porcentaje inverso / hallar el original)',
+        skill:'Percentages (reverse percent / finding the original)',
         stem:'During a sale, a jacket was sold for $51 after a 15% discount off its original price. What was the original price of the jacket, in dollars?',
         choices:{A:'$58.65', B:'$60', C:'$66', D:'$68'},
         correct:'B',
         expCorrect:'With 15% off you pay 85% of the original: 0.85 × original = 51. Original = 51 / 0.85 = $60.',
         expWrong:{
           A:'$58.65 adds 15% to $51 (51 × 1.15), but the discount is figured on the ORIGINAL price, not on the discounted one.',
-          C:'$66 usa una base equivocada; 51/0.85 da 60, no 66.',
+          C:'$66 uses the wrong base; 51/0.85 gives 60, not 66.',
           D:'$68 divides 51 by 0.75 (as if it were 25% off). The discount is 15%, so you divide by 0.85.'
         },
         tip:'Reverse percent: if 15% was taken off, the price paid is 85% of the original. Divide the final price by 0.85 (do not add 15% back to the discounted price).'
       },
       {
         id:'DT2-04', type:'mc', domain:'Problem-Solving & Data Analysis', difficulty:'Media',
-        skill:'Porcentajes (porcentaje de, base correcta)',
+        skill:'Percentages (percent of, correct base)',
         stem:'At a conference, 80 people attended. Of the attendees, 25% were speakers and the rest were guests. If 15% of the guests were first-time attendees, how many guests were first-time attendees?',
         choices:{A:'12', B:'20', C:'60', D:'9'},
         correct:'D',
@@ -66,7 +66,7 @@
       },
       {
         id:'DT2-05', type:'mc', domain:'Problem-Solving & Data Analysis', difficulty:'Media',
-        skill:'Razones (repartir un total en tres partes)',
+        skill:'Ratios (splitting a total into three parts)',
         stem:'A recipe mixes flour, sugar, and butter in a ratio of 5 to 2 to 1 by weight. If a baker makes 480 grams of this mixture, how many grams of sugar are used?',
         choices:{A:'60', B:'96', C:'120', D:'300'},
         correct:'C',
@@ -136,7 +136,7 @@
       },
       {
         id:'DT2-10', type:'spr', domain:'Problem-Solving & Data Analysis', difficulty:'Fácil',
-        skill:'Probabilidad (evento simple)',
+        skill:'Probability (simple event)',
         stem:'A jar contains 40 buttons: 16 are white, 15 are black, and 9 are red. If one button is selected at random, what is the probability that it is NOT white?',
         answer:'3/5',
         expCorrect:'The ones that are not white = 15 + 9 = 24 (or 40 − 16 = 24). Probability = 24 / 40 = 3/5. Valid forms for the box: 3/5 or .6 or 0.6. Answer: 3/5.',
@@ -145,7 +145,7 @@
       },
       {
         id:'DT2-11', type:'mc', domain:'Problem-Solving & Data Analysis', difficulty:'Media',
-        skill:'Probabilidad (subgrupo dentro de un total, en palabras)',
+        skill:'Probability (subgroup within a total, in words)',
         stem:'A class has 30 students. There are 18 girls, and 12 of the girls play a sport. There are 12 boys, and 9 of the boys play a sport. If one student who plays a sport is chosen at random, what is the probability that the student is a boy?',
         choices:{A:'3/10', B:'9/30', C:'9/21', D:'3/4'},
         correct:'C',
@@ -159,7 +159,7 @@
       },
       {
         id:'DT2-12', type:'mc', domain:'Problem-Solving & Data Analysis', difficulty:'Difícil',
-        skill:'Porcentajes (dos cambios porcentuales sucesivos)',
+        skill:'Percentages (two successive percent changes)',
         stem:'A stock lost 20% of its value on Monday. On Tuesday, its value increased by 25% from its Monday value. After these two days, the stock\'s value is what percent of its value before Monday?',
         choices:{A:'100%', B:'105%', C:'95%', D:'45%'},
         correct:'A',

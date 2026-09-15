@@ -9,7 +9,7 @@ window.SAT_SETS.push({
   questions: [
     {
       id:'TR2-01', type:'mc', domain:'Expression of Ideas', difficulty:'Fácil',
-      skill:'Transiciones',
+      skill:'Transitions',
       passage:"The community garden had always grown only vegetables, filling its raised beds with tomatoes, peppers, and beans each spring. %BLANK% this year the volunteers planted a wide border of marigolds and sunflowers to attract pollinating bees.",
       stem:'Which choice completes the text with the most logical transition?',
       choices:{A:'However,', B:'For example,', C:'Therefore,', D:'In summary,'},
@@ -24,7 +24,7 @@ window.SAT_SETS.push({
     },
     {
       id:'TR2-02', type:'mc', domain:'Expression of Ideas', difficulty:'Fácil',
-      skill:'Transiciones',
+      skill:'Transitions',
       passage:"The recipe calls for whisking the eggs and sugar together until the mixture turns pale and thick. %BLANK% you fold in the sifted flour a little at a time so the batter stays light.",
       stem:'Which choice completes the text with the most logical transition?',
       choices:{A:'Nevertheless,', B:'Next,', C:'In contrast,', D:'For instance,'},
@@ -39,7 +39,7 @@ window.SAT_SETS.push({
     },
     {
       id:'TR2-03', type:'mc', domain:'Expression of Ideas', difficulty:'Fácil',
-      skill:'Transiciones',
+      skill:'Transitions',
       passage:"The new phone's battery lasts nearly two full days on a single charge, far longer than that of last year's model. %BLANK% its screen is brighter and easier to read outdoors in direct sunlight.",
       stem:'Which choice completes the text with the most logical transition?',
       choices:{A:'Moreover,', B:'However,', C:'As a result,', D:'In other words,'},
@@ -54,7 +54,7 @@ window.SAT_SETS.push({
     },
     {
       id:'TR2-04', type:'mc', domain:'Expression of Ideas', difficulty:'Fácil',
-      skill:'Transiciones',
+      skill:'Transitions',
       passage:"Deep-sea anglerfish live where almost no sunlight reaches, and finding a mate in that darkness is rare. %BLANK% the female carries a glowing lure on her head that draws prey and partners toward her.",
       stem:'Which choice completes the text with the most logical transition?',
       choices:{A:'On the other hand,', B:'Similarly,', C:'For this reason,', D:'Meanwhile,'},
@@ -69,7 +69,7 @@ window.SAT_SETS.push({
     },
     {
       id:'TR2-05', type:'mc', domain:'Expression of Ideas', difficulty:'Media',
-      skill:'Transiciones',
+      skill:'Transitions',
       passage:"For decades scholars believed the ancient city had been abandoned suddenly after a violent earthquake toppled its temples. %BLANK% recent excavations reveal cooking fires and repaired walls dating from generations after the quake, showing that people kept living there.",
       stem:'Which choice completes the text with the most logical transition?',
       choices:{A:'Likewise,', B:'For example,', C:'However,', D:'Consequently,'},
@@ -84,7 +84,7 @@ window.SAT_SETS.push({
     },
     {
       id:'TR2-06', type:'mc', domain:'Expression of Ideas', difficulty:'Media',
-      skill:'Transiciones',
+      skill:'Transitions',
       passage:"The startup poured most of its budget into flashy television ads that reached millions of viewers but rarely mentioned what the product actually did. %BLANK% sales barely moved, and the marketing team quietly shifted its money toward clearer, smaller campaigns.",
       stem:'Which choice completes the text with the most logical transition?',
       choices:{A:'By contrast,', B:'In particular,', C:'Alternatively,', D:'Predictably,'},
@@ -99,7 +99,7 @@ window.SAT_SETS.push({
     },
     {
       id:'TR2-07', type:'mc', domain:'Expression of Ideas', difficulty:'Media',
-      skill:'Transiciones',
+      skill:'Transitions',
       passage:"Many people assume that bamboo is a kind of tree because of its height and woody stalks. %BLANK% it is actually a giant grass, closely related to wheat and rice rather than to oaks or pines.",
       stem:'Which choice completes the text with the most logical transition?',
       choices:{A:'Therefore,', B:'Similarly,', C:'In fact,', D:'Afterward,'},
@@ -114,7 +114,7 @@ window.SAT_SETS.push({
     },
     {
       id:'TR2-08', type:'mc', domain:'Expression of Ideas', difficulty:'Media',
-      skill:'Transiciones',
+      skill:'Transitions',
       passage:"The coach spent the entire preseason drilling the team on quick, short passes to keep possession under pressure. %BLANK% by the opening match the players moved the ball with a calm precision that opponents found almost impossible to break up.",
       stem:'Which choice completes the text with the most logical transition?',
       choices:{A:'Nonetheless,', B:'As a result,', C:'For example,', D:'Meanwhile,'},
@@ -129,7 +129,7 @@ window.SAT_SETS.push({
     },
     {
       id:'TR2-09', type:'mc', domain:'Expression of Ideas', difficulty:'Media',
-      skill:'Transiciones',
+      skill:'Transitions',
       passage:"The proposed law would clearly cut the city's traffic by charging drivers a fee to enter the crowded downtown core during rush hour. %BLANK% opponents argue that the fee would fall hardest on low-income workers who cannot easily change their commuting hours.",
       stem:'Which choice completes the text with the most logical transition?',
       choices:{A:'Likewise,', B:'For instance,', C:'Therefore,', D:'Still,'},
@@ -144,7 +144,7 @@ window.SAT_SETS.push({
     },
     {
       id:'TR2-10', type:'mc', domain:'Expression of Ideas', difficulty:'Difícil',
-      skill:'Transiciones',
+      skill:'Transitions',
       passage:"The biologist gathered years of data on the frogs' shrinking numbers, mapped their vanishing wetlands, and tested the pond water for pollutants. %BLANK% she concluded that habitat loss, not disease, was driving the population's steep decline.",
       stem:'Which choice completes the text with the most logical transition?',
       choices:{A:'In contrast,', B:'On balance,', C:'For example,', D:'Regardless,'},
@@ -159,7 +159,7 @@ window.SAT_SETS.push({
     },
     {
       id:'TR2-11', type:'mc', domain:'Expression of Ideas', difficulty:'Difícil',
-      skill:'Transiciones',
+      skill:'Transitions',
       passage:"The essay's author does not merely suggest that the policy was flawed or poorly timed. %BLANK% she insists it was the single worst decision in the agency's entire history, one that undid decades of careful progress.",
       stem:'Which choice completes the text with the most logical transition?',
       choices:{A:'Otherwise,', B:'In comparison,', C:'Indeed,', D:'Previously,'},
@@ -174,7 +174,7 @@ window.SAT_SETS.push({
     },
     {
       id:'TR2-12', type:'mc', domain:'Expression of Ideas', difficulty:'Difícil',
-      skill:'Transiciones',
+      skill:'Transitions',
       passage:"Engineers designed the bridge's cables to flex slightly in strong winds so that the whole structure could sway without cracking. %BLANK% early travelers, unaware of this feature, wrote panicked letters describing a bridge they were sure was about to collapse.",
       stem:'Which choice completes the text with the most logical transition?',
       choices:{A:'Accordingly,', B:'In short,', C:'Namely,', D:'Ironically,'},

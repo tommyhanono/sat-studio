@@ -548,7 +548,7 @@
         expWrong:{
           B:'"Therefore" marks consequence. The machine changing little does not CAUSE it to later change everything: it contradicts it.',
           C:'"For example" announces an example of what came before. The second sentence does not exemplify the limited use in mines, it reverses it.',
-          D:'«Similarly» marca semejanza, y las dos oraciones dicen cosas contrarias.'
+          D:'“Similarly” signals likeness, but the two sentences say opposite things.'
         },
         tip:'Ignore the transition the text carries and sum up the two sentences in one word each. Then ask: are they alike, do they clash, or does one cause the other? Only then look at the options. Choosing by "which sounds right" is the error that sinks these.'
       },

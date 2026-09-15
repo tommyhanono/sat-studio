@@ -17,7 +17,7 @@
         expCorrect:'Set the two equations equal: x² + 4x + 12 = −3x + c. Move everything to one side: x² + 7x + (12 − c) = 0. “Exactly one point” means a zero discriminant: 7² − 4(1)(12 − c) = 0 → 49 − 48 + 4c = 0 → 4c = −1 → c = −1/4. Check: with c = −1/4 the equation becomes x² + 7x + 49/4 = (x + 7/2)² = 0, a single solution. ✓',
         expWrong:{
           A:'49/4 is the value the constant term 12 − c has to take, not the value of c. You skipped the last step: 12 − c = 49/4 → c = −1/4.',
-          C:'1/4 sale de un error de signo al despejar: 49 − 48 + 4c = 0 da 4c = −1, o sea c = −1/4, negativo.',
+          C:'1/4 comes from a sign error while solving: 49 − 48 + 4c = 0 gives 4c = −1, that is, c = −1/4, which is negative.',
           D:'−7/2 is the x-coordinate of the point of tangency (where (x + 7/2)² = 0), not the value of c they asked for.'
         },
         tip:'A line touching a parabola at ONE point → set them equal, rearrange into ax² + bx + c = 0 and demand b² − 4ac = 0. Careful: the “b” in the discriminant is the coefficient AFTER moving the line to the other side (here 4 + 3 = 7), not the original 4.',
@@ -96,14 +96,14 @@
       },
       {
         id:'XV-07', type:'mc', domain:'Advanced Math', difficulty:'Difícil', extreme:true,
-        skill:'Exponentes fraccionarios (combinar tres factores)',
+        skill:'Fractional exponents (combining three factors)',
         stem:'For x > 0, which of the following is equivalent to (⁵√(x²) · ³√x) / x^(1/15)?',
         choices:{A:'x^(2/3)', B:'x^(11/15)', C:'x^(4/5)', D:'x^(2/15)'},
         correct:'A',
         expCorrect:'Convert everything to exponents: ⁵√(x²) = x^(2/5) and ³√x = x^(1/3). Common denominator 15: 2/5 = 6/15 and 1/3 = 5/15. Multiplying on top (add): 6/15 + 5/15 = 11/15. Dividing (subtract): 11/15 − 1/15 = 10/15 = 2/3. Result: x^(2/3). Check with x = 32: 32^(2/5) · 32^(1/3) / 32^(1/15) ≈ 4 · 3.1748 / 1.2599 ≈ 10.08 and 32^(2/3) ≈ 10.08. ✓',
         expWrong:{
           B:'x^(11/15) is only the numerator (6/15 + 5/15): you skipped subtracting the 1/15 from the division.',
-          C:'x^(4/5) = x^(12/15) sale de SUMAR el 1/15 en vez de restarlo. Dividir resta exponentes.',
+          C:'x^(4/5) = x^(12/15) comes from ADDING the 1/15 instead of subtracting it. Dividing subtracts exponents.',
           D:'x^(2/15) comes from MULTIPLYING 2/5 · 1/3 = 2/15 instead of adding. Multiplying powers of the same base ADDS exponents; only power-of-a-power multiplies.'
         },
         tip:'Convert each radical into a fractional exponent and use a common denominator (here 15) so you do not slip while adding. Multiplying equal bases adds exponents, dividing subtracts. And simplify at the end: 10/15 = 2/3, because the options come reduced.',
@@ -132,7 +132,7 @@
         stem:'The function f is defined by f(x) = 2(x + 1)² + 3. If g(x) = f(x − 3) + 2, what is the value of g(5)?',
         choices:{A:'21', B:'23', C:'77', D:'167'},
         correct:'B',
-        expCorrect:'Dos pasos, en orden. Paso 1: g(5) = f(5 − 3) + 2 = f(2) + 2. Paso 2: f(2) = 2(2 + 1)² + 3 = 2(9) + 3 = 21. Entonces g(5) = 21 + 2 = 23. Verifica reescribiendo g completo: g(x) = 2(x − 2)² + 5, y g(5) = 2(3)² + 5 = 23. ✓',
+        expCorrect:'Two steps, in order. Step 1: g(5) = f(5 − 3) + 2 = f(2) + 2. Step 2: f(2) = 2(2 + 1)² + 3 = 2(9) + 3 = 21. So g(5) = 21 + 2 = 23. Check by rewriting all of g: g(x) = 2(x − 2)² + 5, and g(5) = 2(3)² + 5 = 23. ✓',
         expWrong:{
           A:'21 is f(2) without the final +2: you skipped the last step of g’s definition.',
           C:'77 comes from evaluating f(5) + 2 = 2(36) + 3 + 2: you skipped the x − 3 shift and put the 5 straight into f.',

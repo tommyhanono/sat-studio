@@ -30,7 +30,7 @@
         correct:'B',
         expCorrect:'For f(3): since 3 > 2, use x² − 3 → f(3) = 9 − 3 = 6. For f(0): since 0 ≤ 2, use 2x + 1 → f(0) = 2(0) + 1 = 1. So f(3) − f(0) = 6 − 1 = 5.',
         expWrong:{
-          A:'4 sale de tomar f(0) = 2 (calculando 2(0 + 1) en vez de 2(0) + 1 = 1): 6 − 2 = 4.',
+          A:'4 comes from taking f(0) = 2 (computing 2(0 + 1) instead of 2(0) + 1 = 1): 6 − 2 = 4.',
           C:'6 is only f(3); you forgot to subtract f(0).',
           D:'7 comes from using the wrong piece for f(3): 2(3) + 1 = 7. Since 3 > 2, the right piece is x² − 3.'
         },
@@ -97,7 +97,7 @@
         skill:'Solving a system for one variable',
         stem:'If 2x + y = 10 and x − y = 4, what is the value of x?',
         answer:'14/3',
-        expCorrect:'Add the two equations: (2x + y) + (x − y) = 10 + 4 → 3x = 14 → x = 14/3 ≈ 4.67. (Alternative: from x − y = 4, get y = x − 4. Substitute into 2x + y = 10: 2x + (x − 4) = 10 → 3x = 14 → x = 14/3.) Respuesta: 14/3.',
+        expCorrect:'Add the two equations: (2x + y) + (x − y) = 10 + 4 → 3x = 14 → x = 14/3 ≈ 4.67. (Alternative: from x − y = 4, get y = x − 4. Substitute into 2x + y = 10: 2x + (x − 4) = 10 → 3x = 14 → x = 14/3.) Answer: 14/3.',
         expWrong:{},
         tip:'SPR trick: if the answer is a fraction, write it as is (14/3). As a decimal you have to fill the whole box: 4.666 or 4.667. A short decimal like 4.67 is not accepted.'
       },

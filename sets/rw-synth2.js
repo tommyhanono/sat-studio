@@ -41,14 +41,14 @@ window.SAT_SETS.push({
       expWrong:{
         A:'It is about the switch and future plans, not the energy use of each bulb.',
         B:'It compares brightness, not the energy consumption the goal asks for.',
-        D:'Da un plan futuro; solo menciona un tipo de foco y no compara consumo.'
+        D:'It gives a future plan; it mentions only one type of bulb and does not compare energy use.'
       },
       tip:'"Compare the consumption" demands mentioning BOTH with their wattage. Rule out anything comparing something else (brightness) or naming only one side.'
     },
     {
       id:'RS2-03', type:'mc', domain:'Expression of Ideas', difficulty:'Fácil',
       skill:'Rhetorical Synthesis',
-      stem:"While researching a topic, a student has taken the following notes:<ul><li>Hedy Lamarr was a Hollywood film actress in the 1930s and 1940s.</li><li>She was also a self-taught inventor.</li><li>During World War II, she co-designed a system to keep radio-guided torpedoes from being jammed.</li><li>The system rapidly switched signals across many frequencies.</li><li>This \"frequency-hopping\" idea later helped make Wi-Fi and Bluetooth possible.</li></ul>The student wants to emphasize the lasting impact of Lamarr's invention. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+      stem:"While researching a topic, a student has taken the following notes:<ul><li>Hedy Lamarr was a Hollywood film actress in the 1930s and 1940s.</li><li>She was also a self-taught inventor.</li><li>During World War II, she co-designed a system to keep radio-guided torpedoes from being jammed.</li><li>The system rapidly switched signals across many frequencies.</li><li>This \"frequency-hopping\" idea later helped make Wi-Fi and Bluetooth possible.</li></ul>The student wants to emphasize the lasting impact of Lamarr’s invention. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
       choices:{
         A:'Hedy Lamarr was a Hollywood film actress during the 1930s and 1940s.',
         B:'During World War II, Lamarr co-designed a system to keep radio-guided torpedoes from being jammed.',

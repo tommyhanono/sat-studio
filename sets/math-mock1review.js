@@ -103,14 +103,14 @@
       },
       {
         id:'M1M-03', type:'mc', domain:'Geometry & Trigonometry', difficulty:'Difícil',
-        skill:'Recta tangente a una circunferencia',
+        skill:'Tangent line to a circle',
         figure: FIG_TANGENT,
         stem:'A circle in the xy-plane is centered at the origin with a radius of 13. A line is tangent to the circle at the point (5, 12), as shown. What is the slope of the tangent line?',
         choices:{A:'12/5', B:'5/12', C:'−12/5', D:'−5/12'},
         correct:'D',
         expCorrect:'The radius reaching the point of tangency runs from the origin (0, 0) to (5, 12), with slope 12/5. The tangent is PERPENDICULAR to the radius at that point, so its slope is the negative reciprocal: −5/12.',
         expWrong:{
-          A:'12/5 es la pendiente del RADIO, no de la tangente. La tangente es perpendicular al radio, no paralela.',
+          A:'12/5 is the slope of the RADIUS, not of the tangent. The tangent is perpendicular to the radius, not parallel.',
           B:'5/12 is the reciprocal but it is missing the negative sign. Perpendicular = NEGATIVE reciprocal.',
           C:'−12/5 only flipped the sign of the radius slope, without inverting the fraction. For perpendicular you have to do both.'
         },
@@ -120,7 +120,7 @@
       },
       {
         id:'M1M-04', type:'mc', domain:'Advanced Math', difficulty:'Difícil',
-        skill:'Ceros y multiplicidad (cruzar vs. tocar)',
+        skill:'Zeros and multiplicity (cross vs. touch)',
         stem:'The polynomial p is defined by p(x) = (x + 2)³(x − 1)²(x − 4). At how many distinct values of x does the graph of y = p(x) cross the x-axis?',
         choices:{A:'1', B:'3', C:'2', D:'6'},
         correct:'C',
@@ -136,7 +136,7 @@
       },
       {
         id:'M1M-05', type:'mc', domain:'Advanced Math', difficulty:'Media',
-        skill:'Comportamiento en los extremos (end behavior)',
+        skill:'End behavior of the graph',
         stem:'The function f is defined by f(x) = −3x⁴ + 2x³ − x + 5. Which statement describes the end behavior of the graph of f?',
         choices:{
           A:'As x → −∞, f(x) → +∞; and as x → +∞, f(x) → +∞',
@@ -173,7 +173,7 @@
       },
       {
         id:'M1M-07', type:'mc', domain:'Problem-Solving & Data Analysis', difficulty:'Media',
-        skill:'Probabilidad condicional (tabla de doble entrada)',
+        skill:'Conditional probability (two-way table)',
         stem:'A group of 100 people at a conference were asked whether they prefer coffee or tea. The results are shown in the two-way table below, organized by role.<br><br>Students — Coffee: 48, Tea: 27, Total: 75<br>Teachers — Coffee: 12, Tea: 13, Total: 25<br>Total — Coffee: 60, Tea: 40, Total: 100<br><br>If one of the 100 people is selected at random and that person prefers coffee, what is the probability that the person is a teacher?',
         choices:{A:'12/25', B:'3/25', C:'1/4', D:'1/5'},
         correct:'D',
@@ -189,7 +189,7 @@
       },
       {
         id:'M1M-08', type:'mc', domain:'Problem-Solving & Data Analysis', difficulty:'Difícil',
-        skill:'Probabilidad condicional (tabla de doble entrada)',
+        skill:'Conditional probability (two-way table)',
         stem:'At a clinic, 80 patients were given an allergy test. The two-way table below shows the results, organized by age group.<br><br>Under 30 — Positive: 18, Negative: 22, Total: 40<br>30 or older — Positive: 12, Negative: 28, Total: 40<br>Total — Positive: 30, Negative: 50, Total: 80<br><br>If one of the patients who tested negative is selected at random, what is the probability that the patient is under 30?',
         choices:{A:'11/20', B:'11/40', C:'11/25', D:'1/2'},
         correct:'C',
@@ -205,7 +205,7 @@
       },
       {
         id:'M1M-09', type:'spr', domain:'Problem-Solving & Data Analysis', difficulty:'Media',
-        skill:'Mediana a partir de una tabla de frecuencias',
+        skill:'Median from a frequency table',
         stem:'The frequency table below shows the number of siblings reported by each of 20 students.<br><br>0 siblings: 4 students<br>1 sibling: 6 students<br>2 siblings: 5 students<br>3 siblings: 3 students<br>4 siblings: 2 students<br><br>What is the median number of siblings for these 20 students?',
         answer:'1.5',
         expCorrect:'With 20 data points, the median is the average of the 10th and 11th ordered values. Cumulative frequencies: four 0s (positions 1–4), six 1s (positions 5–10), five 2s (positions 11–15). The 10th value is 1 and the 11th is 2, so the median is (1 + 2)/2 = 1.5.',
@@ -286,7 +286,7 @@
         expWrong:{
           A:'5.4 flips the ratio (9 · 6/10 instead of 9 · 10/6). Triangle DEF is the bigger one, so EF has to be GREATER than BC.',
           B:'10 is the length of DE (a given figure), not EF. EF corresponds to BC, so it scales from 9; you do not copy DE.',
-          D:'13 suma la diferencia (DE − AB = 4) a BC: 9 + 4 = 13. La semejanza MULTIPLICA por un factor de escala, no suma.'
+          D:'13 adds the difference (DE − AB = 4) to BC: 9 + 4 = 13. Similarity MULTIPLIES by a scale factor; it does not add.'
         },
         tip:'In similar figures, set up a proportion with CORRESPONDING sides: the same ratio for all of them. Match A↔D, B↔E, C↔F correctly before solving.',
         desmos:'Semejantes: lados correspondientes en la misma razón. AB va con DE y BC va con EF, así que 6/10 = 9/EF. Despeja: escribe 9*10/6 en Desmos y te da 15.',

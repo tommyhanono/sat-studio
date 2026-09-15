@@ -38,7 +38,7 @@
       // ---------------- ALGEBRA (8) ----------------
       {
         id:'M1-01', type:'mc', domain:'Algebra', difficulty:'Fácil',
-        skill:'Ecuaciones lineales (una variable)',
+        skill:'Linear equations (one variable)',
         stem:'If 6x − 9 = 27, what is the value of x ?',
         choices:{A:'6', B:'3', C:'4.5', D:'36'},
         correct:'A',
@@ -58,7 +58,7 @@
         stem:'The function g is defined by g(x) = 5x + 2. What is the value of g(4) ?',
         choices:{A:'22', B:'20', C:'30', D:'7'},
         correct:'A',
-        expCorrect:'Reemplaza x por 4: g(4) = 5(4) + 2 = 20 + 2 = 22.',
+        expCorrect:'Substitute 4 for x: g(4) = 5(4) + 2 = 20 + 2 = 22.',
         expWrong:{
           B:'20 is only 5(4): you forgot to add the 2.',
           C:'30 comes from adding before multiplying, 5(4 + 2). The 2 is outside the parentheses.',
@@ -70,7 +70,7 @@
       },
       {
         id:'M1-03', type:'mc', domain:'Algebra', difficulty:'Media',
-        skill:'Funciones lineales (pendiente entre dos puntos)',
+        skill:'Linear functions (slope between two points)',
         stem:'What is the slope of the line that passes through the points (1, −2) and (5, 10) ?',
         choices:{A:'3', B:'2', C:'1/3', D:'−3'},
         correct:'A',
@@ -102,7 +102,7 @@
       },
       {
         id:'M1-05', type:'mc', domain:'Algebra', difficulty:'Media',
-        skill:'Desigualdades lineales (una variable)',
+        skill:'Linear inequalities (one variable)',
         stem:'Which of the following is equivalent to 3x + 7 < 22 ?',
         choices:{A:'x < 5', B:'x > 5', C:'x < 15', D:'x < 29/3'},
         correct:'A',
@@ -134,7 +134,7 @@
       },
       {
         id:'M1-07', type:'spr', domain:'Algebra', difficulty:'Media',
-        skill:'Ecuaciones lineales (variable en los dos lados)',
+        skill:'Linear equations (variable on both sides)',
         stem:'If 2(x + 6) = 5x − 3, what is the value of x? (Grid in your answer.)',
         answer:'5',
         expCorrect:'Distribute: 2x + 12 = 5x − 3. Move the x terms to one side and the numbers to the other: 12 + 3 = 5x − 2x ⇒ 15 = 3x ⇒ x = 5. (Check: 2(5 + 6) = 22 and 5(5) − 3 = 22 ✓.)',
@@ -186,7 +186,7 @@
         expWrong:{
           B:'x = −7 and x = 2 are the signs backwards. With those values: (−7)² − 5(−7) − 14 = 49 + 35 − 14 = 70, not 0.',
           C:'x = 7 and x = 2 give a product of +14, but the constant term is −14: the solutions have OPPOSITE signs.',
-          D:'x = −7 y x = −2 dan producto +14 y suma −9. Ni el producto ni la suma coinciden.'
+          D:'x = −7 and x = −2 give a product of +14 and a sum of −9. Neither the product nor the sum matches.'
         },
         tip:'Two-second check: the sum of the solutions has to be −b (=5) and the product c (=−14). 7 + (−2) = 5 ✓ and 7(−2) = −14 ✓. It rules out three options without factoring.',
         desmos:'Grafica y=x^2-5x-14 y mirá dónde corta el eje x: en -2 y en 7.',
@@ -256,13 +256,13 @@
           C:'√10 comes from adding the 1 instead of subtracting it: (19 + 1)/2 = 10. The +1 crosses over as −1.',
           D:'8.5 comes from dividing before subtracting: 19/2 − 1. You have to isolate the x² term first.'
         },
-        tip:'Undo in the reverse order of how it was built: first what is added, then what multiplies, and last the power. The option "x²" is always among the answers.',
+        tip:'Undo in the reverse order of how it was built: first what is added, then what multiplies, and last the power. The option “x²” is always among the answers.',
         desmos:'Grafica y=2x^2+1 y y=19: se cruzan en x=-3 y x=3.',
         desmosLatex:['y=2x^2+1','y=19']
       },
       {
         id:'M1-16', type:'mc', domain:'Advanced Math', difficulty:'Difícil',
-        skill:'Ecuaciones racionales',
+        skill:'Rational equations',
         stem:'If 12/(x − 2) = 4, what is the value of x ?',
         choices:{A:'5', B:'3', C:'1', D:'48'},
         correct:'A',
@@ -288,7 +288,7 @@
         expWrong:{
           B:'$20 is the DISCOUNT, not the final price. It still has to be subtracted from the $80.',
           C:'$55 subtracts 25 dollars instead of 25 percent. A percentage is computed on the price, it is not subtracted directly.',
-          D:'$100 suma el 25 % en vez de restarlo. "Off" significa descuento.'
+          D:'$100 adds the 25% instead of subtracting it. “Off” means a discount.'
         },
         tip:'A shortcut that saves a step: to take 25% off, multiply by 0.75 directly. It works for any percentage — and it avoids the error of keeping the discount instead of the price.',
         desmos:'Escribí 0.75*80 y Desmos te da 60 al toque.',
@@ -296,7 +296,7 @@
       },
       {
         id:'M1-18', type:'mc', domain:'Problem-Solving & Data Analysis', difficulty:'Media',
-        skill:'Proporciones y razones',
+        skill:'Proportions and ratios',
         stem:'A recipe requires 3 cups of flour for every 4 cups of milk. If a baker uses 15 cups of flour, how many cups of milk are needed?',
         choices:{A:'20', B:'11.25', C:'16', D:'60'},
         correct:'A',
@@ -344,7 +344,7 @@
         stem:'A circle has an area of 49π. What is the radius of the circle? (Grid in your answer.)',
         answer:'7',
         expCorrect:'The area of a circle is πr². Set it equal: πr² = 49π ⇒ r² = 49 ⇒ r = **7**. The π cancels on both sides, so there is nothing to approximate.',
-        tip:'When the area comes "in terms of π", cancel it and work with the number: the problem turns into arithmetic. And do not confuse r² with r — the 49 is the square, the answer is its root.',
+        tip:'When the area comes “in terms of π”, cancel it and work with the number: the problem turns into arithmetic. And do not confuse r² with r — the 49 is the square, the answer is its root.',
         desmos:'Escribí sqrt(49) o graficá y=pi*x^2 con y=49pi.',
         desmosLatex:['\\sqrt{49}']
       },

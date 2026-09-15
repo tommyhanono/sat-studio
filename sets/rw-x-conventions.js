@@ -24,7 +24,7 @@ window.SAT_SETS.push({
     },
     {
       id:'XC-02', type:'mc', domain:'Standard English Conventions', difficulty:'Difícil', extreme:true,
-      skill:'Interruptores apilados: coma interna dentro de un inciso con guiones',
+      skill:'Stacked interrupters: internal comma inside a dash parenthetical',
       passage:"The astronomer Vera Rubin—whose measurements of spiral galaxies, made with a spectrograph she had helped %BLANK% some of the first persuasive evidence for dark matter—remained skeptical of easy fame throughout her career.",
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'design—provided', B:'design, provided', C:'design provided', D:'design; provided'},
@@ -84,7 +84,7 @@ window.SAT_SETS.push({
     },
     {
       id:'XC-06', type:'mc', domain:'Standard English Conventions', difficulty:'Difícil', extreme:true,
-      skill:'Sujeto pospuesto tras frase participial inicial',
+      skill:'Postponed subject after an initial participial phrase',
       passage:"Tucked between the pages of the ledgers kept by the expedition's quartermaster %BLANK% letters that were never sent, along with a hand-drawn map of the coastline the crew had charted.",
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'was', B:'were', C:'is', D:'sits'},
@@ -144,7 +144,7 @@ window.SAT_SETS.push({
     },
     {
       id:'XC-10', type:'mc', domain:'Standard English Conventions', difficulty:'Difícil', extreme:true,
-      skill:'Modificador colgante con antecedente posesivo',
+      skill:'Dangling modifier with a possessive antecedent',
       passage:"Hoping to preserve her grandmother's handwritten recipes before the ink faded further, %BLANK% and stored the images in three separate digital archives.",
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'Amara photographed each page of the fragile notebook', B:'the fragile notebook was photographed page by page by Amara', C:"the fragile notebook's pages were photographed by Amara", D:'photographs were taken of each page of the fragile notebook'},
@@ -174,14 +174,14 @@ window.SAT_SETS.push({
     },
     {
       id:'XC-12', type:'mc', domain:'Standard English Conventions', difficulty:'Difícil', extreme:true,
-      skill:'Posesivo plural dentro de un inciso',
+      skill:'Plural possessive inside a parenthetical',
       passage:"The observatory's archive—a collection that includes several nineteenth-century %BLANK% earliest glass photographic plates—was fully digitized last year after decades of neglect.",
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:"astronomer's", B:'astronomers', C:"astronomers'", D:"astronomers's"},
       correct:'C',
       expCorrect:'“Several” forces the plural: several astronomers. And the plates BELONG to them, so you need a possessive. A plural ending in -s → apostrophe after the s: “several… astronomers’ earliest glass photographic plates”. The blank sitting inside a dash aside does not change the rule; do not let the outer punctuation distract you.',
       expWrong:{
-        A:'“Astronomer’s” es posesivo SINGULAR, pero “several” exige plural.',
+        A:'“Astronomer’s” is a SINGULAR possessive, but “several” requires the plural.',
         B:'“Astronomers” is a plural with no possessive: “astronomers earliest plates” leaves two nouns colliding with no relationship of ownership.',
         D:'“Astronomers’s” does not exist: regular plurals in -s form the possessive with the final apostrophe alone.'
       },

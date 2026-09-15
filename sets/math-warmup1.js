@@ -121,15 +121,15 @@
         correct:'C',
         expCorrect:'SOHCAHTOA: tan θ = opposite / adjacent. The leg opposite θ is 5 and the adjacent one is 12, so tan θ = 5/12. (The 5-12-13 triple satisfies 5² + 12² = 25 + 144 = 169 = 13² ✓.)',
         expWrong:{
-          A:'5/13 es sin θ (opuesto/hipotenusa). La tangente NO usa la hipotenusa.',
-          B:'12/13 es cos θ (adyacente/hipotenusa), no la tangente.',
+          A:'5/13 is sin θ (opposite/hypotenuse). The tangent does NOT use the hypotenuse.',
+          B:'12/13 is cos θ (adjacent/hypotenuse), not the tangent.',
           D:'12/5 is the reciprocal: that would be adjacent/opposite (cot θ). The tangent is opposite/adjacent = 5/12.'
         },
         tip:'SOHCAHTOA: Tangent = Opposite / Adjacent (the only ratio that does NOT use the hypotenuse). First work out which side is opposite and which is adjacent relative to θ.'
       },
       {
         id:'MW1-09', type:'mc', domain:'Problem-Solving & Data Analysis', difficulty:'Difícil',
-        skill:'Porcentaje inverso (precio original)',
+        skill:'Reverse percent (original price)',
         stem:'After a discount of 20%, the price of a jacket is $60. What was the original price of the jacket, in dollars?',
         choices:{A:'$48', B:'$72', C:'$75', D:'$80'},
         correct:'C',
@@ -143,7 +143,7 @@
       },
       {
         id:'MW1-10', type:'spr', domain:'Problem-Solving & Data Analysis', difficulty:'Media',
-        skill:'Media (valor faltante)',
+        skill:'Mean (missing value)',
         stem:'A list of 5 numbers is 4, 9, 12, x, and 20. The mean (average) of the 5 numbers is 12. What is the value of x?',
         answer:'15',
         expCorrect:'The mean is the sum divided by the number of data points, so the total sum = mean × count = 12 × 5 = 60. The four known numbers add to 4 + 9 + 12 + 20 = 45. So x = 60 − 45 = 15. (Check: (4 + 9 + 12 + 15 + 20)/5 = 60/5 = 12 ✓.) Answer: 15.',
@@ -152,7 +152,7 @@
       },
       {
         id:'MW1-11', type:'mc', domain:'Advanced Math', difficulty:'Media',
-        skill:'Decaimiento exponencial (modelo)',
+        skill:'Exponential decay (model)',
         stem:'A car is purchased for $24,000 and loses 15% of its value each year. Which function V models the value of the car, in dollars, after t years?',
         choices:{A:'V(t) = 24000(0.85)^t', B:'V(t) = 24000(1.15)^t', C:'V(t) = 24000(0.15)^t', D:'V(t) = 24000 − 0.15t'},
         correct:'A',
@@ -166,7 +166,7 @@
       },
       {
         id:'MW1-12', type:'mc', domain:'Algebra', difficulty:'Media',
-        skill:'Funciones lineales (evaluar)',
+        skill:'Linear functions (evaluating)',
         stem:'The linear function f satisfies f(0) = 3 and f(4) = 15. What is the value of f(10)?',
         choices:{A:'30', B:'33', C:'36', D:'45'},
         correct:'B',

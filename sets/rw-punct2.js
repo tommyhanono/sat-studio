@@ -54,7 +54,7 @@ window.SAT_SETS.push({
     },
     {
       id:'PB2-04', type:'mc', domain:'Standard English Conventions', difficulty:'Media',
-      skill:'Elementos no esenciales (comas en pareja)',
+      skill:'Nonessential elements (paired commas)',
       passage:"The %BLANK% a flightless parrot native to New Zealand, is one of the longest-lived birds in the world.",
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'kakapo', B:'kakapo:', C:'kakapo;', D:'kakapo,'},
@@ -114,7 +114,7 @@ window.SAT_SETS.push({
     },
     {
       id:'PB2-08', type:'mc', domain:'Standard English Conventions', difficulty:'Media',
-      skill:'Coma innecesaria (verbo y su complemento)',
+      skill:'Unnecessary comma (verb and its object)',
       passage:"After months of testing, the biologists concluded %BLANK% the coral colonies were recovering faster than any model had predicted.",
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'that,', B:'that', C:', that', D:': that'},
@@ -129,7 +129,7 @@ window.SAT_SETS.push({
     },
     {
       id:'PB2-09', type:'mc', domain:'Standard English Conventions', difficulty:'Difícil',
-      skill:'Punto y coma en listas complejas',
+      skill:'Semicolons in complex lists',
       passage:"The grant will fund three teams: a group in Oslo, which studies Arctic %BLANK% a lab in Nairobi, which tracks migratory birds; and a station in Chile, which monitors ocean acidification.",
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'ice,', B:'ice:', C:'ice—', D:'ice;'},
@@ -144,14 +144,14 @@ window.SAT_SETS.push({
     },
     {
       id:'PB2-10', type:'mc', domain:'Standard English Conventions', difficulty:'Media',
-      skill:'Punto y coma con adverbio conjuntivo (therefore)',
+      skill:'Semicolon with a conjunctive adverb (therefore)',
       passage:"The archive's oldest films are printed on unstable nitrate %BLANK% they must be stored in climate-controlled vaults far from the reading rooms.",
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'stock, therefore,', B:'stock; therefore,', C:'stock therefore,', D:'stock; therefore'},
       correct:'B',
       expCorrect:'These are two independent sentences and the second opens with the conjunctive adverb "therefore". The correct pattern is: sentence 1 + semicolon + therefore + comma + sentence 2 → "…nitrate stock; therefore, they must…".',
       expWrong:{
-        A:'", therefore," no puede unir dos oraciones completas: sigue siendo comma splice.',
+        A:'“, therefore,” cannot join two complete sentences: it is still a comma splice.',
         C:'The semicolon before “therefore” is missing.',
         D:'It is missing the comma AFTER "therefore".'
       },
@@ -174,7 +174,7 @@ window.SAT_SETS.push({
     },
     {
       id:'PB2-12', type:'mc', domain:'Standard English Conventions', difficulty:'Difícil',
-      skill:'Coma innecesaria entre sujeto y verbo',
+      skill:'Unnecessary comma between subject and verb',
       passage:"The long-held belief that lightning never strikes the same place %BLANK% has been disproven many times over by observations of tall buildings.",
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'twice,', B:'twice', C:'twice;', D:'twice:'},
@@ -182,7 +182,7 @@ window.SAT_SETS.push({
       expCorrect:'The full subject is "The long-held belief that lightning never strikes the same place twice" and its verb is "has been disproven". The "that…" clause is essential (it defines which belief), so it takes no commas, and you never split a subject from its verb.',
       expWrong:{
         A:'A comma between the subject (however long) and "has been disproven" is wrong.',
-        C:'El punto y coma pide oraciones independientes a ambos lados; "has been disproven…" no lo es.',
+        C:'The semicolon requires independent clauses on both sides; “has been disproven…” is not one.',
         D:'The colon would split the subject from its verb, on top of demanding a complete sentence before it.'
       },
       tip:'Long subjects "ask" for a pause when you read them, but grammar ≠ breathing. Find subject + verb and do NOT split them.'

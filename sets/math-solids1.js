@@ -39,7 +39,7 @@
     questions: [
       {
         id:'SOL-01', type:'mc', domain:'Geometry & Trigonometry', difficulty:'Fácil',
-        skill:'Volumen (prisma rectangular)',
+        skill:'Volume (rectangular prism)',
         stem:'A rectangular storage box has a length of 8 inches, a width of 5 inches, and a height of 4 inches. What is the volume, in cubic inches, of the box?',
         choices:{A:'40', B:'160', C:'184', D:'17'},
         correct:'B',
@@ -55,7 +55,7 @@
       },
       {
         id:'SOL-02', type:'mc', domain:'Geometry & Trigonometry', difficulty:'Fácil',
-        skill:'Volumen (cilindro)',
+        skill:'Volume (cylinder)',
         stem:'A cylindrical water tank has a base radius of 4 feet and a height of 9 feet. What is the volume, in cubic feet, of the tank?',
         choices:{A:'36π', B:'72π', C:'144π', D:'576π'},
         correct:'C',
@@ -71,7 +71,7 @@
       },
       {
         id:'SOL-03', type:'mc', domain:'Geometry & Trigonometry', difficulty:'Fácil',
-        skill:'Volumen (esfera)',
+        skill:'Volume (sphere)',
         stem:'A spherical balloon has a radius of 6 centimeters. What is the volume, in cubic centimeters, of the balloon?',
         choices:{A:'288π', B:'144π', C:'216π', D:'48π'},
         correct:'A',
@@ -79,7 +79,7 @@
         expWrong:{
           B:'144π is the SURFACE AREA of the sphere, 4πr² = 4π(36). They want volume, which uses r³ and the 4/3 factor.',
           C:'216π is πr³ without the 4/3 factor. The full formula is (4/3)πr³.',
-          D:'48π sale de (4/3)π(6)²: elevaste al CUADRADO en vez de al cubo. El volumen de la esfera lleva r³.'
+          D:'48π comes from (4/3)π(6)²: you SQUARED instead of cubing. The volume of a sphere uses r³.'
         },
         tip:'Sphere: V = (4/3)πr³ — it is on the Reference Sheet. Check two things: that you used r CUBED and that the 4/3 did not fall out. Quick trick: (4/3)(216) = 4(72) = 288.',
         desmos:'Escribe (4/3)*pi*6^3 en Desmos y te da ≈904.8, que es 288π. Compara: 4*pi*6^2 da 144π, pero esa es el área superficial, no el volumen.',
@@ -87,14 +87,14 @@
       },
       {
         id:'SOL-04', type:'mc', domain:'Geometry & Trigonometry', difficulty:'Fácil',
-        skill:'Volumen (cono)',
+        skill:'Volume (cone)',
         stem:'A right circular cone has a base radius of 5 inches and a height of 12 inches. What is the volume, in cubic inches, of the cone?',
         choices:{A:'300π', B:'20π', C:'150π', D:'100π'},
         correct:'D',
         expCorrect:'Volume of the cone = (1/3)πr²h = (1/3)π(5)²(12) = (1/3)π(25)(12) = (1/3)(300π) = 100π cubic inches.',
         expWrong:{
           A:'300π is the volume of the CYLINDER with the same base and height (πr²h). The cone is missing the 1/3 factor.',
-          B:'20π sale de (1/3)π(5)(12): olvidaste elevar el radio al cuadrado.',
+          B:'20π comes from (1/3)π(5)(12): you forgot to square the radius.',
           C:'150π uses 1/2 instead of 1/3. A cone is exactly ONE THIRD of the cylinder, not half.'
         },
         tip:'A cone is one third of the cylinder with the same base and height: V = (1/3)πr²h. Compute the full πr²h (300π) and divide by 3 at the end: 100π.',
@@ -103,7 +103,7 @@
       },
       {
         id:'SOL-05', type:'mc', domain:'Geometry & Trigonometry', difficulty:'Media',
-        skill:'Volumen → despejar la altura',
+        skill:'Volume → solve for the height',
         stem:'The volume of a right circular cylinder is 250π cubic centimeters. If the radius of the base is 5 centimeters, what is the height, in centimeters, of the cylinder?',
         choices:{A:'50', B:'10', C:'25', D:'2'},
         correct:'B',
@@ -119,7 +119,7 @@
       },
       {
         id:'SOL-06', type:'spr', domain:'Geometry & Trigonometry', difficulty:'Media',
-        skill:'Densidad (masa = densidad × volumen)',
+        skill:'Density (mass = density × volume)',
         stem:'A solid rectangular block of metal measures 10 centimeters by 4 centimeters by 5 centimeters. The density of the metal is 8 grams per cubic centimeter. What is the mass, in grams, of the block? (Mass is equal to density times volume.)',
         answer:'1600',
         expCorrect:'First the volume of the block: 10 × 4 × 5 = 200 cm³. Then, mass = density × volume = 8 g/cm³ × 200 cm³ = 1600 grams. Answer: 1600.',
@@ -139,7 +139,7 @@
         expWrong:{
           A:'72π is only the cylinder. You forgot to add the hemisphere on top, which contributes 18π.',
           B:'81π comes from treating the dome as a CONE of height 3: (1/3)π(9)(3) = 9π. But it is a hemisphere: (2/3)πr³ = 18π.',
-          D:'108π suma la esfera COMPLETA (36π) en vez de la mitad. El domo es media esfera: 18π.'
+          D:'108π adds the WHOLE sphere (36π) instead of half of it. The dome is half a sphere: 18π.'
         },
         tip:'Composite solid = the sum of simple pieces. Hemisphere = (1/2)·(4/3)πr³ = (2/3)πr³. Compute each piece separately and add at the end.',
         desmos:'Escribe pi*3^2*8+(2/3)*pi*3^3 en Desmos y te da ≈282.7, que es 90π. El primer término es el cilindro (72π) y el segundo la semiesfera (18π).',
@@ -147,7 +147,7 @@
       },
       {
         id:'SOL-08', type:'mc', domain:'Geometry & Trigonometry', difficulty:'Media',
-        skill:'Escala y volumen (factor k³)',
+        skill:'Scaling and volume (factor k³)',
         stem:'The radius of sphere B is 3 times the radius of sphere A. The volume of sphere B is how many times the volume of sphere A?',
         choices:{A:'27', B:'9', C:'3', D:'81'},
         correct:'A',
@@ -179,11 +179,11 @@
       },
       {
         id:'SOL-10', type:'mc', domain:'Geometry & Trigonometry', difficulty:'Difícil',
-        skill:'Volumen → despejar el radio (cono)',
+        skill:'Volume → solve for the radius (cone)',
         stem:'A right circular cone has a volume of 96π cubic inches and a height of 8 inches. What is the radius, in inches, of the base of the cone?',
         choices:{A:'36', B:'12', C:'2√3', D:'6'},
         correct:'D',
-        expCorrect:'De V = (1/3)πr²h: 96π = (1/3)πr²(8). Multiplica ambos lados por 3: 288π = 8πr² → r² = 288/8 = 36 → r = 6 pulgadas. (Verifica: (1/3)π(36)(8) = 96π ✓.)',
+        expCorrect:'From V = (1/3)πr²h: 96π = (1/3)πr²(8). Multiply both sides by 3: 288π = 8πr² → r² = 288/8 = 36 → r = 6 inches. (Check: (1/3)π(36)(8) = 96π ✓.)',
         expWrong:{
           A:'36 is r², not r. The last step is missing: take the square root.',
           B:'12 comes from 96/8 without multiplying by 3 (that would be a CYLINDER), and besides it would be r², not r.',
@@ -195,7 +195,7 @@
       },
       {
         id:'SOL-11', type:'spr', domain:'Geometry & Trigonometry', difficulty:'Difícil',
-        skill:'Escala combinada (radio y altura)',
+        skill:'Combined scaling (radius and height)',
         stem:'Cylinder B is obtained from cylinder A by doubling the radius and halving the height. The volume of cylinder B is how many times the volume of cylinder A?',
         answer:'2',
         expCorrect:'V = πr²h. The radius is SQUARED: doubling it multiplies the volume by 2² = 4. The height is linear: halving it multiplies by 1/2. Total effect: 4 × (1/2) = 2. The volume of B is 2 times that of A. Answer: 2.',

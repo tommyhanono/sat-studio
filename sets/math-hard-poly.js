@@ -10,7 +10,7 @@
     questions: [
       {
         id:'HMP-01', type:'mc', domain:'Advanced Math', difficulty:'Difícil',
-        skill:'Ceros y multiplicidad (tocar vs. cruzar)',
+        skill:'Zeros and multiplicity (touch vs. cross)',
         stem:'The polynomial p is defined by p(x) = (x − 3)²(x + 1)(x − 5). At how many distinct values of x does the graph of y = p(x) touch the x-axis without crossing it?',
         choices:{A:'1', B:'2', C:'3', D:'0'},
         correct:'A',
@@ -24,7 +24,7 @@
       },
       {
         id:'HMP-02', type:'mc', domain:'Advanced Math', difficulty:'Difícil',
-        skill:'Comportamiento en los extremos (end behavior)',
+        skill:'End behavior (polynomials)',
         stem:'The function f is defined by f(x) = −2x³ + 5x² − 7. Which statement describes the end behavior of the graph of f?',
         choices:{
           A:'As x → −∞, f(x) → −∞; and as x → +∞, f(x) → +∞',
@@ -43,7 +43,7 @@
       },
       {
         id:'HMP-03', type:'mc', domain:'Advanced Math', difficulty:'Difícil',
-        skill:'Teorema del residuo',
+        skill:'Remainder theorem',
         stem:'When the polynomial p(x) = 2x³ − 3x² + kx − 5 is divided by (x − 2), the remainder is 7. What is the value of the constant k?',
         choices:{A:'2', B:'3', C:'4', D:'6'},
         correct:'C',
@@ -57,7 +57,7 @@
       },
       {
         id:'HMP-04', type:'mc', domain:'Advanced Math', difficulty:'Difícil',
-        skill:'Teorema del factor',
+        skill:'Factor theorem',
         stem:'The expression (x + 3) is a factor of the polynomial p(x) = x³ + 2x² − 5x + c, where c is a constant. What is the value of c?',
         choices:{A:'6', B:'12', C:'−3', D:'−6'},
         correct:'D',
@@ -78,7 +78,7 @@
         expCorrect:'Factor the top and the bottom: x² − 9 = (x − 3)(x + 3) and x² − x − 6 = (x − 3)(x + 2). The common factor (x − 3) cancels, leaving (x + 3)/(x + 2). (Check with x = 0: original = −9/−6 = 3/2; simplified = 3/2 ✓.)',
         expWrong:{
           A:'(x − 3)/(x + 2) cancels the wrong factor: what cancels is (x − 3), not (x + 3). The top is left with (x + 3).',
-          B:'(x − 3)/(x − 2) factoriza mal el denominador; x² − x − 6 = (x − 3)(x + 2), no (x − 2)(algo).',
+          B:'(x − 3)/(x − 2) factors the denominator wrong; x² − x − 6 = (x − 3)(x + 2), not (x − 2)(something).',
           D:'(x + 3)/(x − 2) has the wrong denominator: the factor left on the bottom is (x + 2), not (x − 2).'
         },
         tip:'Factor the numerator and denominator separately, and cancel ONLY identical factors. Difference of squares: x² − 9 = (x − 3)(x + 3).'
@@ -107,7 +107,7 @@
         expWrong:{
           A:'729x⁴ squares 27 (27² = 729) without taking the cube root first. The 2/3 is a cube root and then a square: 27^(2/3) = 9.',
           B:'18x⁴ multiplies 27 · (2/3) = 18, treating the exponent as a factor. Exponents do not multiply the base like that.',
-          C:'9x⁹ multiplica los exponentes de x mal: 6 · (2/3) = 4, no 9.'
+          C:'9x⁹ multiplies the exponents of x wrong: 6 · (2/3) = 4, not 9.'
         },
         tip:'a^(m/n) = the nth root of a, raised to m. Distribute the exponent to each factor. With powers of x, multiply the exponents: (x⁶)^(2/3) = x⁴.'
       },
@@ -119,7 +119,7 @@
         correct:'B',
         expCorrect:'When dividing powers of the same base you subtract exponents. For x: −3 − (−5) = −3 + 5 = 2, so x². For y: 2 − (−1) = 3, so y³. The result is x²y³. (Check with x = y = 2: top 2⁻³·2² = 2⁻¹ = 1/2; bottom 2⁻⁵·2⁻¹ = 2⁻⁶ = 1/64; quotient = 64/2 = 32 = 2⁵ = x²y³ since 2²·2³ = 2⁵ ✓.)',
         expWrong:{
-          A:'x⁸y suma los exponentes de x (−3 + 5 = ... da 2, no 8) y maneja mal la y. Al dividir se RESTAN: −3 − (−5) = 2.',
+          A:'x⁸y adds the exponents of x (−3 + 5 = ... gives 2, not 8) and mishandles the y. When dividing you SUBTRACT: −3 − (−5) = 2.',
           C:'y³/x⁸ leaves the x in the denominator with exponent 8; but −3 − (−5) = +2, so the x moves up to the numerator as x².',
           D:'x²y drops the sign on the y exponent: 2 − (−1) = 3, so it is y³, not y.'
         },

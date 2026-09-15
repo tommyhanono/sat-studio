@@ -40,7 +40,7 @@
         expCorrect:'Volume = (4/3)πr³ = 288π → r³ = 288·(3/4) = 216 → r = 6. Surface area = 4πr² = 4π(6²) = 4π(36) = 144π.',
         expWrong:{
           A:'36π is πr² = π(36): only the area of ONE great circle, forgetting the sphere’s factor of 4.',
-          C:'72π es 2πr². La superficie de una esfera es 4πr², no 2πr².',
+          C:'72π is 2πr². The surface area of a sphere is 4πr², not 2πr².',
           D:'216π uses r³ = 216 straight as the answer; that number is an intermediate step for finding r, not the area.'
         },
         tip:'With spheres, always get the radius from the volume first: from (4/3)πr³ solve for r³ and then r. With r in hand, apply 4πr². Both formulas are on the Reference Sheet.'
@@ -66,7 +66,7 @@
         stem:'The right circular cone shown has a base radius of 6 and a height of 8. What is the volume of the cone?',
         choices:{A:'96π', B:'288π', C:'144π', D:'128π'},
         correct:'A',
-        expCorrect:'Volumen del cono = (1/3)πr²h = (1/3)π(6²)(8) = (1/3)π(36)(8) = (1/3)(288π) = 96π.',
+        expCorrect:'Cone volume = (1/3)πr²h = (1/3)π(6²)(8) = (1/3)π(36)(8) = (1/3)(288π) = 96π.',
         expWrong:{
           B:'288π is πr²h, the CYLINDER formula. The cone is a third of that: you forgot to multiply by 1/3.',
           C:'144π uses (1/2)πr²h. The cone factor is 1/3, not 1/2.',

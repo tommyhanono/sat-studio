@@ -59,7 +59,7 @@
       },
       {
         id:'XD-02', type:'mc', domain:'Problem-Solving & Data Analysis', difficulty:'Difícil', extreme:true,
-        skill:'Tabla de doble entrada: llenar celdas desde totales',
+        skill:'Two-way table: filling in cells from the totals',
         stem:'A survey asked 200 adults whether they own a dog and whether they own a cat. The results are partially shown in the table below.' + TBL_PETS + 'If one of the surveyed adults who owns a dog is selected at random, what is the probability that the adult also owns a cat?',
         choices:{A:'3/20', B:'3/8', C:'1/3', D:'2/5'},
         correct:'C',
@@ -75,7 +75,7 @@
       },
       {
         id:'XD-03', type:'mc', domain:'Problem-Solving & Data Analysis', difficulty:'Difícil', extreme:true,
-        skill:'Probabilidad condicional P(X | Y o Z) con celda faltante',
+        skill:'Conditional probability P(X | Y or Z) with a missing cell',
         stem:'A factory uses three machines, A, B, and C, to produce 1,000 parts in one day. The incomplete table below classifies the parts by machine and by whether they were found to be defective.' + TBL_MACHINES + 'If one part is selected at random from the parts produced by machine B or machine C, what is the probability that the part is defective?',
         choices:{A:'1/20', B:'1/40', C:'1/25', D:'5/8'},
         correct:'A',
@@ -91,7 +91,7 @@
       },
       {
         id:'XD-04', type:'mc', domain:'Problem-Solving & Data Analysis', difficulty:'Difícil', extreme:true,
-        skill:'Condicional inversa: condicionar sobre la columna',
+        skill:'Reverse conditional: conditioning on the column',
         stem:'The incomplete table below shows the results of a satisfaction survey given to 150 customers of a store.' + TBL_CUSTOMERS + 'If one of the customers who reported being satisfied is selected at random, what is the probability that the customer is under 40 years old?',
         choices:{A:'3/10', B:'9/14', C:'7/10', D:'3/7'},
         correct:'D',
@@ -139,7 +139,7 @@
       },
       {
         id:'XD-07', type:'spr', domain:'Problem-Solving & Data Analysis', difficulty:'Difícil', extreme:true,
-        skill:'Media: quitar un valor de la lista',
+        skill:'Mean: removing a value from the list',
         stem:'The mean of a list of 15 numbers is 62. When one number is removed from the list, the mean of the remaining 14 numbers is 59. What is the value of the number that was removed?',
         answer:'104',
         expCorrect:'Original total sum: 15 × 62 = 930. Sum after removing the value: 14 × 59 = 826. The number removed is the difference of the sums: 930 − 826 = 104. It makes sense: removing a value well ABOVE the mean pulls the mean down.',
@@ -150,7 +150,7 @@
       },
       {
         id:'XD-08', type:'spr', domain:'Problem-Solving & Data Analysis', difficulty:'Difícil', extreme:true,
-        skill:'Media ponderada: hallar el valor desconocido agregado',
+        skill:'Weighted mean: finding the unknown added value',
         stem:'A student’s first 8 quiz scores have a mean of 76. The student then takes 2 more quizzes and earns the same score, x, on each. If the mean of all 10 quiz scores is 79, what is the value of x?',
         answer:'91',
         expCorrect:'Sum of the first 8: 8 × 76 = 608. Equation with the total sum: (608 + 2x)/10 = 79 → 608 + 2x = 790 → 2x = 182 → x = 91. Check: (608 + 182)/10 = 790/10 = 79 ✓.',
@@ -219,7 +219,7 @@
       },
       {
         id:'XD-12', type:'spr', domain:'Problem-Solving & Data Analysis', difficulty:'Difícil', extreme:true,
-        skill:'Cadena de tres porcentajes: hallar el valor original',
+        skill:'Chain of three percentages: finding the original value',
         stem:'The population of a town increased by 25% during its first decade, decreased by 20% during its second decade, and then increased by 10% during its third decade. If the population at the end of the third decade was 3,300, what was the population at the beginning of the first decade?',
         answer:'3000',
         expCorrect:'Multipliers: +25% → 1.25; −20% → 0.80; +10% → 1.10. Product: 1.25 × 0.80 × 1.10 = 1.10. If p is the initial population: 1.10p = 3300 → p = 3300/1.10 = 3000. Check forward: 3000 → 3750 → 3000 → 3300 ✓. Notice that +25% and −20% cancel exactly (1.25 × 0.8 = 1).',

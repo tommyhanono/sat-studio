@@ -32,7 +32,7 @@
         expWrong:{
           A:'h(1) = 2(1) − 5 = −3, no 13.',
           B:'h(2) = 2(4) − 5 = 3, not 13. Careful: h(2) = 3 is not the same as h⁻¹(13) = 3.',
-          D:'h(4) = 2(16) − 5 = 27, no 13. Revisa el despeje: 2x² = 18, no 32.'
+          D:'h(4) = 2(16) − 5 = 27, not 13. Check your work: 2x² = 18, not 32.'
         },
         tip:'For h⁻¹(y) you do not need the inverse formula: solve the equation h(x) = y. And for the composite, work from the inside out: g first, then f.'
       },

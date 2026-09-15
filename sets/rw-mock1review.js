@@ -194,7 +194,7 @@ window.SAT_SETS.push({
     },
     {
       id:'M1V-11', type:'mc', domain:'Standard English Conventions', difficulty:'Media',
-      skill:'Posesivos',
+      skill:'Possessives',
       passage:"Although the hive holds tens of thousands of workers, a single %BLANK% survival through the winter determines whether the whole colony will last until spring.",
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'queen’s', B:'queens', C:'queens’', D:'queen'},
@@ -209,7 +209,7 @@ window.SAT_SETS.push({
     },
     {
       id:'M1V-12', type:'mc', domain:'Standard English Conventions', difficulty:'Difícil',
-      skill:'Concordancia sujeto-verbo',
+      skill:'Subject-verb agreement',
       passage:"The collection of rare stamps that the two brothers inherited from their grandfather %BLANK% now worth more than the house in which it is stored.",
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'are', B:'were', C:'have been', D:'is'},

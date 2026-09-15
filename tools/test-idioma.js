@@ -19,17 +19,37 @@ const fs = require('fs');
 const path = require('path');
 const RAIZ = path.resolve(__dirname, '..');
 
-/* Detector de español. Sensible a propósito: es mejor marcar de más (y traducir
-   a sí mismo un texto que ya estaba en inglés) que dejar pasar contenido en
-   español. La primera versión era demasiado permisiva y dejó 248 campos sin
-   traducir porque las etiquetas cortas no traen palabras funcionales. */
-const PERMITIDOS = /Inés|Ibáñez|Bogotá|café|Perú|México|Nicolás|Ada Rourke|naïve|résumé|Zaha|José|García|Amara|Petrova|\b(?:sin|cos|tan|sec|csc|cot)\s*[²³]?\s*[(θA-Za-z0-9]|\b(?:sin|cos|tan)\s*[²³]|\bet\s+al\b|SOHCAHTOA/g;
-/* Palabras y terminaciones que no existen en inglés. Una sola basta. */
-const ES_FUERTE = /\b(los|las|una|unos|unas|del|que|por|para|como|cuando|donde|porque|entre|sobre|desde|hasta|hacia|según|durante|mientras|aunque|también|tampoco|siempre|nunca|cada|toda|todos|todas|otra|otros|otras|mismo|misma|tanto|son|era|fue|ser|estar|está|están|tiene|tienen|puede|pueden|hace|hacen|dice|dicen|queda|quedan|salen|más|menos|muy|pero|aquí|esto|eso|este|esta|ese|esa|estos|estas|esos|esas|sus|les|así|solo|sólo|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|primero|segunda|segundo|tercera|tercero|nada|algo|alguien|nadie|cual|cuál|quien|quién|cuyo|cuya|ambos|ambas|varios|varias|mucho|mucha|muchos|muchas|poco|poca|pocos|pocas)\b|\b\w+(ción|ciones|dad|tad|mente|miento|mientos|anza|encia|ancia|aje|ísimo|ería|ando|endo|arse|erse|irse)\b|\b(ecuaci\w*|exponencial\w*|iguales|cuadr[áa]tic\w*|ra[íi]c\w*|ra[íi]z|despeje|pendiente|recta|rectas|circunferencia|tri[áa]ngulo\w*|volumen|posesiv\w*|verbo\w*|oraci\w*|palabra\w*|pregunta\w*|respuesta\w*|nivel\w*|f[áa]cil|dif[íi]cil|simulacro|n[úu]cleo|banco|coma|comas|sujeto|signo|signos|valor|valores|n[úu]mero\w*|suma|resta|divide|multiplica|elevar|elevado|entero|enteros|cateto\w*|hipotenusa|[áa]ngulo\w*|lado|lados|altura|radio|di[áa]metro|[áa]rea|gr[áa]fica|tabla|texto|opci[óo]n\w*)\b/i;
+/* Detector de español. Dos reglas y las dos son DEFINITIVAS: un solo acierto
+   basta. La versión anterior era "sensible a propósito" y eso resultó ser un
+   error de diseño: metía en la lista palabras que también son inglesas (son,
+   era, solo, area, radio, coma, error, divide, sale, dice, valor) y sufijos que
+   chocan con el inglés (-arse en "parse", -erse en "universe", -ando en
+   "commando", -endo en "crescendo", -anza en "bonanza"). Con el banco ya
+   traducido marcaba 228 campos que estaban perfectos en inglés, así que como
+   compuerta permanente no servía: nunca iba a poder quedar en verde.
+
+   Ahora la lista es SOLO palabras que no existen en inglés. Lo que un regex no
+   puede ver —una frase corta en español sin ninguna de estas palabras— lo cubre
+   la revisión semántica que se hizo sobre las 786 preguntas; esto es la red que
+   evita que vuelva a entrar español sin que nadie se dé cuenta. */
+
+/* Nombres propios y notación que llevan acento o parecen españoles y no lo son. */
+const PERMITIDOS = /Inés|Ibáñez|Bogotá|café|Perú|México|Nicolás|Ada Rourke|naïve|résumé|Zaha|José|García|Amara|Petrova|Los Angeles|Las Vegas|La Niña|El Niño|\bLos\b(?=\s+[A-Z])|\bLas\b(?=\s+[A-Z])|\b(?:sin|cos|tan|sec|csc|cot)\s*[²³]?\s*[(θA-Za-z0-9]|\b(?:sin|cos|tan)\s*[²³]|\bet\s+al\b|SOHCAHTOA/g;
+
+/* Palabras que NO existen en inglés. Cada una se verificó una por una: las que
+   son homógrafas del inglés están fuera a propósito y se listan arriba. */
+const ES_PALABRAS = /\b(los|las|una|unos|unas|del|que|por|para|como|cuando|donde|porque|entre|desde|hasta|hacia|durante|mientras|aunque|tampoco|siempre|nunca|toda|todo|todos|todas|otra|otro|otros|otras|mismo|misma|tanto|tiene|tienen|puede|pueden|hace|hacen|dicen|queda|quedan|salen|fue|pero|esto|eso|este|esta|ese|esa|estos|estas|esos|esas|sus|les|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|primero|primera|segundo|segunda|tercero|tercera|alguien|nadie|ninguno|ninguna|cual|cuyo|cuya|ambos|ambas|varios|varias|mucho|mucha|muchos|muchas|poco|poca|pocos|pocas|menos|muy|cada|nada|hay|siguiente|siguientes)\b/i;
+
+/* Vocabulario del banco en español, sin acentos (con acento ya cae por la otra regla). */
+const ES_VOCAB = /\b(ecuacion\w*|ecuaciones|exponencial\w*|iguales|cuadratic\w*|raices|despeje|pendiente|recta|rectas|circunferencia|triangul\w*|volumen|posesiv\w*|verbo|verbos|oraciones|palabra|palabras|pregunta|preguntas|respuesta|respuestas|nivel|niveles|facil|dificil|dificultad|simulacro|nucleo|banco|sujeto|sujetos|signo|signos|valores|numeros|suma|resta|multiplica|elevar|elevado|entero|enteros|cateto|catetos|hipotenusa|angulo|angulos|lado|lados|altura|diametro|grafica|graficas|tabla|texto|opcion|opciones|dominio|correcto|correcta|correctas|incorrect[ao]|resuelve|resolver|calcula|calcular|sustituye|sustituir|factoriza|simplifica|verifica|ejemplo|ejemplos|cuenta|cuentas|errores|servidor|correo|guardar|cargar|secciones|seccion|estudiante|estudiantes|puntaje|examen|prueba|pruebas|semana|semanas|meta|fecha|fechas|repaso|practica|practicar)\b/i;
+
+/* Terminaciones que no chocan con ninguna palabra inglesa. */
+const ES_SUFIJOS = /\b\w{2,}(ciones|idad|edad|miento|mientos|encia|ancia)\b|\b\w{3,}mente\b|\b\w{3,}aje\b/i;
+
 function esEspanol(t) {
   const limpio = String(t).replace(PERMITIDOS, '');
   if (/[áéíóúñ¿¡]/i.test(limpio)) return true;
-  return ES_FUERTE.test(limpio);
+  return ES_PALABRAS.test(limpio) || ES_VOCAB.test(limpio) || ES_SUFIJOS.test(limpio);
 }
 
 /* ---------- 1. el banco ---------- */

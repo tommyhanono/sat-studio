@@ -48,12 +48,12 @@
       },
       {
         id:'GE2-02', type:'mc', domain:'Geometry & Trigonometry', difficulty:'Fácil',
-        skill:'Volumen del cono',
+        skill:'Volume of a cone',
         figure: FIG_CONE,
         stem:'A right circular cone has a base radius of 3 and a height of 4. What is the volume of the cone?',
         choices:{A:'12π', B:'36π', C:'48π', D:'16π'},
         correct:'A',
-        expCorrect:'Volumen del cono = (1/3)πr²h = (1/3)π(3)²(4) = (1/3)π(9)(4) = (1/3)(36π) = 12π.',
+        expCorrect:'Volume of the cone = (1/3)πr²h = (1/3)π(3)²(4) = (1/3)π(9)(4) = (1/3)(36π) = 12π.',
         expWrong:{
           B:'36π is πr²h without the (1/3) factor: that would be the volume of a CYLINDER with the same radius and height. A cone is one third of that.',
           C:'48π squares the height or mixes up the numbers; the formula is (1/3)πr²h with r=3, h=4.',
@@ -112,9 +112,9 @@
         correct:'D',
         expCorrect:'SOHCAHTOA: tan θ = opposite / adjacent = 7/24. (The hypotenuse would be √(7²+24²)=√625=25, but the tangent does not use it.)',
         expWrong:{
-          A:'7/25 es sin θ (opuesto/hipotenusa), usando la hipotenusa 25. La tangente NO usa la hipotenusa.',
+          A:'7/25 is sin θ (opposite/hypotenuse), using the hypotenuse 25. The tangent does NOT use the hypotenuse.',
           B:'24/7 is the reciprocal: adjacent/opposite. That would be 1/tan θ (the cotangent), not tan θ.',
-          C:'24/25 es cos θ (adyacente/hipotenusa). Te piden la tangente, que es opuesto/adyacente.'
+          C:'24/25 is cos θ (adjacent/hypotenuse). They are asking for the tangent, which is opposite/adjacent.'
         },
         tip:'Tangent = Opposite / Adjacent (the T in TOA). You do not need the hypotenuse for the tangent. Watch the order: opposite ON TOP, adjacent below.'
       },
@@ -148,10 +148,10 @@
       },
       {
         id:'GE2-09', type:'spr', domain:'Geometry & Trigonometry', difficulty:'Difícil',
-        skill:'Volumen de la esfera',
+        skill:'Volume of a sphere',
         stem:'A sphere has a radius of 3. What is the volume of the sphere, in terms of π? (Enter your answer as the coefficient of π. For example, if the volume is 10π, enter 10.)',
         answer:'36',
-        expCorrect:'Volumen de la esfera = (4/3)πr³ = (4/3)π(3)³ = (4/3)π(27) = (4 × 27)/3 × π = 108/3 × π = 36π. El coeficiente de π es 36.',
+        expCorrect:'Volume of the sphere = (4/3)πr³ = (4/3)π(3)³ = (4/3)π(27) = (4 × 27)/3 × π = 108/3 × π = 36π. The coefficient of π is 36.',
         expWrong:{},
         tip:'Sphere: V = (4/3)πr³ (the radius is CUBED, not squared). It is on the Reference Sheet. With r = 3: 3³ = 27, and (4/3)(27) = 36.'
       },
@@ -178,7 +178,7 @@
         expCorrect:'The diagonal of a square with side s is s√2 (from the 45-45-90). Here s√2 = 10√2, so s = 10. Area = s² = 10² = 100.',
         expWrong:{
           B:'200 squares the diagonal: (10√2)² = 200. But that is twice the area; the area is s², with s = 10, not the diagonal squared.',
-          C:'50 sale de tomar la mitad de la diagonal al cuadrado de forma incorrecta o de usar (1/2)d·d mal aplicado.',
+          C:'50 comes from taking half the diagonal squared incorrectly, or from misapplying (1/2)d·d.',
           D:'100√2 mixes up the side with the diagonal; the area of a square is a whole number of units², with no √2 here.'
         },
         tip:'Diagonal of a square = side × √2. Solve for the side first (divide the diagonal by √2), THEN square it for the area. Do not square the diagonal directly.'

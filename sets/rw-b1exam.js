@@ -206,7 +206,7 @@ window.SAT_SETS.push({
       correct:'B',
       expCorrect:'The first sentence praises the panels (electricity without burning fuel); the second presents a downside (their manufacture has environmental costs). That contrast calls for "however".',
       expWrong:{
-        A:'“Therefore” marca consecuencia, pero la segunda idea no es un resultado de la primera; es un contrapunto.',
+        A:'“Therefore” signals a consequence, but the second idea is not a result of the first; it is a counterpoint.',
         C:'"For example" announces an example of what came before, and the manufacturing cost does not exemplify what is good about the panel: it contradicts it.',
         D:'"Likewise" adds something similar, but here the ideas CLASH, they are not alike.'
       },

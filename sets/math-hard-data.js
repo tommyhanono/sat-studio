@@ -10,7 +10,7 @@
     questions: [
       {
         id:'HMD-01', type:'mc', domain:'Problem-Solving & Data Analysis', difficulty:'Difícil',
-        skill:'Porcentajes (porcentaje inverso / hallar el original)',
+        skill:'Percentages (reverse percent / finding the original)',
         stem:'After a 25% discount, the sale price of a bicycle is $90. What was the original price of the bicycle, before the discount?',
         choices:{A:'$67.50', B:'$120.00', C:'$112.50', D:'$115.00'},
         correct:'B',
@@ -24,7 +24,7 @@
       },
       {
         id:'HMD-02', type:'mc', domain:'Problem-Solving & Data Analysis', difficulty:'Difícil',
-        skill:'Porcentajes (dos cambios porcentuales sucesivos)',
+        skill:'Percentages (two successive percent changes)',
         stem:'The number of subscribers to a channel increased by 30% during one year and then decreased by 20% the following year. Over these two years, the number of subscribers changed by what percent, compared with the original number?',
         choices:{
           A:'It increased by 4%.',
@@ -43,7 +43,7 @@
       },
       {
         id:'HMD-03', type:'mc', domain:'Problem-Solving & Data Analysis', difficulty:'Difícil',
-        skill:'Probabilidad condicional (tabla de doble entrada)',
+        skill:'Conditional probability (two-way table)',
         stem:'A group of 200 people were asked whether they prefer shopping online or in-store. The results are shown in the two-way table below, organized by age group.<br><br>Under 40 — Online: 84, In-store: 36, Total: 120<br>40 or older — Online: 28, In-store: 52, Total: 80<br>Total — Online: 112, In-store: 88, Total: 200<br><br>If one of the 200 people is selected at random and that person prefers shopping online, what is the probability that the person is under 40 years old?',
         choices:{A:'0.42', B:'0.56', C:'0.75', D:'0.70'},
         correct:'C',
@@ -109,7 +109,7 @@
       },
       {
         id:'HMD-07', type:'mc', domain:'Problem-Solving & Data Analysis', difficulty:'Difícil',
-        skill:'Probabilidad condicional (tabla de doble entrada)',
+        skill:'Conditional probability (two-way table)',
         stem:'A total of 300 people who watched a movie were asked whether they liked it, categorized by whether they had read the book first. The two-way table below shows the results.<br><br>Read the book — Liked: 120, Did not like: 30, Total: 150<br>Did not read the book — Liked: 60, Did not like: 90, Total: 150<br>Total — Liked: 180, Did not like: 120, Total: 300<br><br>If one of these 300 people who did NOT read the book is selected at random, what is the probability that the person liked the movie?',
         choices:{A:'0.20', B:'0.33', C:'0.40', D:'0.60'},
         correct:'C',
@@ -123,7 +123,7 @@
       },
       {
         id:'HMD-08', type:'mc', domain:'Algebra', difficulty:'Difícil',
-        skill:'Sistemas de ecuaciones lineales (infinitas soluciones)',
+        skill:'Systems of linear equations (infinitely many solutions)',
         stem:'The system of equations below has infinitely many solutions.<br><br>6x + 4y = 10<br>3x + 2y = c<br><br>What is the value of the constant c?',
         choices:{A:'2', B:'2.5', C:'10', D:'5'},
         correct:'D',
@@ -137,7 +137,7 @@
       },
       {
         id:'HMD-09', type:'mc', domain:'Algebra', difficulty:'Difícil',
-        skill:'Sistemas de ecuaciones lineales (problema en palabras)',
+        skill:'Systems of linear equations (word problem)',
         stem:'At a concession stand, 3 hot dogs and 2 drinks cost $16, and 2 hot dogs and 4 drinks cost $16. What is the price, in dollars, of one hot dog?',
         choices:{A:'$4', B:'$2', C:'$3', D:'$5'},
         correct:'A',
@@ -165,7 +165,7 @@
       },
       {
         id:'HMD-11', type:'spr', domain:'Problem-Solving & Data Analysis', difficulty:'Difícil',
-        skill:'Porcentajes (porcentaje inverso / hallar el original)',
+        skill:'Percentages (reverse percent / finding the original)',
         stem:'After a 15% increase, a gym now has 460 members. How many members did the gym have before the increase?',
         answer:'400',
         expCorrect:'Raising by 15% means multiplying by 1.15. If M is the original amount, M × 1.15 = 460, so M = 460 / 1.15 = 400. (Check: 400 × 1.15 = 460 ✓.) Answer: 400.',
@@ -174,7 +174,7 @@
       },
       {
         id:'HMD-12', type:'spr', domain:'Algebra', difficulty:'Difícil',
-        skill:'Sistemas de ecuaciones lineales (problema en palabras)',
+        skill:'Systems of linear equations (word problem)',
         stem:'A vendor sells small candles for $6 each and large candles for $10 each. One day the vendor sold 40 candles for a total of $312. How many large candles were sold that day?',
         answer:'18',
         expCorrect:'Let s be the number of small candles and g the large ones: s + g = 40 and 6s + 10g = 312. From the first, s = 40 − g. Substitute: 6(40 − g) + 10g = 312 → 240 − 6g + 10g = 312 → 240 + 4g = 312 → 4g = 72 → g = 18. (Check: small = 22, and 22 × 6 + 18 × 10 = 132 + 180 = 312 ✓.) Answer: 18.',

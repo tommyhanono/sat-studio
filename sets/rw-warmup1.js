@@ -104,7 +104,7 @@ window.SAT_SETS.push({
     },
     {
       id:'VW1-06', type:'mc', domain:'Standard English Conventions', difficulty:'Media',
-      skill:'Punctuation (elemento no esencial, comas en pareja)',
+      skill:'Punctuation (nonessential element, paired commas)',
       passage:"The Voyager 1 probe, launched in %BLANK% is now the most distant human-made object from Earth.",
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'1977', B:'1977,', C:'1977;', D:'1977:'},
@@ -209,9 +209,9 @@ window.SAT_SETS.push({
       correct:'C',
       expCorrect:'The clue after the colon defines the word: "nothing exaggerated or softened, every detail drawn from reality". That is a portrayal true to life, so "faithful" is the precise word.',
       expWrong:{
-        A:'“whimsical” (caprichoso, fantasioso) choca con “sacado directamente de la realidad”.',
+        A:'“whimsical” (fanciful, playful) clashes with “taken directly from reality”.',
         B:'"nostalgic" adds an emotion the text never mentions; the focus is accuracy, not longing.',
-        D:'“ambiguous” (ambiguo) contradice la pista: si nada se exagera ni suaviza y todo viene de la realidad, no hay ambigüedad.'
+        D:'“ambiguous” contradicts the clue: if nothing is exaggerated or softened and everything comes from reality, there is no ambiguity.'
       },
       tip:'When there is a colon, what follows almost always DEFINES the blank. Here "nothing exaggerated… drawn from reality" = true to life → "faithful".'
     }

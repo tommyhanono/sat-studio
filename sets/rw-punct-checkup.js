@@ -146,7 +146,7 @@ window.SAT_SETS.push({
     },
     {
       id:'PCU-10', type:'mc', domain:'Standard English Conventions', difficulty:'Media',
-      skill:'Posesivos', cheat:'possessive',
+      skill:'Possessives', cheat:'possessive',
       passage:"The researchers followed forty families for a decade, documenting how the %BLANK% grocery budgets shifted as their children became teenagers.",
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'families’', B:'family’s', C:'families', D:'familys’'},

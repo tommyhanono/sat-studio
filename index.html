@@ -25,7 +25,7 @@
   /* Un dedo no acierta a 32 px: 44x44 es el minimo que recomienda WCAG 2.2.
      Y un input por debajo de 16 px hace que iOS haga zoom solo al enfocarlo. */
   .btn-primary,.btn-outline,.mini,.danger-link,.set-actions button,.pt-home-btns button,
-  .home-sec summary,.plan-op,.auth-guest,.uc-out,.uc-admin,#btn-mock-rw,#btn-mock-math,#btn-start-mock{min-height:44px}
+  .home-sec summary,.plan-op,.uc-out,.uc-admin,#btn-mock-rw,#btn-mock-math,#btn-start-mock{min-height:44px}
   .set-actions button,.pt-home-btns button{padding-top:11px;padding-bottom:11px}
   input,select,textarea{font-size:16px}
   .home-sec summary{display:flex;align-items:center;gap:8px}
@@ -370,21 +370,16 @@
   .auth-two{display:flex;gap:10px}
   .auth-two > div{flex:1;min-width:0}
   .auth-hint{font-size:.78rem;color:var(--gray-mid);margin-top:8px;line-height:1.5}
-  .auth-or{display:flex;align-items:center;gap:10px;margin:16px 0 12px;color:var(--gray-mid);font-size:.8rem}
-  .auth-or::before,.auth-or::after{content:'';flex:1;height:1px;background:var(--gray-line)}
-  .auth-guest{width:100%;min-height:44px;background:none;border:1px dashed var(--gray-line);border-radius:999px;padding:11px 18px;color:var(--blue-dark);font-size:.88rem;font-weight:600;font-family:var(--sans)}
-  .auth-guest:hover{border-color:var(--blue);background:var(--blue-soft)}
   .exam-bar{display:flex;gap:12px;align-items:center;flex-wrap:wrap;background:#fff;border:1px solid var(--gray-line);border-radius:10px;padding:12px 16px;margin-bottom:20px;font-size:.86rem}
   .exam-bar label{display:flex;align-items:center;gap:6px}
   .exam-bar input{border:1px solid var(--gray-line);border-radius:8px;padding:9px 12px;font-family:var(--sans);font-size:16px;min-height:44px}
   .exam-bar input:focus{outline:3px solid #8fa2ef;outline-offset:1px}
   .exam-bar-note{color:var(--gray-mid);flex:1;min-width:220px}
-  .guest-bar{display:flex;gap:12px;align-items:center;flex-wrap:wrap;background:#fff8e6;border:1px solid #f0d9a0;border-radius:10px;padding:12px 16px;margin-bottom:20px;font-size:.86rem;color:#6b4e00}
-  .guest-bar b{color:#4a3600}
-  .guest-bar button{margin-left:auto;min-height:44px;background:var(--blue);color:#fff;border:none;border-radius:999px;padding:10px 20px;font-size:.84rem;font-weight:600;font-family:var(--sans)}
   #view-auth{min-height:100vh;display:flex;align-items:center;justify-content:center;background:#f7f8fc;padding:28px 18px}
   .auth-card{width:100%;max-width:400px;background:#fff;border:1px solid var(--gray-line);border-radius:16px;padding:30px 26px;box-shadow:0 10px 40px rgba(20,30,60,.08)}
-  .auth-card .brand{margin-bottom:6px}
+  .auth-card .brand{display:block;margin-bottom:8px}
+  .auth-card .brand .brand-h{font-size:1.65rem;line-height:1.05;margin:0}
+  .auth-card .brand .tag{display:block;margin-top:5px}
   .auth-sub{color:var(--gray-mid);font-size:.9rem;margin:0 0 18px}
   .auth-lbl{display:block;font-size:.76rem;font-weight:700;color:var(--gray-mid);text-transform:uppercase;letter-spacing:.02em;margin:12px 0 5px}
   .auth-inp{min-height:44px;font-size:16px;width:100%;border:1px solid var(--gray-line);border-radius:10px;padding:11px 13px;font-size:.95rem;box-sizing:border-box}
@@ -738,13 +733,22 @@
 <div id="view-auth" class="hidden">
   <div class="auth-card">
     <div class="brand"><p class="brand-h">SAT Studio</p><span class="tag">Your progress, in the cloud</span></div>
-    <p class="auth-sub">Sign in or create your account to save your history and see it from any device.</p>
+    <p class="auth-sub">Create your account with your school email. Your history follows you to any device.</p>
     <label class="auth-lbl" for="auth-name">Name (optional)</label>
     <input id="auth-name" class="auth-inp" type="text" autocomplete="name" placeholder="Your name">
-    <label class="auth-lbl" for="auth-email">Email</label>
-    <input id="auth-email" class="auth-inp" type="email" autocomplete="email" placeholder="tucorreo@ejemplo.com">
+    <label class="auth-lbl" for="auth-email">School email</label>
+    <input id="auth-email" class="auth-inp" type="email" autocomplete="email" placeholder="you@iae.edu">
     <label class="auth-lbl" for="auth-pass">Password</label>
-    <input id="auth-pass" class="auth-inp" type="password" autocomplete="current-password" placeholder="At least 6 characters">
+    <input id="auth-pass" class="auth-inp" type="password" autocomplete="current-password" placeholder="At least 8 characters">
+
+    <div id="auth-extra" class="auth-extra hidden">
+      <label class="auth-lbl" for="auth-target">Target score</label>
+      <input id="auth-target" class="auth-inp" type="number" min="400" max="1600" step="10" inputmode="numeric" placeholder="1500">
+      <label class="auth-lbl" for="auth-exam">Test date</label>
+      <input id="auth-exam" class="auth-inp" type="date">
+      <p class="auth-hint">Both are optional, and you can change them later under Progress.</p>
+    </div>
+
     <div id="auth-msg" class="auth-msg hidden"></div>
     <div class="auth-actions">
       <button id="auth-login-btn" class="btn-primary">Sign in</button>
@@ -758,9 +762,6 @@
       <input id="auth-pass2" class="auth-inp" type="password" autocomplete="new-password" placeholder="At least 8 characters">
       <button id="auth-savepass" class="btn-primary">Save and sign in</button>
     </div>
-
-    <div class="auth-or"><span>o</span></div>
-    <button id="auth-guest-btn" class="auth-guest" type="button">Entrar sin cuenta y ver la app →</button>
 
   </div>
 </div>

@@ -44,7 +44,7 @@
       },
       {
         id:'AL3-02', type:'mc', domain:'Algebra', difficulty:'Media',
-        skill:'Ecuaciones lineales (dos variables, despeje)',
+        skill:'Linear equations (two variables, solving for one)',
         stem:'The equation 5x − 2y = 20 relates the quantities x and y. Which of the following expresses y in terms of x ?',
         choices:{A:'y = (5/2)x − 10', B:'y = (5/2)x + 10', C:'y = 10 − (5/2)x', D:'y = (2/5)x − 10'},
         correct:'A',
@@ -60,14 +60,14 @@
       },
       {
         id:'AL3-03', type:'mc', domain:'Algebra', difficulty:'Media',
-        skill:'Funciones lineales (pendiente entre dos puntos)',
+        skill:'Linear functions (slope between two points)',
         stem:'Line ℓ in the xy-plane passes through the points (−3, 8) and (5, −4). What is the slope of line ℓ ?',
         choices:{A:'−3/2', B:'3/2', C:'−6', D:'−2/3'},
         correct:'A',
         expCorrect:'Slope = (change in y)/(change in x) = (−4 − 8)/(5 − (−3)) = −12/8 = −3/2. Watch the denominator: 5 − (−3) = 5 + 3 = 8. (It makes sense: the line drops from y = 8 to y = −4 as x grows, so the slope is negative.)',
         expWrong:{
           B:'3/2 has the wrong sign. If y FALLS as x rises, the slope is negative. A glance at the points tells you before you compute.',
-          C:'−6 sale de restar mal el denominador: 5 − 3 = 2 en vez de 5 − (−3) = 8. Restar un negativo suma.',
+          C:'−6 comes from subtracting the denominator wrong: 5 − 3 = 2 instead of 5 − (−3) = 8. Subtracting a negative adds.',
           D:'−2/3 is the slope upside down: you put the change in x on top. The formula is Δy over Δx, in that order.'
         },
         tip:'Before computing, look at whether the line rises or falls and lock in the sign. After that, the only real trap is the double negative in the denominator.',
@@ -124,7 +124,7 @@
       },
       {
         id:'AL3-07', type:'mc', domain:'Algebra', difficulty:'Media',
-        skill:'Ecuaciones lineales (modelo decreciente en contexto)',
+        skill:'Linear equations (decreasing model in context)',
         stem:'A tank contains 500 liters of water and is being drained at a constant rate of 10 liters per minute. After how many minutes will the tank contain 260 liters?',
         choices:{A:'24', B:'240', C:'50', D:'76'},
         correct:'A',
@@ -140,7 +140,7 @@
       },
       {
         id:'AL3-08', type:'mc', domain:'Algebra', difficulty:'Media',
-        skill:'Desigualdades lineales (invertir el signo)',
+        skill:'Linear inequalities (flipping the sign)',
         stem:'Which of the following is the solution to the inequality −4x + 9 ≥ 25 ?',
         choices:{A:'x ≤ −4', B:'x ≥ −4', C:'x ≤ 4', D:'x ≥ 4'},
         correct:'A',
@@ -172,7 +172,7 @@
       },
       {
         id:'AL3-10', type:'mc', domain:'Algebra', difficulty:'Media',
-        skill:'Funciones lineales (interpretar el intercepto en contexto)',
+        skill:'Linear functions (interpreting the intercept in context)',
         stem:'The equation y = 3.5x + 18 models the height y, in centimeters, of a plant x weeks after it was planted. What does 18 represent in this model?',
         choices:{
           A:'The height of the plant, in centimeters, at the time it was planted',
@@ -195,7 +195,7 @@
         skill:'Linear equations (one variable, with parentheses)',
         stem:'If 7(x + 2) − 3x = 46, what is the value of x? (Grid in your answer.)',
         answer:'8',
-        expCorrect:'Distribuye: 7x + 14 − 3x = 46. Junta las x: 4x + 14 = 46 ⇒ 4x = 32 ⇒ x = 8. (Comprueba: 7(8 + 2) − 3(8) = 70 − 24 = 46 ✓.)',
+        expCorrect:'Distribute: 7x + 14 − 3x = 46. Combine the x terms: 4x + 14 = 46 ⇒ 4x = 32 ⇒ x = 8. (Check: 7(8 + 2) − 3(8) = 70 − 24 = 46 ✓.)',
         tip:'On SPR questions there are no options to catch your error, so checking is not optional: plug your answer back into the original equation before you write it. They are one in four questions of the section.',
         desmos:'Grafica y=7(x+2)-3x y y=46, y toca la intersección: x = 8.',
         desmosLatex:['y=7(x+2)-3x','y=46']

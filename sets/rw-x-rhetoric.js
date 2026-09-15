@@ -72,7 +72,7 @@ window.SAT_SETS.push({
     {
       id:'XT-05', type:'mc', domain:'Expression of Ideas', difficulty:'Difícil', extreme:true,
       skill:'Transitions',
-      passage:"Most of the composer's symphonies were greeted warmly at their premieres. One early work, admittedly, was booed so fiercely that the orchestra could barely play it to the end. %BLANK% audiences of his era generally embraced his music the moment they first heard it.",
+      passage:"Most of the composer’s symphonies were greeted warmly at their premieres. One early work, admittedly, was booed so fiercely that the orchestra could barely play it to the end. %BLANK% audiences of his era generally embraced his music the moment they first heard it.",
       stem:'Which choice completes the text with the most logical transition?',
       choices:{A:'Even so,', B:'Indeed,', C:'What is more,', D:'Likewise,'},
       correct:'A',

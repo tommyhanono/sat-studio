@@ -13,7 +13,7 @@
         skill:'One-step linear equation',
         stem:'If 3x = 21, what is the value of x? (Grid in your answer.)',
         answer:'7',
-        expCorrect:'Divide ambos lados entre 3: x = 21/3 = 7. Respuesta: 7.',
+        expCorrect:'Divide both sides by 3: x = 21/3 = 7. Answer: 7.',
         tip:'Grid-in rule: write only the final number. No variables, commas, units or equations.'
       },
       {
@@ -21,7 +21,7 @@
         skill:'Two-step linear equation',
         stem:'If 2x + 5 = 17, what is the value of x? (Grid in your answer.)',
         answer:'6',
-        expCorrect:'Resta 5 a ambos lados: 2x = 12. Divide entre 2: x = 6. (Verifica: 2(6) + 5 = 17 ✓.)',
+        expCorrect:'Subtract 5 from both sides: 2x = 12. Divide by 2: x = 6. (Check: 2(6) + 5 = 17 ✓.)',
         tip:'Do not write the intermediate step (12): finish solving before you fill the box.'
       },
       {
@@ -42,10 +42,10 @@
       },
       {
         id:'SPR-05', type:'spr', domain:'Problem-Solving & Data Analysis', difficulty:'Media',
-        skill:'Tasas (velocidad promedio)',
+        skill:'Rates (average speed)',
         stem:'A car travels 240 miles in 4 hours. What is the car\'s average speed in miles per hour? (Grid in your answer.)',
         answer:'60',
-        expCorrect:'Velocidad promedio = distancia / tiempo = 240 / 4 = 60 millas por hora. Respuesta: 60.',
+        expCorrect:'Average speed = distance / time = 240 / 4 = 60 miles per hour. Answer: 60.',
         tip:'Identify the operation being asked for (speed = distance ÷ time) and write the result, not the figures from the problem (240 or 4).'
       },
       {
@@ -61,15 +61,15 @@
         skill:'Quadratic (solution with a constraint)',
         stem:'If x² − 6x + 8 = 0, what is the smaller positive solution? (Grid in your answer.)',
         answer:'2',
-        expCorrect:'Factoriza: (x − 2)(x − 4) = 0 → x = 2 o x = 4. Ambas son positivas; la MENOR es 2. (Verifica: 4 − 12 + 8 = 0 ✓.)',
+        expCorrect:'Factor: (x − 2)(x − 4) = 0 → x = 2 or x = 4. Both are positive; the SMALLER one is 2. (Check: 4 − 12 + 8 = 0 ✓.)',
         tip:'After solving a quadratic, reread the question: words like "positive", "smaller" or "greater" decide which of the two solutions you write.'
       },
       {
         id:'SPR-08', type:'spr', domain:'Problem-Solving & Data Analysis', difficulty:'Media',
-        skill:'Media (despejar un valor faltante)',
+        skill:'Mean (solving for a missing value)',
         stem:'The mean of the numbers 5, 8, 12, and x is 10. What is the value of x? (Grid in your answer.)',
         answer:'15',
-        expCorrect:'Media = (5 + 8 + 12 + x) / 4 = 10. Multiplica por 4: 25 + x = 40 → x = 15. (Verifica: (5+8+12+15)/4 = 40/4 = 10 ✓.)',
+        expCorrect:'Mean = (5 + 8 + 12 + x) / 4 = 10. Multiply by 4: 25 + x = 40 → x = 15. (Check: (5+8+12+15)/4 = 40/4 = 10 ✓.)',
         tip:'Total sum = mean × count. Here 10 × 4 = 40; subtract what you already have (25) and the missing value falls out.'
       },
       {
@@ -82,7 +82,7 @@
       },
       {
         id:'SPR-10', type:'spr', domain:'Algebra', difficulty:'Difícil',
-        skill:'Sistema de ecuaciones (despejar una variable)',
+        skill:'Systems of equations (solving for one variable)',
         stem:'If 3x + y = 18 and x − y = 2, what is the value of x? (Grid in your answer.)',
         answer:'5',
         expCorrect:'Add the two equations to eliminate y: (3x + y) + (x − y) = 18 + 2 → 4x = 20 → x = 5. (Check: y = 3; 3(5) + 3 = 18 ✓ and 5 − 3 = 2 ✓.)',
@@ -98,7 +98,7 @@
       },
       {
         id:'SPR-12', type:'spr', domain:'Problem-Solving & Data Analysis', difficulty:'Difícil',
-        skill:'Problema multipaso con porcentaje',
+        skill:'Multi-step percent problem',
         stem:'A store sells books at $12 each. If a customer buys 5 books and receives a 20% discount on the total, how much does the customer pay? (Grid in your answer.)',
         answer:'48',
         expCorrect:'Original total: 5 × 12 = $60. A 20% discount: 0.20 × 60 = $12. You pay: 60 − 12 = $48. (Shortcut: you pay 80% → 0.80 × 60 = 48.) In the box: 48, with no dollar sign.',

@@ -10,7 +10,7 @@
     questions: [
       {
         id:'AV2-01', type:'mc', domain:'Advanced Math', difficulty:'Fácil',
-        skill:'Ecuaciones exponenciales (bases iguales)',
+        skill:'Exponential equations (same bases)',
         stem:'If 2^(3x) = 2^12, what is the value of x?',
         choices:{A:'3', B:'4', C:'9', D:'36'},
         correct:'B',
@@ -18,7 +18,7 @@
         expWrong:{
           A:'3 is the coefficient in the exponent, not the value of x. You still have to divide 12 by 3.',
           C:'9 comes from subtracting 12 − 3 instead of dividing. The equation is 3x = 12, so you divide.',
-          D:'36 sale de multiplicar 3 · 12. Iguala exponentes y DIVIDE: x = 12/3 = 4.'
+          D:'36 comes from multiplying 3 · 12. Set the exponents equal and DIVIDE: x = 12/3 = 4.'
         },
         tip:'If a^m = a^n with the same base a, then m = n. Set the exponents equal and solve the linear equation — here 3x = 12.'
       },
@@ -52,7 +52,7 @@
       },
       {
         id:'AV2-04', type:'mc', domain:'Advanced Math', difficulty:'Media',
-        skill:'Decrecimiento exponencial (modelo)',
+        skill:'Exponential decay (model)',
         stem:'A car is worth $400 (in hundreds of dollars) and its value decreases by 15% each year. Which function V models the value after t years?',
         choices:{A:'V(t) = 400 − 0.15t', B:'V(t) = 400(0.15)^t', C:'V(t) = 400(0.85)^t', D:'V(t) = 400(1.15)^t'},
         correct:'C',
@@ -60,7 +60,7 @@
         expWrong:{
           A:'This model is LINEAR (it subtracts 0.15 per year). A percentage repeating every year is multiplicative, not additive.',
           B:'Multiplying by 0.15 would make the value drop to 15% each year (an 85% loss), not a 15% one.',
-          D:'1.15 modela un CRECIMIENTO del 15%, no un decrecimiento.'
+          D:'1.15 models 15% GROWTH, not decay.'
         },
         tip:'Decay of r% → factor (1 − r/100)^t. Growth → (1 + r/100)^t. "Decreases by 15%" is ×0.85 per period.'
       },

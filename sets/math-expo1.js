@@ -10,7 +10,7 @@
     questions: [
       {
         id:'EXF-01', type:'mc', domain:'Advanced Math', difficulty:'Fácil',
-        skill:'Exponentes enteros (producto de potencias)',
+        skill:'Integer exponents (product of powers)',
         stem:'Which of the following is the value of 2⁻³ · 2⁵?',
         choices:{A:'1/4', B:'4', C:'256', D:'−4'},
         correct:'B',
@@ -26,7 +26,7 @@
       },
       {
         id:'EXF-02', type:'mc', domain:'Advanced Math', difficulty:'Fácil',
-        skill:'Exponentes enteros (potencia de una potencia)',
+        skill:'Integer exponents (power of a power)',
         stem:'Which of the following is equivalent to (x⁴)³ · x², where x ≠ 0?',
         choices:{A:'x⁹', B:'x¹²', C:'x¹⁴', D:'x²⁴'},
         correct:'C',
@@ -101,7 +101,7 @@
       },
       {
         id:'EXF-07', type:'mc', domain:'Advanced Math', difficulty:'Media',
-        skill:'Ecuaciones exponenciales (bases iguales)',
+        skill:'Exponential equations (equal bases)',
         stem:'What is the solution to the equation 4^x = 8^(x − 1)?',
         choices:{A:'1', B:'2', C:'3', D:'−3'},
         correct:'C',
@@ -117,7 +117,7 @@
       },
       {
         id:'EXF-08', type:'mc', domain:'Advanced Math', difficulty:'Fácil',
-        skill:'Ecuaciones exponenciales (bases iguales)',
+        skill:'Exponential equations (equal bases)',
         stem:'If 2^(3x) = 2^12, what is the value of x?',
         choices:{A:'4', B:'9', C:'12', D:'36'},
         correct:'A',
@@ -133,7 +133,7 @@
       },
       {
         id:'EXF-09', type:'mc', domain:'Advanced Math', difficulty:'Media',
-        skill:'Crecimiento exponencial (modelo)',
+        skill:'Exponential growth (model)',
         stem:'An investment account has an initial value of $2,000, and the value increases by 5% each year. Which function V gives the value of the account, in dollars, after t years?',
         choices:{A:'V(t) = 2,000(0.05)^t', B:'V(t) = 2,000 + 0.05t', C:'V(t) = 2,000(1.5)^t', D:'V(t) = 2,000(1.05)^t'},
         correct:'D',
@@ -149,7 +149,7 @@
       },
       {
         id:'EXF-10', type:'mc', domain:'Advanced Math', difficulty:'Media',
-        skill:'Decaimiento exponencial (modelo)',
+        skill:'Exponential decay (model)',
         stem:'A car is purchased for $24,000, and its value decreases by 15% each year. Which function v gives the value of the car, in dollars, t years after it is purchased?',
         choices:{A:'v(t) = 24,000(1.15)^t', B:'v(t) = 24,000(0.15)^t', C:'v(t) = 24,000 − 0.15t', D:'v(t) = 24,000(0.85)^t'},
         correct:'D',
@@ -168,7 +168,7 @@
         skill:'Semivida (evaluar el modelo)',
         stem:'A scientist has a 400-milligram sample of a substance. The mass of the sample is halved every 3 hours. How many milligrams of the sample remain after 12 hours?',
         answer:'25',
-        expCorrect:'Modelo de semivida: m(t) = 400 · (1/2)^(t/3). En t = 12 horas hay 12/3 = 4 semividas: m = 400 · (1/2)⁴ = 400/16 = 25 miligramos. (Paso a paso: 400 → 200 → 100 → 50 → 25 ✓.) Respuesta: 25.',
+        expCorrect:'Half-life model: m(t) = 400 · (1/2)^(t/3). At t = 12 hours there are 12/3 = 4 half-lives: m = 400 · (1/2)⁴ = 400/16 = 25 milligrams. (Step by step: 400 → 200 → 100 → 50 → 25 ✓.) Answer: 25.',
         expWrong:{},
         tip:'Half-life: amount = initial · (1/2)^(t/period). First count how many times it halves (t ÷ period = 12/3 = 4) and then halve that many times.',
         desmos:'Escribe 400*(1/2)^{12/3} en Desmos y te da 25. También puedes graficar y=400*(1/2)^{x/3} y tocar el punto en x = 12.',
@@ -176,7 +176,7 @@
       },
       {
         id:'EXF-12', type:'mc', domain:'Advanced Math', difficulty:'Difícil',
-        skill:'Exponencial vs lineal',
+        skill:'Exponential vs linear',
         stem:'Which of the following situations is best modeled by an exponential function?',
         choices:{
           A:'A worker’s salary starts at $40,000 and increases by $2,000 each year.',

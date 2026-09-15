@@ -88,14 +88,14 @@
       },
       {
         id:'HMC-04', type:'mc', domain:'Geometry & Trigonometry', difficulty:'Difícil',
-        skill:'Recta tangente a una circunferencia',
+        skill:'Tangent line to a circle',
         figure: FIG_TANGENT_PT,
         stem:'A circle in the xy-plane is centered at the origin with a radius of 5. A line is tangent to the circle at the point (3, 4), as shown. What is the slope of the tangent line?',
         choices:{A:'4/3', B:'3/4', C:'−4/3', D:'−3/4'},
         correct:'D',
         expCorrect:'The radius reaching the point of tangency runs from the origin (0, 0) to (3, 4), with slope 4/3. The tangent is PERPENDICULAR to the radius at that point, so its slope is the negative reciprocal: −3/4.',
         expWrong:{
-          A:'4/3 es la pendiente del RADIO, no de la tangente. La tangente es perpendicular al radio, no paralela.',
+          A:'4/3 is the slope of the RADIUS, not of the tangent. The tangent is perpendicular to the radius, not parallel.',
           B:'3/4 is the reciprocal but it is missing the negative sign. Perpendicular = NEGATIVE reciprocal.',
           C:'−4/3 only flipped the sign of the radius slope, without inverting the fraction. For perpendicular you have to do both: invert AND flip the sign.'
         },
@@ -117,7 +117,7 @@
       },
       {
         id:'HMC-06', type:'mc', domain:'Algebra', difficulty:'Difícil',
-        skill:'Rectas perpendiculares (pendiente)',
+        skill:'Perpendicular lines (slope)',
         stem:'Line ℓ passes through the points (2, −1) and (6, 5). Line k is perpendicular to line ℓ. What is the slope of line k?',
         choices:{A:'3/2', B:'2/3', C:'−2/3', D:'−3/2'},
         correct:'C',
@@ -142,7 +142,7 @@
         correct:'B',
         expCorrect:'Solve the given line for y: 4x − 2y = 10 → −2y = −4x + 10 → y = 2x − 5, with slope 2. A parallel line has the same slope, 2. Using the point (1, 3): y − 3 = 2(x − 1) → y = 2x + 1. Check: 2(1) + 1 = 3 ✓.',
         expWrong:{
-          A:'y = −(1/2)x + 7/2 usa la pendiente PERPENDICULAR (−1/2). Paralela significa MISMA pendiente (2), no perpendicular.',
+          A:'y = −(1/2)x + 7/2 uses the PERPENDICULAR slope (−1/2). Parallel means the SAME slope (2), not perpendicular.',
           C:'y = 2x − 5 is the original line itself: it has the right slope (2) but it does not pass through (1, 3): 2(1) − 5 = −3, not 3.',
           D:'y = −2x + 5 flipped the sign of the slope. A parallel line keeps the exact slope, sign included.'
         },
@@ -154,7 +154,7 @@
         stem:'In the xy-plane, what is the distance between the points (−2, 3) and (4, −5)?',
         choices:{A:'√14', B:'2√17', C:'14', D:'10'},
         correct:'D',
-        expCorrect:'Distancia = √((x₂ − x₁)² + (y₂ − y₁)²) = √((4 − (−2))² + (−5 − 3)²) = √(6² + (−8)²) = √(36 + 64) = √100 = 10.',
+        expCorrect:'Distance = √((x₂ − x₁)² + (y₂ − y₁)²) = √((4 − (−2))² + (−5 − 3)²) = √(6² + (−8)²) = √(36 + 64) = √100 = 10.',
         expWrong:{
           A:'√14 adds the differences (6 + 8 = 14) and then takes the root, without squaring first. You have to square EACH difference before adding.',
           B:'2√17 = √68 comes from a sign error in x: using (4 − 2) = 2 instead of (4 − (−2)) = 6, giving √(4 + 64). Careful subtracting a negative number.',
@@ -211,7 +211,7 @@
       },
       {
         id:'HMC-12', type:'spr', domain:'Geometry & Trigonometry', difficulty:'Difícil',
-        skill:'Longitud de tangente desde un punto externo',
+        skill:'Tangent length from an external point',
         figure: FIG_EXT_TANGENT,
         stem:'A circle in the xy-plane is centered at the origin O with a radius of 9. Point P has coordinates (9, 12). A segment is drawn from P tangent to the circle, touching it at point T, as shown. What is the length of segment PT?',
         answer:'12',

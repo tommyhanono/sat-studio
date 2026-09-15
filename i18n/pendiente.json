@@ -1316,7 +1316,8 @@
   "fin": 2238,
   "contenido": false,
   "es": "Geometry & Trigonometry: area and volume, triangles, circles, and trigonometry.",
-  "en": null
+  "en": "Geometry & Trigonometry: area and volume, triangles, circles, and trigonometry.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-geo.js",
@@ -1326,7 +1327,8 @@
   "fin": 2924,
   "contenido": false,
   "es": "18π comes from dividing the area by 2 (36π / 2), which is not a valid formula.",
-  "en": null
+  "en": "18π comes from dividing the area by 2 (36π / 2), which is not a valid formula.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-geo.js",
@@ -1336,7 +1338,8 @@
   "fin": 3003,
   "contenido": false,
   "es": "72π is 2 × 36π, that is, twice the area, not the circumference.",
-  "en": null
+  "en": "72π is 2 × 36π, that is, twice the area, not the circumference.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-geo.js",
@@ -1346,7 +1349,8 @@
   "fin": 4793,
   "contenido": false,
   "es": "60π comes from π(2)(3)(10), mixing up the volume formula with something like “2rh” (lateral area / r).",
-  "en": null
+  "en": "60π comes from π(2)(3)(10), mixing up the volume formula with something like “2rh” (lateral area / r).",
+  "hecho": true
  },
  {
   "archivo": "sets/math-geo.js",
@@ -1356,7 +1360,8 @@
   "fin": 6176,
   "contenido": false,
   "es": "Combina dos errores: signos del centro invertidos Y usa 5 en vez de 25.",
-  "en": null
+  "en": "It combines two errors: the signs of the center are flipped AND it uses 5 instead of 25.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-geo.js",
@@ -1366,7 +1371,8 @@
   "fin": 7272,
   "contenido": false,
   "es": "3/4 es tan θ (opuesto/adyacente = 6/8). No es lo que piden.",
-  "en": null
+  "en": "3/4 is tan θ (opposite/adjacent = 6/8). That is not what they are asking for.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-geo.js",
@@ -1376,7 +1382,8 @@
   "fin": 2531,
   "contenido": true,
   "es": "A circle in the xy-plane has an area of 36π square units. What is the circumference of the circle?",
-  "en": null
+  "en": "A circle in the xy-plane has an area of 36π square units. What is the circumference of the circle?",
+  "hecho": true
  },
  {
   "archivo": "sets/math-geo.js",
@@ -1386,7 +1393,8 @@
   "fin": 11146,
   "contenido": true,
   "es": "In right triangle PQR, angle Q is 90°, angle R is 30°, and the hypotenuse PR has length 12. What is the area of triangle PQR?",
-  "en": null
+  "en": "In right triangle PQR, angle Q is 90°, angle R is 30°, and the hypotenuse PR has length 12. What is the area of triangle PQR?",
+  "hecho": true
  },
  {
   "archivo": "sets/rw-ideas2.js",
@@ -1396,7 +1404,8 @@
   "fin": 16107,
   "contenido": false,
   "es": "Illogical here: the physical find is exactly what CORRECTS the sparse documents, so the text does not suggest the written record is more reliable.",
-  "en": null
+  "en": "Illogical here: the physical find is exactly what CORRECTS the sparse documents, so the text does not suggest the written record is more reliable.",
+  "hecho": true
  },
  {
   "archivo": "sets/rw-wic2.js",
@@ -1406,7 +1415,8 @@
   "fin": 6422,
   "contenido": false,
   "es": "La “polished statue” es la pista: lo opuesto a un retrato equilibrado es uno idealizado. Predice “pintar como perfecto” y elige “idealize”.",
-  "en": null
+  "en": "The “polished statue” is the clue: the opposite of a balanced portrait is an idealized one. Predict “paint as perfect” and choose “idealize”.",
+  "hecho": true
  },
  {
   "archivo": "sets/rw-wic2.js",
@@ -1416,7 +1426,8 @@
   "fin": 9662,
   "contenido": false,
   "es": "“Authoritarian” (autoritario) es lo opuesto de “Rather than rigid commands”: precisamente NO mandaba.",
-  "en": null
+  "en": "“Authoritarian” is the opposite of “Rather than rigid commands”: issuing orders is precisely what they did NOT do.",
+  "hecho": true
  },
  {
   "archivo": "sets/rw-wic2.js",
@@ -1426,7 +1437,8 @@
   "fin": 11983,
   "contenido": false,
   "es": "“Ornate” (recargado) es lo contrario: el texto describe recorte, no adornos.",
-  "en": null
+  "en": "“Ornate” is the opposite: the text describes trimming down, not adornment.",
+  "hecho": true
  },
  {
   "archivo": "sets/rw-trans2.js",
@@ -1436,7 +1448,8 @@
   "fin": 433,
   "contenido": false,
   "es": "Transiciones",
-  "en": null
+  "en": "Transitions",
+  "hecho": true
  },
  {
   "archivo": "sets/rw-trans2.js",
@@ -1446,7 +1459,8 @@
   "fin": 1980,
   "contenido": false,
   "es": "Transiciones",
-  "en": null
+  "en": "Transitions",
+  "hecho": true
  },
  {
   "archivo": "sets/rw-trans2.js",
@@ -1456,7 +1470,8 @@
   "fin": 3363,
   "contenido": false,
   "es": "Transiciones",
-  "en": null
+  "en": "Transitions",
+  "hecho": true
  },
  {
   "archivo": "sets/rw-trans2.js",
@@ -1466,7 +1481,8 @@
   "fin": 4812,
   "contenido": false,
   "es": "Transiciones",
-  "en": null
+  "en": "Transitions",
+  "hecho": true
  },
  {
   "archivo": "sets/rw-trans2.js",
@@ -1476,7 +1492,8 @@
   "fin": 6312,
   "contenido": false,
   "es": "Transiciones",
-  "en": null
+  "en": "Transitions",
+  "hecho": true
  },
  {
   "archivo": "sets/rw-trans2.js",
@@ -1486,7 +1503,8 @@
   "fin": 7830,
   "contenido": false,
   "es": "Transiciones",
-  "en": null
+  "en": "Transitions",
+  "hecho": true
  },
  {
   "archivo": "sets/rw-trans2.js",
@@ -1496,7 +1514,8 @@
   "fin": 9419,
   "contenido": false,
   "es": "Transiciones",
-  "en": null
+  "en": "Transitions",
+  "hecho": true
  },
  {
   "archivo": "sets/rw-trans2.js",
@@ -1506,7 +1525,8 @@
   "fin": 10902,
   "contenido": false,
   "es": "Transiciones",
-  "en": null
+  "en": "Transitions",
+  "hecho": true
  },
  {
   "archivo": "sets/rw-trans2.js",
@@ -1516,7 +1536,8 @@
   "fin": 12473,
   "contenido": false,
   "es": "Transiciones",
-  "en": null
+  "en": "Transitions",
+  "hecho": true
  },
  {
   "archivo": "sets/rw-trans2.js",
@@ -1526,7 +1547,8 @@
   "fin": 14026,
   "contenido": false,
   "es": "Transiciones",
-  "en": null
+  "en": "Transitions",
+  "hecho": true
  },
  {
   "archivo": "sets/rw-trans2.js",
@@ -1536,7 +1558,8 @@
   "fin": 15640,
   "contenido": false,
   "es": "Transiciones",
-  "en": null
+  "en": "Transitions",
+  "hecho": true
  },
  {
   "archivo": "sets/rw-trans2.js",
@@ -1546,7 +1569,8 @@
   "fin": 17263,
   "contenido": false,
   "es": "Transiciones",
-  "en": null
+  "en": "Transitions",
+  "hecho": true
  },
  {
   "archivo": "sets/rw-punct2.js",
@@ -1556,7 +1580,8 @@
   "fin": 3976,
   "contenido": false,
   "es": "Elementos no esenciales (comas en pareja)",
-  "en": null
+  "en": "Nonessential elements (paired commas)",
+  "hecho": true
  },
  {
   "archivo": "sets/rw-punct2.js",
@@ -1566,7 +1591,8 @@
   "fin": 8613,
   "contenido": false,
   "es": "Coma innecesaria (verbo y su complemento)",
-  "en": null
+  "en": "Unnecessary comma (verb and its object)",
+  "hecho": true
  },
  {
   "archivo": "sets/rw-punct2.js",
@@ -1576,7 +1602,8 @@
   "fin": 9763,
   "contenido": false,
   "es": "Punto y coma en listas complejas",
-  "en": null
+  "en": "Semicolons in complex lists",
+  "hecho": true
  },
  {
   "archivo": "sets/rw-punct2.js",
@@ -1586,7 +1613,8 @@
   "fin": 10987,
   "contenido": false,
   "es": "Punto y coma con adverbio conjuntivo (therefore)",
-  "en": null
+  "en": "Semicolon with a conjunctive adverb (therefore)",
+  "hecho": true
  },
  {
   "archivo": "sets/rw-punct2.js",
@@ -1596,7 +1624,8 @@
   "fin": 13285,
   "contenido": false,
   "es": "Coma innecesaria entre sujeto y verbo",
-  "en": null
+  "en": "Unnecessary comma between subject and verb",
+  "hecho": true
  },
  {
   "archivo": "sets/rw-punct2.js",
@@ -1606,7 +1635,8 @@
   "fin": 11731,
   "contenido": false,
   "es": "\", therefore,\" no puede unir dos oraciones completas: sigue siendo comma splice.",
-  "en": null
+  "en": "“, therefore,” cannot join two complete sentences: it is still a comma splice.",
+  "hecho": true
  },
  {
   "archivo": "sets/rw-punct2.js",
@@ -1616,7 +1646,8 @@
   "fin": 14125,
   "contenido": false,
   "es": "El punto y coma pide oraciones independientes a ambos lados; \"has been disproven…\" no lo es.",
-  "en": null
+  "en": "The semicolon requires independent clauses on both sides; “has been disproven…” is not one.",
+  "hecho": true
  },
  {
   "archivo": "sets/rw-synth2.js",
@@ -1626,7 +1657,8 @@
   "fin": 3935,
   "contenido": false,
   "es": "Da un plan futuro; solo menciona un tipo de foco y no compara consumo.",
-  "en": null
+  "en": "It gives a future plan; it mentions only one type of bulb and does not compare energy use.",
+  "hecho": true
  },
  {
   "archivo": "sets/rw-synth2.js",
@@ -1636,7 +1668,8 @@
   "fin": 4873,
   "contenido": true,
   "es": "While researching a topic, a student has taken the following notes:<ul><li>Hedy Lamarr was a Hollywood film actress in the 1930s and 1940s.</li><li>She was also a self-taught inventor.</li><li>During World War II, she co-designed a system to keep radio-guided torpedoes from being jammed.</li><li>The system rapidly switched signals across many frequencies.</li><li>This \\\"frequency-hopping\\\" idea later helped make Wi-Fi and Bluetooth possible.</li></ul>The student wants to emphasize the lasting impact of Lamarr's invention. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
-  "en": null
+  "en": "While researching a topic, a student has taken the following notes:<ul><li>Hedy Lamarr was a Hollywood film actress in the 1930s and 1940s.</li><li>She was also a self-taught inventor.</li><li>During World War II, she co-designed a system to keep radio-guided torpedoes from being jammed.</li><li>The system rapidly switched signals across many frequencies.</li><li>This \\\"frequency-hopping\\\" idea later helped make Wi-Fi and Bluetooth possible.</li></ul>The student wants to emphasize the lasting impact of Lamarr’s invention. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+  "hecho": true
  },
  {
   "archivo": "sets/rw-synth2.js",
@@ -1646,7 +1679,8 @@
   "fin": 5083,
   "contenido": true,
   "es": "During World War II, Lamarr co-designed a system to keep radio-guided torpedoes from being jammed.",
-  "en": null
+  "en": "During World War II, Lamarr co-designed a system to keep radio-guided torpedoes from being jammed.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-alg2.js",
@@ -1656,7 +1690,8 @@
   "fin": 469,
   "contenido": false,
   "es": "Ecuaciones lineales (una variable)",
-  "en": null
+  "en": "Linear equations (one variable)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-alg2.js",
@@ -1666,7 +1701,8 @@
   "fin": 2385,
   "contenido": false,
   "es": "Inecuaciones lineales (una variable)",
-  "en": null
+  "en": "Linear inequalities (one variable)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-alg2.js",
@@ -1676,7 +1712,8 @@
   "fin": 3191,
   "contenido": false,
   "es": "Funciones lineales (pendiente e intercepto)",
-  "en": null
+  "en": "Linear functions (slope and intercept)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-alg2.js",
@@ -1686,7 +1723,8 @@
   "fin": 5189,
   "contenido": false,
   "es": "Sistemas de ecuaciones lineales (palabras)",
-  "en": null
+  "en": "Systems of linear equations (word problems)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-alg2.js",
@@ -1696,7 +1734,8 @@
   "fin": 7343,
   "contenido": false,
   "es": "Inecuaciones lineales (dividir por negativo)",
-  "en": null
+  "en": "Linear inequalities (dividing by a negative)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-alg2.js",
@@ -1706,7 +1745,8 @@
   "fin": 8252,
   "contenido": false,
   "es": "Sistemas de ecuaciones lineales (infinitas soluciones)",
-  "en": null
+  "en": "Systems of linear equations (infinitely many solutions)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-alg2.js",
@@ -1716,7 +1756,8 @@
   "fin": 10530,
   "contenido": false,
   "es": "Sistemas de ecuaciones lineales (valor combinado)",
-  "en": null
+  "en": "Systems of linear equations (combined value)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-alg2.js",
@@ -1726,7 +1767,8 @@
   "fin": 11321,
   "contenido": false,
   "es": "Funciones lineales (evaluar y despejar)",
-  "en": null
+  "en": "Linear functions (evaluate and solve)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-alg2.js",
@@ -1736,7 +1778,8 @@
   "fin": 11608,
   "contenido": false,
   "es": "g(a) = 6 significa −4a + 26 = 6. Despeja: −4a = 6 − 26 = −20 → a = (−20)/(−4) = 5. (Comprueba: g(5) = −4(5) + 26 = −20 + 26 = 6 ✓.) Respuesta: 5.",
-  "en": null
+  "en": "g(a) = 6 means −4a + 26 = 6. Solve: −4a = 6 − 26 = −20 → a = (−20)/(−4) = 5. (Check: g(5) = −4(5) + 26 = −20 + 26 = 6 ✓.) Answer: 5.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-alg2.js",
@@ -1746,7 +1789,8 @@
   "fin": 2245,
   "contenido": false,
   "es": "If one equation has +y and the other has −y, ADD them and the y terms vanish. Then divide by the coefficient and check whether they want x or y.",
-  "en": null
+  "en": "If one equation has +y and the other has −y, ADD them and the y terms vanish. Then divide by the coefficient and check whether they want x or y.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-alg2.js",
@@ -1756,7 +1800,8 @@
   "fin": 8092,
   "contenido": false,
   "es": "If you divide or multiply by a NEGATIVE number, flip the sign (≤ becomes ≥). And watch the sign of the result: 6/(−2) = −3.",
-  "en": null
+  "en": "If you divide or multiply by a NEGATIVE number, flip the sign (≤ becomes ≥). And watch the sign of the result: 6/(−2) = −3.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-alg2.js",
@@ -1766,7 +1811,8 @@
   "fin": 9261,
   "contenido": false,
   "es": "\"Infinitely many solutions\" = the same line. Make the x and y coefficients match (here divide the first by 2) and the constant term has to match too.",
-  "en": null
+  "en": "“Infinitely many solutions” = the same line. Make the x and y coefficients match (here divide the first by 2) and the constant term has to match too.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-alg2.js",
@@ -1776,7 +1822,8 @@
   "fin": 1113,
   "contenido": false,
   "es": "24 is the value of 4x, not of x. You skipped the last step: divide by 4.",
-  "en": null
+  "en": "24 is the value of 4x, not of x. You skipped the last step: divide by 4.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-alg2.js",
@@ -1786,7 +1833,8 @@
   "fin": 2740,
   "contenido": false,
   "es": "6 no cumple: 3(6)−4 = 14, que no es < 11.",
-  "en": null
+  "en": "6 does not work: 3(6)−4 = 14, which is not < 11.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-alg2.js",
@@ -1796,7 +1844,8 @@
   "fin": 2797,
   "contenido": false,
   "es": "7 no cumple: 3(7)−4 = 17, que no es < 11.",
-  "en": null
+  "en": "7 does not work: 3(7)−4 = 17, which is not < 11.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-alg2.js",
@@ -1806,7 +1855,8 @@
   "fin": 2892,
   "contenido": false,
   "es": "5 es el borde exacto: 3(5)−4 = 11, y 11 NO es < 11. La desigualdad es estricta.",
-  "en": null
+  "en": "5 is the exact boundary: 3(5)−4 = 11, and 11 is NOT < 11. The inequality is strict.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-alg3.js",
@@ -1816,7 +1866,8 @@
   "fin": 2840,
   "contenido": false,
   "es": "Ecuaciones lineales (dos variables, despeje)",
-  "en": null
+  "en": "Linear equations (two variables, solving for one)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-alg3.js",
@@ -1826,7 +1877,8 @@
   "fin": 4287,
   "contenido": false,
   "es": "Funciones lineales (pendiente entre dos puntos)",
-  "en": null
+  "en": "Linear functions (slope between two points)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-alg3.js",
@@ -1836,7 +1888,8 @@
   "fin": 9647,
   "contenido": false,
   "es": "Ecuaciones lineales (modelo decreciente en contexto)",
-  "en": null
+  "en": "Linear equations (decreasing model in context)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-alg3.js",
@@ -1846,7 +1899,8 @@
   "fin": 11018,
   "contenido": false,
   "es": "Desigualdades lineales (invertir el signo)",
-  "en": null
+  "en": "Linear inequalities (flipping the sign)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-alg3.js",
@@ -1856,7 +1910,8 @@
   "fin": 13687,
   "contenido": false,
   "es": "Funciones lineales (interpretar el intercepto en contexto)",
-  "en": null
+  "en": "Linear functions (interpreting the intercept in context)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-alg3.js",
@@ -1866,7 +1921,8 @@
   "fin": 3329,
   "contenido": false,
   "es": "Isolate the y term: 5x − 2y = 20 ⇒ −2y = 20 − 5x. Now divide EVERYTHING by −2: y = 20/(−2) − 5x/(−2) = −10 + (5/2)x, that is y = (5/2)x − 10. (Check with x = 4: y = 10 − 10 = 0, and in the original 5(4) − 2(0) = 20 ✓.)",
-  "en": null
+  "en": "Isolate the y term: 5x − 2y = 20 ⇒ −2y = 20 − 5x. Now divide EVERYTHING by −2: y = 20/(−2) − 5x/(−2) = −10 + (5/2)x, that is y = (5/2)x − 10. (Check with x = 4: y = 10 − 10 = 0, and in the original 5(4) − 2(0) = 20 ✓.)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-alg3.js",
@@ -1876,7 +1932,8 @@
   "fin": 15565,
   "contenido": false,
   "es": "Distribuye: 7x + 14 − 3x = 46. Junta las x: 4x + 14 = 46 ⇒ 4x = 32 ⇒ x = 8. (Comprueba: 7(8 + 2) − 3(8) = 70 − 24 = 46 ✓.)",
-  "en": null
+  "en": "Distribute: 7x + 14 − 3x = 46. Combine the x terms: 4x + 14 = 46 ⇒ 4x = 32 ⇒ x = 8. (Check: 7(8 + 2) − 3(8) = 70 − 24 = 46 ✓.)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-alg3.js",
@@ -1886,7 +1943,8 @@
   "fin": 16673,
   "contenido": false,
   "es": "No solution means PARALLEL lines: proportional coefficients, but a constant that does not match. Divide the first by 2: 2x + 3y = 6. For the second to be parallel it needs the same left-hand side, so k = 3. That leaves 2x + 3y = 6 against 2x + 3y = 5: two parallel lines that never meet ✓ (and since 6 ≠ 5, they are not the same line, which would give infinitely many solutions).",
-  "en": null
+  "en": "No solution means PARALLEL lines: proportional coefficients, but a constant that does not match. Divide the first by 2: 2x + 3y = 6. For the second to be parallel it needs the same left-hand side, so k = 3. That leaves 2x + 3y = 6 against 2x + 3y = 5: two parallel lines that never meet ✓ (and since 6 ≠ 5, they are not the same line, which would give infinitely many solutions).",
+  "hecho": true
  },
  {
   "archivo": "sets/math-alg3.js",
@@ -1896,7 +1954,8 @@
   "fin": 3945,
   "contenido": false,
   "es": "When you solve, the expensive error is not the algebra: it is dividing by a negative and applying it to only one term. Divide the whole equation at once and check both signs.",
-  "en": null
+  "en": "When you solve, the expensive error is not the algebra: it is dividing by a negative and applying it to only one term. Divide the whole equation at once and check both signs.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-alg3.js",
@@ -1906,7 +1965,8 @@
   "fin": 4981,
   "contenido": false,
   "es": "−6 sale de restar mal el denominador: 5 − 3 = 2 en vez de 5 − (−3) = 8. Restar un negativo suma.",
-  "en": null
+  "en": "−6 comes from subtracting the denominator wrong: 5 − 3 = 2 instead of 5 − (−3) = 8. Subtracting a negative adds.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-alg3.js",
@@ -1916,7 +1976,8 @@
   "fin": 8784,
   "contenido": false,
   "es": "C = 40m + 25 swaps the roles: it would charge $40 every month and $25 once. That is the reverse of what the problem says.",
-  "en": null
+  "en": "C = 40m + 25 swaps the roles: it would charge $40 every month and $25 once. That is the reverse of what the problem says.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-alg4.js",
@@ -1926,7 +1987,8 @@
   "fin": 2606,
   "contenido": false,
   "es": "Sistemas con infinitas soluciones",
-  "en": null
+  "en": "Systems with infinitely many solutions",
+  "hecho": true
  },
  {
   "archivo": "sets/math-alg4.js",
@@ -1936,7 +1998,8 @@
   "fin": 4305,
   "contenido": false,
   "es": "Desigualdades en dos variables (verificar un punto)",
-  "en": null
+  "en": "Inequalities in two variables (testing a point)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-alg4.js",
@@ -1946,7 +2009,8 @@
   "fin": 5623,
   "contenido": false,
   "es": "Rectas paralelas (misma pendiente)",
-  "en": null
+  "en": "Parallel lines (same slope)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-alg4.js",
@@ -1956,7 +2020,8 @@
   "fin": 8492,
   "contenido": false,
   "es": "Modelo lineal a partir de dos condiciones",
-  "en": null
+  "en": "Linear model from two conditions",
+  "hecho": true
  },
  {
   "archivo": "sets/math-alg4.js",
@@ -1966,7 +2031,8 @@
   "fin": 10115,
   "contenido": false,
   "es": "Valor absoluto lineal (dos soluciones)",
-  "en": null
+  "en": "Linear absolute value (two solutions)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-alg4.js",
@@ -1976,7 +2042,8 @@
   "fin": 11469,
   "contenido": false,
   "es": "Ecuaciones lineales con fracciones",
-  "en": null
+  "en": "Linear equations with fractions",
+  "hecho": true
  },
  {
   "archivo": "sets/math-alg4.js",
@@ -1986,7 +2053,8 @@
   "fin": 12700,
   "contenido": false,
   "es": "Funciones lineales (interpretar la pendiente en contexto)",
-  "en": null
+  "en": "Linear functions (interpreting the slope in context)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-alg4.js",
@@ -1996,7 +2064,8 @@
   "fin": 3190,
   "contenido": false,
   "es": "Infinitely many solutions means the two equations are **the same line**: one is an exact multiple of the other, coefficients AND constant. Divide the first by 3: x − 2y = 4. Compare it with ax − 2y = 4: the y terms and the constants already match, so a = 1. (With a = 1 the two equations are identical, that is, infinitely many solutions ✓.)",
-  "en": null
+  "en": "Infinitely many solutions means the two equations are **the same line**: one is an exact multiple of the other, coefficients AND constant. Divide the first by 3: x − 2y = 4. Compare it with ax − 2y = 4: the y terms and the constants already match, so a = 1. (With a = 1 the two equations are identical, that is, infinitely many solutions ✓.)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-alg4.js",
@@ -2006,7 +2075,8 @@
   "fin": 10501,
   "contenido": false,
   "es": "El valor absoluto abre en DOS casos. Caso 1: 2x − 7 = 11 ⇒ 2x = 18 ⇒ x = 9. Caso 2: 2x − 7 = −11 ⇒ 2x = −4 ⇒ x = −2. La suma es 9 + (−2) = **7**. (Comprueba: |2(9) − 7| = |11| = 11 ✓ y |2(−2) − 7| = |−11| = 11 ✓.)",
-  "en": null
+  "en": "Absolute value opens into TWO cases. Case 1: 2x − 7 = 11 ⇒ 2x = 18 ⇒ x = 9. Case 2: 2x − 7 = −11 ⇒ 2x = −4 ⇒ x = −2. The sum is 9 + (−2) = **7**. (Check: |2(9) − 7| = |11| = 11 ✓ and |2(−2) − 7| = |−11| = 11 ✓.)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-alg4.js",
@@ -2016,7 +2086,8 @@
   "fin": 17688,
   "contenido": false,
   "es": "Name the variables before you write anything and build one equation per purchase. The two most tempting distractors are always \"divide a total by a single quantity\" — but each total includes both products.",
-  "en": null
+  "en": "Name the variables before you write anything and build one equation per purchase. The two most tempting distractors are always “divide a total by a single quantity” — but each total includes both products.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-alg4.js",
@@ -2026,7 +2097,8 @@
   "fin": 851,
   "contenido": false,
   "es": "Math — Algebra 4 (sistemas y rectas)",
-  "en": null
+  "en": "Math — Algebra 4 (systems and lines)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-alg4.js",
@@ -2036,7 +2108,8 @@
   "fin": 7706,
   "contenido": false,
   "es": "−2/3 es la pendiente de la recta ORIGINAL, no de la perpendicular. Es el paso intermedio.",
-  "en": null
+  "en": "−2/3 is the slope of the ORIGINAL line, not of the perpendicular one. It is the intermediate step.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-alg4.js",
@@ -2046,7 +2119,8 @@
   "fin": 12188,
   "contenido": false,
   "es": "168 is 12 × 14, the intermediate step. You still have to divide by 7.",
-  "en": null
+  "en": "168 is 12 × 14, the intermediate step. You still have to divide by 7.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-alg4.js",
@@ -2056,7 +2130,8 @@
   "fin": 15128,
   "contenido": false,
   "es": "14 is 7x, the result of the subtraction before solving. You still have to divide by 7.",
-  "en": null
+  "en": "14 is 7x, the result of the subtraction before solving. You still have to divide by 7.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-mod1-sim.js",
@@ -2066,7 +2141,8 @@
   "fin": 1913,
   "contenido": false,
   "es": "Ecuaciones lineales (una variable)",
-  "en": null
+  "en": "Linear equations (one variable)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-mod1-sim.js",
@@ -2076,7 +2152,8 @@
   "fin": 3743,
   "contenido": false,
   "es": "Funciones lineales (pendiente entre dos puntos)",
-  "en": null
+  "en": "Linear functions (slope between two points)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-mod1-sim.js",
@@ -2086,7 +2163,8 @@
   "fin": 5855,
   "contenido": false,
   "es": "Desigualdades lineales (una variable)",
-  "en": null
+  "en": "Linear inequalities (one variable)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-mod1-sim.js",
@@ -2096,7 +2174,8 @@
   "fin": 8101,
   "contenido": false,
   "es": "Ecuaciones lineales (variable en los dos lados)",
-  "en": null
+  "en": "Linear equations (variable on both sides)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-mod1-sim.js",
@@ -2106,7 +2185,8 @@
   "fin": 17661,
   "contenido": false,
   "es": "Ecuaciones racionales",
-  "en": null
+  "en": "Rational equations",
+  "hecho": true
  },
  {
   "archivo": "sets/math-mod1-sim.js",
@@ -2116,7 +2196,8 @@
   "fin": 20011,
   "contenido": false,
   "es": "Proporciones y razones",
-  "en": null
+  "en": "Proportions and ratios",
+  "hecho": true
  },
  {
   "archivo": "sets/math-mod1-sim.js",
@@ -2126,7 +2207,8 @@
   "fin": 23285,
   "contenido": false,
   "es": "Circles (from area to radius)",
-  "en": null
+  "en": "Circles (from area to radius)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-mod1-sim.js",
@@ -2136,7 +2218,8 @@
   "fin": 2138,
   "contenido": false,
   "es": "Add 9 to both sides: 6x = 36. Divide by 6: x = 6. (Check: 6(6) − 9 = 27 ✓.)",
-  "en": null
+  "en": "Add 9 to both sides: 6x = 36. Divide by 6: x = 6. (Check: 6(6) − 9 = 27 ✓.)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-mod1-sim.js",
@@ -2146,7 +2229,8 @@
   "fin": 3071,
   "contenido": false,
   "es": "Reemplaza x por 4: g(4) = 5(4) + 2 = 20 + 2 = 22.",
-  "en": null
+  "en": "Substitute 4 for x: g(4) = 5(4) + 2 = 20 + 2 = 22.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-mod1-sim.js",
@@ -2156,7 +2240,8 @@
   "fin": 6164,
   "contenido": false,
   "es": "Subtract 7: 3x < 15. Divide by 3, which is POSITIVE, so the sign does NOT flip: x < 5. (Check with x = 0: 7 < 22 ✓, and 0 < 5 ✓.)",
-  "en": null
+  "en": "Subtract 7: 3x < 15. Divide by 3, which is POSITIVE, so the sign does NOT flip: x < 5. (Check with x = 0: 7 < 22 ✓, and 0 < 5 ✓.)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-mod1-sim.js",
@@ -2166,7 +2251,8 @@
   "fin": 23570,
   "contenido": false,
   "es": "The area of a circle is πr². Set it equal: πr² = 49π ⇒ r² = 49 ⇒ r = **7**. The π cancels on both sides, so there is nothing to approximate.",
-  "en": null
+  "en": "The area of a circle is πr². Set it equal: πr² = 49π ⇒ r² = 49 ⇒ r = **7**. The π cancels on both sides, so there is nothing to approximate.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-mod1-sim.js",
@@ -2176,7 +2262,8 @@
   "fin": 17420,
   "contenido": false,
   "es": "Undo in the reverse order of how it was built: first what is added, then what multiplies, and last the power. The option \"x²\" is always among the answers.",
-  "en": null
+  "en": "Undo in the reverse order of how it was built: first what is added, then what multiplies, and last the power. The option “x²” is always among the answers.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-mod1-sim.js",
@@ -2186,7 +2273,8 @@
   "fin": 23770,
   "contenido": false,
   "es": "When the area comes \"in terms of π\", cancel it and work with the number: the problem turns into arithmetic. And do not confuse r² with r — the 49 is the square, the answer is its root.",
-  "en": null
+  "en": "When the area comes “in terms of π”, cancel it and work with the number: the problem turns into arithmetic. And do not confuse r² with r — the 49 is the square, the answer is its root.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-mod1-sim.js",
@@ -2196,7 +2284,8 @@
   "fin": 5369,
   "contenido": false,
   "es": "16 is 2x, the intermediate step. You still have to divide by 2.",
-  "en": null
+  "en": "16 is 2x, the intermediate step. You still have to divide by 2.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-mod1-sim.js",
@@ -2206,7 +2295,8 @@
   "fin": 6327,
   "contenido": false,
   "es": "x > 5 flips the sign for no reason. The symbol only flips when you multiply or divide by a NEGATIVE, and here you divided by +3.",
-  "en": null
+  "en": "x > 5 flips the sign for no reason. The symbol only flips when you multiply or divide by a NEGATIVE, and here you divided by +3.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-mod1-sim.js",
@@ -2216,7 +2306,8 @@
   "fin": 6401,
   "contenido": false,
   "es": "x < 15 forgot to divide by 3. It is the intermediate step.",
-  "en": null
+  "en": "x < 15 forgot to divide by 3. It is the intermediate step.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-mod1-sim.js",
@@ -2226,7 +2317,8 @@
   "fin": 11975,
   "contenido": false,
   "es": "x = −7 y x = −2 dan producto +14 y suma −9. Ni el producto ni la suma coinciden.",
-  "en": null
+  "en": "x = −7 and x = −2 give a product of +14 and a sum of −9. Neither the product nor the sum matches.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-mod1-sim.js",
@@ -2236,7 +2328,8 @@
   "fin": 18329,
   "contenido": false,
   "es": "48 is 12 × 4: it multiplied where it had to divide. If 12 divided by something gives 4, that something is 3, not 48.",
-  "en": null
+  "en": "48 is 12 × 4: it multiplied where it had to divide. If 12 divided by something gives 4, that something is 3, not 48.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-mod1-sim.js",
@@ -2246,7 +2339,8 @@
   "fin": 19562,
   "contenido": false,
   "es": "$100 suma el 25 % en vez de restarlo. \"Off\" significa descuento.",
-  "en": null
+  "en": "$100 adds the 25% instead of subtracting it. “Off” means a discount.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-mod1-sim.js",
@@ -2256,7 +2350,8 @@
   "fin": 23387,
   "contenido": true,
   "es": "A circle has an area of 49π. What is the radius of the circle? (Grid in your answer.)",
-  "en": null
+  "en": "A circle has an area of 49π. What is the radius of the circle? (Grid in your answer.)",
+  "hecho": true
  },
  {
   "archivo": "sets/rw-mod1-sim.js",
@@ -2266,7 +2361,8 @@
   "fin": 10191,
   "contenido": false,
   "es": "\"Verbosity\" is the exact opposite: the text praises restraint, not an excess of words. The first sentence already says \"praised its restraint\".",
-  "en": null
+  "en": "\"Verbosity\" is the exact opposite: the text praises restraint, not an excess of words. The first sentence already says \"praised its restraint\".",
+  "hecho": true
  },
  {
   "archivo": "sets/rw-mod1-sim.js",
@@ -2276,7 +2372,8 @@
   "fin": 24725,
   "contenido": false,
   "es": "It reverses the timing: rivers and lakes COVERED the area six thousand years ago; it does not say they still exist beneath the sand today.",
-  "en": null
+  "en": "It reverses the timing: rivers and lakes COVERED the area six thousand years ago; it does not say they still exist beneath the sand today.",
+  "hecho": true
  },
  {
   "archivo": "sets/rw-mod1-sim.js",
@@ -2286,7 +2383,8 @@
   "fin": 55866,
   "contenido": false,
   "es": "«Similarly» marca semejanza, y las dos oraciones dicen cosas contrarias.",
-  "en": null
+  "en": "“Similarly” signals likeness, but the two sentences say opposite things.",
+  "hecho": true
  },
  {
   "archivo": "sets/rw-mod1-sim.js",
@@ -2296,7 +2394,8 @@
   "fin": 9633,
   "contenido": true,
   "es": "verbosity",
-  "en": null
+  "en": "verbosity",
+  "hecho": true
  },
  {
   "archivo": "sets/math-adv2.js",
@@ -2306,7 +2405,8 @@
   "fin": 494,
   "contenido": false,
   "es": "Ecuaciones exponenciales (bases iguales)",
-  "en": null
+  "en": "Exponential equations (same bases)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-adv2.js",
@@ -2316,7 +2416,8 @@
   "fin": 3252,
   "contenido": false,
   "es": "Decrecimiento exponencial (modelo)",
-  "en": null
+  "en": "Exponential decay (model)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-adv2.js",
@@ -2326,7 +2427,8 @@
   "fin": 8411,
   "contenido": false,
   "es": "Divide everything by 3: x² − 6x + 5 = 0 → (x − 1)(x − 5) = 0 → roots 1 and 5. Their sum is 1 + 5 = 6. (Shortcut: for ax² + bx + c, the sum of the roots is −b/a = −(−18)/3 = 6.)",
-  "en": null
+  "en": "Divide everything by 3: x² − 6x + 5 = 0 → (x − 1)(x − 5) = 0 → roots 1 and 5. Their sum is 1 + 5 = 6. (Shortcut: for ax² + bx + c, the sum of the roots is −b/a = −(−18)/3 = 6.)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-adv2.js",
@@ -2336,7 +2438,8 @@
   "fin": 864,
   "contenido": false,
   "es": "3 is the coefficient in the exponent, not the value of x. You still have to divide 12 by 3.",
-  "en": null
+  "en": "3 is the coefficient in the exponent, not the value of x. You still have to divide 12 by 3.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-adv2.js",
@@ -2346,7 +2449,8 @@
   "fin": 972,
   "contenido": false,
   "es": "9 comes from subtracting 12 − 3 instead of dividing. The equation is 3x = 12, so you divide.",
-  "en": null
+  "en": "9 comes from subtracting 12 − 3 instead of dividing. The equation is 3x = 12, so you divide.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-adv2.js",
@@ -2356,7 +2460,8 @@
   "fin": 1060,
   "contenido": false,
   "es": "36 sale de multiplicar 3 · 12. Iguala exponentes y DIVIDE: x = 12/3 = 4.",
-  "en": null
+  "en": "36 comes from multiplying 3 · 12. Set the exponents equal and DIVIDE: x = 12/3 = 4.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-adv2.js",
@@ -2366,7 +2471,8 @@
   "fin": 4057,
   "contenido": false,
   "es": "1.15 modela un CRECIMIENTO del 15%, no un decrecimiento.",
-  "en": null
+  "en": "1.15 models 15% GROWTH, not decay.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-adv2.js",
@@ -2376,7 +2482,8 @@
   "fin": 7742,
   "contenido": false,
   "es": "100 is b², but you forgot to divide by 4: c = 100/4 = 25.",
-  "en": null
+  "en": "100 is b², but you forgot to divide by 4: c = 100/4 = 25.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-data2.js",
@@ -2386,7 +2493,8 @@
   "fin": 550,
   "contenido": false,
   "es": "Porcentajes (porcentaje de un total)",
-  "en": null
+  "en": "Percentages (percent of a total)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-data2.js",
@@ -2396,7 +2504,8 @@
   "fin": 1431,
   "contenido": false,
   "es": "Porcentajes (porcentaje de cambio)",
-  "en": null
+  "en": "Percentages (percent change)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-data2.js",
@@ -2406,7 +2515,8 @@
   "fin": 2408,
   "contenido": false,
   "es": "Porcentajes (porcentaje inverso / hallar el original)",
-  "en": null
+  "en": "Percentages (reverse percent / finding the original)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-data2.js",
@@ -2416,7 +2526,8 @@
   "fin": 3429,
   "contenido": false,
   "es": "Porcentajes (porcentaje de, base correcta)",
-  "en": null
+  "en": "Percentages (percent of, correct base)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-data2.js",
@@ -2426,7 +2537,8 @@
   "fin": 4469,
   "contenido": false,
   "es": "Razones (repartir un total en tres partes)",
-  "en": null
+  "en": "Ratios (splitting a total into three parts)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-data2.js",
@@ -2436,7 +2548,8 @@
   "fin": 9802,
   "contenido": false,
   "es": "Probabilidad (evento simple)",
-  "en": null
+  "en": "Probability (simple event)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-data2.js",
@@ -2446,7 +2559,8 @@
   "fin": 10499,
   "contenido": false,
   "es": "Probabilidad (subgrupo dentro de un total, en palabras)",
-  "en": null
+  "en": "Probability (subgroup within a total, in words)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-data2.js",
@@ -2456,7 +2570,8 @@
   "fin": 11704,
   "contenido": false,
   "es": "Porcentajes (dos cambios porcentuales sucesivos)",
-  "en": null
+  "en": "Percentages (two successive percent changes)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-data2.js",
@@ -2466,7 +2581,8 @@
   "fin": 1769,
   "contenido": false,
   "es": "Aumento porcentual = (cambio / valor original) × 100 = (54 − 45)/45 × 100 = 9/45 × 100 = 20%.",
-  "en": null
+  "en": "Percent increase = (change / original value) × 100 = (54 − 45)/45 × 100 = 9/45 × 100 = 20%.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-data2.js",
@@ -2476,7 +2592,8 @@
   "fin": 3259,
   "contenido": false,
   "es": "Reverse percent: if 15% was taken off, the price paid is 85% of the original. Divide the final price by 0.85 (do not add 15% back to the discounted price).",
-  "en": null
+  "en": "Reverse percent: if 15% was taken off, the price paid is 85% of the original. Divide the final price by 0.85 (do not add 15% back to the discounted price).",
+  "hecho": true
  },
  {
   "archivo": "sets/math-data2.js",
@@ -2486,7 +2603,8 @@
   "fin": 5291,
   "contenido": false,
   "es": "A three-term ratio → add ALL the parts (5+2+1=8), divide the total by that sum, and multiply by the parts of the ingredient they want.",
-  "en": null
+  "en": "A three-term ratio → add ALL the parts (5+2+1=8), divide the total by that sum, and multiply by the parts of the ingredient they want.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-data2.js",
@@ -2496,7 +2614,8 @@
   "fin": 5900,
   "contenido": false,
   "es": "First get the unit rate (pages per MINUTE = 210/6 = 35), then multiply by the new time. Divide before you multiply.",
-  "en": null
+  "en": "First get the unit rate (pages per MINUTE = 210/6 = 35), then multiply by the new time. Divide before you multiply.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-data2.js",
@@ -2506,7 +2625,8 @@
   "fin": 8018,
   "contenido": false,
   "es": "To work with means, recover the SUM: sum = mean × count. Adjust the sum, adjust the count, and divide again. Here 40 → 60, divided by 6 = 10.",
-  "en": null
+  "en": "To work with means, recover the SUM: sum = mean × count. Adjust the sum, adjust the count, and divide again. Here 40 → 60, divided by 6 = 10.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-data2.js",
@@ -2516,7 +2636,8 @@
   "fin": 1900,
   "contenido": false,
   "es": "9% confuses the absolute change ($9) with the percent. You have to divide by the original value.",
-  "en": null
+  "en": "9% confuses the absolute change ($9) with the percent. You have to divide by the original value.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-data2.js",
@@ -2526,7 +2647,8 @@
   "fin": 2971,
   "contenido": false,
   "es": "$66 usa una base equivocada; 51/0.85 da 60, no 66.",
-  "en": null
+  "en": "$66 uses the wrong base; 51/0.85 gives 60, not 66.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-data2.js",
@@ -2536,7 +2658,8 @@
   "fin": 3078,
   "contenido": false,
   "es": "$68 divides 51 by 0.75 (as if it were 25% off). The discount is 15%, so you divide by 0.85.",
-  "en": null
+  "en": "$68 divides 51 by 0.75 (as if it were 25% off). The discount is 15%, so you divide by 0.85.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-data2.js",
@@ -2546,7 +2669,8 @@
   "fin": 7851,
   "contenido": false,
   "es": "14 does not fit; recover the original sum (40), add 20 and divide by 6 to get 10.",
-  "en": null
+  "en": "14 does not fit; recover the original sum (40), add 20 and divide by 6 to get 10.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-geo2.js",
@@ -2556,7 +2680,8 @@
   "fin": 2513,
   "contenido": false,
   "es": "Area of a circular sector",
-  "en": null
+  "en": "Area of a circular sector",
+  "hecho": true
  },
  {
   "archivo": "sets/math-geo2.js",
@@ -2566,7 +2691,8 @@
   "fin": 3534,
   "contenido": false,
   "es": "Volumen del cono",
-  "en": null
+  "en": "Volume of a cone",
+  "hecho": true
  },
  {
   "archivo": "sets/math-geo2.js",
@@ -2576,7 +2702,8 @@
   "fin": 11393,
   "contenido": false,
   "es": "Volumen de la esfera",
-  "en": null
+  "en": "Volume of a sphere",
+  "hecho": true
  },
  {
   "archivo": "sets/math-geo2.js",
@@ -2586,7 +2713,8 @@
   "fin": 13277,
   "contenido": false,
   "es": "Area using a 45-45-90 triangle / diagonal",
-  "en": null
+  "en": "Area using a 45-45-90 triangle / diagonal",
+  "hecho": true
  },
  {
   "archivo": "sets/math-geo2.js",
@@ -2596,7 +2724,8 @@
   "fin": 2881,
   "contenido": false,
   "es": "Sector area = (central angle / 360°) × area of the circle. Total area = πr² = π(6)² = 36π. Sector = (120/360)(36π) = (1/3)(36π) = 12π.",
-  "en": null
+  "en": "Sector area = (central angle / 360°) × area of the circle. Total area = πr² = π(6)² = 36π. Sector = (120/360)(36π) = (1/3)(36π) = 12π.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-geo2.js",
@@ -2606,7 +2735,8 @@
   "fin": 3849,
   "contenido": false,
   "es": "Volumen del cono = (1/3)πr²h = (1/3)π(3)²(4) = (1/3)π(9)(4) = (1/3)(36π) = 12π.",
-  "en": null
+  "en": "Volume of the cone = (1/3)πr²h = (1/3)π(3)²(4) = (1/3)π(9)(4) = (1/3)(36π) = 12π.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-geo2.js",
@@ -2616,7 +2746,8 @@
   "fin": 9618,
   "contenido": false,
   "es": "In similar figures, the ratio of areas is the SQUARE of the ratio of sides. Ratio of sides = 2/3, so ratio of areas = (2/3)² = 4/9. So 20 / Area(XYZ) = 4/9 → Area(XYZ) = 20 × (9/4) = 45.",
-  "en": null
+  "en": "In similar figures, the ratio of areas is the SQUARE of the ratio of sides. Ratio of sides = 2/3, so ratio of areas = (2/3)² = 4/9. So 20 / Area(XYZ) = 4/9 → Area(XYZ) = 20 × (9/4) = 45.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-geo2.js",
@@ -2626,7 +2757,8 @@
   "fin": 11740,
   "contenido": false,
   "es": "Volumen de la esfera = (4/3)πr³ = (4/3)π(3)³ = (4/3)π(27) = (4 × 27)/3 × π = 108/3 × π = 36π. El coeficiente de π es 36.",
-  "en": null
+  "en": "Volume of the sphere = (4/3)πr³ = (4/3)π(3)³ = (4/3)π(27) = (4 × 27)/3 × π = 108/3 × π = 36π. The coefficient of π is 36.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-geo2.js",
@@ -2636,7 +2768,8 @@
   "fin": 13579,
   "contenido": false,
   "es": "The diagonal of a square with side s is s√2 (from the 45-45-90). Here s√2 = 10√2, so s = 10. Area = s² = 10² = 100.",
-  "en": null
+  "en": "The diagonal of a square with side s is s√2 (from the 45-45-90). Here s√2 = 10√2, so s = 10. Area = s² = 10² = 100.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-geo2.js",
@@ -2646,7 +2779,8 @@
   "fin": 3398,
   "contenido": false,
   "es": "Sector = a fraction of the area: (angle/360) × πr². Arc = a fraction of the circumference: (angle/360) × 2πr. Do not mix area with perimeter.",
-  "en": null
+  "en": "Sector = a fraction of the area: (angle/360) × πr². Arc = a fraction of the circumference: (angle/360) × 2πr. Do not mix area with perimeter.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-geo2.js",
@@ -2656,7 +2790,8 @@
   "fin": 14162,
   "contenido": false,
   "es": "Diagonal of a square = side × √2. Solve for the side first (divide the diagonal by √2), THEN square it for the area. Do not square the diagonal directly.",
-  "en": null
+  "en": "Diagonal of a square = side × √2. Solve for the side first (divide the diagonal by √2), THEN square it for the area. Do not square the diagonal directly.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-geo2.js",
@@ -2666,7 +2801,8 @@
   "fin": 2342,
   "contenido": false,
   "es": "More Geometry & Trig: circles (arcs, sectors, equations), triangles & similarity, area/volume, and right-triangle trig.",
-  "en": null
+  "en": "More Geometry & Trig: circles (arcs, sectors, equations), triangles & similarity, area/volume, and right-triangle trig.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-geo2.js",
@@ -2676,7 +2812,8 @@
   "fin": 3039,
   "contenido": false,
   "es": "4π comes from taking (120/360) of the radius, or from a computation with r not squared. You have to use the area πr² = 36π.",
-  "en": null
+  "en": "4π comes from taking (120/360) of the radius, or from a computation with r not squared. You have to use the area πr² = 36π.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-geo2.js",
@@ -2686,7 +2823,8 @@
   "fin": 3124,
   "contenido": false,
   "es": "36π is the area of the WHOLE circle (360°), not just the 120° sector.",
-  "en": null
+  "en": "36π is the area of the WHOLE circle (360°), not just the 120° sector.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-geo2.js",
@@ -2696,7 +2834,8 @@
   "fin": 3231,
   "contenido": false,
   "es": "6π confuses it with arc length (fraction × circumference). Here they want AREA, so use πr².",
-  "en": null
+  "en": "6π confuses it with arc length (fraction × circumference). Here they want AREA, so use πr².",
+  "hecho": true
  },
  {
   "archivo": "sets/math-geo2.js",
@@ -2706,7 +2845,8 @@
   "fin": 8588,
   "contenido": false,
   "es": "7/25 es sin θ (opuesto/hipotenusa), usando la hipotenusa 25. La tangente NO usa la hipotenusa.",
-  "en": null
+  "en": "7/25 is sin θ (opposite/hypotenuse), using the hypotenuse 25. The tangent does NOT use the hypotenuse.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-geo2.js",
@@ -2716,7 +2856,8 @@
   "fin": 8798,
   "contenido": false,
   "es": "24/25 es cos θ (adyacente/hipotenusa). Te piden la tangente, que es opuesto/adyacente.",
-  "en": null
+  "en": "24/25 is cos θ (adjacent/hypotenuse). They are asking for the tangent, which is opposite/adjacent.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-geo2.js",
@@ -2726,7 +2867,8 @@
   "fin": 9859,
   "contenido": false,
   "es": "13.5 applies the ratio backwards (20 × 4/9), shrinking the area when XYZ is the larger triangle.",
-  "en": null
+  "en": "13.5 applies the ratio backwards (20 × 4/9), shrinking the area when XYZ is the larger triangle.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-geo2.js",
@@ -2736,7 +2878,8 @@
   "fin": 13737,
   "contenido": false,
   "es": "200 squares the diagonal: (10√2)² = 200. But that is twice the area; the area is s², with s = 10, not the diagonal squared.",
-  "en": null
+  "en": "200 squares the diagonal: (10√2)² = 200. But that is twice the area; the area is s², with s = 10, not the diagonal squared.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-geo2.js",
@@ -2746,7 +2889,8 @@
   "fin": 13858,
   "contenido": false,
   "es": "50 sale de tomar la mitad de la diagonal al cuadrado de forma incorrecta o de usar (1/2)d·d mal aplicado.",
-  "en": null
+  "en": "50 comes from taking half the diagonal squared incorrectly, or from misapplying (1/2)d·d.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-geo2.js",
@@ -2756,7 +2900,8 @@
   "fin": 13983,
   "contenido": false,
   "es": "100√2 mixes up the side with the diagonal; the area of a square is a whole number of units², with no √2 here.",
-  "en": null
+  "en": "100√2 mixes up the side with the diagonal; the area of a square is a whole number of units², with no √2 here.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-geo2.js",
@@ -2766,7 +2911,8 @@
   "fin": 2651,
   "contenido": true,
   "es": "A circle has a radius of 6. A sector of the circle is bounded by a central angle of 120°. What is the area of the sector?",
-  "en": null
+  "en": "A circle has a radius of 6. A sector of the circle is bounded by a central angle of 120°. What is the area of the sector?",
+  "hecho": true
  },
  {
   "archivo": "sets/math-geo2.js",
@@ -2776,7 +2922,8 @@
   "fin": 9336,
   "contenido": true,
   "es": "Triangle ABC is similar to triangle XYZ. The ratio of a side of triangle ABC to the corresponding side of triangle XYZ is 2 to 3. If the area of triangle ABC is 20, what is the area of triangle XYZ?",
-  "en": null
+  "en": "Triangle ABC is similar to triangle XYZ. The ratio of a side of triangle ABC to the corresponding side of triangle XYZ is 2 to 3. If the area of triangle ABC is 20, what is the area of triangle XYZ?",
+  "hecho": true
  },
  {
   "archivo": "sets/math-geo2.js",
@@ -2786,7 +2933,8 @@
   "fin": 13365,
   "contenido": true,
   "es": "A square has a diagonal of length 10√2. What is the area of the square?",
-  "en": null
+  "en": "A square has a diagonal of length 10√2. What is the area of the square?",
+  "hecho": true
  },
  {
   "archivo": "sets/rw-data1.js",
@@ -2796,7 +2944,8 @@
   "fin": 11559,
   "contenido": false,
   "es": "420→610 (2019 a 2021) es un tramo parcial; no llega a 2023 ni muestra que se duplicara.",
-  "en": null
+  "en": "420→610 (2019 to 2021) is only part of the span; it does not reach 2023 or show that the value doubled.",
+  "hecho": true
  },
  {
   "archivo": "sets/rw-structure1.js",
@@ -2806,7 +2955,8 @@
   "fin": 12593,
   "contenido": false,
   "es": "The text contrasts the silent era (gestures only) with the arrival of sound, and shows that some stars struggled and others adapted. The purpose is to explain how sound changed what actors were asked to do.",
-  "en": null
+  "en": "The text contrasts the silent era (gestures only) with the arrival of sound, and shows that some stars struggled and others adapted. The purpose is to explain how sound changed what actors were asked to do.",
+  "hecho": true
  },
  {
   "archivo": "sets/rw-structure1.js",
@@ -2816,7 +2966,8 @@
   "fin": 2714,
   "contenido": true,
   "es": "Empty city lots can be found in almost every large urban area.",
-  "en": null
+  "en": "Empty city lots can be found in almost every large urban area.",
+  "hecho": true
  },
  {
   "archivo": "sets/rw-structure1.js",
@@ -2826,7 +2977,8 @@
   "fin": 12168,
   "contenido": true,
   "es": "To celebrate one particular actor’s success in the era of sound.",
-  "en": null
+  "en": "To celebrate one particular actor’s success in the era of sound.",
+  "hecho": true
  },
  {
   "archivo": "sets/rw-agree1.js",
@@ -2836,7 +2988,8 @@
   "fin": 13420,
   "contenido": false,
   "es": "“their” = posesivo (their backpacks); “there” = lugar; “they’re” = they are. Antes de un sustantivo, usa “their”.",
-  "en": null
+  "en": "“their” = possessive (their backpacks); “there” = place; “they’re” = they are. Before a noun, use “their”.",
+  "hecho": true
  },
  {
   "archivo": "sets/rw-agree1.js",
@@ -2846,7 +2999,8 @@
   "fin": 1235,
   "contenido": false,
   "es": "“were” es plural; el sujeto singular “box” pide un verbo singular, no plural.",
-  "en": null
+  "en": "“were” is plural; the singular subject “box” needs a singular verb, not a plural one.",
+  "hecho": true
  },
  {
   "archivo": "sets/rw-agree1.js",
@@ -2856,7 +3010,8 @@
   "fin": 1329,
   "contenido": false,
   "es": "“have been” es plural; el sujeto singular “box” pide “has been”, no “have been”.",
-  "en": null
+  "en": "“have been” is plural; the singular subject “box” needs “has been”, not “have been”.",
+  "hecho": true
  },
  {
   "archivo": "sets/rw-agree1.js",
@@ -2866,7 +3021,8 @@
   "fin": 2449,
   "contenido": false,
   "es": "“are receiving” es plural; el sujeto singular “Each” pide un verbo singular.",
-  "en": null
+  "en": "“are receiving” is plural; the singular subject “Each” needs a singular verb.",
+  "hecho": true
  },
  {
   "archivo": "sets/rw-agree1.js",
@@ -2876,7 +3032,8 @@
   "fin": 3300,
   "contenido": false,
   "es": "“stand” es plural; el sujeto “a small cabin” es singular.",
-  "en": null
+  "en": "“stand” is plural; the subject “a small cabin” is singular.",
+  "hecho": true
  },
  {
   "archivo": "sets/rw-agree1.js",
@@ -2886,7 +3043,8 @@
   "fin": 3390,
   "contenido": false,
   "es": "“have stood” es plural; el sujeto singular “a small cabin” pide “has stood”.",
-  "en": null
+  "en": "“have stood” is plural; the singular subject “a small cabin” needs “has stood”.",
+  "hecho": true
  },
  {
   "archivo": "sets/rw-agree1.js",
@@ -2896,7 +3054,8 @@
   "fin": 5678,
   "contenido": false,
   "es": "“were” es plural; el sujeto singular “committee” pide un verbo singular.",
-  "en": null
+  "en": "“were” is plural; the singular subject “committee” needs a singular verb.",
+  "hecho": true
  },
  {
   "archivo": "sets/rw-agree1.js",
@@ -2906,7 +3065,8 @@
   "fin": 7826,
   "contenido": false,
   "es": "“our” es primera persona; el texto habla de la orquesta en tercera persona.",
-  "en": null
+  "en": "“our” is first person; the text talks about the orchestra in the third person.",
+  "hecho": true
  },
  {
   "archivo": "sets/rw-agree1.js",
@@ -2916,7 +3076,8 @@
   "fin": 9834,
   "contenido": false,
   "es": "“yourself” es segunda persona; el texto habla de “A person” en tercera persona.",
-  "en": null
+  "en": "“yourself” is second person; the text talks about “A person” in the third person.",
+  "hecho": true
  },
  {
   "archivo": "sets/rw-b1exam.js",
@@ -2926,7 +3087,8 @@
   "fin": 18153,
   "contenido": false,
   "es": "“Therefore” marca consecuencia, pero la segunda idea no es un resultado de la primera; es un contrapunto.",
-  "en": null
+  "en": "“Therefore” signals a consequence, but the second idea is not a result of the first; it is a counterpoint.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-mashup-alg-func.js",
@@ -2936,7 +3098,8 @@
   "fin": 9227,
   "contenido": false,
   "es": "Inverse functions and solving",
-  "en": null
+  "en": "Inverse functions and solving",
+  "hecho": true
  },
  {
   "archivo": "sets/math-mashup-alg-func.js",
@@ -2946,7 +3109,8 @@
   "fin": 6799,
   "contenido": false,
   "es": "Add the two equations: (2x + y) + (x − y) = 10 + 4 → 3x = 14 → x = 14/3 ≈ 4.67. (Alternative: from x − y = 4, get y = x − 4. Substitute into 2x + y = 10: 2x + (x − 4) = 10 → 3x = 14 → x = 14/3.) Respuesta: 14/3.",
-  "en": null
+  "en": "Add the two equations: (2x + y) + (x − y) = 10 + 4 → 3x = 14 → x = 14/3 ≈ 4.67. (Alternative: from x − y = 4, get y = x − 4. Substitute into 2x + y = 10: 2x + (x − 4) = 10 → 3x = 14 → x = 14/3.) Answer: 14/3.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-mashup-alg-func.js",
@@ -2956,7 +3120,8 @@
   "fin": 9933,
   "contenido": false,
   "es": "Inverse function notation: f^(−1)(a) is the x-value such that f(x) = a. Don\\'t confuse it with 1/f(x).",
-  "en": null
+  "en": "Inverse function notation: f^(−1)(a) is the x-value such that f(x) = a. Don\\'t confuse it with 1/f(x).",
+  "hecho": true
  },
  {
   "archivo": "sets/math-mashup-alg-func.js",
@@ -2966,7 +3131,8 @@
   "fin": 2233,
   "contenido": false,
   "es": "4 sale de tomar f(0) = 2 (calculando 2(0 + 1) en vez de 2(0) + 1 = 1): 6 − 2 = 4.",
-  "en": null
+  "en": "4 comes from taking f(0) = 2 (computing 2(0 + 1) instead of 2(0) + 1 = 1): 6 − 2 = 4.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-spr-drill.js",
@@ -2976,7 +3142,8 @@
   "fin": 2485,
   "contenido": false,
   "es": "Tasas (velocidad promedio)",
-  "en": null
+  "en": "Rates (average speed)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-spr-drill.js",
@@ -2986,7 +3153,8 @@
   "fin": 4133,
   "contenido": false,
   "es": "Media (despejar un valor faltante)",
-  "en": null
+  "en": "Mean (solving for a missing value)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-spr-drill.js",
@@ -2996,7 +3164,8 @@
   "fin": 4670,
   "contenido": false,
   "es": "Area of a rectangle",
-  "en": null
+  "en": "Area of a rectangle",
+  "hecho": true
  },
  {
   "archivo": "sets/math-spr-drill.js",
@@ -3006,7 +3175,8 @@
   "fin": 5126,
   "contenido": false,
   "es": "Sistema de ecuaciones (despejar una variable)",
-  "en": null
+  "en": "Systems of equations (solving for one variable)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-spr-drill.js",
@@ -3016,7 +3186,8 @@
   "fin": 6084,
   "contenido": false,
   "es": "Problema multipaso con porcentaje",
-  "en": null
+  "en": "Multi-step percent problem",
+  "hecho": true
  },
  {
   "archivo": "sets/math-spr-drill.js",
@@ -3026,7 +3197,8 @@
   "fin": 697,
   "contenido": false,
   "es": "Divide ambos lados entre 3: x = 21/3 = 7. Respuesta: 7.",
-  "en": null
+  "en": "Divide both sides by 3: x = 21/3 = 7. Answer: 7.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-spr-drill.js",
@@ -3036,7 +3208,8 @@
   "fin": 1131,
   "contenido": false,
   "es": "Resta 5 a ambos lados: 2x = 12. Divide entre 2: x = 6. (Verifica: 2(6) + 5 = 17 ✓.)",
-  "en": null
+  "en": "Subtract 5 from both sides: 2x = 12. Divide by 2: x = 6. (Check: 2(6) + 5 = 17 ✓.)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-spr-drill.js",
@@ -3046,7 +3219,8 @@
   "fin": 1663,
   "contenido": false,
   "es": "Add 3: 4x = 8. Divide by 4: x = 2. (Check: 4(2) − 3 = 5 ✓.) Even though the question allows a fraction or a decimal, here it comes out as an exact integer.",
-  "en": null
+  "en": "Add 3: 4x = 8. Divide by 4: x = 2. (Check: 4(2) − 3 = 5 ✓.) Even though the question allows a fraction or a decimal, here it comes out as an exact integer.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-spr-drill.js",
@@ -3056,7 +3230,8 @@
   "fin": 2192,
   "contenido": false,
   "es": "Subtract 2: 5x = 2. Divide by 5: x = 2/5 = 0.4. (Check: 5(2/5) + 2 = 2 + 2 = 4 ✓.) The box accepts 2/5, .4 or 0.4.",
-  "en": null
+  "en": "Subtract 2: 5x = 2. Divide by 5: x = 2/5 = 0.4. (Check: 5(2/5) + 2 = 2 + 2 = 4 ✓.) The box accepts 2/5, .4 or 0.4.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-spr-drill.js",
@@ -3066,7 +3241,8 @@
   "fin": 2742,
   "contenido": false,
   "es": "Velocidad promedio = distancia / tiempo = 240 / 4 = 60 millas por hora. Respuesta: 60.",
-  "en": null
+  "en": "Average speed = distance / time = 240 / 4 = 60 miles per hour. Answer: 60.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-spr-drill.js",
@@ -3076,7 +3252,8 @@
   "fin": 3816,
   "contenido": false,
   "es": "Factoriza: (x − 2)(x − 4) = 0 → x = 2 o x = 4. Ambas son positivas; la MENOR es 2. (Verifica: 4 − 12 + 8 = 0 ✓.)",
-  "en": null
+  "en": "Factor: (x − 2)(x − 4) = 0 → x = 2 or x = 4. Both are positive; the SMALLER one is 2. (Check: 4 − 12 + 8 = 0 ✓.)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-spr-drill.js",
@@ -3086,7 +3263,8 @@
   "fin": 4402,
   "contenido": false,
   "es": "Media = (5 + 8 + 12 + x) / 4 = 10. Multiplica por 4: 25 + x = 40 → x = 15. (Verifica: (5+8+12+15)/4 = 40/4 = 10 ✓.)",
-  "en": null
+  "en": "Mean = (5 + 8 + 12 + x) / 4 = 10. Multiply by 4: 25 + x = 40 → x = 15. (Check: (5+8+12+15)/4 = 40/4 = 10 ✓.)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-spr-drill.js",
@@ -3096,7 +3274,8 @@
   "fin": 4868,
   "contenido": false,
   "es": "Area = length × width = 12 × 5 = 60. Answer: 60.",
-  "en": null
+  "en": "Area = length × width = 12 × 5 = 60. Answer: 60.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-spr-drill.js",
@@ -3106,7 +3285,8 @@
   "fin": 4974,
   "contenido": false,
   "es": "Do not confuse area (l × w = 60) with perimeter (2(l + w) = 34). They want area: multiply.",
-  "en": null
+  "en": "Do not confuse area (l × w = 60) with perimeter (2(l + w) = 34). They want area: multiply.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-spr-drill.js",
@@ -3116,7 +3296,8 @@
   "fin": 4776,
   "contenido": true,
   "es": "A rectangle has a length of 12 and a width of 5. What is the area? (Grid in your answer.)",
-  "en": null
+  "en": "A rectangle has a length of 12 and a width of 5. What is the area? (Grid in your answer.)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-insane-parametric.js",
@@ -3126,7 +3307,8 @@
   "fin": 1886,
   "contenido": false,
   "es": "Nested function composition and inverse logic",
-  "en": null
+  "en": "Nested function composition and inverse logic",
+  "hecho": true
  },
  {
   "archivo": "sets/math-insane-parametric.js",
@@ -3136,7 +3318,8 @@
   "fin": 3355,
   "contenido": false,
   "es": "Let a and b be the sides. Perimeter: 2(a + b) = 34 → a + b = 17. Area: ab = 60. So a and b are the roots of t² − 17t + 60 = 0 → (t − 5)(t − 12) = 0 → the sides are 5 and 12. Check: 2(5 + 12) = 34 ✓ and 5 × 12 = 60 ✓. The longer side is 12. Answer: 12.",
-  "en": null
+  "en": "Let a and b be the sides. Perimeter: 2(a + b) = 34 → a + b = 17. Area: ab = 60. So a and b are the roots of t² − 17t + 60 = 0 → (t − 5)(t − 12) = 0 → the sides are 5 and 12. Check: 2(5 + 12) = 34 ✓ and 5 × 12 = 60 ✓. The longer side is 12. Answer: 12.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-insane-parametric.js",
@@ -3146,7 +3329,8 @@
   "fin": 2745,
   "contenido": false,
   "es": "For h⁻¹(y) you do not need the inverse formula: solve the equation h(x) = y. And for the composite, work from the inside out: g first, then f.",
-  "en": null
+  "en": "For h⁻¹(y) you do not need the inverse formula: solve the equation h(x) = y. And for the composite, work from the inside out: g first, then f.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-insane-parametric.js",
@@ -3156,7 +3340,8 @@
   "fin": 3576,
   "contenido": false,
   "es": "With perimeter and area you have the SUM (a + b) and the PRODUCT (ab): the sides are the roots of t² − (sum)t + (product) = 0. You can also hunt factors of 60 that add to 17: 5 and 12.",
-  "en": null
+  "en": "With perimeter and area you have the SUM (a + b) and the PRODUCT (ab): the sides are the roots of t² − (sum)t + (product) = 0. You can also hunt factors of 60 that add to 17: 5 and 12.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-insane-parametric.js",
@@ -3166,7 +3351,8 @@
   "fin": 2577,
   "contenido": false,
   "es": "h(4) = 2(16) − 5 = 27, no 13. Revisa el despeje: 2x² = 18, no 32.",
-  "en": null
+  "en": "h(4) = 2(16) − 5 = 27, not 13. Check your work: 2x² = 18, not 32.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-insane-parametric.js",
@@ -3176,7 +3362,8 @@
   "fin": 3060,
   "contenido": true,
   "es": "A rectangle has integer dimensions. Its perimeter is 34, and its area is 60. What is the length of the longer side? (Grid in your answer.)",
-  "en": null
+  "en": "A rectangle has integer dimensions. Its perimeter is 34, and its area is 60. What is the length of the longer side? (Grid in your answer.)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-insane-probability.js",
@@ -3186,7 +3373,8 @@
   "fin": 3755,
   "contenido": false,
   "es": "P(exactamente uno) = P(A)·(1 − P(B)) + (1 − P(A))·P(B) = (2/5)(4/7) + (3/5)(3/7) = 8/35 + 9/35 = 17/35.",
-  "en": null
+  "en": "P(exactly one) = P(A)·(1 − P(B)) + (1 − P(A))·P(B) = (2/5)(4/7) + (3/5)(3/7) = 8/35 + 9/35 = 17/35.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-insane-probability.js",
@@ -3196,7 +3384,8 @@
   "fin": 5579,
   "contenido": false,
   "es": "Total de bolas: 5 + 3 + 1 = 9. Formas de sacar 3 de 9: C(9,3) = 84. Favorables: C(5,2) × C(3,1) = 10 × 3 = 30. Probabilidad = 30/84 = 5/14.",
-  "en": null
+  "en": "Total balls: 5 + 3 + 1 = 9. Ways to draw 3 out of 9: C(9,3) = 84. Favorable: C(5,2) × C(3,1) = 10 × 3 = 30. Probability = 30/84 = 5/14.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-insane-probability.js",
@@ -3206,7 +3395,8 @@
   "fin": 7782,
   "contenido": false,
   "es": "P(primera de corazones) = 13/52. P(segunda de corazones | primera de corazones) = 12/51. P(ambas) = (13/52) × (12/51) = 156/2652 = 1/17.",
-  "en": null
+  "en": "P(first is a heart) = 13/52. P(second is a heart | first is a heart) = 12/51. P(both) = (13/52) × (12/51) = 156/2652 = 1/17.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-insane-probability.js",
@@ -3216,7 +3406,8 @@
   "fin": 4045,
   "contenido": false,
   "es": "12/35 = (3/5)(4/7) = P(ninguno de los dos), no \"exactamente uno\".",
-  "en": null
+  "en": "12/35 = (3/5)(4/7) = P(neither of the two), not \"exactly one\".",
+  "hecho": true
  },
  {
   "archivo": "sets/math-insane-probability.js",
@@ -3226,7 +3417,8 @@
   "fin": 5689,
   "contenido": false,
   "es": "25/84 cuenta mal los favorables (5 × 5 en vez de C(5,2) × C(3,1) = 10 × 3).",
-  "en": null
+  "en": "25/84 counts the favorable outcomes wrong (5 × 5 instead of C(5,2) × C(3,1) = 10 × 3).",
+  "hecho": true
  },
  {
   "archivo": "sets/math-insane-probability.js",
@@ -3236,7 +3428,8 @@
   "fin": 7997,
   "contenido": false,
   "es": "1/26 = 2/52 divide mal el producto (13 × 12)/(52 × 51).",
-  "en": null
+  "en": "1/26 = 2/52 handles the product (13 × 12)/(52 × 51) incorrectly.",
+  "hecho": true
  },
  {
   "archivo": "sets/rw-vocab-bridge.js",
@@ -3246,7 +3439,8 @@
   "fin": 7873,
   "contenido": false,
   "es": "Curated = thoughtfully selected. Sparse/Limited = just fewer items. Austere = coldly bare. Curated emphasizes the intentionality.",
-  "en": null
+  "en": "Curated = thoughtfully selected. Sparse/Limited = just fewer items. Austere = coldly bare. Curated emphasizes the intentionality.",
+  "hecho": true
  },
  {
   "archivo": "sets/rw-vocab-bridge.js",
@@ -3256,7 +3450,8 @@
   "fin": 7479,
   "contenido": false,
   "es": "Sparse = scant, with few elements. The text does not say there are few works, but that they were CHOSEN deliberately.",
-  "en": null
+  "en": "Sparse = scant, with few elements. The text does not say there are few works, but that they were CHOSEN deliberately.",
+  "hecho": true
  },
  {
   "archivo": "sets/rw-vocab-bridge.js",
@@ -3266,7 +3461,8 @@
   "fin": 8658,
   "contenido": false,
   "es": "Minimal = sparse; contradicts the richness described.",
-  "en": null
+  "en": "Minimal = sparse; contradicts the richness described.",
+  "hecho": true
  },
  {
   "archivo": "sets/rw-vocab-bridge.js",
@@ -3276,7 +3472,8 @@
   "fin": 7097,
   "contenido": true,
   "es": "sparse",
-  "en": null
+  "en": "sparse",
+  "hecho": true
  },
  {
   "archivo": "sets/rw-warmup1.js",
@@ -3286,7 +3483,8 @@
   "fin": 9531,
   "contenido": false,
   "es": "Punctuation (elemento no esencial, comas en pareja)",
-  "en": null
+  "en": "Punctuation (nonessential element, paired commas)",
+  "hecho": true
  },
  {
   "archivo": "sets/rw-warmup1.js",
@@ -3296,7 +3494,8 @@
   "fin": 18866,
   "contenido": false,
   "es": "“whimsical” (caprichoso, fantasioso) choca con “sacado directamente de la realidad”.",
-  "en": null
+  "en": "“whimsical” (fanciful, playful) clashes with “taken directly from reality”.",
+  "hecho": true
  },
  {
   "archivo": "sets/rw-warmup1.js",
@@ -3306,7 +3505,8 @@
   "fin": 19102,
   "contenido": false,
   "es": "“ambiguous” (ambiguo) contradice la pista: si nada se exagera ni suaviza y todo viene de la realidad, no hay ambigüedad.",
-  "en": null
+  "en": "“ambiguous” contradicts the clue: if nothing is exaggerated or softened and everything comes from reality, there is no ambiguity.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-warmup1.js",
@@ -3316,7 +3516,8 @@
   "fin": 6965,
   "contenido": false,
   "es": "Circles (sector area)",
-  "en": null
+  "en": "Circles (sector area)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-warmup1.js",
@@ -3326,7 +3527,8 @@
   "fin": 10056,
   "contenido": false,
   "es": "Porcentaje inverso (precio original)",
-  "en": null
+  "en": "Reverse percent (original price)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-warmup1.js",
@@ -3336,7 +3538,8 @@
   "fin": 11179,
   "contenido": false,
   "es": "Media (valor faltante)",
-  "en": null
+  "en": "Mean (missing value)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-warmup1.js",
@@ -3346,7 +3549,8 @@
   "fin": 11922,
   "contenido": false,
   "es": "Decaimiento exponencial (modelo)",
-  "en": null
+  "en": "Exponential decay (model)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-warmup1.js",
@@ -3356,7 +3560,8 @@
   "fin": 13188,
   "contenido": false,
   "es": "Funciones lineales (evaluar)",
-  "en": null
+  "en": "Linear functions (evaluating)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-warmup1.js",
@@ -3366,7 +3571,8 @@
   "fin": 7322,
   "contenido": false,
   "es": "Sector area = (central angle / 360°) × total area. Total area = πr² = π(6)² = 36π. Sector = (60/360)(36π) = (1/6)(36π) = 6π.",
-  "en": null
+  "en": "Sector area = (central angle / 360°) × total area. Total area = πr² = π(6)² = 36π. Sector = (60/360)(36π) = (1/6)(36π) = 6π.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-warmup1.js",
@@ -3376,7 +3582,8 @@
   "fin": 7863,
   "contenido": false,
   "es": "A sector and an arc are a FRACTION of the whole: (angle/360). Sector area → fraction × area (πr²). Arc length → fraction × circumference (2πr). Do not mix area with circumference.",
-  "en": null
+  "en": "A sector and an arc are a FRACTION of the whole: (angle/360). Sector area → fraction × area (πr²). Arc length → fraction × circumference (2πr). Do not mix area with circumference.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-warmup1.js",
@@ -3386,7 +3593,8 @@
   "fin": 11028,
   "contenido": false,
   "es": "Reverse percent: if something dropped 20%, the final price is 80% of the original. Divide by 0.80 (do not subtract 20% from the final number). Rule: final price = original × (1 − discount).",
-  "en": null
+  "en": "Reverse percent: if something dropped 20%, the final price is 80% of the original. Divide by 0.80 (do not subtract 20% from the final number). Rule: final price = original × (1 − discount).",
+  "hecho": true
  },
  {
   "archivo": "sets/math-warmup1.js",
@@ -3396,7 +3604,8 @@
   "fin": 7491,
   "contenido": false,
   "es": "2π is the ARC LENGTH (you used the circumference 12π: (1/6)(12π) = 2π), not the sector area. A sector is a fraction of the AREA (πr²).",
-  "en": null
+  "en": "2π is the ARC LENGTH (you used the circumference 12π: (1/6)(12π) = 2π), not the sector area. A sector is a fraction of the AREA (πr²).",
+  "hecho": true
  },
  {
   "archivo": "sets/math-warmup1.js",
@@ -3406,7 +3615,8 @@
   "fin": 7575,
   "contenido": false,
   "es": "12π is the full circumference (2πr = 12π), not the area of a sector.",
-  "en": null
+  "en": "12π is the full circumference (2πr = 12π), not the area of a sector.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-warmup1.js",
@@ -3416,7 +3626,8 @@
   "fin": 7658,
   "contenido": false,
   "es": "36π is the area of the WHOLE circle (360°), not just the 60° slice.",
-  "en": null
+  "en": "36π is the area of the WHOLE circle (360°), not just the 60° slice.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-warmup1.js",
@@ -3426,7 +3637,8 @@
   "fin": 9507,
   "contenido": false,
   "es": "5/13 es sin θ (opuesto/hipotenusa). La tangente NO usa la hipotenusa.",
-  "en": null
+  "en": "5/13 is sin θ (opposite/hypotenuse). The tangent does NOT use the hypotenuse.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-warmup1.js",
@@ -3436,7 +3648,8 @@
   "fin": 9577,
   "contenido": false,
   "es": "12/13 es cos θ (adyacente/hipotenusa), no la tangente.",
-  "en": null
+  "en": "12/13 is cos θ (adjacent/hypotenuse), not the tangent.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-warmup1.js",
@@ -3446,7 +3659,8 @@
   "fin": 7102,
   "contenido": true,
   "es": "A circle has a radius of 6. A sector of the circle is bounded by a central angle of 60°. What is the area of the sector?",
-  "en": null
+  "en": "A circle has a radius of 6. A sector of the circle is bounded by a central angle of 60°. What is the area of the sector?",
+  "hecho": true
  },
  {
   "archivo": "sets/math-hard-circles.js",
@@ -3456,7 +3670,8 @@
   "fin": 4464,
   "contenido": false,
   "es": "Sector area (radians)",
-  "en": null
+  "en": "Sector area (radians)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-hard-circles.js",
@@ -3466,7 +3681,8 @@
   "fin": 6634,
   "contenido": false,
   "es": "Recta tangente a una circunferencia",
-  "en": null
+  "en": "Tangent line to a circle",
+  "hecho": true
  },
  {
   "archivo": "sets/math-hard-circles.js",
@@ -3476,7 +3692,8 @@
   "fin": 9193,
   "contenido": false,
   "es": "Rectas perpendiculares (pendiente)",
-  "en": null
+  "en": "Perpendicular lines (slope)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-hard-circles.js",
@@ -3486,7 +3703,8 @@
   "fin": 16376,
   "contenido": false,
   "es": "Longitud de tangente desde un punto externo",
-  "en": null
+  "en": "Tangent length from an external point",
+  "hecho": true
  },
  {
   "archivo": "sets/math-hard-circles.js",
@@ -3496,7 +3714,8 @@
   "fin": 4822,
   "contenido": false,
   "es": "The area of a sector in radians is (1/2)r²θ. With r = 6 and θ = 2π/3: area = (1/2)(6²)(2π/3) = (1/2)(36)(2π/3) = 18 · (2π/3) = 12π.",
-  "en": null
+  "en": "The area of a sector in radians is (1/2)r²θ. With r = 6 and θ = 2π/3: area = (1/2)(6²)(2π/3) = (1/2)(36)(2π/3) = 18 · (2π/3) = 12π.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-hard-circles.js",
@@ -3506,7 +3725,8 @@
   "fin": 11919,
   "contenido": false,
   "es": "Distancia = √((x₂ − x₁)² + (y₂ − y₁)²) = √((4 − (−2))² + (−5 − 3)²) = √(6² + (−8)²) = √(36 + 64) = √100 = 10.",
-  "en": null
+  "en": "Distance = √((x₂ − x₁)² + (y₂ − y₁)²) = √((4 − (−2))² + (−5 − 3)²) = √(6² + (−8)²) = √(36 + 64) = √100 = 10.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-hard-circles.js",
@@ -3516,7 +3736,8 @@
   "fin": 5372,
   "contenido": false,
   "es": "In radians: arc length = rθ (a single r), sector area = (1/2)r²θ (r squared and the 1/2). Confusing arc with sector, or forgetting the square or the 1/2, are the classic traps.",
-  "en": null
+  "en": "In radians: arc length = rθ (a single r), sector area = (1/2)r²θ (r squared and the 1/2). Confusing arc with sector, or forgetting the square or the 1/2, are the classic traps.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-hard-circles.js",
@@ -3526,7 +3747,8 @@
   "fin": 5066,
   "contenido": false,
   "es": "4π is the ARC LENGTH (s = rθ = 6 · 2π/3 = 4π), not the sector area. They are different things.",
-  "en": null
+  "en": "4π is the ARC LENGTH (s = rθ = 6 · 2π/3 = 4π), not the sector area. They are different things.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-hard-circles.js",
@@ -3536,7 +3758,8 @@
   "fin": 5170,
   "contenido": false,
   "es": "24π forgets the 1/2 factor: r²θ = 36 · 2π/3 = 24π. Sector area always carries the (1/2).",
-  "en": null
+  "en": "24π forgets the 1/2 factor: r²θ = 36 · 2π/3 = 24π. Sector area always carries the (1/2).",
+  "hecho": true
  },
  {
   "archivo": "sets/math-hard-circles.js",
@@ -3546,7 +3769,8 @@
   "fin": 6037,
   "contenido": false,
   "es": "3π comes from multiplying by 1/2 for no reason: (1/2)(10)(3π/5) = 3π. Arc length does NOT carry the 1/2 factor (that belongs to the sector area).",
-  "en": null
+  "en": "3π comes from multiplying by 1/2 for no reason: (1/2)(10)(3π/5) = 3π. Arc length does NOT carry the 1/2 factor (that belongs to the sector area).",
+  "hecho": true
  },
  {
   "archivo": "sets/math-hard-circles.js",
@@ -3556,7 +3780,8 @@
   "fin": 6131,
   "contenido": false,
   "es": "30π is the sector AREA, (1/2)r²θ = (1/2)(100)(3π/5) = 30π, not the arc length.",
-  "en": null
+  "en": "30π is the sector AREA, (1/2)r²θ = (1/2)(100)(3π/5) = 30π, not the arc length.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-hard-circles.js",
@@ -3566,7 +3791,8 @@
   "fin": 7292,
   "contenido": false,
   "es": "4/3 es la pendiente del RADIO, no de la tangente. La tangente es perpendicular al radio, no paralela.",
-  "en": null
+  "en": "4/3 is the slope of the RADIUS, not of the tangent. The tangent is perpendicular to the radius, not parallel.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-hard-circles.js",
@@ -3576,7 +3802,8 @@
   "fin": 11010,
   "contenido": false,
   "es": "y = −(1/2)x + 7/2 usa la pendiente PERPENDICULAR (−1/2). Paralela significa MISMA pendiente (2), no perpendicular.",
-  "en": null
+  "en": "y = −(1/2)x + 7/2 uses the PERPENDICULAR slope (−1/2). Parallel means the SAME slope (2), not perpendicular.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-hard-circles.js",
@@ -3586,7 +3813,8 @@
   "fin": 4595,
   "contenido": true,
   "es": "A sector of a circle has a radius of 6 and a central angle measuring 2π/3 radians. What is the area of the sector?",
-  "en": null
+  "en": "A sector of a circle has a radius of 6 and a central angle measuring 2π/3 radians. What is the area of the sector?",
+  "hecho": true
  },
  {
   "archivo": "sets/math-hard-poly.js",
@@ -3596,7 +3824,8 @@
   "fin": 576,
   "contenido": false,
   "es": "Ceros y multiplicidad (tocar vs. cruzar)",
-  "en": null
+  "en": "Zeros and multiplicity (touch vs. cross)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-hard-poly.js",
@@ -3606,7 +3835,8 @@
   "fin": 1879,
   "contenido": false,
   "es": "Comportamiento en los extremos (end behavior)",
-  "en": null
+  "en": "End behavior (polynomials)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-hard-poly.js",
@@ -3616,7 +3846,8 @@
   "fin": 3258,
   "contenido": false,
   "es": "Teorema del residuo",
-  "en": null
+  "en": "Remainder theorem",
+  "hecho": true
  },
  {
   "archivo": "sets/math-hard-poly.js",
@@ -3626,7 +3857,8 @@
   "fin": 4333,
   "contenido": false,
   "es": "Teorema del factor",
-  "en": null
+  "en": "Factor theorem",
+  "hecho": true
  },
  {
   "archivo": "sets/math-hard-poly.js",
@@ -3636,7 +3868,8 @@
   "fin": 6113,
   "contenido": false,
   "es": "(x − 3)/(x − 2) factoriza mal el denominador; x² − x − 6 = (x − 3)(x + 2), no (x − 2)(algo).",
-  "en": null
+  "en": "(x − 3)/(x − 2) factors the denominator wrong; x² − x − 6 = (x − 3)(x + 2), not (x − 2)(something).",
+  "hecho": true
  },
  {
   "archivo": "sets/math-hard-poly.js",
@@ -3646,7 +3879,8 @@
   "fin": 8515,
   "contenido": false,
   "es": "9x⁹ multiplica los exponentes de x mal: 6 · (2/3) = 4, no 9.",
-  "en": null
+  "en": "9x⁹ multiplies the exponents of x wrong: 6 · (2/3) = 4, not 9.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-hard-poly.js",
@@ -3656,7 +3890,8 @@
   "fin": 9437,
   "contenido": false,
   "es": "x⁸y suma los exponentes de x (−3 + 5 = ... da 2, no 8) y maneja mal la y. Al dividir se RESTAN: −3 − (−5) = 2.",
-  "en": null
+  "en": "x⁸y adds the exponents of x (−3 + 5 = ... gives 2, not 8) and mishandles the y. When dividing you SUBTRACT: −3 − (−5) = 2.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-hard-geo.js",
@@ -3666,7 +3901,8 @@
   "fin": 2456,
   "contenido": false,
   "es": "Volume and surface area (sphere)",
-  "en": null
+  "en": "Volume and surface area (sphere)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-hard-geo.js",
@@ -3676,7 +3912,8 @@
   "fin": 6778,
   "contenido": false,
   "es": "Surface area (closed cylinder)",
-  "en": null
+  "en": "Surface area (closed cylinder)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-hard-geo.js",
@@ -3686,7 +3923,8 @@
   "fin": 13007,
   "contenido": false,
   "es": "Effect of scaling one dimension (surface area)",
-  "en": null
+  "en": "Effect of scaling one dimension (surface area)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-hard-geo.js",
@@ -3696,7 +3934,8 @@
   "fin": 2786,
   "contenido": false,
   "es": "Volume = (4/3)πr³ = 288π → r³ = 288·(3/4) = 216 → r = 6. Surface area = 4πr² = 4π(6²) = 4π(36) = 144π.",
-  "en": null
+  "en": "Volume = (4/3)πr³ = 288π → r³ = 288·(3/4) = 216 → r = 6. Surface area = 4πr² = 4π(6²) = 4π(36) = 144π.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-hard-geo.js",
@@ -3706,7 +3945,8 @@
   "fin": 4976,
   "contenido": false,
   "es": "Volumen del cono = (1/3)πr²h = (1/3)π(6²)(8) = (1/3)π(36)(8) = (1/3)(288π) = 96π.",
-  "en": null
+  "en": "Cone volume = (1/3)πr²h = (1/3)π(6²)(8) = (1/3)π(36)(8) = (1/3)(288π) = 96π.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-hard-geo.js",
@@ -3716,7 +3956,8 @@
   "fin": 8225,
   "contenido": false,
   "es": "In similar figures, the ratio of AREAS is the square of the ratio of sides: (2/5)² = 4/25. So area(ABC)/area(DEF) = 4/25 → 12/area(DEF) = 4/25 → area(DEF) = 12·(25/4) = 75.",
-  "en": null
+  "en": "In similar figures, the ratio of AREAS is the square of the ratio of sides: (2/5)² = 4/25. So area(ABC)/area(DEF) = 4/25 → 12/area(DEF) = 4/25 → area(DEF) = 12·(25/4) = 75.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-hard-geo.js",
@@ -3726,7 +3967,8 @@
   "fin": 10134,
   "contenido": false,
   "es": "The diagonal of a square forms a 45-45-90 triangle, so diagonal = side·√2 → 10 = s√2 → s = 10/√2 = 5√2. Area = s² = (5√2)² = 25·2 = 50. (Shortcut: area = diagonal²/2 = 100/2 = 50.)",
-  "en": null
+  "en": "The diagonal of a square forms a 45-45-90 triangle, so diagonal = side·√2 → 10 = s√2 → s = 10/√2 = 5√2. Area = s² = (5√2)² = 25·2 = 50. (Shortcut: area = diagonal²/2 = 100/2 = 50.)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-hard-geo.js",
@@ -3736,7 +3978,8 @@
   "fin": 13377,
   "contenido": false,
   "es": "Surface area depends on the square of the length (SA of a cube = 6s²). Multiplying each edge by 2 multiplies the area by 2² = 4.",
-  "en": null
+  "en": "Surface area depends on the square of the length (SA of a cube = 6s²). Multiplying each edge by 2 multiplies the area by 2² = 4.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-hard-geo.js",
@@ -3746,7 +3989,8 @@
   "fin": 8828,
   "contenido": false,
   "es": "Similarity: the ratio of areas is (ratio of sides)² and the ratio of volumes is (ratio of sides)³. Check the direction: the triangle with the bigger sides (DEF, scale 5) has to have the bigger area.",
-  "en": null
+  "en": "Similarity: the ratio of areas is (ratio of sides)² and the ratio of volumes is (ratio of sides)³. Check the direction: the triangle with the bigger sides (DEF, scale 5) has to have the bigger area.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-hard-geo.js",
@@ -3756,7 +4000,8 @@
   "fin": 10662,
   "contenido": false,
   "es": "Handy trick: for a square, area = diagonal²/2. It follows from diagonal = s√2, so s² = d²/2. Spotting the 45-45-90 inside the square saves you the algebra.",
-  "en": null
+  "en": "Handy trick: for a square, area = diagonal²/2. It follows from diagonal = s√2, so s² = d²/2. Spotting the 45-45-90 inside the square saves you the algebra.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-hard-geo.js",
@@ -3766,7 +4011,8 @@
   "fin": 13901,
   "contenido": false,
   "es": "Scaling by a factor k: lengths ×k, areas ×k², volumes ×k³. Doubling (k = 2) makes the area ×4 and the volume ×8. Ask yourself whether they want area (squared) or volume (cubed).",
-  "en": null
+  "en": "Scaling by a factor k: lengths ×k, areas ×k², volumes ×k³. Doubling (k = 2) makes the area ×4 and the volume ×8. Ask yourself whether they want area (squared) or volume (cubed).",
+  "hecho": true
  },
  {
   "archivo": "sets/math-hard-geo.js",
@@ -3776,7 +4022,8 @@
   "fin": 14714,
   "contenido": false,
   "es": "When they share a radius and a height, the cone always fits 3 times inside the cylinder: cone = (1/3) × cylinder. You do not need r and h separately; just divide the cylinder volume by 3.",
-  "en": null
+  "en": "When they share a radius and a height, the cone always fits 3 times inside the cylinder: cone = (1/3) × cylinder. You do not need r and h separately; just divide the cylinder volume by 3.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-hard-geo.js",
@@ -3786,7 +4033,8 @@
   "fin": 2276,
   "contenido": false,
   "es": "Hard solid geometry (volume/surface area, composite & scaled solids) plus triangle similarity and right-triangle trig.",
-  "en": null
+  "en": "Hard solid geometry (volume/surface area, composite & scaled solids) plus triangle similarity and right-triangle trig.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-hard-geo.js",
@@ -3796,7 +4044,8 @@
   "fin": 2912,
   "contenido": false,
   "es": "36π is πr² = π(36): only the area of ONE great circle, forgetting the sphere’s factor of 4.",
-  "en": null
+  "en": "36π is πr² = π(36): only the area of ONE great circle, forgetting the sphere’s factor of 4.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-hard-geo.js",
@@ -3806,7 +4055,8 @@
   "fin": 2986,
   "contenido": false,
   "es": "72π es 2πr². La superficie de una esfera es 4πr², no 2πr².",
-  "en": null
+  "en": "72π is 2πr². The surface area of a sphere is 4πr², not 2πr².",
+  "hecho": true
  },
  {
   "archivo": "sets/math-hard-geo.js",
@@ -3816,7 +4066,8 @@
   "fin": 3109,
   "contenido": false,
   "es": "216π uses r³ = 216 straight as the answer; that number is an intermediate step for finding r, not the area.",
-  "en": null
+  "en": "216π uses r³ = 216 straight as the answer; that number is an intermediate step for finding r, not the area.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-hard-geo.js",
@@ -3826,7 +4077,8 @@
   "fin": 7221,
   "contenido": false,
   "es": "80π is only the lateral area (2πrh). A CLOSED cylinder also has two circular caps.",
-  "en": null
+  "en": "80π is only the lateral area (2πrh). A CLOSED cylinder also has two circular caps.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-hard-geo.js",
@@ -3836,7 +4088,8 @@
   "fin": 8604,
   "contenido": false,
   "es": "48 = 12·4 squares it correctly but in the wrong direction (multiplying by 4 instead of by 25/4). DEF is the bigger one, so its area is 75.",
-  "en": null
+  "en": "48 = 12·4 squares it correctly but in the wrong direction (multiplying by 4 instead of by 25/4). DEF is the bigger one, so its area is 75.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-hard-geo.js",
@@ -3846,7 +4099,8 @@
   "fin": 13503,
   "contenido": false,
   "es": "2 is the factor by which the edges grow, but the area grows with the square of that factor.",
-  "en": null
+  "en": "2 is the factor by which the edges grow, but the area grows with the square of that factor.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-hard-geo.js",
@@ -3856,7 +4110,8 @@
   "fin": 13591,
   "contenido": false,
   "es": "6 is the number of faces of a cube, which is not the area growth factor.",
-  "en": null
+  "en": "6 is the number of faces of a cube, which is not the area growth factor.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-hard-geo.js",
@@ -3866,7 +4121,8 @@
   "fin": 13698,
   "contenido": false,
   "es": "8 = 2³ is the factor by which the VOLUME grows, not the area. Area uses the square, 2² = 4.",
-  "en": null
+  "en": "8 = 2³ is the factor by which the VOLUME grows, not the area. Area uses the square, 2² = 4.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-hard-geo.js",
@@ -3876,7 +4132,8 @@
   "fin": 2584,
   "contenido": true,
   "es": "A sphere has a volume of 288π cubic centimeters. What is the surface area of the sphere, in square centimeters?",
-  "en": null
+  "en": "A sphere has a volume of 288π cubic centimeters. What is the surface area of the sphere, in square centimeters?",
+  "hecho": true
  },
  {
   "archivo": "sets/math-hard-geo.js",
@@ -3886,7 +4143,8 @@
   "fin": 6913,
   "contenido": true,
   "es": "A closed right circular cylinder has a radius of 4 and a height of 10. What is the total surface area of the cylinder?",
-  "en": null
+  "en": "A closed right circular cylinder has a radius of 4 and a height of 10. What is the total surface area of the cylinder?",
+  "hecho": true
  },
  {
   "archivo": "sets/math-hard-geo.js",
@@ -3896,7 +4154,8 @@
   "fin": 7959,
   "contenido": true,
   "es": "Triangle ABC is similar to triangle DEF, and the ratio of corresponding sides ABC : DEF is 2 : 5. If the area of triangle ABC is 12, what is the area of triangle DEF?",
-  "en": null
+  "en": "Triangle ABC is similar to triangle DEF, and the ratio of corresponding sides ABC : DEF is 2 : 5. If the area of triangle ABC is 12, what is the area of triangle DEF?",
+  "hecho": true
  },
  {
   "archivo": "sets/math-hard-geo.js",
@@ -3906,7 +4165,8 @@
   "fin": 9858,
   "contenido": true,
   "es": "A square has a diagonal of length 10. What is the area of the square?",
-  "en": null
+  "en": "A square has a diagonal of length 10. What is the area of the square?",
+  "hecho": true
  },
  {
   "archivo": "sets/math-hard-geo.js",
@@ -3916,7 +4176,8 @@
   "fin": 13159,
   "contenido": true,
   "es": "If every edge of a cube is doubled in length, the surface area of the new cube is how many times the surface area of the original cube?",
-  "en": null
+  "en": "If every edge of a cube is doubled in length, the surface area of the new cube is how many times the surface area of the original cube?",
+  "hecho": true
  },
  {
   "archivo": "sets/math-hard-data.js",
@@ -3926,7 +4187,8 @@
   "fin": 619,
   "contenido": false,
   "es": "Porcentajes (porcentaje inverso / hallar el original)",
-  "en": null
+  "en": "Percentages (reverse percent / finding the original)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-hard-data.js",
@@ -3936,7 +4198,8 @@
   "fin": 1843,
   "contenido": false,
   "es": "Porcentajes (dos cambios porcentuales sucesivos)",
-  "en": null
+  "en": "Percentages (two successive percent changes)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-hard-data.js",
@@ -3946,7 +4209,8 @@
   "fin": 3166,
   "contenido": false,
   "es": "Probabilidad condicional (tabla de doble entrada)",
-  "en": null
+  "en": "Conditional probability (two-way table)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-hard-data.js",
@@ -3956,7 +4220,8 @@
   "fin": 9476,
   "contenido": false,
   "es": "Probabilidad condicional (tabla de doble entrada)",
-  "en": null
+  "en": "Conditional probability (two-way table)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-hard-data.js",
@@ -3966,7 +4231,8 @@
   "fin": 11098,
   "contenido": false,
   "es": "Sistemas de ecuaciones lineales (infinitas soluciones)",
-  "en": null
+  "en": "Systems of linear equations (infinitely many solutions)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-hard-data.js",
@@ -3976,7 +4242,8 @@
   "fin": 12459,
   "contenido": false,
   "es": "Sistemas de ecuaciones lineales (problema en palabras)",
-  "en": null
+  "en": "Systems of linear equations (word problem)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-hard-data.js",
@@ -3986,7 +4253,8 @@
   "fin": 14915,
   "contenido": false,
   "es": "Porcentajes (porcentaje inverso / hallar el original)",
-  "en": null
+  "en": "Percentages (reverse percent / finding the original)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-hard-data.js",
@@ -3996,7 +4264,8 @@
   "fin": 15650,
   "contenido": false,
   "es": "Sistemas de ecuaciones lineales (problema en palabras)",
-  "en": null
+  "en": "Systems of linear equations (word problem)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-hard-data.js",
@@ -4006,7 +4275,8 @@
   "fin": 11554,
   "contenido": false,
   "es": "\"Infinitely many solutions\" means the two equations are the SAME line, that is, one is a multiple of the other. Divide the first by 2: 6x + 4y = 10 → 3x + 2y = 5. For it to match 3x + 2y = c, you need c = 5.",
-  "en": null
+  "en": "\"Infinitely many solutions\" means the two equations are the SAME line, that is, one is a multiple of the other. Divide the first by 2: 6x + 4y = 10 → 3x + 2y = 5. For it to match 3x + 2y = c, you need c = 5.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-hard-data.js",
@@ -4016,7 +4286,8 @@
   "fin": 1665,
   "contenido": false,
   "es": "Reverse percent: if you are given the value AFTER the change, DIVIDE by the factor. Down 25% → divide by 0.75. Multiplying by 1.25 does not undo a 25% discount.",
-  "en": null
+  "en": "Reverse percent: if you are given the value AFTER the change, DIVIDE by the factor. Down 25% → divide by 0.75. Multiplying by 1.25 does not undo a 25% discount.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-hard-data.js",
@@ -4026,7 +4297,8 @@
   "fin": 5887,
   "contenido": false,
   "es": "Weighted average: multiply each average by its count, add, and divide by the total count. The result gets pulled toward the larger group (here, toward the 80).",
-  "en": null
+  "en": "Weighted average: multiply each average by its count, add, and divide by the total count. The result gets pulled toward the larger group (here, toward the 80).",
+  "hecho": true
  },
  {
   "archivo": "sets/math-hard-data.js",
@@ -4036,7 +4308,8 @@
   "fin": 15489,
   "contenido": false,
   "es": "Reverse percent: when you are given the value AFTER the change, DIVIDE by the factor. Up 15% → divide by 1.15, do not multiply. Subtracting 15% from 460 gives the wrong value because the 15% was figured on the original.",
-  "en": null
+  "en": "Reverse percent: when you are given the value AFTER the change, DIVIDE by the factor. Up 15% → divide by 1.15, do not multiply. Subtracting 15% from 460 gives the wrong value because the 15% was figured on the original.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-hard-data.js",
@@ -4046,7 +4319,8 @@
   "fin": 410,
   "contenido": false,
   "es": "Hard percentages (successive & reverse percent), probability (conditional & two-way tables), statistics (mean/median/spread), and systems of equations.",
-  "en": null
+  "en": "Hard percentages (successive & reverse percent), probability (conditional & two-way tables), statistics (mean/median/spread), and systems of equations.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-hard-data.js",
@@ -4056,7 +4330,8 @@
   "fin": 4080,
   "contenido": false,
   "es": "0.42 = 84 / 200. That is the JOINT probability (online AND under 40 over the total). The condition already narrows the universe to the 112 online.",
-  "en": null
+  "en": "0.42 = 84 / 200. That is the JOINT probability (online AND under 40 over the total). The condition already narrows the universe to the 112 online.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-hard-data.js",
@@ -4066,7 +4341,8 @@
   "fin": 10398,
   "contenido": false,
   "es": "0.20 = 60 / 300, the JOINT probability over the total. The condition narrows the universe to the 150 who did not read the book.",
-  "en": null
+  "en": "0.20 = 60 / 300, the JOINT probability over the total. The condition narrows the universe to the 150 who did not read the book.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-hard-data.js",
@@ -4076,7 +4352,8 @@
   "fin": 11869,
   "contenido": false,
   "es": "2.5 = 10 / 4, mixing the 10 with the wrong coefficient. You have to divide the 10 by 2 (the same factor that reduces 6x→3x), not by 4.",
-  "en": null
+  "en": "2.5 = 10 / 4, mixing the 10 with the wrong coefficient. You have to divide the 10 by 2 (the same factor that reduces 6x→3x), not by 4.",
+  "hecho": true
  },
  {
   "archivo": "sets/rw-hard-grammar.js",
@@ -4086,7 +4363,8 @@
   "fin": 5229,
   "contenido": false,
   "es": "El punto y coma pide oraciones independientes a ambos lados; “has been undermined…” no lo es.",
-  "en": null
+  "en": "A semicolon needs independent clauses on both sides; “has been undermined…” is not one.",
+  "hecho": true
  },
  {
   "archivo": "sets/rw-hard-grammar.js",
@@ -4096,7 +4374,8 @@
   "fin": 7786,
   "contenido": false,
   "es": "“are reviewing” es plural; el sujeto singular “committee” pide un verbo singular.",
-  "en": null
+  "en": "“are reviewing” is plural; the singular subject “committee” needs a singular verb.",
+  "hecho": true
  },
  {
   "archivo": "sets/rw-hard-grammar.js",
@@ -4106,7 +4385,8 @@
   "fin": 9033,
   "contenido": false,
   "es": "“are putting” es plural; el sujeto singular “A series” pide un verbo singular.",
-  "en": null
+  "en": "“are putting” is plural; the singular subject “A series” needs a singular verb.",
+  "hecho": true
  },
  {
   "archivo": "sets/rw-hard-grammar.js",
@@ -4116,7 +4396,8 @@
   "fin": 10207,
   "contenido": false,
   "es": "“have been” es plural; el sujeto singular “a gold astrolabe” pide “has been”.",
-  "en": null
+  "en": "“have been” is plural; the singular subject “a gold astrolabe” needs “has been”.",
+  "hecho": true
  },
  {
   "archivo": "sets/rw-mock1review.js",
@@ -4126,7 +4407,8 @@
   "fin": 18266,
   "contenido": false,
   "es": "Posesivos",
-  "en": null
+  "en": "Possessives",
+  "hecho": true
  },
  {
   "archivo": "sets/rw-mock1review.js",
@@ -4136,7 +4418,8 @@
   "fin": 19395,
   "contenido": false,
   "es": "Concordancia sujeto-verbo",
-  "en": null
+  "en": "Subject-verb agreement",
+  "hecho": true
  },
  {
   "archivo": "sets/math-mock1review.js",
@@ -4146,7 +4429,8 @@
   "fin": 7003,
   "contenido": false,
   "es": "Sector area (degrees)",
-  "en": null
+  "en": "Sector area (degrees)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-mock1review.js",
@@ -4156,7 +4440,8 @@
   "fin": 8307,
   "contenido": false,
   "es": "Recta tangente a una circunferencia",
-  "en": null
+  "en": "Tangent line to a circle",
+  "hecho": true
  },
  {
   "archivo": "sets/math-mock1review.js",
@@ -4166,7 +4451,8 @@
   "fin": 9873,
   "contenido": false,
   "es": "Ceros y multiplicidad (cruzar vs. tocar)",
-  "en": null
+  "en": "Zeros and multiplicity (cross vs. touch)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-mock1review.js",
@@ -4176,7 +4462,8 @@
   "fin": 11311,
   "contenido": false,
   "es": "Comportamiento en los extremos (end behavior)",
-  "en": null
+  "en": "End behavior of the graph",
+  "hecho": true
  },
  {
   "archivo": "sets/math-mock1review.js",
@@ -4186,7 +4473,8 @@
   "fin": 14371,
   "contenido": false,
   "es": "Probabilidad condicional (tabla de doble entrada)",
-  "en": null
+  "en": "Conditional probability (two-way table)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-mock1review.js",
@@ -4196,7 +4484,8 @@
   "fin": 16060,
   "contenido": false,
   "es": "Probabilidad condicional (tabla de doble entrada)",
-  "en": null
+  "en": "Conditional probability (two-way table)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-mock1review.js",
@@ -4206,7 +4495,8 @@
   "fin": 17661,
   "contenido": false,
   "es": "Mediana a partir de una tabla de frecuencias",
-  "en": null
+  "en": "Median from a frequency table",
+  "hecho": true
  },
  {
   "archivo": "sets/math-mock1review.js",
@@ -4216,7 +4506,8 @@
   "fin": 7393,
   "contenido": false,
   "es": "A 135° angle covers 135/360 = 3/8 of the circle. Sector area = (3/8) · area of the circle = (3/8) · π · 8² = (3/8) · 64π = 24π. (Check: (135/360) · π · 64 ≈ 75.4 = 24π ✓.)",
-  "en": null
+  "en": "A 135° angle covers 135/360 = 3/8 of the circle. Sector area = (3/8) · area of the circle = (3/8) · π · 8² = (3/8) · 64π = 24π. (Check: (135/360) · π · 64 ≈ 75.4 = 24π ✓.)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-mock1review.js",
@@ -4226,7 +4517,8 @@
   "fin": 15072,
   "contenido": false,
   "es": "This is P(teacher | coffee). You are told the person drinks coffee, so the universe is the 60 coffee drinkers. Of those, 12 are teachers. P = 12/60 = 1/5.",
-  "en": null
+  "en": "This is P(teacher | coffee). You are told the person drinks coffee, so the universe is the 60 coffee drinkers. Of those, 12 are teachers. P = 12/60 = 1/5.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-mock1review.js",
@@ -4236,7 +4528,8 @@
   "fin": 7916,
   "contenido": false,
   "es": "With the angle in degrees, the sector is (θ/360) of the circle. Area = (θ/360) · π · r². Do not forget to square the radius (π·r²), and do not confuse it with the arc (2·π·r).",
-  "en": null
+  "en": "With the angle in degrees, the sector is (θ/360) of the circle. Area = (θ/360) · π · r². Do not forget to square the radius (π·r²), and do not confuse it with the arc (2·π·r).",
+  "hecho": true
  },
  {
   "archivo": "sets/math-mock1review.js",
@@ -4246,7 +4539,8 @@
   "fin": 15675,
   "contenido": false,
   "es": "Conditional \"given that A\": the denominator is the total for A, not the grand total. \"Given that they drink coffee\" → divide by the 60 coffee drinkers, not by 100.",
-  "en": null
+  "en": "Conditional \"given that A\": the denominator is the total for A, not the grand total. \"Given that they drink coffee\" → divide by the 60 coffee drinkers, not by 100.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-mock1review.js",
@@ -4256,7 +4550,8 @@
   "fin": 7510,
   "contenido": false,
   "es": "6π is the ARC LENGTH, (3/8) · 2π · 8 = 6π, not the area. Area uses π·r², not 2π·r.",
-  "en": null
+  "en": "6π is the ARC LENGTH, (3/8) · 2π · 8 = 6π, not the area. Area uses π·r², not 2π·r.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-mock1review.js",
@@ -4266,7 +4561,8 @@
   "fin": 7715,
   "contenido": false,
   "es": "64π is the area of the WHOLE circle (π·8²). You only want the 3/8 fraction of that area.",
-  "en": null
+  "en": "64π is the area of the WHOLE circle (π·8²). You only want the 3/8 fraction of that area.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-mock1review.js",
@@ -4276,7 +4572,8 @@
   "fin": 8972,
   "contenido": false,
   "es": "12/5 es la pendiente del RADIO, no de la tangente. La tangente es perpendicular al radio, no paralela.",
-  "en": null
+  "en": "12/5 is the slope of the RADIUS, not of the tangent. The tangent is perpendicular to the radius, not parallel.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-mock1review.js",
@@ -4286,7 +4583,8 @@
   "fin": 23157,
   "contenido": false,
   "es": "12√3 multiplies the hypotenuse by √3 but forgets to divide by 2. The side opposite 60° is hypotenuse · (√3/2).",
-  "en": null
+  "en": "12√3 multiplies the hypotenuse by √3 but forgets to divide by 2. The side opposite 60° is hypotenuse · (√3/2).",
+  "hecho": true
  },
  {
   "archivo": "sets/math-mock1review.js",
@@ -4296,7 +4594,8 @@
   "fin": 24633,
   "contenido": false,
   "es": "13 suma la diferencia (DE − AB = 4) a BC: 9 + 4 = 13. La semejanza MULTIPLICA por un factor de escala, no suma.",
-  "en": null
+  "en": "13 adds the difference (DE − AB = 4) to BC: 9 + 4 = 13. Similarity MULTIPLIES by a scale factor; it does not add.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-mock1review.js",
@@ -4306,7 +4605,8 @@
   "fin": 7126,
   "contenido": true,
   "es": "A sector of a circle has a radius of 8 and a central angle measuring 135°. What is the area of the sector?",
-  "en": null
+  "en": "A sector of a circle has a radius of 8 and a central angle measuring 135°. What is the area of the sector?",
+  "hecho": true
  },
  {
   "archivo": "sets/rw-punct-checkup.js",
@@ -4316,7 +4616,8 @@
   "fin": 11700,
   "contenido": false,
   "es": "Posesivos",
-  "en": null
+  "en": "Possessives",
+  "hecho": true
  },
  {
   "archivo": "sets/math-expo1.js",
@@ -4326,7 +4627,8 @@
   "fin": 520,
   "contenido": false,
   "es": "Exponentes enteros (producto de potencias)",
-  "en": null
+  "en": "Integer exponents (product of powers)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-expo1.js",
@@ -4336,7 +4638,8 @@
   "fin": 1749,
   "contenido": false,
   "es": "Exponentes enteros (potencia de una potencia)",
-  "en": null
+  "en": "Integer exponents (power of a power)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-expo1.js",
@@ -4346,7 +4649,8 @@
   "fin": 7455,
   "contenido": false,
   "es": "Ecuaciones exponenciales (bases iguales)",
-  "en": null
+  "en": "Exponential equations (equal bases)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-expo1.js",
@@ -4356,7 +4660,8 @@
   "fin": 8732,
   "contenido": false,
   "es": "Ecuaciones exponenciales (bases iguales)",
-  "en": null
+  "en": "Exponential equations (equal bases)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-expo1.js",
@@ -4366,7 +4671,8 @@
   "fin": 9752,
   "contenido": false,
   "es": "Crecimiento exponencial (modelo)",
-  "en": null
+  "en": "Exponential growth (model)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-expo1.js",
@@ -4376,7 +4682,8 @@
   "fin": 11278,
   "contenido": false,
   "es": "Decaimiento exponencial (modelo)",
-  "en": null
+  "en": "Exponential decay (model)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-expo1.js",
@@ -4386,7 +4693,8 @@
   "fin": 13624,
   "contenido": false,
   "es": "Exponencial vs lineal",
-  "en": null
+  "en": "Exponential vs linear",
+  "hecho": true
  },
  {
   "archivo": "sets/math-expo1.js",
@@ -4396,7 +4704,8 @@
   "fin": 13116,
   "contenido": false,
   "es": "Modelo de semivida: m(t) = 400 · (1/2)^(t/3). En t = 12 horas hay 12/3 = 4 semividas: m = 400 · (1/2)⁴ = 400/16 = 25 miligramos. (Paso a paso: 400 → 200 → 100 → 50 → 25 ✓.) Respuesta: 25.",
-  "en": null
+  "en": "Half-life model: m(t) = 400 · (1/2)^(t/3). At t = 12 hours there are 12/3 = 4 half-lives: m = 400 · (1/2)⁴ = 400/16 = 25 milligrams. (Step by step: 400 → 200 → 100 → 50 → 25 ✓.) Answer: 25.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-expo1.js",
@@ -4406,7 +4715,8 @@
   "fin": 3558,
   "contenido": false,
   "es": "4 comes from SUBTRACTING 6 − 2. Coefficients divide like ordinary numbers: 6/2 = 3.",
-  "en": null
+  "en": "4 comes from SUBTRACTING 6 − 2. Coefficients divide like ordinary numbers: 6/2 = 3.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-expo1.js",
@@ -4416,7 +4726,8 @@
   "fin": 9201,
   "contenido": false,
   "es": "12 is the exponent on the right-hand side; the last step is still missing: divide by 3.",
-  "en": null
+  "en": "12 is the exponent on the right-hand side; the last step is still missing: divide by 3.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-solids1.js",
@@ -4426,7 +4737,8 @@
   "fin": 3029,
   "contenido": false,
   "es": "Volumen (prisma rectangular)",
-  "en": null
+  "en": "Volume (rectangular prism)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-solids1.js",
@@ -4436,7 +4748,8 @@
   "fin": 4209,
   "contenido": false,
   "es": "Volumen (cilindro)",
-  "en": null
+  "en": "Volume (cylinder)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-solids1.js",
@@ -4446,7 +4759,8 @@
   "fin": 5370,
   "contenido": false,
   "es": "Volumen (esfera)",
-  "en": null
+  "en": "Volume (sphere)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-solids1.js",
@@ -4456,7 +4770,8 @@
   "fin": 6542,
   "contenido": false,
   "es": "Volumen (cono)",
-  "en": null
+  "en": "Volume (cone)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-solids1.js",
@@ -4466,7 +4781,8 @@
   "fin": 7720,
   "contenido": false,
   "es": "Volumen → despejar la altura",
-  "en": null
+  "en": "Volume → solve for the height",
+  "hecho": true
  },
  {
   "archivo": "sets/math-solids1.js",
@@ -4476,7 +4792,8 @@
   "fin": 9033,
   "contenido": false,
   "es": "Densidad (masa = densidad × volumen)",
-  "en": null
+  "en": "Density (mass = density × volume)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-solids1.js",
@@ -4486,7 +4803,8 @@
   "fin": 11389,
   "contenido": false,
   "es": "Escala y volumen (factor k³)",
-  "en": null
+  "en": "Scaling and volume (factor k³)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-solids1.js",
@@ -4496,7 +4814,8 @@
   "fin": 12651,
   "contenido": false,
   "es": "Volume → surface area (cube)",
-  "en": null
+  "en": "Volume → surface area (cube)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-solids1.js",
@@ -4506,7 +4825,8 @@
   "fin": 13810,
   "contenido": false,
   "es": "Volumen → despejar el radio (cono)",
-  "en": null
+  "en": "Volume → solve for the radius (cone)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-solids1.js",
@@ -4516,7 +4836,8 @@
   "fin": 15096,
   "contenido": false,
   "es": "Escala combinada (radio y altura)",
-  "en": null
+  "en": "Combined scaling (radius and height)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-solids1.js",
@@ -4526,7 +4847,8 @@
   "fin": 13005,
   "contenido": false,
   "es": "From the volume you get the edge: s³ = 64 → s = 4. Each face is a square of area s² = 16, and a cube has 6 faces: 6 × 16 = 96 square inches.",
-  "en": null
+  "en": "From the volume you get the edge: s³ = 64 → s = 4. Each face is a square of area s² = 16, and a cube has 6 faces: 6 × 16 = 96 square inches.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-solids1.js",
@@ -4536,7 +4858,8 @@
   "fin": 14206,
   "contenido": false,
   "es": "De V = (1/3)πr²h: 96π = (1/3)πr²(8). Multiplica ambos lados por 3: 288π = 8πr² → r² = 288/8 = 36 → r = 6 pulgadas. (Verifica: (1/3)π(36)(8) = 96π ✓.)",
-  "en": null
+  "en": "From V = (1/3)πr²h: 96π = (1/3)πr²(8). Multiply both sides by 3: 288π = 8πr² → r² = 288/8 = 36 → r = 6 inches. (Check: (1/3)π(36)(8) = 96π ✓.)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-solids1.js",
@@ -4546,7 +4869,8 @@
   "fin": 7381,
   "contenido": false,
   "es": "A cone is one third of the cylinder with the same base and height: V = (1/3)πr²h. Compute the full πr²h (300π) and divide by 3 at the end: 100π.",
-  "en": null
+  "en": "A cone is one third of the cylinder with the same base and height: V = (1/3)πr²h. Compute the full πr²h (300π) and divide by 3 at the end: 100π.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-solids1.js",
@@ -4556,7 +4880,8 @@
   "fin": 13493,
   "contenido": false,
   "es": "The chain: volume → edge (cube root) → area of one face (edge²) → ×6 faces. Do not mix them up: the 64 is a volume and is not used directly in the area.",
-  "en": null
+  "en": "The chain: volume → edge (cube root) → area of one face (edge²) → ×6 faces. Do not mix them up: the 64 is a volume and is not used directly in the area.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-solids1.js",
@@ -4566,7 +4891,8 @@
   "fin": 14749,
   "contenido": false,
   "es": "To solve within a cone, clear the 1/3 in one go by multiplying everything by 3. Then divide by πh and take the square root LAST. The typical error is stopping at r² = 36 and answering 36.",
-  "en": null
+  "en": "To solve within a cone, clear the 1/3 in one go by multiplying everything by 3. Then divide by πh and take the square root LAST. The typical error is stopping at r² = 36 and answering 36.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-solids1.js",
@@ -4576,7 +4902,8 @@
   "fin": 3490,
   "contenido": false,
   "es": "40 is only 8 × 5, the area of the base. You forgot to multiply by the height 4.",
-  "en": null
+  "en": "40 is only 8 × 5, the area of the base. You forgot to multiply by the height 4.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-solids1.js",
@@ -4586,7 +4913,8 @@
   "fin": 3603,
   "contenido": false,
   "es": "184 is the total SURFACE AREA: 2(8·5 + 8·4 + 5·4) = 2(92) = 184. They asked for volume, not area.",
-  "en": null
+  "en": "184 is the total SURFACE AREA: 2(8·5 + 8·4 + 5·4) = 2(92) = 184. They asked for volume, not area.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-solids1.js",
@@ -4596,7 +4924,8 @@
   "fin": 4753,
   "contenido": false,
   "es": "72π is the LATERAL area of the cylinder, 2πrh = 2π(4)(9). That measures surface, not volume.",
-  "en": null
+  "en": "72π is the LATERAL area of the cylinder, 2πrh = 2π(4)(9). That measures surface, not volume.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-solids1.js",
@@ -4606,7 +4935,8 @@
   "fin": 5821,
   "contenido": false,
   "es": "144π is the SURFACE AREA of the sphere, 4πr² = 4π(36). They want volume, which uses r³ and the 4/3 factor.",
-  "en": null
+  "en": "144π is the SURFACE AREA of the sphere, 4πr² = 4π(36). They want volume, which uses r³ and the 4/3 factor.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-solids1.js",
@@ -4616,7 +4946,8 @@
   "fin": 6015,
   "contenido": false,
   "es": "48π sale de (4/3)π(6)²: elevaste al CUADRADO en vez de al cubo. El volumen de la esfera lleva r³.",
-  "en": null
+  "en": "48π comes from (4/3)π(6)²: you SQUARED instead of cubing. The volume of a sphere uses r³.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-solids1.js",
@@ -4626,7 +4957,8 @@
   "fin": 7111,
   "contenido": false,
   "es": "20π sale de (1/3)π(5)(12): olvidaste elevar el radio al cuadrado.",
-  "en": null
+  "en": "20π comes from (1/3)π(5)(12): you forgot to square the radius.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-solids1.js",
@@ -4636,7 +4968,8 @@
   "fin": 8358,
   "contenido": false,
   "es": "25 comes from dividing by 2πr = 10π (that belongs to the lateral-area formula). For volume you divide by πr².",
-  "en": null
+  "en": "25 comes from dividing by 2πr = 10π (that belongs to the lateral-area formula). For volume you divide by πr².",
+  "hecho": true
  },
  {
   "archivo": "sets/math-solids1.js",
@@ -4646,7 +4979,8 @@
   "fin": 10867,
   "contenido": false,
   "es": "108π suma la esfera COMPLETA (36π) en vez de la mitad. El domo es media esfera: 18π.",
-  "en": null
+  "en": "108π adds the WHOLE sphere (36π) instead of half of it. The dome is half a sphere: 18π.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-solids1.js",
@@ -4656,7 +4990,8 @@
   "fin": 11927,
   "contenido": false,
   "es": "9 = 3² is how AREA scales (surface area, for instance), not volume. Volume is three-dimensional: it scales with k³.",
-  "en": null
+  "en": "9 = 3² is how AREA scales (surface area, for instance), not volume. Volume is three-dimensional: it scales with k³.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-solids1.js",
@@ -4666,7 +5001,8 @@
   "fin": 13102,
   "contenido": false,
   "es": "16 is the area of ONE face (4²). A cube has 6 identical faces.",
-  "en": null
+  "en": "16 is the area of ONE face (4²). A cube has 6 identical faces.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-solids1.js",
@@ -4676,7 +5012,8 @@
   "fin": 13212,
   "contenido": false,
   "es": "384 comes from 6 × 64: you multiplied by the VOLUME instead of the area of one face (s² = 16).",
-  "en": null
+  "en": "384 comes from 6 × 64: you multiplied by the VOLUME instead of the area of one face (s² = 16).",
+  "hecho": true
  },
  {
   "archivo": "sets/math-solids1.js",
@@ -4686,7 +5023,8 @@
   "fin": 12770,
   "contenido": true,
   "es": "A cube has a volume of 64 cubic inches. What is the total surface area, in square inches, of the cube?",
-  "en": null
+  "en": "A cube has a volume of 64 cubic inches. What is the total surface area, in square inches, of the cube?",
+  "hecho": true
  },
  {
   "archivo": "sets/rw-x-wic.js",
@@ -4696,7 +5034,8 @@
   "fin": 2337,
   "contenido": true,
   "es": "Reviewers praised the biography as exhaustive, yet one specialist found it curiously %BLANK% in exactly the area readers cared about most: on the subject’s decisive final decade, the book offers barely a dozen thinly sourced pages.",
-  "en": null
+  "en": "Reviewers praised the biography as exhaustive, yet one specialist found it curiously %BLANK% in exactly the area readers cared about most: on the subject’s decisive final decade, the book offers barely a dozen thinly sourced pages.",
+  "hecho": true
  },
  {
   "archivo": "sets/rw-x-conventions.js",
@@ -4706,7 +5045,8 @@
   "fin": 2188,
   "contenido": false,
   "es": "Interruptores apilados: coma interna dentro de un inciso con guiones",
-  "en": null
+  "en": "Stacked interrupters: internal comma inside a dash parenthetical",
+  "hecho": true
  },
  {
   "archivo": "sets/rw-x-conventions.js",
@@ -4716,7 +5056,8 @@
   "fin": 8333,
   "contenido": false,
   "es": "Sujeto pospuesto tras frase participial inicial",
-  "en": null
+  "en": "Postponed subject after an initial participial phrase",
+  "hecho": true
  },
  {
   "archivo": "sets/rw-x-conventions.js",
@@ -4726,7 +5067,8 @@
   "fin": 14523,
   "contenido": false,
   "es": "Modificador colgante con antecedente posesivo",
-  "en": null
+  "en": "Dangling modifier with a possessive antecedent",
+  "hecho": true
  },
  {
   "archivo": "sets/rw-x-conventions.js",
@@ -4736,7 +5078,8 @@
   "fin": 17721,
   "contenido": false,
   "es": "Posesivo plural dentro de un inciso",
-  "en": null
+  "en": "Plural possessive inside a parenthetical",
+  "hecho": true
  },
  {
   "archivo": "sets/rw-x-conventions.js",
@@ -4746,7 +5089,8 @@
   "fin": 18572,
   "contenido": false,
   "es": "“Astronomer’s” es posesivo SINGULAR, pero “several” exige plural.",
-  "en": null
+  "en": "“Astronomer’s” is a SINGULAR possessive, but “several” requires the plural.",
+  "hecho": true
  },
  {
   "archivo": "sets/rw-x-rhetoric.js",
@@ -4756,7 +5100,8 @@
   "fin": 6905,
   "contenido": true,
   "es": "Most of the composer's symphonies were greeted warmly at their premieres. One early work, admittedly, was booed so fiercely that the orchestra could barely play it to the end. %BLANK% audiences of his era generally embraced his music the moment they first heard it.",
-  "en": null
+  "en": "Most of the composer’s symphonies were greeted warmly at their premieres. One early work, admittedly, was booed so fiercely that the orchestra could barely play it to the end. %BLANK% audiences of his era generally embraced his music the moment they first heard it.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-x-alg.js",
@@ -4766,7 +5111,8 @@
   "fin": 10054,
   "contenido": false,
   "es": "Modelo lineal (valor intermedio + unidades)",
-  "en": null
+  "en": "Linear model (intermediate value + units)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-x-alg.js",
@@ -4776,7 +5122,8 @@
   "fin": 14431,
   "contenido": false,
   "es": "Desigualdad con valor absoluto (contar enteros, SPR)",
-  "en": null
+  "en": "Absolute value inequality (counting integers, SPR)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-x-alg.js",
@@ -4786,7 +5133,8 @@
   "fin": 17436,
   "contenido": false,
   "es": "Diferencia de cuadrados (atajo estructural)",
-  "en": null
+  "en": "Difference of squares (structural shortcut)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-x-alg.js",
@@ -4796,7 +5144,8 @@
   "fin": 14859,
   "contenido": false,
   "es": "|3x − 7| < 11 opens up as −11 < 3x − 7 < 11. Add 7 to all three sides: −4 < 3x < 18, and divide by 3: −4/3 < x < 6. The integers strictly between −1.33… and 6 are: −1, 0, 1, 2, 3, 4, 5. That is 7 integers. A double catch: −1 DOES count (−1 > −4/3) and 6 does NOT (the inequality is strict). Answer: 7.",
-  "en": null
+  "en": "|3x − 7| < 11 opens up as −11 < 3x − 7 < 11. Add 7 to all three sides: −4 < 3x < 18, and divide by 3: −4/3 < x < 6. The integers strictly between −1.33… and 6 are: −1, 0, 1, 2, 3, 4, 5. That is 7 integers. A double catch: −1 DOES count (−1 > −4/3) and 6 does NOT (the inequality is strict). Answer: 7.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-x-alg.js",
@@ -4806,7 +5155,8 @@
   "fin": 18614,
   "contenido": false,
   "es": "Seeing x² − y² next to x + y (or x − y) is an alarm bell: factor it as (x + y)(x − y) BEFORE you think about substituting. Divide, get the second linear equation, and add or subtract. The intermediate values (6 and 9) are always among the options waiting to catch you.",
-  "en": null
+  "en": "Seeing x² − y² next to x + y (or x − y) is an alarm bell: factor it as (x + y)(x − y) BEFORE you think about substituting. Divide, get the second linear equation, and add or subtract. The intermediate values (6 and 9) are always among the options waiting to catch you.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-x-adv.js",
@@ -4816,7 +5166,8 @@
   "fin": 9555,
   "contenido": false,
   "es": "Exponentes fraccionarios (combinar tres factores)",
-  "en": null
+  "en": "Fractional exponents (combining three factors)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-x-adv.js",
@@ -4826,7 +5177,8 @@
   "fin": 13284,
   "contenido": false,
   "es": "Dos pasos, en orden. Paso 1: g(5) = f(5 − 3) + 2 = f(2) + 2. Paso 2: f(2) = 2(2 + 1)² + 3 = 2(9) + 3 = 21. Entonces g(5) = 21 + 2 = 23. Verifica reescribiendo g completo: g(x) = 2(x − 2)² + 5, y g(5) = 2(3)² + 5 = 23. ✓",
-  "en": null
+  "en": "Two steps, in order. Step 1: g(5) = f(5 − 3) + 2 = f(2) + 2. Step 2: f(2) = 2(2 + 1)² + 3 = 2(9) + 3 = 21. So g(5) = 21 + 2 = 23. Check by rewriting all of g: g(x) = 2(x − 2)² + 5, and g(5) = 2(3)² + 5 = 23. ✓",
+  "hecho": true
  },
  {
   "archivo": "sets/math-x-adv.js",
@@ -4836,7 +5188,8 @@
   "fin": 1426,
   "contenido": false,
   "es": "1/4 sale de un error de signo al despejar: 49 − 48 + 4c = 0 da 4c = −1, o sea c = −1/4, negativo.",
-  "en": null
+  "en": "1/4 comes from a sign error while solving: 49 − 48 + 4c = 0 gives 4c = −1, that is, c = −1/4, which is negative.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-x-adv.js",
@@ -4846,7 +5199,8 @@
   "fin": 10338,
   "contenido": false,
   "es": "x^(4/5) = x^(12/15) sale de SUMAR el 1/15 en vez de restarlo. Dividir resta exponentes.",
-  "en": null
+  "en": "x^(4/5) = x^(12/15) comes from ADDING the 1/15 instead of subtracting it. Dividing subtracts exponents.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-x-data.js",
@@ -4856,7 +5210,8 @@
   "fin": 3971,
   "contenido": false,
   "es": "Tabla de doble entrada: llenar celdas desde totales",
-  "en": null
+  "en": "Two-way table: filling in cells from the totals",
+  "hecho": true
  },
  {
   "archivo": "sets/math-x-data.js",
@@ -4866,7 +5221,8 @@
   "fin": 5674,
   "contenido": false,
   "es": "Probabilidad condicional P(X | Y o Z) con celda faltante",
-  "en": null
+  "en": "Conditional probability P(X | Y or Z) with a missing cell",
+  "hecho": true
  },
  {
   "archivo": "sets/math-x-data.js",
@@ -4876,7 +5232,8 @@
   "fin": 7332,
   "contenido": false,
   "es": "Condicional inversa: condicionar sobre la columna",
-  "en": null
+  "en": "Reverse conditional: conditioning on the column",
+  "hecho": true
  },
  {
   "archivo": "sets/math-x-data.js",
@@ -4886,7 +5243,8 @@
   "fin": 12221,
   "contenido": false,
   "es": "Media: quitar un valor de la lista",
-  "en": null
+  "en": "Mean: removing a value from the list",
+  "hecho": true
  },
  {
   "archivo": "sets/math-x-data.js",
@@ -4896,7 +5254,8 @@
   "fin": 13334,
   "contenido": false,
   "es": "Media ponderada: hallar el valor desconocido agregado",
-  "en": null
+  "en": "Weighted mean: finding the unknown added value",
+  "hecho": true
  },
  {
   "archivo": "sets/math-x-data.js",
@@ -4906,7 +5265,8 @@
   "fin": 20741,
   "contenido": false,
   "es": "Cadena de tres porcentajes: hallar el valor original",
-  "en": null
+  "en": "Chain of three percentages: finding the original value",
+  "hecho": true
  },
  {
   "archivo": "sets/math-x-data.js",
@@ -4916,7 +5276,8 @@
   "fin": 2881,
   "contenido": false,
   "es": "First fill in the table: Senior Car = 60 − 16 − 14 = 30 (or 48 − 18 = 30 from the column). The condition “bus or walk” narrows the universe to 40 + 32 = 72 students. Of those, the seniors are 16 + 14 = 30. Probability = 30/72 = 5/12.",
-  "en": null
+  "en": "First fill in the table: Senior Car = 60 − 16 − 14 = 30 (or 48 − 18 = 30 from the column). The condition “bus or walk” narrows the universe to 40 + 32 = 72 students. Of those, the seniors are 16 + 14 = 30. Probability = 30/72 = 5/12.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-x-data.js",
@@ -4926,7 +5287,8 @@
   "fin": 6329,
   "contenido": false,
   "es": "The missing cell: defective from C = 40 − 15 − 12 = 13 (check: 13 + 187 = 200 ✓). The conditioned universe is B or C: 300 + 200 = 500 parts. Defective among those: 12 + 13 = 25. P = 25/500 = 1/20.",
-  "en": null
+  "en": "The missing cell: defective from C = 40 − 15 − 12 = 13 (check: 13 + 187 = 200 ✓). The conditioned universe is B or C: 300 + 200 = 500 parts. Defective among those: 12 + 13 = 25. P = 25/500 = 1/20.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-x-data.js",
@@ -4936,7 +5298,8 @@
   "fin": 20314,
   "contenido": false,
   "es": "Turn each percent change into a multiplier and MULTIPLY them: +20% → 1.2, −25% → 0.75. To work backwards, divide the final value by the product of the multipliers. Never add or subtract successive percentages.",
-  "en": null
+  "en": "Turn each percent change into a multiplier and MULTIPLY them: +20% → 1.2, −25% → 0.75. To work backwards, divide the final value by the product of the multipliers. Never add or subtract successive percentages.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-x-data.js",
@@ -4946,7 +5309,8 @@
   "fin": 19961,
   "contenido": false,
   "es": "$337.50 = 270/0.80 undoes a 20% discount nobody applied (the discount was 25% and there was an increase before it). You have to reverse the WHOLE chain.",
-  "en": null
+  "en": "$337.50 = 270/0.80 undoes a 20% discount nobody applied (the discount was 25% and there was an increase before it). You have to reverse the WHOLE chain.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-x-geo.js",
@@ -4956,7 +5320,8 @@
   "fin": 3256,
   "contenido": false,
   "es": "Circunferencia (coeficiente ≠ 1, tangencia)",
-  "en": null
+  "en": "Circle (coefficient ≠ 1, tangency)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-x-geo.js",
@@ -4966,7 +5331,8 @@
   "fin": 11925,
   "contenido": false,
   "es": "Altura a la hipotenusa (con expresiones)",
-  "en": null
+  "en": "Altitude to the hypotenuse (with expressions)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-x-geo.js",
@@ -4976,7 +5342,8 @@
   "fin": 13489,
   "contenido": false,
   "es": "Tangente desde punto externo",
-  "en": null
+  "en": "Tangent from an external point",
+  "hecho": true
  },
  {
   "archivo": "sets/math-x-geo.js",
@@ -4986,7 +5353,8 @@
   "fin": 3920,
   "contenido": false,
   "es": "First divide EVERYTHING by 2: x² + y² − 6x + 2y = k/2. Complete the square: (x − 3)² − 9 + (y + 1)² − 1 = k/2 → (x − 3)² + (y + 1)² = k/2 + 10. The center is (3, −1). To be tangent to the x-axis, the radius has to equal the vertical distance from the center to the axis: r = |−1| = 1, so r² = 1. Then k/2 + 10 = 1 → k/2 = −9 → k = −18. (Check: (x − 3)² + (y + 1)² = 1 touches the x-axis only at (3, 0) ✓.)",
-  "en": null
+  "en": "First divide EVERYTHING by 2: x² + y² − 6x + 2y = k/2. Complete the square: (x − 3)² − 9 + (y + 1)² − 1 = k/2 → (x − 3)² + (y + 1)² = k/2 + 10. The center is (3, −1). To be tangent to the x-axis, the radius has to equal the vertical distance from the center to the axis: r = |−1| = 1, so r² = 1. Then k/2 + 10 = 1 → k/2 = −9 → k = −18. (Check: (x − 3)² + (y + 1)² = 1 touches the x-axis only at (3, 0) ✓.)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-x-geo.js",
@@ -4996,7 +5364,8 @@
   "fin": 5665,
   "contenido": false,
   "es": "Divide by 2: x² + y² + 8x − 4y = −11. Complete the square: (x + 4)² − 16 + (y − 2)² − 4 = −11 → (x + 4)² + (y − 2)² = 9. So r² = 9 → r = 3, and the DIAMETER = 2r = 6. (Check: −11 + 16 + 4 = 9 ✓.)",
-  "en": null
+  "en": "Divide by 2: x² + y² + 8x − 4y = −11. Complete the square: (x + 4)² − 16 + (y − 2)² − 4 = −11 → (x + 4)² + (y − 2)² = 9. So r² = 9 → r = 3, and the DIAMETER = 2r = 6. (Check: −11 + 16 + 4 = 9 ✓.)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-x-geo.js",
@@ -5006,7 +5375,8 @@
   "fin": 7416,
   "contenido": false,
   "es": "Divide by 3: x² + y² = 16, a circle with center (0, 0) and radius 4. Substitute y = x + 6: x² + (x + 6)² = 16 → 2x² + 12x + 36 = 16 → 2x² + 12x + 20 = 0 → x² + 6x + 10 = 0. Discriminant: 6² − 4(1)(10) = 36 − 40 = −4 < 0, so there are NO real solutions: zero intersections. (Geometric check: the distance from the center to the line x − y + 6 = 0 is 6/√2 = 3√2 ≈ 4.24 > 4 = the radius; the line passes outside ✓.)",
-  "en": null
+  "en": "Divide by 3: x² + y² = 16, a circle with center (0, 0) and radius 4. Substitute y = x + 6: x² + (x + 6)² = 16 → 2x² + 12x + 36 = 16 → 2x² + 12x + 20 = 0 → x² + 6x + 10 = 0. Discriminant: 6² − 4(1)(10) = 36 − 40 = −4 < 0, so there are NO real solutions: zero intersections. (Geometric check: the distance from the center to the line x − y + 6 = 0 is 6/√2 = 3√2 ≈ 4.24 > 4 = the radius; the line passes outside ✓.)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-x-geo.js",
@@ -5016,7 +5386,8 @@
   "fin": 9163,
   "contenido": false,
   "es": "Divide by 2: x² + y² − 10x + 6y = k/2. Complete the square: (x − 5)² − 25 + (y + 3)² − 9 = k/2 → (x − 5)² + (y + 3)² = k/2 + 34. A radius of 6 means r² = 36, so k/2 + 34 = 36 → k/2 = 2 → k = 4. (Check: with k = 4 the right-hand side is 2/2 + 34 = 36 = 6² ✓.)",
-  "en": null
+  "en": "Divide by 2: x² + y² − 10x + 6y = k/2. Complete the square: (x − 5)² − 25 + (y + 3)² − 9 = k/2 → (x − 5)² + (y + 3)² = k/2 + 34. A radius of 6 means r² = 36, so k/2 + 34 = 36 → k/2 = 2 → k = 4. (Check: with k = 4 the right-hand side is 2/2 + 34 = 36 = 6² ✓.)",
+  "hecho": true
  },
  {
   "archivo": "sets/math-x-geo.js",
@@ -5026,7 +5397,8 @@
   "fin": 6357,
   "contenido": false,
   "es": "The full chain: divide by the coefficient → complete the square → r² → square root → r → did they ask for the radius or the diameter? Underline the word “diameter” in the stem: the test ALWAYS plants the radius as a distractor.",
-  "en": null
+  "en": "The full chain: divide by the coefficient → complete the square → r² → square root → r → did they ask for the radius or the diameter? Underline the word “diameter” in the stem: the test ALWAYS plants the radius as a distractor.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-x-geo.js",
@@ -5036,7 +5408,8 @@
   "fin": 8297,
   "contenido": false,
   "es": "Circle + line system: substitute, build the quadratic and look at the DISCRIMINANT: positive → 2 solutions, zero → 1 (tangent), negative → 0. Geometric shortcut: compare the distance from the center to the line against the radius. Do not forget to divide 3x² + 3y² = 48 first: the radius is 4, not √48.",
-  "en": null
+  "en": "Circle + line system: substitute, build the quadratic and look at the DISCRIMINANT: positive → 2 solutions, zero → 1 (tangent), negative → 0. Geometric shortcut: compare the distance from the center to the line against the radius. Do not forget to divide 3x² + 3y² = 48 first: the radius is 4, not √48.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-x-geo.js",
@@ -5046,7 +5419,8 @@
   "fin": 9877,
   "contenido": false,
   "es": "Three traps stacked in one problem: (1) divide by the coefficient BEFORE completing the square, (2) set it equal to r² = 36 and not to r = 6, (3) solve for the full k, do not stop at k/2. Write out every step.",
-  "en": null
+  "en": "Three traps stacked in one problem: (1) divide by the coefficient BEFORE completing the square, (2) set it equal to r² = 36 and not to r = 6, (3) solve for the full k, do not stop at k/2. Write out every step.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-x-geo.js",
@@ -5056,7 +5430,8 @@
   "fin": 20435,
   "contenido": false,
   "es": "Filling problems: (1) volume in cm³, (2) CONVERT to liters (÷1,000) — this is the buried trap, (3) divide by the rate. Sanity check: a ~283 L tank at 12 L/min should take twenty-odd minutes, not thousands.",
-  "en": null
+  "en": "Filling problems: (1) volume in cm³, (2) CONVERT to liters (÷1,000) — this is the buried trap, (3) divide by the rate. Sanity check: a ~283 L tank at 12 L/min should take twenty-odd minutes, not thousands.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-x-geo.js",
@@ -5066,7 +5441,8 @@
   "fin": 4177,
   "contenido": false,
   "es": "−36 comes from completing the square WITHOUT dividing by 2 first: (x − 6)² + (y + 2)² = k + 40 with a “radius” of 2 gives k = −36. With a coefficient of 2 you have to divide the whole equation before completing the square.",
-  "en": null
+  "en": "−36 comes from completing the square WITHOUT dividing by 2 first: (x − 6)² + (y + 2)² = k + 40 with a “radius” of 2 gives k = −36. With a coefficient of 2 you have to divide the whole equation before completing the square.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-x-geo.js",
@@ -5076,7 +5452,8 @@
   "fin": 7832,
   "contenido": false,
   "es": "Two intersections would need a positive discriminant (a secant line). If you do not divide by 3 and treat √48 ≈ 6.9 as the radius, you wrongly conclude the line cuts through — the real radius is 4.",
-  "en": null
+  "en": "Two intersections would need a positive discriminant (a secant line). If you do not divide by 3 and treat √48 ≈ 6.9 as the radius, you wrongly conclude the line cuts through — the real radius is 4.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-x-geo.js",
@@ -5086,7 +5463,8 @@
   "fin": 9374,
   "contenido": false,
   "es": "−100 comes from completing the square without dividing by 2: (x − 10)² + (y + 6)² = k + 136 = 36 → k = −100. The coefficient of 2 forces you to divide the whole equation first.",
-  "en": null
+  "en": "−100 comes from completing the square without dividing by 2: (x − 10)² + (y + 6)² = k + 136 = 36 → k = −100. The coefficient of 2 forces you to divide the whole equation first.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-x-geo.js",
@@ -5096,7 +5474,8 @@
   "fin": 15729,
   "contenido": false,
   "es": "65 is the value of 5x, not of x. You skipped the last step: divide by 5.",
-  "en": null
+  "en": "65 is the value of 5x, not of x. You skipped the last step: divide by 5.",
+  "hecho": true
  },
  {
   "archivo": "sets/math-x-geo.js",
@@ -5106,6 +5485,7 @@
   "fin": 20204,
   "contenido": false,
   "es": "23,562 is 90,000π/12 WITHOUT converting cm³ to liters: you are dividing cubic centimeters by liters per minute. The units have to match before you divide.",
-  "en": null
+  "en": "23,562 is 90,000π/12 WITHOUT converting cm³ to liters: you are dividing cubic centimeters by liters per minute. The units have to match before you divide.",
+  "hecho": true
  }
 ]

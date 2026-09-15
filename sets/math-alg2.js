@@ -10,7 +10,7 @@
     questions: [
       {
         id:'AL2-01', type:'mc', domain:'Algebra', difficulty:'Fácil',
-        skill:'Ecuaciones lineales (una variable)',
+        skill:'Linear equations (one variable)',
         stem:'If 6x − 9 = 2x + 15, what is the value of x?',
         choices:{A:'4', B:'3', C:'24', D:'6'},
         correct:'D',
@@ -38,21 +38,21 @@
       },
       {
         id:'AL2-03', type:'mc', domain:'Algebra', difficulty:'Fácil',
-        skill:'Inecuaciones lineales (una variable)',
+        skill:'Linear inequalities (one variable)',
         stem:'Which value of x is a solution to the inequality 3x − 4 < 11?',
         choices:{A:'6', B:'7', C:'5', D:'4'},
         correct:'D',
         expCorrect:'Solve it: 3x − 4 < 11 → 3x < 15 → x < 5. The only choice strictly less than 5 is 4. (Check: 3(4)−4 = 8 < 11 ✓.)',
         expWrong:{
-          A:'6 no cumple: 3(6)−4 = 14, que no es < 11.',
-          B:'7 no cumple: 3(7)−4 = 17, que no es < 11.',
-          C:'5 es el borde exacto: 3(5)−4 = 11, y 11 NO es < 11. La desigualdad es estricta.'
+          A:'6 does not work: 3(6)−4 = 14, which is not < 11.',
+          B:'7 does not work: 3(7)−4 = 17, which is not < 11.',
+          C:'5 is the exact boundary: 3(5)−4 = 11, and 11 is NOT < 11. The inequality is strict.'
         },
         tip:'Solve it like a normal equation: x < 5. With "<" the boundary does NOT count — x < 5 excludes 5. Only smaller values are left.'
       },
       {
         id:'AL2-04', type:'mc', domain:'Algebra', difficulty:'Fácil',
-        skill:'Funciones lineales (pendiente e intercepto)',
+        skill:'Linear functions (slope and intercept)',
         stem:'The graph of the line y = −4x + 7 is shown in the xy-plane. What is the y-intercept of the line?',
         choices:{A:'(0, 7)', B:'(0, −4)', C:'(7, 0)', D:'(−4, 0)'},
         correct:'A',
@@ -80,7 +80,7 @@
       },
       {
         id:'AL2-06', type:'mc', domain:'Algebra', difficulty:'Media',
-        skill:'Sistemas de ecuaciones lineales (palabras)',
+        skill:'Systems of linear equations (word problems)',
         stem:'At a snack stand, 2 hot dogs and 3 sodas cost $13, while 1 hot dog and 1 soda cost $5. What is the price, in dollars, of one hot dog?',
         choices:{A:'2', B:'4', C:'3', D:'5'},
         correct:'A',
@@ -108,7 +108,7 @@
       },
       {
         id:'AL2-08', type:'mc', domain:'Algebra', difficulty:'Media',
-        skill:'Inecuaciones lineales (dividir por negativo)',
+        skill:'Linear inequalities (dividing by a negative)',
         stem:'What is the solution to the inequality 4 − 2x ≤ 10?',
         choices:{A:'x ≥ −3', B:'x ≤ −3', C:'x ≥ 3', D:'x ≤ 3'},
         correct:'A',
@@ -122,7 +122,7 @@
       },
       {
         id:'AL2-09', type:'mc', domain:'Algebra', difficulty:'Difícil',
-        skill:'Sistemas de ecuaciones lineales (infinitas soluciones)',
+        skill:'Systems of linear equations (infinitely many solutions)',
         stem:'The system of equations below has infinitely many solutions.<br><br>4x + 6y = 10<br>2x + 3y = k<br><br>What is the value of the constant k?',
         choices:{A:'10', B:'20', C:'5', D:'2'},
         correct:'C',
@@ -132,7 +132,7 @@
           B:'20 multiplies by 2 instead of dividing; the second equation is the first divided by 2, not multiplied.',
           D:'2 is the factor between the equations, not the value of the constant k.'
         },
-        tip:'"Infinitely many solutions" = the same line. Make the x and y coefficients match (here divide the first by 2) and the constant term has to match too.'
+        tip:'“Infinitely many solutions” = the same line. Make the x and y coefficients match (here divide the first by 2) and the constant term has to match too.'
       },
       {
         id:'AL2-10', type:'mc', domain:'Algebra', difficulty:'Difícil',
@@ -150,7 +150,7 @@
       },
       {
         id:'AL2-11', type:'spr', domain:'Algebra', difficulty:'Media',
-        skill:'Sistemas de ecuaciones lineales (valor combinado)',
+        skill:'Systems of linear equations (combined value)',
         stem:'The system of equations below is given.<br><br>3x + 2y = 20<br>x + 2y = 8<br><br>What is the value of x − y in the solution to the system?',
         answer:'5',
         expCorrect:'Subtract the equations to eliminate y: (3x + 2y) − (x + 2y) = 20 − 8 → 2x = 12 → x = 6. Substitute into x + 2y = 8: 6 + 2y = 8 → 2y = 2 → y = 1. They want x − y = 6 − 1 = 5. (Check the system: 3(6)+2(1) = 20 ✓ and 6+2(1) = 8 ✓.) Answer: 5.',
@@ -159,10 +159,10 @@
       },
       {
         id:'AL2-12', type:'spr', domain:'Algebra', difficulty:'Difícil',
-        skill:'Funciones lineales (evaluar y despejar)',
+        skill:'Linear functions (evaluate and solve)',
         stem:'The function g is defined by g(x) = −4x + 26. If g(a) = 6, what is the value of a?',
         answer:'5',
-        expCorrect:'g(a) = 6 significa −4a + 26 = 6. Despeja: −4a = 6 − 26 = −20 → a = (−20)/(−4) = 5. (Comprueba: g(5) = −4(5) + 26 = −20 + 26 = 6 ✓.) Respuesta: 5.',
+        expCorrect:'g(a) = 6 means −4a + 26 = 6. Solve: −4a = 6 − 26 = −20 → a = (−20)/(−4) = 5. (Check: g(5) = −4(5) + 26 = −20 + 26 = 6 ✓.) Answer: 5.',
         expWrong:{},
         tip:'g(a) = 6 means "the output is 6": replace the formula with 6 and solve for the input a. Watch the two negatives: −20 divided by −4 gives +5.'
       }

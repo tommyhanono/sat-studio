@@ -62,7 +62,7 @@ window.SAT_SETS.push({
       expCorrect:'The full subject is "The long-standing suspicion that… had never actually existed" and its verb is "has been undermined". The "that…" clause is essential (it defines which suspicion), so it takes no commas, and you never split a subject from its verb with a comma, semicolon or colon.',
       expWrong:{
         A:'A comma between the subject (however long) and its verb "has been" is wrong.',
-        B:'El punto y coma pide oraciones independientes a ambos lados; “has been undermined…” no lo es.',
+        B:'A semicolon needs independent clauses on both sides; “has been undermined…” is not one.',
         C:'The colon would split the subject from its verb.'
       },
       tip:'Long subjects "ask" for a pause when you read them, but grammar ≠ breathing. Find subject + verb and do NOT split them.'
@@ -93,7 +93,7 @@ window.SAT_SETS.push({
       expWrong:{
         A:'"review" is plural; it agrees with "collection" or "proposals", not with the singular subject "The committee".',
         C:'“have reviewed” es plural; el singular “committee” pide “has reviewed”.',
-        D:'“are reviewing” es plural; el sujeto singular “committee” pide un verbo singular.'
+        D:'“are reviewing” is plural; the singular subject “committee” needs a singular verb.'
       },
       tip:'A collective acting as a single unit ("The committee") is singular. Ignore the "that…" clause: the verb agrees with "committee".'
     },
@@ -108,7 +108,7 @@ window.SAT_SETS.push({
       expWrong:{
         B:'"have put" is plural; it agrees with "setbacks", but the real subject is the singular "A series".',
         C:'"putting" is not a finite verb: it would leave the sentence with no main verb (a fragment).',
-        D:'“are putting” es plural; el sujeto singular “A series” pide un verbo singular.'
+        D:'“are putting” is plural; the singular subject “A series” needs a singular verb.'
       },
       tip:'"A series of…", "a set of…" and "a pair of…" are singular. Cover the intervening phrase and agree with "A series".'
     },
@@ -123,7 +123,7 @@ window.SAT_SETS.push({
       expWrong:{
         A:'"are" is plural; it agrees with "artifacts", but the real subject is the singular "a gold astrolabe".',
         B:'"were" is plural and past tense; the subject is singular and the rest of the text is in the present ("have puzzled… for decades").',
-        D:'“have been” es plural; el sujeto singular “a gold astrolabe” pide “has been”.'
+        D:'“have been” is plural; the singular subject “a gold astrolabe” needs “has been”.'
       },
       tip:'When the sentence opens with a place ("Among the artifacts…"), look for the subject AFTER the verb. Here it is "a gold astrolabe" (singular).'
     },

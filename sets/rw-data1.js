@@ -157,7 +157,7 @@
         correct:'C',
         expCorrect:'The claim is that ridership MORE THAN DOUBLED between 2019 and 2023. C uses the two exact years: 420 thousand → 880 thousand. Double 420 is 840, and 880 clears that, so "more than double" is correct and supports the claim.',
         expWrong:{
-          A:'420→610 (2019 a 2021) es un tramo parcial; no llega a 2023 ni muestra que se duplicara.',
+          A:'420→610 (2019 to 2021) is only part of the span; it does not reach 2023 or show that the value doubled.',
           B:'That 2023 is the highest year (880) is true, but "the highest" is not the same as "more than double 2019"; it does not compare with the starting point.',
           D:'610→880 (2021 to 2023) uses the wrong starting year; the claim compares with 2019, not with 2021.'
         },

@@ -100,7 +100,7 @@
       },
       {
         id:'XA-07', type:'mc', domain:'Algebra', difficulty:'Difícil', extreme:true,
-        skill:'Modelo lineal (valor intermedio + unidades)',
+        skill:'Linear model (intermediate value + units)',
         stem:'The total cost C, in dollars, to rent a kayak consists of an $18 fixed fee plus $7.50 per hour, so C = 18 + 7.5h, where h is the number of hours. Marco paid a total of $85.50. For how many minutes did Marco rent the kayak?',
         choices:{A:'9', B:'90', C:'684', D:'540'},
         correct:'D',
@@ -142,7 +142,7 @@
       },
       {
         id:'XA-10', type:'spr', domain:'Algebra', difficulty:'Difícil', extreme:true,
-        skill:'Desigualdad con valor absoluto (contar enteros, SPR)',
+        skill:'Absolute value inequality (counting integers, SPR)',
         stem:'How many integer values of x satisfy the inequality |3x − 7| < 11 ?',
         answer:'7',
         expCorrect:'|3x − 7| < 11 opens up as −11 < 3x − 7 < 11. Add 7 to all three sides: −4 < 3x < 18, and divide by 3: −4/3 < x < 6. The integers strictly between −1.33… and 6 are: −1, 0, 1, 2, 3, 4, 5. That is 7 integers. A double catch: −1 DOES count (−1 > −4/3) and 6 does NOT (the inequality is strict). Answer: 7.',
@@ -168,7 +168,7 @@
       },
       {
         id:'XA-12', type:'mc', domain:'Algebra', difficulty:'Difícil', extreme:true,
-        skill:'Diferencia de cuadrados (atajo estructural)',
+        skill:'Difference of squares (structural shortcut)',
         stem:'If x + y = 9 and x² − y² = 54, what is the value of x ?',
         choices:{A:'3/2', B:'6', C:'9', D:'15/2'},
         correct:'D',

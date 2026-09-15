@@ -41,7 +41,7 @@
     questions: [
       {
         id:'XG-01', type:'mc', domain:'Geometry & Trigonometry', difficulty:'Difícil', extreme:true,
-        skill:'Circunferencia (coeficiente ≠ 1, tangencia)',
+        skill:'Circle (coefficient ≠ 1, tangency)',
         stem:'In the xy-plane, the graph of 2x² + 2y² − 12x + 4y = k, where k is a constant, is a circle that is tangent to the x-axis. What is the value of k?',
         choices:{A:'−36', B:'−18', C:'−20', D:'−2'},
         correct:'B',
@@ -122,7 +122,7 @@
       },
       {
         id:'XG-06', type:'mc', domain:'Geometry & Trigonometry', difficulty:'Difícil', extreme:true,
-        skill:'Altura a la hipotenusa (con expresiones)',
+        skill:'Altitude to the hypotenuse (with expressions)',
         stem:'In a right triangle, the altitude to the hypotenuse has length 6 and divides the hypotenuse into two segments of lengths x and x + 5. What is the length of the hypotenuse?',
         choices:{A:'4', B:'9', C:'13', D:'36'},
         correct:'C',
@@ -138,7 +138,7 @@
       },
       {
         id:'XG-07', type:'spr', domain:'Geometry & Trigonometry', difficulty:'Difícil', extreme:true,
-        skill:'Tangente desde punto externo',
+        skill:'Tangent from an external point',
         figure: FIG_TANGENT,
         stem:'In the figure, the circle has center O and radius 5. Point P lies outside the circle with OP = 13, and segment PT is tangent to the circle at point T. What is the length of PT?',
         answer:'12',
