@@ -510,6 +510,21 @@
   .class-ta{width:100%;border:1px solid var(--gray-line);border-radius:10px;padding:11px 13px;font-size:16px;font-family:var(--sans);resize:vertical;box-sizing:border-box}
   .class-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:12px}
   .class-pin{display:flex;align-items:center;gap:7px;font-size:.85rem;color:#5c4212;font-weight:600;min-height:44px}
+  .class-istask{align-items:flex-start;line-height:1.5;margin-top:12px}
+  .class-task{border-top:1px solid #e6d3a8;margin-top:14px;padding-top:14px}
+  .ct-chips{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px;max-height:150px;overflow-y:auto}
+  .ct-row{display:flex;gap:12px;flex-wrap:wrap}
+  .ct-lbl{display:flex;flex-direction:column;gap:5px;font-size:.78rem;font-weight:700;color:#5c4212;text-transform:uppercase;letter-spacing:.05em}
+  .ct-sel{min-height:40px;border:1px solid var(--gray-line);border-radius:9px;padding:8px 11px;font-size:16px;font-family:var(--sans);background:#fff}
+  .cp-task{border:1px solid var(--blue);background:var(--blue-soft);border-radius:10px;padding:14px 16px;margin-top:12px}
+  .cp-task-top{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:7px}
+  .cp-task-tag{font-size:.68rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--blue);border-radius:999px;padding:3px 10px}
+  .cp-task-due{font-size:.76rem;font-weight:700;color:var(--amber)}
+  .cp-task-due.late{color:var(--red)}
+  .cp-task-what{font-size:.92rem;line-height:1.5;margin-bottom:3px}
+  .cp-task-how{font-size:.79rem;color:var(--gray-mid);margin-bottom:12px}
+  .cp-task-go{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  .cp-task-hist{font-size:.78rem;color:var(--gray-mid)}
   .class-list{display:flex;flex-direction:column;gap:12px}
   .class-post{background:#fff;border:1px solid #e3e6ef;border-radius:12px;padding:16px 18px;box-shadow:var(--sombra)}
   .class-post.pinned{border-left:4px solid var(--gold)}
@@ -2251,6 +2266,7 @@ function classRender(){
         '<p class="cp-meta">' + escHtml(p.autor || 'Teacher') + ' · ' + escHtml(p.fecha || '') + '</p>' +
       '</header>' +
       (p.cuerpo ? '<p class="cp-body">' + escHtml(p.cuerpo).replace(/\n/g, '<br>') + '</p>' : '') +
+      (p.tarea ? tareaHTML(p) : '') +
       (puedeEditar
         ? '<div class="cp-tools">' +
             '<button type="button" class="mini" data-class-edit="' + escAttr(p.id) + '">Edit</button>' +
@@ -2267,9 +2283,27 @@ function classRender(){
       $('#class-title').value = p.titulo || '';
       $('#class-body').value = p.cuerpo || '';
       $('#class-pin').checked = !!p.fijado;
+      var t = p.tarea || null;
+      $('#class-istask').checked = !!t;
+      $('#class-task').classList.toggle('hidden', !t);
+      Array.prototype.forEach.call(document.querySelectorAll('#class-task [data-task-topic]'), function(chip){
+        chip.classList.toggle('on', !!t && (t.temas || []).indexOf(chip.getAttribute('data-task-topic')) >= 0);
+      });
+      if(t){
+        $('#class-min').value = String(t.minutos || 20);
+        $('#class-niv').value = t.nivel || 'examen';
+        $('#class-modo').value = t.modo || 'drill';
+        $('#class-due').value = t.vence || '';
+      }
       $('#class-save').textContent = 'Save changes';
       $('#class-cancel').classList.remove('hidden');
       intenta(function(){ $('#class-title').focus(); }, 'focus');
+    });
+  });
+  Array.prototype.forEach.call(caja.querySelectorAll('[data-task-start]'), function(b){
+    b.addEventListener('click', function(){
+      var p = (CLASS_POSTS || []).filter(function(x){ return String(x.id) === b.getAttribute('data-task-start'); })[0];
+      if(p) empezarTarea(p);
     });
   });
   Array.prototype.forEach.call(caja.querySelectorAll('[data-class-del]'), function(b){
@@ -2284,17 +2318,87 @@ function classRender(){
     });
   });
 }
+/* La tarjeta de una tarea. Se puede repetir todas las veces que el estudiante
+   quiera y cada intento arma un test NUEVO desde los mismos temas: repetir es
+   practicar, no memorizar el orden de las respuestas. Se muestran los intentos y
+   el mejor resultado para que vea que mejora, que es lo que lo trae de vuelta. */
+function tareaHTML(p){
+  var t = p.tarea || {};
+  var nombres = (t.temas || []).map(function(k){
+    var x = PLAN_TOPICS.filter(function(y){ return y.key === k; })[0];
+    return x ? x.t : k;
+  });
+  var mios = getHistory().filter(function(e){ return e.setId === 'assign-' + p.id; });
+  var mejor = mios.reduce(function(a, e){
+    var pct = e.total ? e.score / e.total : 0;
+    return pct > a ? pct : a;
+  }, 0);
+  var vence = t.vence ? new Date(t.vence + 'T12:00:00') : null;
+  var dias = vence ? Math.ceil((vence - new Date()) / 86400000) : null;
+  return '<div class="cp-task">' +
+    '<div class="cp-task-top"><span class="cp-task-tag">Assignment</span>' +
+      (t.vence ? '<span class="cp-task-due' + (dias !== null && dias < 0 ? ' late' : '') + '">' +
+        (dias === null ? '' : dias > 1 ? 'due in ' + dias + ' days' : dias === 1 ? 'due tomorrow' :
+         dias === 0 ? 'due today' : 'was due ' + (-dias) + (dias === -1 ? ' day' : ' days') + ' ago') + '</span>' : '') +
+    '</div>' +
+    '<p class="cp-task-what"><b>' + escHtml(nombres.join(' · ')) + '</b></p>' +
+    '<p class="cp-task-how">' + (t.minutos || 20) + ' min · ' +
+      (t.modo === 'exam' ? 'timed, graded at the end' : 'no timer, explained as you go') + ' · ' +
+      (t.nivel === 'mas' ? 'hardest only' : t.nivel === 'donde' ? 'building up' : 'test level') + '</p>' +
+    '<div class="cp-task-go">' +
+      '<button type="button" class="btn-primary" data-task-start="' + escAttr(p.id) + '">' +
+        (mios.length ? 'Take it again' : 'Start') + '</button>' +
+      '<span class="cp-task-hist">' + (mios.length
+        ? mios.length + (mios.length === 1 ? ' attempt' : ' attempts') + ' · best ' + Math.round(mejor * 100) + '%' +
+          ' · new questions every time'
+        : 'You can take it as many times as you want.') + '</span>' +
+    '</div>' +
+  '</div>';
+}
+function empezarTarea(post){
+  var t = post.tarea || {};
+  if(!BANCO_LISTO) return conBanco(function(){ empezarTarea(post); });
+  var set = planBuildSet(t.temas || [], {
+    minutos: t.minutos || 20, modo: t.modo || 'drill', nivel: t.nivel || 'examen'
+  });
+  if(!set.questions.length){
+    toast('There are no questions left for the topics in this assignment. Tell your teacher.', true);
+    return;
+  }
+  // El id fija la tarea: así cada intento queda contado contra ELLA y el
+  // estudiante ve cuántas veces la hizo y cómo va mejorando.
+  set.id = 'assign-' + post.id;
+  set.title = post.titulo;
+  _beginSession(set, t.modo || 'drill');
+}
+
 function classWire(){
   var g = $('#class-save'); if(!g) return;
   g.addEventListener('click', function(){
     var t = ($('#class-title').value || '').trim();
     if(!t){ toast('A post needs a title.', true); return; }
     g.disabled = true;
+    var esTarea = !!($('#class-istask') && $('#class-istask').checked);
+    var temas = Array.prototype.map.call(
+      document.querySelectorAll('#class-task [data-task-topic].on'),
+      function(c){ return c.getAttribute('data-task-topic'); });
+    if(esTarea && !temas.length){
+      g.disabled = false;
+      toast('An assignment needs at least one topic. Pick them above.', true);
+      return;
+    }
     SB.rpc('sat_class_post_save', {
       p_id: $('#class-id').value || null,
       p_titulo: t,
       p_cuerpo: $('#class-body').value || '',
-      p_fijado: !!$('#class-pin').checked
+      p_fijado: !!$('#class-pin').checked,
+      p_tarea: esTarea ? {
+        temas: temas,
+        nivel: $('#class-niv').value || 'examen',
+        minutos: parseInt($('#class-min').value, 10) || 20,
+        modo: $('#class-modo').value || 'drill',
+        vence: $('#class-due').value || null
+      } : null
     }).then(function(r){
       g.disabled = false;
       if(r.error){ toast('Could not post it: ' + (r.error.message || 'unknown error'), true); return; }
@@ -2304,11 +2408,22 @@ function classWire(){
     }).catch(function(){ g.disabled = false; toast('Could not post it. Check your connection.', true); });
   });
   var c = $('#class-cancel'); if(c) c.addEventListener('click', classLimpiar);
+  var it = $('#class-istask');
+  if(it) it.addEventListener('change', function(){ $('#class-task').classList.toggle('hidden', !this.checked); });
+  Array.prototype.forEach.call(document.querySelectorAll('#class-task [data-task-topic]'), function(chip){
+    chip.addEventListener('click', function(){ chip.classList.toggle('on'); });
+  });
 }
 function classLimpiar(){
   if(!$('#class-save')) return;
   $('#class-id').value = ''; $('#class-title').value = ''; $('#class-body').value = '';
   $('#class-pin').checked = false;
+  if($('#class-istask')){
+    $('#class-istask').checked = false;
+    $('#class-task').classList.add('hidden');
+    Array.prototype.forEach.call(document.querySelectorAll('#class-task [data-task-topic].on'), function(c){ c.classList.remove('on'); });
+    $('#class-due').value = '';
+  }
   $('#class-save').textContent = 'Post';
   $('#class-cancel').classList.add('hidden');
 }
@@ -2687,6 +2802,37 @@ function renderHome(){
             '<input id="class-title" class="auth-inp" type="text" maxlength="120" placeholder="Homework for Friday">' +
             '<label class="auth-lbl" for="class-body">Message</label>' +
             '<textarea id="class-body" class="class-ta" rows="4" maxlength="2000" placeholder="What they need to know, and by when."></textarea>' +
+            '<label class="class-pin class-istask"><input type="checkbox" id="class-istask"> ' +
+              'Make this an <b>assignment</b> — they can take it as many times as they want, ' +
+              'and it draws different questions each time</label>' +
+            '<div id="class-task" class="class-task hidden">' +
+              '<p class="class-hint">Pick the topics. The app builds a fresh test from them on every attempt, ' +
+                'so repeating it is practice, not memorising.</p>' +
+              '<div class="ct-chips">' + PLAN_TOPICS.map(function(t){
+                return '<button type="button" class="f-chip" data-task-topic="' + escAttr(t.key) + '">' +
+                  escHtml(t.t) + '</button>';
+              }).join('') + '</div>' +
+              '<div class="ct-row">' +
+                '<label class="ct-lbl">Length' +
+                  '<select id="class-min" class="ct-sel">' +
+                    '<option value="10">10 min · 6 questions</option>' +
+                    '<option value="20" selected>20 min · 12 questions</option>' +
+                    '<option value="40">40 min · 20 questions</option>' +
+                  '</select></label>' +
+                '<label class="ct-lbl">Level' +
+                  '<select id="class-niv" class="ct-sel">' +
+                    '<option value="examen" selected>Test level</option>' +
+                    '<option value="mas">Hardest only</option>' +
+                    '<option value="donde">Build up</option>' +
+                  '</select></label>' +
+                '<label class="ct-lbl">Mode' +
+                  '<select id="class-modo" class="ct-sel">' +
+                    '<option value="drill" selected>Drill — no timer, explains as they go</option>' +
+                    '<option value="exam">Exam — timed, graded at the end</option>' +
+                  '</select></label>' +
+                '<label class="ct-lbl">Due <input type="date" id="class-due" class="ct-sel"></label>' +
+              '</div>' +
+            '</div>' +
             '<div class="class-actions">' +
               '<label class="class-pin"><input type="checkbox" id="class-pin"> Pin to the top</label>' +
               '<button type="button" class="btn-primary" id="class-save">Post</button>' +

@@ -118,6 +118,9 @@ const FAKE = function () {
               fijado: true, autor: 'Ms. Reyes', fecha: '2026-09-14', mio: true },
             { id: 'p2', titulo: 'Practice test next Tuesday', cuerpo: 'Full mock in class. Bring headphones.',
               fijado: false, autor: 'Ms. Reyes', fecha: '2026-09-10', mio: true },
+            { id: 'p3', titulo: 'Circles and commas — do it twice', cuerpo: 'Repeat it until you are over 80%.',
+              fijado: false, autor: 'Ms. Reyes', fecha: '2026-09-15', mio: true,
+              tarea: { temas: ['circles', 'punct'], nivel: 'examen', minutos: 10, modo: 'drill', vence: '2027-01-30' } },
           ], error: null });
           if (name === 'sat_class_post_save') return Promise.resolve({ data: 'p3', error: null });
           if (name === 'sat_class_post_delete') return Promise.resolve({ data: null, error: null });
@@ -402,7 +405,7 @@ const BOTONES_MUERTOS = function () {
       };
     });
     check('P13 la pestaña Classroom existe', tablon.hayPestana, tablon);
-    check(`P13b pinta los posts del profesor (${tablon.posts})`, tablon.posts === 2, tablon);
+    check(`P13b pinta los posts del profesor (${tablon.posts})`, tablon.posts === 3, tablon);
     check('P13c el fijado va primero y se marca', tablon.fijado === 1, tablon);
     check('P13d el profesor ve el compositor', tablon.compositor, tablon);
 
@@ -421,6 +424,52 @@ const BOTONES_MUERTOS = function () {
     });
     check('P13e un post con HTML no se ejecuta', postXss.ejecutado === 0 && postXss.imgs === 0 && postXss.literal, postXss);
     await page.evaluate(() => { window.CLASS_POSTS = null; });
+
+    /* --- P15. la tarea del profesor es repetible y saca preguntas distintas --- */
+    const tarea = await page.evaluate(async () => {
+      const b = document.querySelector('#set-sections .hnav-a[data-tab="clase"]');
+      if (b) { b.click(); await new Promise(r => setTimeout(r, 600)); }
+      const card = document.querySelector('.cp-task');
+      const r = {
+        hayTarjeta: !!card,
+        texto: card ? card.textContent.replace(/\s+/g, ' ').trim().slice(0, 140) : '',
+        boton: !!document.querySelector('[data-task-start]'),
+      };
+      if (!r.boton) return r;
+      // primer intento
+      document.querySelector('[data-task-start]').click();
+      await new Promise(x => setTimeout(x, 700));
+      const s1 = window.SATAPP.getS();
+      r.arranca = !!s1;
+      r.setId = s1 && s1.set.id;
+      r.titulo = s1 && s1.set.title;
+      r.n1 = s1 ? s1.set.questions.length : 0;
+      const ids1 = s1 ? s1.set.questions.map(q => q.id) : [];
+
+      // se termina y se vuelve a empezar: tienen que ser OTRAS preguntas
+      s1.set.questions.forEach(q => { s1.answers[q.id] = q.type === 'spr' ? String(q.answer) : q.correct; s1.checked[q.id] = true; });
+      finishSession(false);
+      await new Promise(x => setTimeout(x, 500));
+      goHome();
+      await new Promise(x => setTimeout(x, 300));
+      const b2 = document.querySelector('#set-sections .hnav-a[data-tab="clase"]');
+      if (b2) { b2.click(); await new Promise(x => setTimeout(x, 600)); }
+      r.diceIntentos = (document.querySelector('.cp-task-hist') || {}).textContent || '';
+      document.querySelector('[data-task-start]').click();
+      await new Promise(x => setTimeout(x, 700));
+      const s2 = window.SATAPP.getS();
+      const ids2 = s2 ? s2.set.questions.map(q => q.id) : [];
+      r.repetidas = ids1.filter(i => ids2.indexOf(i) >= 0).length;
+      r.n2 = ids2.length;
+      goHome();
+      return r;
+    });
+    check('P15 la tarea del profesor se pinta con su botón', tarea.hayTarjeta && tarea.boton, tarea);
+    check('P15b arranca y queda atada a la tarea',
+      tarea.arranca && /^assign-/.test(tarea.setId || ''), tarea);
+    check('P15c el segundo intento trae preguntas DISTINTAS',
+      tarea.n2 > 0 && tarea.repetidas < tarea.n1, tarea);
+    check('P15d y se cuentan los intentos', /attempt/.test(tarea.diceIntentos), tarea.diceIntentos);
 
     // --- P11. un nombre con HTML no puede ejecutarse en el panel del profesor ---
     // El nombre lo escribe el estudiante al registrarse. Si el panel lo mete

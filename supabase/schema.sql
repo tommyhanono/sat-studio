@@ -257,6 +257,15 @@ returns text language sql stable security definer set search_path = '' as $$
   select lower(split_part(u.email, '@', 2)) from auth.users u where u.id = (select auth.uid());
 $$;
 
+-- Tareas: viven en la MISMA tabla. Un post con `tarea` distinto de null es una
+-- asignación; sin ella, un aviso. Una sola tabla y un solo juego de RPC.
+--   tarea = { temas:['circles','punct'], nivel:'examen'|'mas'|'donde',
+--             minutos:10|20|40, modo:'drill'|'exam', vence:'YYYY-MM-DD'|null }
+-- Los `temas` son las claves de PLAN_TOPICS en index.html, que por esto mismo no
+-- se renombran nunca. Cada intento arma un test NUEVO desde esos temas, así que
+-- repetir una tarea es practicar y no memorizar el orden de las respuestas.
+alter table sat.posts add column if not exists tarea jsonb;
+
 create or replace function public.sat_class_posts()
 returns jsonb language plpgsql security definer set search_path = '' as $$
 declare v_dom text; res jsonb;
@@ -265,7 +274,7 @@ begin
   v_dom := public.sat_dominio_actual();
   select coalesce(jsonb_agg(to_jsonb(t) order by t.fijado desc, t.created_at desc), '[]'::jsonb) into res
   from (
-    select p.id, p.titulo, p.cuerpo, p.fijado,
+    select p.id, p.titulo, p.cuerpo, p.fijado, p.tarea,
            coalesce(p.autor_nom, 'Teacher') as autor,
            to_char(p.created_at, 'YYYY-MM-DD') as fecha,
            (p.autor_id = (select auth.uid())) as mio
@@ -276,7 +285,7 @@ begin
 end $$;
 
 create or replace function public.sat_class_post_save(
-  p_id uuid, p_titulo text, p_cuerpo text, p_fijado boolean
+  p_id uuid, p_titulo text, p_cuerpo text, p_fijado boolean, p_tarea jsonb default null
 ) returns uuid language plpgsql security definer set search_path = '' as $$
 declare v_role text; v_dom text; v_id uuid; v_nom text;
 begin
@@ -287,18 +296,23 @@ begin
   if coalesce(btrim(p_titulo), '') = '' then
     raise exception 'a post needs a title' using errcode = '22023';
   end if;
+  -- Una tarea sin temas no puede armar ningún test: se rechaza acá y no cuando
+  -- el estudiante le da a "Start" y no pasa nada.
+  if p_tarea is not null and coalesce(jsonb_array_length(p_tarea -> 'temas'), 0) = 0 then
+    raise exception 'an assignment needs at least one topic' using errcode = '22023';
+  end if;
   v_dom := public.sat_dominio_actual();
   select coalesce(u.raw_user_meta_data->>'name', split_part(u.email, '@', 1)) into v_nom
   from auth.users u where u.id = (select auth.uid());
 
   if p_id is null then
-    insert into sat.posts(grupo, autor_id, autor_nom, titulo, cuerpo, fijado)
-    values (v_dom, (select auth.uid()), v_nom, btrim(p_titulo), coalesce(p_cuerpo, ''), coalesce(p_fijado, false))
+    insert into sat.posts(grupo, autor_id, autor_nom, titulo, cuerpo, fijado, tarea)
+    values (v_dom, (select auth.uid()), v_nom, btrim(p_titulo), coalesce(p_cuerpo, ''), coalesce(p_fijado, false), p_tarea)
     returning id into v_id;
   else
     update sat.posts
        set titulo = btrim(p_titulo), cuerpo = coalesce(p_cuerpo, ''),
-           fijado = coalesce(p_fijado, false), updated_at = now()
+           fijado = coalesce(p_fijado, false), tarea = p_tarea, updated_at = now()
      where id = p_id and grupo = v_dom
      returning id into v_id;
     if v_id is null then raise exception 'post not found in your group' using errcode = '42501'; end if;
@@ -319,10 +333,13 @@ end $$;
 
 revoke all on function public.sat_dominio_actual() from public, anon;
 revoke all on function public.sat_class_posts() from public, anon;
-revoke all on function public.sat_class_post_save(uuid, text, text, boolean) from public, anon;
+revoke all on function public.sat_class_post_save(uuid, text, text, boolean, jsonb) from public, anon;
 revoke all on function public.sat_class_post_delete(uuid) from public, anon;
 grant execute on function public.sat_class_posts() to authenticated;
-grant execute on function public.sat_class_post_save(uuid, text, text, boolean) to authenticated;
+grant execute on function public.sat_class_post_save(uuid, text, text, boolean, jsonb) to authenticated;
+-- La firma vieja de cuatro argumentos se retira: dejarla viva sería una segunda
+-- puerta de entrada que no valida los temas de la tarea.
+drop function if exists public.sat_class_post_save(uuid, text, text, boolean);
 grant execute on function public.sat_class_post_delete(uuid) to authenticated;
 
 notify pgrst, 'reload schema';

@@ -38,8 +38,9 @@ Corre las ocho y sale con código 1 si algo falla:
 | `test-datos.js` | que **una sesión jugada no se pierde**, con un Supabase falso al que se le corta la red | 48 |
 | `test-plan.js` | que "Mi plan de mejora" recomienda desde los datos del estudiante y arma el test que prometió | 30 |
 | `test-idioma.js` | que los 9.000+ campos que lee un estudiante en el banco están en inglés | — |
-| `test-pantallas.js` | **lo que se ve**: recorre las ocho pestañas y todas las pantallas en Chrome leyendo el texto renderizado, más los botones sin acción, el XSS del panel y del tablón, las barras que se pintan vacías y el scroll horizontal a 320/375/414 | 22 |
+| `test-pantallas.js` | **lo que se ve**: recorre las ocho pestañas y todas las pantallas en Chrome leyendo el texto renderizado, más los botones sin acción, el XSS del panel y del tablón, las barras vacías, el scroll horizontal a 320/375/414, la pregunta de confianza y la tarea repetible | 33 |
 | `test-pwa.js` | que se **instale** en el teléfono y **abra sin internet** (corta la red de verdad) | 20 |
+| `auditar-longitud.js` | que la correcta no sea sistemáticamente la opción más larga (se contesta sin leer) | — |
 | `huella-banco.js` | la huella estructural del banco (ids, respuestas, dominios, dificultades) | — |
 
 Necesitan Chrome y `puppeteer-core` (se toma de `~/jarvis/app`); si no están, se **saltan** con código 0 para
@@ -93,6 +94,23 @@ encima. Decidir entre 21 acordeones es la forma más rápida de que alguien no h
 - `Fast Pace` arma el test en el momento con los temas que el plan marcó como los más flojos. Existe porque
   el hueco real de un estudiante no son 70 minutos seguidos, son los diez entre clase y clase.
 - `Classroom` es el tablón del profesor: tabla `sat.posts` + tres RPC, el grupo sale del dominio del correo.
+  Un post con `tarea` distinto de `null` es una **asignación repetible**: el estudiante la puede hacer las veces
+  que quiera y cada intento arma un test **nuevo** con `planBuildSet()` desde los mismos temas, así que repetir
+  es practicar y no memorizar el orden de las respuestas. Los intentos se cuentan solos porque la sesión se
+  guarda con `setId = 'assign-<id>'`. Los `temas` guardados son claves de `PLAN_TOPICS`, que **por esto** no se
+  renombran nunca.
+
+## Lo que el porcentaje esconde
+
+Desde el 15-sep-2026 cada respuesta guarda dos cosas más: **`conf`** (qué tan seguro estaba el estudiante
+ANTES de ver la respuesta: `guess` · `unsure` · `sure`) y **`ms`** (cuánto tardó en esa pregunta, con tope de
+5 minutos por si alguien deja la pestaña abierta).
+
+- La confianza se pregunta **solo en Drill**. En el examen cronometrado rompería la simulación.
+- `missedPool()` devuelve lo fallado **más lo acertado adivinando**: acertar una que adivinaste no es saberla,
+  y la pantalla de resultados le promete al estudiante que esas vuelven.
+- Una respuesta **sin `conf`** (de antes de que existiera, o de un examen) cuenta como acierto normal. No se
+  inventa un dato que no se tomó.
 
 ## Como app en el teléfono
 
