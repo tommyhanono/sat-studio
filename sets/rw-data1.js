@@ -85,13 +85,13 @@
           D:'Fiberglass let through only 15 W of heat, the lowest heat loss of the four materials.'
         },
         correct:'D',
-        expCorrect:'El claim es que la fibra de vidrio fue el MEJOR aislante, y menos pérdida de calor = mejor. D cita el número correcto (15 W) y añade lo clave: es la pérdida MÁS BAJA de las cuatro. Eso prueba que fue la mejor.',
+        expCorrect:'The claim is that fiberglass was the BEST insulator, and less heat loss = better. D cites the right number (15 W) and adds the key part: it is the LOWEST loss of the four. That proves it was the best.',
         expWrong:{
-          A:'Los dos números (15 y 48) son correctos, pero comparar la fibra solo con el ladrillo no muestra que sea la mejor de las CUATRO; podría haber otra aún más baja.',
-          B:'El foam board (22 W) sí pierde menos que el ladrillo, pero eso no dice nada sobre la fibra de vidrio; verdadero pero no apoya el claim.',
-          C:'El plywood (63 W) es el PEOR aislante; ese dato dice cuál es el peor, no que la fibra de vidrio sea la mejor.'
+          A:'The two numbers (15 and 48) are right, but comparing fiberglass only with brick does not show it is the best of the FOUR; there could be another even lower.',
+          B:'The foam board (22 W) does lose less than brick, but that says nothing about fiberglass; true but it does not support the claim.',
+          C:'The plywood (63 W) is the WORST insulator; that figure tells you which is worst, not that fiberglass is best.'
         },
-        tip:'Método: 1) lee el CLAIM exacto (fibra de vidrio = la mejor), 2) traduce "mejor aislante" al número que importa (la pérdida MÁS BAJA), 3) elige la opción que diga "la más baja de las cuatro", no una comparación parcial.'
+        tip:'Method: 1) read the exact CLAIM (fiberglass = the best), 2) translate "best insulator" into the number that matters (the LOWEST loss), 3) pick the option saying "the lowest of the four", not a partial comparison.'
       },
       {
         id:'DATA-02', type:'mc', domain:'Information and Ideas', difficulty:'Fácil',
@@ -106,13 +106,13 @@
           D:'Deepwater receives 61 cm of rain per year, and Marlow receives 52 cm.'
         },
         correct:'A',
-        expCorrect:'El claim es que Deepwater recibe MÁS lluvia que las otras dos. A cita el dato correcto (61 cm) y aclara que supera a Kestrel Y a Marlow. Al ser mayor que ambas, apoya el claim directo.',
+        expCorrect:'The claim is that Deepwater gets MORE rain than the other two. A cites the right figure (61 cm) and makes clear it beats Kestrel AND Marlow. Being greater than both, it supports the claim directly.',
         expWrong:{
-          B:'Que Kestrel sea la MENOR (38 cm) es cierto, pero el claim es sobre Deepwater; verdadero pero no apoya el punto.',
-          C:'Que Marlow (52) supere a Kestrel (38) es cierto, pero no dice que Deepwater sea la mayor de las TRES.',
-          D:'Los números (61 y 52) son correctos, pero solo compara Deepwater con Marlow; falta descartar a Kestrel para probar que es "la más" de las tres.'
+          B:'That Kestrel is the LOWEST (38 cm) is true, but the claim is about Deepwater; true but it does not support the point.',
+          C:'That Marlow (52) beats Kestrel (38) is true, but it does not say Deepwater is the highest of the THREE.',
+          D:'The numbers (61 and 52) are right, but it only compares Deepwater with Marlow; it still has to rule out Kestrel to prove it is "the most" of the three.'
         },
-        tip:'Método: 1) lee el CLAIM (Deepwater = la más), 2) busca su barra en el gráfico (61, la más alta), 3) elige la opción que la compara con AMBAS rivales, no con una sola ni la que habla de otro pueblo.'
+        tip:'Method: 1) read the CLAIM (Deepwater = the most), 2) find its bar on the graph (61, the tallest), 3) pick the option comparing it with BOTH rivals, not with only one or the one about another town.'
       },
       {
         id:'DATA-03', type:'mc', domain:'Information and Ideas', difficulty:'Fácil',
@@ -134,13 +134,13 @@
           D:'Attendance in Week 2 was 31 patrons, higher than Week 1’s 24.'
         },
         correct:'B',
-        expCorrect:'El claim es que la asistencia creció SEMANA a SEMANA (una tendencia). B es la única que muestra toda la serie subiendo en orden: 24 → 31 → 39 → 50. Esa subida pareja es justo lo que afirma.',
+        expCorrect:'The claim is that attendance grew WEEK by WEEK (a trend). B is the only one showing the whole series rising in order: 24 → 31 → 39 → 50. That steady climb is exactly what it claims.',
         expWrong:{
-          A:'Que la Semana 4 sea la más alta (50) es un solo punto; no muestra que subiera CADA semana; pudo haber bajado en el medio.',
-          C:'Que la Semana 1 sea la más baja también es un punto suelto; no prueba la subida continua.',
-          D:'Que la Semana 2 supere a la 1 es verdad, pero solo cubre dos semanas; no muestra la tendencia de todo el mes.'
+          A:'That Week 4 is the highest (50) is a single point; it does not show it rose EVERY week; it could have dipped in the middle.',
+          C:'That Week 1 is the lowest is also a loose point; it does not prove the continuous climb.',
+          D:'That Week 2 beats Week 1 is true, but it covers only two weeks; it does not show the trend across the whole month.'
         },
-        tip:'Método: 1) el CLAIM habla de una TENDENCIA ("semana a semana"), 2) una tendencia necesita TODA la serie en orden, no un solo dato, 3) elige la opción que enlista los cuatro valores subiendo.'
+        tip:'Method: 1) the CLAIM is about a TREND ("week by week"), 2) a trend needs the WHOLE series in order, not a single data point, 3) pick the option listing all four values rising.'
       },
       {
         id:'DATA-04', type:'mc', domain:'Information and Ideas', difficulty:'Media',
@@ -155,13 +155,13 @@
           D:'Ridership rose from 610,000 in 2021 to 880,000 in 2023.'
         },
         correct:'C',
-        expCorrect:'El claim es que los pasajeros se MÁS QUE DUPLICARON entre 2019 y 2023. C usa los dos años exactos: 420 mil → 880 mil. El doble de 420 es 840, y 880 pasa de eso, así que "más que el doble" es correcto y apoya el claim.',
+        expCorrect:'The claim is that ridership MORE THAN DOUBLED between 2019 and 2023. C uses the two exact years: 420 thousand → 880 thousand. Double 420 is 840, and 880 clears that, so "more than double" is correct and supports the claim.',
         expWrong:{
           A:'420→610 (2019 a 2021) es un tramo parcial; no llega a 2023 ni muestra que se duplicara.',
-          B:'Que 2023 sea el año más alto (880) es cierto, pero "el más alto" no es lo mismo que "más del doble que 2019"; no compara con el punto de partida.',
+          B:'That 2023 is the highest year (880) is true, but "the highest" is not the same as "more than double 2019"; it does not compare with the starting point.',
           D:'610→880 (2021 a 2023) usa el año inicial equivocado; el claim compara con 2019, no con 2021.'
         },
-        tip:'Método: 1) el CLAIM fija DOS años (2019 y 2023) y una relación ("más del doble"), 2) toma esas dos barras exactas (420 y 880) y verifica: 2×420 = 840 < 880 ✓, 3) descarta tramos que usan años intermedios.'
+        tip:'Method: 1) the CLAIM fixes TWO years (2019 and 2023) and a relationship ("more than double"), 2) take those two exact bars (420 and 880) and verify: 2×420 = 840 < 880 ✓, 3) rule out stretches using intermediate years.'
       },
       {
         id:'DATA-05', type:'mc', domain:'Information and Ideas', difficulty:'Media',
@@ -181,13 +181,13 @@
           D:'Lake Hollow supported 9 fish species despite its lower water clarity of 2.1 m.'
         },
         correct:'C',
-        expCorrect:'El claim conecta DOS cosas: el lago más CLARO también tiene MÁS especies. C es la única que junta ambas variables en el mismo lago: Verde gana en claridad (5.4 vs 2.1) Y en especies (17 vs 9). Esa doble comparación apoya la relación.',
+        expCorrect:'The claim connects TWO things: the CLEAREST lake also has MORE species. C is the only one pairing both variables in the same lake: Verde wins on clarity (5.4 vs 2.1) AND on species (17 vs 9). That double comparison supports the relationship.',
         expWrong:{
           A:'Solo compara la CLARIDAD (2.1 vs 5.4); no menciona las especies, así que no muestra la relación entre las dos variables.',
           B:'Solo habla de las ESPECIES de Verde (17); no menciona la claridad, así que no conecta clara↔más peces.',
           D:'Menciona ambas variables de Hollow, pero el claim es que la CLARIDAD alta va con MÁS especies; Hollow tiene baja claridad y pocas especies, y por sí solo no prueba la relación.'
         },
-        tip:'Método: 1) el CLAIM une DOS variables (más claro → más especies), 2) la evidencia debe mostrar AMBAS a la vez comparando los lagos, 3) descarta opciones que citan solo una variable.'
+        tip:'Method: 1) the CLAIM links TWO variables (clearer → more species), 2) the evidence has to show BOTH at once, comparing the lakes, 3) rule out options citing only one variable.'
       },
       {
         id:'DATA-06', type:'mc', domain:'Information and Ideas', difficulty:'Media',
@@ -202,13 +202,13 @@
           D:'Plastic is recycled at a rate of 41%, while paper is recycled at 88%.'
         },
         correct:'B',
-        expCorrect:'El claim es que el plástico se recicla MENOS que los OTROS DOS y por eso necesita más mejora. B cita 41% y muestra que está por debajo de glass (74) Y de paper (88). Al quedar bajo ambos, prueba que es el más rezagado.',
+        expCorrect:'The claim is that plastic is recycled LESS than the OTHER TWO and therefore needs the most improvement. B cites 41% and shows it sits below glass (74) AND paper (88). Falling below both proves it is the furthest behind.',
         expWrong:{
           A:'Que el papel sea el más alto (88%) es cierto, pero el claim es sobre el PLÁSTICO; verdadero pero no apoya el punto.',
           C:'Que glass (74) supere a plastic (41) es cierto, pero solo lo compara con UN material; falta descartar al papel para decir "el más bajo".',
           D:'Cita plastic (41) y paper (88), pero deja fuera al glass; sin las tres comparaciones no prueba que el plástico sea el más bajo de todos.'
         },
-        tip:'Método: 1) el CLAIM dice "más bajo que los OTROS DOS", 2) esa afirmación exige comparar el plástico con AMBOS materiales, 3) elige la opción que lo pone debajo de glass y paper a la vez.'
+        tip:'Method: 1) the CLAIM says "lower than the OTHER TWO", 2) that claim demands comparing plastic with BOTH materials, 3) pick the option putting it below glass and paper at the same time.'
       },
       {
         id:'DATA-07', type:'mc', domain:'Information and Ideas', difficulty:'Media',
@@ -228,13 +228,13 @@
           D:'The self-quizzing group averaged 34 of 40, compared with 27 of 40 for the rereading group.'
         },
         correct:'D',
-        expCorrect:'El claim es que el autoexamen dio puntajes MÁS ALTOS (una comparación). D pone los dos promedios lado a lado: 34 vs 27, mostrando que el autoexamen superó al relectura. Esa comparación directa apoya el claim.',
+        expCorrect:'The claim is that self-testing produced HIGHER scores (a comparison). D puts the two averages side by side: 34 vs 27, showing self-testing beat rereading. That direct comparison supports the claim.',
         expWrong:{
           A:'Solo da el promedio del autoexamen (34); sin comparar con 27 no prueba que sea MÁS alto que la otra técnica.',
           B:'Que ambos grupos tengan 30 estudiantes hace justo el experimento, pero es sobre el TAMAÑO de muestra, no sobre los puntajes; no apoya "más alto".',
           C:'Solo da el promedio del grupo de relectura (27); sin el otro número no muestra que el autoexamen fuera MÁS alto.'
         },
-        tip:'Método: 1) un CLAIM comparativo ("más alto que") necesita AMBOS números, 2) descarta las que citan un solo grupo (verdaderas pero incompletas), 3) el tamaño de muestra es un dato de control, no evidencia del efecto.'
+        tip:'Method: 1) a comparative CLAIM ("higher than") needs BOTH numbers, 2) rule out the ones citing a single group (true but incomplete), 3) sample size is a control fact, not evidence of the effect.'
       },
       {
         id:'DATA-08', type:'mc', domain:'Information and Ideas', difficulty:'Media',
@@ -256,13 +256,13 @@
           D:'Seedlings at very high light reached 22 cm, tied for the tallest of the four groups.'
         },
         correct:'A',
-        expCorrect:'El claim tiene DOS partes: (1) crece con más luz y (2) llega un punto donde luz extra ya NO ayuda. A cubre las dos: sube de 8 a 22 (crece), pero de high a very high se queda en 22 (ya no ayuda). Es la única que muestra el "hasta cierto punto".',
+        expCorrect:'The claim has TWO parts: (1) it grows with more light and (2) there comes a point where extra light NO LONGER helps. A covers both: it rises from 8 to 22 (it grows), but from high to very high it stays at 22 (it no longer helps). It is the only one showing the "up to a point".',
         expWrong:{
           B:'Solo da el mínimo (8 cm en low); no muestra ni el crecimiento ni el punto donde se estanca.',
           C:'Muestra el crecimiento (8→15→22) pero se detiene en "high"; omite el very high, así que no prueba la segunda parte (que la luz extra ya no ayuda).',
           D:'Dice que very high empata como el más alto, pero por sí solo no muestra el estancamiento; sin comparar con high no se ve que la luz extra no sumó.'
         },
-        tip:'Método: 1) subraya que el CLAIM tiene DOS partes (sube… hasta un punto), 2) la respuesta debe cubrir AMBAS, 3) descarta la que solo muestra el crecimiento y corta antes del punto de estancamiento.'
+        tip:'Method: 1) underline that the CLAIM has TWO parts (it rises… up to a point), 2) the answer has to cover BOTH, 3) rule out the one showing only the growth and stopping before the plateau.'
       },
       {
         id:'DATA-09', type:'mc', domain:'Information and Ideas', difficulty:'Difícil',
@@ -283,13 +283,13 @@
           D:'Fertilizer A produced only 9 cm of growth in clay, its lowest result.'
         },
         correct:'B',
-        expCorrect:'El claim es fuerte: B supera a A en TODOS los suelos. Para probar "en todos" hay que revisar los TRES: sandy 18>12, loam 25>20, clay 14>9. B lo hace en los tres, así que es la única que respalda el "every soil type".',
+        expCorrect:'The claim is strong: B beats A in EVERY soil. To prove "in every" you have to check all THREE: sandy 18>12, loam 25>20, clay 14>9. B does it in all three, so it is the only one backing the "every soil type".',
         expWrong:{
           A:'Solo muestra loam (25>20); prueba un caso, no los TRES que exige "en todos".',
           C:'Que B tenga su máximo en loam (25) es un dato interno de B; no compara con A ni cubre los otros suelos.',
           D:'Habla del peor resultado de A (9 cm en clay); es un dato sobre A solo, no la comparación en cada suelo.'
         },
-        tip:'Método: 1) ojo con los CLAIM absolutos ("en TODOS", "siempre"): exigen revisar cada caso, 2) un solo ejemplo no basta, 3) elige la opción que recorre las tres filas comparando A vs B.'
+        tip:'Method: 1) watch absolute CLAIMS ("in ALL", "always"): they demand checking every case, 2) a single example is not enough, 3) pick the option running through all three rows comparing A vs B.'
       },
       {
         id:'DATA-10', type:'mc', domain:'Information and Ideas', difficulty:'Difícil',
@@ -311,13 +311,13 @@
           D:'Ownership rose every year from 2019 to 2022, from 210 to 500 households.'
         },
         correct:'C',
-        expCorrect:'El claim es sobre la SUBIDA MÁS PRONUNCIADA en un solo año. Hay que calcular cada salto: 2019→20 = 55, 2020→21 = 155, 2021→22 = 80. C muestra que 155 es mayor que 55 y que 80, probando que ese tramo fue el de mayor aumento.',
+        expCorrect:'The claim is about the STEEPEST rise in a single year. You have to compute each jump: 2019→20 = 55, 2020→21 = 155, 2021→22 = 80. C shows 155 beats 55 and 80, proving that stretch had the biggest increase.',
         expWrong:{
           A:'El total más alto (500 en 2022) es sobre el NIVEL, no sobre qué año SUBIÓ más; el claim es sobre el ritmo del aumento.',
           B:'El salto de 2019→2020 fue solo 55, el más pequeño; citarlo no apoya que 2020→2021 fuera el mayor.',
           D:'Que suba cada año (210→500) muestra crecimiento general, pero no compara los saltos anuales para señalar el más grande.'
         },
-        tip:'Método: 1) "subió MÁS" = compara los CAMBIOS, no los totales, 2) resta año con año (55, 155, 80), 3) elige la opción que demuestra que el tramo del claim tiene el salto mayor.'
+        tip:'Method: 1) "rose the MOST" = compare the CHANGES, not the totals, 2) subtract year by year (55, 155, 80), 3) pick the option proving the stretch in the claim has the biggest jump.'
       },
       {
         id:'DATA-11', type:'mc', domain:'Information and Ideas', difficulty:'Difícil',
@@ -337,13 +337,13 @@
           D:'Before the campaign, Riverside used 190 L per person, more than Oakmont’s 170 L.'
         },
         correct:'A',
-        expCorrect:'El claim compara la REDUCCIÓN (el cambio), no el nivel final. Hay que restar en cada barrio: Riverside 190−150 = 40, Oakmont 170−155 = 15. A muestra que 40 > 15, probando que Riverside redujo MÁS. Es la única que compara los descensos.',
+        expCorrect:'The claim compares the REDUCTION (the change), not the final level. You have to subtract in each neighborhood: Riverside 190−150 = 40, Oakmont 170−155 = 15. A shows 40 > 15, proving Riverside cut MORE. It is the only one comparing the drops.',
         expWrong:{
           B:'Compara los niveles FINALES (150 vs 155), no cuánto BAJÓ cada uno; una diferencia final pequeña no equivale a una reducción mayor.',
           C:'Solo da la caída de Oakmont (15 L); sin la de Riverside no muestra cuál redujo más.',
           D:'Compara los niveles ANTES (190 vs 170); el claim es sobre la reducción, no sobre quién partía más alto.'
         },
-        tip:'Método: 1) "redujo MÁS" = compara los CAMBIOS (antes − después), no el valor final, 2) calcula ambas restas (40 y 15), 3) descarta las que solo miran el "antes" o el "después" sueltos.'
+        tip:'Method: 1) "cut the MOST" = compare the CHANGES (before − after), not the final value, 2) compute both subtractions (40 and 15), 3) rule out the ones looking only at the "before" or the "after" alone.'
       },
       {
         id:'DATA-12', type:'mc', domain:'Information and Ideas', difficulty:'Difícil',
@@ -365,13 +365,13 @@
           D:'Design W was the slowest design, at 52 s per order, with 2.4 items per order.'
         },
         correct:'B',
-        expCorrect:'La meta tiene DOS condiciones: más rápido SIN bajar los ítems por orden. Y es la más rápida (31 s) pero sus ítems caen a 1.6, así que se descarta. Entre las que mantienen ítems altos (2.4–2.5), X es la más rápida (40 s) y conserva 2.4. B es la única que cumple ambas condiciones.',
+        expCorrect:'The goal has TWO conditions: faster WITHOUT lowering items per order. And Y is the fastest (31 s) but its items drop to 1.6, so it is ruled out. Among those keeping items high (2.4–2.5), X is the fastest (40 s) and holds 2.4. B is the only one meeting both conditions.',
         expWrong:{
           A:'Design Y es la más rápida (31 s), pero sus ítems por orden bajan a 1.6; viola la segunda condición ("sin bajar los ítems"). Rápida pero no cumple el claim completo.',
           C:'Design Z tiene los ítems más altos (2.5), pero es más lenta (44 s) que X; el objetivo prioriza la rapidez manteniendo los ítems, y X logra ambos mejor.',
           D:'Design W es la MÁS LENTA (52 s); es lo contrario de lo que se busca recomendar.'
         },
-        tip:'Método: 1) el CLAIM tiene DOS condiciones (rápido Y sin perder ítems), 2) descarta primero las que fallan una condición (Y baja ítems; W es lenta), 3) entre las que quedan, elige la que optimiza la otra: X, rápida y con ítems intactos.'
+        tip:'Method: 1) the CLAIM has TWO conditions (fast AND without losing items), 2) first rule out the ones failing a condition (Y drops items; W is slow), 3) among the rest, pick the one optimizing the other: X, fast and with items intact.'
       }
     ]
   });
