@@ -55,6 +55,12 @@ importa a un estudiante ambicioso** — y hoy la app no se la dice.
 
 ## 3. Los diez cambios que más moverían la aguja
 
+> [!success] Estado al 15-sep-2026 — cuatro ya están hechos
+> **3.2 intercalado**, **3.3 confianza al contestar**, **3.4 dónde estás respecto
+> del Módulo 2** y **3.6 tiempo por pregunta** están implementados y probados
+> (P14 en `tools/test-pantallas.js`). Quedan pendientes 3.1, 3.5, 3.7, 3.8, 3.9
+> y 3.10.
+
 Ordenados por impacto ÷ esfuerzo. Los cuatro primeros son los que yo haría
 primero y los tres últimos son los que valen para la escuela, no para el alumno
 suelto.
@@ -71,7 +77,7 @@ Intervalos: 1, 3, 7, 16, 35 días. Si falla, vuelve a 1. Si acierta dos veces
 seguidas rápido, salta un escalón. Es SM-2 simplificado y con el banco actual
 (786 preguntas, ~90 destrezas) hay material de sobra para no repetir.
 
-### 3.2 · Intercalar dentro del plan, en vez de agrupar por tema
+### 3.2 · Intercalar dentro del plan, en vez de agrupar por tema ✅ HECHO
 **Impacto: alto. Esfuerzo: bajo — es ordenar distinto un arreglo.**
 
 `planBuildSet()` arma el test agrupado por tema. Ese es el orden que *se siente*
@@ -83,7 +89,7 @@ Cuidado con una cosa: esto empeora el porcentaje de la sesión y el estudiante l
 va a sentir como retroceso. Hay que decírselo en pantalla, una línea: *mixed on
 purpose — it is harder now and it is what makes it stick.*
 
-### 3.3 · Preguntar la confianza antes de revelar
+### 3.3 · Preguntar la confianza antes de revelar ✅ HECHO
 **Impacto: alto. Esfuerzo: bajo.**
 
 Al contestar, tres botones: **Guess · Not sure · Sure**. Dos razones:
@@ -97,7 +103,7 @@ Al contestar, tres botones: **Guess · Not sure · Sure**. Dos razones:
 De paso da la métrica más útil que puede tener un estudiante: *"acertaste 8, pero
 adivinaste 3 de ellas"*.
 
-### 3.4 · Decirle dónde está parado respecto del Módulo 2
+### 3.4 · Decirle dónde está parado respecto del Módulo 2 ✅ HECHO
 **Impacto: alto. Esfuerzo: bajo.**
 
 `estimadoActual()` devuelve un punto (`1340`). Un punto es mentira: el intervalo
@@ -121,7 +127,7 @@ El banco ya tiene el material: `expCorrect` ES el ejemplo resuelto. Solo hay que
 mostrarlo *antes* en vez de después, y solo cuando la destreza está en rojo. Y
 apagarlo cuando sube: el efecto se **invierte** con el que ya sabe.
 
-### 3.6 · Medir el tiempo por pregunta, no por sesión
+### 3.6 · Medir el tiempo por pregunta, no por sesión ✅ HECHO
 **Impacto: medio-alto. Esfuerzo: bajo.**
 
 Se guarda `timeUsed` de la sesión entera. Por pregunta aparece la categoría que
@@ -183,6 +189,23 @@ copia y que en una herramienta de escuela hacen daño:
   nuevos.
 
 ---
+
+## 4.bis · Un defecto que no estaba en la lista y sí importaba
+
+Midiendo el banco apareció algo que ninguna de las diez ideas cubría: **en Reading
+& Writing, la respuesta correcta era la opción más larga el 47 % de las veces**, y
+en seis sets el 100 %. Al azar sería 25 %.
+
+En esos seis, un estudiante que marque siempre la más larga saca 12 de 12 sin leer
+el pasaje. Hace daño dos veces: le enseña una estrategia que en el examen real no
+funciona —College Board controla el largo— y le infla el porcentaje que este mismo
+plan usa para decidir qué practicar.
+
+Se arregla haciendo **mejores los distractores**, no más cortos los correctos: un
+distractor corto suele serlo porque es perezoso, nombra una idea equivocada sin
+darle al estudiante ninguna razón para creerla. Lo mide
+`node tools/auditar-longitud.js --todos` y `validar-set.js` ya rechaza un set nuevo
+que pase del 60 %.
 
 ## 5. Si tuviera que elegir tres
 
