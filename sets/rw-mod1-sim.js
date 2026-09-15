@@ -94,7 +94,7 @@
         stem:'Which choice completes the text with the most logical and precise word or phrase?',
         choices:{A:'painstaking', B:'careless', C:'spontaneous', D:'theoretical'},
         correct:'A',
-        expCorrect:'El texto describe once años de trabajo medido en centímetros, capa por capa. «Painstaking» significa hecho con cuidado extremo y mucho esfuerzo: es exactamente eso. Y encaja con el contraste que plantea la oración —colegas que preferían métodos «más rápidos y amplios»— y con el resultado final, el registro más completo del asentamiento.',
+        expCorrect:'The text describes eleven years of work measured in centimeters, layer by layer. "Painstaking" means done with extreme care and great effort: that is exactly it. And it fits the contrast the sentence sets up — colleagues who preferred "faster and broader" methods — and the end result, the most complete record of the settlement.',
         expWrong:{
           B:'«Careless» (descuidado) contradice todo el pasaje: alguien descuidado no dedica once años a medir en centímetros ni produce el registro más completo del sitio.',
           C:'«Spontaneous» (espontáneo) choca con un trabajo planificado a lo largo de once años. Además nada en el texto sugiere improvisación.',
@@ -109,7 +109,7 @@
         stem:'Which choice completes the text with the most logical and precise word or phrase?',
         choices:{A:'celebrated', B:'lost', C:'unfinished', D:'controversial'},
         correct:'B',
-        expCorrect:'Los dos puntos introducen la explicación de la palabra que falta: «existían, pero nadie podía tocarlas porque nadie sabía dónde estaban las partituras». Eso es la definición de perdidas. Lo confirma la última oración, que habla de su «redescubrimiento».',
+        expCorrect:'The colon introduces the explanation of the missing word: "they existed, but nobody could play them because nobody knew where the scores were". That is the definition of lost. The last sentence confirms it, speaking of their "rediscovery".',
         expWrong:{
           A:'«Celebrated» contradice la explicación que sigue a los dos puntos: nadie podía interpretarlas. Además, si hubieran sido celebradas no haría falta redescubrirlas.',
           C:'«Unfinished» (inconclusas) no encaja: el texto dice que las obras existían y que volvieron al repertorio, o sea que estaban terminadas. Lo que faltaba era saber dónde.',
@@ -124,7 +124,7 @@
         stem:'Which choice completes the text with the most logical and precise word or phrase?',
         choices:{A:'verbosity', B:'obscurity', C:'reticence', D:'hostility'},
         correct:'C',
-        expCorrect:'«Reticence» es la cualidad de no decir lo que se podría decir. El texto la describe sin nombrarla: la narradora «nunca anuncia lo que siente» y el duelo aparece solo en detalles. La palabra tiene que resumir esa contención, y la última oración lo confirma llamándolo «the withholding».',
+        expCorrect:'"Reticence" is the quality of not saying what could be said. The text describes it without naming it: the narrator "never announces what she feels" and the grief shows only in details. The word has to sum up that restraint, and the last sentence confirms it by calling it "the withholding".',
         expWrong:{
           A:'«Verbosity» (verborrea) es lo opuesto exacto: el texto elogia la contención, no el exceso de palabras. La primera oración ya dice «praised its restraint».',
           B:'«Obscurity» está cerca pero es impreciso: obscuridad significa que no se entiende, y el texto dice que los lectores SÍ perciben el duelo, solo que a través de detalles. No es confuso, es callado.',
@@ -139,7 +139,7 @@
         stem:'Which choice completes the text with the most logical and precise word or phrase?',
         choices:{A:'unreliable', B:'fraudulent', C:'inaccessible', D:'concise'},
         correct:'A',
-        expCorrect:'La oración tiene una estructura de matiz: «no eran fabricaciones, exactamente, PERO eran suficientemente ______ que…». Hace falta una palabra más suave que «mentira» pero que justifique tener que corroborar cada dato en otra fuente. «Unreliable» (poco confiables) es exactamente ese punto intermedio, y lo apoya que los detalles se volvían más dramáticos en cada repetición.',
+        expCorrect:'The sentence has a hedging structure: "they were not fabrications, exactly, BUT they were ______ enough that…". You need a word softer than "lie" but strong enough to justify having to corroborate every fact in another source. "Unreliable" is exactly that middle ground, and it is supported by the details growing more dramatic with each retelling.',
         expWrong:{
           B:'«Fraudulent» es justo lo que la oración descarta: dice explícitamente «not fabrications, exactly». Fraudulento implica intención de engañar, y el texto la niega.',
           C:'«Inaccessible» contradice el pasaje: los documentos estaban disponibles, los historiadores los leyeron y los evaluaron. El problema era su contenido, no el acceso.',
@@ -158,7 +158,7 @@
           C:'To compare the healing of salamanders with that of humans',
           D:'To describe the lakes near Mexico City where the axolotl lives'},
         correct:'A',
-        expCorrect:'El texto tiene dos movimientos: primero describe la capacidad del ajolote de regenerar miembros, y después dice que POR ESO («therefore») los investigadores se interesaron en la especie. El propósito es explicar por qué esa habilidad llamó la atención de la ciencia.',
+        expCorrect:'The text has two movements: first it describes the axolotl’s ability to regrow limbs, and then it says that FOR THAT REASON ("therefore") researchers took an interest in the species. The purpose is to explain why that ability caught the attention of science.',
         expWrong:{
           B:'El texto no argumenta nada sobre conservación ni menciona extinción. Describir dónde vive no es pedir que se lo proteja.',
           C:'No hay comparación: se menciona a los humanos una sola vez, como aplicación futura posible, y nunca se describe cómo cicatrizan.',
@@ -177,7 +177,7 @@
           C:'It compares two competing explanations and concludes that both are partly correct',
           D:'It traces the biography of an inventor from an early failure to eventual success'},
         correct:'A',
-        expCorrect:'La estructura está a la vista: oración 1 presenta la afirmación común («empezó con un solo invento»), oración 2 la rechaza («conveniente pero engañosa»), y el resto aporta la evidencia — setenta años, decenas de talleres, mejoras acumuladas. Es afirmación → rechazo → evidencia de un proceso distribuido.',
+        expCorrect:'The structure is in plain sight: sentence 1 presents the common claim ("it began with a single invention"), sentence 2 rejects it ("convenient but misleading"), and the rest supplies the evidence — seventy years, dozens of workshops, accumulated improvements. It is claim → rejection → evidence of a distributed process.',
         expWrong:{
           B:'Solo se menciona una industria (la minería) y como limitación, no como lista de adopción. El texto no enumera industrias.',
           C:'No hay dos explicaciones compitiendo: hay una afirmación y su refutación. Y el texto no concluye que la primera sea parcialmente correcta, dice que es engañosa.',
@@ -196,7 +196,7 @@
           C:'It concedes a weakness in the poet\'s work that the text does not dispute',
           D:'It explains why the poet chose to reuse the image in her second collection'},
         correct:'A',
-        expCorrect:'La oración presenta la lectura de los críticos («repetición = limitación») y el «But» que abre la oración siguiente marca que el texto va a corregirla. Todo lo que viene después —el mismo objeto con dos significados distintos— sirve para mostrar que no es circular sino evolutivo. Su función es plantear la interpretación que el texto revisa.',
+        expCorrect:'The sentence presents the critics’ reading ("repetition = limitation") and the "But" opening the next sentence signals that the text is about to correct it. Everything that follows — the same object carrying two different meanings — serves to show it is not circular but evolving. Its function is to lay out the interpretation the text revises.',
         expWrong:{
           B:'No es evidencia: es la postura que el texto discute. La evidencia real es el contraste entre los dos sentidos de la lámpara, que aparece después.',
           C:'No hay concesión: el texto sí disputa esa lectura, y de inmediato. La palabra «But» al principio de la oración siguiente es la señal.',
@@ -215,7 +215,7 @@
           C:'By claiming that field observation is more expensive than maintaining a museum collection',
           D:'By proposing that naturalists and curators should both abandon their methods in favor of a third approach'},
         correct:'A',
-        expCorrect:'Los curadores no niegan la pérdida de contexto: la esquivan cambiando el criterio. Su defensa es que la observación de campo «no podía ser verificada por nadie más», mientras que un espécimen preservado «podía ser examinado por cien investigadores a lo largo de un siglo». O sea: conceden el punto de Kingsley y responden con una ventaja distinta, la verificabilidad.',
+        expCorrect:'The curators do not deny the loss of context: they sidestep it by changing the criterion. Their defense is that field observation "could not be verified by anyone else", while a preserved specimen "could be examined by a hundred researchers over a century". That is: they concede Kingsley’s point and answer with a different advantage, verifiability.',
         expWrong:{
           B:'El Texto 2 nunca niega la pérdida. Su argumento es «en términos prácticos», lo cual concede implícitamente que en otros términos Kingsley puede tener razón.',
           C:'El costo no se menciona en ninguno de los dos textos. Es una preocupación razonable pero inventada por la opción.',
@@ -238,7 +238,7 @@
           C:'Wild yeasts are more nutritious than the yeasts sold in stores',
           D:'Bakers should feed their starters on a consistent schedule'},
         correct:'B',
-        expCorrect:'El texto explica qué es el fermento (una mezcla viva de levaduras y bacterias silvestres) y cierra con la consecuencia: como esos organismos varían según el lugar y la alimentación, la misma receta da panes distintos. La opción B junta las dos mitades.',
+        expCorrect:'The text explains what a starter is (a living mix of wild yeasts and bacteria) and closes with the consequence: since those organisms vary by place and by what they are fed, the same recipe yields different breads. Option B joins the two halves.',
         expWrong:{
           A:'La dificultad nunca se menciona. El texto describe cómo funciona, no si es fácil o difícil.',
           C:'La nutrición no aparece. El contraste con la levadura comercial es de comportamiento, no de valor nutricional.',
@@ -257,7 +257,7 @@
           C:'Evidence from seabed cores shows that the Sahara became a desert far more recently than was believed',
           D:'Pollen preserves better in seabed sediment than in desert sand'},
         correct:'C',
-        expCorrect:'El texto contrapone una creencia («árido por millones de años») con evidencia que la corrige (polen de pastos y algas de agua dulce de hace apenas seis mil años). La última oración lo resume: «El desierto es real, pero es joven». La opción C dice exactamente eso.',
+        expCorrect:'The text sets a belief ("arid for millions of years") against evidence that corrects it (grass pollen and freshwater algae from a mere six thousand years ago). The last sentence sums it up: "The desert is real, but it is young". Option C says exactly that.',
         expWrong:{
           A:'El texto usa los núcleos de sedimento como fuente de evidencia, pero nunca los compara con otros métodos ni afirma que sean los más confiables.',
           B:'Dice lo contrario en el tiempo: los ríos y lagos CUBRÍAN la zona hace seis mil años, no que sigan existiendo bajo la arena hoy.',
@@ -276,7 +276,7 @@
           C:'Mathematical equations have proven more useful than field work in fighting malaria',
           D:'Malaria control programs have failed because they aimed at eradication'},
         correct:'A',
-        expCorrect:'El texto presenta la implicación contraintuitiva de las ecuaciones —no hace falta eliminar todos los mosquitos, basta bajar de cierta densidad— y cierra diciendo que los programas de control se construyeron sobre ese umbral. Esa es la idea completa.',
+        expCorrect:'The text presents the counterintuitive implication of the equations — you do not need to wipe out every mosquito, just drop below a certain density — and closes by saying control programs were built on that threshold. That is the complete idea.',
         expWrong:{
           B:'El texto nunca dice que Ross descubriera el papel del mosquito; describe sus ecuaciones sobre la propagación. Es un hecho verosímil pero no está en el texto.',
           C:'No hay comparación con el trabajo de campo. El texto no jerarquiza métodos.',
@@ -295,7 +295,7 @@
           C:'Children raised in larger families were found to begin speaking at a slightly earlier age',
           D:'Adults in the study simplified their vocabulary when speaking to young children'},
         correct:'A',
-        expCorrect:'La propuesta es que los chicos NO aprenden solo por imitación, y el propio texto dice cuál sería la prueba: encontrar expresiones que el chico no pudo haber copiado. «Goed» y «breaked» son exactamente eso — regularizaciones que ningún adulto dice. Prueban que el chico está aplicando una regla propia.',
+        expCorrect:'The proposal is that children do NOT learn by imitation alone, and the text itself says what the proof would be: finding expressions the child could not have copied. "Goed" and "breaked" are exactly that — regularizations no adult says. They prove the child is applying a rule of their own.',
         expWrong:{
           B:'Apoya la posición CONTRARIA: repetir con precisión lo que se oyó es justamente imitación.',
           C:'El tamaño de la familia y la edad de inicio no dicen nada sobre si el mecanismo es imitación o regla. Es un dato irrelevante para la hipótesis.',
@@ -315,7 +315,7 @@
           C:'El tramo Centro registró 9,8 ranas por hora, más que el tramo Sur',
           D:'Los cuatro tramos del arroyo fueron muestreados durante el mismo año, 2024'},
         correct:'A',
-        expCorrect:'La afirmación es sobre una RELACIÓN entre dos variables: más sombra, más ranas. Para apoyarla hace falta citar las dos variables en al menos dos tramos, y conviene que sean los extremos. La opción A hace exactamente eso: 85 % → 14,2 contra 12 % → 2,4.',
+        expCorrect:'The claim is about a RELATIONSHIP between two variables: more shade, more frogs. To support it you have to cite both variables in at least two stretches, and it is best if they are the extremes. Option A does exactly that: 85% → 14.2 against 12% → 2.4.',
         expWrong:{
           B:'Menciona solo las ranas y no dice nada de la cobertura de árboles. Sin las dos variables no se puede apoyar una afirmación sobre la relación entre ellas.',
           C:'Compara dos tramos pero otra vez omite la cobertura. Además elige dos valores intermedios, que muestran menos contraste que los extremos.',
@@ -334,7 +334,7 @@
           C:'is likely to choose a shorter route across the Pacific the following year',
           D:'tends to arrive in New Zealand earlier than birds that departed on time'},
         correct:'A',
-        expCorrect:'El texto establece dos cosas: el viaje se hace sin escalas y la grasa acumulada es el combustible. Si el ave empieza a gastar esa reserva ANTES de partir, la conclusión que se sigue directamente es que puede no alcanzarle para cruzar sin parar. No hace falta información de afuera.',
+        expCorrect:'The text establishes two things: the journey is nonstop and the stored fat is the fuel. If the bird starts burning that reserve BEFORE it leaves, the conclusion that follows directly is that it may not have enough to cross without stopping. No outside information is needed.',
         expWrong:{
           B:'El texto dice que los órganos digestivos se encogen porque no se usan en vuelo, pero nunca menciona que se regeneren antes de un segundo intento. Es una invención plausible.',
           C:'No hay nada sobre elección de rutas ni sobre lo que hace el ave al año siguiente. Es un salto que el texto no autoriza.',
@@ -353,7 +353,7 @@
           C:'restaurants that use regional labels earn more revenue than those that do not',
           D:'the diners in the study did not read the descriptions before placing their orders'},
         correct:'A',
-        expCorrect:'La clave está en el segundo dato: el efecto persistió AUNQUE se les dijera que las etiquetas eran aleatorias y falsas. Si el efecto sobrevive a saber que la etiqueta no es cierta, entonces no depende de creerla. Eso es exactamente lo que dice A, y es lo único que la evidencia autoriza.',
+        expCorrect:'The key is the second fact: the effect persisted EVEN when they were told the labels were random and false. If the effect survives knowing the label is not true, then it does not depend on believing it. That is exactly what A says, and it is all the evidence licenses.',
         expWrong:{
           B:'El estudio midió qué pedían, no si podían distinguir sabores. Nunca se probó su paladar.',
           C:'Salta de «se pidieron más» a «ganan más dinero», que involucra precios y costos de los que el texto no dice nada.',
@@ -373,7 +373,7 @@
         stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
         choices:{A:'1815, farmers', B:'1815 farmers', C:'1815; farmers', D:'1815: farmers'},
         correct:'A',
-        expCorrect:'«After the volcano fell silent in 1815» es un elemento introductorio: no es una oración completa, prepara el terreno para la principal. Un elemento introductorio se separa con COMA de la oración que sigue.',
+        expCorrect:'"After the volcano fell silent in 1815" is an introductory element: it is not a complete sentence, it sets up the main clause. An introductory element is separated with a COMMA from the sentence that follows.',
         expWrong:{
           B:'Sin puntuación se pegan el elemento introductorio y el sujeto, y por un instante se lee «1815 farmers» como si fuera un grupo de agricultores. La coma existe justamente para evitar eso.',
           C:'El punto y coma une dos oraciones INDEPENDIENTES. «After the volcano fell silent in 1815» no puede sostenerse sola, así que no califica.',
@@ -388,7 +388,7 @@
         stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
         choices:{A:'includes', B:'include', C:'are including', D:'have included'},
         correct:'A',
-        expCorrect:'El sujeto es «The collection», que es singular. Todo lo que va entre el sujeto y el verbo —«of manuscripts recovered from the abandoned house»— es una frase preposicional que no cambia el número. Colección singular pide verbo singular: «includes».',
+        expCorrect:'The subject is "The collection", which is singular. Everything between the subject and the verb — "of manuscripts recovered from the abandoned house" — is a prepositional phrase that does not change the number. A singular collection calls for a singular verb: "includes".',
         expWrong:{
           B:'«Include» es plural y concuerda con «manuscripts», que está dentro de una frase preposicional. El núcleo del sujeto nunca está dentro de un «of…».',
           C:'«Are including» es plural y además pone en progresivo algo que es un estado permanente, no una acción en curso.',
@@ -403,7 +403,7 @@
         stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
         choices:{A:'effect;', B:'effect,', C:'effect', D:'effect:'},
         correct:'A',
-        expCorrect:'A los dos lados hay oraciones completas e independientes: «The first trial produced no measurable effect» y «the second… produced a clear one». Dos oraciones independientes relacionadas, sin conjunción en el medio, se unen con PUNTO Y COMA.',
+        expCorrect:'On both sides there are complete, independent sentences: "The first trial produced no measurable effect" and "the second… produced a clear one". Two related independent sentences, with no conjunction in between, are joined with a SEMICOLON.',
         expWrong:{
           B:'Una sola coma entre dos oraciones completas es un empalme de comas (comma splice), uno de los errores que el SAT evalúa con más frecuencia. Hace falta punto y coma, o coma MÁS conjunción.',
           C:'Sin nada quedan dos oraciones pegadas (run-on). El problema es el mismo que con la coma sola, agravado.',
@@ -418,7 +418,7 @@
         stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
         choices:{A:'its', B:'their', C:'it\'s', D:'they\'re'},
         correct:'A',
-        expCorrect:'El sujeto es «Each», que es SIEMPRE singular por más que le siga «of the four research teams». Un antecedente singular pide un posesivo singular: «its».',
+        expCorrect:'The subject is "Each", which is ALWAYS singular no matter that "of the four research teams" follows it. A singular antecedent calls for a singular possessive: "its".',
         expWrong:{
           B:'«Their» es plural y concuerda con «teams», que está dentro de la frase preposicional. «Each» es el núcleo y es singular.',
           C:'«It\'s» es la contracción de «it is», no un posesivo. Reemplazalo mentalmente: «Each team submitted it is findings» no tiene sentido.',
@@ -433,7 +433,7 @@
         stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
         choices:{A:'a salamander native to central Mexico,', B:'a salamander native to central Mexico', C:'a salamander native to central Mexico;', D:'a salamander, native to central Mexico'},
         correct:'A',
-        expCorrect:'«a salamander native to central Mexico, which can regrow entire limbs without scarring» es un aposito no esencial: se puede quitar y la oración sigue completa. Un elemento no esencial va entre DOS comas, y la segunda ya está en el texto después de «scarring». Falta la de apertura.',
+        expCorrect:'"a salamander native to central Mexico, which can regrow entire limbs without scarring" is a non-essential appositive: you can remove it and the sentence still stands. A non-essential element goes between TWO commas, and the second is already in the text after "scarring". The opening one is missing.',
         expWrong:{
           B:'Deja el aposito con coma de cierre pero sin coma de apertura. Las comas de un elemento no esencial van en PAREJA: una sola es siempre un error.',
           C:'El punto y coma exige oraciones independientes a los dos lados, y «a salamander native to central Mexico» no es una oración.',
@@ -452,7 +452,7 @@
           C:'there was pollen in the cores from grasses that no longer grow in the region.',
           D:'it was the pollen in the cores that showed grasses no longer grow in the region.'},
         correct:'A',
-        expCorrect:'La frase inicial «Drilled from the seabed» es un modificador participial, y tiene que describir al sujeto que viene inmediatamente después. Lo que se perforó del lecho marino son los núcleos (cores), así que el sujeto de la oración principal debe ser «the cores».',
+        expCorrect:'The opening phrase "Drilled from the seabed" is a participial modifier, and it has to describe the subject that comes immediately after. What was drilled from the seabed are the cores, so the subject of the main clause has to be "the cores".',
         expWrong:{
           B:'Deja el modificador colgando sobre «researchers»: dice literalmente que los investigadores fueron perforados del lecho marino. Es el error clásico de modificador mal colocado.',
           C:'«There» no es un sujeto real que pueda ser perforado. El modificador queda sin nada a qué referirse.',
