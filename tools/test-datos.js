@@ -28,7 +28,12 @@ const CANDIDATOS_PUP = [
   'puppeteer-core',
 ];
 function resolverPuppeteer() {
-  for (const c of CANDIDATOS_PUP) { try { return require(c); } catch (e) {} }
+  const porQue = [];
+  for (const c of CANDIDATOS_PUP) {
+    try { return require(c); }
+    catch (e) { porQue.push(c + ': ' + (e && e.code === 'MODULE_NOT_FOUND' ? 'no está ahí' : e.message)); }
+  }
+  console.error('No se pudo cargar puppeteer-core. Se buscó en:\n  ' + porQue.join('\n  '));
   return null;
 }
 
@@ -46,7 +51,11 @@ const FAKE_SUPABASE = function () {
   // poder distinguir para probar que la cola sobrevive un cierre.
   try {
     if (!sessionStorage.getItem('__test_caso')) { localStorage.clear(); sessionStorage.setItem('__test_caso', '1'); }
-  } catch (e) {}
+  } catch (e) {
+    // Todo este test es sobre almacenamiento. Si está bloqueado no hay nada que
+    // medir, así que se lanza y la corrida se cae en vez de salir verde en falso.
+    throw new Error('el navegador tiene bloqueado el almacenamiento: este test no puede medir nada · ' + e.message);
+  }
   window.__FAKE = {
     online: true,          // false = "sin internet": todo RPC falla
     failNext: 0,           // N próximas llamadas de upsert fallan y luego se recupera

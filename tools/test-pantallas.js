@@ -36,7 +36,12 @@ const CANDIDATOS_PUP = [
   'puppeteer-core',
 ];
 function resolverPuppeteer() {
-  for (const c of CANDIDATOS_PUP) { try { return require(c); } catch (e) {} }
+  const porQue = [];
+  for (const c of CANDIDATOS_PUP) {
+    try { return require(c); }
+    catch (e) { porQue.push(c + ': ' + (e && e.code === 'MODULE_NOT_FOUND' ? 'no está ahí' : e.message)); }
+  }
+  console.error('No se pudo cargar puppeteer-core. Se buscó en:\n  ' + porQue.join('\n  '));
   return null;
 }
 
@@ -50,7 +55,11 @@ const sleep = ms => new Promise(r => setTimeout(r, ms));
  * mostrar. Los fallos de red los prueba test-datos.js, no esto.
  * ------------------------------------------------------------------------- */
 const FAKE = function () {
-  try { localStorage.clear(); } catch (e) {}
+  // Si el navegador bloquea el almacenamiento, el test deja de medir lo que dice
+  // medir. Se lanza: el arnés recoge el pageerror y P9 se pone en rojo. Avisar
+  // por consola y seguir daría una corrida verde que no probó nada.
+  try { localStorage.clear(); }
+  catch (e) { throw new Error('el navegador tiene bloqueado el almacenamiento, el recorrido no mide nada: ' + e.message); }
   const user = {
     id: 'u-pantallas', email: 'profe@iae.edu',
     user_metadata: { name: 'Screen Test', app: 'sat-studio', target_score: '1500', exam_date: '2027-05-01' },

@@ -26,7 +26,10 @@
   }
   *{box-sizing:border-box;margin:0;padding:0}
   html,body{height:100%}
-  body{font-family:var(--sans);color:var(--ink);background:#fff}
+  /* El papel es el fondo de la app. La pantalla de examen se pinta blanca a
+     propósito y de forma explícita: ahí el parecido con Bluebook es la mitad
+     del valor del producto. */
+  body{font-family:var(--sans);color:var(--ink);background:var(--paper)}
   button{font-family:var(--sans);cursor:pointer}
   button:focus,a:focus,input:focus,select:focus,textarea:focus,summary:focus,[tabindex]:focus{outline:3px solid #2439a0;outline-offset:2px;border-radius:4px}
   /* Un dedo no acierta a 32 px: 44x44 es el minimo que recomienda WCAG 2.2.
@@ -116,7 +119,7 @@
   .home-tools{font-size:.85rem;color:var(--gray-mid);line-height:1.7;margin-top:8px}
 
   /* ============ TEST CHROME ============ */
-  #view-app{display:flex;flex-direction:column;height:100vh}
+  #view-app{display:flex;flex-direction:column;height:100vh;background:#fff}
   header{display:flex;align-items:center;justify-content:space-between;padding:9px 16px;border-bottom:1px dashed #bdbdbd;background:#fff;position:relative;z-index:40}
   .hdr-left{min-width:200px}
   .hdr-left .section-name{font-weight:600;font-size:.92rem}
@@ -381,6 +384,7 @@
   .auth-extra{border-top:1px solid var(--gray-line);margin-top:14px;padding-top:14px}
   .auth-two{display:flex;gap:10px}
   .auth-two > div{flex:1;min-width:0}
+  .auth-foot{margin-top:22px;padding-top:16px;border-top:1px solid var(--gray-line);color:var(--gray-mid);font-size:.76rem;line-height:1.6;text-align:center}
   .auth-hint{font-size:.78rem;color:var(--gray-mid);margin-top:8px;line-height:1.5}
   .exam-bar{display:flex;gap:12px;align-items:center;flex-wrap:wrap;background:#fff;border:1px solid var(--gray-line);border-radius:10px;padding:12px 16px;margin-bottom:20px;font-size:.86rem}
   .exam-bar label{display:flex;align-items:center;gap:6px}
@@ -389,13 +393,17 @@
   .exam-bar-note{color:var(--gray-mid);flex:1;min-width:220px}
   #view-auth{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:28px 18px;
     background:var(--paper);background-image:radial-gradient(1100px 520px at 50% -10%,#fbfcfe 0,var(--paper) 55%,var(--paper-2) 100%)}
-  .auth-card{width:100%;max-width:400px;background:#fff;border:1px solid #e3e6ef;border-radius:16px;padding:32px 28px;box-shadow:var(--sombra-alta)}
+  .auth-card{width:100%;max-width:400px;border:1px solid #e3e6ef;border-radius:16px;padding:32px 28px;box-shadow:var(--sombra-alta);
+    background:linear-gradient(175deg,#ffffff 0%,#fdfdff 55%,#fafbff 100%)}
   .auth-card .brand{display:block;margin-bottom:8px}
   .auth-card .brand .brand-h{font-size:1.65rem;line-height:1.05;margin:0}
   .auth-card .brand .tag{display:block;margin-top:5px}
   .auth-sub{color:var(--gray-mid);font-size:.9rem;margin:0 0 18px}
   .auth-lbl{display:block;font-size:.76rem;font-weight:700;color:var(--gray-mid);text-transform:uppercase;letter-spacing:.02em;margin:12px 0 5px}
-  .auth-inp{min-height:44px;font-size:16px;width:100%;border:1px solid var(--gray-line);border-radius:10px;padding:11px 13px;font-size:.95rem;box-sizing:border-box}
+  /* OJO: un solo font-size. Estaban los dos (16px y .95rem) y ganaba el
+     segundo: 15,2 px, justo debajo del umbral que hace que iOS haga zoom al
+     enfocar el campo y deje la pantalla torcida. */
+  .auth-inp{min-height:44px;width:100%;border:1px solid var(--gray-line);border-radius:10px;padding:11px 13px;font-size:16px;box-sizing:border-box}
   .auth-inp:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-soft)}
   .auth-msg{margin:14px 0 0;padding:10px 12px;border-radius:9px;font-size:.86rem;background:var(--blue-soft);color:var(--blue-dark)}
   .auth-msg.err{background:#fdeaea;color:#c0392b}
@@ -637,7 +645,11 @@
   /* ---- Mi plan de mejora ---- */
   .plan-wrap{max-width:100%}
   .plan-intro{font-size:.9rem;color:#42506b;line-height:1.6;margin-bottom:14px}
-  .plan-link{color:var(--blue-dark);font-weight:600;text-decoration:none;white-space:nowrap}
+  /* Es un botón, no un enlace: no lleva a otra página, abre la pestaña de
+     progreso. Un <a href="#"> ahí es un callejón sin salida para quien navega
+     con teclado o lector de pantalla. */
+  .plan-link{background:none;border:none;padding:0;font-family:var(--sans);font-size:inherit;cursor:pointer;color:var(--blue-dark);font-weight:600;white-space:nowrap}
+  .plan-link:hover{text-decoration:underline}
   .plan-link:hover{text-decoration:underline}
   .plan-step{display:flex;align-items:center;gap:10px;margin:22px 0 10px}
   .plan-step:first-child{margin-top:4px}
@@ -778,6 +790,10 @@
       <input id="auth-pass2" class="auth-inp" type="password" autocomplete="new-password" placeholder="At least 8 characters">
       <button id="auth-savepass" class="btn-primary">Save and sign in</button>
     </div>
+
+    <p class="auth-foot">Free Digital SAT practice. All questions are original;
+      College Board does not sponsor or endorse this tool.<br>
+      © <span id="auth-year"></span> SAT Studio</p>
 
   </div>
 </div>
@@ -1150,6 +1166,7 @@
 <script defer src="sets/math-brutal-adv1.js"></script>
 <script defer src="sets/math-hard-spr1.js"></script>
 <script defer src="sets/rw-brutal-inference.js"></script>
+<script defer src="sets/rw-brutal-conventions.js"></script>
 <!-- Desmos how-to hints per Math question (merged into questions at load) -->
 <script defer src="sets/desmos-a.js"></script>
 <script defer src="sets/desmos-b.js"></script>
@@ -1375,24 +1392,54 @@ function estimateScore(results){
   return Math.round(est / 10) * 10;
 }
 
-/* Para lo accesorio (scroll, foco, resize de la calculadora): si falla no hay
-   nada que reparar, pero queda registrado en la consola en vez de evaporarse. */
+/* Para lo accesorio (scroll, foco, resize de la calculadora): si falla una vez
+   no hay nada que reparar y avisar sería ruido. Pero un paso que falla TRES
+   veces ya dejó de ser accesorio —normalmente es el navegador bloqueando algo—
+   y entonces sí se dice en pantalla, una sola vez por paso. */
+var _fallosAccesorios = {};
 function intenta(fn, que){
   try { return fn(); }
-  catch(e){ console.debug('SAT Studio · a non-critical step failed (' + (que || 'unnamed') + '):', e && e.message); }
+  catch(e){
+    var k = que || 'unnamed';
+    _fallosAccesorios[k] = (_fallosAccesorios[k] || 0) + 1;
+    console.debug('SAT Studio · a non-critical step failed (' + k + '):', e && e.message);
+    if(_fallosAccesorios[k] === 3){
+      toast('Something in this browser keeps blocking “' + k + '”. Nothing was lost, but part of the page may not react.', true);
+    }
+  }
 }
 /* Aviso no bloqueante: el estado de exito o de error se muestra en pantalla
-   sin frenar al estudiante ni obligarlo a cerrar un cuadro de dialogo. */
+   sin frenar al estudiante ni obligarlo a cerrar un cuadro de dialogo.
+   Si ni siquiera se puede pintar el toast (DOM a medio cargar, o el contenedor
+   todavía no existe), el mensaje se guarda y se muestra en cuanto haya dónde:
+   perderlo es exactamente lo que no puede pasar con un aviso de error. */
+var _toastPendientes = [];
 function toast(msg, isErr){
+  var wrap = null;
+  try { wrap = document.getElementById('toast-wrap'); } catch(e){ wrap = null; }
+  if(!wrap){
+    _toastPendientes.push([msg, isErr]);
+    console.log(msg);
+    if(_toastPendientes.length === 1) setTimeout(vaciarToasts, 400);
+    return;
+  }
   try {
-    var wrap = document.getElementById('toast-wrap');
-    if(!wrap){ console.log(msg); return; }
     var d = document.createElement('div');
     d.className = 'toast' + (isErr ? ' err' : '');
     d.textContent = msg;
     wrap.appendChild(d);
     setTimeout(function(){ d.style.opacity = '0'; setTimeout(function(){ d.remove(); }, 250); }, isErr ? 7000 : 3800);
-  } catch(e){ console.log(msg); }
+  } catch(e){
+    _toastPendientes.push([msg, isErr]);
+    console.log(msg);
+    setTimeout(vaciarToasts, 400);
+  }
+}
+function vaciarToasts(){
+  if(!_toastPendientes.length) return;
+  if(!document.getElementById('toast-wrap')){ setTimeout(vaciarToasts, 800); return; }
+  var cola = _toastPendientes.slice(); _toastPendientes.length = 0;
+  cola.forEach(function(t){ toast(t[0], t[1]); });
 }
 
 /* ================= NIVELES DE DIFICULTAD =================
@@ -1766,7 +1813,7 @@ function planHTML(){
   var head = '<p class="plan-intro">' +
     (nuevo ? 'Not enough answers yet to know your weak spots — these weigh most on the test.'
            : 'From your ' + practicadas + ' answers. Pick what you want, I build the test.') +
-    ' <a href="#" id="plan-progress" class="plan-link">See all my numbers →</a></p>';
+    ' <button type="button" id="plan-progress" class="plan-link">See all my numbers →</button></p>';
 
   /* ---- paso 1: los temas ---- */
   function fila(s, recomendado){
@@ -5260,7 +5307,10 @@ function init(){
     else showReview();
   });
 
-  var _fy = $('#foot-year'); if(_fy) _fy.textContent = new Date().getFullYear();
+  // El año se calcula, no se escribe: un sitio que dice 2026 en 2028 se ve abandonado.
+  var _anio = new Date().getFullYear();
+  var _fy = $('#foot-year'); if(_fy) _fy.textContent = _anio;
+  var _ay = $('#auth-year'); if(_ay) _ay.textContent = _anio;
   var _bh = $('#brand-home');
   if(_bh) _bh.addEventListener('click', function(e){ e.preventDefault(); goHome(); });
   $('#btn-copy').addEventListener('click', copySummary);

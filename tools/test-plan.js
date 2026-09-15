@@ -25,7 +25,12 @@ const CANDIDATOS_PUP = [
   'puppeteer-core',
 ];
 function resolverPuppeteer() {
-  for (const c of CANDIDATOS_PUP) { try { return require(c); } catch (e) {} }
+  const porQue = [];
+  for (const c of CANDIDATOS_PUP) {
+    try { return require(c); }
+    catch (e) { porQue.push(c + ': ' + (e && e.code === 'MODULE_NOT_FOUND' ? 'no está ahí' : e.message)); }
+  }
+  console.error('No se pudo cargar puppeteer-core. Se buscó en:\n  ' + porQue.join('\n  '));
   return null;
 }
 
