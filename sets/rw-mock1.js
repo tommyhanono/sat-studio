@@ -423,7 +423,7 @@ window.SAT_SETS.push({
     {
       id:'MK1-23', type:'mc', domain:'Expression of Ideas', difficulty:'Media',
       skill:'Transitions',
-      passage:"The first trial showed that the drug lowered blood pressure in most participants. The second and third trials, conducted with larger and more diverse groups, reached the same conclusion. %BLANK% researchers now regard the drug's effect as well established.",
+      passage:"The first trial showed that the drug lowered blood pressure in most participants. The second and third trials, conducted with larger and more diverse groups, reached the same conclusion. %BLANK% researchers now regard the drug’s effect as well established.",
       stem:'Which choice completes the text with the most logical transition?',
       choices:{A:'Nevertheless,', B:'In contrast,', C:'Consequently,', D:'Meanwhile,'},
       correct:'C',

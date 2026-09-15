@@ -19,17 +19,17 @@ const fs = require('fs');
 const path = require('path');
 const RAIZ = path.resolve(__dirname, '..');
 
-/* Nombres propios y términos que llevan acento y son correctos en inglés. */
-const PERMITIDOS = /Inés|Ibáñez|Bogotá|café|Perú|México|Nicolás|Ada Rourke|naïve|résumé|Zaha|José|García|Amara|Petrova|\b(?:sin|cos|tan|sec|csc|cot)\s*[²³]?\s*[(\u03b8A-Za-z0-9]|\b(?:sin|cos|tan)\s*[²³]|\bet\s+al\b|SOHCAHTOA/g;
-
-/* Palabras que, en inglés, no existen o no aparecen jamás en este contenido. */
-const SOLO_ES = /\b(el|los|las|una|unos|unas|que|para|por|con|del|como|cuando|donde|porque|entre|sobre|desde|hasta|este|esta|cada|puede|tiene|son|pero|así|queda|hacia|aunque|mismo|misma|otro|otra|toda|todos|sin|más|ya|muy|bien|aquí|ahí|solo|también|siempre|nunca|entonces|ese|esa|esos|esas|era|fue|ser|estar|hacer|decir|dice|dijo|tanto|mientras|según|además|luego|antes|después)\b/gi;
-
+/* Detector de español. Sensible a propósito: es mejor marcar de más (y traducir
+   a sí mismo un texto que ya estaba en inglés) que dejar pasar contenido en
+   español. La primera versión era demasiado permisiva y dejó 248 campos sin
+   traducir porque las etiquetas cortas no traen palabras funcionales. */
+const PERMITIDOS = /Inés|Ibáñez|Bogotá|café|Perú|México|Nicolás|Ada Rourke|naïve|résumé|Zaha|José|García|Amara|Petrova|\b(?:sin|cos|tan|sec|csc|cot)\s*[²³]?\s*[(θA-Za-z0-9]|\b(?:sin|cos|tan)\s*[²³]|\bet\s+al\b|SOHCAHTOA/g;
+/* Palabras y terminaciones que no existen en inglés. Una sola basta. */
+const ES_FUERTE = /\b(los|las|una|unos|unas|del|que|por|para|como|cuando|donde|porque|entre|sobre|desde|hasta|hacia|según|durante|mientras|aunque|también|tampoco|siempre|nunca|cada|toda|todos|todas|otra|otros|otras|mismo|misma|tanto|son|era|fue|ser|estar|está|están|tiene|tienen|puede|pueden|hace|hacen|dice|dicen|queda|quedan|salen|más|menos|muy|pero|aquí|esto|eso|este|esta|ese|esa|estos|estas|esos|esas|sus|les|así|solo|sólo|dos|tres|cuatro|cinco|seis|siete|ocho|nueve|diez|primero|segunda|segundo|tercera|tercero|nada|algo|alguien|nadie|cual|cuál|quien|quién|cuyo|cuya|ambos|ambas|varios|varias|mucho|mucha|muchos|muchas|poco|poca|pocos|pocas)\b|\b\w+(ción|ciones|dad|tad|mente|miento|mientos|anza|encia|ancia|aje|ísimo|ería|ando|endo|arse|erse|irse)\b|\b(ecuaci\w*|exponencial\w*|iguales|cuadr[áa]tic\w*|ra[íi]c\w*|ra[íi]z|despeje|pendiente|recta|rectas|circunferencia|tri[áa]ngulo\w*|volumen|posesiv\w*|verbo\w*|oraci\w*|palabra\w*|pregunta\w*|respuesta\w*|nivel\w*|f[áa]cil|dif[íi]cil|simulacro|n[úu]cleo|banco|coma|comas|sujeto|signo|signos|valor|valores|n[úu]mero\w*|suma|resta|divide|multiplica|elevar|elevado|entero|enteros|cateto\w*|hipotenusa|[áa]ngulo\w*|lado|lados|altura|radio|di[áa]metro|[áa]rea|gr[áa]fica|tabla|texto|opci[óo]n\w*)\b/i;
 function esEspanol(t) {
   const limpio = String(t).replace(PERMITIDOS, '');
-  const acento = /[áéíóúñ¿¡]/i.test(limpio);
-  const marcas = (limpio.match(SOLO_ES) || []).length;
-  return acento || marcas >= 2;
+  if (/[áéíóúñ¿¡]/i.test(limpio)) return true;
+  return ES_FUERTE.test(limpio);
 }
 
 /* ---------- 1. el banco ---------- */

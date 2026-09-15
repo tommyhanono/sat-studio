@@ -10,13 +10,13 @@
     questions: [
       {
         id:'ALG-01', type:'mc', domain:'Algebra', difficulty:'Fácil',
-        skill:'Ecuaciones lineales (una variable)',
+        skill:'Linear equations (one variable)',
         stem:'If 5x + 8 = 3x + 20, what is the value of x?',
         choices:{A:'6', B:'2', C:'12', D:'14'},
         correct:'A',
         expCorrect:'Gather the x terms on one side and the numbers on the other: 5x − 3x = 20 − 8 → 2x = 12 → x = 6. (Check: 5(6)+8 = 38 and 3(6)+20 = 38 ✓.)',
         expWrong:{
-          B:'2 sale de restar mal: 8 − (algo) o dividir 4/2. Vuelve a agrupar: 2x = 12, no 2x = 4.',
+          B:'2 comes from subtracting wrong: 8 − (something) or dividing 4/2. Regroup again: 2x = 12, not 2x = 4.',
           C:'12 is the value of 2x, not of x. You skipped the last step: divide by 2.',
           D:'14 comes from adding 20 + 8 = 28 and not subtracting the x terms correctly. Move the x terms first.'
         },
@@ -24,7 +24,7 @@
       },
       {
         id:'ALG-02', type:'mc', domain:'Algebra', difficulty:'Fácil',
-        skill:'Ecuaciones lineales (dos variables, despeje)',
+        skill:'Linear equations (two variables, solving)',
         stem:'The equation 4x + 3y = 24 relates x and y. If x = 3, what is the value of y?',
         choices:{A:'3', B:'4', C:'7', D:'12'},
         correct:'B',
@@ -38,11 +38,11 @@
       },
       {
         id:'ALG-03', type:'mc', domain:'Algebra', difficulty:'Fácil',
-        skill:'Funciones lineales (pendiente)',
+        skill:'Linear functions (slope)',
         stem:'A line in the xy-plane passes through the points (1, 5) and (4, 17). What is the slope of the line?',
         choices:{A:'3', B:'6', C:'4', D:'12'},
         correct:'C',
-        expCorrect:'Pendiente = (cambio en y)/(cambio en x) = (17 − 5)/(4 − 1) = 12/3 = 4.',
+        expCorrect:'Slope = (change in y)/(change in x) = (17 − 5)/(4 − 1) = 12/3 = 4.',
         expWrong:{
           A:'3 is the change in x (4 − 1), not the slope. It is the denominator, not the result.',
           B:'6 sale de dividir mal o de promediar; 12/3 = 4, no 6.',
@@ -52,17 +52,17 @@
       },
       {
         id:'ALG-04', type:'mc', domain:'Algebra', difficulty:'Fácil',
-        skill:'Inecuaciones lineales (una variable)',
+        skill:'Linear inequalities (one variable)',
         stem:'Which of the following is a solution to the inequality 2x + 5 > 13?',
         choices:{A:'2', B:'3', C:'4', D:'5'},
         correct:'D',
         expCorrect:'Solve it: 2x + 5 > 13 → 2x > 8 → x > 4. The only choice strictly greater than 4 is 5. (Check: 2(5)+5 = 15 > 13 ✓.)',
         expWrong:{
-          A:'2 no cumple: 2(2)+5 = 9, que no es > 13.',
-          B:'3 no cumple: 2(3)+5 = 11, que no es > 13.',
-          C:'4 es el borde exacto: 2(4)+5 = 13, y 13 NO es > 13. La desigualdad es estricta.'
+          A:'2 does not work: 2(2)+5 = 9, which is not > 13.',
+          B:'3 does not work: 2(3)+5 = 11, which is not > 13.',
+          C:'4 is exactly the boundary: 2(4)+5 = 13, and 13 is NOT > 13. The inequality is strict.'
         },
-        tip:'Solve it like a normal equation (you only flip the sign if you multiply or divide by a negative). With ">" the boundary does NOT count: x > 4 excludes 4.'
+        tip:'Solve it like a normal equation (you only flip the sign if you multiply or divide by a negative). With \">\" the boundary does NOT count: x > 4 excludes 4.'
       },
       {
         id:'ALG-05', type:'mc', domain:'Algebra', difficulty:'Media',
@@ -72,7 +72,7 @@
         correct:'B',
         expCorrect:'Add the two equations (the y terms cancel): (3x + y) + (x − y) = 11 + 1 → 4x = 12 → x = 3. (Check: 3(3)+2 = 11 and 3−2 = 1 ✓.)',
         expWrong:{
-          A:'2 es el valor de y, no de x. Cuidado: la pregunta pide x.',
+          A:'2 is the value of y, not of x. Careful: the question asks for x.',
           C:'5 comes from adding wrong, or from solving x − y = 1 on its own without using the other equation.',
           D:'8 es 4x sin dividir, o 11 − 3 mal hecho. Recuerda 4x = 12 → x = 3.'
         },
@@ -86,8 +86,8 @@
         correct:'A',
         expCorrect:'The first equation already gives you y. Substitute into the second: 4x + (2x − 5) = 13 → 6x − 5 = 13 → 6x = 18 → x = 3. Then y = 2(3) − 5 = 1. (Check: 4(3)+1 = 13 ✓.) Answer: y = 1.',
         expWrong:{
-          B:'3 es el valor de x, no de y. La pregunta pide y — sustituye x en y = 2x − 5.',
-          C:'-1 sale de un error de signo en 2x − 5: 2(3) − 5 = 1, no −1.',
+          B:'3 is the value of x, not of y. The question asks for y — substitute x into y = 2x − 5.',
+          C:'-1 comes from a sign slip in 2x − 5: 2(3) − 5 = 1, not −1.',
           D:'6 is 2x without subtracting the 5, or an incomplete solve for y.'
         },
         tip:'When one equation is already solved (y = ...), substitute it straight into the other. One step less. Then use that same formula to find y.'
@@ -112,17 +112,17 @@
         stem:'A technician charges a fixed fee of $40 for a house visit plus $25 per hour of work. If the total charge for a visit was $190, for how many hours did the technician work?',
         choices:{A:'5', B:'7', C:'6', D:'8'},
         correct:'C',
-        expCorrect:'Modelo: 40 + 25h = 190. Resta el cargo fijo: 25h = 150 → h = 6. (Comprueba: 40 + 25(6) = 40 + 150 = 190 ✓.)',
+        expCorrect:'Model: 40 + 25h = 190. Subtract the fixed charge: 25h = 150 → h = 6. (Check: 40 + 25(6) = 40 + 150 = 190 ✓.)',
         expWrong:{
           A:'5 sale de dividir 190/40 o de restar mal; 150/25 = 6, no 5.',
-          B:'7 sale de olvidar el cargo fijo o restarlo dos veces.',
+          B:'7 comes from forgetting the fixed charge or subtracting it twice.',
           D:'8 comes from dividing 190/25 ≈ 7.6 and rounding, without taking off the fixed $40 first.'
         },
         tip:'Translate it: “flat” = the constant, “per hour” = the coefficient of h. Build total = flat + rate×h, then subtract the flat fee BEFORE dividing.'
       },
       {
         id:'ALG-09', type:'mc', domain:'Algebra', difficulty:'Media',
-        skill:'Inecuaciones lineales (dividir por negativo)',
+        skill:'Linear inequalities (dividing by a negative)',
         stem:'What is the solution to the inequality −3x + 7 ≥ 1?',
         choices:{A:'x ≥ 2', B:'x ≤ 2', C:'x ≥ −2', D:'x ≤ −2'},
         correct:'B',
@@ -136,21 +136,21 @@
       },
       {
         id:'ALG-10', type:'mc', domain:'Algebra', difficulty:'Difícil',
-        skill:'Sistemas de ecuaciones lineales (coeficientes)',
+        skill:'Systems of linear equations (coefficients)',
         stem:'The system of equations below has no solution.<br><br>y = 5x + 2<br>y = (c − 1)x + 9<br><br>What is the value of the constant c?',
         choices:{A:'4', B:'5', C:'6', D:'7'},
         correct:'C',
         expCorrect:'A linear system with "no solution" means PARALLEL lines: same slope, different intercept. Set the slopes equal: 5 = c − 1 → c = 6. (The intercepts 2 and 9 are already different, so they never meet ✓.)',
         expWrong:{
           A:'4 comes from solving c + 1 = 5 instead of c − 1 = 5. Watch the sign on the −1.',
-          B:'5 iguala c directamente a la pendiente, olvidando que la pendiente es (c − 1), no c.',
+          B:'5 sets c equal to the slope directly, forgetting that the slope is (c − 1), not c.',
           D:'7 comes from adding 5 + 2 (the slope and the intercept), which makes no sense here.'
         },
         tip:'"No solution" = parallel lines = equal slopes, different intercepts. Set only the x coefficients equal. "Infinitely many solutions" would be the same line (everything equal).'
       },
       {
         id:'ALG-11', type:'spr', domain:'Algebra', difficulty:'Media',
-        skill:'Sistemas de ecuaciones lineales (valor combinado)',
+        skill:'Systems of linear equations (combined value)',
         stem:'The system of equations below is given.<br><br>2x + 3y = 18<br>x + y = 7<br><br>What is the value of x + 2y in the solution to the system?',
         answer:'11',
         expCorrect:'Solve the system. From x + y = 7 → x = 7 − y. Substitute: 2(7 − y) + 3y = 18 → 14 − 2y + 3y = 18 → 14 + y = 18 → y = 4. Then x = 7 − 4 = 3. They want x + 2y = 3 + 2(4) = 3 + 8 = 11. (Check the system: 2(3)+3(4) = 18 ✓ and 3+4 = 7 ✓.) Answer: 11.',
@@ -159,10 +159,10 @@
       },
       {
         id:'ALG-12', type:'spr', domain:'Algebra', difficulty:'Difícil',
-        skill:'Funciones lineales (evaluar y despejar)',
+        skill:'Linear functions (evaluating and solving)',
         stem:'The function f is defined by f(x) = 7x − 4. If f(a) = 31, what is the value of a?',
         answer:'5',
-        expCorrect:'f(a) = 31 significa 7a − 4 = 31. Despeja: 7a = 35 → a = 5. (Comprueba: f(5) = 7(5) − 4 = 35 − 4 = 31 ✓.) Respuesta: 5.',
+        expCorrect:'f(a) = 31 means 7a − 4 = 31. Solve: 7a = 35 → a = 5. (Check: f(5) = 7(5) − 4 = 35 − 4 = 31 ✓.) Answer: 5.',
         expWrong:{},
         tip:'f(a) = 31 means "the output is 31": replace the formula with 31 and solve for the input a. Do not confuse the input (a) with the output (31).'
       }

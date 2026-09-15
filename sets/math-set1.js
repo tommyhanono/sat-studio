@@ -49,7 +49,7 @@
         expCorrect:'You do not need to solve for x: notice that 6x \u2212 14 = 2(3x \u2212 7). Since 3x \u2212 7 = 14, then 6x \u2212 14 = 2 \u00d7 14 = 28. (The long check: 3x = 21 → x = 7 → 6(7) \u2212 14 = 42 \u2212 14 = 28.)',
         expWrong:{
           A:'7 is the value of x, not of 6x \u2212 14. The SAT almost always plants "x" as a distractor when it asks for an expression.',
-          C:'35 sale de calcular 6x \u2212 7 (olvidando duplicar el \u22127).',
+          C:'35 comes from computing 6x \u2212 7 (forgetting to double the \u22127).',
           D:'42 is only 6x. You forgot to subtract the 14.'
         },
         tip:'Before solving, ask yourself: is the expression they want a MULTIPLE of the one they gave me? Here 6x\u221214 = 2(3x\u22127). Double it and you are done — 5 seconds.'
@@ -70,10 +70,10 @@
       },
       {
         id:'M-003', type:'spr', domain:'Algebra', difficulty:'Media',
-        skill:'Sistemas de ecuaciones lineales',
+        skill:'Systems of linear equations',
         stem:'The system of equations below is given.<br><br>x + 2y = 17<br>x \u2212 y = 5<br><br>If (x, y) is the solution to the system, what is the value of x?',
         answer:'9',
-        expCorrect:'Resta las ecuaciones: (x + 2y) \u2212 (x \u2212 y) = 17 \u2212 5 → 3y = 12 → y = 4. Sustituye: x \u2212 4 = 5 → x = 9. (Verifica: 9 + 8 = 17 ✓.) Respuesta: 9.',
+        expCorrect:'Subtract the equations: (x + 2y) \u2212 (x \u2212 y) = 17 \u2212 5 → 3y = 12 → y = 4. Substitute: x \u2212 4 = 5 → x = 9. (Check: 9 + 8 = 17 ✓.) Answer: 9.',
         expWrong:{},
         tip:'Desmos trick: type both equations exactly as they are into the calculator and tap the intersection point — it hands you (9, 4) instantly. Careful: the question asks for x, not y (4 would be the trap).'
       },
@@ -101,7 +101,7 @@
         expCorrect:'Pythagoras: x\u00b2 = 15\u00b2 + 8\u00b2 = 225 + 64 = 289 → x = \u221a289 = 17. (8-15-17 is a classic Pythagorean triple, like 3-4-5 and 5-12-13.)',
         expWrong:{
           A:'13 belongs to the 5-12-13 triple; here the legs are 8 and 15.',
-          C:'19 sale de errores de suma (225 + 64 = 289, no 361).',
+          C:'19 comes from arithmetic slips (225 + 64 = 289, not 361).',
           D:'23 = 15 + 8. The hypotenuse is NEVER the sum of the legs (that would be a degenerate triangle).'
         },
         tip:'Memorize the triples: 3-4-5, 5-12-13, 8-15-17, 7-24-25 (and their multiples). Seeing "15 and 8" should shout "17" at you with no computing. The formula is in the app Reference Sheet.'
@@ -124,7 +124,7 @@
       },
       {
         id:'M-007', type:'spr', domain:'Advanced Math', difficulty:'Media',
-        skill:'Ecuaciones racionales',
+        skill:'Rational equations',
         stem:'If <span style="white-space:nowrap">3/(x + 1) = 12</span>, what is the value of x?',
         answer:'-3/4',
         expCorrect:'Multiply both sides by (x + 1): 3 = 12(x + 1) → 3 = 12x + 12 → 12x = \u22129 → x = \u22129/12 = \u22123/4. Valid forms for the box: -3/4, -.75 or -0.75 (also -9/12, since it is the same value). Careful: 0.75 without the sign would be wrong.',
@@ -154,14 +154,14 @@
         expCorrect:'Since B = 90\u00b0, angles A and C are complementary (A + C = 90\u00b0). Key SAT identity: sin A = cos(90\u00b0 \u2212 A) = cos C. So cos C = 3/5, with nothing else to compute.',
         expWrong:{
           B:'4/5 is cos A (or sin C) — the co-function of the SAME angle, not of the complementary one.',
-          C:'3/4 es tan A; no es lo que piden.',
+          C:'3/4 is tan A; that is not what they want.',
           D:'5/3 is 1/sin A flipped; a sine or cosine can never be greater than 1 in a triangle.'
         },
         tip:'Star rule: sin(x) = cos(90\u00b0 \u2212 x). In a right triangle, the sine of one acute angle = the cosine of the other. If you see "sin A … cos C" with B = 90°, the answer is immediate.'
       },
       {
         id:'M-010', type:'spr', domain:'Advanced Math', difficulty:'Difícil',
-        skill:'Discriminante (soluciones no reales)',
+        skill:'Discriminant (non-real solutions)',
         stem:'The equation 2x\u00b2 + bx + 8 = 0, where b is a positive integer, has no real solutions. What is the greatest possible value of b?',
         answer:'7',
         expCorrect:'"No real solutions" ⇔ negative discriminant: b\u00b2 \u2212 4ac &lt; 0 → b\u00b2 \u2212 4(2)(8) &lt; 0 → b\u00b2 &lt; 64 → \u22128 &lt; b &lt; 8. The largest positive integer strictly less than 8 is 7. (With b = 8 the discriminant would be 0 and there would be ONE real solution — no good.)',

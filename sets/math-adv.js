@@ -10,7 +10,7 @@
     questions: [
       {
         id:'ADV-01', type:'mc', domain:'Advanced Math', difficulty:'Fácil',
-        skill:'Ecuaciones exponenciales (bases iguales)',
+        skill:'Exponential equations (equal bases)',
         stem:'If 5^(x + 2) = 5^7, what is the value of x?',
         choices:{A:'2', B:'5', C:'7', D:'9'},
         correct:'B',
@@ -52,7 +52,7 @@
       },
       {
         id:'ADV-04', type:'mc', domain:'Advanced Math', difficulty:'Media',
-        skill:'Crecimiento exponencial (modelo)',
+        skill:'Exponential growth (model)',
         stem:'A colony of bacteria has a population of 300, and the population increases by 12% each hour. Which function P models the population after t hours?',
         choices:{A:'P(t) = 300 + 0.12t', B:'P(t) = 300(0.12)^t', C:'P(t) = 300(0.88)^t', D:'P(t) = 300(1.12)^t'},
         correct:'D',
@@ -60,7 +60,7 @@
         expWrong:{
           A:'This model is LINEAR (it adds 0.12 per hour). A percentage repeating every hour is multiplicative, not additive.',
           B:'Multiplying by 0.12 would make the population nearly vanish every hour; that factor does not represent 12% growth.',
-          C:'0.88 = 1 − 0.12 modela un DECRECIMIENTO del 12%, no un crecimiento.'
+          C:'0.88 = 1 − 0.12 models 12% DECAY, not growth.'
         },
         tip:'Growth of r% → factor (1 + r/100)^t. Decay → (1 − r/100)^t. "Increases by 12%" is ×1.12 per period, not +0.12.'
       },
@@ -88,7 +88,7 @@
         expWrong:{
           A:'0 would say it never equals zero, but each linear factor contributes a real root.',
           B:'1 counts only one root; there are three distinct linear factors, each with its own zero.',
-          C:'2 se te olvida un factor. Cuenta los tres: (x + 4), (x − 2) y (x − 5).'
+          C:'2 misses a factor. Count all three: (x + 4), (x − 2) and (x − 5).'
         },
         tip:'Zero product property: each distinct linear factor = one zero (one crossing of the x-axis). Count the distinct factors to know how many real roots there are.'
       },
@@ -131,7 +131,7 @@
       },
       {
         id:'ADV-10', type:'mc', domain:'Advanced Math', difficulty:'Difícil',
-        skill:'Decaimiento exponencial (semivida)',
+        skill:'Exponential decay (half-life)',
         stem:'A radioactive sample has an initial mass of 80 grams and its mass is halved every 6 years. Which function m gives the mass, in grams, remaining after t years?',
         choices:{A:'m(t) = 80(1/2)^(6t)', B:'m(t) = 80(1/2)^(t/6)', C:'m(t) = 80(1/2)^(t−6)', D:'m(t) = 80(6)^(t/2)'},
         correct:'B',

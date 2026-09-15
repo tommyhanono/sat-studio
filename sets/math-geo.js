@@ -61,11 +61,11 @@
       },
       {
         id:'GEO-03', type:'mc', domain:'Geometry & Trigonometry', difficulty:'Fácil',
-        skill:'Volumen (cilindro)',
+        skill:'Volume (cylinder)',
         stem:'A right circular cylinder has a radius of 3 and a height of 10. What is the volume of the cylinder?',
         choices:{A:'90π', B:'60π', C:'30π', D:'300π'},
         correct:'A',
-        expCorrect:'Volumen del cilindro = πr²h = π(3)²(10) = π(9)(10) = 90π.',
+        expCorrect:'Volume of the cylinder = πr²h = π(3)²(10) = π(9)(10) = 90π.',
         expWrong:{
           B:'60π comes from π(2)(3)(10), mixing up the volume formula with something like “2rh” (lateral area / r).',
           C:'30π comes from π(3)(10): you used the radius WITHOUT squaring it. The formula calls for r².',

@@ -10,7 +10,7 @@
     questions: [
       {
         id:'DAT-01', type:'mc', domain:'Problem-Solving & Data Analysis', difficulty:'Fácil',
-        skill:'Porcentajes (porcentaje de un total)',
+        skill:'Percents (percent of a total)',
         stem:'A school has 350 students. If 40% of the students are in the band, how many students are in the band?',
         choices:{A:'40', B:'140', C:'210', D:'245'},
         correct:'B',
@@ -24,15 +24,15 @@
       },
       {
         id:'DAT-02', type:'mc', domain:'Problem-Solving & Data Analysis', difficulty:'Fácil',
-        skill:'Porcentajes (porcentaje de cambio)',
+        skill:'Percents (percent change)',
         stem:'A plant was 60 centimeters tall. Over the summer it grew to 75 centimeters tall. What was the percent increase in the height of the plant?',
         choices:{A:'15%', B:'20%', C:'25%', D:'75%'},
         correct:'C',
-        expCorrect:'Aumento porcentual = (cambio / valor original) × 100 = (75 − 60)/60 × 100 = 15/60 × 100 = 25%.',
+        expCorrect:'Percent increase = (change / original value) × 100 = (75 − 60)/60 × 100 = 15/60 × 100 = 25%.',
         expWrong:{
           A:'15% confuses the absolute change (15 cm) with the percent. You have to divide by the original value.',
           B:'20% comes from dividing the change by the NEW value (15/75), but percent change is always figured on the original value.',
-          D:'75% es la altura final en cm, no un porcentaje de cambio.'
+          D:'75% is the final height in cm, not a percent change.'
         },
         tip:'Percent change = (new − old) / OLD. The denominator is always the starting value. Divide by 75 and you have already gone wrong.'
       },
@@ -52,14 +52,14 @@
       },
       {
         id:'DAT-04', type:'mc', domain:'Problem-Solving & Data Analysis', difficulty:'Media',
-        skill:'Tasas y unidades (velocidad constante)',
+        skill:'Rates and units (constant speed)',
         stem:'A train travels 150 miles in 2.5 hours at a constant speed. At this rate, how many miles will the train travel in 4 hours?',
         choices:{A:'96', B:'160', C:'240', D:'375'},
         correct:'C',
-        expCorrect:'Velocidad = 150 / 2.5 = 60 millas por hora. En 4 horas: 60 × 4 = 240 millas.',
+        expCorrect:'Speed = 150 / 2.5 = 60 miles per hour. In 4 hours: 60 × 4 = 240 miles.',
         expWrong:{
           A:'96 flips the ratio (it multiplies by 2.5/4 instead of by the speed).',
-          B:'160 usa una velocidad mal calculada; 150/2.5 = 60, no 40.',
+          B:'160 uses a miscomputed speed; 150/2.5 = 60, not 40.',
           D:'375 comes from 150 × 2.5, multiplying instead of dividing to find the rate.'
         },
         tip:'First get the unit rate (miles per HOUR = distance/time), then multiply by the new time. Divide before you multiply and you dodge the trap.'
@@ -69,7 +69,7 @@
         skill:'One-variable statistics (mean/average)',
         stem:'A student scored 12, 15, 18, 20, and 25 points in five games. What is the mean (average) number of points the student scored per game?',
         answer:'18',
-        expCorrect:'Media = suma / cantidad. Suma = 12 + 15 + 18 + 20 + 25 = 90. Media = 90 / 5 = 18. Respuesta: 18.',
+        expCorrect:'Mean = sum / count. Sum = 12 + 15 + 18 + 20 + 25 = 90. Mean = 90 / 5 = 18. Answer: 18.',
         expWrong:{},
         tip:'Mean = the sum of all the values divided by how many there are. Do not confuse it with the median (here the middle ordered value is also 18, but that is a coincidence).'
       },
@@ -94,7 +94,7 @@
       },
       {
         id:'DAT-07', type:'spr', domain:'Problem-Solving & Data Analysis', difficulty:'Media',
-        skill:'Probabilidad (evento simple)',
+        skill:'Probability (single event)',
         stem:'A bag contains 30 marbles: 12 are red, 8 are green, and 10 are blue. If one marble is selected at random from the bag, what is the probability that it is red?',
         answer:'2/5',
         expCorrect:'Probability = favorable cases / total cases = 12 / 30 = 2/5. Valid forms for the box: 2/5 or .4 or 0.4 (also 12/30, the same value). Answer: 2/5.',
@@ -103,7 +103,7 @@
       },
       {
         id:'DAT-08', type:'mc', domain:'Problem-Solving & Data Analysis', difficulty:'Difícil',
-        skill:'Probabilidad condicional (tabla de doble entrada en palabras)',
+        skill:'Conditional probability (a two-way table in words)',
         stem:'A survey was given to 200 people. Of the 120 adults surveyed, 90 said they prefer tea over coffee. If one of the surveyed adults is selected at random, what is the probability that this person prefers tea over coffee?',
         choices:{A:'0.375', B:'0.45', C:'0.60', D:'0.75'},
         correct:'D',
@@ -125,13 +125,13 @@
         expWrong:{
           A:'68 comes from adding 8 + 60, forgetting to multiply by the slope 2.5.',
           C:'62.5 comes from adding 2.5 + 60 (using x wrong, as if x = 1).',
-          D:'140 multiplica todo mal: 2.5 × 8 = 20, no 80. La cuenta correcta da 80.'
+          D:'140 multiplies everything wrong: 2.5 × 8 = 20, not 80. The correct computation gives 80.'
         },
         tip:'"Prediction with the line of best fit" = substitute the x value into the equation and compute y. Respect the order: multiply the slope by x BEFORE adding the intercept.'
       },
       {
         id:'DAT-10', type:'mc', domain:'Problem-Solving & Data Analysis', difficulty:'Difícil',
-        skill:'Porcentajes (dos cambios porcentuales sucesivos)',
+        skill:'Percents (two successive percent changes)',
         stem:'The price of a product was first increased by 20%. Later, the new price was decreased by 10%. The final price is what percent of the original price?',
         choices:{A:'108%', B:'110%', C:'100%', D:'90%'},
         correct:'A',

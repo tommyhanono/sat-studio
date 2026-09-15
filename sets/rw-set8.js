@@ -9,7 +9,7 @@ window.SAT_SETS.push({
   questions: [
     {
       id:'GRM-01', type:'mc', domain:'Standard English Conventions', difficulty:'Difícil',
-      skill:'Concordancia sujeto-verbo',
+      skill:'Subject-verb agreement',
       passage:"The collection of rare beetles that the museum acquired from a retired entomologist %BLANK% dozens of species never before recorded in the region.",
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'include', B:'includes', C:'have included', D:'were including'},
@@ -17,14 +17,14 @@ window.SAT_SETS.push({
       expCorrect:'The subject is “The collection” (singular). The phrase “of rare beetles that the museum acquired…” only describes the subject and does not change it. A singular subject calls for a singular verb: “includes”.',
       expWrong:{
         A:'“include” is plural; it agrees with “beetles”, not with the real subject “The collection” (singular).',
-        C:'“have included” es plural; el sujeto singular “collection” pide “has”, no “have”.',
-        D:'“were including” es plural y pasado; el sujeto singular “collection” pide un verbo singular en presente.'
+        C:'“have included” is plural; the singular subject “collection” calls for “has”, not “have”.',
+        D:'“were including” is plural and past tense; the singular subject “collection” calls for a singular present-tense verb.'
       },
       tip:'Cover the phrase between the subject and the verb (“of… entomologist”). What is left is “The collection ___”: singular calls for a singular verb.'
     },
     {
       id:'GRM-02', type:'mc', domain:'Standard English Conventions', difficulty:'Difícil',
-      skill:'Concordancia sujeto-verbo',
+      skill:'Subject-verb agreement',
       passage:"Neither the lead architect nor her three assistants %BLANK% able to explain why the building’s east wing had settled several centimeters in its first year.",
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'was', B:'has been', C:'is', D:'were'},
@@ -39,16 +39,16 @@ window.SAT_SETS.push({
     },
     {
       id:'GRM-03', type:'mc', domain:'Standard English Conventions', difficulty:'Media',
-      skill:'Concordancia sujeto-verbo',
+      skill:'Subject-verb agreement',
       passage:"Hidden beneath the layers of dried paint on the old canvas %BLANK% a faint pencil sketch that the artist had drawn years before beginning the final portrait.",
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'were', B:'are', C:'was', D:'have been'},
       correct:'C',
       expCorrect:'The sentence is inverted: the real subject comes after the verb. The subject is “a faint pencil sketch” (singular), so the verb is singular and past tense: “was”.',
       expWrong:{
-        A:'“were” es plural; el sujeto “a faint pencil sketch” es singular.',
+        A:'“were” is plural; the subject “a faint pencil sketch” is singular.',
         B:'“are” is plural and present tense; the subject is singular and the text is in the past.',
-        D:'“have been” es plural; el sujeto singular “a sketch” pide un verbo singular.'
+        D:'“have been” is plural; the singular subject “a sketch” calls for a singular verb.'
       },
       tip:'When the sentence opens with a place (“Beneath…”), look for the subject AFTER the verb. Here it is “a sketch” (singular).'
     },
@@ -129,7 +129,7 @@ window.SAT_SETS.push({
     },
     {
       id:'GRM-09', type:'mc', domain:'Standard English Conventions', difficulty:'Difícil',
-      skill:'Concordancia de pronombres',
+      skill:'Pronoun agreement',
       passage:"Each of the researchers presenting at the conference was asked to bring a copy of %BLANK% latest findings so the panel could compare the data side by side.",
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'their', B:'his or her', C:'its', D:'our'},
@@ -144,7 +144,7 @@ window.SAT_SETS.push({
     },
     {
       id:'GRM-10', type:'mc', domain:'Standard English Conventions', difficulty:'Media',
-      skill:'Concordancia de pronombres',
+      skill:'Pronoun agreement',
       passage:"The debate team celebrated after the regional finals, proud that %BLANK% months of preparation had finally paid off in a decisive victory over the defending champions.",
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'its', B:'their', C:'it’s', D:'they’re'},
@@ -153,13 +153,13 @@ window.SAT_SETS.push({
       expWrong:{
         B:'“their” is plural; the text treats the team as a single unit.',
         C:'“it’s” means “it is”; here you need the possessive “its”, with no apostrophe.',
-        D:'“they’re” significa “they are” (plural) y no es posesivo; no puede describir “months of preparation”.'
+        D:'“they’re” means “they are” (plural) and is not a possessive; it cannot describe “months of preparation”.'
       },
       tip:'The possessive of “it” is “its” (no apostrophe). “it’s” always means “it is”.'
     },
     {
       id:'GRM-11', type:'mc', domain:'Standard English Conventions', difficulty:'Difícil',
-      skill:'Posesivos',
+      skill:'Possessives',
       passage:"After a long day guiding tourists through the canyon, the two %BLANK% boots were caked with the reddish dust that coated every trail in the park.",
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'guides’', B:'guide’s', C:'guides', D:'guides’s'},
@@ -174,7 +174,7 @@ window.SAT_SETS.push({
     },
     {
       id:'GRM-12', type:'mc', domain:'Standard English Conventions', difficulty:'Media',
-      skill:'Posesivos',
+      skill:'Possessives',
       passage:"The novelist insisted that the success of her latest book belonged to her editors, whose careful attention to %BLANK% pacing had transformed a rough draft into a bestseller.",
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'its', B:'it’s', C:'their', D:'the storys'},

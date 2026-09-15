@@ -50,7 +50,8 @@ if (modo === 'meter') {
     // así que una comilla recta puede cerrar la cadena destino y romper el archivo.
     const sueltas = (en.match(/(^|[^\\])'/g) || []).length;
     if (sueltas) { malos.push(k + ': comilla simple sin escapar (usa \u2019)'); continue; }
-    if (en.includes('"')) { malos.push(k + ': comilla doble recta (usa \u201c \u201d)'); continue; }
+    const dobles = (en.match(/(^|[^\\])"/g) || []).length;
+    if (dobles) { malos.push(k + ': comilla doble sin escapar (usa \u201c \u201d o \\")'); continue; }
     items[i].en = en; n++;
   }
   fs.writeFileSync(LISTA, JSON.stringify(items, null, 1));

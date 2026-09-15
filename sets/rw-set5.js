@@ -62,7 +62,7 @@ window.SAT_SETS.push({
       expCorrect:'The 1st idea says libraries lend far more than books; the 2nd gives the concrete list (tools, telescopes, games…) that proves it. “For example” introduces that example.',
       expWrong:{
         A:'“Nevertheless” marks contrast, but the 2nd idea does not oppose the 1st: it confirms it with cases.',
-        C:'“As a result” marca consecuencia, y la lista no es un efecto de la 1ª idea, es un ejemplo de ella.',
+        C:'“As a result” marks consequence, and the list is not an effect of the 1st idea, it is an example of it.',
         D:'“Meanwhile” signals something happening at the same time elsewhere, but there are no two parallel scenes here.'
       },
       tip:'If the 2nd sentence gives concrete cases that prove the 1st, it is exemplification: “For example” or “For instance”.'

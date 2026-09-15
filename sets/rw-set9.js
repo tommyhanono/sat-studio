@@ -122,7 +122,7 @@ window.SAT_SETS.push({
       expCorrect:'The goal is to highlight the TRUST the astronauts placed in Johnson. D shows it directly: Glenn trusted her so much that he would not lift off until she checked the numbers by hand. It meets the goal with accurate notes.',
       expWrong:{
         A:'It introduces who she was, but says nothing about the trust placed in her.',
-        B:'Habla de la computadora y los ingenieros; no muestra confianza en Johnson.',
+        B:'It is about the computer and the engineers; it does not show trust in Johnson.',
         C:'It gives an achievement (Shepard’s flight), but does not demonstrate the astronauts’ trust in her.'
       },
       tip:'"Emphasize the trust" = look for the option where someone ACTS because they trust her, not a standalone achievement.'
@@ -163,7 +163,7 @@ window.SAT_SETS.push({
       expWrong:{
         A:'It is about the launch and the golden record; it does not emphasize the distance.',
         C:'It mentions a milestone (interstellar space), but not how far it has traveled in distance.',
-        D:'Describe la carga de la sonda, no la distancia recorrida.'
+        D:'It describes the probe’s payload, not the distance traveled.'
       },
       tip:'"Emphasize how far" = choose the option with the DISTANCE data (kilometers, signal time), not a milestone or the payload.'
     },

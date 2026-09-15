@@ -137,7 +137,7 @@ window.SAT_SETS.push({
       expCorrect:'The apology sounds mechanical, full of hedges and with no feeling, and it convinces nobody of real remorse. “Perfunctory” describes something done as a mere formality, with no interest or sincerity: that covers all of it.',
       expWrong:{
         B:'“Belated” is TRUE — it did come late — but it covers only one clue; the rejection is mostly because it sounded hollow and forced, not only because of the delay.',
-        C:'“Eloquent” (elocuente) contradice “flat monotone”: fue plana, no brillante.',
+        C:'“Eloquent” contradicts “flat monotone”: it was flat, not brilliant.',
         D:'“Inflammatory” does not apply: a bland, hedged apology does not provoke anyone; it leaves people cold.'
       },
       tip:'When several clues point the same way (mechanical + hedged + no emotion), pick the word that SUMS THEM UP (“perfunctory”), not one that describes a single detail like the delay (“belated”).'

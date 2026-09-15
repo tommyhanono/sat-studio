@@ -91,7 +91,7 @@ window.SAT_SETS.push({
       id:'RHD-05', type:'mc', domain:'Expression of Ideas', difficulty:'Media',
       skill:'Rhetorical Synthesis',
       passage:"",
-      stem:"While researching a topic, a student has taken the following notes:<ul><li>Two orchestras recorded the same symphony for a listening study.</li><li>Orchestra X played on modern steel-string instruments.</li><li>Orchestra Y played on gut-string instruments from the composer's era.</li><li>Listeners rated both recordings as equally enjoyable overall.</li><li>Listeners described Orchestra Y's tone as \"warmer\" and \"softer.\"</li><li>Listeners described Orchestra X's tone as \"brighter\" and \"louder.\"</li></ul>The student wants to describe how listeners perceived the difference in tone between the two orchestras. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
+      stem:"While researching a topic, a student has taken the following notes:<ul><li>Two orchestras recorded the same symphony for a listening study.</li><li>Orchestra X played on modern steel-string instruments.</li><li>Orchestra Y played on gut-string instruments from the composer’s era.</li><li>Listeners rated both recordings as equally enjoyable overall.</li><li>Listeners described the tone of Orchestra Y as \"warmer\" and \"softer.\"</li><li>Listeners described the tone of Orchestra X as \"brighter\" and \"louder.\"</li></ul>The student wants to describe how listeners perceived the difference in tone between the two orchestras. Which choice most effectively uses relevant information from the notes to accomplish this goal?",
       choices:{
         A:'Listeners rated the two recordings as equally enjoyable overall.',
         B:'Orchestra X played on modern steel-string instruments, while Orchestra Y used gut-string instruments from the composer’s era.',
@@ -101,7 +101,7 @@ window.SAT_SETS.push({
       correct:'C',
       expCorrect:'The goal asks how listeners PERCEIVED the difference in TONE. C pairs the two perceptions: Orchestra Y sounded "warmer/softer" and Orchestra X "brighter/louder". That is exactly the tonal difference the listeners described.',
       expWrong:{
-        A:'Reporta que gustaron igual (enjoyment), no la diferencia de tono.',
+        A:'It reports that both were equally enjoyed, not the difference in tone.',
         B:'It contrasts the instruments (steel vs. gut), not how listeners perceived the tone.',
         D:'It gives the study setup; it never mentions any perception of tone.'
       },

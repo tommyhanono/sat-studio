@@ -8,7 +8,7 @@ window.SAT_SETS.push({
   questions: [
     {
       id:'RW-001', type:'mc', domain:'Standard English Conventions', difficulty:'Fácil',
-      skill:'Elementos no esenciales (comas en pareja)',
+      skill:'Non-essential elements (paired commas)',
       passage:"In 2021, engineer Ada Reyes founded Solaria, a startup that converts food waste into biodegradable packaging. The company's first %BLANK% a compostable takeout container, sold out within weeks of its launch.",
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'product', B:'product,', C:'product:', D:'product\u2014'},
@@ -31,7 +31,7 @@ window.SAT_SETS.push({
       expCorrect:'There are two independent clauses: "Some deep-sea fish produce…" and "others rely…". The semicolon is the correct way to join them without a conjunction.',
       expWrong:{
         A:'A ";" has to sit between two independent clauses, but "while others rely…" is subordinate → it creates a fragment.',
-        B:'Coma sola entre dos oraciones completas = comma splice.',
+        B:'A lone comma between two complete sentences = comma splice.',
         D:'"however" between commas can NOT join two independent clauses; you would need "; however," → as written, it is still a comma splice.'
       },
       tip:'The period test: if you can drop in a period and both halves are complete sentences, a ";" is valid there.'
@@ -90,15 +90,15 @@ window.SAT_SETS.push({
       correct:'D',
       expCorrect:'"Many" signals plural → hummingbirds. The nests belong to them → possessive. The possessive of a plural ending in -s is an apostrophe after the s: hummingbirds\u2019.',
       expWrong:{
-        A:'Posesivo singular — contradice "Many".',
+        A:'A singular possessive — it contradicts “Many”.',
         B:'Plural with no apostrophe → it does not mark ownership of the "nests".',
-        C:'Forma inexistente para plurales regulares terminados en -s.'
+        C:'A form that does not exist for regular plurals ending in -s.'
       },
       tip:'Two quick questions: is it plural? does it own something? Plural + ownership → s\u2019 (apostrophe at the end).'
     },
     {
       id:'RW-007', type:'mc', domain:'Standard English Conventions', difficulty:'Difícil',
-      skill:'Punto y coma en listas complejas',
+      skill:'Semicolons in complex lists',
       passage:"The documentary features interviews with three pioneers of electronic music: Wendy Carlos, who popularized the %BLANK% Delia Derbyshire, who composed haunting scores for early television; and Halim El-Dabh, who experimented with tape recorders in the 1940s.",
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'synthesizer,', B:'synthesizer:', C:'synthesizer;', D:'synthesizer\u2014'},
@@ -135,7 +135,7 @@ window.SAT_SETS.push({
       correct:'D',
       expCorrect:'There are two independent clauses and the second one EXPLAINS the first (why the system is "decentralized"). A colon can join two independent clauses when the second elaborates on or illustrates the first.',
       expWrong:{
-        A:'Coma sola entre dos independientes = comma splice.',
+        A:'A lone comma between two independent clauses = comma splice.',
         B:'No punctuation = fused sentence (run-on).',
         C:'"and" joining two independent clauses needs a comma BEFORE it: ", and". Without the comma it is wrong on the SAT.'
       },

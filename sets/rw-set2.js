@@ -8,7 +8,7 @@ window.SAT_SETS.push({
   questions: [
     {
       id:'RW-011', type:'mc', domain:'Standard English Conventions', difficulty:'Media',
-      skill:'Punto y coma entre dos oraciones independientes',
+      skill:'Semicolon between two independent sentences',
       passage:"Marie Tharp’s hand-drawn maps of the ocean floor were at first dismissed by many %BLANK% within a decade, her detailed rendering of the Mid-Atlantic Ridge had become central to the theory of plate tectonics.",
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'geologists,', B:'geologists', C:'geologists;', D:'geologists:'},
@@ -38,7 +38,7 @@ window.SAT_SETS.push({
     },
     {
       id:'RW-013', type:'mc', domain:'Standard English Conventions', difficulty:'Media',
-      skill:'Elemento no esencial (comas en pareja)',
+      skill:'Non-essential element (paired commas)',
       passage:"The %BLANK% a salamander that never fully leaves its larval stage, can regrow not only lost limbs but also portions of its heart and brain.",
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'axolotl', B:'axolotl:', C:'axolotl;', D:'axolotl,'},
@@ -68,14 +68,14 @@ window.SAT_SETS.push({
     },
     {
       id:'RW-015', type:'mc', domain:'Standard English Conventions', difficulty:'Fácil',
-      skill:'Coma tras frase introductoria',
+      skill:'Comma after an introductory phrase',
       passage:"After tracking the wolf pack across the tundra for nearly two %BLANK% the researchers finally located the den where the pups had been born.",
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'months', B:'months:', C:'months,', D:'months;'},
       correct:'C',
       expCorrect:'“After tracking the wolf pack… for nearly two months” is an introductory phrase; when it opens the sentence, it is separated from the main clause with a comma.',
       expWrong:{
-        A:'Falta la coma obligatoria tras la frase introductoria.',
+        A:'The required comma after the introductory phrase is missing.',
         B:'A colon needs a complete sentence before it; this phrase is not one.',
         D:'A semicolon demands an independent sentence before it, and “After tracking…” is not one.'
       },
@@ -83,7 +83,7 @@ window.SAT_SETS.push({
     },
     {
       id:'RW-016', type:'mc', domain:'Standard English Conventions', difficulty:'Difícil',
-      skill:'No separar sujeto y verbo',
+      skill:'Do not separate subject and verb',
       passage:"The claim that regular exposure to natural daylight improves both sleep quality and daytime %BLANK% is now supported by dozens of independent studies.",
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'focus', B:'focus,', C:'focus;', D:'focus:'},
@@ -91,7 +91,7 @@ window.SAT_SETS.push({
       expCorrect:'The full subject is “The claim that… daytime focus” and its verb is “is”. The “that…” clause is essential (it defines which claim), so it takes no commas, and you never split a subject from its verb with a single comma, semicolon or colon.',
       expWrong:{
         B:'A comma between the subject (however long) and “is” is wrong.',
-        C:'El punto y coma pide oraciones independientes a ambos lados; “is supported…” no lo es.',
+        C:'A semicolon calls for independent sentences on both sides; “is supported…” is not one.',
         D:'The colon would split the subject from its verb.'
       },
       tip:'Long subjects “ask” for a pause when you read them, but grammar ≠ breathing. Find subject + verb and do NOT split them.'
@@ -143,14 +143,14 @@ window.SAT_SETS.push({
     },
     {
       id:'RW-020', type:'mc', domain:'Standard English Conventions', difficulty:'Difícil',
-      skill:'Punto y coma con adverbio conjuntivo (however)',
+      skill:'Semicolon with a conjunctive adverb (however)',
       passage:"The footbridge was engineered to flex slightly under heavy foot %BLANK% the designers had not accounted for the way hundreds of people unconsciously fall into step, amplifying its sway.",
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'traffic, however,', B:'traffic however,', C:'traffic; however', D:'traffic; however,'},
       correct:'D',
       expCorrect:'These are two independent sentences and the second one opens with the conjunctive adverb “however”. The correct pattern is: sentence 1 + semicolon + however + comma + sentence 2 → “…foot traffic; however, the designers…”.',
       expWrong:{
-        A:'“, however,” no puede unir dos oraciones completas: sigue siendo comma splice.',
+        A:'“, however,” cannot join two complete sentences: it is still a comma splice.',
         B:'The semicolon before “however” is missing.',
         C:'It is missing the comma AFTER “however”.'
       },
