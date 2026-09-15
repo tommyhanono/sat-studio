@@ -9,32 +9,36 @@
     minutes: 18,
     questions: [
       {
-        id:'AV2-01', type:'mc', domain:'Advanced Math', difficulty:'Fácil',
-        skill:'Exponential equations (same bases)',
-        stem:'If 2^(3x) = 2^12, what is the value of x?',
-        choices:{A:'3', B:'4', C:'9', D:'36'},
-        correct:'B',
-        expCorrect:'With the same base, the exponents have to be equal: 3x = 12 → x = 4. (Check: 2^(3·4) = 2^12 ✓.)',
+        id:'AV2-01', type:'mc', domain:'Advanced Math', difficulty:'Difícil',
+        skill:'Rational equations (extraneous solution)',
+        stem:'What is the solution to the equation x/(x − 4) = 4/(x − 4) + 3 ?',
+        choices:{A:'4', B:'−4', C:'0', D:'There is no solution'},
+        correct:'D',
+        expCorrect:'Multiply every term by (x − 4): x = 4 + 3(x − 4) → x = 4 + 3x − 12 → x = 3x − 8 → −2x = −8 → x = 4. But x = 4 makes both denominators zero, so it is not in the domain of the equation: it is extraneous. The only candidate fails, so the equation has no solution.',
         expWrong:{
-          A:'3 is the coefficient in the exponent, not the value of x. You still have to divide 12 by 3.',
-          C:'9 comes from subtracting 12 − 3 instead of dividing. The equation is 3x = 12, so you divide.',
-          D:'36 comes from multiplying 3 · 12. Set the exponents equal and DIVIDE: x = 12/3 = 4.'
+          A:'4 is what the algebra produces, and that is exactly the trap. Substitute it back: x − 4 = 0, so both fractions are undefined. A value that breaks a denominator can never be a solution.',
+          B:'−4 comes from a sign slip at the end: the equation reduces to −2x = −8, so x = +4, not −4.',
+          C:'0 comes from distributing 3(x − 4) as 3x − 4 instead of 3x − 12. That mistake turns the equation into x = 3x, which gives x = 0.'
         },
-        tip:'If a^m = a^n with the same base a, then m = n. Set the exponents equal and solve the linear equation — here 3x = 12.'
+        tip:'With an unknown in a denominator, write the excluded values BEFORE you solve (here x ≠ 4). Solve normally, then throw out any answer on that list. If every candidate is excluded, the honest answer is “no solution”.',
+        desmos:'Graph y=x/(x-4) and y=4/(x-4)+3: the two curves never touch, and x = 4 is a vertical asymptote of both.',
+        desmosLatex:['y=x/(x-4)','y=4/(x-4)+3']
       },
       {
-        id:'AV2-02', type:'mc', domain:'Advanced Math', difficulty:'Fácil',
-        skill:'Quadratics: factoring (roots)',
-        stem:'What is the positive solution to the equation x² + 2x − 15 = 0?',
-        choices:{A:'3', B:'5', C:'6', D:'15'},
-        correct:'A',
-        expCorrect:'Look for two numbers that multiply to −15 and add to +2: they are +5 and −3. You factor (x + 5)(x − 3) = 0, so x = −5 or x = 3. The positive solution is 3. (Check: 9 + 6 − 15 = 0 ✓.)',
+        id:'AV2-02', type:'mc', domain:'Advanced Math', difficulty:'Difícil',
+        skill:'Exponential models (solving for time)',
+        stem:'The number of bacteria in a culture is modeled by N(t) = 400(2)^(t/3), where t is the number of hours after the culture was prepared. After how many hours will the culture contain 6,400 bacteria?',
+        choices:{A:'4', B:'12', C:'16', D:'48'},
+        correct:'B',
+        expCorrect:'Divide out the starting amount first: 6,400 / 400 = 16, so 2^(t/3) = 16. Write 16 as a power of the same base: 16 = 2⁴, so t/3 = 4 and t = 12. (Check: N(12) = 400(2)⁴ = 400(16) = 6,400 ✓.)',
         expWrong:{
-          B:'5 is the absolute value of the NEGATIVE root (−5), not the positive one. Watch the sign.',
-          C:'6 is not a root: 36 + 12 − 15 = 33 ≠ 0. It does not satisfy the equation.',
-          D:'15 is the constant term c, not a root. Factor to find the solutions.'
+          A:'4 is the value of the exponent t/3, not of t. One step is missing: multiply by 3.',
+          C:'16 is how many times the culture grew (6,400 / 400), not how long it took. That 16 is the value of 2^(t/3), not of t.',
+          D:'48 comes from multiplying the growth factor by 3 (16 · 3). The 3 belongs to the exponent, not to the ratio: solve t/3 = 4 first.'
         },
-        tip:'For x² + bx + c: two numbers that MULTIPLY to c and ADD to b. Here product −15, sum +2 → +5 and −3. The roots are their opposites: −5 and 3.'
+        tip:'In an a(b)^(t/k) model, divide by the starting amount FIRST. That leaves b^(t/k) equal to a plain number; rewrite that number as a power of b and set the exponents equal. The k underneath is the last thing you undo.',
+        desmos:'Graph y=400*2^(x/3) and y=6400 and read the crossing: x = 12.',
+        desmosLatex:['y=400*2^(x/3)','y=6400']
       },
       {
         id:'AV2-03', type:'mc', domain:'Advanced Math', difficulty:'Media',

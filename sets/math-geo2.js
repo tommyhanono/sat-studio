@@ -157,17 +157,19 @@
       },
       {
         id:'GE2-10', type:'mc', domain:'Geometry & Trigonometry', difficulty:'Difícil',
-        skill:'Relationship between sine and cosine of complementary angles',
-        stem:'In a right triangle, the two acute angles are A and B. If sin A = 0.6, what is the value of cos B?',
-        choices:{A:'0.6', B:'0.8', C:'0.4', D:'1.6'},
-        correct:'A',
-        expCorrect:'In a right triangle the two acute angles are complementary (A + B = 90°). For complementary angles, sin A = cos B. That is why cos B = sin A = 0.6. (The side opposite A is the side adjacent to B, so both ratios use the same side over the hypotenuse.)',
+        skill:'Complementary angles with a variable inside the ratio',
+        stem:'If sin(3x)° = cos(x + 10)°, and 0 < x < 30, what is the value of x?',
+        choices:{A:'5', B:'20', C:'42.5', D:'50'},
+        correct:'B',
+        expCorrect:'sin(θ) = cos(90° − θ), so a sine and a cosine are equal when their angles are COMPLEMENTARY. Set the two angles to add to 90: 3x + (x + 10) = 90 → 4x + 10 = 90 → 4x = 80 → x = 20. (Check: sin 60° = cos 30° ✓, and 20 is inside 0 < x < 30.)',
         expWrong:{
-          B:'0.8 is cos A (using sin²A + cos²A = 1: cos A = √(1−0.36) = 0.8), but they want cos B, not cos A. And cos B = sin A = 0.6.',
-          C:'0.4 comes from computing 1 − 0.6. No identity gives that; the relationship is sin A = cos B directly.',
-          D:'1.6 adds 1 + 0.6. A cosine can never be greater than 1, so rule it out immediately.'
+          A:'5 comes from setting the angles EQUAL (3x = x + 10). That is what you would do for sin = sin; for sin = cos the angles are complementary, not equal.',
+          C:'42.5 comes from making the angles add to 180 instead of 90. Complementary means 90°, not supplementary. It also falls outside the given range 0 < x < 30.',
+          D:'50 comes from subtracting the angles instead of adding them: 3x − (x + 10) = 90 gives x = 50, which is also outside the given range.'
         },
-        tip:'Key SAT identity: for complementary angles (adding to 90°), sin(x) = cos(90° − x). In a right triangle the two acute angles are complementary, so sin A = cos B always.'
+        tip:'sin(A) = cos(B) means A + B = 90, not A = B. Write that sum, solve the linear equation, and then check the answer against any range the question gives you — the range is usually there to kill one of the other choices.',
+        desmos:'In degree mode, graph y=sin(3x) and y=cos(x+10) and look at the first crossing after x = 0: it lands on x = 20.',
+        desmosLatex:['y=\\sin(3x)','y=\\cos(x+10)']
       },
       {
         id:'GE2-11', type:'mc', domain:'Geometry & Trigonometry', difficulty:'Difícil',
