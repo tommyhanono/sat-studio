@@ -114,7 +114,7 @@ const sleep = ms => new Promise(r => setTimeout(r, ms));
     });
     check('P4 20 min arma 12 preguntas', t20.n === 12, t20);
     check('P4b sin repetir ninguna', t20.unicos === t20.n, t20);
-    check('P4c el título dice de qué es', /Círculos|Puntuación/.test(t20.titulo), t20.titulo);
+    check('P4c el título dice de qué es', /Circles|Punctuation/.test(t20.titulo), t20.titulo);
     check('P4d math + verbal se marca como mixto', t20.seccion === 'mixed', t20);
 
     const t10 = await page.evaluate(() => window.SATAPP.planBuildSet(['circles'], { minutos: 10, modo: 'drill', nivel: 'examen' }).questions.length);

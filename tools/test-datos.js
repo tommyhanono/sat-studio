@@ -359,7 +359,7 @@ const etiqueta = page => page.evaluate(() => window.SATAPP.syncLabel());
       await sleep(300);
       await page.evaluate(() => {
         window.__FAKE.online = false;
-        window.prompt = () => 'BORRAR';     // el usuario confirma de verdad
+        window.prompt = () => 'DELETE';     // el usuario confirma de verdad
         window.SATAPP.safeClearHistory();
       });
       await sleep(500);
@@ -487,7 +487,7 @@ const etiqueta = page => page.evaluate(() => window.SATAPP.syncLabel());
         return { msg: document.querySelector('#auth-msg').textContent, llamadas: window.__FAKE.calls.reset || 0 };
       });
       check('D14c sin correo escrito avisa en vez de fallar callado',
-            /correo/i.test(sinCorreo.msg), sinCorreo);
+            /email/i.test(sinCorreo.msg), sinCorreo);
 
       // El evento de recuperación NO entra a la app: pide la contraseña nueva.
       const recuperando = await page.evaluate(async () => {

@@ -4,8 +4,8 @@
 <meta charset="UTF-8">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='13' fill='%230b1f3a'/%3E%3Ctext x='32' y='44' font-family='Georgia,serif' font-size='34' font-weight='bold' text-anchor='middle' fill='%23ffc861'%3ES%3C/text%3E%3C/svg%3E">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SAT Studio — práctica del Digital SAT, estilo Bluebook</title>
-<meta name="description" content="Práctica gratuita del Digital SAT con la misma interfaz del Bluebook: 786 preguntas con explicación, exámenes adaptativos completos y un plan que sale de tus propios errores. Sin instalar nada.">
+<title>SAT Studio — Digital SAT practice, Bluebook style</title>
+<meta name="description" content="Free Digital SAT practice in the same interface as Bluebook: 786 explained questions, full adaptive practice tests, and a study plan built from your own mistakes. Nothing to install.">
 <meta name="author" content="SAT Studio">
 <meta name="theme-color" content="#324DC7">
 <style>
@@ -699,17 +699,17 @@
     <link rel="canonical" href="https://sat-studio.vercel.app/" />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://sat-studio.vercel.app/" />
-    <meta property="og:title" content="SAT Studio — práctica del Digital SAT, estilo Bluebook" />
-    <meta property="og:description" content="Práctica gratuita del Digital SAT con la misma interfaz del Bluebook: 786 preguntas con explicación, exámenes adaptativos completos y un plan que sale de tus propios errores. Sin instalar nada." />
+    <meta property="og:title" content="SAT Studio — Digital SAT practice, Bluebook style" />
+    <meta property="og:description" content="Free Digital SAT practice in the same interface as Bluebook: 786 explained questions, full adaptive practice tests, and a study plan built from your own mistakes. Nothing to install." />
     <meta property="og:locale" content="es_PA" />
     <meta property="og:site_name" content="SAT Studio" />
     <meta property="og:image" content="https://sat-studio.vercel.app/og.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="SAT Studio: práctica del Digital SAT con interfaz estilo Bluebook" />
+    <meta property="og:image:alt" content="SAT Studio: Digital SAT practice with a Bluebook-style interface" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="SAT Studio — práctica del Digital SAT, estilo Bluebook" />
-    <meta name="twitter:description" content="Práctica gratuita del Digital SAT con la misma interfaz del Bluebook: 786 preguntas con explicación, exámenes adaptativos completos y un plan que sale de tus propios errores. Sin instalar nada." />
+    <meta name="twitter:title" content="SAT Studio — Digital SAT practice, Bluebook style" />
+    <meta name="twitter:description" content="Free Digital SAT practice in the same interface as Bluebook: 786 explained questions, full adaptive practice tests, and a study plan built from your own mistakes. Nothing to install." />
     <meta name="twitter:image" content="https://sat-studio.vercel.app/og.png" />
     <script type="application/ld+json">
       {
@@ -718,14 +718,14 @@
         "name": "SAT Studio",
         "url": "https://sat-studio.vercel.app/",
         "applicationCategory": "EducationalApplication",
-        "operatingSystem": "Cualquiera con navegador",
+        "operatingSystem": "Any device with a browser",
         "inLanguage": ["es", "en"],
-        "description": "Práctica gratuita del Digital SAT con la misma interfaz del Bluebook: 786 preguntas con explicación, exámenes adaptativos completos y un plan que sale de tus propios errores. Sin instalar nada.",
+        "description": "Free Digital SAT practice in the same interface as Bluebook: 786 explained questions, full adaptive practice tests, and a study plan built from your own mistakes. Nothing to install.",
         "image": "https://sat-studio.vercel.app/og.png",
         "isAccessibleForFree": true,
         "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-        "educationalLevel": "Secundaria",
-        "teaches": "Digital SAT: Reading and Writing, y Math"
+        "educationalLevel": "High school",
+        "teaches": "Digital SAT: Reading and Writing, and Math"
       }
     </script>
 </head>
@@ -735,7 +735,7 @@
 <!-- ============ AUTH ============ -->
 <div id="view-auth" class="hidden">
   <div class="auth-card">
-    <div class="brand"><p class="brand-h">SAT Studio</p><span class="tag">Tu progreso, en la nube</span></div>
+    <div class="brand"><p class="brand-h">SAT Studio</p><span class="tag">Your progress, in the cloud</span></div>
     <p class="auth-sub">Sign in or create your account to save your history and see it from any device.</p>
     <label class="auth-lbl" for="auth-name">Name (optional)</label>
     <input id="auth-name" class="auth-inp" type="text" autocomplete="name" placeholder="Your name">
@@ -748,13 +748,13 @@
       <button id="auth-login-btn" class="btn-primary">Sign in</button>
       <button id="auth-signup-btn" class="btn-outline">Create account</button>
     </div>
-    <button id="auth-forgot" class="auth-forgot" type="button">¿Olvidaste tu contraseña?</button>
+    <button id="auth-forgot" class="auth-forgot" type="button">Forgot your password?</button>
 
     <div id="auth-newpass" class="auth-newpass hidden">
-      <p class="auth-np-t"><b>Elige tu contraseña nueva</b></p>
-      <label class="auth-lbl" for="auth-pass2">Contraseña nueva</label>
-      <input id="auth-pass2" class="auth-inp" type="password" autocomplete="new-password" placeholder="Mínimo 6 caracteres">
-      <button id="auth-savepass" class="btn-primary">Guardar y entrar</button>
+      <p class="auth-np-t"><b>Choose your new password</b></p>
+      <label class="auth-lbl" for="auth-pass2">New password</label>
+      <input id="auth-pass2" class="auth-inp" type="password" autocomplete="new-password" placeholder="At least 8 characters">
+      <button id="auth-savepass" class="btn-primary">Save and sign in</button>
     </div>
 
     <div class="auth-or"><span>o</span></div>
@@ -788,13 +788,13 @@
     <div id="set-sections"></div>
 
     <footer class="home-foot">
-      <p><b>SAT Studio</b> — práctica libre del Digital SAT. Las preguntas son originales;
-        College Board no patrocina ni avala esta herramienta.</p>
+      <p><b>SAT Studio</b> — free Digital SAT practice. All questions are original;
+        College Board does not sponsor or endorse this tool.</p>
       <p class="foot-links">
-        <a href="#g-hoy">Hoy</a> ·
-        <a href="#g-practicar">Practicar</a> ·
-        <a href="#g-examen">Examen completo</a> ·
-        <a href="https://github.com/tommyhanono/sat-studio" rel="noopener">Código</a>
+        <a href="#g-hoy">Today</a> ·
+        <a href="#g-practicar">Practice</a> ·
+        <a href="#g-examen">Full test</a> ·
+        <a href="https://github.com/tommyhanono/sat-studio" rel="noopener">Source</a>
       </p>
       <p class="foot-c">© <span id="foot-year"></span> SAT Studio</p>
     </footer>
@@ -845,7 +845,7 @@
 <div id="view-admin" class="hidden">
   <div class="admin-wrap">
     <div class="admin-head">
-      <div><p class="brand-h admin-h">Admin Panel</p><span class="admin-sub">SAT Studio · vista de administrador</span></div>
+      <div><p class="brand-h admin-h">Admin Panel</p><span class="admin-sub">SAT Studio · administrator view</span></div>
       <div class="admin-actions">
         <button class="btn-outline" id="btn-admin-refresh">↻ Refresh</button>
         <button class="btn-primary" id="btn-admin-back">← Back</button>
@@ -904,7 +904,7 @@
         <button id="mm-zoom-out">Zoom out (text −)</button>
         <button id="mm-zoom-reset">Reset zoom</button>
         <button id="mm-exit">Exit to menu</button>
-        <div class="mm-note">💡 Highlights &amp; Notes: selecciona texto del pasaje o del enunciado con el mouse para resaltar, subrayar o dejar una nota.</div>
+        <div class="mm-note">Highlights &amp; Notes: select text in the passage or the question with your mouse to highlight, underline or leave a note.</div>
       </div>
     </div>
   </header>
@@ -1121,9 +1121,9 @@ var SB = null;
 var SB_ERROR = '';
 try {
   if (window.supabase && /^https?:\/\//.test(SUPABASE_URL)) SB = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-  else SB_ERROR = 'no cargó la librería de Supabase';
+  else SB_ERROR = 'the Supabase library did not load';
 } catch(e){ SB_ERROR = (e && e.message) || 'error al crear el cliente'; }
-if(SB_ERROR) console.warn('SAT Studio: sin cuentas ni nube —', SB_ERROR, '· la app sigue funcionando y guarda en este navegador.');
+if(SB_ERROR) console.warn('SAT Studio: no accounts, no cloud sync —', SB_ERROR, '· the app still works and saves in this browser.');
 var currentUser = null;
 
 /* ================= STORAGE (safe wrapper: falls back to memory) ================= */
@@ -1158,8 +1158,8 @@ var store = (function(){
         mem[k] = raw;
         if(!window.__quotaAvisada && typeof toast === 'function'){
           window.__quotaAvisada = true;
-          toast('\u26a0\ufe0f Este navegador ya no tiene espacio para guardar. ' +
-                'Descarga tu historial desde Session History y libera espacio.', true);
+          toast('\u26a0\ufe0f This browser has run out of space to save. ' +
+                'Download your history from Session History and free some space.', true);
         }
         return false;
       }
@@ -1323,7 +1323,7 @@ function estimateScore(results){
    nada que reparar, pero queda registrado en la consola en vez de evaporarse. */
 function intenta(fn, que){
   try { return fn(); }
-  catch(e){ console.debug('SAT Studio · falló algo no crítico (' + (que || 'sin nombre') + '):', e && e.message); }
+  catch(e){ console.debug('SAT Studio · a non-critical step failed (' + (que || 'unnamed') + '):', e && e.message); }
 }
 /* Aviso no bloqueante: el estado de exito o de error se muestra en pantalla
    sin frenar al estudiante ni obligarlo a cerrar un cuadro de dialogo. */
@@ -1484,34 +1484,34 @@ var PLAN_DOMW = {   // peso oficial de cada dominio en el examen (College Board)
   'Craft and Structure':28, 'Information and Ideas':26, 'Standard English Conventions':26, 'Expression of Ideas':20
 };
 var PLAN_TOPICS = [
-  { key:'lineq',    sec:'math', dom:'Algebra', t:'Ecuaciones e inecuaciones lineales', m:/ecuaci[óo]n(es)? lineal|inecuaci|desigualdad|linear equation|inequalit/i },
-  { key:'systems',  sec:'math', dom:'Algebra', t:'Sistemas de ecuaciones', m:/sistema|system/i },
-  { key:'lines',    sec:'math', dom:'Algebra', t:'Rectas: pendiente e intercepto', m:/pendiente|recta|slope|intercept|línea recta|linear function|funci[óo]n lineal/i },
-  { key:'translate',sec:'math', dom:'Algebra', t:'Traducir enunciados a álgebra', m:/traducci[óo]n|modelo lineal|word problem|translat|plantear/i },
-  { key:'expr',     sec:'math', dom:'Algebra', t:'Expresiones equivalentes y valor absoluto', m:/expresi[óo]n(es)? equivalente|binomio|valor absoluto|absolute value|equivalent expression|fracci[óo]n o decimal|diferencia de cuadrados/i },
-  { key:'quad',     sec:'math', dom:'Advanced Math', t:'Cuadráticas', m:/cuadr[áa]tic|quadratic|par[áa]bola|discriminante|v[ée]rtice/i },
-  { key:'expo',     sec:'math', dom:'Advanced Math', t:'Exponentes y exponenciales', m:/exponen|semivida|decaimiento|crecimiento exponencial|logar[íi]tm|logarithm/i },
-  { key:'poly',     sec:'math', dom:'Advanced Math', t:'Polinomios y racionales', m:/polin[óo]m|racional|rational|factor|residuo|ceros|as[íi]ntot/i },
-  { key:'funcs',    sec:'math', dom:'Advanced Math', t:'Funciones: notación y transformaciones', m:/funci[óo]n|function|composit|composici|inversa|inverse|transformaci|traslaci|piecewise|por partes|dominio|domain|rango|end behavior|comportamiento en los extremos|constraint|modular|cubic/i },
-  { key:'percent',  sec:'math', dom:'Problem-Solving & Data Analysis', t:'Porcentajes', m:/porcentaje|percent|descuento|inter[ée]s/i },
-  { key:'prob',     sec:'math', dom:'Problem-Solving & Data Analysis', t:'Probabilidad y tablas', m:/probabilidad|probabilit|tabla de doble entrada|two-way|valor esperado|expected value|mutuamente|independien|permutaci|combinatoria|counting/i },
-  { key:'stats',    sec:'math', dom:'Problem-Solving & Data Analysis', t:'Estadística y lectura de datos', m:/media|mediana|moda|promedio|desviaci|dispersi|estad[íi]stic|margen de error|muestra|mean|median|standard deviation|gr[áa]fic|diagrama|scatter|histograma|graph|plot|l[íi]nea de mejor ajuste|best fit|dos variables|predicci/i },
-  { key:'rates',    sec:'math', dom:'Problem-Solving & Data Analysis', t:'Razones, proporciones y unidades', m:/raz[óo]n|proporci|tasa|unidad|densidad|escala|ratio|rate|unit/i },
-  { key:'circles',  sec:'math', dom:'Geometry & Trigonometry', t:'Círculos', m:/c[íi]rcul|circunferenc|arco|sector|tangen|radio/i },
-  { key:'trig',     sec:'math', dom:'Geometry & Trigonometry', t:'Triángulos y trigonometría', m:/tri[áa]ngulo|trigonometr|pit[áa]goras|sohcahtoa|semejan|congruen|seno|coseno|triangle|angle|[áa]ngulo|distancia|punto medio|midpoint|altura|hipotenusa/i },
-  { key:'solids',   sec:'math', dom:'Geometry & Trigonometry', t:'Volumen y sólidos', m:/volumen|s[óo]lido|cilindro|cono|esfera|prisma|[áa]rea superficial|volume|surface/i },
-  { key:'punct',    sec:'rw', dom:'Standard English Conventions', t:'Puntuación y límites de oración', m:/puntuaci|punctuation|coma|comma|punto y coma|semicolon|dos puntos|colon|raya|dash|boundar|l[íi]mites|coordinaci|coordination|par[ée]ntesis|interruptor|gui[óo]n|inciso/i },
-  { key:'verbs',    sec:'rw', dom:'Standard English Conventions', t:'Verbos: concordancia y tiempos', m:/verb|concordancia|agreement|tiempo verbal|tense|sujeto-verbo/i },
-  { key:'pronouns', sec:'rw', dom:'Standard English Conventions', t:'Pronombres y posesivos', m:/pronombre|pronoun|posesiv|possessive|ap[óo]strof|antecedent/i },
-  { key:'modif',    sec:'rw', dom:'Standard English Conventions', t:'Modificadores y estructura de la oración', m:/modificador|modifier|form, structure|estructura|sense|paralel|parallel|fragment|aposici|apositiv|sujeto pospuesto|comparaci[óo]n l[óo]gica|participial/i },
-  { key:'transit',  sec:'rw', dom:'Expression of Ideas', t:'Transiciones', m:/transici|transition/i },
-  { key:'synth',    sec:'rw', dom:'Expression of Ideas', t:'Síntesis retórica (las notas)', m:/synthesis|s[íi]ntesis|conclusion|notas/i },
-  { key:'wic',      sec:'rw', dom:'Craft and Structure', t:'Vocabulario en contexto', m:/words in context|word choice|vocabulario|palabra|significado|word in context|tone|tono|synonym|sin[óo]nim|meaning|irony|sarcas|attitude|actitud|context clue|nuance|matiz|academic vocab/i },
-  { key:'structure',sec:'rw', dom:'Craft and Structure', t:'Estructura y propósito del texto', m:/structure|purpose|prop[óo]sito|estructura|function of|l[óo]gica|premise|counterargument|rhetoric|ret[óo]ric|stance|persuasion|shift/i },
-  { key:'crosstext',sec:'rw', dom:'Craft and Structure', dom2:'Information and Ideas', t:'Textos pareados', m:/cross-text|paired|pareado|dos textos|both texts|passage a|perspective|compromise|across passages|agreement across|unstated disagreement/i },
-  { key:'evidence', sec:'rw', dom:'Information and Ideas', t:'Evidencia (textual y de datos)', m:/evidence|evidencia|quotation|cita|data in context|interpreting data|gr[áa]fic/i },
-  { key:'infer',    sec:'rw', dom:'Information and Ideas', t:'Inferencias y razonamiento', m:/inferen|inferir|implicat|fallacy|conditional|contradictor|complementar|reasoning|claim|synthesiz|position/i },
-  { key:'central',  sec:'rw', dom:'Information and Ideas', t:'Idea central y detalles', m:/central|main idea|idea principal|details|detalle|summar|resum/i }
+  { key:'lineq',    sec:'math', dom:'Algebra', t:'Linear equations & inequalities', m:/ecuaci[óo]n(es)? lineal|inecuaci|desigualdad|linear equation|inequalit/i },
+  { key:'systems',  sec:'math', dom:'Algebra', t:'Systems of equations', m:/sistema|system/i },
+  { key:'lines',    sec:'math', dom:'Algebra', t:'Lines: slope & intercept', m:/pendiente|recta|slope|intercept|línea recta|linear function|funci[óo]n lineal/i },
+  { key:'translate',sec:'math', dom:'Algebra', t:'Word problems into algebra', m:/traducci[óo]n|modelo lineal|word problem|translat|plantear/i },
+  { key:'expr',     sec:'math', dom:'Algebra', t:'Equivalent expressions & absolute value', m:/expresi[óo]n(es)? equivalente|binomio|valor absoluto|absolute value|equivalent expression|fracci[óo]n o decimal|diferencia de cuadrados/i },
+  { key:'quad',     sec:'math', dom:'Advanced Math', t:'Quadratics', m:/cuadr[áa]tic|quadratic|par[áa]bola|discriminante|v[ée]rtice/i },
+  { key:'expo',     sec:'math', dom:'Advanced Math', t:'Exponents & exponentials', m:/exponen|semivida|decaimiento|crecimiento exponencial|logar[íi]tm|logarithm/i },
+  { key:'poly',     sec:'math', dom:'Advanced Math', t:'Polynomials & rational functions', m:/polin[óo]m|racional|rational|factor|residuo|ceros|as[íi]ntot/i },
+  { key:'funcs',    sec:'math', dom:'Advanced Math', t:'Functions: notation & transformations', m:/funci[óo]n|function|composit|composici|inversa|inverse|transformaci|traslaci|piecewise|por partes|dominio|domain|rango|end behavior|comportamiento en los extremos|constraint|modular|cubic/i },
+  { key:'percent',  sec:'math', dom:'Problem-Solving & Data Analysis', t:'Percents', m:/porcentaje|percent|descuento|inter[ée]s/i },
+  { key:'prob',     sec:'math', dom:'Problem-Solving & Data Analysis', t:'Probability & two-way tables', m:/probabilidad|probabilit|tabla de doble entrada|two-way|valor esperado|expected value|mutuamente|independien|permutaci|combinatoria|counting/i },
+  { key:'stats',    sec:'math', dom:'Problem-Solving & Data Analysis', t:'Statistics & reading data', m:/media|mediana|moda|promedio|desviaci|dispersi|estad[íi]stic|margen de error|muestra|mean|median|standard deviation|gr[áa]fic|diagrama|scatter|histograma|graph|plot|l[íi]nea de mejor ajuste|best fit|dos variables|predicci/i },
+  { key:'rates',    sec:'math', dom:'Problem-Solving & Data Analysis', t:'Ratios, proportions & units', m:/raz[óo]n|proporci|tasa|unidad|densidad|escala|ratio|rate|unit/i },
+  { key:'circles',  sec:'math', dom:'Geometry & Trigonometry', t:'Circles', m:/c[íi]rcul|circunferenc|arco|sector|tangen|radio/i },
+  { key:'trig',     sec:'math', dom:'Geometry & Trigonometry', t:'Triangles & trigonometry', m:/tri[áa]ngulo|trigonometr|pit[áa]goras|sohcahtoa|semejan|congruen|seno|coseno|triangle|angle|[áa]ngulo|distancia|punto medio|midpoint|altura|hipotenusa/i },
+  { key:'solids',   sec:'math', dom:'Geometry & Trigonometry', t:'Volume & solids', m:/volumen|s[óo]lido|cilindro|cono|esfera|prisma|[áa]rea superficial|volume|surface/i },
+  { key:'punct',    sec:'rw', dom:'Standard English Conventions', t:'Punctuation & sentence boundaries', m:/puntuaci|punctuation|coma|comma|punto y coma|semicolon|dos puntos|colon|raya|dash|boundar|l[íi]mites|coordinaci|coordination|par[ée]ntesis|interruptor|gui[óo]n|inciso/i },
+  { key:'verbs',    sec:'rw', dom:'Standard English Conventions', t:'Verbs: agreement & tense', m:/verb|concordancia|agreement|tiempo verbal|tense|sujeto-verbo/i },
+  { key:'pronouns', sec:'rw', dom:'Standard English Conventions', t:'Pronouns & possessives', m:/pronombre|pronoun|posesiv|possessive|ap[óo]strof|antecedent/i },
+  { key:'modif',    sec:'rw', dom:'Standard English Conventions', t:'Modifiers & sentence structure', m:/modificador|modifier|form, structure|estructura|sense|paralel|parallel|fragment|aposici|apositiv|sujeto pospuesto|comparaci[óo]n l[óo]gica|participial/i },
+  { key:'transit',  sec:'rw', dom:'Expression of Ideas', t:'Transitions', m:/transici|transition/i },
+  { key:'synth',    sec:'rw', dom:'Expression of Ideas', t:'Rhetorical synthesis (the notes)', m:/synthesis|s[íi]ntesis|conclusion|notas/i },
+  { key:'wic',      sec:'rw', dom:'Craft and Structure', t:'Words in context', m:/words in context|word choice|vocabulario|palabra|significado|word in context|tone|tono|synonym|sin[óo]nim|meaning|irony|sarcas|attitude|actitud|context clue|nuance|matiz|academic vocab/i },
+  { key:'structure',sec:'rw', dom:'Craft and Structure', t:'Text structure & purpose', m:/structure|purpose|prop[óo]sito|estructura|function of|l[óo]gica|premise|counterargument|rhetoric|ret[óo]ric|stance|persuasion|shift/i },
+  { key:'crosstext',sec:'rw', dom:'Craft and Structure', dom2:'Information and Ideas', t:'Paired passages', m:/cross-text|paired|pareado|dos textos|both texts|passage a|perspective|compromise|across passages|agreement across|unstated disagreement/i },
+  { key:'evidence', sec:'rw', dom:'Information and Ideas', t:'Evidence (text & data)', m:/evidence|evidencia|quotation|cita|data in context|interpreting data|gr[áa]fic/i },
+  { key:'infer',    sec:'rw', dom:'Information and Ideas', t:'Inference & reasoning', m:/inferen|inferir|implicat|fallacy|conditional|contradictor|complementar|reasoning|claim|synthesiz|position/i },
+  { key:'central',  sec:'rw', dom:'Information and Ideas', t:'Central ideas & details', m:/central|main idea|idea principal|details|detalle|summar|resum/i }
 ];
 function planTopicOf(q){
   var sec = (q._section === 'math') ? 'math' : 'rw';
@@ -1680,9 +1680,9 @@ function planBuildSet(keys, opts){
   var hayMath = elegidas.some(function(q){ return q._section === 'math'; });
   var hayRW = elegidas.some(function(q){ return q._section !== 'math'; });
   return {
-    id: 'mi-plan', title: 'Mi plan — ' + titulos.slice(0, 3).join(' · ') + (titulos.length > 3 ? ' +' + (titulos.length - 3) : ''),
+    id: 'mi-plan', title: 'My plan — ' + titulos.slice(0, 3).join(' · ') + (titulos.length > 3 ? ' +' + (titulos.length - 3) : ''),
     section: hayMath && hayRW ? 'mixed' : (hayMath ? 'math' : 'rw'),
-    description: 'Test armado por ti a partir de tus propios resultados',
+    description: 'A test you built from your own results',
     minutes: Math.max(5, Math.round(elegidas.length * (hayMath ? 1.6 : 1.2))),
     questions: elegidas
   };
@@ -1923,19 +1923,19 @@ function renderHome(){
   var _dl = fwDaysLeft();
   if(_dl !== null && _dl <= 7 && _dl >= -1){
     var fw = fwPlanHTML();
-    G.hoy += homeSection('🚨 Semana final — tu plan día por día', fw.html, fw.badge, true);
+    G.hoy += homeSection('Final week — your day-by-day plan', fw.html, fw.badge, true);
   }
   {
     var stp = studyState();
     var mT = STUDY_TOPICS.filter(function(t){ return t.sec === 'math'; });
     var vT = STUDY_TOPICS.filter(function(t){ return t.sec === 'rw'; });
     var masteredAll = STUDY_TOPICS.filter(function(t){ return stp.topics[t.key].mastered; }).length;
-    var spBody = '<p class="study-hint">Ruta de dominio tema por tema. La regla: para dominar un tema hay que sacar una <b>ronda perfecta de 4/4</b> — un solo fallo rompe la ronda. Los dos exámenes finales exigen <b>100%</b>: si fallas uno, los temas de esa pregunta se reabren.</p>' +
-      '<h4 class="study-h">1 · Matemática</h4>' + mT.map(function(t){ return studyTopicCard(t, stp.topics[t.key]); }).join('') +
+    var spBody = '<p class="study-hint">Topic-by-topic mastery. The rule: to master a topic you need a <b>perfect 4/4 round</b> — one miss breaks it. Both finals demand <b>100%</b>: miss one and the topics behind that question reopen.</p>' +
+      '<h4 class="study-h">1 · Math</h4>' + mT.map(function(t){ return studyTopicCard(t, stp.topics[t.key]); }).join('') +
       '<h4 class="study-h">2 · Verbal</h4>' + vT.map(function(t){ return studyTopicCard(t, stp.topics[t.key]); }).join('') +
       '<h4 class="study-h">3 · Math Final (100%)</h4>' + studyFinalCard('math', stp) +
       '<h4 class="study-h">4 · English Final (100%)</h4>' + studyFinalCard('rw', stp);
-    G.entender += homeSection('🎯 Ruta de dominio', spBody, masteredAll + '/' + STUDY_TOPICS.length, true);
+    G.entender += homeSection('Mastery path', spBody, masteredAll + '/' + STUDY_TOPICS.length, true);
   }
   var dm = dailyMiniHTML();
   G.hoy += homeSection('🌅 Daily Mini Mocks', dm.html, (dm.streak > 0 ? '🔥 ' + dm.streak + ' · ' : '') + dm.done + '/2 today', true);
@@ -1943,11 +1943,11 @@ function renderHome(){
   if(tf) G.hoy += homeSection('🎯 Today’s Focus', tf, 3, true);
   var _ccSt = planStats().circles;
   var _ccMio = (_ccSt && _ccSt.hechas >= PLAN_MIN_MEDIDO)
-    ? ' Tú llevas <b>' + _ccSt.bien + '/' + _ccSt.hechas + '</b> en círculos.' : '';
-  var ccTeaser = '<p class="study-hint">Toda pregunta de círculos del SAT es una de <b>6 formas fijas</b>. Esta clase recorre cada una con su diagrama, un ejemplo resuelto y la trampa exacta donde se pierden los puntos, y termina soltándote en práctica difícil.' + _ccMio + '</p><button class="btn-primary" data-open-class="circles">Abrir la clase de círculos</button>';
+    ? ' You are at <b>' + _ccSt.bien + '/' + _ccSt.hechas + '</b> on circles.' : '';
+  var ccTeaser = '<p class="study-hint">Every SAT circle question is one of <b>6 fixed shapes</b>. This class walks each one with its diagram, a worked example and the exact trap where points get lost, then drops you into hard practice.' + _ccMio + '</p><button class="btn-primary" data-open-class="circles">Open the Circles class</button>';
   G.entender += homeSection('📐 Circles — Full Class', ccTeaser, 'NEW', true);
   var ptM = (typeof ptMasteredCount === 'function') ? ptMasteredCount() : 0;
-  var ptTeaser = '<p class="study-hint">La puntuación cuesta puntos cuando las REGLAS no son automáticas todavía. Este entrenador doesn’t give practice passages — it drills <b>the rules themselves</b>, over and over: every answer (right or wrong) shows you the full rule again, a rule is mastered only after <b>3 correct in a row</b>, and one miss resets it. When every dot is green, prove it with the <b>Perfect Run</b> — all questions, zero misses, or you start over.</p>' +
+  var ptTeaser = '<p class="study-hint">Punctuation costs points when the RULES are not automatic yet. This trainer doesn’t give practice passages — it drills <b>the rules themselves</b>, over and over: every answer (right or wrong) shows you the full rule again, a rule is mastered only after <b>3 correct in a row</b>, and one miss resets it. When every dot is green, prove it with the <b>Perfect Run</b> — all questions, zero misses, or you start over.</p>' +
     '<div class="pt-home-btns"><button class="btn-primary" data-pt="drill">Memorization drill</button><button class="btn-outline" data-pt="read">Read the 12 rules</button><button class="btn-outline" data-pt="perfect">Perfect Run</button></div>';
   G.entender += homeSection('🧠 Punctuation Rules — Know Them 100%', ptTeaser, ptM + '/12', true);
   var sr = spacedReviewHTML();
@@ -2073,11 +2073,11 @@ function renderHome(){
   G.practicar += homeSection('Things To Work On', redoCard('redo-math', 'Math', 'math') + redoCard('redo-verbal', 'Verbal', 'rw'), totalMissed || null, true);
   G.progreso += homeSection('Completed', completedSets.length ? completedSets.map(setCard).join('') : '<div class="empty-note">Nothing completed yet.</div>', completedSets.length, false);
   var GRUPOS = [
-    ['hoy',       'Hoy',           'Lo que te toca ahora mismo'],
-    ['entender',  'Entender',      'Clases y reglas, antes de practicar'],
-    ['practicar', 'Practicar',     'Sets por tema, a tu ritmo'],
-    ['examen',    'Examen completo','Simulacros cronometrados y adaptativos'],
-    ['progreso',  'Mi progreso',   'Lo que ya hiciste y lo que falta']
+    ['hoy',       'Today',         'What to do right now'],
+    ['entender',  'Learn',         'Lessons and rules, before you drill'],
+    ['practicar', 'Practice',      'Sets by topic, at your pace'],
+    ['examen',    'Full test',     'Timed, adaptive practice tests'],
+    ['progreso',  'My progress',   'What you have done, and what is left']
   ];
   var nav = '', cuerpo = '';
   GRUPOS.forEach(function(g){
@@ -2726,22 +2726,22 @@ function fwDayDate(off){
   b.setDate(b.getDate() - off);
   return fwDateStr(b);
 }
-var FW_DIAS = ['domingo','lunes','martes','miércoles','jueves','viernes','sábado'];
-var FW_MESES = ['ene','feb','mar','abr','may','jun','jul','ago','sep','oct','nov','dic'];
+var FW_DIAS = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+var FW_MESES = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 function fwBonito(iso){
   if(!iso) return '';
   var p = iso.split('-'), d = new Date(+p[0], +p[1] - 1, +p[2]);
-  return FW_DIAS[d.getDay()] + ' ' + d.getDate() + ' ' + FW_MESES[d.getMonth()];
+  return FW_DIAS[d.getDay()] + ', ' + FW_MESES[d.getMonth()] + ' ' + d.getDate();
 }
 function fwPlanHTML(){
   var st = fwLoad(), today = fwDateStr(), dl = fwDaysLeft(), ed = FW_EXAM_DATE_GET();
-  var html = '<div class="fw-head">📅 <b>Tu examen: ' + fwBonito(ed) + '</b> — ' +
-    (dl > 0 ? '<b>faltan ' + dl + ' día' + (dl === 1 ? '' : 's') + '</b>' : dl === 0 ? '<b>ES HOY. A darle.</b>' : 'ya pasó — mucha suerte con el resultado') + '.<br>' +
-    'Para abrir el Módulo 2 difícil (la puerta a los 700 puntos) necesitas <b>17/27</b> en R&amp;W y <b>16/22</b> en Math en el Módulo 1.</div>' +
-    '<div class="fw-goal">Esta es la última semana: no es para aprender temas nuevos, es para <b>afilar lo que ya sabes</b> y llegar descansado. Marca cada tarea al terminarla.</div>';
+  var html = '<div class="fw-head"><b>Your test: ' + fwBonito(ed) + '</b> — ' +
+    (dl > 0 ? '<b>' + dl + ' day' + (dl === 1 ? '' : 's') + ' to go</b>' : dl === 0 ? '<b>IT IS TODAY. Go get it.</b>' : 'already past — good luck with the score') + '.<br>' +
+    'To unlock the hard Module 2 (the door to 700) you need <b>17/27</b> on R&amp;W and <b>16/22</b> on Math in Module 1.</div>' +
+    '<div class="fw-goal">This is the last week: not for new topics, but for <b>sharpening what you already know</b> and showing up rested. Check off each task as you finish it.</div>';
   FW_PLAN.forEach(function(day, i){
     day.d = fwDayDate(day.off);
-    day.when = fwBonito(day.d) + (day.off === 0 ? ' · día del examen' : '');
+    day.when = fwBonito(day.d) + (day.off === 0 ? ' · test day' : '');
     var cls = 'fw-day' + (day.d === today ? ' today' : (day.d < today ? ' past' : '')) + (i === FW_PLAN.length - 1 ? ' exam' : '');
     var doneN = 0;
     var rows = day.tasks.map(function(t, j){
@@ -2753,7 +2753,7 @@ function fwPlanHTML(){
       '<div class="fw-focus">' + day.focus + '</div>' + rows +
       '<div style="text-align:right;margin-top:7px"><span class="fw-daycount">' + doneN + '/' + day.tasks.length + '</span></div></div>';
   });
-  var badge = dl > 0 ? 'faltan ' + dl + 'd' : dl === 0 ? 'HOY' : '✓';
+  var badge = dl > 0 ? dl + 'd left' : dl === 0 ? 'TODAY' : '✓';
   return { html: html, badge: badge };
 }
 function fwToggle(k, btn){
@@ -3124,14 +3124,14 @@ var STUDY_A_PLAN = { circles:'circles', poly:'poly', probstat:'prob', expo:'expo
 function studyPorQue(t){
   var k = STUDY_A_PLAN[t.key];
   var st = k ? planStats()[k] : null;
-  if(!st) return 'Tema del examen.';
+  if(!st) return 'A tested topic.';
   if(st.hechas >= PLAN_MIN_MEDIDO){
-    return 'Llevas <b>' + st.bien + '/' + st.hechas + '</b> (' + Math.round(st.acc * 100) + '%) en este tema · ' +
-      st.peso + '% del examen.';
+    return 'You are at <b>' + st.bien + '/' + st.hechas + '</b> (' + Math.round(st.acc * 100) + '%) here · ' +
+      st.peso + '% of the test.';
   }
   return st.hechas
-    ? 'Solo ' + st.hechas + ' pregunta' + (st.hechas === 1 ? '' : 's') + ' hasta ahora — todavía no se puede medir · ' + st.peso + '% del examen.'
-    : 'Todavía no lo has practicado · ' + st.peso + '% del examen.';
+    ? 'Only ' + st.hechas + ' question' + (st.hechas === 1 ? '' : 's') + ' so far — too few to measure · ' + st.peso + '% of the test.'
+    : 'Not practiced yet · ' + st.peso + '% of the test.';
 }
 function studyTopicCard(t, ts){
   var state = ts.mastered ? '<span class="study-badge done">✓ Mastered</span>'
@@ -3334,10 +3334,10 @@ function drillCardHTML(q){
     '<div class="drill-tags"><span class="res-diff">' + q.difficulty + '</span><span class="res-skill">' + q.domain + ' · ' + q.skill + '</span></div>';
   if(q.type === 'spr'){
     body += '<div class="res-answers">Your answer: <b class="' + (ok?'ok':'bad') + '">' + (user || '(blank)') + '</b> · Correct answer: <b class="ok">' + q.answer + '</b></div>';
-    body += '<h4>Explicación</h4><p>' + fmtExp(q.expCorrect, isMath) + '</p>';
+    body += '<h4>Explanation</h4><p>' + fmtExp(q.expCorrect, isMath) + '</p>';
   } else {
     body += '<div class="res-answers">Correct answer: <b class="ok">' + q.correct + ') ' + q.choices[q.correct] + '</b></div>';
-    body += '<h4>Por qué ' + q.correct + ' es correcta</h4><p>' + fmtExp(q.expCorrect, isMath) + '</p><h4>Why the others are wrong</h4>';
+    body += '<h4>Why ' + q.correct + ' is correct</h4><p>' + fmtExp(q.expCorrect, isMath) + '</p><h4>Why the others are wrong</h4>';
     ['A','B','C','D'].forEach(function(L){
       if(L === q.correct) return;
       body += '<p><strong>' + L + ')</strong> ' + fmtExp(q.expWrong[L], isMath) + '</p>';
@@ -3702,7 +3702,7 @@ function loadDesmos(){
       desmosLoading = false;
       $('#calc-status').classList.add('hidden');
       if(typeof ResizeObserver !== 'undefined'){
-        intenta(function(){ new ResizeObserver(function(){ if(desmosCalc) desmosCalc.resize(); }).observe($('#calc-panel').querySelector('.float-body')); }, 'observer de la calculadora');
+        intenta(function(){ new ResizeObserver(function(){ if(desmosCalc) desmosCalc.resize(); }).observe($('#calc-panel').querySelector('.float-body')); }, 'calculator observer');
       }
     } catch(e){ desmosFail(); }
   };
@@ -3745,13 +3745,13 @@ function setCalcMode(mode){
   if(mode === 'sci'){
     var mk = function(tries){
       if(window.Desmos && !sciCalc){
-        intenta(function(){ sciCalc = window.Desmos.ScientificCalculator($('#desmos-sci-root'), { keypad: true }); }, 'calculadora científica');
+        intenta(function(){ sciCalc = window.Desmos.ScientificCalculator($('#desmos-sci-root'), { keypad: true }); }, 'scientific calculator');
       }
-      if(sciCalc){ intenta(function(){ sciCalc.resize(); }, 'resize calculadora'); }
+      if(sciCalc){ intenta(function(){ sciCalc.resize(); }, 'calculator resize'); }
       else if(tries > 0){ setTimeout(function(){ mk(tries - 1); }, 300); }
     };
     mk(25);
-  } else if(desmosCalc){ intenta(function(){ desmosCalc.resize(); }, 'resize calculadora'); }
+  } else if(desmosCalc){ intenta(function(){ desmosCalc.resize(); }, 'calculator resize'); }
 }
 function escAttr(s){ return String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 // "In Desmos" help block shown under a Math explanation (uses q.desmos text + optional q.desmosLatex[]).
@@ -3814,20 +3814,20 @@ function toggleRef(){
 
 /* ================= PUNCTUATION CHEAT SHEET (adaptive) ================= */
 var CHEAT_RULES = {
-  'comma-intro':        { t:'Coma tras elemento introductorio', r:'Cuando la oración abre con una frase o cláusula introductoria, va una coma antes de la oración principal.', ok:'After the experiment ended, the team analyzed the data.', bad:'After the experiment ended the team analyzed the data.' },
-  'comma-nonessential': { t:'Elemento no esencial → comas EN PAREJA', r:'Si puedes quitar el pedazo y la oración sigue completa y con sentido, va entre DOS comas (una antes y una después).', ok:'The bridge, built in 1902, still carries traffic.', bad:'The bridge, built in 1902 still carries traffic.' },
-  'comma-fanboys':      { t:'Coma + FANBOYS', r:'Dos oraciones completas se unen con coma + conjunción coordinante (for, and, nor, but, or, yet, so). La coma va ANTES de la conjunción.', ok:'The data was incomplete, so the team repeated the trial.', bad:'The data was incomplete, the team repeated the trial.' },
-  'comma-unnecessary':  { t:'SIN coma (coma innecesaria)', r:'Nunca separes con una sola coma el sujeto de su verbo, ni el verbo de su complemento. Si nada exige puntuación, la respuesta correcta es SIN puntuación.', ok:'The results of the study suggest a new pathway.', bad:'The results of the study, suggest a new pathway.' },
-  'semicolon':          { t:'Punto y coma = 2 oraciones completas', r:'El punto y coma une dos oraciones INDEPENDIENTES relacionadas, sin conjunción. Prueba: cada lado debe poder ser su propia oración.', ok:'The first trial failed; the second one succeeded.', bad:'The first trial failed; because of the heavy rain.' },
-  'semicolon-adverb':   { t:'; however, (adverbio conjuntivo)', r:'however, therefore, moreover, meanwhile… entre dos oraciones completas piden PUNTO Y COMA antes y coma después. Coma sola = comma splice.', ok:'The plan seemed solid; however, the costs doubled.', bad:'The plan seemed solid, however, the costs doubled.' },
-  'colon':              { t:'Dos puntos: presentan algo', r:'Los dos puntos van SOLO después de una oración completa, para introducir una lista, explicación o cita. Lo de antes debe poder terminar en punto.', ok:'She packed three tools: a map, a rope, and a lamp.', bad:'She packed: a map, a rope, and a lamp.' },
-  'dash':               { t:'Rayas en pareja', r:'Las rayas encierran un elemento no esencial igual que las comas — pero NO se mezclan: si abres con raya, cierras con raya.', ok:'The reef — once nearly dead — is recovering fast.', bad:'The reef — once nearly dead, is recovering fast.' },
-  'boundaries':         { t:'Comma splice / run-on', r:'Dos oraciones completas NO se unen con solo una coma (ni pegadas sin nada). Arreglos válidos: punto · punto y coma · coma + FANBOYS · subordinar una.', ok:'The tide rose, so the crew moved inland.', bad:'The tide rose, the crew moved inland.' },
-  'possessive':         { t:'Apóstrofos posesivos', r:'Singular: dog’s. Plural terminado en -s: dogs’. its = posesivo (sin apóstrofo); it’s = “it is”. El plural simple NUNCA lleva apóstrofo.', ok:'The two teams’ coaches met after the game.', bad:'The two team’s coaches met after the game.' },
-  'coordination':       { t:'Coordinación de cláusulas', r:'Formas VÁLIDAS de unir dos cláusulas: coma + FANBOYS · punto y coma · subordinar una (although, because, while…). Una cláusula subordinada NUNCA se queda sola como oración.', ok:'Although the museum was closed, the tour continued outside.', bad:'Although the museum was closed. The tour continued outside.' },
-  'verb-agreement':     { t:'Concordancia sujeto–verbo', r:'El verbo concuerda con el SUJETO real, no con la frase intermedia (“of the students…”). Tapa lo que está entre comas o tras “of”. each/either/neither → singular. En orden invertido, busca el sujeto DESPUÉS del verbo.', ok:'The collection of rare maps was donated to the library.', bad:'The collection of rare maps were donated to the library.' },
-  'pronoun-agreement':  { t:'Concordancia de pronombres', r:'El pronombre concuerda en número con su antecedente: antecedente singular → it/its; plural → they/their. Verifica QUIÉN es el antecedente exacto. who = sujeto, whom = objeto.', ok:'Each device saves its settings automatically.', bad:'Each device saves their settings automatically.' },
-  'verb-forms':         { t:'Formas y tiempos verbales', r:'Mantén el tiempo verbal consistente con el contexto (marcadores como “in 1990”, “today”, “by next year” mandan). Tras “to” va la forma base; los verbos en listas paralelas deben tener la misma forma.', ok:'In 1962, the lab developed a faster method.', bad:'In 1962, the lab develops a faster method.' }
+  'comma-intro':        { t:'Coma tras elemento introductorio', r:'When a sentence opens with an introductory phrase or clause, put a comma before the main sentence.', ok:'After the experiment ended, the team analyzed the data.', bad:'After the experiment ended the team analyzed the data.' },
+  'comma-nonessential': { t:'Elemento no esencial → comas EN PAREJA', r:'If you can remove the chunk and the sentence still stands and makes sense, it takes TWO commas — one before, one after.', ok:'The bridge, built in 1902, still carries traffic.', bad:'The bridge, built in 1902 still carries traffic.' },
+  'comma-fanboys':      { t:'Coma + FANBOYS', r:'Two complete sentences join with comma + coordinating conjunction (for, and, nor, but, or, yet, so). The comma goes BEFORE the conjunction.', ok:'The data was incomplete, so the team repeated the trial.', bad:'The data was incomplete, the team repeated the trial.' },
+  'comma-unnecessary':  { t:'SIN coma (coma innecesaria)', r:'Never split a subject from its verb, or a verb from its object, with a single comma. If nothing demands punctuation, the right answer is NO punctuation.', ok:'The results of the study suggest a new pathway.', bad:'The results of the study, suggest a new pathway.' },
+  'semicolon':          { t:'Punto y coma = 2 oraciones completas', r:'A semicolon joins two related INDEPENDENT sentences, with no conjunction. Test it: each side has to stand as its own sentence.', ok:'The first trial failed; the second one succeeded.', bad:'The first trial failed; because of the heavy rain.' },
+  'semicolon-adverb':   { t:'; however, (adverbio conjuntivo)', r:'however, therefore, moreover, meanwhile… between two complete sentences need a SEMICOLON before and a comma after. A comma alone is a comma splice.', ok:'The plan seemed solid; however, the costs doubled.', bad:'The plan seemed solid, however, the costs doubled.' },
+  'colon':              { t:'Dos puntos: presentan algo', r:'A colon comes ONLY after a complete sentence, to introduce a list, an explanation or a quote. What comes before it must be able to end in a period.', ok:'She packed three tools: a map, a rope, and a lamp.', bad:'She packed: a map, a rope, and a lamp.' },
+  'dash':               { t:'Rayas en pareja', r:'Dashes enclose a non-essential element just like commas — but they do NOT mix: open with a dash, close with a dash.', ok:'The reef — once nearly dead — is recovering fast.', bad:'The reef — once nearly dead, is recovering fast.' },
+  'boundaries':         { t:'Comma splice / run-on', r:'Two complete sentences do NOT join with just a comma (or with nothing at all). Valid fixes: period · semicolon · comma + FANBOYS · subordinate one of them.', ok:'The tide rose, so the crew moved inland.', bad:'The tide rose, the crew moved inland.' },
+  'possessive':         { t:'Possessive apostrophes', r:'Singular: dog’s. Plural ending in -s: dogs’. its = possessive (no apostrophe); it’s = “it is”. A plain plural NEVER takes an apostrophe.', ok:'The two teams’ coaches met after the game.', bad:'The two team’s coaches met after the game.' },
+  'coordination':       { t:'Joining clauses', r:'VALID ways to join two clauses: comma + FANBOYS · semicolon · subordinate one (although, because, while…). A subordinate clause NEVER stands alone as a sentence.', ok:'Although the museum was closed, the tour continued outside.', bad:'Although the museum was closed. The tour continued outside.' },
+  'verb-agreement':     { t:'Concordancia sujeto–verbo', r:'The verb agrees with the REAL subject, not the phrase in between (“of the students…”). Cover whatever sits between commas or after “of”. each/either/neither → singular. In inverted order, look for the subject AFTER the verb.', ok:'The collection of rare maps was donated to the library.', bad:'The collection of rare maps were donated to the library.' },
+  'pronoun-agreement':  { t:'Concordancia de pronombres', r:'A pronoun agrees in number with its antecedent: singular antecedent → it/its; plural → they/their. Check WHO the exact antecedent is. who = subject, whom = object.', ok:'Each device saves its settings automatically.', bad:'Each device saves their settings automatically.' },
+  'verb-forms':         { t:'Formas y tiempos verbales', r:'Keep the tense consistent with the context (markers like “in 1990”, “today”, “by next year” rule). After “to” comes the base form; verbs in parallel lists must take the same form.', ok:'In 1962, the lab developed a faster method.', bad:'In 1962, the lab develops a faster method.' }
 };
 // Skill → cheat-rule mapping (most specific first) so EVERY conventions question in the
 // bank gets an adaptive cheat sheet in Drill mode, not just the Check-Up set.
@@ -4015,7 +4015,7 @@ function showAnnotPop(x, y, existingMark){
     var inp = $('#an-note-input');
     var prev = activeMark ? (activeMark.getAttribute('data-note') || '') : '';
     inp.value = prev;
-    intenta(function(){ inp.focus(); }, 'foco');
+    intenta(function(){ inp.focus(); }, 'focus');
     $('#an-note-save').addEventListener('click', function(ev2){
       ev2.stopPropagation();
       applyHighlight('hl-y', inp.value.trim() || 'Nota');
@@ -4047,7 +4047,7 @@ function wireAnnotations(){
       if(area && String(selObj.toString()).trim().length){
         pendingRange = range.cloneRange();
         var rect = null;
-        rect = intenta(function(){ return range.getBoundingClientRect(); }, 'posición de la selección') || null;
+        rect = intenta(function(){ return range.getBoundingClientRect(); }, 'selection position') || null;
         var x = rect && rect.left ? rect.left : (e.clientX || 60);
         var y = rect && rect.top ? rect.top : (e.clientY || 60);
         showAnnotPop(x, y, null);
@@ -4767,15 +4767,15 @@ function afterLogin(){
   return migrateLegacy()
     .catch(function(e){
       console.warn('SAT Studio · no se pudo adoptar el historial de invitado:', e);
-      toast('No se pudo pasar a tu cuenta lo que jugaste sin cuenta. Sigue guardado en este navegador: ' +
-            'descárgalo desde Session History si vas a cambiar de dispositivo.', true);
+      toast('Could not move your earlier local practice into your account. It is still saved in this browser: ' +
+            'download it from Session History if you are switching devices.', true);
     })
     .then(function(){ return cloudPull(); })
     .catch(function(e){
       // Nunca dejar a alguien mirando una cuenta vacia sin saber por que.
-      var m = (e && e.message) || 'sin conexión';
-      toast('No se pudo traer tu historial de la nube (' + m + '). Lo que ves es lo que hay guardado en este ' +
-            'navegador; nada se perdió y se reintenta solo cuando vuelva el internet.', true);
+      var m = (e && e.message) || 'no connection';
+      toast('Could not fetch your history from the cloud (' + m + '). What you see is what is saved in this ' +
+            'browser; nothing was lost and it retries on its own when you are back online.', true);
     })
     .then(function(){ enterApp(); });
 }
@@ -4813,7 +4813,7 @@ function cloudPull(){
 /* Devuelve la respuesta cruda del RPC (o rechaza). Quien llama decide que hacer
    con el error: aqui NO se traga nada, porque tragarselo es perder la sesion. */
 function cloudUpsert(entry){
-  if(!authAvailable() || !currentUser) return Promise.reject(new Error('sin sesion iniciada'));
+  if(!authAvailable() || !currentUser) return Promise.reject(new Error('not signed in'));
   if(!entry.sid) entry.sid = genSid();
   return SB.rpc('sat_upsert_session', {
     p_sid: entry.sid,
@@ -4825,7 +4825,7 @@ function cloudUpsert(entry){
 }
 
 function cloudDeleteAll(){
-  if(!authAvailable() || !currentUser) return Promise.reject(new Error('sin sesion iniciada'));
+  if(!authAvailable() || !currentUser) return Promise.reject(new Error('not signed in'));
   return SB.rpc('sat_delete_all_sessions').then(function(r){
     if(r && r.error) throw r.error;
     return true;
@@ -4855,9 +4855,9 @@ function safeClearHistory(){
   var h = getHistory();
   if(!h.length){ toast('There is no history to clear.'); return; }
   downloadHistory();
-  var w = window.prompt('Esto borra tu historial (' + h.length + ' sesiones)' +
-    (currentUser ? ' en TODOS tus dispositivos' : ' de este navegador') + '.\n' +
-    'Ya se descargo un respaldo .json que puedes volver a importar.\n\n' +
+  var w = window.prompt('This deletes your history (' + h.length + ' sessions)' +
+    (currentUser ? ' on ALL your devices' : ' in this browser') + '.\n' +
+    'A .json backup was just downloaded, and you can import it back.\n\n' +
     'Type DELETE to confirm:');
   if((w || '').trim().toUpperCase() !== 'DELETE'){ toast('Cancelled. Nothing was deleted.'); return; }
   if(!currentUser){
@@ -4869,8 +4869,8 @@ function safeClearHistory(){
     store.remove(histKey()); store.remove(syncKey());
     renderHome(); toast('History cleared on all your devices.');
   }).catch(function(e){
-    toast('\u26a0\ufe0f No se pudo borrar en el servidor (' + ((e && e.message) || 'sin conexion') +
-          '). NO se borro nada, para no dejarte a medias. Intenta de nuevo con internet.', true);
+    toast('\u26a0\ufe0f Could not delete on the server (' + ((e && e.message) || 'no connection') +
+          '). NOTHING was deleted, so you are not left half-done. Try again with a connection.', true);
   });
 }
 
@@ -4928,8 +4928,8 @@ function doLogout(){
   if(!syncPendingCount()) return salir();
   // Hay sesiones sin subir: se intenta una ultima vez antes de soltar la cuenta.
   syncFlush().then(function(quedan){
-    if(quedan && !window.confirm('Quedan ' + quedan + ' sesion(es) sin subir a la nube.\n' +
-      'Si cierras sesion ahora se quedan solo en este navegador.\n\n\u00bfCerrar sesion igual?')) return;
+    if(quedan && !window.confirm('There are still ' + quedan + ' session(s) not uploaded.\n' +
+      'If you sign out now they stay only in this browser.\n\nSign out anyway?')) return;
     salir();
   });
 }
@@ -4939,9 +4939,9 @@ function traducirAuthError(m){
   if(/invalid login|invalid credentials/i.test(m)) return 'Incorrect email or password.';
   if(/already registered|already been registered|user already/i.test(m)) return 'That email already has an account. Sign in.';
   if(/email not confirmed/i.test(m)) return 'You must confirm your email before signing in (check your inbox).';
-  if(/rate limit|too many|email rate/i.test(m)) return 'Demasiados intentos seguidos. Espera unos minutos y vuelve a probar.';
-  if(/new password should be different/i.test(m)) return 'La contraseña nueva tiene que ser distinta a la anterior.';
-  if(/not found|no user/i.test(m)) return 'No hay ninguna cuenta con ese correo.';
+  if(/rate limit|too many|email rate/i.test(m)) return 'Too many tries in a row. Wait a few minutes and try again.';
+  if(/new password should be different/i.test(m)) return 'Your new password has to be different from the old one.';
+  if(/not found|no user/i.test(m)) return 'There is no account with that email.';
   if(/password/i.test(m) && /(6|8)/.test(m)) return 'Password must be at least 8 characters.';
   if(/pwned|leaked|compromised/i.test(m)) return 'That password has appeared in a known data breach. Pick a different one.';
   return m;
@@ -4955,28 +4955,28 @@ function traducirAuthError(m){
 function doForgot(){
   if(!authAvailable()) return;
   var email = ($('#auth-email').value || '').trim();
-  if(!email){ setAuthMsg('Escribe tu correo arriba y vuelve a tocar este enlace.', true); $('#auth-email').focus(); return; }
-  setAuthMsg('Enviando el correo…'); setAuthBusy(true);
+  if(!email){ setAuthMsg('Type your email above, then tap this link again.', true); $('#auth-email').focus(); return; }
+  setAuthMsg('Sending the email…'); setAuthBusy(true);
   SB.auth.resetPasswordForEmail(email, { redirectTo: location.origin + location.pathname }).then(function(r){
     setAuthBusy(false);
     if(r && r.error){ setAuthMsg(traducirAuthError(r.error.message), true); return; }
-    setAuthMsg('Listo: te mandamos un correo a ' + email + ' con un enlace para poner una contraseña nueva. ' +
-               'Revisa también la carpeta de spam.', false);
-  }).catch(function(){ setAuthBusy(false); setAuthMsg('No se pudo enviar el correo. Revisa tu internet.', true); });
+    setAuthMsg('Done: we sent an email to ' + email + ' with a link to set a new password. ' +
+               'Check your spam folder too.', false);
+  }).catch(function(){ setAuthBusy(false); setAuthMsg('Could not send the email. Check your connection.', true); });
 }
 function mostrarNuevaContrasena(){
   var box = $('#auth-newpass'); if(!box) return;
   $('#view-auth').classList.remove('hidden');
   $('#view-home').classList.add('hidden');
   box.classList.remove('hidden');
-  setAuthMsg('Abriste el enlace de recuperación. Elige tu contraseña nueva aquí abajo.', false);
-  intenta(function(){ $('#auth-pass2').focus(); }, 'foco');
+  setAuthMsg('You opened the recovery link. Choose your new password below.', false);
+  intenta(function(){ $('#auth-pass2').focus(); }, 'focus');
 }
 function guardarNuevaContrasena(){
   if(!authAvailable()) return;
   var pass = $('#auth-pass2').value || '';
   if(pass.length < 8){ setAuthMsg('Your new password needs at least 8 characters.', true); return; }
-  setAuthBusy(true); setAuthMsg('Guardando…');
+  setAuthBusy(true); setAuthMsg('Saving…');
   SB.auth.updateUser({ password: pass }).then(function(r){
     setAuthBusy(false);
     if(r && r.error){ setAuthMsg(traducirAuthError(r.error.message), true); return; }
@@ -4984,7 +4984,7 @@ function guardarNuevaContrasena(){
     setAuthMsg('');
     toast('Password changed. Your history is all here.');
     if(r && r.data && r.data.user){ currentUser = r.data.user; afterLogin(); }
-  }).catch(function(){ setAuthBusy(false); setAuthMsg('No se pudo guardar. Revisa tu internet.', true); });
+  }).catch(function(){ setAuthBusy(false); setAuthMsg('Could not save. Check your connection.', true); });
 }
 function wireAuth(){
   var fg = $('#auth-forgot'); if(fg) fg.addEventListener('click', doForgot);
@@ -4999,7 +4999,7 @@ function wireAuth(){
     if(extra && extra.classList.contains('hidden')){
       extra.classList.remove('hidden');
       setAuthMsg('One more step: your goal and your test date (both optional). Then tap "Create account" again.', false);
-      intenta(function(){ $('#auth-target').focus(); }, 'foco');
+      intenta(function(){ $('#auth-target').focus(); }, 'focus');
       return;
     }
     doSignup();
