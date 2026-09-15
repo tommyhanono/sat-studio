@@ -41,9 +41,16 @@
   .home-wrap{max-width:960px;margin:0 auto}
   .brand{display:flex;align-items:baseline;gap:12px;margin-bottom:4px}
   .brand h1,.brand .brand-h{font-size:1.9rem;font-weight:800}
+  .brand-link{color:inherit;text-decoration:none}
+  .brand-link:hover{color:var(--blue-dark)}
   .admin-h{font-size:1.5rem;font-weight:800}
   .brand .tag{color:var(--gray-mid);font-size:.9rem}
   .home-sub{color:var(--gray-mid);margin-bottom:26px}
+  .home-foot{margin-top:44px;padding-top:22px;border-top:1px solid var(--gray-line);color:var(--gray-mid);font-size:.82rem;line-height:1.6}
+  .home-foot p{margin-bottom:7px}
+  .foot-links a{color:var(--blue-dark);text-decoration:none;display:inline-block;padding:6px 2px}
+  .foot-links a:hover{text-decoration:underline}
+  .foot-c{font-size:.78rem}
   .dash-cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px;margin-bottom:26px}
   .dash-card{background:#fff;border:1px solid var(--gray-line);border-radius:12px;padding:18px 20px}
   .dash-card .k{font-size:.78rem;color:var(--gray-mid);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}
@@ -372,7 +379,7 @@
   .auth-card .brand{margin-bottom:6px}
   .auth-sub{color:var(--gray-mid);font-size:.9rem;margin:0 0 18px}
   .auth-lbl{display:block;font-size:.76rem;font-weight:700;color:var(--gray-mid);text-transform:uppercase;letter-spacing:.02em;margin:12px 0 5px}
-  .auth-inp{width:100%;border:1px solid var(--gray-line);border-radius:10px;padding:11px 13px;font-size:.95rem;box-sizing:border-box}
+  .auth-inp{min-height:44px;font-size:16px;width:100%;border:1px solid var(--gray-line);border-radius:10px;padding:11px 13px;font-size:.95rem;box-sizing:border-box}
   .auth-inp:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 3px var(--blue-soft)}
   .auth-msg{margin:14px 0 0;padding:10px 12px;border-radius:9px;font-size:.86rem;background:var(--blue-soft);color:var(--blue-dark)}
   .auth-msg.err{background:#fdeaea;color:#c0392b}
@@ -564,6 +571,23 @@
   .fw-day.today .fw-daycount{background:#dbe2fb;color:var(--blue-dark)}
   @media(max-width:560px){ .cc-title{font-size:1.42rem} #view-class{padding:16px 12px 96px} .cc-sec{padding:15px 15px} }
 
+  /* ---- grupos del home ---- */
+  .home-nav{display:flex;gap:8px;flex-wrap:wrap;margin:6px 0 24px;position:sticky;top:0;z-index:20;background:#f7f8fc;padding:10px 0}
+  /* En el telefono la navegacion se desliza en UNA fila dentro de su propio
+     contenedor: envuelta ocupaba tres filas, y la pagina nunca scrollea en
+     horizontal porque el desborde vive aqui adentro. */
+  @media(max-width:620px){
+    .home-nav{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+    .home-nav::-webkit-scrollbar{display:none}
+    .hnav-a{flex:none}
+  }
+  .hnav-a{display:flex;align-items:center;gap:6px;min-height:44px;padding:9px 16px;border:1px solid var(--gray-line);border-radius:999px;background:#fff;color:var(--ink);text-decoration:none;font-size:.86rem;font-weight:600}
+  .hnav-a:hover{border-color:var(--blue);background:var(--blue-soft)}
+  .hnav-a span{background:var(--gray-strip);border-radius:999px;padding:1px 8px;font-size:.74rem;color:var(--gray-mid);font-weight:600}
+  .home-group{margin-bottom:38px;scroll-margin-top:72px}
+  .hg-t{font-size:1.35rem;font-family:var(--serif);margin-bottom:2px}
+  .hg-s{font-size:.84rem;color:var(--gray-mid);margin-bottom:12px}
+
   /* ---- Mi plan de mejora ---- */
   .plan-wrap{max-width:100%}
   .plan-intro{font-size:.9rem;color:#42506b;line-height:1.6;margin-bottom:14px}
@@ -629,7 +653,7 @@
   .hist-tools .mini:hover{background:var(--blue-soft);border-color:var(--blue)}
   .hist-tools .sep{flex:1}
   .hist-note{font-size:.78rem;color:var(--gray-mid);margin-top:8px;line-height:1.5}
-  /* ---- avisos (reemplazan alert() como feedback) ---- */
+  /* ---- avisos no bloqueantes ---- */
   #toast-wrap{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:9999;display:flex;flex-direction:column;gap:8px;align-items:center;pointer-events:none;width:min(92vw,520px)}
   .toast{background:#132a4d;color:#fff;border-radius:10px;padding:12px 18px;font-size:.9rem;line-height:1.45;box-shadow:0 8px 28px rgba(11,31,58,.28);pointer-events:auto;animation:toast-in .18s ease-out}
   .toast.err{background:#8d1f2f}
@@ -698,7 +722,7 @@
 
 <div id="view-home" class="hidden">
   <div class="home-wrap">
-    <div class="brand"><h1>SAT Studio</h1><span class="tag">Bluebook-style practice</span><div id="user-chip" class="user-chip hidden"></div></div>
+    <header class="brand"><h1><a href="./" id="brand-home" class="brand-link">SAT Studio</a></h1><span class="tag">Bluebook-style practice</span><div id="user-chip" class="user-chip hidden"></div></header>
     <p class="home-sub">Pick a set and a mode. <strong>Exam</strong> = timed, graded at the end. <strong>Drill</strong> = no timer, with instant feedback and an explanation on every question.</p>
 
     <div id="guest-bar"></div>
@@ -719,6 +743,18 @@
     </div>
 
     <div id="set-sections"></div>
+
+    <footer class="home-foot">
+      <p><b>SAT Studio</b> — práctica libre del Digital SAT. Las preguntas son originales;
+        College Board no patrocina ni avala esta herramienta.</p>
+      <p class="foot-links">
+        <a href="#g-hoy">Hoy</a> ·
+        <a href="#g-practicar">Practicar</a> ·
+        <a href="#g-examen">Examen completo</a> ·
+        <a href="https://github.com/tommyhanono/sat-studio" rel="noopener">Código</a>
+      </p>
+      <p class="foot-c">© <span id="foot-year"></span> SAT Studio</p>
+    </footer>
 
     <details class="home-sec" open>
       <summary>Session History</summary>
@@ -1019,7 +1055,7 @@
 <script defer src="sets/desmos-d.js"></script>
 <script defer src="sets/desmos-e.js"></script>
 <script defer src="sets/desmos-f.js"></script>
-<script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1"></script>
 
 <script>
@@ -1236,7 +1272,8 @@ function intenta(fn, que){
   try { return fn(); }
   catch(e){ console.debug('SAT Studio · falló algo no crítico (' + (que || 'sin nombre') + '):', e && e.message); }
 }
-/* Aviso no bloqueante. Reemplaza alert() como feedback de exito/error. */
+/* Aviso no bloqueante: el estado de exito o de error se muestra en pantalla
+   sin frenar al estudiante ni obligarlo a cerrar un cuadro de dialogo. */
 function toast(msg, isErr){
   try {
     var wrap = document.getElementById('toast-wrap');
@@ -1829,15 +1866,15 @@ function renderHome(){
   var completedSets = sortSets(SETS.filter(function(s){ return doneBySet[s.id]; }));
   var totalMissed = pool.length;
 
-  var sec = '';
+  var G = { hoy:'', entender:'', practicar:'', examen:'', progreso:'' };
   var _planN = (planState().elegidos || []).length;
-  sec += homeSection('🧭 Mi plan de mejora', planHTML(), _planN ? _planN + ' temas' : null, true);
+  G.hoy += homeSection('🧭 Mi plan de mejora', planHTML(), _planN ? _planN + ' temas' : null, true);
   // La cuenta regresiva aparece sola cuando el estudiante puso su fecha y el
   // examen esta a una semana o menos. Sin fecha no se le muestra a nadie.
   var _dl = fwDaysLeft();
   if(_dl !== null && _dl <= 7 && _dl >= -1){
     var fw = fwPlanHTML();
-    sec += homeSection('🚨 Semana final — tu plan día por día', fw.html, fw.badge, true);
+    G.hoy += homeSection('🚨 Semana final — tu plan día por día', fw.html, fw.badge, true);
   }
   {
     var stp = studyState();
@@ -1849,28 +1886,28 @@ function renderHome(){
       '<h4 class="study-h">2 · Verbal</h4>' + vT.map(function(t){ return studyTopicCard(t, stp.topics[t.key]); }).join('') +
       '<h4 class="study-h">3 · Math Final (100%)</h4>' + studyFinalCard('math', stp) +
       '<h4 class="study-h">4 · English Final (100%)</h4>' + studyFinalCard('rw', stp);
-    sec += homeSection('🎯 Ruta de dominio', spBody, masteredAll + '/' + STUDY_TOPICS.length, true);
+    G.entender += homeSection('🎯 Ruta de dominio', spBody, masteredAll + '/' + STUDY_TOPICS.length, true);
   }
   var dm = dailyMiniHTML();
-  sec += homeSection('🌅 Daily Mini Mocks', dm.html, (dm.streak > 0 ? '🔥 ' + dm.streak + ' · ' : '') + dm.done + '/2 today', true);
+  G.hoy += homeSection('🌅 Daily Mini Mocks', dm.html, (dm.streak > 0 ? '🔥 ' + dm.streak + ' · ' : '') + dm.done + '/2 today', true);
   var tf = todaysFocusHTML();
-  if(tf) sec += homeSection('🎯 Today’s Focus', tf, 3, true);
+  if(tf) G.hoy += homeSection('🎯 Today’s Focus', tf, 3, true);
   var _ccSt = planStats().circles;
   var _ccMio = (_ccSt && _ccSt.hechas >= PLAN_MIN_MEDIDO)
     ? ' Tú llevas <b>' + _ccSt.bien + '/' + _ccSt.hechas + '</b> en círculos.' : '';
   var ccTeaser = '<p class="study-hint">Toda pregunta de círculos del SAT es una de <b>6 formas fijas</b>. Esta clase recorre cada una con su diagrama, un ejemplo resuelto y la trampa exacta donde se pierden los puntos, y termina soltándote en práctica difícil.' + _ccMio + '</p><button class="btn-primary" data-open-class="circles">Abrir la clase de círculos</button>';
-  sec += homeSection('📐 Circles — Full Class', ccTeaser, 'NEW', true);
+  G.entender += homeSection('📐 Circles — Full Class', ccTeaser, 'NEW', true);
   var ptM = (typeof ptMasteredCount === 'function') ? ptMasteredCount() : 0;
   var ptTeaser = '<p class="study-hint">La puntuación cuesta puntos cuando las REGLAS no son automáticas todavía. Este entrenador doesn’t give practice passages — it drills <b>the rules themselves</b>, over and over: every answer (right or wrong) shows you the full rule again, a rule is mastered only after <b>3 correct in a row</b>, and one miss resets it. When every dot is green, prove it with the <b>Perfect Run</b> — all questions, zero misses, or you start over.</p>' +
     '<div class="pt-home-btns"><button class="btn-primary" data-pt="drill">Memorization drill</button><button class="btn-outline" data-pt="read">Read the 12 rules</button><button class="btn-outline" data-pt="perfect">Perfect Run</button></div>';
-  sec += homeSection('🧠 Punctuation Rules — Know Them 100%', ptTeaser, ptM + '/12', true);
+  G.entender += homeSection('🧠 Punctuation Rules — Know Them 100%', ptTeaser, ptM + '/12', true);
   var sr = spacedReviewHTML();
-  if(sr){ var srDue = spacedQueue().due.length; sec += homeSection('🔁 Spaced Review', sr, srDue || null, true); }
+  if(sr){ var srDue = spacedQueue().due.length; G.hoy += homeSection('🔁 Spaced Review', sr, srDue || null, true); }
   var learnBody = '<p class="study-hint">' + LEARN_ROADMAP + '</p>' +
     '<h4 class="study-h">Math — method + trap + worked example</h4>' + LESSONS.filter(function(l){ return l.sec === 'math'; }).map(lessonCardHTML).join('') +
     '<h4 class="study-h">Reading &amp; Writing</h4>' + LESSONS.filter(function(l){ return l.sec === 'rw'; }).map(lessonCardHTML).join('');
-  sec += homeSection('📚 Learn — Master Each Skill', learnBody, LESSONS.length, false);
-  sec += homeSection('📋 Exam-Day Playbook', PLAYBOOK_HTML, null, false);
+  G.entender += homeSection('📚 Learn — Master Each Skill', learnBody, LESSONS.length, false);
+  G.entender += homeSection('📋 Exam-Day Playbook', PLAYBOOK_HTML, null, false);
   var mocks = pastMocks();
   if(mocks.length){
     var mockRows = mocks.slice().reverse().map(function(e){
@@ -1885,7 +1922,7 @@ function renderHome(){
         '<button class="btn-outline" data-review-mock="' + e.sid + '">Review answers</button>' +
       '</div>';
     }).join('');
-    sec += homeSection('Your Practice Tests', mockRows, mocks.length, true);
+    G.progreso += homeSection('Your Practice Tests', mockRows, mocks.length, true);
   }
   // ===== English Mocks category (Reading & Writing only, adaptive, /800) =====
   var N_ENG = 8;
@@ -1901,7 +1938,7 @@ function renderHome(){
       (eb != null ? '<div class="set-done">✓ completed</div>' : '') +
       '</div><div class="set-actions"><button class="btn-primary" data-start-engmock="' + ei + '">' + (eb != null ? 'Retake' : 'Start') + '</button></div></div>';
   }
-  sec += homeSection('English Mocks', engCards, N_ENG, true);
+  G.examen += homeSection('English Mocks', engCards, N_ENG, true);
 
   // ===== Math Mocks category (Math only, adaptive, /800) =====
   var N_MATH = 6;
@@ -1917,7 +1954,7 @@ function renderHome(){
       (mb != null ? '<div class="set-done">✓ completed</div>' : '') +
       '</div><div class="set-actions"><button class="btn-primary" data-start-mathmock="' + mmi + '">' + (mb != null ? 'Retake' : 'Start') + '</button></div></div>';
   }
-  sec += homeSection('Math Mocks', mmCards, N_MATH, true);
+  G.examen += homeSection('Math Mocks', mmCards, N_MATH, true);
 
   // ===== Realistic Hard Mocks (true-to-test difficult form: tough M1, EARNED hard M2 with real composition) =====
   var N_REAL = 4;
@@ -1933,7 +1970,7 @@ function renderHome(){
       (rb != null ? '<div class="set-done">✓ completed</div>' : '') +
       '</div><div class="set-actions"><button class="btn-primary" data-start-realmock="' + ri + '">' + (rb != null ? 'Retake' : 'Start') + '</button></div></div>';
   }
-  sec += homeSection('Realistic Hard Mocks · true to test', realCards, N_REAL, true);
+  G.examen += homeSection('Realistic Hard Mocks · true to test', realCards, N_REAL, true);
 
   // ===== Extreme Mocks category (only extreme-flagged questions — real hard-Module-2 level) =====
   var N_EXTREME = 4;
@@ -1949,7 +1986,7 @@ function renderHome(){
       (xb != null ? '<div class="set-done">✓ completed</div>' : '') +
       '</div><div class="set-actions"><button class="btn-primary" data-start-extrememock="' + xi + '">' + (xb != null ? 'Retake' : 'Start') + '</button></div></div>';
   }
-  sec += homeSection('Extreme Mocks · brutal tier', exCards, N_EXTREME, true);
+  G.examen += homeSection('Extreme Mocks · brutal tier', exCards, N_EXTREME, true);
 
   // ===== Hard Mocks category (all questions difficult, no easy routing) =====
   var N_HARD = 6;
@@ -1965,7 +2002,7 @@ function renderHome(){
       (hb != null ? '<div class="set-done">✓ completed</div>' : '') +
       '</div><div class="set-actions"><button class="btn-primary" data-start-hardmock="' + hi + '">' + (hb != null ? 'Retake' : 'Start') + '</button></div></div>';
   }
-  sec += homeSection('Hard Mocks · all difficult', hardCards, N_HARD, true);
+  G.examen += homeSection('Hard Mocks · all difficult', hardCards, N_HARD, true);
 
   // ===== Full Mocks category (numbered, stable full-length adaptive tests) =====
   var N_MOCKS = 8;
@@ -1981,12 +2018,27 @@ function renderHome(){
       (best != null ? '<div class="set-done">✓ completed</div>' : '') +
       '</div><div class="set-actions"><button class="btn-primary" data-start-fullmock="' + mi + '">' + (best != null ? 'Retake' : 'Start') + '</button></div></div>';
   }
-  sec += homeSection('Full Mocks', mockCards, N_MOCKS, true);
-  sec += homeSection('Math', mathSets.length ? mathSets.map(setCard).join('') : '<div class="empty-note">No Math sets pending — see Completed below.</div>', mathSets.length, true);
-  sec += homeSection('Verbal', verbalSets.length ? verbalSets.map(setCard).join('') : '<div class="empty-note">No Verbal sets pending — see Completed below.</div>', verbalSets.length, true);
-  sec += homeSection('Things To Work On', redoCard('redo-math', 'Math', 'math') + redoCard('redo-verbal', 'Verbal', 'rw'), totalMissed || null, true);
-  sec += homeSection('Completed', completedSets.length ? completedSets.map(setCard).join('') : '<div class="empty-note">Nothing completed yet.</div>', completedSets.length, false);
-  $('#set-sections').innerHTML = sec;
+  G.examen += homeSection('Full Mocks', mockCards, N_MOCKS, true);
+  G.practicar += homeSection('Math', mathSets.length ? mathSets.map(setCard).join('') : '<div class="empty-note">No Math sets pending — see Completed below.</div>', mathSets.length, true);
+  G.practicar += homeSection('Verbal', verbalSets.length ? verbalSets.map(setCard).join('') : '<div class="empty-note">No Verbal sets pending — see Completed below.</div>', verbalSets.length, true);
+  G.practicar += homeSection('Things To Work On', redoCard('redo-math', 'Math', 'math') + redoCard('redo-verbal', 'Verbal', 'rw'), totalMissed || null, true);
+  G.progreso += homeSection('Completed', completedSets.length ? completedSets.map(setCard).join('') : '<div class="empty-note">Nothing completed yet.</div>', completedSets.length, false);
+  var GRUPOS = [
+    ['hoy',       'Hoy',           'Lo que te toca ahora mismo'],
+    ['entender',  'Entender',      'Clases y reglas, antes de practicar'],
+    ['practicar', 'Practicar',     'Sets por tema, a tu ritmo'],
+    ['examen',    'Examen completo','Simulacros cronometrados y adaptativos'],
+    ['progreso',  'Mi progreso',   'Lo que ya hiciste y lo que falta']
+  ];
+  var nav = '', cuerpo = '';
+  GRUPOS.forEach(function(g){
+    if(!G[g[0]]) return;
+    var n = (G[g[0]].match(/<details class="home-sec"/g) || []).length;
+    nav += '<a class="hnav-a" href="#g-' + g[0] + '">' + g[1] + ' <span>' + n + '</span></a>';
+    cuerpo += '<section class="home-group" id="g-' + g[0] + '">' +
+      '<h2 class="hg-t">' + g[1] + '</h2><p class="hg-s">' + g[2] + '</p>' + G[g[0]] + '</section>';
+  });
+  $('#set-sections').innerHTML = '<nav class="home-nav" aria-label="Secciones">' + nav + '</nav>' + cuerpo;
   planWire();
 
   Array.prototype.forEach.call(document.querySelectorAll('#set-sections [data-start-exam]'), function(b){
@@ -4821,6 +4873,9 @@ function init(){
     else showReview();
   });
 
+  var _fy = $('#foot-year'); if(_fy) _fy.textContent = new Date().getFullYear();
+  var _bh = $('#brand-home');
+  if(_bh) _bh.addEventListener('click', function(e){ e.preventDefault(); goHome(); });
   $('#btn-copy').addEventListener('click', copySummary);
   $('#btn-home').addEventListener('click', goHome);
   $('#btn-clear-history').addEventListener('click', safeClearHistory);
@@ -4873,6 +4928,7 @@ window.SATAPP = {
   gradeSPR: gradeSPR, sanitizeSPR: sanitizeSPR, parseRational: parseRational,
   estimateScore: estimateScore, startSession: startSession, goHome: goHome,
   store: store, missedPool: missedPool, wrapRange: wrapRange, saveAnnotations: saveAnnotations,
+  authAvailable: authAvailable, SB: function(){ return SB; },
   saveSession: saveSession, getHistory: getHistory, syncFlush: syncFlush, syncQueue: syncQueue,
   syncPendingCount: syncPendingCount, cloudPull: cloudPull, importHistory: importHistory,
   migrateLegacy: migrateLegacy, histKey: function(){ return histKey(); }, syncLabel: syncLabel,

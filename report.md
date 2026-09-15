@@ -2,10 +2,10 @@
 
 **Objetivo:** `/Users/tommyhanono/sat-studio  (sirviendo ./)`  
 **Fecha:** 2026-09-15  
-**Paginas analizadas:** 1 · **Links revisados:** 0  
+**Paginas analizadas:** 1 · **Links revisados:** 2  
 **Framework detectado:** static  
 
-**Resultado:** 29 PASS · 3 FAIL · 4 WARN · 10 no aplica · 8 de revision manual
+**Resultado:** 31 PASS · 3 FAIL · 3 WARN · 9 no aplica · 8 de revision manual
 
 > [!danger] No lanzar todavia
 > Hay 3 punto(s) en FAIL. Estan detallados abajo con archivo o selector.
@@ -15,25 +15,25 @@
 | id | Punto | Estado | Detalle |
 |---|---|---|---|
 | `B1-01` | Cero scroll horizontal (320/375/414) | PASS | 1 pagina(s) x 3 anchos limpias |
-| `B1-02` | Cero links rotos (internos y externos) | PASS | la pagina no tiene enlaces http(s) que revisar |
+| `B1-02` | Cero links rotos (internos y externos) | PASS | 2 links revisados, todos responden |
 | `B1-03` | Menu movil abre, cierra y navega | n/a | el sitio no tiene una navegacion de varios destinos: no hay menu que probar |
 | `B1-04` | Favicon propio (no el del framework) | PASS | favicon inline (data URI) propio |
 | `B1-05` | Titulo de pagina correcto y especifico | PASS | todas las paginas con titulo propio |
 | `B1-06` | Meta description en cada pagina | PASS | 1 pagina(s) con description |
-| `B1-07` | Links del footer funcionando | WARN | no se detecto <footer> con links |
+| `B1-07` | Links del footer funcionando | PASS | 2 link(s) de footer, todos responden |
 | `B1-08` | Pagina 404 propia con salida al home | PASS | 404 propia con salida al home |
 | `B1-09` | Año de copyright correcto (calculado) | WARN | no se encontro aviso de copyright en el sitio |
 | `B1-10` | Imagenes comprimidas y en formato moderno | PASS | sin imagenes pesadas |
 | `B1-11` | Cero botones rotos o sin handler | PASS | todos los botones tienen handler, submit o delegacion de framework |
-| `B1-12` | Estados de exito visibles en toda accion | WARN | 2 uso(s) de alert()/confirm() como feedback |
+| `B1-12` | Estados de exito visibles en toda accion | PASS | toda accion que escribe tiene estados de carga, exito y error en su archivo |
 | `B1-13` | Estados de error visibles y con mensaje util | **FAIL** | 5 catch mudo(s), 0 formulario(s) probado(s), 0 sin error visible |
 | `B1-14` | Cero texto placeholder | PASS | sin lorem ipsum ni relleno |
 | `B1-15` | Cero items de navegacion que no llevan a nada | PASS | todos los items de navegacion tienen destino |
 | `B1-16` | Cero overflow de elementos en movil | PASS | ningun elemento se sale del viewport |
-| `B1-17` | Logo clickeable que vuelve al home | n/a | sitio de una sola pagina sin navegacion interna: no hay home al que volver |
+| `B1-17` | Logo clickeable que vuelve al home | PASS | el logo vuelve al home |
 | `B1-18` | Telefono clickeable (tel:) | n/a | el sitio no publica telefono |
 | `B1-19` | Email clickeable (mailto:) | n/a | el sitio no publica correo |
-| `B1-20` | Optimizado para movil de verdad | PASS | viewport, objetivos tactiles y tipografia de inputs correctos |
+| `B1-20` | Optimizado para movil de verdad | WARN | 0 problema(s) de viewport, 0 toque(s) chico(s), 3 input(s) con zoom en iOS |
 
 ## Bloque 2 — SEO y produccion
 
@@ -63,36 +63,38 @@
 
 | id | Punto | Estado | Detalle |
 |---|---|---|---|
-| `B3-01` | Contraste AA (WCAG 2.2) | PASS | 1078 elementos de texto, todos sobre el minimo |
-| `B3-02` | Foco de teclado visible | PASS | 34 controles con foco visible |
+| `B3-01` | Contraste AA (WCAG 2.2) | PASS | 10 elementos de texto, todos sobre el minimo |
+| `B3-02` | Foco de teclado visible | PASS | 6 controles con foco visible |
 | `B3-03` | prefers-reduced-motion respetado | PASS | sin animaciones que apagar |
 | `B3-04` | Campos de formulario con etiqueta | PASS | todos los campos etiquetados |
 | `B3-05` | El telefono girado (812x375) | PASS | en horizontal se ve bien |
-| `B3-06` | Core Web Vitals (LCP y CLS) | PASS | LCP 200 ms · CLS 0 (peor pagina, red local sin latencia) |
-| `B3-07` | Regla cero de TOMMY-DESIGN | **FAIL** | 3 firma(s) del look default de IA |
+| `B3-06` | Core Web Vitals (LCP y CLS) | PASS | LCP 116 ms · CLS 0 (peor pagina, red local sin latencia) |
+| `B3-07` | Regla cero de TOMMY-DESIGN | **FAIL** | 2 firma(s) del look default de IA |
 
 ## Evidencia
-
-### `B1-12` Estados de exito visibles en toda accion — WARN
-
-2 uso(s) de alert()/confirm() como feedback
-
-- index.html:632 — alert() no es un estado de exito · /* ---- avisos (reemplazan alert() como feedback) ---- */
-- index.html:1239 — alert() no es un estado de exito · /* Aviso no bloqueante. Reemplaza alert() como feedback de exito/error. */
-
-**Como se arregla:** Un boton que escribe necesita: deshabilitarse mientras carga, y una confirmacion visible al terminar. Cerrar con la revision manual M-01.
 
 ### `B1-13` Estados de error visibles y con mensaje util — **FAIL**
 
 5 catch mudo(s), 0 formulario(s) probado(s), 0 sin error visible
 
-- index.html:1237 — catch que solo hace console: el usuario nunca se entera · catch(e){ console.debug('SAT Studio · falló algo no crítico (' + (que \|\| 'sin nombre') + '):', e && e.message); }
-- index.html:1249 — catch que solo hace console: el usuario nunca se entera · } catch(e){ console.log(msg); }
+- index.html:1273 — catch que solo hace console: el usuario nunca se entera · catch(e){ console.debug('SAT Studio · falló algo no crítico (' + (que \|\| 'sin nombre') + '):', e && e.message); }
+- index.html:1286 — catch que solo hace console: el usuario nunca se entera · } catch(e){ console.log(msg); }
 - tools/test-datos.js:31 — catch vacio: el usuario nunca se entera · for (const c of CANDIDATOS_PUP) { try { return require(c); } catch (e) {} }
 - tools/test-datos.js:49 — catch vacio: el usuario nunca se entera · } catch (e) {}
 - tools/test-plan.js:28 — catch vacio: el usuario nunca se entera · for (const c of CANDIDATOS_PUP) { try { return require(c); } catch (e) {} }
 
 **Como se arregla:** Probado enviando el formulario vacio con TODA escritura de red bloqueada: nunca se manda nada de verdad.
+
+### `B1-20` Optimizado para movil de verdad — WARN
+
+0 problema(s) de viewport, 0 toque(s) chico(s), 3 input(s) con zoom en iOS
+
+- 3 input(s) con font-size < 16px (iOS hace zoom al enfocar)
+-   input#auth-name 15.2px
+-   input#auth-email 15.2px
+-   input#auth-pass 15.2px
+
+**Como se arregla:** El resto del punto se cierra con la revision manual M-03.
 
 ### `B2-17` Imagenes de social share (OG + Twitter) — **FAIL**
 
@@ -104,10 +106,9 @@ la og:image no carga (HTTP 404)
 
 ### `B3-07` Regla cero de TOMMY-DESIGN — **FAIL**
 
-3 firma(s) del look default de IA
+2 firma(s) del look default de IA
 
-- 4. Emojis como iconos — 5 control(es) con emoji: button#calc-mode-graph "📈 Graphing" · button#calc-mode-sci "🔢 Scientific" · button#btn-calc-close "✕" · button#btn-cheat-close "✕"
-- 5. #FFF/#000 planos — 38 superficie(s) grande(s) sin tinte de marca: body background:rgb(255, 255, 255) · div.dash-card background:rgb(255, 255, 255) · div.dash-card background:rgb(255, 255, 255)
+- 5. #FFF/#000 planos — 2 superficie(s) grande(s) sin tinte de marca: body background:rgb(255, 255, 255) · div.auth-card background:rgb(255, 255, 255)
 - 8. Fuente por inercia — cuerpo y titulos en "-apple-system" y ninguna fuente propia cargada: body:-apple-system · h:-apple-system
 
 **Como se arregla:** La lista completa esta en 90_Sistema/TOMMY-DESIGN.md, regla cero. El juicio final es humano (M-08).

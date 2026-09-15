@@ -153,7 +153,16 @@ const sleep = ms => new Promise(r => setTimeout(r, ms));
     await sleep(600);
     const vuelta = await page.evaluate(() => !document.getElementById('view-home').classList.contains('hidden'));
     check('H11 se puede volver al inicio', vuelta);
-    check('H12 sin errores de JS en todo el recorrido', errs.length === 0, errs.slice(0, 3));
+    // Regresion real: al poner `defer` en el CDN de Supabase, el cliente no se
+  // creaba y la app se quedaba sin cuentas ni nube sin dar un solo error.
+  const auth = await page.evaluate(() => ({
+    disponible: !!(window.SATAPP && window.SATAPP.authAvailable && window.SATAPP.authAvailable()),
+    lib: typeof window.supabase,
+    cliente: !!(window.SATAPP && window.SATAPP.SB && window.SATAPP.SB()),
+  }));
+  check('H13 el backend de cuentas queda disponible (login + nube)', auth.disponible && auth.cliente, auth);
+
+  check('H12 sin errores de JS en todo el recorrido', errs.length === 0, errs.slice(0, 3));
   } catch (e) {
     check('FATAL: ' + e.message, false);
   } finally {
