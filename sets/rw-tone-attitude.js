@@ -54,13 +54,13 @@
         id:'TONE-04', type:'mc', domain:'Craft and Structure', difficulty:'Difícil',
         skill:'Recognizing tone shift',
         stem:'The passage begins with "Traditional manufacturing faces mounting challenges..." and concludes with "...yet innovative companies are discovering unexpected opportunities in this transition." The overall tone of the passage is best described as:\n',
-        choices:{A:'Entirely pessimistic', B:'Initially critical, shifting to cautiously optimistic', C:'Entirely optimistic', D:'Ironic throughout'},
+        choices:{A:'Uniformly pessimistic, since the closing clause concedes nothing', B:'Initially critical, shifting to cautiously optimistic', C:'Optimistic from the opening sentence onward', D:'Ironic, with "opportunities" meant sarcastically'},
         correct:'B',
         expCorrect:'Opening = challenges (negative). Closing = opportunities (positive). Tone shifts from concern to cautious optimism.',
         expWrong:{
-          A:'Ignores the optimistic conclusion.',
-          C:'Ignores the critical opening.',
-          D:'No irony present; this is a genuine tonal progression.'
+          A:'The closing clause concedes a great deal: it reports that companies are "discovering unexpected opportunities." Calling the tone uniformly negative means ignoring the last eight words of the passage.',
+          C:'It skips the opening, which reports "mounting challenges." The passage never treats those challenges as solved or overstated; it ends on companies working through them.',
+          D:'"Opportunities" is meant straight. The passage says innovative companies are actually finding them, so there is no gap between what is said and what is meant — and irony needs that gap.'
         },
         tip:'Tone shift questions: identify the opening tone, the closing tone, and the trajectory. Phrases like "yet" and "despite" often signal shifts.'
       },
@@ -82,13 +82,13 @@
         id:'TONE-06', type:'mc', domain:'Craft and Structure', difficulty:'Difícil',
         skill:'Identifying tone within an argument (not overall tone)',
         stem:'In the passage, the author supports renewable energy but writes: "Despite solar panels\' well-documented benefits, installation costs remain prohibitively high for low-income households—an undeniable barrier to equitable adoption."\n\nThe tone of this sentence regarding renewable energy is:\n',
-        choices:{A:'Entirely supportive', B:'Entirely critical', C:'Supportively realistic (supportive of the goal, realistic about obstacles)', D:'Dismissive of cost concerns'},
+        choices:{A:'Entirely supportive, since the costs are named only to be quickly brushed aside', B:'Entirely critical, treating the benefits as outweighed by the cost', C:'Supportively realistic (supportive of the goal, realistic about obstacles)', D:'Dismissive of cost concerns as a distraction from adoption'},
         correct:'C',
         expCorrect:'The author supports renewables ("well-documented benefits") and acknowledges real obstacles ("prohibitively high," "undeniable barrier") without abandoning the goal. This is nuanced support.',
         expWrong:{
-          A:'Ignores the realistic acknowledgment of cost barriers.',
-          B:'Ignores the supportive language about benefits.',
-          D:'The author takes cost concerns seriously, not dismissively.'
+          A:'Nothing is brushed aside: the costs are called "prohibitively high" and the barrier "undeniable." The support is real, but it is not the whole sentence.',
+          B:'It reverses the weighting. The benefits are "well-documented," and the author never says the cost cancels them — only that it blocks equitable adoption.',
+          D:'A distraction is what you set aside. This author does the opposite, calling the cost an "undeniable barrier" to the very goal being supported.'
         },
         tip:'Supportive ≠ Uncritical. Authors can support a goal AND acknowledge real obstacles. Look for both positive and negative language to assess nuance.'
       },
@@ -96,13 +96,13 @@
         id:'TONE-07', type:'mc', domain:'Craft and Structure', difficulty:'Difícil',
         skill:'Recognizing tone through punctuation and structure',
         stem:'Which sentence best conveys a tone of concern mixed with determination?\n',
-        choices:{A:'The problem is insurmountable; we might as well give up.', B:'The problem is significant, but our commitment to solving it remains unshaken.', C:'We are uncertain whether a solution exists.', D:'The problem is trivial.'},
+        choices:{A:'The problem is insurmountable, and further effort would waste resources.', B:'The problem is significant, but our commitment to solving it remains unshaken.', C:'We are concerned about the problem, though a solution may not exist.', D:'The problem is minor, so our usual procedures will resolve it in time.'},
         correct:'B',
         expCorrect:'"Significant" = concern. "Unshaken" = determination. Conjunctions like "but" link these opposing tones.',
         expWrong:{
-          A:'Resignation, not determination.',
-          C:'Uncertainty, not determination.',
-          D:'Dismissal, not concern.'
+          A:'The concern is real, but "insurmountable" plus a call to stop spending effort is resignation. Determination requires the commitment to survive the bad news.',
+          C:'This has the concern and adds doubt about whether the work can succeed. Doubt is not determination: nothing here says the effort continues.',
+          D:'Confidence with no concern attached. Calling the problem minor removes the very thing the question asks the sentence to convey.'
         },
         tip:'Tone-signaling structures: "______, but ____" (first clause one tone, second clause shifts it). "______, yet ____" (acknowledgment + reaffirmation).'
       },
@@ -110,13 +110,13 @@
         id:'TONE-08', type:'mc', domain:'Craft and Structure', difficulty:'Media',
         skill:'Identifying implicit attitude (not explicit)',
         stem:'An author writes: "The research has been ongoing for over a decade; still, no consensus has emerged."\n\nThe implicit attitude toward the research is:\n',
-        choices:{A:'Complete approval', B:'Mild disappointment or surprise at lack of progress', C:'Indifference', D:'Enthusiasm for continued funding'},
+        choices:{A:'Approval of the decade of sustained effort', B:'Mild disappointment or surprise at lack of progress', C:'Detachment from a debate the author does not join', D:'Confidence that a consensus is about to emerge'},
         correct:'B',
         expCorrect:'"Over a decade" → investment. "Still, no consensus" → surprise/disappointment. The structure (contrast) implies expected progress hasn\'t arrived.',
         expWrong:{
-          A:'No approval is indicated; the author notes *lack* of consensus.',
-          C:'"Still" signals the author cares about the outcome.',
-          D:'No recommendation for funding present; only observation of lack of progress.'
+          A:'The decade is reported as a setup, not as praise: "still" turns that long effort into the reason the missing consensus is worth remarking on.',
+          C:'"Still" is the giveaway. Someone detached from the question would have had no expectation to be let down, and would not mark the absence of consensus at all.',
+          D:'It reverses the sentence. "No consensus has emerged" reports a result that has not arrived, not one the author expects imminently.'
         },
         tip:'Implicit tone: read between the lines. "Still" and "yet" signal the author expected X but got ¬X. That\'s disappointment or surprise.'
       },

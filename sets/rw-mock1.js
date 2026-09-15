@@ -62,16 +62,16 @@ window.SAT_SETS.push({
       stem:'Which choice best describes the overall structure of the text?',
       choices:{
         A:'It presents a widely held belief and then complicates it with evidence that points to a more collaborative account.',
-        B:'It traces a single inventor\'s career from an early failure to an eventual, celebrated breakthrough.',
-        C:'It compares two competing machines in order to argue that one was clearly superior to the other.',
-        D:'It lists the technical specifications of an invention and then evaluates whether they were practical.'
+        B:'It traces the sewing machine from a single inventor\'s first patent to the court case that made it work.',
+        C:'It compares the claims of four rival patent-holders in order to establish which of them deserves the credit for the sewing machine.',
+        D:'It lists the mechanical problems the machine posed and then ranks them by difficulty.'
       },
       correct:'A',
       expCorrect:'The text opens with the common belief (a single inventor) and then complicates it: the records show several inventors whose patents had to be combined. It is an established belief followed by evidence pointing to a collective origin.',
       expWrong:{
-        B:'It does not follow the career of a single inventor; in fact, the point is that there was no single inventor.',
-        C:'It does not compare two rival machines to pick the better one; it is about patents that had to be combined, not about superiority.',
-        D:'It does not list technical specifications or weigh their practicality; the thread is historical and about authorship, not technical.'
+        B:'The court case is really in the text, which is what makes this tempting. But the passage opens by rejecting the single-inventor story: at least four practitioners on two continents filed overlapping claims, so there is no one career to trace.',
+        C:'Four rival patent-holders are in the text, and that specificity is exactly the bait. The passage never weighs their claims against one another to award credit — its last line says the machine was assembled from parts no one of them had invented alone.',
+        D:'The text says each practitioner solved "a different piece of the same mechanical puzzle", but it never names those pieces and never ranks them. The thread is authorship, not mechanics.'
       },
       tip:'On structure questions, watch the turn. The Yet after the first sentence warns that the opening belief is about to be complicated: belief, then complication.'
     },
@@ -225,17 +225,17 @@ window.SAT_SETS.push({
       passage:"A student claims that a local lake's water quality has improved since a nearby factory installed new filters two years ago. She wants to support this claim with evidence about the lake itself rather than about the factory's equipment.",
       stem:'Which finding, if true, would most effectively support the student\'s claim?',
       choices:{
-        A:'The factory spent a large sum of money on the new filtration equipment.',
+        A:'The factory spent more on the new filtration equipment than on any upgrade in its history.',
         B:'Measurements of pollutants in the lake are markedly lower now than they were before the filters were installed.',
-        C:'The factory\'s managers say they are confident the filters are working as intended.',
-        D:'A different lake in a neighboring region has also seen its water quality improve recently.'
+        C:'The factory\'s engineers certified that the filters remove 95% of the pollutants they target.',
+        D:'A different lake in a neighboring region has seen its water quality improve over the same two years, with no factory nearby.'
       },
       correct:'B',
       expCorrect:'The student wants evidence about the lake, not about the equipment. Measuring that contaminants in the lake dropped sharply after the filters went in speaks directly to the water quality of the lake, which is exactly her claim.',
       expWrong:{
-        A:'How much the equipment cost is information about the plant, not about the water quality of the lake, which is what she is asking for.',
-        C:'The managers’ confidence is an opinion about the equipment, not a measurement of the lake itself.',
-        D:'Another lake in another region says nothing about this lake or about the effect of these filters.'
+        A:'A bigger number does not change what is being measured: this is still spending on the factory’s equipment, and the prompt asked for evidence about the lake.',
+        C:'It is a hard measurement, and a convincing one — but of the filters, not of the water. The prompt rules it out in so many words: evidence about the lake itself rather than about the equipment.',
+        D:'It is about a different body of water, and the prompt asked about this one. If anything it cuts against her: an improvement where no filters were installed points to some other cause acting on both lakes.'
       },
       tip:'Notice the constraint in the prompt: about the lake itself. Rule out anything about the plant, the cost, or another lake.'
     },
@@ -267,16 +267,16 @@ window.SAT_SETS.push({
       stem:'Which choice most logically completes the text?',
       choices:{
         A:'the project also has a dedicated core able to review and integrate the incoming work.',
-        B:'the project attracts even more contributors to keep its momentum going.',
+        B:'the project attracts even more contributors, since momentum is what keeps a codebase alive.',
         C:'the project restricts contributions to a single programming language.',
-        D:'the project abandons the practice of reviewing contributions altogether.'
+        D:'the project drops its review step so that contributions merge automatically.'
       },
       correct:'A',
       expCorrect:'The economist found that the key is a stable core that reviews and integrates the work; without it, fast-growing projects pile up unmerged contributions and fragment. The inference is that growth hurts unless that integrating core exists.',
       expWrong:{
-        B:'More contributors is exactly what causes the problem when the core is missing; adding people does not fix the lack of integration.',
+        B:'It doubles down on the very thing the economist identified as the danger. Growth in contributors is what piles up unmerged work when nobody is integrating it, so it cannot be the condition that prevents the harm growth causes.',
         C:'The text never ties project health to sticking to a single language; that is outside the argument.',
-        D:'Dropping review is the opposite of what helps; healthy projects do review and integrate contributions.'
+        D:'It looks like it clears the pile of unmerged contributions, which is why it is tempting. But the healthiest projects in the study are precisely the ones that DO review and integrate; removing review removes the thing that kept them from fragmenting.'
       },
       tip:'The word unless calls for the condition that prevents the problem. The text already named it: a stable core that reviews. Pick the option that restores it.'
     },
@@ -457,16 +457,16 @@ window.SAT_SETS.push({
       passage:"",
       stem:'While researching a project, a student has taken the following notes:<br><br>• The kakapo is a large, flightless parrot native to New Zealand.<br>• It is nocturnal and can live for several decades.<br>• By the 1990s, fewer than 50 kakapo remained.<br>• An intensive recovery program has since raised the population to over 200 birds.<br><br>The student wants to emphasize the change in the kakapo\'s population. Which choice most effectively uses the relevant information from the notes to accomplish this goal?',
       choices:{
-        A:'The kakapo, a large flightless parrot from New Zealand, is both nocturnal and long-lived.',
-        B:'Although the kakapo is a nocturnal parrot, it is also flightless and native to New Zealand.',
+        A:'The kakapo is a large, flightless parrot native to New Zealand, and it is nocturnal and can live for several decades.',
+        B:'Although fewer than 50 kakapo remained by the 1990s, the bird is nocturnal and flightless.',
         C:'Once down to fewer than 50 birds by the 1990s, the kakapo population has since recovered to more than 200.',
         D:'The kakapo, a parrot that can live for several decades, is native to New Zealand.'
       },
       correct:'C',
       expCorrect:'The goal is to highlight the change in population. Only option C uses the two key figures (fewer than 50 in the 90s and more than 200 now) and sets them against each other, which is exactly highlighting how the population changed.',
       expWrong:{
-        A:'It describes general traits (large, nocturnal, long-lived) but mentions no numbers or change in population.',
-        B:'It mixes physical and habitat traits; nothing about the population increase.',
+        A:'Every clause is lifted accurately from the notes, which is what makes it the longest option here. None of it is about the population: size, flight, range, habits and lifespan, and not one of the two figures the goal depends on.',
+        B:'It reaches for one of the two figures and then pairs it with traits that have nothing to do with population, and "Although" invents a contrast between a count of birds and being nocturnal. The recovery to over 200 — the other half of the change — is missing.',
         D:'It gives habitat and lifespan, but leaves out entirely the figures that show the change.'
       },
       tip:'Anchor every option to the goal. If the goal is the change in the population, the answer has to include the before and the after (both numbers).'
@@ -479,15 +479,15 @@ window.SAT_SETS.push({
       choices:{
         A:'LED bulbs, like incandescent bulbs, eventually burn out and must be replaced.',
         B:'Whereas incandescent bulbs turn only about 5% of their energy into light, LEDs convert roughly 40%.',
-        C:'Incandescent bulbs lose most of their energy as heat rather than light.',
-        D:'Both incandescent and LED bulbs are widely used to light homes and workplaces.'
+        C:'Incandescent bulbs convert only about 5% of their energy into visible light and lose the rest as heat.',
+        D:'Both incandescent and LED bulbs turn part of their energy into visible light.'
       },
       correct:'B',
       expCorrect:'The goal is to highlight a contrast between the two types. Option B puts the figures head to head (5% for the incandescent against 40% for the LED) using whereas, which marks the opposition precisely.',
       expWrong:{
         A:'It underlines a similarity (both burn), not the contrast the goal calls for.',
-        C:'It is only about the incandescent bulb; with no comparison to the LED there is no contrast.',
-        D:'It points to something both share (they are widely used), the opposite of highlighting a difference.'
+        C:'Two accurate notes, the 5% figure included — and both of them about the incandescent bulb. With the LED figure missing there is no second term, and one thing cannot be contrasted with itself.',
+        D:'It is true of both and it does use the notes, but "Both…" frames the two types as alike. The goal was to set them against each other, and the percentages that would do it are left out.'
       },
       tip:'Emphasize a contrast demands naming both elements and setting them against each other. Words like whereas, while or in contrast usually give the right option away.'
     },
@@ -498,16 +498,16 @@ window.SAT_SETS.push({
       stem:'While researching a topic, a student has taken the following notes:<br><br>• Lidar is a sensing method that measures distance using pulses of laser light.<br>• Archaeologists mount lidar on aircraft to scan the ground below.<br>• The lasers can penetrate gaps in dense forest canopy.<br>• This has revealed ancient structures hidden beneath the trees.<br><br>The student wants to explain to an audience unfamiliar with lidar how it has aided archaeologists. Which choice most effectively uses the relevant information from the notes to accomplish this goal?',
       choices:{
         A:'Lidar, a laser-based sensing method flown over forests, can see through gaps in the canopy, helping archaeologists uncover ancient structures hidden beneath the trees.',
-        B:'Lidar measures distance using pulses of laser light, a technique with many possible applications.',
-        C:'Archaeologists have long searched for ancient structures, sometimes in dense and remote forests.',
-        D:'Mounted on aircraft, lidar sends laser pulses toward the ground far below.'
+        B:'Lidar measures distance using pulses of laser light, a technique with many possible applications beyond archaeology.',
+        C:'Archaeologists have long searched for ancient structures hidden beneath dense and remote forest canopy.',
+        D:'Mounted on aircraft, lidar sends pulses of laser light toward the ground far below, measuring the distance to whatever they strike, including gaps in a dense forest canopy.'
       },
       correct:'A',
       expCorrect:'The goal is to explain to a new audience how lidar helps archaeology. Option A pulls together the essentials: what it is (a laser method), how it is used (flown over forests, piercing the canopy) and its result (revealing hidden ancient structures). It meets the whole goal.',
       expWrong:{
-        B:'It defines lidar in general but does not say how it helps archaeologists; it misses the stated purpose.',
-        C:'It is about the search for structures, but does not explain what lidar is or how it works for a new audience.',
-        D:'It describes one detail of the method (pulses toward the ground) without connecting it to the benefit for archaeology.'
+        B:'It defines the method accurately and then points away from the goal: "beyond archaeology" is the opposite of explaining how archaeologists have used it.',
+        C:'It names the problem and even the canopy that hid the structures, but lidar never appears. An audience unfamiliar with lidar would finish this sentence knowing nothing about it.',
+        D:'It is now the fullest explanation of the instrument on offer — pulses, distance, even the canopy — and that is the trap. Archaeologists are never mentioned, and neither is what lidar revealed. The goal was to explain how it AIDED them.'
       },
       tip:'When the goal is to explain how something helped, the best option usually chains what it is, how it works and what it achieved. Rule out the ones covering only one piece.'
     }

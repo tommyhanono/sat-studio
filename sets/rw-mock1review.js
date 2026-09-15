@@ -13,16 +13,16 @@ window.SAT_SETS.push({
       passage:"For years, city planners treated stormwater as a nuisance to be flushed away through concrete pipes as quickly as possible. A newer approach, however, treats rainfall as a resource: rain gardens, permeable pavement, and green roofs now capture water where it falls. Cities that have adopted these designs report cleaner rivers and cooler summer streets.",
       stem:'Which choice best describes the overall structure of the text?',
       choices:{
-        A:'It ranks several stormwater technologies from least to most expensive.',
+        A:'It ranks rain gardens, permeable pavement, and green roofs by how much water each one captures where it falls.',
         B:'It presents an older practice, introduces a contrasting newer one, and notes the newer one’s results.',
-        C:'It argues that concrete pipes should be banned in every city.',
+        C:'It argues that cities should replace their concrete stormwater pipes with rain gardens.',
         D:'It defines a single technical term and traces the word’s origins.'
       },
       correct:'B',
       expCorrect:'The text moves in three stages: first the old practice (flushing rainwater away through pipes), then "however" introduces the new, opposing approach (treating rain as a resource), and finally it notes the results (cleaner rivers, cooler streets). Option B captures that movement: old practice → a new one that contrasts → results.',
       expWrong:{
-        A:'Not supported: the text mentions technologies (rain gardens, permeable pavement), but never ranks them by cost.',
-        C:'It misreads the purpose: the text describes a change of approach, it does not "argue" for banning pipes. The verb matters.',
+        A:'All three technologies are named in the text, and "where it falls" is lifted from it word for word — which is what makes this the longest option. But the three are listed together as one newer approach; the text never measures them against one another or ranks them by anything.',
+        C:'It misreads the purpose: the text reports a change of practice and its results, it never urges cities to do anything. "Argues" names a move the passage does not make.',
         D:'It describes a part, not the whole: it does not focus on defining a term or the origin of a word; it narrates the shift from one practice to another.'
       },
       tip:'For STRUCTURE, trace the WHOLE movement of the text. Words like "however" mark the turn between the old part and the new one; check whether results come at the end.'
@@ -138,17 +138,17 @@ window.SAT_SETS.push({
       passage:"Fungi are often mistaken for plants, but they cannot make their own food from sunlight. Instead, a fungus spreads a vast web of thread-like filaments through soil or rotting wood, releasing chemicals that break down dead material and then absorbing the nutrients set loose. In this way, fungi recycle much of a forest’s fallen matter, returning nutrients to the soil that living trees can draw on again.",
       stem:'Which choice best states the main idea of the text?',
       choices:{
-        A:'Fungi are far more closely related to animals than they are to plants.',
-        B:'The filaments of a fungus are usually too small to be seen without a microscope.',
+        A:'Fungi are more closely related to animals than to plants, since neither can feed on sunlight.',
+        B:'The thread-like filaments a fungus spreads through soil are too small to see without a microscope.',
         C:'Rather than making food as plants do, fungi feed by breaking down dead matter, recycling a forest’s nutrients.',
-        D:'A forest could not survive for even a single season without fungi.'
+        D:'Because fungi return nutrients that living trees draw on, a forest could not survive a single season without them.'
       },
       correct:'C',
       expCorrect:'The text contrasts fungi with plants (they do not make food from light), explains how they eat (breaking down dead matter and absorbing nutrients) and closes with their role: recycling the forest’s nutrients. Option C joins the three things and covers the whole paragraph.',
       expWrong:{
-        A:'Not supported: the text says they are mistaken for plants, but it never compares them with animals. That is outside information.',
-        B:'A detail never mentioned: the text says nothing about the size of the filaments or about microscopes.',
-        D:'Too extreme: it says they recycle "much" of the fallen matter, not that the forest would die within a single season without them.'
+        A:'The reason attached to it is straight from the text — fungi cannot make food from sunlight — which makes the comparison feel earned. Animals are never mentioned in the passage at all, and a shared inability is not evidence of kinship.',
+        B:'It takes a real detail, the thread-like filaments, and builds a claim the text never makes: nothing here is said about their size or about microscopes. A detail is not the main idea even when the detail is true.',
+        D:'The first half is the text’s own point, which is what makes the second half slide by. But the text says fungi recycle "much" of the fallen matter, not all of it, and it never claims a forest would die in one season. The right idea pushed into an absolute.'
       },
       tip:'The central idea sums up the whole arc: what they do NOT do (eat like plants), what they DO (break things down) and what it is for (recycling). Avoid the extremes ("not a single season").'
     },
@@ -178,17 +178,17 @@ window.SAT_SETS.push({
       passage:"In the novel “The Cartographer’s Daughter,” the young mapmaker Inés is portrayed as distrustful of any information she has not confirmed for herself. A student argues that the novel shows Inés relying on her own direct observation rather than on the accounts of other people.",
       stem:'Which quotation from "The Cartographer’s Daughter" most effectively illustrates the student’s claim?',
       choices:{
-        A:'“Inés loved the old sailors’ tales of golden coasts and would repeat them to anyone who stopped to listen.”',
+        A:'“Inés loved the old sailors’ tales of golden coasts and would repeat them to anyone who stopped to listen, never once asking how they knew.”',
         B:'“Inés had inherited her father’s brass instruments, and she polished each of them every evening out of habit.”',
-        C:'“The villagers trusted Inés completely, carrying to her every rumor they gathered from passing travelers.”',
+        C:'“Inés copied the coastline from her father’s charts, certain that no one had ever surveyed it more carefully than he had.”',
         D:'“Though the merchants swore the mountain pass was impassable, Inés resolved to walk its full length before drawing a single line.”'
       },
       correct:'D',
       expCorrect:'The claim is that Inés trusts what she observes herself, not what she is told. Quote D shows it: even though the merchants swore the pass was impassable (other people’s testimony), Inés resolves to walk it herself before drawing a single line. That is the exact evidence.',
       expWrong:{
-        A:'It runs the other way: gladly repeating the sailors’ tales shows she DOES accept other people’s accounts, the opposite of the claim.',
+        A:'It runs the other way, and the closing clause makes it sharper: repeating the tales without ever asking how the sailors knew is exactly accepting other people’s accounts unchecked.',
         B:'Off topic: inheriting and polishing her father’s instruments says nothing about trusting only her own observation.',
-        C:'It points at others, not at her: it describes villagers trusting Inés and bringing her rumors; it does not show Inés verifying things herself.'
+        C:'This is the closest trap, because there is careful surveying in it. But the surveying is her father’s, not hers, and she accepts his charts on his authority. The claim is about Inés relying on her OWN direct observation.'
       },
       tip:'Match the claim to the quote: "her own observation vs. other people’s accounts" demands a quote where the character IGNORES what others say and checks in person. D contrasts "merchants swore" with walking it herself.'
     },

@@ -42,7 +42,7 @@
 | `B2-01` | Sin titulo/favicon default del framework | PASS | sin 'Vite + React' ni iconos de plantilla |
 | `B2-02` | Sin source maps en produccion | PASS | el build no publica source maps |
 | `B2-03` | Cero errores en consola | PASS | consola limpia |
-| `B2-04` | Bundles de JS razonables | WARN | mayor carga JS por pagina: 1.72 MB; total en build: 1.77 MB |
+| `B2-04` | Bundles de JS razonables | WARN | mayor carga JS por pagina: 1.76 MB; total en build: 1.82 MB |
 | `B2-05` | Titulos unicos por pagina | n/a | una sola pagina: no aplica |
 | `B2-06` | Un solo h1 por pagina, unico por pagina | PASS | un h1 por pagina, todos distintos |
 | `B2-07` | Meta descriptions unicas | n/a | una sola pagina: no aplica |
@@ -68,7 +68,7 @@
 | `B3-03` | prefers-reduced-motion respetado | PASS | sin animaciones que apagar |
 | `B3-04` | Campos de formulario con etiqueta | PASS | todos los campos etiquetados |
 | `B3-05` | El telefono girado (812x375) | PASS | en horizontal se ve bien |
-| `B3-06` | Core Web Vitals (LCP y CLS) | PASS | LCP 128 ms · CLS 0 (peor pagina, red local sin latencia) |
+| `B3-06` | Core Web Vitals (LCP y CLS) | PASS | LCP 284 ms · CLS 0 (peor pagina, red local sin latencia) |
 | `B3-07` | Regla cero de TOMMY-DESIGN | PASS | sin firmas genericas · tipografia: -apple-system |
 
 ## Evidencia

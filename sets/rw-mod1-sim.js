@@ -173,15 +173,15 @@
         stem:'Which choice best describes the overall structure of the text?',
         choices:{
           A:'It presents a common claim, rejects it, and then supplies evidence of a slower and more distributed process',
-          B:'It describes an invention and then lists the industries that adopted it',
-          C:'It compares two competing explanations and concludes that both are partly correct',
-          D:'It traces the biography of an inventor from an early failure to eventual success'},
+          B:'It describes an invention, explains the single trade that used it, and then lists the workshops that improved it',
+          C:'It compares two competing explanations of the same event and endorses the older one',
+          D:'It traces the career of an inventor from a failed engine in 1712 to later success'},
         correct:'A',
         expCorrect:'The structure is in plain sight: sentence 1 presents the common claim ("it began with a single invention"), sentence 2 rejects it ("convenient but misleading"), and the rest supplies the evidence — seventy years, dozens of workshops, accumulated improvements. It is claim → rejection → evidence of a distributed process.',
         expWrong:{
-          B:'Only one industry is mentioned (mining) and as a limitation, not as a list of adopters. The text does not enumerate industries.',
-          C:'There are not two competing explanations: there is a claim and its refutation. And the text does not conclude the first is partly right, it says it is misleading.',
-          D:'No inventor appears. The text speaks of workshops in the plural precisely to deny the lone-genius idea.'
+          B:'Every piece is drawn from the text and the order is even right, which is what makes it tempting — but the workshops are never listed, only counted ("dozens"), and the option drops the move the paragraph is built on: the common claim and its rejection.',
+          C:'There are not two explanations competing: there is a claim and its refutation. And far from endorsing the older one, the text calls it misleading in its second sentence.',
+          D:'No inventor appears anywhere in the text, and the 1712 engine is not called a failure — it worked, just only for pumping mines. The text counts workshops in the plural precisely to deny that one person is the story.'
         },
         tip:'For structure, sum up each sentence in two words and read the sequence: "claim / I deny it / evidence". Almost always one option traces that sequence and the others describe a different text.'
       },
@@ -211,15 +211,15 @@
         stem:'Based on the texts, how would the curators in Text 2 most likely respond to Kingsley\'s claim in Text 1 that a museum label “records a death, not a life”?',
         choices:{
           A:'By agreeing that specimens lose context but arguing that they gain something field observation cannot offer: verifiability by others',
-          B:'By denying that any information is lost when a specimen is removed from its habitat',
-          C:'By claiming that field observation is more expensive than maintaining a museum collection',
-          D:'By proposing that naturalists and curators should both abandon their methods in favor of a third approach'},
+          B:'By denying that a label records a death, since the specimen itself survives in the drawer',
+          C:'By arguing that field observation is the only method that can be checked by other researchers',
+          D:'By proposing that naturalists record the season and the water alongside each specimen so that the drawer would preserve both the death and the life'},
         correct:'A',
         expCorrect:'The curators do not deny the loss of context: they sidestep it by changing the criterion. Their defense is that field observation "could not be verified by anyone else", while a preserved specimen "could be examined by a hundred researchers over a century". That is: they concede Kingsley’s point and answer with a different advantage, verifiability.',
         expWrong:{
-          B:'Text 2 never denies the loss. Its argument is "in practical terms", which implicitly grants that in other terms Kingsley may be right.',
-          C:'Cost is mentioned in neither text. It is a reasonable worry but invented by the option.',
-          D:'Neither text proposes abandoning both methods. Text 2 defends its own; Text 1 defends the other.'
+          B:'It picks a fight the curators never pick. They do not dispute what the label fails to record; they change the subject to what the specimen makes possible afterward — checking.',
+          C:'It reverses Text 2 exactly. The curators say it is FIELD observation that "could not be checked by anyone else", and the preserved specimen that can.',
+          D:'It is the sensible compromise nobody in the texts proposes. Text 2 defends the collections as they already are, on the single ground of verifiability; it recommends no change in how specimens are recorded.'
         },
         tip:'In paired passages, the answer is almost never "denies everything" or "agrees completely". It is usually "grants part of it and answers with a different criterion". Look for what each author concedes, not only where they differ.'
       },
@@ -272,15 +272,15 @@
         stem:'Which choice best states the main idea of the text?',
         choices:{
           A:'Ross showed that malaria could be controlled by reducing mosquitoes below a threshold rather than eliminating them',
-          B:'Ross was the first scientist to identify the mosquito as the carrier of malaria',
-          C:'Mathematical equations have proven more useful than field work in fighting malaria',
-          D:'Malaria control programs have failed because they aimed at eradication'},
+          B:'Ross was the first to prove that mosquitoes carry malaria from one person to another',
+          C:'Ross’s equations have done more to reduce malaria than any mosquito-control program',
+          D:'Control programs since 1900 have failed whenever they settled for a threshold instead of eliminating every single mosquito'},
         correct:'A',
         expCorrect:'The text presents the counterintuitive implication of the equations — you do not need to wipe out every mosquito, just drop below a certain density — and closes by saying control programs were built on that threshold. That is the complete idea.',
         expWrong:{
-          B:'The text never says Ross discovered the mosquito’s role; it describes his equations on transmission. It is a plausible fact but it is not in the text.',
-          C:'There is no comparison with field work. The text does not rank methods.',
-          D:'It is the opposite: it says the programs were built on the threshold "rather than on eradication", and it mentions no failure.'
+          B:'The text credits Ross with the equations, not with the discovery of the carrier — which it treats as already known when he wrote them. Plausible outside the passage, absent inside it.',
+          C:'The text never weighs the equations against anything. It says programs were BUILT on the threshold the equations described, which makes the two work together rather than compete.',
+          D:'It reverses the passage twice: the programs were built on the threshold, not against it, and the text reports no failure of any kind. The absolute "every single mosquito" is exactly what the equations showed to be unnecessary.'
         },
         tip:'Watch out for options that are true in the real world but are not in the text. The question is what THIS passage says. If you have to bring in outside information to justify it, it is wrong.'
       },
@@ -311,15 +311,15 @@
         stem:'Which choice most effectively uses data from the table to support the biologist\'s claim?',
         choices:{
           A:'The North stretch, with 85% cover, recorded 14.2 frogs per hour, while the East stretch, with 12%, recorded 2.4',
-          B:'The East stretch recorded 2.4 frogs per hour, the lowest value of the four stretches',
-          C:'The Central stretch recorded 9.8 frogs per hour, more than the South stretch',
-          D:'All four stretches of the creek were sampled during the same year, 2024'},
+          B:'The South stretch recorded 5.1 frogs per hour, more than the East stretch’s 2.4',
+          C:'The East stretch, with 12% cover, recorded 2.4 frogs per hour, more than any other stretch',
+          D:'All four stretches were searched for the same number of hours during 2024, so the counts can be compared directly'},
         correct:'A',
         expCorrect:'The claim is about a RELATIONSHIP between two variables: more shade, more frogs. To support it you have to cite both variables in at least two stretches, and it is best if they are the extremes. Option A does exactly that: 85% → 14.2 against 12% → 2.4.',
         expWrong:{
-          B:'It mentions only the frogs and says nothing about tree cover. Without both variables you cannot support a claim about the relationship between them.',
-          C:'It compares two stretches but again leaves out the cover. On top of that it picks two middling values, which show less contrast than the extremes.',
-          D:'It is a fact about the study design, not about the relationship. All of them being measured in 2024 says nothing about shade or frogs.'
+          B:'Both figures are read correctly off the table, and the comparison even runs the right way — but neither tree-cover percentage appears. A comparison of frog counts alone cannot support a claim about shade.',
+          C:'It names both variables, which is the filter most students apply, and then misreads the column: 2.4 is the LOWEST count of the four stretches, not the highest. Grabbing the extreme row without checking the number lands you here.',
+          D:'It is a fact about the design of the study, not about the relationship. And the table reports a RATE, frogs per hour, which already controls for effort: equal search time would still say nothing about shade.'
         },
         tip:'Fixed rule for table or graph questions: if the claim relates TWO variables, the right answer has to name BOTH. It is the fastest filter there is — it usually rules out three options without thinking.'
       },
@@ -487,15 +487,15 @@
         stem:'The student wants to emphasize a contrast between the axolotl\'s situation in the wild and in laboratories. Which choice most effectively uses relevant information from the notes to accomplish this goal?',
         choices:{
           A:'Although the axolotl is critically endangered in its natural habitat, it is one of the most widely bred laboratory species in the world.',
-          B:'The axolotl, a salamander native to a few lakes near Mexico City, can regrow an entire limb in weeks.',
-          C:'The axolotl can regrow bone, muscle, nerve and skin repeatedly and without scarring.',
-          D:'The axolotl is critically endangered and is bred in laboratories around the world.'},
+          B:'The axolotl, a salamander native to a few lakes near Mexico City, can regrow an entire limb — bone, muscle, nerve and skin — in a matter of weeks.',
+          C:'The axolotl can regrow bone, muscle, nerve and skin repeatedly, and it can do so without scarring.',
+          D:'The axolotl is critically endangered in the wild, and it is one of the most widely bred laboratory species in the world.'},
         correct:'A',
         expCorrect:'The goal calls for EMPHASIZING A CONTRAST between two situations. Option A uses the two relevant notes (endangered in the wild / abundant in laboratories) and joins them with "Although", which is what marks the contrast explicitly.',
         expWrong:{
-          B:'It uses correct notes but on a different topic: origin and regeneration. It mentions neither of the two situations that had to be contrasted.',
-          C:'It describes the regeneration ability. That is true information from the notes but it does not meet the stated goal.',
-          D:'It mentions the two right situations, but joins them with "and", which presents them as facts that stack up. With no contrast word, the contrast is not emphasized — which is exactly what the prompt asked for.'
+          B:'Four of the five notes are in here and every one of them is accurate, which is what makes it the longest and the most tempting. They are simply the wrong notes: origin and regeneration, not the wild and the laboratory.',
+          C:'It describes the regeneration ability, accurately and in the notes’ own words. It still names neither of the two situations the prompt asked to set against each other.',
+          D:'It now carries exactly the same two facts as the right answer, in the same order. The only difference is the connector: "and" stacks them as two things that are both true, while "Although" is what turns them into a contrast. That single word is the whole question.'
         },
         tip:'These are solved in two steps, in this order: (1) what does THE PROMPT ask for?, (2) which option delivers it? There is almost always an option with true information that does not meet the goal — that is the main trap. Here D is correct as a fact and fails as a contrast.'
       },
@@ -506,15 +506,15 @@
         stem:'The student wants to present the sediment cores as evidence that overturned an earlier assumption. Which choice most effectively uses relevant information from the notes to accomplish this goal?',
         choices:{
           A:'Although the Sahara was assumed throughout the twentieth century to have been arid for millions of years, the sediment cores contain freshwater pollen deposited only six thousand years ago.',
-          B:'The sediment cores, drilled from the sea floor off West Africa, contain layers of grass pollen and freshwater algae.',
-          C:'The Sahara, today the largest hot desert in the world, was assumed in the twentieth century to have been arid for millions of years.',
-          D:'The pollen layers in the cores were deposited only six thousand years ago, and today the Sahara is the largest hot desert in the world.'},
+          B:'The sediment cores, drilled from the sea floor off West Africa, contain layers of grass pollen and freshwater algae deposited only six thousand years ago.',
+          C:'The Sahara, today the largest hot desert in the world, was assumed throughout the twentieth century to have been arid for millions of years, long before anyone drilled the sea floor off West Africa.',
+          D:'Because the pollen layers in the cores were deposited only six thousand years ago, the Sahara is today the largest hot desert in the world.'},
         correct:'A',
         expCorrect:'The goal is to present the cores as evidence THAT OVERTURNED an earlier assumption. That takes three things and A has them all: the old assumption, the new evidence, and the contrast between them ("Although… the cores contain…").',
         expWrong:{
-          B:'It describes the evidence but never mentions the assumption it overturned. Without both parts there is no refutation, only a fact.',
-          C:'It presents the old assumption as if it were the point, and never mentions the cores or the evidence. It does the opposite of what was asked.',
-          D:'It pairs two facts that do not oppose each other. That the pollen is recent and that today it is a desert overturns nothing on its own: it is missing what was believed before.'
+          B:'It is now the complete evidence, dating included, and it is still only half the job: the assumption it overturned never appears, so nothing is being overturned. A finding with nothing to contradict is just a finding.',
+          C:'It states the old assumption and even gestures at the drilling, but the cores never function as evidence here — the sentence never says what they contained or that the assumption was wrong. The refutation is mentioned as a date, not made.',
+          D:'It joins two true notes with "Because", inventing a causal link the notes never support: recent pollen does not make the Sahara large today. And the assumption the cores overturned is still missing.'
         },
         tip:'When the prompt asks you to show that something "refuted", "changed" or "overturned" an earlier idea, the answer has to contain BOTH: the old idea and the new evidence. An option with only the evidence is always incomplete.'
       },
@@ -525,13 +525,13 @@
         stem:'The student wants to explain why the curators\' position was difficult to dismiss, without endorsing it. Which choice most effectively uses relevant information from the notes to accomplish this goal?',
         choices:{
           A:'The curators acknowledged the loss of context, but pointed out something field observation did not offer: a preserved specimen could be verified by a hundred researchers over a century.',
-          B:'The curators were right: field observation could not be verified by anyone else, whereas a preserved specimen could.',
+          B:'The curators were right that field observation could not be verified by anyone else, whereas a preserved specimen could be examined and re-examined by a hundred researchers over a century.',
           C:'Mary Kingsley argued that a species had to be studied where it lives, since specimens shipped to museums arrived stripped of their context.',
           D:'The debate between naturalists and curators occupied scholars for much of the nineteenth century.'},
         correct:'A',
         expCorrect:'The prompt asks for two things at once: explain the STRENGTH of the curators’ argument and NOT endorse it. Option A gives the reason it was hard to dismiss (verifiability, which field work did not offer) using reporting verbs — "acknowledged", "pointed out" — that attribute the position to them without the student adopting it.',
         expWrong:{
-          B:'It explains the strength of the argument but opens with "The curators were right", which is precisely endorsing it. It fails half the prompt, and that is the central trap of this question.',
+          B:'The explanation is complete, accurate and uses both of the relevant notes — which is exactly what makes it the longest option and the hardest to let go of. It fails on its fourth word: "were right" endorses the position, and the prompt asked the student to explain its strength WITHOUT endorsing it.',
           C:'It presents Kingsley’s position, that is, the opposing one. It explains nothing about the curators.',
           D:'It is about how long the debate lasted. That is information from the notes but it explains neither position.'
         },
