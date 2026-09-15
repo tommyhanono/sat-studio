@@ -18,7 +18,7 @@ window.SAT_SETS.push({
         D:'The axolotl can regrow lost limbs, parts of its heart, and even portions of its brain.'
       },
       correct:'B',
-      expCorrect:'La meta es PRESENTAR el axolotl a un público nuevo. La B da lo básico: qué es (una salamandra), de dónde es (lagos cerca de Ciudad de México) y su rasgo distintivo. Es la introducción general con notas exactas.',
+      expCorrect:'The goal is to INTRODUCE the axolotl to a new audience. B gives the basics: what it is (a salamander), where it is from (lakes near Mexico City) and its distinctive trait. It is the general introduction, with accurate notes.',
       expWrong:{
         A:'Dice por qué lo estudian; es un detalle, no una presentación general del animal.',
         C:'Da su estado de conservación; es un dato puntual, no una introducción de qué es.',
@@ -37,7 +37,7 @@ window.SAT_SETS.push({
         D:'The city plans to convert more streets to LED bulbs next year.'
       },
       correct:'C',
-      expCorrect:'La meta pide COMPARAR el consumo de energía de los dos tipos de foco. La C pone los dos lados frente a frente con las cifras: 150 watts los viejos vs. 60 watts los LED. Compara ambos con notas exactas.',
+      expCorrect:'The goal calls for COMPARING the energy use of the two bulb types. C puts both sides face to face with the figures: 150 watts for the old ones vs. 60 watts for the LEDs. It compares both, with accurate notes.',
       expWrong:{
         A:'Habla del cambio y de planes futuros, no del consumo de energía de cada foco.',
         B:'Compara el brillo, no el consumo de energía que pide la meta.',
@@ -56,7 +56,7 @@ window.SAT_SETS.push({
         D:'Lamarr was a self-taught inventor as well as a film actress.'
       },
       correct:'C',
-      expCorrect:'La meta es enfatizar el IMPACTO DURADERO del invento. La C lo muestra: la idea del frequency-hopping ayudó después a hacer posibles el Wi-Fi y el Bluetooth. Conecta el invento con su efecto hasta hoy, con notas exactas.',
+      expCorrect:'The goal is to emphasize the LASTING IMPACT of the invention. C shows it: the frequency-hopping idea later helped make Wi-Fi and Bluetooth possible. It connects the invention with its effect to this day, with accurate notes.',
       expWrong:{
         A:'Presenta quién era; no dice nada del impacto del invento.',
         B:'Describe el invento original (los torpedos), pero no su influencia posterior.',
@@ -75,7 +75,7 @@ window.SAT_SETS.push({
         D:'Meadow A, planted with only clover, drew 8 bee species per visit, compared with 27 for the wildflower mix in Meadow B.'
       },
       correct:'D',
-      expCorrect:'La meta pide un HALLAZGO específico. La D da los números concretos del estudio: 8 especies de abejas en el prado de trébol vs. 27 en el de flores variadas. Es un resultado medible y exacto.',
+      expCorrect:'The goal calls for a specific FINDING. D gives the study’s concrete numbers: 8 bee species in the clover meadow vs. 27 in the mixed-flower one. It is a measurable, exact result.',
       expWrong:{
         A:'Describe el montaje del estudio, no lo que se encontró.',
         B:'Explica la diferencia entre los prados, pero sin reportar ningún dato del resultado.',
@@ -94,7 +94,7 @@ window.SAT_SETS.push({
         D:'The buildings of Venice rest on wooden piles driven deep into the soft mud.'
       },
       correct:'A',
-      expCorrect:'La meta pide especificar una MEDIDA para proteger la ciudad de las inundaciones. La A nombra la medida concreta: el sistema de barreras móviles MOSE, que se levanta para bloquear las mareas altas. Responde justo lo que pide, con notas exactas.',
+      expCorrect:'The goal calls for naming a MEASURE protecting the city from flooding. A names the concrete measure: the MOSE system of movable barriers, which rises to block high tides. It answers exactly what was asked, with accurate notes.',
       expWrong:{
         B:'Describe cómo está construida Venecia; no es una medida de protección.',
         C:'Explica el problema (se hunde, sube el mar), no la solución tomada.',
@@ -113,7 +113,7 @@ window.SAT_SETS.push({
         D:'Both printmakers made a portrait of the same city square.'
       },
       correct:'C',
-      expCorrect:'La meta pide una DIFERENCIA en las técnicas. La C contrasta los dos métodos: X hizo woodcut tallando madera y Y hizo etching con ácido en metal. Es diferencia de técnica pura, con notas exactas.',
+      expCorrect:'The goal calls for a DIFFERENCE in technique. C contrasts the two methods: X made a woodcut by carving wood and Y made an etching with acid on metal. It is pure technique difference, with accurate notes.',
       expWrong:{
         A:'Dice lo que las dos estampas tienen en COMÚN (mismo tema), no una diferencia de técnica.',
         B:'Reporta que fueron igual de hábiles; es una semejanza de calidad, no una diferencia de método.',

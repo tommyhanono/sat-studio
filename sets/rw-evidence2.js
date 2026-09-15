@@ -19,13 +19,13 @@ window.SAT_SETS.push({
         D:'The lullaby is considered one of the most beautiful songs in the region.'
       },
       correct:'C',
-      expCorrect:'Su argumento es que la canción NO tiene un solo autor, sino que fue creciendo con versos que muchos cantantes fueron sumando. C lo apoya directo: grabaciones de distintas décadas guardan versos distintos → la canción fue cambiando de boca en boca, tal como ella dice.',
+      expCorrect:'Her argument is that the song has NO single author, but grew as singers kept adding verses. C supports it directly: recordings from different decades preserve different verses → the song kept changing from mouth to mouth, exactly as she says.',
       expWrong:{
-        A:'Que se cante en bodas y cosechas dice que es popular hoy, pero no dice nada sobre CÓMO se compuso ni si tuvo un solo autor.',
-        B:'La canción de otro pueblo es otra cosa distinta; no informa sobre el origen colectivo de ESTA canción.',
-        D:'Que sea bella es una opinión de valor; no toca si se creó entre muchos o un solo autor.'
+        A:'That it is sung at weddings and harvests says it is popular today, but says nothing about HOW it was composed or whether it had a single author.',
+        B:'The song from another village is a different thing; it tells you nothing about the collective origin of THIS song.',
+        D:'That it is beautiful is a value judgment; it does not touch whether it was created by many or by one author.'
       },
-      tip:'Vuelve al CLAIM exacto (creció entre muchos, sin un solo autor) y pregunta: ¿esta opción lo apoya directamente? Busca la que muestra el cambio con el tiempo, no la que solo dice que es popular o linda.'
+      tip:'Go back to the exact CLAIM (it grew among many, with no single author) and ask: does this option support it directly? Look for the one showing change over time, not the one saying it is popular or beautiful.'
     },
     {
       id:'CE2-02', type:'mc', domain:'Information and Ideas', difficulty:'Fácil',
@@ -39,13 +39,13 @@ window.SAT_SETS.push({
         D:'Both classes had studied the same material during the previous week.'
       },
       correct:'B',
-      expCorrect:'Su afirmación es que explicar en voz alta a un compañero ayuda a ATRAPAR los propios errores más que trabajar en silencio. B lo dice exacto: los que explicaron en voz alta corrigieron muchos más errores propios que los del silencio. Compara justo las dos variables de la afirmación.',
+      expCorrect:'Her claim is that explaining out loud to a partner helps you CATCH your own mistakes more than working in silence. B says exactly that: those who explained aloud corrected far more of their own errors than the silent group. It compares precisely the two variables in the claim.',
       expWrong:{
-        A:'Qué método PREFIEREN los estudiantes es un gusto, no mide si atrapan más errores. No apoya la afirmación.',
-        C:'Terminar más rápido en silencio habla de velocidad, no de corregir errores; incluso podría ir en contra de hablar.',
-        D:'Que estudiaran el mismo material es un control de método justo, pero no muestra que hablar ayude a corregir más.'
+        A:'Which method students PREFER is a matter of taste, not a measure of whether they catch more errors. It does not support the claim.',
+        C:'Finishing faster in silence is about speed, not about correcting errors; it might even work against speaking aloud.',
+        D:'That they studied the same material is a fair methodological control, but it does not show that speaking helps you correct more.'
       },
-      tip:'Vuelve al CLAIM exacto (hablar en voz alta → atrapar más errores propios) y pregunta: ¿esta opción lo apoya directamente? La correcta compara ESAS dos variables, no la preferencia ni la velocidad.'
+      tip:'Go back to the exact CLAIM (speaking aloud → catching more of your own errors) and ask: does this option support it directly? The right one compares THOSE two variables, not preference or speed.'
     },
     {
       id:'CE2-03', type:'mc', domain:'Information and Ideas', difficulty:'Media',
@@ -59,13 +59,13 @@ window.SAT_SETS.push({
         D:'After the lane opened, driving alone was still the most common way to commute, at 49%.'
       },
       correct:'B',
-      expCorrect:'La idea es que el carril de bici jaló gente que ANTES manejaba sola. B usa los datos para mostrarlo: bici subió casi lo mismo (13 puntos) que lo que bajó manejar solo (13 puntos), mientras bus y caminar casi no cambiaron. Ese casi-empate sugiere que el traspaso vino de los que manejaban.',
+      expCorrect:'The idea is that the bike lane pulled in people who USED to drive alone. B uses the data to show it: biking rose by almost the same amount (13 points) as driving alone fell (13 points), while bus and walking barely moved. That near-match suggests the shift came from the drivers.',
       expWrong:{
-        A:'Que la bici subiera es cierto, pero por sí solo no dice DE DÓNDE vino esa gente; podrían haber dejado de caminar o de tomar bus.',
-        C:'Que el bus quedara en ~20% muestra que NO cambió; no explica el aumento de la bici ni conecta con manejar solo.',
-        D:'Que manejar solo siga siendo lo más común (49%) es verdad, pero apunta a que muchos siguen manejando; no muestra el traspaso hacia la bici.'
+        A:'That biking rose is true, but on its own it does not say WHERE those people came from; they could have stopped walking or taking the bus.',
+        C:'That the bus stayed at ~20% shows it did NOT change; it does not explain the rise in biking or connect to driving alone.',
+        D:'That driving alone is still the most common (49%) is true, but it points to many people still driving; it does not show the shift toward biking.'
       },
-      tip:'Para datos, lee bien los números y compara los cambios: la correcta empareja la SUBIDA de bici con la BAJADA de manejar solo (13 puntos ambos) y descarta las otras opciones que casi no se movieron.'
+      tip:'With data, read the numbers carefully and compare the changes: the right one pairs the RISE in biking with the FALL in driving alone (13 points each) and rules out the other options that barely moved.'
     },
     {
       id:'CE2-04', type:'mc', domain:'Information and Ideas', difficulty:'Media',
@@ -79,13 +79,13 @@ window.SAT_SETS.push({
         D:'The reflective metal coating produced a temperature drop of 6.5°C, the largest of the four options tested.'
       },
       correct:'D',
-      expCorrect:'La afirmación es que el recubrimiento metálico reflectante enfría MÁS. D usa el dato correcto: 6.5°C, la mayor caída de las cuatro. Al ser la más grande, respalda que ese material fue el más efectivo.',
+      expCorrect:'The claim is that the reflective metal coating cools MORE. D uses the right figure: 6.5°C, the biggest drop of the four. Being the largest, it backs up that material being the most effective.',
       expWrong:{
-        A:'La pintura blanca (4.0°C) enfría, pero menos que el metal; citarla no apoya que el METAL sea el mejor.',
-        B:'Las plantas (3.0°C) son de las que MENOS enfrían; ese dato no respalda que el metal gane.',
-        C:'El techo pelado (0.5°C) muestra la caída MÁS pequeña; no dice cuál es la mejor opción, solo la peor.'
+        A:'The white paint (4.0°C) cools, but less than the metal; citing it does not support the METAL being the best.',
+        B:'The plants (3.0°C) are among the LEAST cooling; that figure does not back the metal winning.',
+        C:'The bare roof (0.5°C) shows the SMALLEST drop; it tells you the worst option, not the best one.'
       },
-      tip:'Vuelve al CLAIM exacto (el metal enfría MÁS) y busca en la tabla el número MAYOR de caída: 6.5°C. La correcta cita ese dato; las otras citan materiales que enfrían menos.'
+      tip:'Go back to the exact CLAIM (metal cools MORE) and find the LARGEST drop in the table: 6.5°C. The right one cites that figure; the others cite materials that cool less.'
     },
     {
       id:'CE2-05', type:'mc', domain:'Information and Ideas', difficulty:'Media',
@@ -99,13 +99,13 @@ window.SAT_SETS.push({
         D:'The handwritten draft was written in the same year the novel was eventually published.'
       },
       correct:'A',
-      expCorrect:'Su tesis es que la autora REVISÓ el libro para volver a la heroína menos obediente y más habladora. A lo prueba directo: en la versión final la heroína discute abiertamente donde en el borrador solo obedecía en silencio. Ese contraste borrador→final es justo el cambio que él afirma.',
+      expCorrect:'His thesis is that the author REVISED the book to make the heroine less obedient and more outspoken. A proves it directly: in the final version the heroine argues openly where in the draft she only obeyed in silence. That draft→final contrast is exactly the change he claims.',
       expWrong:{
-        B:'Que la autora escribiera OTROS libros con mujeres fuertes no muestra que cambiara ESTE libro entre borrador y publicación.',
-        C:'Cuántas copias vendió mide popularidad, no si revisó a la heroína para hacerla más franca.',
-        D:'En qué año se escribió el borrador es un dato de fechas; no dice si el personaje cambió de obediente a franca.'
+        B:'That the author wrote OTHER books with strong women does not show she changed THIS book between draft and publication.',
+        C:'How many copies it sold measures popularity, not whether she revised the heroine to be more outspoken.',
+        D:'What year the draft was written is a matter of dates; it does not say whether the character changed from obedient to outspoken.'
       },
-      tip:'Vuelve al CLAIM exacto (revisó borrador→final para hacerla más franca) y pregunta: ¿esta opción lo apoya directamente? La correcta compara las DOS versiones y muestra el cambio; las demás hablan de otros libros, ventas o fechas.'
+      tip:'Go back to the exact CLAIM (she revised draft→final to make her more outspoken) and ask: does this option support it directly? The right one compares the TWO versions and shows the change; the rest are about other books, sales or dates.'
     },
     {
       id:'CE2-06', type:'mc', domain:'Information and Ideas', difficulty:'Fácil',
@@ -119,13 +119,13 @@ window.SAT_SETS.push({
         D:'Plants watered every 2 weeks produced only 11 tomatoes per plant, the lowest yield.'
       },
       correct:'C',
-      expCorrect:'La hipótesis es que regar cada 3 días da el MAYOR rendimiento. C usa el dato exacto: 26 tomates por planta, más que cualquier otro horario. Al ser el número más alto de los cuatro, respalda su hipótesis directamente.',
+      expCorrect:'The hypothesis is that watering every 3 days gives the HIGHEST yield. C uses the exact figure: 26 tomatoes per plant, more than any other schedule. Being the highest of the four, it supports her hypothesis directly.',
       expWrong:{
-        A:'El riego diario (18) supera al de cada 2 semanas, pero no llega a 26; ese dato no muestra que cada 3 días sea el mejor.',
-        B:'El riego semanal (22) es un rendimiento medio, menor que 26; no apoya que cada 3 días gane.',
-        D:'Cada 2 semanas (11) es el PEOR; dice cuál es el más bajo, no que cada 3 días sea el más alto.'
+        A:'Daily watering (18) beats every two weeks, but does not reach 26; that figure does not show every 3 days is best.',
+        B:'Weekly watering (22) is a middling yield, lower than 26; it does not support every 3 days winning.',
+        D:'Every 2 weeks (11) is the WORST; it tells you the lowest, not that every 3 days is the highest.'
       },
-      tip:'Vuelve al CLAIM exacto (cada 3 días = MÁS tomates) y busca el número mayor: 26. La correcta cita ese máximo; las otras citan valores menores que no prueban la hipótesis.'
+      tip:'Go back to the exact CLAIM (every 3 days = MORE tomatoes) and find the largest figure: 26. The right one cites that maximum; the others cite smaller values that do not prove the hypothesis.'
     },
     {
       id:'CE2-07', type:'mc', domain:'Information and Ideas', difficulty:'Media',
@@ -139,13 +139,13 @@ window.SAT_SETS.push({
         D:'“My rival across town claims to have built something similar, though I doubt it works.”'
       },
       correct:'A',
-      expCorrect:'Su argumento es que el éxito vino de ensayo y error TERCO y repetido, no de chispazos de genio. A lo ilustra perfecto: “intento no. 214 falló… cada fracaso me mostró un camino menos que probar”. Muestra la insistencia paso a paso que él defiende.',
+      expCorrect:'His argument is that the success came from stubborn, repeated trial and error, not flashes of genius. A illustrates it perfectly: “attempt no. 214 failed… each failure showed me one less path to try”. It shows the step-by-step persistence he is defending.',
       expWrong:{
-        B:'Despertar con el diseño COMPLETO “de la noche a la mañana” es justo el chispazo de genio que el biógrafo DESCARTA. Va en dirección contraria.',
-        C:'Que la ciudad financie un taller habla de recursos, no de si el éxito vino de insistir con prueba y error.',
-        D:'Comentar sobre un rival no dice nada sobre el propio método del inventor. Irrelevante a la afirmación.'
+        B:'Waking up with the COMPLETE design “overnight” is exactly the flash of genius the biographer RULES OUT. It runs the opposite way.',
+        C:'That the city funded a workshop is about resources, not about whether the success came from persistent trial and error.',
+        D:'Commenting on a rival says nothing about the inventor’s own method. Irrelevant to the claim.'
       },
-      tip:'Ojo con el “less… than…” (menos por genio que por insistir). Vuelve al CLAIM y elige la cita que ESCENIFICA la insistencia (intento 214, fallar y seguir); la del chispazo repentino es la trampa.'
+      tip:'Watch the “less… than…” (less from genius than from persistence). Go back to the CLAIM and pick the quote that STAGES the persistence (attempt 214, failing and continuing); the sudden-flash one is the trap.'
     },
     {
       id:'CE2-08', type:'mc', domain:'Information and Ideas', difficulty:'Difícil',
@@ -159,13 +159,13 @@ window.SAT_SETS.push({
         D:'The survey included 2,000 people living at various distances from the path network.'
       },
       correct:'C',
-      expCorrect:'La conclusión es que vivir MÁS CERCA se asocia con MÁS ejercicio. C usa los tres datos en orden para mostrar la tendencia completa: a más distancia, menos minutos (150 → 110 → 95). Ese descenso parejo es exactamente la asociación que el equipo afirma.',
+      expCorrect:'The conclusion is that living CLOSER goes with MORE exercise. C uses the three data points in order to show the whole trend: the farther away, the fewer minutes (150 → 110 → 95). That steady decline is exactly the association the team claims.',
       expWrong:{
-        A:'Citar solo el grupo lejano (95 min) da un punto suelto; sin comparar con los cercanos no muestra la tendencia por distancia.',
-        B:'El grupo intermedio (110 min) por sí solo tampoco muestra la relación; falta compararlo con los otros dos.',
-        D:'Que fueran 2,000 personas describe el TAMAÑO de la muestra, no la relación entre distancia y ejercicio.'
+        A:'Citing only the farthest group (95 min) gives a single loose point; without comparing it to the closer ones it does not show the trend by distance.',
+        B:'The middle group (110 min) on its own does not show the relationship either; it needs comparing with the other two.',
+        D:'That there were 2,000 people describes the SIZE of the sample, not the relationship between distance and exercise.'
       },
-      tip:'Para datos, la mejor evidencia de una TENDENCIA usa los extremos o toda la serie en orden (150→110→95), no un solo punto. Lee la variable del eje (distancia) y sigue cómo cambia el otro número.'
+      tip:'With data, the best evidence for a TREND uses the extremes or the whole series in order (150→110→95), not a single point. Read the variable on the axis (distance) and follow how the other number changes.'
     },
     {
       id:'CE2-09', type:'mc', domain:'Information and Ideas', difficulty:'Difícil',
@@ -179,13 +179,13 @@ window.SAT_SETS.push({
         D:'Written accounts describe the epidemics as frightening events that residents long remembered.'
       },
       correct:'A',
-      expCorrect:'Su tesis es que el declive vino del PUERTO azolvado (no de las epidemias), y que se distinguen por el TIEMPO. A da justo eso: el comercio se desplomó cuando se azolvó el puerto, BIEN ANTES de la primera epidemia. Si el daño ocurrió antes de la epidemia, la causa fue el puerto, como ella dice.',
+      expCorrect:'Her thesis is that the decline came from the SILTED harbor (not the epidemics), and that they are told apart by TIMING. A gives exactly that: trade collapsed when the harbor silted up, WELL BEFORE the first epidemic. If the damage came before the epidemic, the cause was the harbor, as she says.',
       expWrong:{
-        B:'Que otras ciudades tuvieran epidemias no separa las causas en ESTA ciudad ni fija el orden temporal.',
-        C:'Que la población subiera ANTES de 1800 es contexto previo; no dice qué causó el declive posterior ni el orden puerto/epidemia.',
-        D:'Que las epidemias fueran memorables refuerza la explicación RIVAL (epidemias); no apoya la del puerto.'
+        B:'That other cities had epidemics does not separate the causes in THIS city or fix the order in time.',
+        C:'That the population rose BEFORE 1800 is earlier context; it does not say what caused the later decline or the harbor/epidemic order.',
+        D:'That the epidemics were memorable reinforces the RIVAL explanation (epidemics); it does not support the harbor one.'
       },
-      tip:'Cuando el claim es “por A, no por B” y se apoya en el TIEMPO, busca la opción que fija el orden: A ocurrió ANTES que B. Aquí, el comercio cae antes de la epidemia → la causa fue el puerto.'
+      tip:'When the claim is “because of A, not B” and rests on TIMING, look for the option that fixes the order: A happened BEFORE B. Here, trade falls before the epidemic → the cause was the harbor.'
     },
     {
       id:'CE2-10', type:'mc', domain:'Information and Ideas', difficulty:'Difícil',
@@ -199,13 +199,13 @@ window.SAT_SETS.push({
         D:'All three groups showed at least some improvement in comprehension over the eight weeks.'
       },
       correct:'B',
-      expCorrect:'La conclusión es que la app SOLA sirvió de poco. B lo prueba comparando: la app sola subió apenas 4 puntos, muy por debajo del tutor solo, que subió 15. Al ser la app sola la de menor mejora, respalda que por sí misma aporta poco.',
+      expCorrect:'The conclusion is that the app ALONE did little. B proves it by comparing: the app alone rose barely 4 points, far below the tutor alone, which rose 15. Since the app alone showed the smallest gain, it supports that on its own it adds little.',
       expWrong:{
-        A:'El Grupo 1 (app + tutor) tuvo el mejor puntaje final, pero incluye al tutor; no aísla el efecto de la app SOLA.',
-        C:'El Grupo 3 (tutor sin app) subió 15 puntos; muestra que el tutor ayuda, no que la app sola sirva poco.',
-        D:'Que las tres subieran “algo” es vago y hasta va en contra: sugeriría que la app también ayudó. No aísla su efecto.'
+        A:'Group 1 (app + tutor) had the best final score, but it includes the tutor; it does not isolate the effect of the app ALONE.',
+        C:'Group 3 (tutor, no app) rose 15 points; it shows the tutor helps, not that the app alone does little.',
+        D:'That all three rose “somewhat” is vague and even works against it: it would suggest the app helped too. It does not isolate its effect.'
       },
-      tip:'Para aislar el efecto de UNA cosa (la app sola), compara el grupo que solo usó eso contra los demás. Lee bien las subidas: 4 puntos (app sola) vs. 15 (tutor solo) es lo que apoya “la app sola sirvió poco”.'
+      tip:'To isolate the effect of ONE thing (the app alone), compare the group that used only that against the others. Read the gains carefully: 4 points (app alone) vs. 15 (tutor alone) is what supports “the app alone did little”.'
     },
     {
       id:'CE2-11', type:'mc', domain:'Information and Ideas', difficulty:'Difícil',
@@ -219,13 +219,13 @@ window.SAT_SETS.push({
         D:'In the areas where the wildflower re-established itself, the rare butterfly reappeared, while nearby meadows still lacking the flower had none.'
       },
       correct:'D',
-      expCorrect:'La predicción es que devolver la flor traería de vuelta a la mariposa que solo come de esa flor. D une la causa con el efecto y agrega contraste: donde volvió la flor, volvió la mariposa; en prados vecinos SIN la flor, no había mariposa. Ese contraste ata el regreso de la mariposa a la flor.',
+      expCorrect:'The prediction is that bringing the flower back would bring back the butterfly that feeds only on it. D links cause to effect and adds a contrast: where the flower returned, the butterfly returned; in neighboring meadows WITHOUT the flower, there was no butterfly. That contrast ties the butterfly back to the flower.',
       expWrong:{
-        A:'Que sea la misma variedad histórica es contexto; no muestra que la mariposa haya vuelto por la flor.',
-        B:'Que a los visitantes les gusten las flores es irrelevante para si la mariposa regresó.',
-        C:'OTRAS mariposas que comen muchas plantas no dicen nada sobre la mariposa rara que solo come esta flor.'
+        A:'That it is the same historical variety is context; it does not show the butterfly came back because of the flower.',
+        B:'That visitors like the flowers is irrelevant to whether the butterfly returned.',
+        C:'OTHER butterflies that feed on many plants say nothing about the rare butterfly that eats only this flower.'
       },
-      tip:'La mejor evidencia enfrenta lo predicho con un contraste: donde ocurrió la causa (volvió la flor) vs. donde no. “Con flor volvió la mariposa, sin flor no” es lo que ata causa y efecto.'
+      tip:'The best evidence sets the prediction against a contrast: where the cause happened (the flower returned) vs. where it did not. “With the flower the butterfly came back, without it, no” is what ties cause to effect.'
     },
     {
       id:'CE2-12', type:'mc', domain:'Information and Ideas', difficulty:'Difícil',
@@ -239,13 +239,13 @@ window.SAT_SETS.push({
         D:'The team should recommend almonds, which kept volunteers full for 4.0 hours, longer than any other snack tested.'
       },
       correct:'D',
-      expCorrect:'La meta es recomendar el snack que mantiene lleno MÁS tiempo. D usa el dato correcto: las almendras, con 4.0 horas, superan a todos. Al ser el número más alto de saciedad, completa la recomendación como el equipo quiere.',
+      expCorrect:'The goal is to recommend the snack that keeps you full the LONGEST. D uses the right figure: almonds, at 4.0 hours, beat them all. Being the highest satiety number, it completes the recommendation the way the team wants.',
       expWrong:{
-        A:'La manzana (2.5 h) llena bastante, pero menos que las almendras; no es el máximo, así que no completa bien la recomendación.',
-        B:'Las galletas (1.8 h) apenas superan a las papas; están entre las que MENOS llenan. Mala lectura del objetivo.',
-        C:'Las papas (1.5 h) son las que llenan por MENOS tiempo; es justo lo contrario de lo que se busca recomendar.'
+        A:'The apple (2.5 h) fills you up quite a bit, but less than the almonds; it is not the maximum, so it does not complete the recommendation well.',
+        B:'The cookies (1.8 h) barely beat the chips; they are among the LEAST filling. A misreading of the goal.',
+        C:'The chips (1.5 h) are the ones that fill you for the SHORTEST time; exactly the opposite of what is meant to be recommended.'
       },
-      tip:'Vuelve al CLAIM exacto (llenar por MÁS tiempo) y busca el número MAYOR de horas: 4.0 (almendras). La correcta cita ese máximo; las demás confunden el objetivo con valores menores o el mínimo.'
+      tip:'Go back to the exact CLAIM (fills you up LONGER) and find the LARGEST number of hours: 4.0 (almonds). The right one cites that maximum; the rest confuse the goal with smaller values or the minimum.'
     }
   ]
 });

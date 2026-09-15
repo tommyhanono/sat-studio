@@ -16,11 +16,11 @@ window.SAT_SETS.push({
       correct:'A',
       expCorrect:'Before you look at the options, read the relationship: the garden ALWAYS grew only vegetables, but this year he planted flowers. Predict your transition: it is a change breaking the habit, that is, contrast. “However” marks that opposition between what always happened and what is new.',
       expWrong:{
-        B:'“For example” anuncia un ejemplo de la 1ª idea, pero las flores no son un caso de “solo vegetales”: la contradicen.',
+        B:'“For example” announces an example of the 1st idea, but the flowers are not a case of “only vegetables”: they contradict it.',
         C:'“Therefore” marca consecuencia, y sembrar flores no es un efecto de haber cultivado solo vegetales, es un giro contra esa costumbre.',
-        D:'“In summary” cierra o resume varias ideas, pero aquí no se resume nada: se contrasta lo de antes con lo de ahora.'
+        D:'“In summary” closes or sums up several ideas, but nothing is being summed up here: the before is set against the now.'
       },
-      tip:'Lee la relación entre las dos ideas ANTES de mirar opciones e ignora las opciones para predecir la transición. Si la 2ª idea rompe con lo que siempre pasaba, la relación es contraste: “However”, “But”.'
+      tip:'Read the relationship between the two ideas BEFORE you look at the options, and ignore the options while you predict the transition. If the 2nd idea breaks with what always happened, the relationship is contrast: “However”, “But”.'
     },
     {
       id:'TR2-02', type:'mc', domain:'Expression of Ideas', difficulty:'Fácil',
@@ -31,11 +31,11 @@ window.SAT_SETS.push({
       correct:'B',
       expCorrect:'Before you look at the options, read the relationship: these are two steps of a recipe in order, first beat and then fold in the flour. Predict your transition: something about sequence. “Next” marks the step that follows.',
       expWrong:{
-        A:'“Nevertheless” marca contraste, pero el 2º paso no se opone al 1º: lo continúa en orden.',
-        C:'“In contrast” señala oposición entre dos cosas, y aquí no se contrastan pasos, se ordenan uno tras otro.',
-        D:'“For instance” introduce un ejemplo, pero incorporar la harina no es un ejemplo de batir los huevos, es el paso siguiente.'
+        A:'“Nevertheless” marks contrast, but the 2nd step does not oppose the 1st: it continues it in order.',
+        C:'“In contrast” signals opposition between two things, and here the steps are not contrasted, they are sequenced one after the other.',
+        D:'“For instance” introduces an example, but folding in the flour is not an example of beating the eggs, it is the next step.'
       },
-      tip:'Lee la relación entre las dos ideas ANTES de mirar opciones e ignora las opciones para predecir la transición. Pasos en orden (primero… luego…) piden secuencia: “Next”, “Then”, “Finally”.'
+      tip:'Read the relationship between the two ideas BEFORE you look at the options, and ignore the options while you predict the transition. Steps in order (first… then…) call for sequence: “Next”, “Then”, “Finally”.'
     },
     {
       id:'TR2-03', type:'mc', domain:'Expression of Ideas', difficulty:'Fácil',
@@ -46,11 +46,11 @@ window.SAT_SETS.push({
       correct:'A',
       expCorrect:'Before you look at the options, read the relationship: the 1st idea gives an advantage (long battery) and the 2nd adds another similar advantage (brighter screen). Predict your transition: something that adds on. “Moreover” stacks a second quality of the same kind.',
       expWrong:{
-        B:'“However” marca contraste, pero las dos ideas van en la misma dirección (dos ventajas), no se oponen.',
-        C:'“As a result” marca consecuencia, y la pantalla brillante no es un efecto de la batería larga, es otra ventaja aparte.',
-        D:'“In other words” reformula la misma idea, y una pantalla más brillante es un dato nuevo, no la batería dicha de otra forma.'
+        B:'“However” marks contrast, but the two ideas run in the same direction (two advantages), they do not clash.',
+        C:'“As a result” marks consequence, and the bright screen is not an effect of the long battery, it is a separate advantage.',
+        D:'“In other words” restates the same idea, and a brighter screen is a new fact, not the battery said another way.'
       },
-      tip:'Lee la relación entre las dos ideas ANTES de mirar opciones e ignora las opciones para predecir la transición. Dos ideas del mismo tipo que se suman piden adición: “Moreover”, “In addition”, “Furthermore”.'
+      tip:'Read the relationship between the two ideas BEFORE you look at the options, and ignore the options while you predict the transition. Two ideas of the same kind stacking up call for addition: “Moreover”, “In addition”, “Furthermore”.'
     },
     {
       id:'TR2-04', type:'mc', domain:'Expression of Ideas', difficulty:'Fácil',
@@ -59,13 +59,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text with the most logical transition?',
       choices:{A:'On the other hand,', B:'Similarly,', C:'For this reason,', D:'Meanwhile,'},
       correct:'C',
-      expCorrect:'Antes de mirar las opciones, lee la relación: la oscuridad hace difícil encontrar pareja (causa) y por eso la hembra tiene un señuelo luminoso (consecuencia). Predice tu transición: causa→efecto. “For this reason” conecta el motivo con lo que produce.',
+      expCorrect:'Before you look at the options, read the relationship: the darkness makes finding a mate hard (cause) and that is why the female has a glowing lure (consequence). Predict your transition: cause→effect. “For this reason” connects the motive with what it produces.',
       expWrong:{
-        A:'“On the other hand” marca contraste, y el señuelo no se opone a la oscuridad, es la respuesta que esa oscuridad provocó.',
-        B:'“Similarly” marca semejanza, pero las dos oraciones no son casos parecidos: una es el problema y la otra la adaptación que lo resuelve.',
-        D:'“Meanwhile” señala algo simultáneo en otro lugar, pero aquí no hay dos escenas paralelas, hay una causa y su efecto.'
+        A:'“On the other hand” marks contrast, and the lure does not oppose the darkness, it is the answer that darkness drove.',
+        B:'“Similarly” marks likeness, but the two sentences are not similar cases: one is the problem and the other the adaptation that solves it.',
+        D:'“Meanwhile” signals something simultaneous elsewhere, but there are no two parallel scenes here, there is a cause and its effect.'
       },
-      tip:'Lee la relación entre las dos ideas ANTES de mirar opciones e ignora las opciones para predecir la transición. Problema → adaptación que ese problema provoca es causa→efecto: “For this reason”, “Therefore”.'
+      tip:'Read the relationship between the two ideas BEFORE you look at the options, and ignore the options while you predict the transition. Problem → the adaptation that problem drives is cause→effect: “For this reason”, “Therefore”.'
     },
     {
       id:'TR2-05', type:'mc', domain:'Expression of Ideas', difficulty:'Media',
@@ -74,13 +74,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text with the most logical transition?',
       choices:{A:'Likewise,', B:'For example,', C:'However,', D:'Consequently,'},
       correct:'C',
-      expCorrect:'Antes de mirar las opciones, lee la relación: los estudiosos creían que la ciudad se abandonó de golpe, pero las excavaciones muestran que la gente siguió viviendo ahí. Predice tu transición: la evidencia contradice la creencia, o sea contraste. “However” marca esa oposición.',
+      expCorrect:'Before you look at the options, read the relationship: scholars believed the city was abandoned all at once, but the excavations show people went on living there. Predict your transition: the evidence contradicts the belief, that is, contrast. “However” marks that opposition.',
       expWrong:{
-        A:'“Likewise” marca semejanza, pero la evidencia va EN CONTRA de la creencia, no en la misma línea.',
-        B:'“For example” daría un caso que confirma la 1ª idea, y las excavaciones la refutan, no la ilustran.',
-        D:'“Consequently” marca consecuencia, pero el hallazgo no es un efecto de la creencia vieja, es la prueba de que era falsa.'
+        A:'“Likewise” marks likeness, but the evidence runs AGAINST the belief, not along the same line.',
+        B:'“For example” would give a case confirming the 1st idea, and the excavations refute it rather than illustrate it.',
+        D:'“Consequently” marks consequence, but the find is not an effect of the old belief, it is the proof that it was false.'
       },
-      tip:'Lee la relación entre las dos ideas ANTES de mirar opciones e ignora las opciones para predecir la transición. Cuando la evidencia contradice lo que se creía, la relación es contraste: “However”, “Yet”.'
+      tip:'Read the relationship between the two ideas BEFORE you look at the options, and ignore the options while you predict the transition. When the evidence contradicts what was believed, the relationship is contrast: “However”, “Yet”.'
     },
     {
       id:'TR2-06', type:'mc', domain:'Expression of Ideas', difficulty:'Media',
@@ -89,13 +89,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text with the most logical transition?',
       choices:{A:'By contrast,', B:'In particular,', C:'Alternatively,', D:'Predictably,'},
       correct:'D',
-      expCorrect:'Antes de mirar las opciones, lee la relación: los anuncios eran vistosos pero no explicaban el producto (causa), así que las ventas casi no se movieron (consecuencia esperada). Predice tu transición: un efecto lógico. “Predictably” marca que el resultado era el esperado de esa causa.',
+      expCorrect:'Before you look at the options, read the relationship: the ads were flashy but did not explain the product (cause), so sales barely moved (expected consequence). Predict your transition: a logical effect. “Predictably” marks that the result was the expected one from that cause.',
       expWrong:{
-        A:'“By contrast” marca oposición entre dos casos, pero aquí las ventas bajas son el resultado de los anuncios, no un caso opuesto.',
-        B:'“In particular” destaca un detalle específico de lo dicho, y las ventas flojas no son un detalle de los anuncios, son su consecuencia.',
-        C:'“Alternatively” presenta otra opción posible, pero aquí no se ofrece una alternativa, se da el resultado de lo que hicieron.'
+        A:'“By contrast” marks opposition between two cases, but here the weak sales are the result of the ads, not an opposite case.',
+        B:'“In particular” highlights a specific detail of what was said, and the weak sales are not a detail of the ads, they are their consequence.',
+        C:'“Alternatively” presents another possible option, but no alternative is offered here, the result of what they did is.'
       },
-      tip:'Lee la relación entre las dos ideas ANTES de mirar opciones e ignora las opciones para predecir la transición. Si la 2ª idea es el resultado lógico y esperado de la 1ª, es causa→efecto: “Predictably”, “As a result”.'
+      tip:'Read the relationship between the two ideas BEFORE you look at the options, and ignore the options while you predict the transition. If the 2nd idea is the logical, expected result of the 1st, it is cause→effect: “Predictably”, “As a result”.'
     },
     {
       id:'TR2-07', type:'mc', domain:'Expression of Ideas', difficulty:'Media',
@@ -104,13 +104,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text with the most logical transition?',
       choices:{A:'Therefore,', B:'Similarly,', C:'In fact,', D:'Afterward,'},
       correct:'C',
-      expCorrect:'Antes de mirar las opciones, lee la relación: la 1ª idea es una suposición común (que el bambú es árbol) y la 2ª la corrige con la verdad (es un pasto gigante). Predice tu transición: algo que introduce la realidad frente a la creencia. “In fact” presenta ese dato que desmiente la suposición.',
+      expCorrect:'Before you look at the options, read the relationship: the 1st idea is a common assumption (that bamboo is a tree) and the 2nd corrects it with the truth (it is a giant grass). Predict your transition: something introducing reality against the belief. “In fact” presents the fact that disproves the assumption.',
       expWrong:{
-        A:'“Therefore” marca consecuencia, pero que el bambú sea un pasto no es un efecto de la suposición, es la corrección de esa suposición.',
-        B:'“Similarly” marca semejanza, y la 2ª idea va en contra de la creencia, no la acompaña con algo parecido.',
-        D:'“Afterward” marca secuencia temporal, pero aquí no hay dos momentos en el tiempo, hay una creencia y su verdad.'
+        A:'“Therefore” marks consequence, but bamboo being a grass is not an effect of the assumption, it is the correction of that assumption.',
+        B:'“Similarly” marks likeness, and the 2nd idea runs against the belief, it does not accompany it with something alike.',
+        D:'“Afterward” marks time sequence, but there are no two moments in time here, there is a belief and the truth.'
       },
-      tip:'Lee la relación entre las dos ideas ANTES de mirar opciones e ignora las opciones para predecir la transición. Cuando la 2ª oración corrige una suposición con la verdad, funciona “In fact” (en realidad…).'
+      tip:'Read the relationship between the two ideas BEFORE you look at the options, and ignore the options while you predict the transition. When the 2nd sentence corrects an assumption with the truth, “In fact” works.'
     },
     {
       id:'TR2-08', type:'mc', domain:'Expression of Ideas', difficulty:'Media',
@@ -119,13 +119,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text with the most logical transition?',
       choices:{A:'Nonetheless,', B:'As a result,', C:'For example,', D:'Meanwhile,'},
       correct:'B',
-      expCorrect:'Antes de mirar las opciones, lee la relación: el entrenador practicó los pases cortos toda la pretemporada (causa) y por eso el equipo jugó con precisión en el primer partido (consecuencia). Predice tu transición: causa→efecto. “As a result” conecta el entrenamiento con lo que logró.',
+      expCorrect:'Before you look at the options, read the relationship: the coach drilled short passes all preseason (cause) and that is why the team played with precision in the first game (consequence). Predict your transition: cause→effect. “As a result” connects the training with what it achieved.',
       expWrong:{
-        A:'“Nonetheless” marca contraste, pero el buen juego no ocurre A PESAR del entrenamiento: es justo lo que el entrenamiento produjo.',
-        C:'“For example” daría un ejemplo de la 1ª idea, y jugar bien en el partido no es un ejemplo de los entrenamientos, es su resultado.',
-        D:'“Meanwhile” señala algo simultáneo en otro lugar, pero aquí la 2ª idea ocurre DESPUÉS y por causa de la 1ª, no al mismo tiempo.'
+        A:'“Nonetheless” marks contrast, but the good play does not happen IN SPITE of the training: it is exactly what the training produced.',
+        C:'“For example” would give an example of the 1st idea, and playing well in the game is not an example of the drills, it is their result.',
+        D:'“Meanwhile” signals something simultaneous elsewhere, but here the 2nd idea happens AFTER and because of the 1st, not at the same time.'
       },
-      tip:'Lee la relación entre las dos ideas ANTES de mirar opciones e ignora las opciones para predecir la transición. Entrenamiento → mejora que produce es causa→efecto: “As a result”, “Consequently”.'
+      tip:'Read the relationship between the two ideas BEFORE you look at the options, and ignore the options while you predict the transition. Training → the improvement it produces is cause→effect: “As a result”, “Consequently”.'
     },
     {
       id:'TR2-09', type:'mc', domain:'Expression of Ideas', difficulty:'Media',
@@ -134,13 +134,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text with the most logical transition?',
       choices:{A:'Likewise,', B:'For instance,', C:'Therefore,', D:'Still,'},
       correct:'D',
-      expCorrect:'Antes de mirar las opciones, lee la relación: la 1ª idea admite un beneficio (menos tráfico) y la 2ª presenta una objeción a pesar de ese beneficio. Predice tu transición: una concesión seguida de una pega. “Still” marca que, aun aceptando el beneficio, hay un problema.',
+      expCorrect:'Before you look at the options, read the relationship: the 1st idea grants a benefit (less traffic) and the 2nd raises an objection in spite of that benefit. Predict your transition: a concession followed by a catch. “Still” marks that, even granting the benefit, there is a problem.',
       expWrong:{
-        A:'“Likewise” marca semejanza, pero la objeción no va en la misma línea del beneficio: lo pone en duda.',
-        B:'“For instance” introduce un ejemplo, y la objeción de los opositores no es un ejemplo del beneficio, es una crítica contraria.',
-        C:'“Therefore” marca consecuencia, pero la objeción no es el efecto de reducir el tráfico, es un reparo que va en contra.'
+        A:'“Likewise” marks likeness, but the objection does not run along the same line as the benefit: it calls it into question.',
+        B:'“For instance” introduces an example, and the opponents’ objection is not an example of the benefit, it is a criticism against it.',
+        C:'“Therefore” marks consequence, but the objection is not the effect of cutting traffic, it is a counter-argument.'
       },
-      tip:'Lee la relación entre las dos ideas ANTES de mirar opciones e ignora las opciones para predecir la transición. Cuando aceptas algo bueno pero luego pones un “pero”, es concesión/contraste: “Still”, “Even so”.'
+      tip:'Read the relationship between the two ideas BEFORE you look at the options, and ignore the options while you predict the transition. When you grant something good and then add a “but”, it is concession/contrast: “Still”, “Even so”.'
     },
     {
       id:'TR2-10', type:'mc', domain:'Expression of Ideas', difficulty:'Difícil',
@@ -149,13 +149,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text with the most logical transition?',
       choices:{A:'In contrast,', B:'On balance,', C:'For example,', D:'Regardless,'},
       correct:'B',
-      expCorrect:'Antes de mirar las opciones, lee la relación: la 1ª oración lista todo lo que la bióloga reunió y midió; la 2ª cierra con la conclusión que saca de todo eso. Predice tu transición: algo que resume y concluye. “On balance” marca el juicio final tras pesar toda la evidencia.',
+      expCorrect:'Before you look at the options, read the relationship: the 1st sentence lists everything the biologist gathered and measured; the 2nd closes with the conclusion she draws from all of it. Predict your transition: something that sums up and concludes. “On balance” marks the final judgment after weighing all the evidence.',
       expWrong:{
-        A:'“In contrast” marca oposición, pero la conclusión no se opone a los datos: sale directamente de ellos.',
-        C:'“For example” daría un caso de lo anterior, y la conclusión general no es un ejemplo de los datos, es lo que se deduce de todos.',
-        D:'“Regardless” significa “sin importar lo anterior”, pero aquí la conclusión SÍ depende de la evidencia reunida, no la ignora.'
+        A:'“In contrast” marks opposition, but the conclusion does not oppose the data: it comes straight out of it.',
+        C:'“For example” would give a case of what came before, and the general conclusion is not an example of the data, it is what follows from all of it.',
+        D:'“Regardless” means “no matter what came before”, but here the conclusion DOES rest on the evidence gathered, it does not ignore it.'
       },
-      tip:'Lee la relación entre las dos ideas ANTES de mirar opciones e ignora las opciones para predecir la transición. Cuando la 2ª oración cierra sopesando toda la evidencia, es conclusión: “On balance”, “In sum”, “Overall”.'
+      tip:'Read the relationship between the two ideas BEFORE you look at the options, and ignore the options while you predict the transition. When the 2nd sentence closes by weighing all the evidence, it is conclusion: “On balance”, “In sum”, “Overall”.'
     },
     {
       id:'TR2-11', type:'mc', domain:'Expression of Ideas', difficulty:'Difícil',
@@ -164,13 +164,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text with the most logical transition?',
       choices:{A:'Otherwise,', B:'In comparison,', C:'Indeed,', D:'Previously,'},
       correct:'C',
-      expCorrect:'Antes de mirar las opciones, lee la relación: la 1ª oración dice que la autora no solo sugiere algo leve; la 2ª sube el tono a algo mucho más fuerte (la peor decisión de la historia). Predice tu transición: algo que intensifica y refuerza. “Indeed” marca ese salto de énfasis hacia una afirmación más rotunda.',
+      expCorrect:'Before you look at the options, read the relationship: the 1st sentence says the author does not merely suggest something mild; the 2nd raises the tone to something far stronger (the worst decision in history). Predict your transition: something that intensifies and reinforces. “Indeed” marks that jump in emphasis toward a stronger claim.',
       expWrong:{
-        A:'“Otherwise” plantea la alternativa si lo anterior no se cumpliera, pero aquí no hay una condición ni un escenario contrario, hay un refuerzo.',
-        B:'“In comparison” compara dos elementos, y la 2ª oración no compara nada: intensifica la misma crítica.',
-        D:'“Previously” marca algo anterior en el tiempo, pero no hay dos momentos aquí, hay una idea que se lleva a un grado más fuerte.'
+        A:'“Otherwise” lays out the alternative if the previous thing did not hold, but there is no condition or opposite scenario here, there is reinforcement.',
+        B:'“In comparison” compares two items, and the 2nd sentence compares nothing: it intensifies the same criticism.',
+        D:'“Previously” marks something earlier in time, but there are no two moments here, there is an idea taken to a stronger degree.'
       },
-      tip:'Lee la relación entre las dos ideas ANTES de mirar opciones e ignora las opciones para predecir la transición. Cuando la 2ª oración sube el tono y refuerza la 1ª (“no solo… sino que aún más”), es énfasis: “Indeed”, “In fact”.'
+      tip:'Read the relationship between the two ideas BEFORE you look at the options, and ignore the options while you predict the transition. When the 2nd sentence raises the tone and reinforces the 1st (“not only… but even more so”), it is emphasis: “Indeed”, “In fact”.'
     },
     {
       id:'TR2-12', type:'mc', domain:'Expression of Ideas', difficulty:'Difícil',
@@ -179,13 +179,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text with the most logical transition?',
       choices:{A:'Accordingly,', B:'In short,', C:'Namely,', D:'Ironically,'},
       correct:'D',
-      expCorrect:'Antes de mirar las opciones, lee la relación: la flexión de los cables era una medida de SEGURIDAD, pero justo esa señal de seguridad hizo que los viajeros creyeran que el puente se caía. Predice tu transición: un giro donde lo bueno produce el efecto contrario al esperado. “Ironically” marca esa contradicción inesperada.',
+      expCorrect:'Before you look at the options, read the relationship: the flexing of the cables was a SAFETY measure, but that very sign of safety made travelers think the bridge was collapsing. Predict your transition: a turn where the good thing produces the opposite of the expected effect. “Ironically” marks that unexpected contradiction.',
       expWrong:{
-        A:'“Accordingly” marca una consecuencia lógica y esperada, pero el pánico es lo CONTRARIO de lo que buscaba una medida de seguridad, no un efecto coherente.',
-        B:'“In short” resume en pocas palabras lo ya dicho, y aquí no se resume nada: se añade un hecho nuevo y sorprendente.',
-        C:'“Namely” introduce una precisión o lista de lo anunciado, pero el pánico de los viajeros no especifica el diseño, lo contradice de forma irónica.'
+        A:'“Accordingly” marks a logical, expected consequence, but the panic is the OPPOSITE of what a safety measure was meant to do, not a coherent effect.',
+        B:'“In short” sums up in a few words what was already said, and nothing is summed up here: a new and surprising fact is added.',
+        C:'“Namely” introduces a specification or list of what was announced, but the travelers’ panic does not specify the design, it contradicts it ironically.'
       },
-      tip:'Lee la relación entre las dos ideas ANTES de mirar opciones e ignora las opciones para predecir la transición. Cuando algo pensado para bien causa justo el efecto opuesto, es ironía: “Ironically”.'
+      tip:'Read the relationship between the two ideas BEFORE you look at the options, and ignore the options while you predict the transition. When something meant for good causes exactly the opposite effect, it is irony: “Ironically”.'
     }
   ]
 });
