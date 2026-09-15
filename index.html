@@ -541,6 +541,58 @@
   .fw-day.today .fw-daycount{background:#dbe2fb;color:var(--blue-dark)}
   @media(max-width:560px){ .cc-title{font-size:1.42rem} #view-class{padding:16px 12px 96px} .cc-sec{padding:15px 15px} }
 
+  /* ---- Mi plan de mejora ---- */
+  .plan-wrap{max-width:100%}
+  .plan-intro{font-size:.9rem;color:#42506b;line-height:1.6;margin-bottom:14px}
+  .plan-step{display:flex;align-items:center;gap:10px;margin:22px 0 10px}
+  .plan-step:first-child{margin-top:4px}
+  .plan-step h4{font-size:1rem;font-family:var(--serif)}
+  .plan-num{flex:none;width:26px;height:26px;border-radius:50%;background:var(--blue);color:#fff;display:flex;align-items:center;justify-content:center;font-size:.82rem;font-weight:700}
+  .plan-list{display:flex;flex-direction:column;gap:8px}
+  .plan-h{font-size:.82rem;text-transform:uppercase;letter-spacing:.05em;color:#42506b;margin:16px 0 8px;font-weight:700}
+  .plan-h:first-child{margin-top:0}
+  .plan-h span{text-transform:none;letter-spacing:0;font-weight:400;color:var(--gray-mid)}
+  .plan-row{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--gray-line);border-radius:10px;padding:12px 14px;background:#fff;cursor:pointer}
+  .plan-row:hover{border-color:var(--blue)}
+  .plan-row.on{border-color:var(--blue);background:var(--blue-soft)}
+  .plan-cb{flex:none;width:18px;height:18px;margin-top:2px;accent-color:var(--blue)}
+  .plan-main{flex:1;min-width:0;display:flex;flex-direction:column;gap:3px}
+  .plan-t{font-weight:600;font-size:.94rem}
+  .plan-rec{background:var(--blue);color:#fff;border-radius:999px;padding:2px 8px;font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.04em;vertical-align:middle}
+  .plan-why{font-size:.82rem;color:var(--gray-mid);line-height:1.45}
+  .plan-nums{flex:none;width:132px;display:flex;flex-direction:column;gap:4px;align-items:flex-end}
+  .plan-pct{font-size:1.15rem;font-weight:800}
+  .plan-bar{width:100%;height:6px;border-radius:999px;background:var(--gray-strip);overflow:hidden}
+  .plan-bar i{display:block;height:100%;border-radius:999px}
+  .plan-bar i.mal{background:var(--red)} .plan-bar i.medio{background:var(--amber)} .plan-bar i.bien{background:var(--green)}
+  .plan-bar.sinmedir{background:repeating-linear-gradient(45deg,var(--gray-strip),var(--gray-strip) 4px,#e4e4e4 4px,#e4e4e4 8px);height:auto;padding:1px 0;text-align:center}
+  .plan-bar.sinmedir span{font-size:.66rem;color:var(--gray-mid);letter-spacing:.03em}
+  .plan-meta{font-size:.72rem;color:var(--gray-mid);text-align:right}
+  .plan-more{display:flex;gap:10px;margin-top:12px;flex-wrap:wrap}
+  .plan-search{flex:1;min-width:210px;border:1px solid var(--gray-line);border-radius:999px;padding:11px 16px;font-size:.86rem;font-family:var(--sans);min-height:44px}
+  .plan-search:focus{outline:3px solid #8fa2ef;outline-offset:1px}
+  .plan-rest{margin-top:10px;max-height:340px;overflow-y:auto;padding-right:4px}
+  .plan-q{margin-bottom:14px}
+  .plan-q h4{font-size:.88rem;margin-bottom:8px;color:#42506b}
+  .plan-opts{display:flex;gap:8px;flex-wrap:wrap}
+  .plan-op{flex:1;min-width:140px;min-height:44px;text-align:left;background:#fff;border:1px solid var(--gray-line);border-radius:10px;padding:10px 14px;display:flex;flex-direction:column;gap:2px}
+  .plan-op b{font-size:.9rem} .plan-op span{font-size:.76rem;color:var(--gray-mid)}
+  .plan-op:hover{border-color:var(--blue)}
+  .plan-op.on{border-color:var(--blue);background:var(--blue-soft);box-shadow:inset 0 0 0 1px var(--blue)}
+  .plan-sum{border:1px solid var(--blue);border-radius:12px;padding:16px 18px;background:var(--blue-soft)}
+  .plan-sum-n{font-size:1rem;margin-bottom:10px}
+  .plan-chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px}
+  .plan-chip{background:#fff;border:1px solid var(--gray-line);border-radius:999px;padding:5px 12px;font-size:.8rem}
+  .plan-chip b{color:var(--blue-dark)}
+  .plan-note{font-size:.78rem;color:var(--gray-mid);line-height:1.5;margin-bottom:12px}
+  .plan-warn{font-size:.86rem;color:var(--amber);font-weight:600}
+  .plan-go{min-height:44px}
+  @media(max-width:620px){
+    .plan-row{flex-wrap:wrap}
+    .plan-nums{width:100%;flex-direction:row;align-items:center;justify-content:space-between;gap:10px}
+    .plan-bar{width:90px}
+  }
+
   /* ---- estado de sincronizacion y respaldo ---- */
   .sync-state{display:inline-block}
   .sync-state.pend{color:var(--amber);font-weight:600}
@@ -1234,6 +1286,358 @@ function missedPool(){
   return pool;
 }
 
+/* ================= MI PLAN DE MEJORA =================
+   La app mira TU historial, propone qué conviene mejorar y por qué (con los
+   números a la vista), te hace tres preguntas, y con lo que elijas arma un test
+   a tu medida. La recomendación es de la app; la decisión es del estudiante.
+
+   Cobertura medida contra el banco: 783 de 786 preguntas caen en algún tema.
+   Los temas de matemática cruzan dominios a propósito (una "función lineal"
+   catalogada en Algebra sirve igual para Funciones); los de verbal exigen su
+   dominio, porque los cuatro son limpios y si no "coma" se cuela en todo.      */
+
+var PLAN_DOMW = {   // peso oficial de cada dominio en el examen (College Board)
+  'Algebra':35, 'Advanced Math':35, 'Problem-Solving & Data Analysis':15, 'Geometry & Trigonometry':15,
+  'Craft and Structure':28, 'Information and Ideas':26, 'Standard English Conventions':26, 'Expression of Ideas':20
+};
+var PLAN_TOPICS = [
+  { key:'lineq',    sec:'math', dom:'Algebra', t:'Ecuaciones e inecuaciones lineales', m:/ecuaci[óo]n(es)? lineal|inecuaci|desigualdad|linear equation|inequalit/i },
+  { key:'systems',  sec:'math', dom:'Algebra', t:'Sistemas de ecuaciones', m:/sistema|system/i },
+  { key:'lines',    sec:'math', dom:'Algebra', t:'Rectas: pendiente e intercepto', m:/pendiente|recta|slope|intercept|línea recta|linear function|funci[óo]n lineal/i },
+  { key:'translate',sec:'math', dom:'Algebra', t:'Traducir enunciados a álgebra', m:/traducci[óo]n|modelo lineal|word problem|translat|plantear/i },
+  { key:'expr',     sec:'math', dom:'Algebra', t:'Expresiones equivalentes y valor absoluto', m:/expresi[óo]n(es)? equivalente|binomio|valor absoluto|absolute value|equivalent expression|fracci[óo]n o decimal|diferencia de cuadrados/i },
+  { key:'quad',     sec:'math', dom:'Advanced Math', t:'Cuadráticas', m:/cuadr[áa]tic|quadratic|par[áa]bola|discriminante|v[ée]rtice/i },
+  { key:'expo',     sec:'math', dom:'Advanced Math', t:'Exponentes y exponenciales', m:/exponen|semivida|decaimiento|crecimiento exponencial|logar[íi]tm|logarithm/i },
+  { key:'poly',     sec:'math', dom:'Advanced Math', t:'Polinomios y racionales', m:/polin[óo]m|racional|rational|factor|residuo|ceros|as[íi]ntot/i },
+  { key:'funcs',    sec:'math', dom:'Advanced Math', t:'Funciones: notación y transformaciones', m:/funci[óo]n|function|composit|composici|inversa|inverse|transformaci|traslaci|piecewise|por partes|dominio|domain|rango|end behavior|comportamiento en los extremos|constraint|modular|cubic/i },
+  { key:'percent',  sec:'math', dom:'Problem-Solving & Data Analysis', t:'Porcentajes', m:/porcentaje|percent|descuento|inter[ée]s/i },
+  { key:'prob',     sec:'math', dom:'Problem-Solving & Data Analysis', t:'Probabilidad y tablas', m:/probabilidad|probabilit|tabla de doble entrada|two-way|valor esperado|expected value|mutuamente|independien|permutaci|combinatoria|counting/i },
+  { key:'stats',    sec:'math', dom:'Problem-Solving & Data Analysis', t:'Estadística y lectura de datos', m:/media|mediana|moda|promedio|desviaci|dispersi|estad[íi]stic|margen de error|muestra|mean|median|standard deviation|gr[áa]fic|diagrama|scatter|histograma|graph|plot|l[íi]nea de mejor ajuste|best fit|dos variables|predicci/i },
+  { key:'rates',    sec:'math', dom:'Problem-Solving & Data Analysis', t:'Razones, proporciones y unidades', m:/raz[óo]n|proporci|tasa|unidad|densidad|escala|ratio|rate|unit/i },
+  { key:'circles',  sec:'math', dom:'Geometry & Trigonometry', t:'Círculos', m:/c[íi]rcul|circunferenc|arco|sector|tangen|radio/i },
+  { key:'trig',     sec:'math', dom:'Geometry & Trigonometry', t:'Triángulos y trigonometría', m:/tri[áa]ngulo|trigonometr|pit[áa]goras|sohcahtoa|semejan|congruen|seno|coseno|triangle|angle|[áa]ngulo|distancia|punto medio|midpoint|altura|hipotenusa/i },
+  { key:'solids',   sec:'math', dom:'Geometry & Trigonometry', t:'Volumen y sólidos', m:/volumen|s[óo]lido|cilindro|cono|esfera|prisma|[áa]rea superficial|volume|surface/i },
+  { key:'punct',    sec:'rw', dom:'Standard English Conventions', t:'Puntuación y límites de oración', m:/puntuaci|punctuation|coma|comma|punto y coma|semicolon|dos puntos|colon|raya|dash|boundar|l[íi]mites|coordinaci|coordination|par[ée]ntesis|interruptor|gui[óo]n|inciso/i },
+  { key:'verbs',    sec:'rw', dom:'Standard English Conventions', t:'Verbos: concordancia y tiempos', m:/verb|concordancia|agreement|tiempo verbal|tense|sujeto-verbo/i },
+  { key:'pronouns', sec:'rw', dom:'Standard English Conventions', t:'Pronombres y posesivos', m:/pronombre|pronoun|posesiv|possessive|ap[óo]strof|antecedent/i },
+  { key:'modif',    sec:'rw', dom:'Standard English Conventions', t:'Modificadores y estructura de la oración', m:/modificador|modifier|form, structure|estructura|sense|paralel|parallel|fragment|aposici|apositiv|sujeto pospuesto|comparaci[óo]n l[óo]gica|participial/i },
+  { key:'transit',  sec:'rw', dom:'Expression of Ideas', t:'Transiciones', m:/transici|transition/i },
+  { key:'synth',    sec:'rw', dom:'Expression of Ideas', t:'Síntesis retórica (las notas)', m:/synthesis|s[íi]ntesis|conclusion|notas/i },
+  { key:'wic',      sec:'rw', dom:'Craft and Structure', t:'Vocabulario en contexto', m:/words in context|word choice|vocabulario|palabra|significado|word in context|tone|tono|synonym|sin[óo]nim|meaning|irony|sarcas|attitude|actitud|context clue|nuance|matiz|academic vocab/i },
+  { key:'structure',sec:'rw', dom:'Craft and Structure', t:'Estructura y propósito del texto', m:/structure|purpose|prop[óo]sito|estructura|function of|l[óo]gica|premise|counterargument|rhetoric|ret[óo]ric|stance|persuasion|shift/i },
+  { key:'crosstext',sec:'rw', dom:'Craft and Structure', dom2:'Information and Ideas', t:'Textos pareados', m:/cross-text|paired|pareado|dos textos|both texts|passage a|perspective|compromise|across passages|agreement across|unstated disagreement/i },
+  { key:'evidence', sec:'rw', dom:'Information and Ideas', t:'Evidencia (textual y de datos)', m:/evidence|evidencia|quotation|cita|data in context|interpreting data|gr[áa]fic/i },
+  { key:'infer',    sec:'rw', dom:'Information and Ideas', t:'Inferencias y razonamiento', m:/inferen|inferir|implicat|fallacy|conditional|contradictor|complementar|reasoning|claim|synthesiz|position/i },
+  { key:'central',  sec:'rw', dom:'Information and Ideas', t:'Idea central y detalles', m:/central|main idea|idea principal|details|detalle|summar|resum/i }
+];
+function planTopicOf(q){
+  var sec = (q._section === 'math') ? 'math' : 'rw';
+  var sk = q.skill || '', dom = q.domain || '';
+  return PLAN_TOPICS.filter(function(t){
+    if(t.sec !== sec || !t.m.test(sk)) return false;
+    return t.sec === 'math' || dom === t.dom || dom === t.dom2;
+  });
+}
+/* Banco por tema. Se calcula una vez: recorrer 786 preguntas por render es caro. */
+var _planBank = null;
+function planBank(){
+  if(_planBank) return _planBank;
+  _planBank = {};
+  PLAN_TOPICS.forEach(function(t){ _planBank[t.key] = []; });
+  Object.keys(QINDEX).forEach(function(qid){
+    var q = QINDEX[qid];
+    planTopicOf(q).forEach(function(t){ _planBank[t.key].push(q); });
+  });
+  return _planBank;
+}
+/* Último intento de cada pregunta: lo que sabemos del estudiante, hoy. */
+function planStats(){
+  var latest = latestResults();       // qid -> {ok, ...} del intento más reciente
+  var bank = planBank(), out = {};
+  var vistas = {};
+  getHistory().forEach(function(s){
+    (s.perQuestion || []).forEach(function(p){ vistas[p.qid] = s.date || s.savedAt || ''; });
+  });
+  PLAN_TOPICS.forEach(function(t){
+    var qs = bank[t.key] || [], hechas = 0, bien = 0, ultima = '';
+    qs.forEach(function(q){
+      var r = latest[q.id];
+      if(!r) return;
+      hechas++; if(r.ok) bien++;
+      var d = vistas[q.id] || '';
+      if(d > ultima) ultima = d;
+    });
+    out[t.key] = {
+      topic: t, banco: qs.length, hechas: hechas, bien: bien,
+      acc: hechas ? bien / hechas : null, ultima: ultima,
+      peso: PLAN_DOMW[t.dom] || 20,
+      falladas: qs.filter(function(q){ return latest[q.id] && !latest[q.id].ok; }).length
+    };
+  });
+  return out;
+}
+var PLAN_MIN_MEDIDO = 4;   // con menos de 4 preguntas, un porcentaje no dice nada
+function planRanking(){
+  var st = planStats();
+  var arr = Object.keys(st).map(function(k){ return st[k]; });
+  arr.forEach(function(s){
+    s.medido = s.hechas >= PLAN_MIN_MEDIDO;
+    if(s.medido){
+      // Cuanto peor te va Y más pesa en el examen, más arriba. El exponente hace
+      // que 40% de acierto pese bastante más que 70%, no apenas un poco más.
+      s.score = s.peso * Math.pow(1 - s.acc, 1.5) * 10;
+      s.razon = s.acc < 0.6
+        ? 'Fallas ' + Math.round((1 - s.acc) * 10) + ' de cada 10 y este dominio es el ' + s.peso + '% del examen'
+        : (s.acc < 0.8
+            ? 'Vas a medio camino (' + Math.round(s.acc * 100) + '%) en un dominio que vale ' + s.peso + '%'
+            : 'Lo tienes bien (' + Math.round(s.acc * 100) + '%) — solo mantenerlo');
+    } else {
+      // Sin datos no se puede decir que estás mal: se dice que NO SABEMOS.
+      s.score = s.peso * 0.45 * 10;
+      s.razon = s.hechas === 0
+        ? 'Nunca lo has practicado aquí y vale ' + s.peso + '% del examen'
+        : 'Solo ' + s.hechas + ' pregunta' + (s.hechas === 1 ? '' : 's') + ': todavía no se puede medir';
+    }
+    if(!s.banco) s.score = -1;   // sin preguntas en el banco no se puede practicar
+  });
+  arr.sort(function(a, b){ return b.score - a.score; });
+  return arr;
+}
+/* ---- estado del asistente (se recuerda entre visitas) ---- */
+function planKey(){ return 'satapp_plan_v1__' + (currentUser ? currentUser.id : 'guest'); }
+function planState(){
+  var d = store.get(planKey(), {});
+  return {
+    paso: d.paso || 1,
+    elegidos: Array.isArray(d.elegidos) ? d.elegidos : null,
+    minutos: d.minutos || 20,
+    modo: d.modo || 'drill',
+    nivel: d.nivel || 'donde',
+    verTodos: !!d.verTodos,
+    busca: d.busca || ''
+  };
+}
+function planSave(p){ store.set(planKey(), p); }
+function planPreguntasTotales(){
+  var n = 0;
+  getHistory().forEach(function(s){ n += (s.perQuestion || []).length; });
+  return n;
+}
+/* Dos cosas distintas merecen estar en la recomendacion, y mezclarlas en una
+   sola lista las vuelve ilegibles: (a) donde ya sabemos que falla, (b) lo que
+   pesa mucho y todavia no hemos medido. Se recomiendan 2 de la primera y 1 de
+   la segunda; si no hay nada medido, las tres salen de la segunda. */
+function planGrupos(rank){
+  var con = rank.filter(function(s){ return s.banco > 0; });
+  return {
+    medidos: con.filter(function(s){ return s.medido; }),
+    sinMedir: con.filter(function(s){ return !s.medido; }).sort(function(a, b){ return b.peso - a.peso; }),
+    todos: con
+  };
+}
+function planRecomendados(rank){
+  var g = planGrupos(rank), out = [];
+  g.medidos.slice(0, 2).forEach(function(s){ out.push(s.topic.key); });
+  g.sinMedir.slice(0, 3 - out.length).forEach(function(s){ out.push(s.topic.key); });
+  return out;
+}
+/* ---- armado del test ---- */
+function planBuildSet(keys, opts){
+  var bank = planBank(), latest = latestResults();
+  var total = opts.minutos === 10 ? 6 : (opts.minutos === 40 ? 20 : 12);
+  var porTema = Math.max(2, Math.floor(total / Math.max(1, keys.length)));
+  var nivelOK = function(q){
+    var d = q.difficulty || 'Media';
+    if(opts.nivel === 'mas') return d === 'Difícil' || d === 'Extreme';
+    if(opts.nivel === 'examen') return true;
+    return d !== 'Extreme';           // "donde estoy": todo menos el tier brutal
+  };
+  var elegidas = [], usadas = {};
+  keys.forEach(function(k){
+    var pool = (bank[k] || []).filter(nivelOK);
+    // Orden pedagógico: primero lo que fallaste, después lo que nunca viste,
+    // y de último lo que ya te salió bien (solo para completar el cupo).
+    var falladas = [], nuevas = [], acertadas = [];
+    pool.forEach(function(q){
+      var r = latest[q.id];
+      if(r && !r.ok) falladas.push(q); else if(!r) nuevas.push(q); else acertadas.push(q);
+    });
+    var orden = falladas.concat(nuevas, acertadas);
+    var n = 0;
+    for(var i = 0; i < orden.length && n < porTema; i++){
+      if(usadas[orden[i].id]) continue;
+      usadas[orden[i].id] = 1; elegidas.push(orden[i]); n++;
+    }
+  });
+  // Completa hasta el total pedido con lo siguiente de los mismos temas.
+  if(elegidas.length < total){
+    keys.forEach(function(k){
+      (bank[k] || []).filter(nivelOK).forEach(function(q){
+        if(elegidas.length >= total || usadas[q.id]) return;
+        usadas[q.id] = 1; elegidas.push(q);
+      });
+    });
+  }
+  var titulos = keys.map(function(k){
+    var t = PLAN_TOPICS.filter(function(x){ return x.key === k; })[0];
+    return t ? t.t : k;
+  });
+  var hayMath = elegidas.some(function(q){ return q._section === 'math'; });
+  var hayRW = elegidas.some(function(q){ return q._section !== 'math'; });
+  return {
+    id: 'mi-plan', title: 'Mi plan — ' + titulos.slice(0, 3).join(' · ') + (titulos.length > 3 ? ' +' + (titulos.length - 3) : ''),
+    section: hayMath && hayRW ? 'mixed' : (hayMath ? 'math' : 'rw'),
+    description: 'Test armado por ti a partir de tus propios resultados',
+    minutes: Math.max(5, Math.round(elegidas.length * (hayMath ? 1.6 : 1.2))),
+    questions: elegidas
+  };
+}
+/* ---- pantalla ---- */
+function planHTML(){
+  var p = planState(), rank = planRanking(), practicadas = planPreguntasTotales();
+  if(p.elegidos === null) p.elegidos = planRecomendados(rank);
+  var disponibles = {};
+  rank.forEach(function(s){ disponibles[s.topic.key] = s.banco; });
+  p.elegidos = p.elegidos.filter(function(k){ return disponibles[k] > 0; });
+
+  var nuevo = practicadas < 20;
+  var head = nuevo
+    ? '<p class="plan-intro"><b>Todavía no te conozco.</b> Llevas ' + practicadas + ' pregunta' + (practicadas === 1 ? '' : 's') +
+      ' contestada' + (practicadas === 1 ? '' : 's') + ', y con eso no puedo decirte en qué estás flojo sin inventar. ' +
+      'Lo honesto es medir primero: abajo están los temas que <b>más pesan en el examen</b>, marcados por defecto. ' +
+      'Practica un poco y esta sección empieza a apuntar a lo tuyo de verdad.</p>'
+    : '<p class="plan-intro">Esto sale de <b>tus</b> ' + practicadas + ' preguntas contestadas. Yo propongo, ' +
+      '<b>tú decides</b>: marca y desmarca lo que quieras y armo el test con eso.</p>';
+
+  /* ---- paso 1: los temas ---- */
+  function fila(s, recomendado){
+    var k = s.topic.key, marcado = p.elegidos.indexOf(k) >= 0;
+    var pct = s.medido ? Math.round(s.acc * 100) + '%' : '—';
+    var barra = s.medido
+      ? '<div class="plan-bar"><i style="width:' + Math.round(s.acc * 100) + '%" class="' +
+        (s.acc < 0.6 ? 'mal' : s.acc < 0.8 ? 'medio' : 'bien') + '"></i></div>'
+      : '<div class="plan-bar sinmedir"><span>sin medir</span></div>';
+    return '<label class="plan-row' + (marcado ? ' on' : '') + '">' +
+      '<input type="checkbox" class="plan-cb" data-plan-topic="' + k + '"' + (marcado ? ' checked' : '') + '>' +
+      '<span class="plan-main">' +
+        '<span class="plan-t">' + s.topic.t + (recomendado ? ' <span class="plan-rec">recomendado</span>' : '') + '</span>' +
+        '<span class="plan-why">' + s.razon + '</span>' +
+      '</span>' +
+      '<span class="plan-nums">' +
+        '<span class="plan-pct">' + pct + '</span>' + barra +
+        '<span class="plan-meta">' + (s.medido || s.hechas ? s.bien + '/' + s.hechas + ' tuyas · ' : '') + s.banco + ' en el banco</span>' +
+      '</span></label>';
+  }
+  var g = planGrupos(rank), conBanco = g.todos;
+  var recKeys = planRecomendados(rank);
+  var busca = (p.busca || '').toLowerCase();
+  var enTop = {};
+  var bloques = '';
+  if(!busca){
+    var flojos = g.medidos.slice(0, 5);
+    // Si todavia no hay nada medido, la lista no puede quedar en cuatro renglones:
+    // se abre a seis para que el estudiante nuevo tenga de donde elegir.
+    var ciegos = g.sinMedir.slice(0, Math.max(4, 6 - flojos.length));
+    if(flojos.length){
+      bloques += '<h5 class="plan-h">Donde estás fallando <span>— medido con tus respuestas</span></h5>' +
+        '<div class="plan-list">' + flojos.map(function(s){ enTop[s.topic.key] = 1; return fila(s, recKeys.indexOf(s.topic.key) >= 0); }).join('') + '</div>';
+    }
+    if(ciegos.length){
+      bloques += '<h5 class="plan-h">Puntos ciegos <span>— todavía no sé cómo estás aquí</span></h5>' +
+        '<div class="plan-list">' + ciegos.map(function(s){ enTop[s.topic.key] = 1; return fila(s, recKeys.indexOf(s.topic.key) >= 0); }).join('') + '</div>';
+    }
+  }
+  var resto = conBanco.filter(function(s){
+    if(busca) return s.topic.t.toLowerCase().indexOf(busca) >= 0 || s.topic.dom.toLowerCase().indexOf(busca) >= 0;
+    return !enTop[s.topic.key];
+  });
+  var paso1 = head + bloques +
+    '<div class="plan-more">' +
+      '<input type="search" id="plan-busca" class="plan-search" placeholder="¿Quieres trabajar otra cosa? Busca un tema…" value="' + escAttr(p.busca || '') + '">' +
+      '<button class="mini" id="plan-vertodos" type="button">' + (p.verTodos ? 'Ocultar' : 'Ver los ' + conBanco.length + ' temas') + '</button>' +
+    '</div>' +
+    ((p.verTodos || busca) ? '<div class="plan-list plan-rest">' + resto.map(function(s){ return fila(s, false); }).join('') + '</div>' : '');
+
+  /* ---- paso 2: las tres preguntas ---- */
+  function ops(name, val, lista){
+    return '<div class="plan-opts">' + lista.map(function(o){
+      return '<button type="button" class="plan-op' + (val === o[0] ? ' on' : '') + '" data-plan-set="' + name + '" data-plan-val="' + o[0] + '">' +
+        '<b>' + o[1] + '</b><span>' + o[2] + '</span></button>';
+    }).join('') + '</div>';
+  }
+  var paso2 =
+    '<div class="plan-q"><h4>1 · ¿Cuánto tiempo tienes ahora?</h4>' +
+      ops('minutos', p.minutos, [[10, '10 min', '6 preguntas'], [20, '20 min', '12 preguntas'], [40, '40 min', '20 preguntas']]) + '</div>' +
+    '<div class="plan-q"><h4>2 · ¿Cómo quieres practicar?</h4>' +
+      ops('modo', p.modo, [['drill', 'Sin reloj', 'te explico cada una al momento'], ['exam', 'Con reloj', 'como el examen, calificación al final']]) + '</div>' +
+    '<div class="plan-q"><h4>3 · ¿Qué tan difícil?</h4>' +
+      ops('nivel', p.nivel, [['donde', 'Donde estoy', 'fácil y media, para afianzar'], ['mas', 'Un escalón arriba', 'solo difíciles'], ['examen', 'Como el examen', 'mezcla real']]) + '</div>';
+
+  /* ---- paso 3: el resumen ---- */
+  var resumen;
+  if(!p.elegidos.length){
+    resumen = '<p class="plan-warn">Marca al menos un tema arriba para poder armarte el test.</p>';
+  } else {
+    var prev = planBuildSet(p.elegidos, p);
+    var porTema = {};
+    prev.questions.forEach(function(q){
+      planTopicOf(q).forEach(function(t){ if(p.elegidos.indexOf(t.key) >= 0) porTema[t.key] = (porTema[t.key] || 0) + 1; });
+    });
+    var chips = p.elegidos.map(function(k){
+      var t = PLAN_TOPICS.filter(function(x){ return x.key === k; })[0];
+      return '<span class="plan-chip">' + (t ? t.t : k) + ' <b>' + (porTema[k] || 0) + '</b></span>';
+    }).join('');
+    resumen =
+      '<div class="plan-sum">' +
+        '<div class="plan-sum-n"><b>' + prev.questions.length + '</b> preguntas · ~' + prev.minutes + ' min · ' +
+          (p.modo === 'drill' ? 'sin reloj' : 'con reloj') + '</div>' +
+        '<div class="plan-chips">' + chips + '</div>' +
+        '<p class="plan-note">Primero van las que ya fallaste, después las que nunca has visto. ' +
+          'Si un tema aparece con menos preguntas de las que pediste, es que el banco no tiene más de ese tema en ese nivel.</p>' +
+        '<button class="btn-primary plan-go" id="plan-crear" type="button">Crear mi test →</button>' +
+      '</div>';
+  }
+  planSave(p);
+  return '<div class="plan-wrap">' +
+    '<div class="plan-step"><span class="plan-num">1</span><h4>Lo que yo mejoraría — tú decides</h4></div>' + paso1 +
+    '<div class="plan-step"><span class="plan-num">2</span><h4>Tres preguntas</h4></div>' + paso2 +
+    '<div class="plan-step"><span class="plan-num">3</span><h4>Tu test</h4></div>' + resumen +
+  '</div>';
+}
+function planWire(){
+  var root = document.getElementById('set-sections');
+  if(!root) return;
+  Array.prototype.forEach.call(root.querySelectorAll('[data-plan-topic]'), function(cb){
+    cb.addEventListener('change', function(){
+      var p = planState(), k = this.getAttribute('data-plan-topic');
+      if(p.elegidos === null) p.elegidos = planRecomendados(planRanking());
+      var i = p.elegidos.indexOf(k);
+      if(this.checked && i < 0) p.elegidos.push(k);
+      if(!this.checked && i >= 0) p.elegidos.splice(i, 1);
+      planSave(p); renderHome();
+    });
+  });
+  Array.prototype.forEach.call(root.querySelectorAll('[data-plan-set]'), function(b){
+    b.addEventListener('click', function(){
+      var p = planState(), k = this.getAttribute('data-plan-set'), v = this.getAttribute('data-plan-val');
+      p[k] = (k === 'minutos') ? parseInt(v, 10) : v;
+      planSave(p); renderHome();
+    });
+  });
+  var vt = root.querySelector('#plan-vertodos');
+  if(vt) vt.addEventListener('click', function(){ var p = planState(); p.verTodos = !p.verTodos; planSave(p); renderHome(); });
+  var bs = root.querySelector('#plan-busca');
+  if(bs) bs.addEventListener('change', function(){ var p = planState(); p.busca = this.value || ''; planSave(p); renderHome(); });
+  var cr = root.querySelector('#plan-crear');
+  if(cr) cr.addEventListener('click', function(){
+    var p = planState();
+    if(!p.elegidos || !p.elegidos.length){ toast('Marca al menos un tema.', true); return; }
+    var set = planBuildSet(p.elegidos, p);
+    if(!set.questions.length){ toast('No hay preguntas de esos temas en ese nivel. Prueba con "Como el examen".', true); return; }
+    _beginSession(set, p.modo);
+  });
+}
+
 /* ================= HOME ================= */
 function renderHome(){
   var h = getHistory();
@@ -1305,6 +1709,8 @@ function renderHome(){
   var totalMissed = pool.length;
 
   var sec = '';
+  var _planN = (planState().elegidos || []).length;
+  sec += homeSection('🧭 Mi plan de mejora', planHTML(), _planN ? _planN + ' temas' : null, true);
   if(currentUser && currentUser.app_metadata && currentUser.app_metadata.role === 'admin'){
     if(!store.get('sat_exam_date')) store.set('sat_exam_date', FW_EXAM_DATE); // cap spaced review to test day
     var fw = fwPlanHTML();
@@ -1453,6 +1859,7 @@ function renderHome(){
   sec += homeSection('Things To Work On', redoCard('redo-math', 'Math', 'math') + redoCard('redo-verbal', 'Verbal', 'rw'), totalMissed || null, true);
   sec += homeSection('Completed', completedSets.length ? completedSets.map(setCard).join('') : '<div class="empty-note">Nothing completed yet.</div>', completedSets.length, false);
   $('#set-sections').innerHTML = sec;
+  planWire();
 
   Array.prototype.forEach.call(document.querySelectorAll('#set-sections [data-start-exam]'), function(b){
     b.addEventListener('click', function(){ if(!b.disabled) startSession(b.getAttribute('data-start-exam'), 'exam'); });
@@ -4266,6 +4673,8 @@ window.SATAPP = {
   syncPendingCount: syncPendingCount, cloudPull: cloudPull, importHistory: importHistory,
   migrateLegacy: migrateLegacy, histKey: function(){ return histKey(); }, syncLabel: syncLabel,
   safeClearHistory: safeClearHistory, downloadHistory: downloadHistory, toast: toast,
+  planRanking: planRanking, planBuildSet: planBuildSet, planState: planState, planSave: planSave,
+  planBank: planBank, planStats: planStats, PLAN_TOPICS: PLAN_TOPICS,
   toggleLineReader: toggleLineReader, toggleRef: toggleRef, SETS: function(){ return SETS; }, QINDEX: QINDEX
 };
 </script>
