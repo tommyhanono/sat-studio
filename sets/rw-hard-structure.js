@@ -63,7 +63,7 @@ window.SAT_SETS.push({
       expWrong:{
         B:'Not supported: there is one historian (Marceau) against planners in general; there is no debate between two historians and no "winner".',
         C:'It contradicts the text: it says explicitly that Marceau "does not dispute these gains"; she does not reject that density has benefits.',
-        D:'No está apoyado: no se propone ninguna política nueva ni se enumeran pasos para adoptarla; el foco es una condición sobre el valor de la densidad.'
+        D:'Not supported: no new policy is proposed and no steps for adopting one are listed; the focus is a condition on the value of density.'
       },
       tip:'Watch for texts that "concede and then qualify". Phrases like "does not dispute… however… depends entirely on" signal a structure that acknowledges something and then attaches a condition, not one that rejects it.'
     },
@@ -81,9 +81,9 @@ window.SAT_SETS.push({
       correct:'A',
       expCorrect:'The text opens with a concrete illustration (the rumor outrunning its correction), draws a general principle from it (the asymmetry is built into what makes information travel) and uses it to redirect the field: what has to be studied is what makes a message move. Option A follows that movement of example → principle → reframing.',
       expWrong:{
-        B:'Describe una parte, no el todo: no se define un término técnico ni se dan tres ejemplos de manual; hay una sola ilustración que impulsa un argumento.',
-        C:'No está apoyado: no se comparan dos organizaciones de fact-checking; el texto dice que mejor fact-checking no “cura” del todo la asimetría.',
-        D:'Contradice el texto: no hay una anécdota personal, y no concluye que los rumores sean “inofensivos”; se pregunta por qué persiste la desinformación.'
+        B:'It describes a part, not the whole: no technical term is defined and no three textbook examples are given; there is a single illustration driving an argument.',
+        C:'Not supported: two fact-checking organizations are not compared; the text says better fact-checking does not fully "cure" the asymmetry.',
+        D:'It contradicts the text: there is no personal anecdote, and it does not conclude that rumors are "harmless"; it asks why misinformation persists.'
       },
       tip:'For STRUCTURE, notice where the text starts and where it lands. Here it goes from a concrete case ("Consider how…") to a principle and then to "must study… what makes any message move": example → principle → new approach.'
     },
@@ -101,9 +101,9 @@ window.SAT_SETS.push({
       correct:'D',
       expCorrect:'The text shows that the old metaphor (an army against invaders) failed to explain a stubborn fact: the system tolerates harmless microbes and the body’s own tissues. That is why immunologists shifted to describing immunity as a "negotiation". The purpose is to explain why the old metaphor gave way to one that fits what the system actually does.',
       expWrong:{
-        A:'Exagera y contradice: el texto dice que la metáfora del ejército “explicaba cómo el cuerpo ataca” bacterias y virus, así que no sostiene que el sistema no pueda atacar amenazas reales.',
-        B:'No está apoyado: no hay instrucciones para “fortalecer” la respuesta inmune; el texto trata de cómo se conceptualiza la inmunidad.',
-        C:'Describe una parte, no el todo: los microbios del intestino se mencionan como ejemplo del hecho terco, no como un catálogo de especies.'
+        A:'It exaggerates and contradicts: the text says the army metaphor "explained how the body attacks" bacteria and viruses, so it does not claim the system cannot attack real threats.',
+        B:'Not supported: there are no instructions for "strengthening" the immune response; the text is about how immunity is conceptualized.',
+        C:'It describes a part, not the whole: the gut microbes are mentioned as an example of the stubborn fact, not as a catalogue of species.'
       },
       tip:'For PURPOSE, pick the right verb: here the author "explains" a change of metaphor, he does not "argue" an extreme or "give instructions". A "however" that breaks the old metaphor usually announces that purpose.'
     },
@@ -121,9 +121,9 @@ window.SAT_SETS.push({
       correct:'C',
       expCorrect:'The text lays out an unavoidable dilemma: keeping the literal sense flattens the music, and keeping the music bends the sense. Then it says the best translations deliberately choose what to sacrifice so that something essential survives. The purpose is to characterize that trade-off and how good translators respond to it.',
       expWrong:{
-        A:'No está apoyado: no se nombra ni se ordena a traductores famosos por su exactitud; se describe un dilema general.',
-        B:'Exagera y contradice: el texto habla de “the finest translations”, o sea que sí se traduce; nunca afirma que traducir sea imposible.',
-        D:'Describe una parte, no el todo: se mencionan ritmo y rima como parte de la “música”, pero no se analiza el esquema de rima de un poema específico.'
+        A:'Not supported: no famous translators are named or ranked by accuracy; a general dilemma is described.',
+        B:'It exaggerates and contradicts: the text speaks of "the finest translations", so translation does happen; it never claims translating is impossible.',
+        D:'It describes a part, not the whole: rhythm and rhyme are mentioned as part of the "music", but no specific poem’s rhyme scheme is analyzed.'
       },
       tip:'When a text lays out a dilemma ("to do X is to lose Y") and then how it is handled, the purpose is usually to "characterize a trade-off and the response to it", not to prove something impossible.'
     },
@@ -141,9 +141,9 @@ window.SAT_SETS.push({
       correct:'C',
       expCorrect:'Just before, two reports with opposite conclusions are contrasted, one funded by merchants and the other based on sales records. The underlined sentence draws the general lesson from that contrast: who the data come from can weigh as much as the method. Its function is to draw that general conclusion from the clash between the two studies.',
       expWrong:{
-        A:'No está apoyado: la oración no da cifras precisas de ingresos; enuncia un principio general sobre las fuentes de los datos.',
-        B:'Contradice el texto: no recomienda rechazar la ciclovía; el segundo reporte muestra que los ingresos subieron. No toma partido por el estacionamiento.',
-        D:'Malinterpreta la posición: el tema (los dos reportes sobre la ciclovía) ya se presentó antes; la oración cierra con una lección, no lo introduce por primera vez.'
+        A:'Not supported: the sentence gives no precise revenue figures; it states a general principle about where data come from.',
+        B:'It contradicts the text: it does not recommend rejecting the bike lane; the second report shows revenue rose. It does not side with parking.',
+        D:'It misreads the position: the topic (the two reports on the bike lane) was already introduced earlier; the sentence closes with a lesson, it does not introduce it for the first time.'
       },
       tip:'For FUNCTION, look at what the sentence does after what came before. If it follows a contrast and opens a broad idea ("whose data… can shape its conclusion"), its role is to draw the general lesson.'
     },
@@ -161,9 +161,9 @@ window.SAT_SETS.push({
       correct:'B',
       expCorrect:'The standard story said the abandonment was sudden, caused by a drought. The underlined sentence supplies the excavation details (grain stores thinning layer by layer, trade goods dwindling, repairs growing cruder over decades) that support the rereading: a gradual decline, not a single blow. Its function is to give the evidence supporting that reinterpretation.',
       expWrong:{
-        A:'Contradice el texto: no reformula el abandono súbito; ofrece justo lo contrario, señales de un proceso lento y gradual.',
-        C:'Contradice el texto: no concede que la sequía repentina tenga razón; los datos empujan hacia el declive largo y desigual.',
-        D:'No está apoyado: la oración no define vocabulario técnico para datar granos; describe patrones que cambian a lo largo de las capas.'
+        A:'It contradicts the text: it does not restate the sudden abandonment; it offers the opposite, signs of a slow and gradual process.',
+        C:'It contradicts the text: it does not concede that the sudden drought is right; the data push toward a long, uneven decline.',
+        D:'Not supported: the sentence defines no technical vocabulary for dating grain; it describes patterns changing across the layers.'
       },
       tip:'For FUNCTION, ask which idea the sentence serves. Here a list of details ("gradually… before they vanish… over decades") supports the new reading of a slow collapse; its role is to back that reinterpretation.'
     },
@@ -181,9 +181,9 @@ window.SAT_SETS.push({
       correct:'C',
       expCorrect:'The text contrasts the image of the lone genius with what the record shows: the idea depended on other people’s instruments, assistants’ data and a question sharpened by a whole community; the "eureka" is a late step in a long relay. The central idea joins both halves: what looks like a solitary flash is usually the last step of a collective process. Option C covers the whole text.',
       expWrong:{
-        A:'Va más allá del texto: los asistentes se mencionan como parte del proceso colectivo, pero el texto no reclama que merezcan “más premios” que los científicos famosos.',
-        B:'Distorsiona el punto: el texto dice que el avance se apoya en instrumentos, datos y una pregunta ya afinada; eso no es un “accidente” sin planeación.',
-        D:'Detalle, no idea central: los instrumentos son un ejemplo del aporte de otros, no una afirmación sobre que sean demasiado complejos de entender.'
+        A:'It goes beyond the text: assistants are mentioned as part of the collective process, but the text does not claim they deserve "more awards" than famous scientists.',
+        B:'It distorts the point: the text says the breakthrough rests on instruments, data and an already-sharpened question; that is not an unplanned "accident".',
+        D:'Detail, not central idea: the instruments are an example of other people’s contribution, not a claim that they are too complex to understand.'
       },
       tip:'The central idea spans the WHOLE paragraph. Here it joins the myth (lone genius) with the reality (a collective process). The last line ("a better story than a history") confirms that contrast: pick the option covering both halves.'
     },
@@ -201,9 +201,9 @@ window.SAT_SETS.push({
       correct:'A',
       expCorrect:'The text starts from the assumption that more options always help, and complicates it: past a certain threshold, people buy less and end up less satisfied, weighed down by what they gave up. The central idea is precisely that, beyond a point, adding options stops helping and starts costing. Option A captures that threshold.',
       expWrong:{
-        B:'No está apoyado: el texto no relaciona el no comprar con tener menos dinero; lo atribuye al exceso de opciones. Es información de afuera.',
-        C:'Contradice el texto: el estudio muestra lo opuesto, que demasiadas opciones empeoran la satisfacción; no que la gente siempre decida mejor con más opciones.',
-        D:'Describe una parte, no el todo: el arrepentimiento se menciona como uno de los costos del exceso de opciones, no como “la emoción más fuerte” en las tiendas.'
+        B:'Not supported: the text does not tie not buying to having less money; it attributes it to too many options. That is outside information.',
+        C:'It contradicts the text: the study shows the opposite, that too many options worsen satisfaction; not that people always decide better with more options.',
+        D:'It describes a part, not the whole: regret is mentioned as one of the costs of too much choice, not as "the strongest emotion" in stores.'
       },
       tip:'When a text says "we tend to assume X, yet research complicates that", the central idea lives in the correction: here, that the benefit of choice does not rise without limit and past a threshold it costs.'
     },
@@ -221,9 +221,9 @@ window.SAT_SETS.push({
       correct:'B',
       expCorrect:'The text contrasts the common idea (restoration means returning a wetland to a pristine past) with what ecologists actually do: the species of centuries ago no longer fit a transformed coast, so they aim to build an ecosystem that can withstand the conditions ahead, even with new species. The central idea joins that contrast with the forward-looking goal. Option B covers it.',
       expWrong:{
-        A:'No está apoyado: el texto nunca clasifica los humedales como “los más valiosos” de todos los ecosistemas; habla de cómo restaurarlos. Es información de afuera.',
-        C:'Exagera y contradice: dice que la costa fue “reshaped”, no que TODO humedal costero ya esté destruido; de hecho se sigue restaurando.',
-        D:'Distorsiona el foco: el desacuerdo no es sobre “qué siglo” tuvo los humedales más sanos, sino sobre restaurar el pasado vs. preparar para el futuro.'
+        A:'Not supported: the text never ranks wetlands as "the most valuable" of all ecosystems; it is about how to restore them. That is outside information.',
+        C:'It exaggerates and contradicts: it says the coast was "reshaped", not that EVERY coastal wetland is already destroyed; in fact restoration continues.',
+        D:'It distorts the focus: the disagreement is not about "which century" had the healthiest wetlands, but about restoring the past vs. preparing for the future.'
       },
       tip:'La idea central abarca el giro completo. Frases como “is often described as… but ecologists describe something stranger… Increasingly, restorers aim” apuntan a la meta nueva: durar en el futuro, no rebobinar al pasado.'
     },
@@ -241,9 +241,9 @@ window.SAT_SETS.push({
       correct:'D',
       expCorrect:'The text says a map recording everything would be useless and that its value lies precisely in what it leaves out: every useful map is a decision about what is relevant, and its silences are the source of its power. The central idea is that a map works precisely because it omits selectively, deciding what matters. Option D captures that thesis.',
       expWrong:{
-        A:'Describe una parte, no el todo: elevación y lluvia son ejemplos de decisiones de relevancia, no una comparación que declare un tipo de mapa mejor que otro.',
-        B:'Contradice el texto: dice que incluir “todo” haría inútil al mapa; no que los cartógrafos deban meter todo el detalle posible. Es lo opuesto.',
-        C:'Distorsiona el foco: el punto no es cómo medir la exactitud comparando con el territorio, sino que el valor del mapa nace de lo que omite.'
+        A:'It describes a part, not the whole: elevation and rainfall are examples of relevance decisions, not a comparison declaring one kind of map better than another.',
+        B:'It contradicts the text: it says including "everything" would make the map useless; not that cartographers should pack in all possible detail. That is the opposite.',
+        C:'It distorts the focus: the point is not how to measure accuracy by comparing with the territory, but that a map’s value comes from what it omits.'
       },
       tip:'The central idea is the thesis holding the whole paragraph together. Here the key line "what it leaves out… its silences are the very source of its power" marks the point: a map is valuable for what it omits, not for including everything.'
     }

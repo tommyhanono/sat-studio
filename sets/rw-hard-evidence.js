@@ -19,13 +19,13 @@ window.SAT_SETS.push({
         D:'Pottery styles found at the settlement match those of a distant region with which its residents are known to have traded.'
       },
       correct:'C',
-      expCorrect:'Su argumento es que la gente se fue POCO A POCO y por decisión propia, no huyendo de un desastre. La C lo apoya directo: tapiaron puertas desde afuera y se llevaron piedras de moler pesadas, tareas de varios días. Ese trabajo lento y ordenado es justo la salida planeada que ella describe.',
+      expCorrect:'Her argument is that people left GRADUALLY and by choice, not fleeing a disaster. C supports it directly: they boarded up doors from the outside and carried away heavy grinding stones, jobs that take days. That slow, orderly work is exactly the planned departure she describes.',
       expWrong:{
-        A:'Una capa de ceniza y un incendio apuntan a un DESASTRE súbito; eso va en contra de la salida tranquila y planeada, no la apoya.',
-        B:'Qué casas se construyeron primero, siglos antes, habla del crecimiento del sitio, no de CÓMO ni por qué se fue la gente al final.',
-        D:'Que la cerámica se parezca a la de otra región muestra que comerciaban, pero no dice nada sobre si la salida fue apurada o planeada.'
+        A:'An ash layer and a fire point to a sudden DISASTER; that runs against a calm, planned departure rather than supporting it.',
+        B:'Which houses were built first, centuries earlier, is about the growth of the site, not about HOW or why people left at the end.',
+        D:'Pottery resembling another region’s shows they traded, but says nothing about whether the departure was hurried or planned.'
       },
-      tip:'Vuelve al CLAIM exacto (salida lenta y por decisión, no huida). Busca la opción que ESCENIFICA una partida con tiempo y preparación (tapiar, cargar cosas pesadas), no la que sugiere un desastre repentino.'
+      tip:'Go back to the exact CLAIM (a slow, deliberate departure, not flight). Look for the option that STAGES a departure with time and preparation (boarding up, hauling heavy things), not the one suggesting a sudden disaster.'
     },
     {
       id:'HVE-02', type:'mc', domain:'Information and Ideas', difficulty:'Difícil',
@@ -39,13 +39,13 @@ window.SAT_SETS.push({
         D:'Speakers of each language today find the other language almost impossible to understand.'
       },
       correct:'B',
-      expCorrect:'El lingüista dice que vienen de un MISMO ancestro; el rival dice que solo se prestaron palabras por el comercio. La B favorece al lingüista: comparten patrones irregulares de plural, algo que casi nunca se presta entre lenguas. Si comparten esa gramática profunda, apunta a un origen común, no a préstamos.',
+      expCorrect:'The linguist says they come from a SHARED ancestor; the rival says they only borrowed words through trade. B favors the linguist: they share irregular plural patterns, something languages almost never borrow. If they share that deep grammar, it points to a common origin, not to borrowing.',
       expWrong:{
-        A:'Que las palabras compartidas sean justo de comercio APOYA al rival (préstamo por trato), no al lingüista.',
-        C:'Que haya siglos de comercio refuerza la explicación RIVAL del préstamo; no distingue a favor del origen común.',
-        D:'Que hoy no se entiendan entre sí es cierto en ambas hipótesis; no decide si el parecido viene de ancestro o de préstamo.'
+        A:'That the shared words are precisely trade words SUPPORTS the rival (borrowing through trade), not the linguist.',
+        C:'Centuries of trade reinforce the RIVAL borrowing explanation; it does not tell in favor of a common origin.',
+        D:'That they cannot understand each other today is true under both hypotheses; it does not decide whether the resemblance comes from ancestry or borrowing.'
       },
-      tip:'Cuando dos explicaciones compiten, busca lo que solo UNA predice. Los préstamos pasan palabras (sobre todo de comercio); la gramática irregular compartida apunta a parentesco. Esa es la evidencia que separa las hipótesis.'
+      tip:'When two explanations compete, look for what only ONE of them predicts. Borrowing moves words (especially trade words); shared irregular grammar points to kinship. That is the evidence that separates the hypotheses.'
     },
     {
       id:'HVE-03', type:'mc', domain:'Information and Ideas', difficulty:'Difícil',
@@ -59,13 +59,13 @@ window.SAT_SETS.push({
         D:'The fish tends to be more brightly colored during the warm season, when food on the reef is most plentiful.'
       },
       correct:'A',
-      expCorrect:'Su afirmación es que el color señala AGRESIÓN al defender territorio, NO cortejo. La A lo prueba justo: el pez enciende su color más fuerte al ahuyentar rivales de su zona y se queda apagado al cortejar. Eso ata el color a la defensa territorial y descarta el cortejo, tal como ella dice.',
+      expCorrect:'Her claim is that the color signals AGGRESSION while defending territory, NOT courtship. A proves exactly that: the fish flares its strongest color while driving rivals out of its patch and stays dull while courting. That ties the color to territorial defense and rules out courtship, just as she says.',
       expWrong:{
-        B:'Cómo se ve el color para buzos vs. otros peces habla de percepción, no de si el color señala agresión o cortejo.',
-        C:'Que ambos sexos puedan producir el color no dice PARA QUÉ lo usan; no distingue agresión de cortejo.',
-        D:'Que el color suba en la temporada cálida con más comida sugiere otra causa (estación/dieta); no apoya que sea señal de agresión territorial.'
+        B:'How the color looks to divers vs. other fish is about perception, not about whether the color signals aggression or courtship.',
+        C:'That both sexes can produce the color does not say WHAT they use it for; it does not separate aggression from courtship.',
+        D:'The color rising in the warm season with more food suggests another cause (season/diet); it does not support it being a territorial aggression signal.'
       },
-      tip:'El claim es “por A, no por B” (agresión, no cortejo). La mejor evidencia liga el rasgo a A y lo APAGA en B: color fuerte al pelear, apagado al cortejar. Descarta lo que mide otra cosa o sugiere una causa distinta.'
+      tip:'The claim is "because of A, not B" (aggression, not courtship). The best evidence ties the trait to A and SWITCHES IT OFF in B: strong color while fighting, dull while courting. Rule out anything measuring something else or suggesting a different cause.'
     },
     {
       id:'HVE-04', type:'mc', domain:'Information and Ideas', difficulty:'Difícil',
@@ -79,13 +79,13 @@ window.SAT_SETS.push({
         D:'Several rival towns eventually built water-powered mills of their own in the following century.'
       },
       correct:'B',
-      expCorrect:'Su tesis es que la prosperidad vino del MOLINO único, no de la feria (que otros también tenían). La B lo apoya directo: la riqueza subió solo DESPUÉS del molino, y los pueblos rivales con feria pero sin molino no crecieron igual. Eso aísla el molino como la causa que lo distingue.',
+      expCorrect:'Her thesis is that the prosperity came from the unique MILL, not from the fair (which others had too). B supports it directly: the wealth rose only AFTER the mill, and rival towns with a fair but no mill did not grow the same way. That isolates the mill as the cause that sets it apart.',
       expWrong:{
-        A:'Que la feria atrajera mercaderes no separa las causas: como varios pueblos tenían feria, no explica por qué ESTE se adelantó.',
-        C:'Que la población creciera ANTES del molino es contexto previo; no muestra que el molino causara el salto de prosperidad.',
-        D:'Que los rivales construyeran molinos DESPUÉS ocurre más tarde; no explica el adelanto original de este pueblo.'
+        A:'That the fair drew merchants does not separate the causes: since several towns had a fair, it does not explain why THIS one pulled ahead.',
+        C:'That the population grew BEFORE the mill is earlier context; it does not show the mill caused the jump in prosperity.',
+        D:'That rivals built mills LATER happens afterward; it does not explain this town’s original head start.'
       },
-      tip:'Cuando el claim dice “por A (único), no por B (compartido)”, busca la opción que empareja el salto CON A y muestra que sin A no pasó. El “solo después del molino, y los rivales sin molino no subieron” es lo que aísla la causa.'
+      tip:'When the claim says "because of A (unique), not B (shared)", look for the option pairing the jump WITH A and showing that without A it did not happen. "Only after the mill, and rivals without a mill did not rise" is what isolates the cause.'
     },
     {
       id:'HVE-05', type:'mc', domain:'Information and Ideas', difficulty:'Difícil',
@@ -99,13 +99,13 @@ window.SAT_SETS.push({
         D:'“A first draft is only wet clay; the book itself does not appear until I have reshaped it a hundred times.”'
       },
       correct:'D',
-      expCorrect:'La afirmación es que el libro toma forma en la REVISIÓN, no en la inspiración inicial. La D la ilustra perfecto: el primer borrador es “barro húmedo” y el libro solo aparece tras rehacerlo “cien veces”. Pone la revisión por encima del primer impulso, justo como dice el crítico.',
+      expCorrect:'The claim is that the book takes shape in REVISION, not in the initial inspiration. D illustrates it perfectly: the first draft is "wet clay" and the book only appears after remaking it "a hundred times". It puts revision above the first impulse, exactly as the critic says.',
       expWrong:{
-        A:'Que una historia deba conmover es una idea sobre el propósito del arte; no toca el papel de la revisión.',
-        B:'Que las mejores frases lleguen “de golpe” celebra la INSPIRACIÓN súbita, lo contrario de que el libro nazca en la revisión.',
-        C:'A qué hora escribe mejor habla de su rutina, no de si la revisión es donde el libro toma forma.'
+        A:'That a story should move you is an idea about the purpose of art; it does not touch the role of revision.',
+        B:'That the best sentences arrive "all at once" celebrates sudden INSPIRATION, the opposite of the book being born in revision.',
+        C:'What time of day he writes best is about his routine, not about whether revision is where the book takes shape.'
       },
-      tip:'En cita, busca la que ESCENIFICA el claim. Aquí, “revisión sobre inspiración”: elige la del borrador que hay que rehacer muchas veces. La que exalta la chispa repentina es la trampa que va en dirección contraria.'
+      tip:'On quotation questions, look for the one that STAGES the claim. Here, "revision over inspiration": pick the one about the draft that has to be remade many times. The one exalting the sudden spark is the trap running the other way.'
     },
     {
       id:'HVE-06', type:'mc', domain:'Information and Ideas', difficulty:'Difícil',
@@ -119,13 +119,13 @@ window.SAT_SETS.push({
         D:'“Between us, I no longer believe these cautious half-measures will free anyone; my patience is a mask I can barely hold.”'
       },
       correct:'D',
-      expCorrect:'El punto es que en público predicaba paciencia pero en privado DUDABA de los métodos lentos. La D lo ilustra exacto: “entre nosotros”, ya no cree en las medidas cautelosas y confiesa que su paciencia “es una máscara”. Muestra la impaciencia oculta detrás del discurso calmado.',
+      expCorrect:'The point is that in public he preached patience but in private he DOUBTED the slow methods. D illustrates it exactly: "between us", he no longer believes in cautious measures and confesses his patience "is a mask". It shows the hidden impatience behind the calm speech.',
       expWrong:{
-        A:'Repite lo que dice en PÚBLICO (confiar en pasos legales y firmes); muestra la fachada, no la duda privada.',
-        B:'Habla de su estrategia de imagen (una voz calmada convence más), no de que dude de que lo lento funcione.',
-        C:'Expresa devoción a la causa, no duda sobre si los métodos graduales servirán. No toca la impaciencia oculta.'
+        A:'It repeats what he says in PUBLIC (trusting steady legal steps); it shows the façade, not the private doubt.',
+        B:'It is about his image strategy (a calm voice persuades more), not about doubting that the slow way works.',
+        C:'It expresses devotion to the cause, not doubt about whether gradual methods will serve. It does not touch the hidden impatience.'
       },
-      tip:'El claim contrasta lo PÚBLICO con lo PRIVADO. Busca la cita íntima (“entre nosotros…”) que revela la duda escondida, no la que repite el discurso público ni la que habla de su imagen o su entrega.'
+      tip:'The claim contrasts the PUBLIC with the PRIVATE. Look for the intimate quote ("between us…") revealing the hidden doubt, not the one repeating the public speech or the one about his image or his devotion.'
     },
     {
       id:'HVE-07', type:'mc', domain:'Information and Ideas', difficulty:'Difícil',
@@ -139,13 +139,13 @@ window.SAT_SETS.push({
         D:'A narrator steps forward to wish the audience a merry evening and thank them warmly for attending.'
       },
       correct:'A',
-      expCorrect:'El argumento es que bajo la comedia el autor colaba CRÍTICA POLÍTICA sin que los censores lo notaran. La A lo ilustra perfecto: el criado finge alabar al rey mientras en realidad se burla de sus impuestos abusivos. Es humor por fuera, crítica al poder por dentro, justo lo que dice el erudito.',
+      expCorrect:'The argument is that beneath the comedy the author slipped in POLITICAL CRITICISM without the censors noticing. A illustrates it perfectly: the servant pretends to praise the king while actually mocking his crushing taxes. It is humor on the outside, criticism of power on the inside, exactly what the scholar says.',
       expWrong:{
-        B:'Insultos juguetones entre enamorados que terminan casándose es comedia romántica pura; no hay crítica política escondida.',
-        C:'El cocinero borracho que tropieza es humor físico inofensivo; hace reír, pero no critica al poder.',
-        D:'Que el narrador salude y agradezca al público es una cortesía teatral; no lleva ninguna crítica velada.'
+        B:'Playful insults between lovers who end up married is pure romantic comedy; there is no hidden political criticism.',
+        C:'The drunken cook tripping over himself is harmless physical humor; it gets a laugh, but it does not criticize power.',
+        D:'The narrator greeting and thanking the audience is theatrical courtesy; it carries no veiled criticism.'
       },
-      tip:'Para “crítica colada bajo el humor”, busca la cita con doble filo: suena a broma pero apunta al poder (los impuestos del rey). Las escenas de puro chiste romántico o físico no llevan el mensaje político que pide el claim.'
+      tip:'For "criticism slipped in under the humor", look for the double-edged quote: it sounds like a joke but aims at power (the king’s taxes). Scenes of pure romantic or physical comedy do not carry the political message the claim calls for.'
     },
     {
       id:'HVE-08', type:'mc', domain:'Expression of Ideas', difficulty:'Difícil',
@@ -158,13 +158,13 @@ window.SAT_SETS.push({
         D:'The two bridges are of similar length and cross the same river.'
       },
       correct:'C',
-      expCorrect:'La meta pide una diferencia en la CONFIABILIDAD de los dos puentes. La C compara justo eso: el Viejo cierra por reparaciones cada dos años y el Nuevo no ha cerrado nunca. Eso mide qué tan confiable es cada uno, con notas exactas.',
+      expCorrect:'The goal calls for a difference in the RELIABILITY of the two bridges. C compares exactly that: the Old one closes for repairs every two years and the New one has never closed. That measures how reliable each one is, with accurate notes.',
       expWrong:{
-        A:'Contrasta cómo están CONSTRUIDOS (pilares vs. cables), no qué tan confiables han sido en servicio.',
-        B:'Compara las FECHAS de construcción, no la confiabilidad de cada puente.',
-        D:'Dice en qué se PARECEN (largo y río), no una diferencia de confiabilidad.'
+        A:'It contrasts how they are BUILT (piers vs. cables), not how reliable they have been in service.',
+        B:'It compares the construction DATES, not the reliability of each bridge.',
+        D:'It says what they have in COMMON (length and river), not a difference in reliability.'
       },
-      tip:'“Diferencia en confiabilidad” pide la opción sobre fallas o cierres (cada dos años vs. nunca), no la de materiales ni fechas ni lo que tienen en común.'
+      tip:'"Difference in reliability" calls for the option about failures or closures (every two years vs. never), not the one about materials or dates or what they have in common.'
     },
     {
       id:'HVE-09', type:'mc', domain:'Expression of Ideas', difficulty:'Difícil',
@@ -177,13 +177,13 @@ window.SAT_SETS.push({
         D:'The chemist tested a new catalyst designed to speed up a reaction that was otherwise slow.'
       },
       correct:'B',
-      expCorrect:'La meta pide enfatizar lo DRÁSTICO de la aceleración. La B lo muestra con los números: con catalizador tardó 12 minutos, la décima parte de los 120 sin él. Ese contraste 120→12 comunica de golpe lo grande del cambio, con notas exactas.',
+      expCorrect:'The goal calls for emphasizing how DRASTIC the speed-up was. B shows it with the numbers: with the catalyst it took 12 minutes, a tenth of the 120 without it. That 120→12 contrast conveys the size of the change at a glance, with accurate notes.',
       expWrong:{
-        A:'Que el catalizador se recupere habla de reutilizarlo, no de cuánto aceleró la reacción.',
-        C:'Que el test se repitiera cinco veces muestra CONSISTENCIA, no la magnitud de la aceleración.',
-        D:'Enuncia qué probaba el químico (el propósito), sin dar el contraste de tiempos que muestra lo drástico.'
+        A:'That the catalyst is recovered is about reusing it, not about how much it sped the reaction up.',
+        C:'That the test was repeated five times shows CONSISTENCY, not the magnitude of the speed-up.',
+        D:'It states what the chemist was testing (the purpose), without giving the time contrast that shows how drastic it was.'
       },
-      tip:'“Qué tan drástico” pide la comparación de MAGNITUD con cifras (120 vs. 12 min). La consistencia (5 veces) o la reutilización responden a otra meta, no a lo impactante del cambio.'
+      tip:'"How drastic" calls for the comparison of MAGNITUDE with figures (120 vs. 12 min). Consistency (five times) or reusability answer a different goal, not how striking the change was.'
     },
     {
       id:'HVE-10', type:'mc', domain:'Expression of Ideas', difficulty:'Difícil',
@@ -196,13 +196,13 @@ window.SAT_SETS.push({
         D:'Although some feared the cleaning would harm the artwork, tests confirmed the original paint layer was left untouched.'
       },
       correct:'D',
-      expCorrect:'La meta es TRANQUILIZAR a quienes temían daño al original. La D lo hace: reconoce el temor y luego lo calma con la prueba de que la capa de pintura original quedó intacta. Responde justo la preocupación, con notas exactas.',
+      expCorrect:'The goal is to REASSURE those who feared damage to the original. D does it: it acknowledges the fear and then settles it with the proof that the original paint layer was left intact. It answers exactly that worry, with accurate notes.',
       expWrong:{
-        A:'Describe cómo se veía el cielo antes (café apagado); no dice nada sobre si la limpieza dañó o no la obra.',
-        B:'Cuenta el resultado visual (cielo azul), pero no aborda el miedo a que se dañara el original.',
-        C:'Solo REPITE el temor de los críticos sin resolverlo; eso inquieta más, no tranquiliza.'
+        A:'It describes how the sky looked before (a dull brown); it says nothing about whether the cleaning harmed the work.',
+        B:'It reports the visual result (a blue sky), but does not address the fear of damaging the original.',
+        C:'It only REPEATS the critics’ fear without settling it; that unsettles people further, it does not reassure them.'
       },
-      tip:'“Tranquilizar a quien temía X” pide la opción que da la prueba de que X no pasó (pintura original intacta). Repetir el miedo o describir el color no calma esa preocupación.'
+      tip:'"Reassure someone who feared X" calls for the option giving the proof that X did not happen (the original paint left intact). Repeating the fear or describing the color does not settle that worry.'
     },
     {
       id:'HVE-11', type:'mc', domain:'Expression of Ideas', difficulty:'Difícil',
@@ -215,13 +215,13 @@ window.SAT_SETS.push({
         D:'Town B’s library sits on a quiet hill at the edge of town, away from the bustle of daily activity.'
       },
       correct:'A',
-      expCorrect:'La meta pide una AFIRMACIÓN sobre cómo la ubicación afecta el uso, apoyada por el caso. La A hace ambas cosas: plantea la idea (ponerla donde ya se junta la gente sube el uso) y la respalda con el dato (cuatro veces más visitas, siendo iguales en tamaño y colección). Es afirmación + evidencia, con notas exactas.',
+      expCorrect:'The goal calls for a CLAIM about how location affects use, supported by the case. A does both: it states the idea (placing it where people already gather raises use) and backs it with the data (four times as many visits, with the same size and collection). It is claim plus evidence, with accurate notes.',
       expWrong:{
-        B:'Dice que ambas abrieron igual el mismo año; es lo que tienen en común, no una afirmación sobre ubicación y uso.',
-        C:'Describe DÓNDE puso cada pueblo su biblioteca, pero no plantea ni apoya ninguna afirmación sobre el uso.',
-        D:'Solo describe la ubicación de la biblioteca de Town B; no hace la afirmación general ni la respalda con datos.'
+        B:'It says both opened the same year at the same size; that is what they have in common, not a claim about location and use.',
+        C:'It describes WHERE each town put its library, but it neither states nor supports any claim about use.',
+        D:'It only describes the location of Town B’s library; it does not make the general claim or back it with data.'
       },
-      tip:'“Afirmación apoyada por el caso” pide la opción que UNE una idea general con el dato que la sostiene (4 veces más visitas). Las que solo describen ubicaciones o coincidencias no plantean la afirmación.'
+      tip:'"A claim supported by the case" calls for the option that JOINS a general idea with the data backing it (four times as many visits). Ones that merely describe locations or coincidences do not state the claim.'
     },
     {
       id:'HVE-12', type:'mc', domain:'Expression of Ideas', difficulty:'Difícil',
@@ -234,13 +234,13 @@ window.SAT_SETS.push({
         D:'The biologist studied three unrelated animals that all live in the desert.'
       },
       correct:'C',
-      expCorrect:'La meta pide una GENERALIZACIÓN apoyada por los ejemplos. La C resume el patrón de los tres casos: distintos animales del desierto desarrollaron estrategias variadas para vivir con poca o ninguna agua para beber. Abarca a la rata, el lagarto y el camello en una sola idea, con notas exactas.',
+      expCorrect:'The goal calls for a GENERALIZATION supported by the examples. C sums up the pattern across the three cases: different desert animals evolved varied strategies for living with little or no drinking water. It covers the rat, the lizard and the camel in a single idea, with accurate notes.',
       expWrong:{
-        A:'Da un solo caso (la rata canguro); es un ejemplo, no la generalización que abarca a los tres.',
-        B:'Da otro caso suelto (el lagarto); un ejemplo aislado, no el patrón general.',
-        D:'Describe el MONTAJE del estudio (tres animales del desierto), no la conclusión general que se sostiene con los ejemplos.'
+        A:'It gives a single case (the kangaroo rat); that is an example, not the generalization covering all three.',
+        B:'It gives another loose case (the lizard); an isolated example, not the general pattern.',
+        D:'It describes the SETUP of the study (three desert animals), not the general conclusion the examples support.'
       },
-      tip:'“Generalización apoyada por ejemplos” pide la opción que RESUME lo común a todos los casos (estrategias variadas, poca agua), no un solo animal ni la descripción del estudio.'
+      tip:'"A generalization supported by examples" calls for the option that SUMS UP what all the cases share (varied strategies, little water), not a single animal or a description of the study.'
     }
   ]
 });

@@ -19,7 +19,7 @@ window.SAT_SETS.push({
         D:'It defines a single technical term and traces the word’s origins.'
       },
       correct:'B',
-      expCorrect:'El texto se mueve en tres tiempos: primero la práctica vieja (botar el agua de lluvia por tuberías), luego “however” introduce el enfoque nuevo y contrario (tratar la lluvia como recurso), y al final anota sus resultados (ríos más limpios, calles más frescas). La opción B captura ese movimiento: práctica vieja → nueva que contrasta → resultados.',
+      expCorrect:'The text moves in three stages: first the old practice (flushing rainwater away through pipes), then "however" introduces the new, opposing approach (treating rain as a resource), and finally it notes the results (cleaner rivers, cooler streets). Option B captures that movement: old practice → a new one that contrasts → results.',
       expWrong:{
         A:'No está apoyado: el texto menciona tecnologías (jardines de lluvia, pavimento permeable), pero nunca las ordena por costo.',
         C:'Malinterpreta el propósito: el texto describe un cambio de enfoque, no “argumenta” que se prohíban las tuberías. El verbo importa.',
@@ -39,7 +39,7 @@ window.SAT_SETS.push({
         D:'It provides the numerical evidence about Greenland’s size.'
       },
       correct:'A',
-      expCorrect:'Antes se explica que los mapas distorsionan las zonas polares (Groenlandia se ve enorme). La oración subrayada dice por qué los cartógrafos ACEPTAN esa distorsión: porque la misma proyección mantiene exactas las direcciones de la brújula. Su función es dar la razón por la que se tolera el defecto.',
+      expCorrect:'Just before, it explains that the maps distort the polar regions (Greenland looks enormous). The underlined sentence says why cartographers ACCEPT that distortion: because the same projection keeps compass directions exact. Its function is to give the reason the flaw is tolerated.',
       expWrong:{
         B:'Malinterpreta la función: el tema (la distorsión de los mapas) ya se presentó en la primera oración, no en la subrayada.',
         C:'Contradice el texto: la oración no niega la distorsión; la da por cierta y explica por qué se acepta.',
@@ -59,7 +59,7 @@ window.SAT_SETS.push({
         D:'To describe the renovation of the abandoned house where the manuscripts were found.'
       },
       correct:'C',
-      expCorrect:'El texto cuenta dos cosas unidas por “Yet”: el hito histórico (primera mujer afroamericana con una sinfonía tocada por una gran orquesta) y el largo olvido que vino después (manuscritos abandonados hasta 2009). El propósito recoge ambas: narrar el logro y la negligencia posterior.',
+      expCorrect:'The text tells two things joined by "Yet": the historic milestone (the first African American woman with a symphony performed by a major orchestra) and the long neglect that followed (manuscripts abandoned until 2009). The purpose covers both: to recount the achievement and the neglect that came after.',
       expWrong:{
         A:'No está apoyado: el texto no compara ni “argumenta” que su sinfonía sea superior a la de otros. No hay juicio de valor.',
         B:'No está apoyado: nunca se analiza la estructura técnica de la sinfonía movimiento por movimiento.',
@@ -69,12 +69,12 @@ window.SAT_SETS.push({
     },
     {
       id:'M1V-04', type:'mc', domain:'Standard English Conventions', difficulty:'Media',
-      skill:'Puntuación',
+      skill:'Punctuation',
       passage:"Marine biologists once believed the deep sea was nearly %BLANK% recent expeditions have revealed thriving communities of animals clustered around volcanic vents.",
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'lifeless,', B:'lifeless;', C:'lifeless', D:'lifeless:'},
       correct:'B',
-      expCorrect:'Hay dos oraciones completas: “Marine biologists once believed the deep sea was nearly lifeless” y “recent expeditions have revealed thriving communities…”. Para unir dos oraciones independientes sin conjunción, el punto y coma es lo correcto.',
+      expCorrect:'There are two complete sentences: "Marine biologists once believed the deep sea was nearly lifeless" and "recent expeditions have revealed thriving communities…". To join two independent clauses with no conjunction, the semicolon is what you want.',
       expWrong:{
         A:'Una coma sola entre dos oraciones completas es un comma splice.',
         C:'Sin puntuación, las dos oraciones se fusionan (run-on).',
@@ -84,12 +84,12 @@ window.SAT_SETS.push({
     },
     {
       id:'M1V-05', type:'mc', domain:'Standard English Conventions', difficulty:'Media',
-      skill:'Puntuación',
+      skill:'Punctuation',
       passage:"The %BLANK% a device that measures atmospheric pressure, gave early forecasters their first reliable way to sense an approaching storm.",
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'barometer', B:'barometer:', C:'barometer,', D:'barometer;'},
       correct:'C',
-      expCorrect:'“a device that measures atmospheric pressure” es un apositivo NO esencial que renombra “The barometer”. Va entre DOS comas; como ya está la coma de cierre antes de “gave”, falta la de apertura después de “barometer”.',
+      expCorrect:'"a device that measures atmospheric pressure" is a NON-essential appositive renaming "The barometer". It goes between TWO commas; since the closing comma is already there before "gave", the opening one after "barometer" is missing.',
       expWrong:{
         A:'Sin la coma de apertura, el inciso cierra pero no abre → queda desbalanceado.',
         B:'El colon no abre un inciso y, además, separaría el sujeto (“The barometer”) de su verbo (“gave”).',
@@ -99,12 +99,12 @@ window.SAT_SETS.push({
     },
     {
       id:'M1V-06', type:'mc', domain:'Standard English Conventions', difficulty:'Difícil',
-      skill:'Puntuación',
+      skill:'Punctuation',
       passage:"The expedition’s survival depended on three things the porters could not afford to %BLANK% a dependable compass, a waterproof tent, and enough dried food to last a month.",
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'lose:', B:'lose,', C:'lose;', D:'lose'},
       correct:'A',
-      expCorrect:'Antes del blank hay una oración completa (“The expedition’s survival depended on three things the porters could not afford to lose”) y lo que sigue es la lista que la detalla. Ese es justo el trabajo del colon.',
+      expCorrect:'Before the blank there is a complete sentence ("The expedition’s survival depended on three things the porters could not afford to lose") and what follows is the list that spells it out. That is exactly the job of the colon.',
       expWrong:{
         B:'La coma no puede introducir así una lista después de una oración completa.',
         C:'El punto y coma exige una oración independiente después, y una lista no lo es.',
@@ -124,7 +124,7 @@ window.SAT_SETS.push({
         D:'The Sahara, now a desert, was once a green, watery landscape that slowly dried out.'
       },
       correct:'D',
-      expCorrect:'El texto abre con “no siempre fue un desierto”, muestra pruebas de un paisaje verde y con agua (hipopótamos, ganado, pesca) y explica cómo se secó con el tiempo. La idea central junta todo eso: el Sahara, hoy desierto, antes fue verde y húmedo y se secó poco a poco. La opción D lo cubre.',
+      expCorrect:'The text opens with "it was not always a desert", shows evidence of a green, watered landscape (hippos, cattle, fishing) and explains how it dried out over time. The central idea joins all of that: the Sahara, a desert today, was once green and wet and dried out gradually. Option D covers it.',
       expWrong:{
         A:'Detalle exagerado: las pinturas son evidencia en el texto, pero nunca se dice que sean la forma “más confiable” de conocer climas antiguos. Es información de afuera.',
         B:'Demasiado extremo: el cambio de órbita explica el caso del Sahara, no la formación de “todos” los desiertos del planeta.',

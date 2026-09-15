@@ -9,78 +9,78 @@ window.SAT_SETS.push({
   questions: [
     {
       id:'HVG-01', type:'mc', domain:'Standard English Conventions', difficulty:'Difícil',
-      skill:'Puntuación',
+      skill:'Punctuation',
       passage:"After weeks of debate, the archaeologists finally agreed on what the fragile burial chamber most urgently %BLANK% a stable temperature, constant humidity, and protection from vibration.",
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'needed:', B:'needed,', C:'needed', D:'needed;'},
       correct:'A',
-      expCorrect:'Antes del blank hay una oración completa (“the archaeologists finally agreed on what the fragile burial chamber most urgently needed”) y lo que sigue es la lista que detalla ese “what”. Introducir una lista tras una oración completa es justo el trabajo del colon.',
+      expCorrect:'Before the blank there is a complete sentence ("the archaeologists finally agreed on what the fragile burial chamber most urgently needed") and what follows is the list spelling out that "what". Introducing a list after a complete sentence is exactly the job of the colon.',
       expWrong:{
-        B:'La coma sola no puede introducir una lista después de una oración completa.',
-        C:'Sin puntuación, la oración choca con la lista y se fusiona (run-on); además “needed” ya tiene su objeto en “what”.',
-        D:'El punto y coma exige una oración independiente después, y una lista no lo es.'
+        B:'A lone comma cannot introduce a list after a complete sentence.',
+        C:'With no punctuation, the sentence collides with the list and fuses (run-on); besides, "needed" already has its object in "what".',
+        D:'A semicolon demands an independent sentence after it, and a list is not one.'
       },
-      tip:'Colon = solo después de una oración COMPLETA. Tápalo: lo de antes debe poder terminar en punto.'
+      tip:'Colon = only after a COMPLETE sentence. Cover it up: what comes before has to be able to end in a period.'
     },
     {
       id:'HVG-02', type:'mc', domain:'Standard English Conventions', difficulty:'Difícil',
-      skill:'Puntuación',
+      skill:'Punctuation',
       passage:"The 1815 eruption of Mount %BLANK% the most powerful volcanic event in recorded history—released so much ash that the following year had almost no summer across the Northern Hemisphere.",
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'Tambora,', B:'Tambora—', C:'Tambora', D:'Tambora:'},
       correct:'B',
-      expCorrect:'El inciso no esencial “the most powerful volcanic event in recorded history” se CIERRA con una raya antes de “released”, así que debe ABRIRSE con otra raya: “Mount Tambora—…history—released…”. La puntuación de un inciso tiene que coincidir a ambos lados.',
+      expCorrect:'The non-essential aside "the most powerful volcanic event in recorded history" CLOSES with a dash before "released", so it has to OPEN with another dash: "Mount Tambora—…history—released…". The punctuation around an aside has to match on both sides.',
       expWrong:{
-        A:'Mezcla coma de apertura con raya de cierre; los signos de un inciso deben ser gemelos.',
-        C:'Sin nada que abra el inciso, la raya de cierre queda huérfana y desbalanceada.',
-        D:'El colon no abre un inciso y partiría el sujeto “The 1815 eruption of Mount Tambora” de su verbo “released”.'
+        A:'It mixes an opening comma with a closing dash; the marks around an aside have to be twins.',
+        C:'With nothing opening the aside, the closing dash is left orphaned and unbalanced.',
+        D:'A colon does not open an aside and it would split the subject "The 1815 eruption of Mount Tambora" from its verb "released".'
       },
-      tip:'Raya “huérfana” cerrando el inciso antes del blank → casi siempre la respuesta es la raya que la empareja.'
+      tip:'An "orphan" dash closing the aside before the blank → the answer is almost always the dash that pairs with it.'
     },
     {
       id:'HVG-03', type:'mc', domain:'Standard English Conventions', difficulty:'Difícil',
-      skill:'Puntuación',
+      skill:'Punctuation',
       passage:"For months the comet had been predicted to blaze brightly across the winter %BLANK% it fizzled into a faint smudge barely visible through binoculars.",
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'sky,', B:'sky', C:'sky;', D:'sky:'},
       correct:'C',
-      expCorrect:'Hay dos oraciones completas: “…the comet had been predicted to blaze brightly across the winter sky” e “it fizzled into a faint smudge…”. Para unir dos oraciones independientes sin conjunción, el punto y coma es lo correcto.',
+      expCorrect:'There are two complete sentences: "…the comet had been predicted to blaze brightly across the winter sky" and "it fizzled into a faint smudge…". To join two independent clauses with no conjunction, the semicolon is what you want.',
       expWrong:{
-        A:'Una coma sola entre dos oraciones completas es un comma splice.',
-        B:'Sin puntuación, las dos oraciones se fusionan (run-on).',
-        D:'El colon une dos independientes solo cuando la segunda EXPLICA o amplía la primera; aquí la segunda CONTRASTA (se predijo brillante, pero se apagó), así que el colon no encaja.'
+        A:'A single comma between two complete sentences is a comma splice.',
+        B:'With no punctuation, the two sentences fuse (run-on).',
+        D:'A colon joins two independent clauses only when the second EXPLAINS or expands the first; here the second CONTRASTS (predicted bright, but it fizzled), so the colon does not fit.'
       },
-      tip:'Prueba del punto: si a ambos lados del blank quedan oraciones completas y la 2ª no aclara a la 1ª, el ";" es tu opción.'
+      tip:'The period test: if both sides of the blank are complete sentences and the 2nd does not clarify the 1st, ";" is your pick.'
     },
     {
       id:'HVG-04', type:'mc', domain:'Standard English Conventions', difficulty:'Difícil',
-      skill:'Puntuación',
+      skill:'Punctuation',
       passage:"The long-standing suspicion that the ancient trade routes described in the manuscript had never actually %BLANK% has been steadily undermined by recent archaeological finds.",
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'existed,', B:'existed;', C:'existed:', D:'existed'},
       correct:'D',
-      expCorrect:'El sujeto completo es “The long-standing suspicion that… had never actually existed” y su verbo es “has been undermined”. La cláusula “that…” es esencial (define cuál suspicion), así que no lleva comas, y nunca se separa un sujeto de su verbo con coma, punto y coma o colon.',
+      expCorrect:'The full subject is "The long-standing suspicion that… had never actually existed" and its verb is "has been undermined". The "that…" clause is essential (it defines which suspicion), so it takes no commas, and you never split a subject from its verb with a comma, semicolon or colon.',
       expWrong:{
-        A:'Una coma entre el sujeto (por largo que sea) y su verbo “has been” es incorrecta.',
+        A:'A comma between the subject (however long) and its verb "has been" is wrong.',
         B:'El punto y coma pide oraciones independientes a ambos lados; “has been undermined…” no lo es.',
-        C:'El colon partiría el sujeto de su verbo.'
+        C:'The colon would split the subject from its verb.'
       },
-      tip:'Los sujetos largos “piden” pausa al leer, pero gramática ≠ respiración. Halla sujeto + verbo y NO los separes.'
+      tip:'Long subjects "ask" for a pause when you read them, but grammar ≠ breathing. Find subject + verb and do NOT split them.'
     },
     {
       id:'HVG-05', type:'mc', domain:'Standard English Conventions', difficulty:'Difícil',
-      skill:'Puntuación',
+      skill:'Punctuation',
       passage:"The %BLANK% first isolated from a common soil mold in the 1940s, revolutionized the treatment of bacterial infections within a single generation.",
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'antibiotic,', B:'antibiotic', C:'antibiotic;', D:'antibiotic:'},
       correct:'A',
-      expCorrect:'“first isolated from a common soil mold in the 1940s” es un inciso no esencial que describe “The antibiotic”. Debe ir entre DOS comas; como ya hay coma de cierre antes de “revolutionized”, falta la de apertura.',
+      expCorrect:'"first isolated from a common soil mold in the 1940s" is a non-essential aside describing "The antibiotic". It has to sit between TWO commas; since the closing comma is already there before "revolutionized", the opening one is missing.',
       expWrong:{
-        B:'Sin la coma de apertura, el inciso cierra pero no abre → queda desbalanceado.',
-        C:'El punto y coma no abre un inciso y separaría el sujeto (“The antibiotic”) de su verbo (“revolutionized”).',
-        D:'El colon no abre un inciso y también partiría el sujeto de su verbo.'
+        B:'Without the opening comma, the aside closes but never opens → it is left unbalanced.',
+        C:'A semicolon does not open an aside and it would split the subject ("The antibiotic") from its verb ("revolutionized").',
+        D:'A colon does not open an aside and it would also split the subject from its verb.'
       },
-      tip:'Apertura y cierre GEMELOS: coma–coma. Si ves una coma “huérfana” cerrando el inciso, la respuesta suele ser la coma que lo abre.'
+      tip:'Opening and closing are TWINS: comma–comma. If you spot an "orphan" comma closing the aside, the answer is usually the comma that opens it.'
     },
     {
       id:'HVG-06', type:'mc', domain:'Standard English Conventions', difficulty:'Difícil',
@@ -89,13 +89,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'review', B:'reviews', C:'have reviewed', D:'are reviewing'},
       correct:'B',
-      expCorrect:'El sujeto es “The committee”, un sustantivo colectivo tratado aquí como una sola unidad que actúa en conjunto. Un sujeto singular pide un verbo singular: “reviews”. La cláusula “that oversees… collection” solo describe al sujeto y no cambia su número.',
+      expCorrect:'The subject is "The committee", a collective noun treated here as a single unit acting together. A singular subject calls for a singular verb: "reviews". The clause "that oversees… collection" only describes the subject and does not change its number.',
       expWrong:{
-        A:'“review” es plural; concuerda con “collection” o “proposals”, no con el sujeto singular “The committee”.',
+        A:'"review" is plural; it agrees with "collection" or "proposals", not with the singular subject "The committee".',
         C:'“have reviewed” es plural; el singular “committee” pide “has reviewed”.',
         D:'“are reviewing” es plural; el sujeto singular “committee” pide un verbo singular.'
       },
-      tip:'Un colectivo que actúa como una sola unidad (“The committee”) es singular. Ignora la cláusula “that…”: el verbo concuerda con “committee”.'
+      tip:'A collective acting as a single unit ("The committee") is singular. Ignore the "that…" clause: the verb agrees with "committee".'
     },
     {
       id:'HVG-07', type:'mc', domain:'Standard English Conventions', difficulty:'Difícil',
@@ -104,13 +104,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'has put', B:'have put', C:'putting', D:'are putting'},
       correct:'A',
-      expCorrect:'El sujeto real es “A series” (singular). La lista entre rayas (“a flooded basement, a broken furnace, and a leaking roof”) solo detalla los setbacks y no cambia el número del sujeto. Un sujeto singular pide un verbo singular: “has put”.',
+      expCorrect:'The real subject is "A series" (singular). The list between dashes ("a flooded basement, a broken furnace, and a leaking roof") only spells out the setbacks and does not change the subject’s number. A singular subject calls for a singular verb: "has put".',
       expWrong:{
-        B:'“have put” es plural; concuerda con “setbacks”, pero el verdadero sujeto es el singular “A series”.',
-        C:'“putting” no es un verbo conjugado: dejaría la oración sin verbo principal (fragmento).',
+        B:'"have put" is plural; it agrees with "setbacks", but the real subject is the singular "A series".',
+        C:'"putting" is not a finite verb: it would leave the sentence with no main verb (a fragment).',
         D:'“are putting” es plural; el sujeto singular “A series” pide un verbo singular.'
       },
-      tip:'“A series of…”, “a set of…” y “a pair of…” son singulares. Tapa la frase intervenida y concuerda con “A series”.'
+      tip:'"A series of…", "a set of…" and "a pair of…" are singular. Cover the intervening phrase and agree with "A series".'
     },
     {
       id:'HVG-08', type:'mc', domain:'Standard English Conventions', difficulty:'Difícil',
@@ -119,13 +119,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'are', B:'were', C:'is', D:'have been'},
       correct:'C',
-      expCorrect:'La oración está invertida: el sujeto viene DESPUÉS del verbo. El sujeto es “a gold astrolabe” (singular), no “the artifacts”, así que el verbo es singular y en presente: “is”.',
+      expCorrect:'The sentence is inverted: the subject comes AFTER the verb. The subject is "a gold astrolabe" (singular), not "the artifacts", so the verb is singular and present: "is".',
       expWrong:{
-        A:'“are” es plural; concuerda con “artifacts”, pero el sujeto real es el singular “a gold astrolabe”.',
-        B:'“were” es plural y pasado; el sujeto es singular y el resto del texto está en presente (“have puzzled… for decades”).',
+        A:'"are" is plural; it agrees with "artifacts", but the real subject is the singular "a gold astrolabe".',
+        B:'"were" is plural and past tense; the subject is singular and the rest of the text is in the present ("have puzzled… for decades").',
         D:'“have been” es plural; el sujeto singular “a gold astrolabe” pide “has been”.'
       },
-      tip:'Cuando la oración empieza con lugar (“Among the artifacts…”), busca el sujeto DESPUÉS del verbo. Aquí es “a gold astrolabe” (singular).'
+      tip:'When the sentence opens with a place ("Among the artifacts…"), look for the subject AFTER the verb. Here it is "a gold astrolabe" (singular).'
     },
     {
       id:'HVG-09', type:'mc', domain:'Standard English Conventions', difficulty:'Difícil',
@@ -134,13 +134,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'were', B:'have been', C:'are', D:'was'},
       correct:'D',
-      expCorrect:'Con “neither… nor…”, el verbo concuerda con el sujeto MÁS CERCANO. El más cercano es “the elaborate marble fountain” (singular), así que el verbo va en singular: “was”.',
+      expCorrect:'With "neither… nor…", the verb agrees with the NEAREST subject. The nearest is "the elaborate marble fountain" (singular), so the verb is singular: "was".',
       expWrong:{
-        A:'“were” es plural; concordaría con “murals”, pero la regla manda concordar con el sujeto más cercano, que es singular.',
-        B:'“have been” es plural; el sujeto más cercano “fountain” es singular.',
-        C:'“are” es plural y presente; el más cercano es singular y el texto está en pasado.'
+        A:'"were" is plural; it would agree with "murals", but the rule says agree with the nearest subject, which is singular.',
+        B:'"have been" is plural; the nearest subject "fountain" is singular.',
+        C:'"are" is plural and present tense; the nearest one is singular and the text is in the past.'
       },
-      tip:'En “neither X nor Y”, mira SOLO la Y (lo más cercano al verbo). Si Y es singular, el verbo es singular.'
+      tip:'In "neither X nor Y", look ONLY at the Y (the one closest to the verb). If Y is singular, the verb is singular.'
     },
     {
       id:'HVG-10', type:'mc', domain:'Standard English Conventions', difficulty:'Difícil',
@@ -149,13 +149,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'lab,', B:'lab;', C:'lab, and,', D:'lab and'},
       correct:'B',
-      expCorrect:'Son dos oraciones completas (“The startup’s first prototype barely worked in the lab” e “within eighteen months its refined design was outperforming…”). Sin conjunción entre ellas, el punto y coma es lo que las une correctamente.',
+      expCorrect:'These are two complete sentences ("The startup’s first prototype barely worked in the lab" and "within eighteen months its refined design was outperforming…"). With no conjunction between them, the semicolon is what joins them correctly.',
       expWrong:{
-        A:'Una coma sola entre dos oraciones completas es un comma splice.',
-        C:'La coma después de “and” separa la conjunción de su cláusula; además sobra puntuación.',
-        D:'Dos oraciones completas unidas por “and” exigen una coma ANTES de la conjunción; “lab and” la omite (run-on).'
+        A:'A single comma between two complete sentences is a comma splice.',
+        C:'The comma after "and" separates the conjunction from its clause; on top of that there is too much punctuation.',
+        D:'Two complete sentences joined by "and" demand a comma BEFORE the conjunction; "lab and" leaves it out (run-on).'
       },
-      tip:'¿Dos oraciones completas sin conjunción? Punto y coma. Si metes “and”, va con coma ANTES, nunca después.'
+      tip:'Two complete sentences with no conjunction? Semicolon. If you bring in "and", it goes with a comma BEFORE it, never after.'
     },
     {
       id:'HVG-11', type:'mc', domain:'Standard English Conventions', difficulty:'Difícil',
@@ -164,13 +164,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'day,', B:'day; and', C:'day, for', D:'day for'},
       correct:'C',
-      expCorrect:'Son dos oraciones completas y la segunda da la razón de la primera. El coordinante “for” (que significa “porque”) une dos independientes con coma ANTES: “…every day, for they lack…”.',
+      expCorrect:'These are two complete sentences and the second gives the reason for the first. The coordinator "for" (meaning "because") joins two independent clauses with a comma BEFORE it: "…every day, for they lack…".',
       expWrong:{
-        A:'Una coma sola entre dos oraciones completas es un comma splice.',
+        A:'A single comma between two complete sentences is a comma splice.',
         B:'El punto y coma ya une dos independientes; agregarle “and” es redundante (“; and” sobra).',
-        D:'“for” aquí une dos oraciones completas, así que necesita una coma antes; “day for” sin coma es un run-on.'
+        D:'"for" here joins two complete sentences, so it needs a comma before it; "day for" with no comma is a run-on.'
       },
-      tip:'El FANBOYS “for” = “porque”. Une dos oraciones completas con coma ANTES: “…, for …”.'
+      tip:'The FANBOYS "for" = "because". It joins two complete sentences with a comma BEFORE it: "…, for …".'
     },
     {
       id:'HVG-12', type:'mc', domain:'Standard English Conventions', difficulty:'Difícil',
@@ -179,13 +179,13 @@ window.SAT_SETS.push({
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'riverbank but', B:'riverbank; but,', C:'riverbank, but,', D:'riverbank, but'},
       correct:'D',
-      expCorrect:'Son dos oraciones completas unidas por el FANBOYS “but”. La regla pide una coma ANTES de la conjunción y nada después: “…riverbank, but a single scorching summer…”.',
+      expCorrect:'These are two complete sentences joined by the FANBOYS "but". The rule calls for a comma BEFORE the conjunction and nothing after it: "…riverbank, but a single scorching summer…".',
       expWrong:{
         A:'Falta la coma antes de “but”; unir dos oraciones completas sin ella es incorrecto.',
-        B:'El punto y coma reemplaza a la conjunción; usarlo junto a “but” es redundante, y la coma tras “but” sobra.',
-        C:'La coma después de “but” separa la conjunción de su cláusula; la coma va ANTES, no después.'
+        B:'The semicolon replaces the conjunction; using it alongside "but" is redundant, and the comma after "but" is wrong too.',
+        C:'The comma after "but" separates the conjunction from its clause; the comma goes BEFORE, not after.'
       },
-      tip:'Regla FANBOYS: dos oraciones completas + and/but/or… → coma justo ANTES de la conjunción y nada después.'
+      tip:'FANBOYS rule: two complete sentences + and/but/or… → comma right BEFORE the conjunction and nothing after it.'
     }
   ]
 });
