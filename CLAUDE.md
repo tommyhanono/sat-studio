@@ -237,12 +237,14 @@ Este sitio es **público**: pasa `90_Sistema/TOMMY-WEB-LAUNCH.md` completo (vaul
 ~/.claude/scripts/web-launch-audit/run.sh . --out report.md
 ```
 
-Estado al 15-sep-2026, contra el sitio EN VIVO: **34 PASS · 0 FAIL · 2 WARN** (medido antes de este cambio;
-hay que volver a correrlo después de publicar). Contra el repo local salta
-un FAIL extra, `B1-12`, que apunta a un `console.log` de `tools/huella-banco.js` — un script de línea de
-comandos, donde el estado de éxito es lo que imprime y su código de salida. Falso positivo por construcción.
+Estado al 15-sep-2026 **después de publicar**, contra el sitio EN VIVO: **34 PASS · 0 FAIL · 2 WARN**.
+Contra el repo local salta un FAIL extra, `B1-12`, que apunta a un `console.log` de `tools/huella-banco.js` — un
+script de línea de comandos, donde el estado de éxito es lo que imprime y su código de salida. Falso positivo
+por construcción; por eso la corrida que vale es la de en vivo.
 
-Los dos WARN que quedan, los dos decididos a propósito:
+Verificado en los dos deploys el 15-sep-2026: `index.html` **byte a byte idéntico** al local en Vercel y en
+Pages, los 17 sets nuevos servidos en los dos, y el navegador cargando **1.200 preguntas · 99 sets · 30
+destrezas · 0 sin clasificar · 0 errores de JS**. Los dos WARN que quedan, los dos decididos a propósito:
 
 1. **`B2-04` peso del JS** — 680 KB comprimidos en vivo. Es el banco entero, y desde que se carga después del
    primer pintado ya no bloquea nada: `DOMContentLoaded` está en 83 ms locales.
