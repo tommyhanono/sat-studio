@@ -170,8 +170,17 @@ const lineaDe = i => html.slice(0, i).split('\n').length;
      adaptativo. Se busca en los sets, que es donde hace daño; en index.html la
      cadena aparece a propósito (el comentario que lo explica y la línea que lo
      normaliza al cargar). */
+  /* Se quitan los comentarios antes de buscar, por la misma razón por la que
+     index.html está exento: la forma correcta de documentar esta trampa es
+     escribirla, y un set que avisa "difficulty:'Extreme' no existe" en su
+     cabecera estaba saliendo en rojo por decir la verdad. Solo se quitan los
+     bloques /* *​/ y las líneas que EMPIEZAN con //: un `//` a media línea
+     puede ser una URL dentro de un pasaje, y cortar ahí escondería código real. */
+  const sinComentarios = src => src
+    .replace(/\/\*[\s\S]*?\*\//g, '')
+    .replace(/^[ \t]*\/\/.*$/gm, '');
   const conExtreme = fs.readdirSync(path.join(RAIZ, 'sets')).filter(f => /\.js$/.test(f))
-    .filter(f => /difficulty\s*:\s*'Extreme'/.test(fs.readFileSync(path.join(RAIZ, 'sets', f), 'utf8')));
+    .filter(f => /difficulty\s*:\s*'Extreme'/.test(sinComentarios(fs.readFileSync(path.join(RAIZ, 'sets', f), 'utf8'))));
   check("S12 ningún set usa difficulty:'Extreme' (caería al módulo fácil)",
     conExtreme.length === 0, conExtreme.join(', '));
   const anon = /supabase\.co[\s\S]{0,400}?service_role/.test(html);
