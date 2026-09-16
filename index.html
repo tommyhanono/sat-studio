@@ -6463,13 +6463,58 @@ var _ES_BRU = function(q){ return !!q.extreme; };
 
 function mulberry32(a){ return function(){ a|=0; a = a + 0x6D2B79F5 | 0; var t = Math.imul(a ^ a>>>15, 1 | a); t = t + Math.imul(t ^ t>>>7, 61 | t) ^ t; return ((t ^ t>>>14) >>> 0) / 4294967296; }; }
 function _shuffle(a, rnd){ rnd = rnd || Math.random; a = a.slice(); for(var i=a.length-1;i>0;i--){ var j=Math.floor(rnd()*(i+1)); var t=a[i];a[i]=a[j];a[j]=t; } return a; }
+/* ¿Qué dominio manda en esta pregunta? Los temas de matemática cruzan a
+   propósito ("Algebra + Functions"): para la cuota manda el primero. */
+function domPrincipal(q){ return String(q.domain || '').split('+')[0].trim(); }
+
+/* Elegir n preguntas de `lista` respetando EL PLANO OFICIAL de dominios.
+   Antes se tomaban las n primeras de una baraja uniforme, y eso copia la
+   proporción del BANCO. Medido sobre 400 simulacros con el banco de 2.620:
+   Geometría salía al 20,8 % contra el 15 % oficial (1,39x) y Conventions al
+   23,3 % contra 26 % — porque el banco tenía Geometría de más.
+
+   Eso soldaba dos cosas que no tienen por qué estar juntas: cuán HONDO es el
+   banco en una destreza, y cuán FIEL es el simulacro al examen. Con el pozo
+   soldado al plano, cada pregunta agregada a una destreza flaca deformaba
+   todos los simulacros, y por eso el banco no podía crecer donde hacía falta.
+   Repartiendo por cuota, el plano lo fija el EXAMEN y el banco queda libre
+   para ser todo lo hondo que haga falta en cualquier destreza. */
+function porDominio(lista, n, rnd){
+  if(n >= lista.length) return lista.slice();
+  var cubos = {}, orden = [];
+  lista.forEach(function(q){
+    var d = domPrincipal(q);
+    if(!cubos[d]){ cubos[d] = []; orden.push(d); }
+    cubos[d].push(q);
+  });
+  /* El peso se normaliza entre los dominios que de verdad aparecen en esta
+     lista: un módulo de verbal no tiene Algebra, y un pozo de brutales puede
+     no tener ni un dominio entero. */
+  var totalW = 0;
+  orden.forEach(function(d){ totalW += (PLAN_DOMW[d] || 0); });
+  if(!totalW) return _shuffle(lista, rnd).slice(0, n);
+  var pick = [], resto = [];
+  orden.forEach(function(d){
+    var cuota = Math.round(n * (PLAN_DOMW[d] || 0) / totalW);
+    pick = pick.concat(cubos[d].slice(0, cuota));      // la lista ya viene barajada
+    resto = resto.concat(cubos[d].slice(cuota));
+  });
+  /* Redondear cuotas casi nunca da exactamente n. Lo que falte se completa con
+     el sobrante barajado —no con el primer dominio de la lista— y lo que sobre
+     se recorta después de barajar, para que el recorte tampoco elija dominio. */
+  if(pick.length < n) pick = pick.concat(_shuffle(resto, rnd).slice(0, n - pick.length));
+  return _shuffle(pick, rnd).slice(0, n);
+}
+
 function assembleModule(section, tier, count, used, rnd){
   var pool = mockPool(section).filter(function(q){ return !used[q.id]; });
   if(tier === 'extreme'){
     // Extreme modules draw ONLY from extreme-flagged questions, topping up with regular hard ones.
     var X = _shuffle(pool.filter(function(q){ return q.extreme; }), rnd);
     var DD = _shuffle(pool.filter(function(q){ return !q.extreme && q.difficulty === 'Difícil'; }), rnd);
-    var pickX = X.concat(DD).slice(0, count);
+    var pickX = porDominio(X, count, rnd);
+    if(pickX.length < count) pickX = pickX.concat(porDominio(DD, count - pickX.length, rnd));
+    pickX = pickX.slice(0, count);
     pickX.forEach(function(q){ used[q.id] = 1; });
     return pickX;
   }
@@ -6477,40 +6522,39 @@ function assembleModule(section, tier, count, used, rnd){
     // Replicates a REAL hard Module 2 (Bluebook calibration): ~22% medium ramp-in,
     // ~48% hard, and the back ~30% brutal (extreme) — ordered medium → hard → brutal.
     var nMed = Math.round(count * 0.22), nXtr = Math.round(count * 0.30);
-    var Mr = _shuffle(pool.filter(function(q){ return q.difficulty === 'Media'; }), rnd).slice(0, nMed);
-    var Xr = _shuffle(pool.filter(function(q){ return q.extreme; }), rnd).slice(0, nXtr);
-    var Dr = _shuffle(pool.filter(function(q){ return !q.extreme && q.difficulty === 'Difícil'; }), rnd).slice(0, count - Mr.length - Xr.length);
+    var Mr = porDominio(_shuffle(pool.filter(function(q){ return q.difficulty === 'Media'; }), rnd), nMed, rnd);
+    var Xr = porDominio(_shuffle(pool.filter(function(q){ return q.extreme; }), rnd), nXtr, rnd);
+    var Dr = porDominio(_shuffle(pool.filter(function(q){ return !q.extreme && q.difficulty === 'Difícil'; }), rnd), count - Mr.length - Xr.length, rnd);
     var pickR = Mr.concat(Dr).concat(Xr).slice(0, count);
     pickR.forEach(function(q){ used[q.id] = 1; });
     return pickR;
   }
-  if(tier === 'tough'){
-    // Module 1 of a tough real form: full easy→hard ramp but weighted harder than average.
-    var nFt = Math.round(count * 0.2), nMt = Math.round(count * 0.4);
-    var Ft = _shuffle(pool.filter(function(q){ return q.difficulty === 'Fácil'; }), rnd).slice(0, nFt);
-    var Mt = _shuffle(pool.filter(function(q){ return q.difficulty === 'Media'; }), rnd).slice(0, nMt);
-    var Dt = _shuffle(pool.filter(function(q){ return q.difficulty === 'Difícil'; }), rnd).slice(0, count - Ft.length - Mt.length);
-    var pickT = Ft.concat(Mt).concat(Dt).slice(0, count);
-    pickT.forEach(function(q){ used[q.id] = 1; });
-    return pickT;
-  }
   var F = _shuffle(pool.filter(function(q){return q.difficulty==='Fácil';}), rnd);
   var M = _shuffle(pool.filter(function(q){return q.difficulty==='Media';}), rnd);
   var D = _shuffle(pool.filter(function(q){return q.difficulty==='Difícil';}), rnd);
-  var order;
-  if(tier==='easy') order = F.concat(M).concat(D);
-  else if(tier==='hard') order = D.concat(M).concat(F);
-  else {
+  /* Cada cupo es [de qué montón, cuántas como mucho], en orden de preferencia.
+     Se recorren hasta llenar `count`, así que los de atrás son el relleno
+     cuando el banco no alcanza — que es exactamente lo que hacía el `concat`
+     largo de antes, pero ahora cada toma pasa por la cuota de dominios. */
+  var cupos;
+  if(tier === 'easy')       cupos = [[F, count], [M, count], [D, count]];
+  else if(tier === 'hard')  cupos = [[D, count], [M, count], [F, count]];
+  else if(tier === 'tough') // Module 1 of a tough real form: full easy→hard ramp, weighted harder than average.
+    cupos = [[F, Math.round(count*0.2)], [M, Math.round(count*0.4)], [D, count], [F, count], [M, count]];
+  else
     // 'mixed' = standard Module 1. Hardened 2026-07-14 (raise overall difficulty): was 33%F/45%M/22%D,
     // now ~20%F / 40%M / 40%D — a short easy on-ramp, then medium/hard-dominant. Keeps it distinguishable
     // from the dedicated 'tough'/'hard' tiers while feeling much less soft early.
-    var nF=Math.round(count*0.20), nM=Math.round(count*0.40);
-    order = F.slice(0,nF).concat(M.slice(0,nM)).concat(D.slice(0,count))
-              .concat(F.slice(nF)).concat(M.slice(nM)).concat(D);
-  }
-  // de-dup preserving order, then trim
+    cupos = [[F, Math.round(count*0.20)], [M, Math.round(count*0.40)], [D, count], [F, count], [M, count]];
   var pick = [], took = {};
-  for(var i=0;i<order.length && pick.length<count;i++){ if(!took[order[i].id]){ took[order[i].id]=1; pick.push(order[i]); } }
+  for(var ci = 0; ci < cupos.length && pick.length < count; ci++){
+    var libres = cupos[ci][0].filter(function(q){ return !took[q.id]; });
+    var quiero = Math.min(cupos[ci][1], count - pick.length);
+    if(quiero <= 0) continue;
+    porDominio(libres, quiero, rnd).forEach(function(q){
+      if(!took[q.id] && pick.length < count){ took[q.id] = 1; pick.push(q); }
+    });
+  }
   var rank = {'Fácil':0,'Media':1,'Difícil':2};
   pick.sort(function(a,b){ return rank[a.difficulty]-rank[b.difficulty]; });
   pick.forEach(function(q){ used[q.id]=1; });
