@@ -58,7 +58,7 @@ evalGlobal(trozo('var PLAN_DOMW', '/* ================= LA TAXONOMÍA'));
    le pasa el banco ya cargado por el mismo camino que usan las demás herramientas. */
 globalThis.__SETS__ = g.SAT_SETS;
 evalGlobal('var SETS = globalThis.__SETS__;');
-evalGlobal(trozo('var _mockPool = {};', '// College Board question order'));
+evalGlobal(trozo('var MOCK_RW', '// College Board question order'));
 
 /* Los seis módulos que la app arma de verdad, con su tamaño real. */
 const MODULOS = [

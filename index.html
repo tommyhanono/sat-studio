@@ -1740,7 +1740,7 @@ function conBanco(fn){
 
 function indexSets(){
   // el banco cambió: toda cuenta derivada de él queda vieja
-  _mockPool = {}; _porTier = {}; _skillBank = null; _skillCache = {};
+  _mockPool = {}; _porTier = {}; _formas = {}; _skillBank = null; _skillCache = {};
   SETS = window.SAT_SETS.slice();
   var hints = window.SAT_DESMOS || {};
   SETS.forEach(function(s){
@@ -3727,7 +3727,7 @@ function renderHome(){
   }
   // ===== English Mocks category (Reading & Writing only, adaptive, /800) =====
   // 54 preguntas por examen de solo verbal
-  var N_ENG = cuantosExamenes(mockPool('rw').length, 54, 8, 30);
+  var N_ENG = cuantosExamenes(formasQueLlena('eng', null, {rw:2}), 1, 27, 40);
   var engBest = {};
   h.forEach(function(e){ if(e.mock && e.mock.kind === 'rw' && typeof e.mock.num === 'number'){ var n = e.mock.num; if(engBest[n] == null || (e.mock.total||0) > engBest[n]) engBest[n] = e.mock.total; } });
   var engCards = '';
@@ -3744,7 +3744,7 @@ function renderHome(){
 
   // ===== Math Mocks category (Math only, adaptive, /800) =====
   // 44 por examen de solo matemática
-  var N_MATH = cuantosExamenes(mockPool('math').length, 44, 6, 30);
+  var N_MATH = cuantosExamenes(formasQueLlena('mat', null, {math:2}), 1, 30, 40);
   var mmBest = {};
   h.forEach(function(e){ if(e.mock && e.mock.kind === 'math' && typeof e.mock.num === 'number'){ var n = e.mock.num; if(mmBest[n] == null || (e.mock.total||0) > mmBest[n]) mmBest[n] = e.mock.total; } });
   var mmCards = '';
@@ -3762,8 +3762,7 @@ function renderHome(){
   // ===== Realistic Hard Mocks (true-to-test difficult form: tough M1, EARNED hard M2 with real composition) =====
   /* El Módulo 2 de un examen difícil real es ~30 % brutal, así que estos los
      limita el banco de preguntas `extreme`, no el banco entero. */
-  var N_REAL = cuantosExamenes(
-    Math.min(poolPorTier('rw', _ES_BRU) / 0.30, poolPorTier('math', _ES_BRU) / 0.30), 98, 4, 20);
+  var N_REAL = cuantosExamenes(formasQueLlena('real', _ES_BRU, {rw:0.30, math:0.30}), 1, 6, 40);
   var realBest = {};
   h.forEach(function(e){ if(e.mock && e.mock.kind === 'full' && e.mock.real && typeof e.mock.num === 'number'){ var n = e.mock.num; if(realBest[n] == null || (e.mock.total||0) > realBest[n]) realBest[n] = e.mock.total; } });
   var realCards = '';
@@ -3780,8 +3779,7 @@ function renderHome(){
 
   // ===== Extreme Mocks category (only extreme-flagged questions — real hard-Module-2 level) =====
   // los brutales salen ENTEROS del tier extreme: los limita ese pozo
-  var N_EXTREME = cuantosExamenes(
-    Math.min(poolPorTier('rw', _ES_BRU), poolPorTier('math', _ES_BRU)), 49, 4, 20);
+  var N_EXTREME = cuantosExamenes(formasQueLlena('bru', _ES_BRU, {rw:2, math:2}), 1, 4, 40);
   var exBest = {};
   h.forEach(function(e){ if(e.mock && e.mock.kind === 'full' && e.mock.extreme && typeof e.mock.num === 'number'){ var n = e.mock.num; if(exBest[n] == null || (e.mock.total||0) > exBest[n]) exBest[n] = e.mock.total; } });
   var exCards = '';
@@ -3798,8 +3796,7 @@ function renderHome(){
 
   // ===== Hard Mocks category (all questions difficult, no easy routing) =====
   // los difíciles salen de las 'Difícil' (que incluyen las brutales)
-  var N_HARD = cuantosExamenes(
-    Math.min(poolPorTier('rw', _ES_DIF), poolPorTier('math', _ES_DIF)), 49, 6, 24);
+  var N_HARD = cuantosExamenes(formasQueLlena('dif', _ES_DIF, {rw:2, math:2}), 1, 11, 40);
   var hardBest = {};
   h.forEach(function(e){ if(e.mock && e.mock.kind === 'full' && e.mock.hard && !e.mock.extreme && typeof e.mock.num === 'number'){ var n = e.mock.num; if(hardBest[n] == null || (e.mock.total||0) > hardBest[n]) hardBest[n] = e.mock.total; } });
   var hardCards = '';
@@ -3815,9 +3812,8 @@ function renderHome(){
   G.mocks += homeSection('Hard Mocks · all difficult', hardCards, N_HARD, true);
 
   // ===== Full Mocks category (numbered, stable full-length adaptive tests) =====
-  // un examen completo usa ~54 de verbal y ~44 de matemática
-  var N_MOCKS = cuantosExamenes(
-    Math.min(mockPool('rw').length / 54, mockPool('math').length / 44), 1, 8, 30);
+  // un examen completo usa 54 de verbal y 44 de matemática: dos módulos de cada
+  var N_MOCKS = cuantosExamenes(formasQueLlena('full', null, {rw:2, math:2}), 1, 27, 40);
   var mockBest = {};
   h.forEach(function(e){ if(e.mock && e.mock.kind === 'full' && !e.mock.hard && !e.mock.real && !e.mock.extreme && typeof e.mock.num === 'number'){ var n = e.mock.num; if(mockBest[n] == null || (e.mock.total||0) > mockBest[n]) mockBest[n] = e.mock.total; } });
   var mockCards = '';
@@ -6475,6 +6471,15 @@ var _porTier = {};
    `porExamen` es cuántas preguntas consume un examen de ese tipo. Con un banco
    de n preguntas salen n/porExamen formas bien distintas: dos simulacros de 54
    preguntas sacadas de 1.300 comparten dos o tres, que es ruido. */
+/* El PISO de cada familia es CUÁNTAS OFRECE HOY, y es un trinquete a propósito.
+   La cuenta honesta (`formasQueLlena`) es más dura que la vieja en cinco de las
+   seis familias, porque la vieja no sabía de dominios y además creía que un
+   simulacro completo consumía 49 preguntas cuando consume 98. Bajar el número
+   haría desaparecer tarjetas que pueden tener el resultado de alguien colgando,
+   y eso no se hace: una tarjeta de más no le hace daño a nadie, una que
+   desaparece sí. Así que el piso congela lo de hoy y la cuenta honesta gobierna
+   el CRECIMIENTO. Cuando el banco alcance a la oferta, el piso deja de actuar
+   solo y el número pasa a ser verdad. */
 function cuantosExamenes(disponibles, porExamen, piso, techo){
   return Math.max(piso, Math.min(techo, Math.floor(disponibles / porExamen)));
 }
@@ -6485,6 +6490,42 @@ function poolPorTier(sec, f){
   if(_porTier[k] != null) return _porTier[k];
   return (_porTier[k] = mockPool(sec).filter(f).length);
 }
+/* ¿Cuántas formas DISTINTAS de un examen puede llenar el banco, sin repetir una
+   sola pregunta entre una y otra?
+
+   Desde que `assembleModule` reparte por CUOTA OFICIAL, la respuesta dejó de ser
+   "el pozo dividido por el largo del examen": manda el DOMINIO MÁS ESCASO. Un
+   pozo brutal con 98 preguntas de Problem-Solving y 31 de Expression of Ideas no
+   llena las que diga el total — llena las que aguante Expression of Ideas, y las
+   de Problem-Solving sobran sin poder usarse.
+
+   `modulos` dice cuántos módulos de cada sección consume ese examen. Un simulacro
+   completo son DOS por sección (Módulo 1 y Módulo 2), o sea 54 de verbal y 44 de
+   matemática: las tarjetas ya decían "~98 questions" y la cuenta vieja dividía
+   por 49, la mitad. Medido el 16-sep-2026 con 3.055 preguntas: los Extreme Mocks
+   llenaban 2 formas distintas y la app ofrecía 4. */
+var _formas = {};
+function formasQueLlena(nombre, f, modulos){
+  if(_formas[nombre] != null) return _formas[nombre];
+  var peor = Infinity;
+  Object.keys(modulos).forEach(function(sec){
+    var porExamen = (sec === 'math' ? MOCK_MATH : MOCK_RW) * modulos[sec];
+    var porDom = {}, totalW = 0;
+    mockPool(sec).forEach(function(q){
+      if(f && !f(q)) return;
+      var d = domPrincipal(q);
+      if(porDom[d] == null){ porDom[d] = 0; totalW += (PLAN_DOMW[d] || 0); }
+      porDom[d]++;
+    });
+    if(!totalW){ peor = 0; return; }
+    Object.keys(porDom).forEach(function(d){
+      var cuota = porExamen * (PLAN_DOMW[d] || 0) / totalW;
+      if(cuota > 0) peor = Math.min(peor, Math.floor(porDom[d] / cuota));
+    });
+  });
+  return (_formas[nombre] = (peor === Infinity ? 0 : peor));
+}
+var _TODAS = function(){ return true; };
 var _ES_DIF = function(q){ return q.difficulty === 'Difícil'; };
 var _ES_BRU = function(q){ return !!q.extreme; };
 

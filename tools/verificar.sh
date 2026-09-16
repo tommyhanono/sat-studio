@@ -27,6 +27,7 @@ corre "Estructura de index.html"                    node tools/test-shell.js
 corre "Banco de preguntas (contenido e integridad)" node tools/auditar-banco.js
 corre "Las 30 destrezas oficiales"                  node tools/auditar-destrezas.js
 corre "El simulacro contra el plano oficial"      node tools/test-plano.js
+corre "Simulacros distintos que llena el banco"    node tools/simulacros.js
 corre "Humo (la app se juega de verdad)"            node tools/test-humo.js
 corre "Integridad de datos del estudiante"          node tools/test-datos.js
 corre "Mi plan de mejora"                           node tools/test-plan.js
