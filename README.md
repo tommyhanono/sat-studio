@@ -107,20 +107,22 @@ caiga siempre en la misma letra. Recién cuando sale en verde se agrega la líne
 
 ## Contenido actual
 
-- **Banco:** 141 sets · **2.620 preguntas originales**, sin ids ni enunciados repetidos, Verbal y Math, en
-  cuatro niveles (Warm-up · Test Level · Hard · real M2 · Brutal). Las 2.620 están clasificadas en una de las
-  **30 destrezas oficiales** de College Board. Sale de `node tools/auditar-banco.js` y
-  `node tools/auditar-destrezas.js`.
+- **Banco:** 168 sets · **3.250 preguntas originales**, sin ids ni enunciados repetidos, Verbal y Math, en
+  cuatro niveles (Warm-up · Test Level · Hard · real M2 · Brutal). Las 3.250 están clasificadas en una de las
+  **30 destrezas oficiales** de College Board, y **ninguna destreza baja de 70 preguntas** (12 warm / 22 test /
+  22 hard / 14 brutal), que es el piso para practicar cualquiera dos veces sin repetir. Sale de
+  `node tools/auditar-banco.js` y `node tools/auditar-destrezas.js`.
 - **Classroom:** el profesor abre una clase, reparte un código de 6 caracteres, y asigna cuatro tipos de
   trabajo: *warm-up*, *assignment*, *final* (un solo intento) y *example* — un ejemplo resuelto con una
   pregunta real del banco, sus propios pasos y una demo de Desmos. El reporte le dice en qué destrezas está
   fallando la clase y quién no entregó.
 - **Fast Pace:** le dices cuánto tiempo tienes y la app decide qué conviene hacer con él. Incluye el **Pace
   Trainer**, que corre al ritmo real del examen (71 s por pregunta de verbal, 95 s por una de matemática).
-- **100 simulacros adaptativos** con la lógica del SAT real (Módulo 1 → rutea Módulo 2; score escalado):
-  **Full Mocks** (26, /1600), **English Mocks** (27, /800), **Math Mocks** (26, /800), **Hard Mocks** (11),
-  **Realistic Hard** (6) y **Extreme** (4) — numerados, estables y re-tomables, con Review de cada intento.
-  La cantidad **sale del tamaño del banco**: cuando el banco crece, la oferta crece sola.
+- **142 simulacros adaptativos** con la lógica del SAT real (Módulo 1 → rutea Módulo 2; score escalado):
+  **Full Mocks** (27, /1600), **English Mocks** (27, /800), **Math Mocks** (30, /800), **Realistic Hard** (40),
+  **Hard Mocks** (12) y **Extreme** (6) — numerados, estables y re-tomables, con Review de cada intento.
+  De esos 142, **134 son formas sin una sola pregunta repetida entre una y otra**; la cuenta la hace
+  `formasQueLlena()` mirando el dominio más escaso de cada pozo, y `node tools/simulacros.js` la vigila.
 - **📋 Exam-Day Playbook:** estrategia investigada (pacing con checkpoints, Módulo 1 adaptativo, jugadas de Desmos, plan de semana final, protocolo del día del examen). Fuentes en `docs/final-week-playbook.md`.
 - **📖 Cheat sheet adaptativo** de Grammar & Punctuation: en cualquier Drill, el botón "Rules" abre un panel que resalta la regla exacta que evalúa la pregunta actual.
 - **Explicaciones de Math** paso a paso + bloque "📈 In Desmos" con botón que abre la calculadora con las expresiones pre-cargadas.

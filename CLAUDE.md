@@ -1,7 +1,7 @@
 # SAT Studio — CLAUDE.md
 
 Plataforma de práctica para el **Digital SAT** con interfaz estilo **Bluebook**. Se reparte por link, se
-instala en el teléfono como app, y la idea es que la use un colegio entero. **Toda la interfaz y las 2.620
+instala en el teléfono como app, y la idea es que la use un colegio entero. **Toda la interfaz y las 3.250
 preguntas están en inglés**, igual que el examen; el código, los comentarios y estas notas siguen en español.
 
 Para entrar hace falta **cuenta**, creada con el correo de la escuela. Al registrarse, el estudiante elige su
@@ -29,21 +29,23 @@ Abrir `index.html` en el navegador, o cualquier server estático. No hay `npm ru
 tools/verificar.sh
 ```
 
-Corre las doce y sale con código 1 si algo falla:
+Corre las catorce y sale con código 1 si algo falla:
 
 | Qué | Verifica | Casos |
 |---|---|---|
 | `test-shell.js` | la **estructura** de `index.html`: llaves del CSS, bloques que compilan, `</script>` sueltos, secciones repetidas, y la salud de los 30 matchers de la taxonomía | 18 |
-| `auditar-destrezas.js` | que las 1.200 caigan en una de las **30 destrezas oficiales**, y cuántas las recoge el cajón | — |
+| `auditar-destrezas.js` | que las 3.250 caigan en una de las **30 destrezas oficiales**, cuántas las recoge el cajón, y seis **casos canónicos** —cada uno sacado de un error real— que tienen que caer donde deben | 6 |
+| `test-plano.js` | que el **simulacro respete el plano oficial** de dominios y no la proporción del banco. Saca `assembleModule` del propio `index.html`, arma 400 módulos de cada tipo y falla si un dominio se desvía más del 18 % de su peso | 10 |
+| `simulacros.js` | cuántos simulacros **distintos** llena el banco de verdad (manda el dominio más escaso) contra cuántos ofrece la app | 6 |
 | `auditar-banco.js` | el contenido: dominios contra los pesos oficiales, dificultad, formato, integridad, duplicados | — |
 | `test-humo.js` | que la app **se juega**: los tres formatos de pregunta, la calificación, y que el backend quede vivo | 13 |
 | `test-datos.js` | que **una sesión jugada no se pierde**, con un Supabase falso al que se le corta la red | 48 |
 | `test-plan.js` | que "Mi plan de mejora" recomienda desde los datos del estudiante y arma el test que prometió | 30 |
 | `test-idioma.js` | que los 9.000+ campos que lee un estudiante en el banco están en inglés | — |
-| `test-pantallas.js` | **lo que se ve**: recorre las ocho pestañas y todas las pantallas en Chrome, más los botones sin acción, el XSS, las barras vacías, Classroom entero, Fast Pace, la confianza, y **siete aparatos** (celular, iPad en las dos orientaciones, computadora) midiendo desborde y tamaño táctil — en el inicio **y en la pantalla donde se contesta**, que es donde el estudiante pasa el 90 % del tiempo | 72 |
+| `test-pantallas.js` | **lo que se ve**: recorre las ocho pestañas y todas las pantallas en Chrome, más los botones sin acción, el XSS, las barras vacías, Classroom entero, Fast Pace, la confianza, y **siete aparatos** (celular, iPad en las dos orientaciones, computadora) midiendo desborde y tamaño táctil — en el inicio **y en la pantalla donde se contesta**, que es donde el estudiante pasa el 90 % del tiempo | 79 |
 | `test-pwa.js` | que se **instale** en el teléfono y **abra sin internet** (corta la red de verdad) | 20 |
 | `test-rendimiento.js` | que **crecer el banco no vuelva lenta la app**: cronometra las 7 operaciones que lo recorren entero y falla si alguna pasa su tope | 7 |
-| `auditar-longitud.js` | que la correcta no sea sistemáticamente la opción más larga (se contesta sin leer) | — |
+| `auditar-longitud.js` | que la correcta no sea sistemáticamente la más larga **ni la más corta**, y que tampoco viva siempre en un extremo (ahí "descarta las dos del medio" acierta demasiado) | — |
 | `huella-banco.js` | la huella estructural del banco (ids, respuestas, dominios, dificultades) | — |
 
 Necesitan Chrome y `puppeteer-core` (se toma de `~/jarvis/app`); si no están, se **saltan** con código 0 para
@@ -74,13 +76,24 @@ entre A, B, C y D cuando un set generado la deja cargada a una letra.
 
 ## Los simulacros salen del banco
 
-Eran seis constantes escritas a mano (`N_MOCKS = 8`, `N_ENG = 8`…). Ahora `cuantosExamenes()` las calcula desde
-el pozo de cada tier, así que **la oferta crece sola** cuando crece el banco. Con 2.620 preguntas son **100**
-simulacros; con 1.200 eran 48; con 786, 36.
+Eran seis constantes escritas a mano (`N_MOCKS = 8`, `N_ENG = 8`…). Ahora salen del banco, así que **la oferta
+crece sola**. Con 3.250 preguntas son **142** simulacros; con 2.620 eran 105; con 786, 36.
+
+**La cuenta la hace `formasQueLlena()`, y no es el pozo dividido por el largo del examen.** Desde que
+`assembleModule` reparte por cuota oficial de dominio, la capacidad la decide el **dominio más escaso**: un pozo
+brutal con 98 preguntas de Problem-Solving y 31 de Expression of Ideas no llena lo que diga el total, llena lo
+que aguante Expression of Ideas. Y un simulacro completo consume **98** preguntas (dos módulos por sección), no
+49 — la fórmula vieja se equivocaba en las dos cosas a la vez, y por eso los Extreme Mocks ofrecían 4 cuando el
+banco llenaba 2.
+
+`tools/simulacros.js` (suite 14) lo vigila: lee los pisos y techos del propio `index.html` con un regex, así que
+no puede desincronizarse, y falla si una familia se pasa más del 35 % de lo que el banco llena.
 
 Dos cosas lo hacen seguro: cada simulacro numerado se siembra con **su número**, así que agregar más nunca
 cambia la composición de los que alguien ya hizo; y hay un **piso** en los que ya existían, porque una tarjeta
-que desaparece puede llevarse el resultado de alguien colgando, y una de más no le hace daño a nadie.
+que desaparece puede llevarse el resultado de alguien colgando, y una de más no le hace daño a nadie. El piso es
+un trinquete a propósito: la cuenta honesta es más dura que la vieja en cinco de las seis familias, así que
+congela lo de hoy y gobierna el **crecimiento**.
 
 `mockPool()` está **memoizado**: desde que las cuentas se calculan solas se llama una docena de veces por
 repintado del inicio, y eso recorre el banco entero.
@@ -131,11 +144,21 @@ Dos cosas que hay que saber antes de tocar los matchers:
   antes de que `pd-claims` llegara a probarse — 18 contra 4, cuando la verdad es al revés.
 - **Cada dominio tiene UN cajón de sastre, marcado `cajon:true`.** Antes era implícito ("el que quedó último"),
   y así el 30 % de las preguntas se clasificaba solo por dominio sin que nada lo dijera. Hoy los ocho tienen
-  regla propia y el auditor reporta cuántas entran por el cajón: **6,3 %**.
+  regla propia y el auditor reporta cuántas entran por el cajón: **2,7 %**.
 
 Al escribir un set nuevo, **el texto de `skill` decide la destreza**. Una palabra de más (`system`, `factor`,
-`at least`, `randomly selected`) manda la pregunta a otra destreza en silencio. Después de agregar un set:
+`at least`, `randomly selected`) manda la pregunta a otra destreza en silencio. La tabla completa de las que
+muerden —y qué escribir en su lugar— está en `docs/COMO-ESCRIBIR-PREGUNTAS.md`. Después de agregar un set:
 `node tools/auditar-destrezas.js`.
+
+**Y un matcher también falla por no reconocer lo suyo.** S18 vigila que ninguno muerda una palabra ajena; eso
+no alcanza, porque cuando un matcher se queda mudo la pregunta cae en el cajón de sastre y "todas clasificadas"
+sigue siendo verdad — nada se pone en rojo. Los dos casos que aparecieron el 16-sep-2026: el matcher de
+trigonometría buscaba `sine`/`cosine` cuando **el examen escribe `sin`/`cos`/`tan`**, así que una identidad de
+cofunción no matcheaba nada; y `complementary angle` vivía en *Right triangles*, que se prueba antes que
+*Lines, angles and triangles*, así que se llevaba geometría pura sin trigonometría. Por eso
+`auditar-destrezas.js` tiene ahora **seis casos canónicos**, cada uno sacado de un error real, que tienen que
+caer donde deben. Es la red positiva que le faltaba a S18.
 
 ## Las dos claves internas que NO se traducen
 
