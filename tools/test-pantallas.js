@@ -813,6 +813,44 @@ const BOTONES_MUERTOS = function () {
       check(`P10c ${nombre}: nada que tocar es más chico que el dedo`,
         vista.chicos.length === 0, vista);
     }
+    /* --- 8b. la pantalla donde se CONTESTA, en los mismos aparatos ---
+       El inicio se mira unos segundos; la pantalla de la pregunta es donde el
+       estudiante pasa el 90 % del tiempo. Si una opción de respuesta es difícil
+       de tocar en el teléfono, no es una molestia: es una respuesta mal marcada
+       en una práctica que después miente sobre lo que sabe. */
+    const APARATOS_Q = [[375, 812, 'iPhone'], [768, 1024, 'iPad vertical'], [1440, 950, 'computadora']];
+    for (const [w, h, nombre] of APARATOS_Q) {
+      await page.setViewport({ width: w, height: h });
+      const pantalla = await page.evaluate(async () => {
+        const esperar = ms => new Promise(r => setTimeout(r, ms));
+        goHome();
+        await esperar(300);
+        const set = window.SATAPP.SETS()[0];
+        window.SATAPP.startSession(set.id, 'drill');
+        await esperar(700);
+        const vis = e => { const r = e.getBoundingClientRect(); return r.width > 0 && r.height > 0; };
+        const ops = [...document.querySelectorAll('#pane-question .choice, #pane-question label, .choice')].filter(vis);
+        const chicos = ops.filter(e => e.getBoundingClientRect().height < 44)
+          .slice(0, 3).map(e => (e.textContent || '').trim().slice(0, 20) + ' [' +
+            Math.round(e.getBoundingClientRect().height) + 'px]');
+        const r = {
+          enPregunta: !document.getElementById('view-app').classList.contains('hidden'),
+          opciones: ops.length,
+          chicos,
+          scroll: document.documentElement.scrollWidth,
+          ancho: window.innerWidth,
+          // el reloj y el botón de siguiente tienen que estar a la vista sin buscar
+          reloj: !!document.getElementById('timer'),
+        };
+        goHome();
+        await esperar(300);
+        return r;
+      });
+      check(`P18 ${nombre}: la pantalla de la pregunta no desborda`,
+        pantalla.enPregunta && pantalla.scroll <= pantalla.ancho + 1, pantalla);
+      check(`P18b ${nombre}: las opciones de respuesta se pueden tocar (44px)`,
+        pantalla.opciones > 0 && pantalla.chicos.length === 0, pantalla);
+    }
     await page.setViewport({ width: 1440, height: 950 });
 
   } catch (e) {

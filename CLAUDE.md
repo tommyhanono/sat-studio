@@ -40,7 +40,7 @@ Corre las once y sale con código 1 si algo falla:
 | `test-datos.js` | que **una sesión jugada no se pierde**, con un Supabase falso al que se le corta la red | 48 |
 | `test-plan.js` | que "Mi plan de mejora" recomienda desde los datos del estudiante y arma el test que prometió | 30 |
 | `test-idioma.js` | que los 9.000+ campos que lee un estudiante en el banco están en inglés | — |
-| `test-pantallas.js` | **lo que se ve**: recorre las ocho pestañas y todas las pantallas en Chrome, más los botones sin acción, el XSS, las barras vacías, Classroom entero, Fast Pace, la confianza, y **siete aparatos** (celular, iPad en las dos orientaciones, computadora) midiendo desborde y tamaño táctil | 66 |
+| `test-pantallas.js` | **lo que se ve**: recorre las ocho pestañas y todas las pantallas en Chrome, más los botones sin acción, el XSS, las barras vacías, Classroom entero, Fast Pace, la confianza, y **siete aparatos** (celular, iPad en las dos orientaciones, computadora) midiendo desborde y tamaño táctil — en el inicio **y en la pantalla donde se contesta**, que es donde el estudiante pasa el 90 % del tiempo | 72 |
 | `test-pwa.js` | que se **instale** en el teléfono y **abra sin internet** (corta la red de verdad) | 20 |
 | `auditar-longitud.js` | que la correcta no sea sistemáticamente la opción más larga (se contesta sin leer) | — |
 | `huella-banco.js` | la huella estructural del banco (ids, respuestas, dominios, dificultades) | — |
