@@ -1564,6 +1564,9 @@ var SAT_SET_FILES = [
   'sets/math-psda-scatter-hard.js',
   'sets/math-psda-ratios-ramp.js',
   'sets/math-psda-onevar-ramp.js',
+  'sets/math-psda-onevar-hard.js',
+  'sets/math-psda-pct-ramp.js',
+  'sets/math-psda-pct-hard.js',
 
   // Desmos how-to hints per Math question (merged into questions at load)
   'sets/desmos-a.js',
@@ -2157,7 +2160,7 @@ var SAT_SKILLS = [
 
   { k:'pd-prob',     dom:'Problem-Solving & Data Analysis', sec:'math', peso:15,
     t:'Probability and conditional probability',
-    m:/probabilit|conditional|mutually|independent|expected value|two-way|counting|permutat|combinator/i },
+    m:/probabilit|conditional|mutually|independent|expected value|two-way|\bcounting\b|permutat|combinator/i },
   { k:'pd-margin',   dom:'Problem-Solving & Data Analysis', sec:'math', peso:15,
     t:'Inference from samples and margin of error',
     /* Ojo: NO lleva /sample|survey|population/ suelto. Toda pregunta de diseño de
@@ -2177,13 +2180,13 @@ var SAT_SKILLS = [
     m:/scatter|line of best fit|two-variable|predict|residual|association/i },
   { k:'pd-1var',     dom:'Problem-Solving & Data Analysis', sec:'math', peso:15,
     t:'One-variable data',
-    m:/mean\b|median|mode\b|average|standard deviation|spread|range\b|box plot|histogram|dot plot|one-variable|distribution|outlier|weighted/i },
+    m:/mean\b|median|mode\b|average|standard deviation|\bspreads?\b|\branges?\b|box plot|histogram|dot plot|one-variable|distribution|outlier|weighted/i },
   { k:'pd-percent',  dom:'Problem-Solving & Data Analysis', sec:'math', peso:15,
     t:'Percentages',
-    m:/percent|discount|markup|\binterest\b|\bincreased? by\b|\bdecreased? by\b|price|sale\b|tax\b|tip\b/i },
+    m:/percent|discount|markup|\binterest\b|\bincreased? by\b|\bdecreased? by\b|price|sale\b|\btax\b|tip\b/i },
   { k:'pd-ratio',    dom:'Problem-Solving & Data Analysis', sec:'math', peso:15,
     t:'Ratios, rates and units', cajon:true,
-    m:/\bratios?\b|\brate\b|unit|proportion|scale|convert|speed|density|per \w+|miles|kilograms|liters/i },
+    m:/\bratios?\b|\brate\b|\bunits?\b|proportion|scale|convert|speed|density|per \w+|miles|kilograms|liters/i },
 
   { k:'gt-circles',  dom:'Geometry & Trigonometry', sec:'math', peso:15,
     t:'Circles',

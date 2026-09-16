@@ -138,7 +138,22 @@ const lineaDe = i => html.slice(0, i).split('\n').length;
     check('S17 cada destreza se reconoce a sí misma por su nombre', mudos.length === 0, mudos.join(' · '));
     /* Y ninguna puede morder palabras inglesas que no tienen nada que ver. */
     const TRAMPAS = ['biologist', 'archaeologist', 'registered', 'factory', 'radically',
-      'interested', 'rational argument', 'characteristic', 'meantime'];
+      'interested', 'rational argument', 'characteristic', 'meantime',
+      /* Tanda del 16-sep-2026. Salieron de barrer los 30 matchers contra 110
+         palabras inglesas corrientes, y las cuatro que mordían eran términos sin
+         \b por delante: `counting` se comía "discounting" —y Probabilidad se
+         prueba ANTES que Percentages, así que una pregunta de descuentos
+         terminaba en Probabilidad—, `range\b` se comía "orange" y "arrange",
+         `spread` se comía "spreadsheet", y `unit` suelto se comía "community". */
+      /* "discounting" NO va en esta lista: para Percentages es un término suyo
+         de pleno derecho (descontar un precio). El bug era que `counting` se la
+         llevaba a Probabilidad, que se prueba antes; lo guardan "accounting" y
+         "recounting", que no son de ninguna destreza. */
+      'accounting', 'recounting',
+      'orange', 'arrange', 'strange', 'derange',
+      'spreadsheet', 'widespread', 'bedspread',
+      'community', 'opportunity', 'immunity', 'unity', 'unitary', 'punitive',
+      'syntax'];
     /* Y algunas que SÍ tienen que caer donde caen: la trampa de "bisector" no era
        que matcheara, era que matcheaba *Circles* por llevar "sector" adentro. */
     const muerden = [];
