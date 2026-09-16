@@ -1,14 +1,13 @@
 # Auditoria de lanzamiento web
 
-**Objetivo:** `/Users/tommyhanono/sat-studio  (sirviendo ./)`  
-**Fecha:** 2026-09-15  
+**Objetivo:** `https://sat-studio.vercel.app/`  
+**Fecha:** 2026-09-16  
 **Paginas analizadas:** 1 · **Links revisados:** 2  
-**Framework detectado:** static  
 
-**Resultado:** 35 PASS · 1 FAIL · 1 WARN · 9 no aplica · 8 de revision manual
+**Resultado:** 34 PASS · 0 FAIL · 2 WARN · 10 no aplica · 8 de revision manual
 
-> [!danger] No lanzar todavia
-> Hay 1 punto(s) en FAIL. Estan detallados abajo con archivo o selector.
+> [!success] Sin bloqueantes automatizables
+> Falta pasar la revision manual guiada del final.
 
 ## Bloque 1 — QA de interfaz y movil (20 puntos, todos obligatorios)
 
@@ -25,8 +24,8 @@
 | `B1-09` | Año de copyright correcto (calculado) | PASS | año 2026 correcto |
 | `B1-10` | Imagenes comprimidas y en formato moderno | PASS | sin imagenes pesadas |
 | `B1-11` | Cero botones rotos o sin handler | PASS | todos los botones tienen handler, submit o delegacion de framework |
-| `B1-12` | Estados de exito visibles en toda accion | **FAIL** | 1 archivo(s) con accion que escribe y sin estado de carga/exito/error |
-| `B1-13` | Estados de error visibles y con mensaje util | PASS | no hay formularios ni catch mudos; queda la revision manual M-02 |
+| `B1-12` | Estados de exito visibles en toda accion | SKIP | solo verificable con la ruta del repo; queda la revision manual M-01 |
+| `B1-13` | Estados de error visibles y con mensaje util | PASS | sin formularios detectados; queda la revision manual M-02 |
 | `B1-14` | Cero texto placeholder | PASS | sin lorem ipsum ni relleno |
 | `B1-15` | Cero items de navegacion que no llevan a nada | PASS | todos los items de navegacion tienen destino |
 | `B1-16` | Cero overflow de elementos en movil | PASS | ningun elemento se sale del viewport |
@@ -40,9 +39,9 @@
 | id | Punto | Estado | Detalle |
 |---|---|---|---|
 | `B2-01` | Sin titulo/favicon default del framework | PASS | sin 'Vite + React' ni iconos de plantilla |
-| `B2-02` | Sin source maps en produccion | PASS | el build no publica source maps |
+| `B2-02` | Sin source maps en produccion | SKIP | solo verificable con la ruta del repo |
 | `B2-03` | Cero errores en consola | PASS | consola limpia |
-| `B2-04` | Bundles de JS razonables | WARN | mayor carga JS por pagina: 1.76 MB; total en build: 1.82 MB |
+| `B2-04` | Bundles de JS razonables | WARN | mayor carga JS por pagina: 2.02 MB |
 | `B2-05` | Titulos unicos por pagina | n/a | una sola pagina: no aplica |
 | `B2-06` | Un solo h1 por pagina, unico por pagina | PASS | un h1 por pagina, todos distintos |
 | `B2-07` | Meta descriptions unicas | n/a | una sola pagina: no aplica |
@@ -56,7 +55,7 @@
 | `B2-15` | Structured data (JSON-LD) valido | PASS | valido y coherente con la pagina · tipos: WebApplication |
 | `B2-16` | LocalBusiness schema (si es negocio local) | SKIP | no se declaro negocio local (correr con --local si lo es) — revision manual M-05 |
 | `B2-17` | Imagenes de social share (OG + Twitter) | PASS | og completo y og:image de 1200x630 (17 KB) |
-| `B2-18` | Dominio propio conectado | SKIP | auditoria local: el dominio se verifica en produccion (revision manual M-06) |
+| `B2-18` | Dominio propio conectado | WARN | el sitio vive en sat-studio.vercel.app, subdominio del hosting |
 | `B2-19` | Atributo lang en <html> | PASS | lang="en" |
 
 ## Bloque 3 — Piso de calidad y regla cero de diseno
@@ -68,18 +67,16 @@
 | `B3-03` | prefers-reduced-motion respetado | PASS | sin animaciones que apagar |
 | `B3-04` | Campos de formulario con etiqueta | PASS | todos los campos etiquetados |
 | `B3-05` | El telefono girado (812x375) | PASS | en horizontal se ve bien |
-| `B3-06` | Core Web Vitals (LCP y CLS) | PASS | LCP 284 ms · CLS 0 (peor pagina, red local sin latencia) |
+| `B3-06` | Core Web Vitals (LCP y CLS) | PASS | LCP 336 ms · CLS 0 (peor pagina, red local sin latencia) |
 | `B3-07` | Regla cero de TOMMY-DESIGN | PASS | sin firmas genericas · tipografia: -apple-system |
 
 ## Evidencia
 
-### `B1-12` Estados de exito visibles en toda accion — **FAIL**
+### `B2-18` Dominio propio conectado — WARN
 
-1 archivo(s) con accion que escribe y sin estado de carga/exito/error
+el sitio vive en sat-studio.vercel.app, subdominio del hosting
 
-- tools/huella-banco.js:37 — falta estado de carga y exito · console.log('huella    : ' + crypto.createHash('md5').update(lineas.join('\n')).digest('hex'));
-
-**Como se arregla:** Un boton que escribe necesita: deshabilitarse mientras carga, y una confirmacion visible al terminar. Cerrar con la revision manual M-01.
+- sat-studio.vercel.app — conectar dominio y redirigir 301 desde este subdominio
 
 ## Revision manual guiada
 
