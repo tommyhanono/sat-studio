@@ -260,7 +260,7 @@
         choices:{
           A:'A tree adds one growth ring every year, wide in the wet years and narrow in the dry ones, throughout its life in the forest.',
           B:'The timber raised from the harbor floor was matched against a laboratory chart and proved to come from an oak felled in 1544.',
-          C:'Laboratories keep master charts of these wide-and-narrow ring patterns, built region by region and reaching back centuries.',
+          C:'Laboratories keep master charts of these wide-and-narrow ring patterns, built from the trees of one region and reaching back centuries.',
           D:'Because trees of one region share a ring pattern, matching a timber’s rings to a master chart gives the year its tree was felled.'
         },
         correct:'D',
@@ -540,7 +540,7 @@
         choices:{
           A:'Watering only when the middle probe reads dry, instead of on a weekly schedule, cut water use by 32 percent with no loss of harvest.',
           B:'The probes read soil moisture at three depths and send a fresh reading to the vineyard manager’s phone every hour of the day.',
-          C:'After the probes went in, the vineyard’s water use fell 32 percent and the harvest that year was unchanged.',
+          C:'After the probes went in, the vineyard’s water use fell 32 percent and the size of the harvest was unchanged.',
           D:'Of the three depths the probes read every hour, the middle one is where the vines draw most of their water.'
         },
         correct:'A',
