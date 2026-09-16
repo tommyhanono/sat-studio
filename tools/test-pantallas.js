@@ -113,17 +113,39 @@ const FAKE = function () {
             { email: 'ana@iae.edu', name: 'Ana', group: 'iae.edu', target: '1450', exam_date: '2027-03-13',
               joined: '2026-08-01', role: 'student', sessions: 12, last_active: '2026-09-12', questions: 140, accuracy: 72.1 },
           ], error: null });
-          if (name === 'sat_class_posts') return Promise.resolve({ data: [
-            { id: 'p1', titulo: 'Homework for Friday', cuerpo: 'Finish the circles set and bring your questions.',
-              fijado: true, autor: 'Ms. Reyes', fecha: '2026-09-14', mio: true },
-            { id: 'p2', titulo: 'Practice test next Tuesday', cuerpo: 'Full mock in class. Bring headphones.',
-              fijado: false, autor: 'Ms. Reyes', fecha: '2026-09-10', mio: true },
-            { id: 'p3', titulo: 'Circles and commas — do it twice', cuerpo: 'Repeat it until you are over 80%.',
-              fijado: false, autor: 'Ms. Reyes', fecha: '2026-09-15', mio: true,
-              tarea: { temas: ['circles', 'punct'], nivel: 'examen', minutos: 10, modo: 'drill', vence: '2027-01-30' } },
+          if (name === 'sat_class_mine') return Promise.resolve({ data: [
+            { id: 'c1', nombre: 'SAT Prep 11.º', periodo: 'Period 3', archivada: false,
+              codigo: 'QK7T2M', mia: true, profe: 'Ms. Reyes', alumnos: 3, trabajos: 4 },
           ], error: null });
-          if (name === 'sat_class_post_save') return Promise.resolve({ data: 'p3', error: null });
-          if (name === 'sat_class_post_delete') return Promise.resolve({ data: null, error: null });
+          if (name === 'sat_class_create') return Promise.resolve({ data: { id: 'c2', codigo: 'ZZ9P4R' }, error: null });
+          if (name === 'sat_class_join') return Promise.resolve({ data: { id: 'c1', nombre: 'SAT Prep 11.º' }, error: null });
+          if (name === 'sat_class_feed') return Promise.resolve({ data: [
+            { id: 'w1', kind: 'warmup', titulo: 'Circles warm-up', cuerpo: 'Five to start the class.',
+              spec: { skills: ['gt-circles'], nivel: 'Media', n: 5, modo: 'drill' },
+              vence: null, fecha: '2026-09-15', mis_intentos: 0, mi_mejor: null },
+            { id: 'w2', kind: 'assignment', titulo: 'Linear systems — repeat until 80%', cuerpo: 'New questions every time.',
+              spec: { skills: ['al-sys', 'al-func'], nivel: 'todo', n: 12, modo: 'drill' },
+              vence: '2027-01-30', fecha: '2026-09-14', mis_intentos: 2, mi_mejor: 75 },
+            { id: 'w3', kind: 'final', titulo: 'Unit 2 final — part A', cuerpo: 'One attempt.',
+              spec: { skills: ['am-nonlin-eq'], nivel: 'Difícil', n: 20, modo: 'exam' },
+              vence: '2027-02-10', fecha: '2026-09-13', mis_intentos: 0, mi_mejor: null },
+            { id: 'w4', kind: 'material', titulo: 'How I want you to set up a system', cuerpo: 'Write both equations first.',
+              spec: { latex: ['y=2x+1', 'y=-x+7'] }, vence: null, fecha: '2026-09-12', mis_intentos: 0, mi_mejor: null },
+          ], error: null });
+          if (name === 'sat_classwork_save') return Promise.resolve({ data: 'w5', error: null });
+          if (name === 'sat_classwork_delete') return Promise.resolve({ data: null, error: null });
+          if (name === 'sat_classwork_report') return Promise.resolve({ data: {
+            kind: 'assignment',
+            alumnos: [
+              { nombre: 'Ana', email: 'ana@iae.edu', intentos: 3, mejor: 83, ultimo: '2026-09-15' },
+              { nombre: 'Beto', email: 'beto@iae.edu', intentos: 1, mejor: 58, ultimo: '2026-09-14' },
+              { nombre: 'Cami', email: 'cami@iae.edu', intentos: 0, mejor: null, ultimo: null },
+            ],
+            skills: [
+              { sk: 'gt-circles', total: 24, ok: 9 },
+              { sk: 'al-sys', total: 30, ok: 24 },
+            ],
+          }, error: null });
           if (name === 'sat_teacher_overview') return Promise.resolve({ data: {
             group: 'iae.edu', is_admin: true,
             students: [{ name: 'Ana', email: 'ana@iae.edu', target: '1450', exam_date: '2027-03-13',
@@ -389,87 +411,90 @@ const BOTONES_MUERTOS = function () {
       check('P8 se llega a la pantalla de resultados', terminó);
     }
 
-    // --- P13. el tablón del salón pinta lo que publicó el profesor ---
-    const tablon = await page.evaluate(async () => {
+    /* --- P13. Classroom: clases, trabajo tipado y el reporte --- */
+    const aula = await page.evaluate(async () => {
+      const esperar = ms => new Promise(r => setTimeout(r, ms));
       const b = document.querySelector('#set-sections .hnav-a[data-tab="clase"]');
-      if (!b) return { hayPestana: false };
+      if (!b) return { sinPestana: true };
       b.click();
-      await new Promise(r => setTimeout(r, 700));
-      const caja = document.getElementById('class-list');
-      return {
-        hayPestana: true,
-        posts: caja ? caja.querySelectorAll('.class-post').length : 0,
-        fijado: caja ? caja.querySelectorAll('.class-post.pinned').length : 0,
-        compositor: !!document.getElementById('class-save'),
-        texto: caja ? caja.textContent.slice(0, 120) : '',
-      };
-    });
-    check('P13 la pestaña Classroom existe', tablon.hayPestana, tablon);
-    check(`P13b pinta los posts del profesor (${tablon.posts})`, tablon.posts === 3, tablon);
-    check('P13c el fijado va primero y se marca', tablon.fijado === 1, tablon);
-    check('P13d el profesor ve el compositor', tablon.compositor, tablon);
+      await esperar(700);
+      const r = {};
 
-    // --- P13e. un post con HTML tampoco puede ejecutarse ---
-    const postXss = await page.evaluate(() => {
-      window.__XSSP = 0;
-      const veneno = '<img src=x onerror="window.__XSSP=1">';
-      window.CLASS_POSTS = [{ id: 'x', titulo: veneno, cuerpo: veneno, fijado: false, autor: veneno, fecha: '2026-09-15', mio: true }];
-      if (typeof classRender === 'function') classRender();
-      const caja = document.getElementById('class-list');
-      return {
-        ejecutado: window.__XSSP,
-        imgs: caja ? caja.querySelectorAll('img').length : -1,
-        literal: !!(caja && caja.textContent.indexOf('onerror') >= 0),
-      };
-    });
-    check('P13e un post con HTML no se ejecuta', postXss.ejecutado === 0 && postXss.imgs === 0 && postXss.literal, postXss);
-    await page.evaluate(() => { window.CLASS_POSTS = null; });
+      // --- la lista de clases ---
+      r.hayCrear = !!document.getElementById('cl-crear');       // solo profe
+      r.hayUnirse = !!document.getElementById('cl-unirse');     // todos
+      r.tarjetas = document.querySelectorAll('[data-clase]').length;
+      r.muestraCodigo = !!document.querySelector('.cl-code');
 
-    /* --- P15. la tarea del profesor es repetible y saca preguntas distintas --- */
-    const tarea = await page.evaluate(async () => {
-      const b = document.querySelector('#set-sections .hnav-a[data-tab="clase"]');
-      if (b) { b.click(); await new Promise(r => setTimeout(r, 600)); }
-      const card = document.querySelector('.cp-task');
-      const r = {
-        hayTarjeta: !!card,
-        texto: card ? card.textContent.replace(/\s+/g, ' ').trim().slice(0, 140) : '',
-        boton: !!document.querySelector('[data-task-start]'),
-      };
-      if (!r.boton) return r;
-      // primer intento
-      document.querySelector('[data-task-start]').click();
-      await new Promise(x => setTimeout(x, 700));
-      const s1 = window.SATAPP.getS();
-      r.arranca = !!s1;
-      r.setId = s1 && s1.set.id;
-      r.titulo = s1 && s1.set.title;
-      r.n1 = s1 ? s1.set.questions.length : 0;
-      const ids1 = s1 ? s1.set.questions.map(q => q.id) : [];
+      // --- entrar a la clase ---
+      document.querySelector('[data-clase]').click();
+      await esperar(700);
+      r.trabajos = document.querySelectorAll('.cw-card').length;
+      r.tipos = [...document.querySelectorAll('.cw-tag')].map(x => x.textContent);
+      r.hayCompositor = !!document.getElementById('cw-guardar');
+      r.chipsDeDestreza = document.querySelectorAll('[data-cw-skill]').length;
+      r.cuatroTipos = document.querySelectorAll('.cw-kind').length;
 
-      // se termina y se vuelve a empezar: tienen que ser OTRAS preguntas
-      s1.set.questions.forEach(q => { s1.answers[q.id] = q.type === 'spr' ? String(q.answer) : q.correct; s1.checked[q.id] = true; });
-      finishSession(false);
-      await new Promise(x => setTimeout(x, 500));
+      // el final que no se ha hecho ofrece Start; el ya hecho diría "one attempt"
+      r.botonesStart = document.querySelectorAll('[data-cw-start]').length;
+      r.materialConDesmos = !!document.querySelector('[data-cw-desmos]');
+
+      // --- arrancar un warm-up ---
+      const w1 = document.querySelector('[data-cw-start]');
+      w1.click();
+      await esperar(900);
+      const st = window.SATAPP.getS();
+      r.arranca = !!st;
+      r.setId = st && st.set.id;
+      r.n = st ? st.set.questions.length : 0;
+      r.modo = st && st.mode;
       goHome();
-      await new Promise(x => setTimeout(x, 300));
-      const b2 = document.querySelector('#set-sections .hnav-a[data-tab="clase"]');
-      if (b2) { b2.click(); await new Promise(x => setTimeout(x, 600)); }
-      r.diceIntentos = (document.querySelector('.cp-task-hist') || {}).textContent || '';
-      document.querySelector('[data-task-start]').click();
-      await new Promise(x => setTimeout(x, 700));
-      const s2 = window.SATAPP.getS();
-      const ids2 = s2 ? s2.set.questions.map(q => q.id) : [];
-      r.repetidas = ids1.filter(i => ids2.indexOf(i) >= 0).length;
-      r.n2 = ids2.length;
-      goHome();
+      await esperar(400);
       return r;
     });
-    check('P15 la tarea del profesor se pinta con su botón', tarea.hayTarjeta && tarea.boton, tarea);
-    check('P15b arranca y queda atada a la tarea',
-      tarea.arranca && /^assign-/.test(tarea.setId || ''), tarea);
-    check('P15c el segundo intento trae preguntas DISTINTAS',
-      tarea.n2 > 0 && tarea.repetidas < tarea.n1, tarea);
-    check('P15d y se cuentan los intentos', /attempt/.test(tarea.diceIntentos), tarea.diceIntentos);
+    check('P13 Classroom: la lista de clases se pinta', !aula.sinPestana && aula.tarjetas > 0, aula);
+    check('P13b el profesor ve crear y todos ven unirse', aula.hayCrear && aula.hayUnirse, aula);
+    check('P13c la clase del profesor muestra su código', aula.muestraCodigo, aula);
+    check(`P13d el feed trae los cuatro tipos de trabajo (${aula.trabajos})`,
+      aula.trabajos === 4 && ['Warm-up', 'Assignment', 'Final', 'Example'].every(t => (aula.tipos || []).indexOf(t) >= 0), aula);
+    check('P13e el compositor ofrece los 4 tipos y las 30 destrezas oficiales',
+      aula.cuatroTipos === 4 && aula.chipsDeDestreza === 30, aula);
+    check('P13f un material con Desmos trae su botón', aula.materialConDesmos, aula);
+    check('P13g arrancar un trabajo queda atado a él (cw-…)',
+      aula.arranca && /^cw-/.test(aula.setId || '') && aula.n > 0, aula);
+
+    /* --- P15. el reporte: en qué falló la clase --- */
+    const reporte = await page.evaluate(async () => {
+      const esperar = ms => new Promise(r => setTimeout(r, ms));
+      const b = document.querySelector('#set-sections .hnav-a[data-tab="clase"]');
+      if (b) { b.click(); await esperar(600); }
+      const c = document.querySelector('[data-clase]');
+      if (c) { c.click(); await esperar(700); }
+      const rep = document.querySelector('[data-cw-report]');
+      if (!rep) return { sinBoton: true };
+      rep.click();
+      await esperar(800);
+      // OJO: acotado a la zona del salón. Las otras vistas siguen en el DOM
+      // (ocultas), así que un querySelectorAll global cuenta sus KPI y sus filas.
+      const z = document.getElementById('class-body-zone');
+      if (!z) return { sinZona: true };
+      const txt = z.textContent || '';
+      return {
+        kpis: z.querySelectorAll('.akpi').length,
+        barras: z.querySelectorAll('.bar-row').length,
+        filas: z.querySelectorAll('.prog-table tbody tr').length,
+        sinEntregar: z.querySelectorAll('tr.sin-entregar').length,
+        nombraDestreza: /Circles/.test(txt),
+        entregados: /2\/3/.test(txt),
+        volver: !!document.getElementById('cl-volver'),
+      };
+    });
+    check('P15 el reporte se pinta con sus KPI', !reporte.sinBoton && reporte.kpis === 2, reporte);
+    check('P15b dice en qué destrezas falló la clase, por su nombre oficial',
+      reporte.barras === 2 && reporte.nombraDestreza, reporte);
+    check('P15c lista a los estudiantes, incluidos los que NO entregaron',
+      reporte.filas === 3 && reporte.sinEntregar === 1, reporte);
+    check('P15d cuenta bien cuántos entregaron', reporte.entregados, reporte);
 
     // --- P11. un nombre con HTML no puede ejecutarse en el panel del profesor ---
     // El nombre lo escribe el estudiante al registrarse. Si el panel lo mete
@@ -606,22 +631,130 @@ const BOTONES_MUERTOS = function () {
     check('P14f los resultados dicen lo que el porcentaje esconde', conf.cajaResultados, conf);
     check('P14g en Examen NO se pregunta (no rompe la simulación)', conf.examenNoPregunta, conf);
 
+    /* --- P16. Fast Pace: la pregunta es cuánto tiempo hay, no cuántas preguntas --- */
+    const fp = await page.evaluate(async () => {
+      const esperar = ms => new Promise(r => setTimeout(r, ms));
+      const b = document.querySelector('#set-sections .hnav-a[data-tab="fast"]');
+      if (!b) return { sinPestana: true };
+      b.click();
+      await esperar(600);
+      const z = () => document.querySelector('.fp-wrap');
+      const r = {
+        pregunta: !!document.querySelector('.fp-ask'),
+        chips: document.querySelectorAll('[data-fastmin]').length,
+        minPorDefecto: window.SATAPP.fastMin(),
+        reco: document.querySelectorAll('.fp-reco').length,
+        // toda tarjeta explica POR QUÉ está ahí: una recomendación sin motivo
+        // no se distingue de un botón cualquiera
+        conMotivo: [...document.querySelectorAll('.fp-card')].every(c => (c.querySelector('.fp-por') || {}).textContent),
+        tarjetas: document.querySelectorAll('.fp-card').length,
+        pace: !!document.querySelector('[data-fastpace="math"]'),
+      };
+      // cambiar los minutos repinta SOLO la caja y vuelve a atar los handlers
+      const antes = z().outerHTML.length;
+      document.querySelector('[data-fastmin="3"]').click();
+      await esperar(300);
+      r.cambia = window.SATAPP.fastMin() === 3;
+      r.reatado = !!z() && z().querySelector('[data-fastmin="3"]').classList.contains('on');
+      r.siguePintado = !!antes && !!z();
+      // y arrancar el Pace Trainer deja el presupuesto por pregunta en la sesión
+      document.querySelector('[data-fastpace="math"]').click();
+      await esperar(900);
+      const st = window.SATAPP.getS();
+      r.paceArranca = !!st;
+      r.paceSeg = st && st.set.paceSeg;
+      r.paceSec = st && st.set.section;
+      const chip = document.getElementById('pace-chip');
+      r.chipVisible = !!chip && !chip.classList.contains('hidden');
+      r.chipDice = chip ? chip.textContent : '';
+      goHome();
+      await esperar(400);
+      return r;
+    });
+    check('P16 Fast Pace pregunta cuánto tiempo hay', !fp.sinPestana && fp.pregunta && fp.chips === 4, fp);
+    check('P16b recomienda UNA sola cosa y explica por qué', fp.reco === 1 && fp.conMotivo && fp.tarjetas >= 4, fp);
+    check('P16c cambiar los minutos repinta y deja los botones vivos',
+      fp.cambia && fp.reatado && fp.siguePintado, fp);
+    check('P16d el Pace Trainer corre al ritmo real del examen (95 s en math)',
+      fp.paceArranca && fp.paceSeg === 95 && fp.paceSec === 'math', fp);
+    check('P16e y muestra el reloj de ESA pregunta', fp.chipVisible && /left on this one|over/.test(fp.chipDice || ''), fp);
+
+    /* --- P17. cada pestaña muestra lo suyo, ni de más ni de menos --- */
+    const tabs = await page.evaluate(async () => {
+      const esperar = ms => new Promise(r => setTimeout(r, ms));
+      const ir = async t => {
+        document.querySelector(`#set-sections .hnav-a[data-tab="${t}"]`).click();
+        await esperar(600);
+        return document.getElementById('set-sections');
+      };
+      const cuenta = el => ({
+        destrezas: el.querySelectorAll('.tx-row').length,
+        dominios: el.querySelectorAll('.tx-dom').length,
+        temasCamino: el.querySelectorAll('[data-study-topic], .study-card').length,
+      });
+      const m = cuenta(await ir('math'));
+      const v = cuenta(await ir('verbal'));
+      const d = cuenta(await ir('daily'));
+      const S = window.SATAPP.SAT_SKILLS;
+      goHome();
+      await esperar(300);
+      return { m, v, d,
+        oficialesMath: S.filter(x => x.sec === 'math').length,
+        oficialesRw: S.filter(x => x.sec === 'rw').length };
+    });
+    check(`P17 Math Topics muestra las ${tabs.oficialesMath} destrezas oficiales de math, en sus 4 dominios`,
+      tabs.m.destrezas === tabs.oficialesMath && tabs.m.dominios === 4, tabs);
+    check(`P17b Verbal Topics muestra las ${tabs.oficialesRw} de verbal, en sus 4 dominios`,
+      tabs.v.destrezas === tabs.oficialesRw && tabs.v.dominios === 4, tabs);
+    check('P17c Daily ya NO arrastra el camino de dominio entero',
+      tabs.d.destrezas === 0 && tabs.d.temasCamino === 0, tabs);
+    check('P17d y ese camino sí está, repartido en las dos pestañas de temas',
+      tabs.m.temasCamino > 0 && tabs.v.temasCamino > 0, tabs);
+
     check('P9 ninguna pantalla lanzó un error de JavaScript', errs.length === 0, errs.slice(0, 4));
 
-    // --- 8. móvil: nada de scroll horizontal ---
-    await page.evaluate(() => { if (typeof showHome === 'function') showHome(); });
-    await sleep(400);
-    for (const w of [320, 375, 414]) {
-      await page.setViewport({ width: w, height: 780 });
-      await sleep(450);
-      const desborde = await page.evaluate(() => ({
-        scroll: document.documentElement.scrollWidth,
-        ancho: window.innerWidth,
-        culpables: [...document.querySelectorAll('body *')]
-          .filter(e => e.getBoundingClientRect().right > window.innerWidth + 1 && !e.closest('.hidden'))
-          .slice(0, 4).map(e => e.tagName + '.' + (e.className || '').toString().split(' ')[0]),
-      }));
-      check(`P10 sin scroll horizontal a ${w}px`, desborde.scroll <= desborde.ancho + 1, desborde);
+    /* --- 8. los tres aparatos con los que se va a usar esto ---
+       Celular, iPad y computadora, y el iPad en las DOS orientaciones: un
+       colegio que reparte tabletas las reparte con teclado y la gente las gira.
+       En cada ancho se mira lo mismo —que nada se salga de la pantalla— y
+       además que lo que hay que tocar se pueda tocar: 44 px es el mínimo que
+       Apple y Google piden, y debajo de eso el dedo falla y el estudiante
+       culpa a la app. */
+    const APARATOS = [
+      [320, 780, 'celular chico'], [375, 812, 'iPhone'], [414, 896, 'iPhone grande'],
+      [768, 1024, 'iPad vertical'], [1024, 768, 'iPad horizontal'],
+      [1180, 820, 'iPad Pro'], [1440, 950, 'computadora'],
+    ];
+    for (const [w, h, nombre] of APARATOS) {
+      await page.setViewport({ width: w, height: h });
+      await page.evaluate(() => { if (typeof showHome === 'function') showHome(); });
+      await sleep(500);
+      const vista = await page.evaluate(() => {
+        const visible = e => {
+          const r = e.getBoundingClientRect();
+          return r.width > 0 && r.height > 0 && !e.closest('.hidden');
+        };
+        const chicos = [...document.querySelectorAll('#set-sections button, #set-sections a[href], #set-sections input')]
+          .filter(visible)
+          .filter(e => { const r = e.getBoundingClientRect(); return r.height < 30 || (r.width < 30 && r.height < 44); })
+          .slice(0, 5).map(e => { const r = e.getBoundingClientRect();
+            return (e.textContent || e.getAttribute('aria-label') || e.tagName).trim().slice(0, 22) +
+              ' [' + Math.round(r.width) + '×' + Math.round(r.height) + ' ' + (e.className||'').toString().split(' ')[0] + ']'; });
+        return {
+          scroll: document.documentElement.scrollWidth,
+          ancho: window.innerWidth,
+          culpables: [...document.querySelectorAll('body *')]
+            .filter(e => e.getBoundingClientRect().right > window.innerWidth + 1 && !e.closest('.hidden'))
+            .slice(0, 4).map(e => e.tagName + '.' + (e.className || '').toString().split(' ')[0]),
+          chicos,
+          nav: document.querySelectorAll('#set-sections .hnav-a').length,
+        };
+      });
+      check(`P10 ${nombre} (${w}×${h}): nada se sale de la pantalla`,
+        vista.scroll <= vista.ancho + 1, vista);
+      check(`P10b ${nombre}: las ocho pestañas siguen alcanzables`, vista.nav === 8, vista);
+      check(`P10c ${nombre}: nada que tocar es más chico que el dedo`,
+        vista.chicos.length === 0, vista);
     }
     await page.setViewport({ width: 1440, height: 950 });
 

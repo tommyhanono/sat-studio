@@ -510,21 +510,60 @@
   .class-ta{width:100%;border:1px solid var(--gray-line);border-radius:10px;padding:11px 13px;font-size:16px;font-family:var(--sans);resize:vertical;box-sizing:border-box}
   .class-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:12px}
   .class-pin{display:flex;align-items:center;gap:7px;font-size:.85rem;color:#5c4212;font-weight:600;min-height:44px}
-  .class-istask{align-items:flex-start;line-height:1.5;margin-top:12px}
-  .class-task{border-top:1px solid #e6d3a8;margin-top:14px;padding-top:14px}
-  .ct-chips{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:14px;max-height:150px;overflow-y:auto}
-  .ct-row{display:flex;gap:12px;flex-wrap:wrap}
-  .ct-lbl{display:flex;flex-direction:column;gap:5px;font-size:.78rem;font-weight:700;color:#5c4212;text-transform:uppercase;letter-spacing:.05em}
-  .ct-sel{min-height:40px;border:1px solid var(--gray-line);border-radius:9px;padding:8px 11px;font-size:16px;font-family:var(--sans);background:#fff}
-  .cp-task{border:1px solid var(--blue);background:var(--blue-soft);border-radius:10px;padding:14px 16px;margin-top:12px}
-  .cp-task-top{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:7px}
-  .cp-task-tag{font-size:.68rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#fff;background:var(--blue);border-radius:999px;padding:3px 10px}
-  .cp-task-due{font-size:.76rem;font-weight:700;color:var(--amber)}
-  .cp-task-due.late{color:var(--red)}
-  .cp-task-what{font-size:.92rem;line-height:1.5;margin-bottom:3px}
-  .cp-task-how{font-size:.79rem;color:var(--gray-mid);margin-bottom:12px}
-  .cp-task-go{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
-  .cp-task-hist{font-size:.78rem;color:var(--gray-mid)}
+  /* ---- Classroom ---- */
+  .cl-new,.cl-join{background:var(--gold-soft);border:1px solid #e6d3a8;border-radius:12px;padding:15px 17px;margin-bottom:14px}
+  .cl-new-row{display:flex;gap:9px;flex-wrap:wrap;align-items:center}
+  .cl-new-row .auth-inp{flex:1 1 200px;width:auto}
+  .cl-per{flex:0 1 150px}
+  .cl-cod{flex:0 1 140px;text-transform:uppercase;letter-spacing:.14em;font-weight:700;font-family:var(--serif)}
+  .cl-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px;margin-top:6px}
+  .cl-card{display:flex;flex-direction:column;gap:3px;align-items:flex-start;text-align:left;cursor:pointer;
+    background:#fff;border:1px solid #e3e6ef;border-radius:12px;padding:15px 17px;box-shadow:var(--sombra);
+    font-family:var(--sans);transition:border-color .15s,box-shadow .15s}
+  .cl-card:hover{border-color:#ccd3e6;box-shadow:var(--sombra-alta)}
+  .cl-card-t{font-family:var(--serif);font-size:1.06rem;font-weight:700;color:var(--navy)}
+  .cl-card-p{font-size:.76rem;color:var(--gray-mid);font-weight:600}
+  .cl-card-m{font-size:.78rem;color:var(--gray-mid);margin-top:2px}
+  .cl-code{margin-top:7px;font-size:.76rem;color:var(--gray-mid);background:var(--gray-strip);border-radius:6px;padding:3px 9px}
+  .cl-code b{font-family:var(--serif);letter-spacing:.12em;color:var(--navy);font-size:.88rem}
+  .cl-head{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+  .cl-head h4{font-family:var(--serif);font-size:1.2rem;font-weight:700;color:var(--navy)}
+
+  .cw-kinds{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:10px}
+  .cw-kind{min-height:38px;border:1px solid var(--gray-line);background:#fff;border-radius:999px;padding:7px 15px;
+    font-size:.84rem;font-weight:700;font-family:var(--sans);color:var(--gray-mid);cursor:pointer}
+  .cw-kind.on{background:var(--navy);border-color:var(--navy);color:#fff}
+  .lbl-opt{font-weight:400;text-transform:none;letter-spacing:0;color:var(--gray-mid)}
+  .cw-chips{max-height:180px;overflow-y:auto;margin-bottom:14px}
+  .cw-dom{margin-bottom:9px}
+  .cw-dom-t{display:block;font-size:.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:#5c4212;margin-bottom:5px}
+  .cw-dom .f-chip{margin:0 5px 5px 0}
+  .cw-dom .f-chip.on{background:var(--navy);border-color:var(--navy);color:#fff}
+  .cw-dom .f-chip.vacio{opacity:.4;cursor:not-allowed}
+
+  .cw-list{display:flex;flex-direction:column;gap:12px}
+  .cw-card{background:#fff;border:1px solid #e3e6ef;border-left:4px solid var(--gray-line);border-radius:12px;
+    padding:15px 18px;box-shadow:var(--sombra)}
+  .cw-card.cw-warm{border-left-color:var(--green)}
+  .cw-card.cw-asgn{border-left-color:var(--blue)}
+  .cw-card.cw-fin{border-left-color:var(--red)}
+  .cw-card.cw-mat{border-left-color:var(--gold)}
+  .cw-top{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-bottom:5px}
+  .cw-tag{font-size:.66rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#fff;border-radius:999px;padding:3px 10px;background:var(--gray-mid)}
+  .cw-warm .cw-tag{background:var(--green)}  .cw-asgn .cw-tag{background:var(--blue)}
+  .cw-fin .cw-tag{background:var(--red)}     .cw-mat .cw-tag{background:var(--gold)}
+  .cw-due{font-size:.76rem;font-weight:700;color:var(--amber)}
+  .cw-due.late{color:var(--red)}
+  .cw-date{margin-left:auto;font-size:.74rem;color:var(--gray-mid)}
+  .cw-card h5{font-family:var(--serif);font-size:1.06rem;font-weight:700;color:var(--navy);margin-bottom:4px}
+  .cw-body{font-size:.9rem;line-height:1.65;margin:7px 0}
+  .cw-go{margin-top:11px;display:flex;align-items:center;gap:11px;flex-wrap:wrap}
+  .cw-what{flex:1 1 100%;font-size:.8rem;color:var(--gray-mid)}
+  .cw-hist{font-size:.78rem;color:var(--gray-mid)}
+  .cw-done{font-size:.85rem;font-weight:600;color:var(--green)}
+  .cw-tools{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+  .sin-entregar td{color:var(--gray-mid)}
+  @media(max-width:560px){ .cl-new-row .auth-inp,.cl-per,.cl-cod{flex:1 1 100%} .cw-date{margin-left:0} }
   .class-list{display:flex;flex-direction:column;gap:12px}
   .class-post{background:#fff;border:1px solid #e3e6ef;border-radius:12px;padding:16px 18px;box-shadow:var(--sombra)}
   .class-post.pinned{border-left:4px solid var(--gold)}
@@ -534,6 +573,29 @@
   .cp-body{font-size:.92rem;line-height:1.65;margin-top:9px}
   .cp-tools{display:flex;gap:8px;margin-top:12px}
   .mini.danger{color:var(--red);border-color:#e8bcc3}
+  .tx-dom{margin-bottom:22px}
+  .tx-dom:last-child{margin-bottom:4px}
+  .tx-dom-t{display:flex;align-items:center;gap:9px;flex-wrap:wrap;font-family:var(--serif);font-size:1.02rem;font-weight:700;
+    color:var(--navy);padding-bottom:7px;margin-bottom:10px;border-bottom:2px solid var(--gold-soft)}
+  .tx-peso{font-family:var(--sans);font-size:.72rem;font-weight:700;color:var(--gray-mid);text-transform:uppercase;letter-spacing:.05em}
+  .tx-tot{margin-left:auto;font-family:var(--sans);font-size:.74rem;font-weight:700;color:var(--gray-mid);background:var(--gray-strip);border-radius:999px;padding:2px 10px}
+  .tx-row{display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding:8px 0;border-bottom:1px solid var(--gray-strip)}
+  .tx-row:last-child{border-bottom:none}
+  .tx-name{flex:1 1 230px;display:flex;flex-direction:column;gap:1px;align-items:flex-start}
+  .tx-go{background:none;border:none;padding:0;font-family:var(--sans);font-size:.93rem;font-weight:600;color:var(--blue-dark);cursor:pointer;text-align:left}
+  .tx-go:hover{text-decoration:underline}
+  .tx-n{font-size:.74rem;color:var(--gray-mid)}
+  .tx-lvs{display:flex;gap:6px;flex-wrap:wrap}
+  .tx-lv{min-height:32px;border-radius:999px;padding:4px 11px;font-size:.74rem;font-weight:600;font-family:var(--sans);
+    border:1px solid var(--gray-line);background:#fff;color:var(--gray-mid);cursor:pointer;white-space:nowrap}
+  .tx-lv b{color:var(--ink)}
+  .tx-lv:hover{border-color:var(--blue);color:var(--blue-dark)}
+  .tx-lv.lv-easy{border-color:#b8ddc6}   .tx-lv.lv-easy:hover{background:#eefaf2}
+  .tx-lv.lv-med{border-color:#e8cfa8}    .tx-lv.lv-med:hover{background:#fdf6ea}
+  .tx-lv.lv-hard{border-color:#e8b8b8}   .tx-lv.lv-hard:hover{background:#fdeeee}
+  .tx-lv.lv-extreme{border-color:#c9a2d6} .tx-lv.lv-extreme:hover{background:#f7eefb}
+  .tx-lv.vacio{opacity:.38;cursor:default;border-style:dashed}
+  @media(max-width:620px){ .tx-row{gap:8px} .tx-name{flex:1 1 100%} .tx-lvs{flex:1 1 100%} }
   .sbuscador{padding:2px 0 2px}
   .sb-input{width:100%;min-height:44px;border:1px solid var(--gray-line);border-radius:10px;padding:11px 14px;font-size:16px;font-family:var(--sans);box-sizing:border-box;margin-bottom:10px}
   .sb-chips{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:8px}
@@ -546,6 +608,33 @@
   .fast-lead{font-size:.92rem;line-height:1.6;margin-bottom:14px}
   .fast-btns{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px}
   .fast-note{font-size:.82rem;color:var(--gray-mid);line-height:1.6}
+  /* Fast Pace: la pregunta primero, la recomendación destacada, el resto abajo. */
+  .fp-wrap{padding:2px 0 4px}
+  .fp-ask{font-family:var(--serif);font-size:1.12rem;color:var(--navy);font-weight:700;margin-bottom:10px}
+  .fp-card{border:1px solid var(--gray-line);border-radius:14px;padding:16px 18px;background:#fff;margin-bottom:12px}
+  .fp-reco{border-color:var(--gold);background:linear-gradient(180deg,var(--gold-soft) 0,#fff 120px);box-shadow:0 4px 18px rgba(184,134,43,.13)}
+  .fp-kicker{font-size:.68rem;letter-spacing:.11em;text-transform:uppercase;color:var(--gold);font-weight:800;margin-bottom:9px}
+  .fp-head{display:flex;gap:12px;align-items:flex-start;margin-bottom:9px}
+  .fp-icon{font-size:1.5rem;line-height:1.1}
+  .fp-t{font-family:var(--serif);font-size:1.04rem;font-weight:700;color:var(--navy);line-height:1.3}
+  .fp-sub{font-size:.8rem;color:var(--gray-mid);margin-top:3px}
+  .fp-por{font-size:.85rem;color:var(--gray-mid);line-height:1.6;margin:0 0 13px}
+  .fp-or{font-size:.76rem;letter-spacing:.06em;text-transform:uppercase;color:var(--gray-mid);font-weight:700;margin:18px 0 10px}
+  .fp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-bottom:14px}
+  .fp-grid .fp-card{margin-bottom:0}
+  .fp-two{display:flex;gap:9px;flex-wrap:wrap}
+  .fp-off{opacity:.55}
+  .fp-off button[disabled]{cursor:default;opacity:.7}
+  @media(max-width:620px){ .fp-grid{grid-template-columns:1fr} }
+  /* El reloj por pregunta del Pace Trainer. Verde no existe a propósito: la
+     única señal que importa es "vas pasado", y tres colores la diluyen. */
+  .pace-chip{display:inline-flex;align-items:center;gap:7px;border:1px solid var(--gray-line);border-radius:999px;
+    padding:5px 13px;font-size:.82rem;font-weight:700;font-family:var(--sans);color:var(--gray-mid);background:#fff}
+  .pace-chip.cerca{border-color:var(--gold);color:var(--gold);background:var(--gold-soft)}
+  .pace-chip.pasado{border-color:#c0392b;color:#c0392b;background:#fdecea}
+  .pace-bar{height:4px;border-radius:2px;background:var(--gray-strip);overflow:hidden;margin-top:7px}
+  .pace-bar > div{display:block;height:100%;background:var(--navy);transition:width .9s linear}
+  .pace-bar.pasado > div{background:#c0392b}
   .mock-mini{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:14px}
   .mock-mini-lbl{font-size:.8rem;opacity:.9;font-weight:600}
   .mini-btn{background:rgba(255,255,255,.16);color:#fff;border:1px solid rgba(255,255,255,.4);border-radius:999px;padding:7px 15px;font-size:.82rem;font-weight:600;cursor:pointer;white-space:nowrap}
@@ -780,8 +869,12 @@
   /* Es un botón, no un enlace: no lleva a otra página, abre la pestaña de
      progreso. Un <a href="#"> ahí es un callejón sin salida para quien navega
      con teclado o lector de pantalla. */
-  .plan-link{background:none;border:none;padding:0;font-family:var(--sans);font-size:inherit;cursor:pointer;color:var(--blue-dark);font-weight:600;white-space:nowrap}
-  .plan-link:hover{text-decoration:underline}
+  /* 44 px de alto: es el mínimo que piden Apple y Google para algo que se toca
+     con el dedo, y esto se usa en el teléfono. Con `padding:0` medía 17 px y el
+     dedo fallaba; el estudiante no piensa "erré", piensa "no sirve". El padding
+     negativo al costado lo mantiene alineado con el texto de al lado. */
+  .plan-link{background:none;border:none;min-height:44px;padding:0 2px;margin:0 -2px;display:inline-flex;align-items:center;
+    font-family:var(--sans);font-size:inherit;cursor:pointer;color:var(--blue-dark);font-weight:600;white-space:nowrap}
   .plan-link:hover{text-decoration:underline}
   .plan-step{display:flex;align-items:center;gap:10px;margin:22px 0 10px}
   .plan-step:first-child{margin-top:4px}
@@ -1081,6 +1174,7 @@
     <div class="hdr-center">
       <div id="timer">--:--</div>
       <button class="timer-hide" id="btn-hide-timer">Hide</button>
+      <div id="pace-chip" class="pace-chip hidden" role="status" aria-live="polite"></div>
     </div>
     <div class="hdr-right">
       <div class="zoom-ctl" title="Scale text size (passage, question, and choices)">
@@ -1344,6 +1438,30 @@ var SAT_SET_FILES = [
   'sets/math-mixed-hard1.js',
   'sets/math-hard-adv4.js',
   'sets/math-hard-alg4.js',
+  // Huecos que mostró la taxonomía oficial (15-sep-2026): destrezas con 0-9 preguntas
+  'sets/math-stat-claims.js',
+  'sets/math-scatter1.js',
+  'sets/math-samples-rates1.js',
+  'sets/math-lines-angles1.js',
+  'sets/math-area-volume1.js',
+  'sets/rw-crosstext1.js',
+
+  /* La rampa de entrada (15-sep-2026). El banco venía 64 % difícil, que para un
+     colegio entero es demasiado: el que arranca en 400 se estrella en la primera
+     tanda y no vuelve. Estos once sets son a propósito 4-5 fáciles de cada
+     doce, y llenan de paso los dos huecos que marcó la taxonomía oficial. */
+  'sets/math-lin1var-warm1.js',
+  'sets/math-lin2var1.js',
+  'sets/math-lin-model1.js',
+  'sets/math-systems-warm1.js',
+  'sets/math-ineq-warm1.js',
+  'sets/math-equiv-warm1.js',
+  'sets/math-quad-warm1.js',
+  'sets/math-nonlin-fn1.js',
+  'sets/math-exp-growth1.js',
+  'sets/math-poly-rational1.js',
+  'sets/math-margin1.js',
+
   // Desmos how-to hints per Math question (merged into questions at load)
   'sets/desmos-a.js',
   'sets/desmos-b.js',
@@ -1835,6 +1953,381 @@ var PLAN_DOMW = {   // peso oficial de cada dominio en el examen (College Board)
   'Algebra':35, 'Advanced Math':35, 'Problem-Solving & Data Analysis':15, 'Geometry & Trigonometry':15,
   'Craft and Structure':28, 'Information and Ideas':26, 'Standard English Conventions':26, 'Expression of Ideas':20
 };
+/* ================= LA TAXONOMÍA OFICIAL DEL DIGITAL SAT =================
+   Cuatro dominios por sección y, dentro de cada uno, las "skills and knowledge
+   testing points" con el nombre que les pone College Board. Son 30 y son las
+   que el estudiante va a ver en SU reporte oficial de puntaje — por eso son las
+   que tiene que ver acá, y no 536 títulos distintos inventados uno por pregunta.
+
+   `skill` de cada pregunta sigue siendo un título libre y sirve para leerla.
+   Esto es la capa de arriba: la que permite filtrar, agrupar, y que el profesor
+   arme trabajo eligiendo una destreza de verdad.
+
+   `m` se prueba contra el `skill` de la pregunta; `dom` la ata a su dominio, que
+   ya viene bien puesto en el banco. Cada pregunta cae en EXACTAMENTE una: el
+   orden importa, gana la primera que machea dentro de su dominio, y la última de
+   cada dominio es el cajón por defecto para que nunca quede ninguna afuera.
+   `tools/test-taxonomia.js` falla si alguna se queda sin clasificar. */
+var SAT_SKILLS = [
+  /* ---- Reading & Writing ---- */
+  { k:'ii-central',  dom:'Information and Ideas', sec:'rw', peso:26,
+    t:'Central Ideas and Details',
+    m:/central|main idea|details?\b|summar|gist|overall point|topic sentence/i },
+  { k:'ii-quant',    dom:'Information and Ideas', sec:'rw', peso:26,
+    t:'Command of Evidence: Quantitative',
+    m:/quantitative|graph|table|chart|figure|data in context|interpreting data|percent of the|bar\b|scatter/i },
+  { k:'ii-textual',  dom:'Information and Ideas', sec:'rw', peso:26,
+    t:'Command of Evidence: Textual',
+    m:/evidence|quotation|\bquote|supports?\b|weakens?\b|undermine|illustrat|hypothesis|finding/i },
+  { k:'ii-infer',    dom:'Information and Ideas', sec:'rw', peso:26,
+    t:'Inferences', cajon:true,
+    m:/\binfer|logically completes|most logical|implies|imply|suggests that|follows that|conclusion/i },
+
+  { k:'cs-words',    dom:'Craft and Structure', sec:'rw', peso:28,
+    t:'Words in Context',
+    m:/words? in context|word choice|vocabulary|vocab|meaning|synonym|nuance|connotation|most logical and precise/i },
+  { k:'cs-cross',    dom:'Craft and Structure', sec:'rw', peso:28,
+    t:'Cross-Text Connections',
+    m:/cross-?text|paired|both (?:texts|passages|authors)|text 1|passage a|two texts|across passages|disagree/i },
+  { k:'cs-structure',dom:'Craft and Structure', sec:'rw', peso:28,
+    t:'Text Structure and Purpose', cajon:true,
+    m:/structure|purpose|function of|overall|organiz|\brole\b|serves? to|main idea of the (text|passage)|underlined (sentence|portion)/i },
+
+  { k:'ei-synth',    dom:'Expression of Ideas', sec:'rw', peso:20,
+    t:'Rhetorical Synthesis',
+    m:/synthes|the notes|bullet|rhetorical goal|most effectively uses/i },
+  { k:'ei-trans',    dom:'Expression of Ideas', sec:'rw', peso:20,
+    t:'Transitions', cajon:true,
+    m:/transition|however|therefore|moreover|furthermore|consequently|nevertheless|for (instance|example)|in addition|by contrast/i },
+
+  { k:'ec-bound',    dom:'Standard English Conventions', sec:'rw', peso:26,
+    t:'Boundaries',
+    m:/boundar|punctuat|comma|semicolon|colon|dash|parenthes|clause|splice|joining|apostroph|possessive|quotation mark|non-?essential|nonessential|restrictive|appositive|title/i },
+  { k:'ec-form',     dom:'Standard English Conventions', sec:'rw', peso:26,
+    t:'Form, Structure, and Sense', cajon:true,
+    m:/verb|tense|agreement|pronoun|subject|plural|singular|possessive|modifier|parallel|antecedent|conventional expression/i },
+
+  /* ---- Math ---- */
+  { k:'al-sys',      dom:'Algebra', sec:'math', peso:35,
+    t:'Systems of two linear equations',
+    m:/system|elimination|substitution|infinitely many|no solution|simultaneous/i },
+  { k:'al-ineq',     dom:'Algebra', sec:'math', peso:35,
+    t:'Linear inequalities',
+    m:/inequalit|at most|at least|greatest integer|least integer|constraint|budget|capacity|region/i },
+  { k:'al-2var',     dom:'Algebra', sec:'math', peso:35,
+    t:'Linear equations in two variables',
+    m:/two variables|standard form|point-slope|intercept form|in terms of|literal equation|solve for/i },
+  { k:'al-func',     dom:'Algebra', sec:'math', peso:35,
+    t:'Linear functions',
+    m:/linear function|slope|intercept|rate of change|linear model|parallel|perpendicular|from a table|from a graph|per (?:hour|minute|year|day)|unit trap/i },
+  { k:'al-1var',     dom:'Algebra', sec:'math', peso:35,
+    t:'Linear equations in one variable', cajon:true,
+    m:/linear equation|one variable|solve for|isolate|no solution|infinitely many|value of [a-z]\b|equivalent equation/i },
+
+  { k:'am-equiv',    dom:'Advanced Math', sec:'math', peso:35,
+    t:'Equivalent expressions',
+    m:/equivalent|factor|expand|simplif|rational expression|radical|exponent rule|difference of squares|complex fraction|grouping|remainder|polynomial division/i },
+  { k:'am-nonlin-eq',dom:'Advanced Math', sec:'math', peso:35,
+    t:'Nonlinear equations and systems',
+    m:/quadratic|discriminant|completing the square|roots?\b|solutions?\b|vieta|radical equation|rational equation|extraneous|nonlinear system|intersect|tangen/i },
+  { k:'am-nonlin-fn',dom:'Advanced Math', sec:'math', peso:35,
+    t:'Nonlinear functions', cajon:true,
+    m:/function|parabola|vertex|exponential|logarith|growth|decay|asymptote|graph of|f\(x\)|maximum|minimum/i },
+
+  { k:'pd-prob',     dom:'Problem-Solving & Data Analysis', sec:'math', peso:15,
+    t:'Probability and conditional probability',
+    m:/probabilit|conditional|mutually|independent|expected value|two-way|counting|permutat|combinator/i },
+  { k:'pd-margin',   dom:'Problem-Solving & Data Analysis', sec:'math', peso:15,
+    t:'Inference from samples and margin of error',
+    /* Ojo: NO lleva /sample|survey|population/ suelto. Toda pregunta de diseño de
+       estudio nombra una muestra, así que ese patrón se comía las de `pd-claims`
+       antes de que llegaran a probarse (18 contra 4, cuando la verdad es al revés).
+       Acá va SOLO lo de estimar un valor de la población: el intervalo y el margen. */
+    m:/margin of error|confidence interval|plausible (interval|range|value)|estimate the (total|number|population)|sample (mean|proportion|size)/i },
+  { k:'pd-claims',   dom:'Problem-Solving & Data Analysis', sec:'math', peso:15, pri:10,
+    t:'Evaluating statistical claims',
+    /* `pri:10` lo prueba ANTES que sus hermanos sin tocar el orden en que se
+       muestran, que es el oficial de College Board. La línea que separa esta
+       destreza de la anterior es la del examen: selección al azar habilita
+       GENERALIZAR, asignación al azar habilita hablar de CAUSA. */
+    m:/statistical claim|observational|random(ly)? (assign|select)|assignment|\bcause\b|causal|causation|correlat|control group|treatment group|experiment|voluntary response|lurking|generaliz|extends? to|appropriate conclusion|conclusion is (justified|supported)|well.supported/i },
+  { k:'pd-2var',     dom:'Problem-Solving & Data Analysis', sec:'math', peso:15,
+    t:'Two-variable data and scatterplots',
+    m:/scatter|line of best fit|two-variable|predict|residual|association/i },
+  { k:'pd-1var',     dom:'Problem-Solving & Data Analysis', sec:'math', peso:15,
+    t:'One-variable data',
+    m:/mean\b|median|mode\b|average|standard deviation|spread|range\b|box plot|histogram|dot plot|one-variable|distribution|outlier|weighted/i },
+  { k:'pd-percent',  dom:'Problem-Solving & Data Analysis', sec:'math', peso:15,
+    t:'Percentages',
+    m:/percent|discount|markup|interest|increase|decrease/i },
+  { k:'pd-ratio',    dom:'Problem-Solving & Data Analysis', sec:'math', peso:15,
+    t:'Ratios, rates and units', cajon:true,
+    m:/ratio|\brate\b|unit|proportion|scale|convert|speed|density|per \w+|miles|kilograms|liters/i },
+
+  { k:'gt-circles',  dom:'Geometry & Trigonometry', sec:'math', peso:15,
+    t:'Circles',
+    m:/circle|circumference|\barc\b|sector|radius|radii|diameter|central angle|tangent line/i },
+  { k:'gt-right',    dom:'Geometry & Trigonometry', sec:'math', peso:15,
+    t:'Right triangles and trigonometry',
+    m:/right triangle|pythagor|sohcahtoa|sine|cosine|tangent|hypotenuse|30-60-90|45-45-90|complementary angle|leg\b/i },
+  { k:'gt-volume',   dom:'Geometry & Trigonometry', sec:'math', peso:15,
+    t:'Area and volume',
+    m:/area|volume|solid|cylinder|cone|sphere|hemisphere|prism|pyramid|surface|scaling|dimension/i },
+  { k:'gt-lines',    dom:'Geometry & Trigonometry', sec:'math', peso:15,
+    t:'Lines, angles and triangles', cajon:true,
+    m:/angle|parallel|transversal|triangle|similar|congruent|supplementary|complementary|interior|exterior|bisect|degrees/i }
+];
+
+/* La destreza oficial de una pregunta. Solo se compara dentro de SU dominio, así
+   que "area" en una pregunta de Algebra no la manda a Geometría. */
+var _skillCache = {};
+function skillOf(q){
+  if(!q) return null;
+  if(_skillCache[q.id]) return _skillCache[q.id];
+  var dom = String(q.domain || '');
+  var sk = String(q.skill || '') + ' ' + String(q.stem || '').slice(0, 160);
+  var cands = SAT_SKILLS.filter(function(x){ return dom.indexOf(x.dom.split(' &')[0]) === 0 || dom === x.dom; });
+  /* Se prueba por `pri` (menor primero) y no por el orden del arreglo: ese orden es
+     el oficial de College Board y es el que se MUESTRA. Cuando dos destrezas se
+     pisan, la que gana tiene que ser la más específica, no la que quedó más arriba. */
+  cands = cands.slice().sort(function(a, b){ return (a.pri || 50) - (b.pri || 50); });
+  if(!cands.length){
+    // dominios cruzados ("Algebra + Functions"): manda la primera parte
+    var base = dom.split('+')[0].trim();
+    cands = SAT_SKILLS.filter(function(x){ return x.dom.indexOf(base) === 0 || base.indexOf(x.dom.split(' &')[0]) === 0; });
+  }
+  if(!cands.length) return null;
+  for(var i = 0; i < cands.length; i++){ if(cands[i].m.test(sk)) return (_skillCache[q.id] = cands[i]); }
+  /* Cada dominio tiene UNA destreza con `m:/./` que recoge lo que no calzó en
+     ninguna regla. Nunca debería llegarse hasta acá; si se llega, es que ese
+     dominio se quedó sin cajón y una pregunta iba a caer en la que quedó última
+     por casualidad. `auditar-destrezas.js` cuenta cuántas entran por el cajón. */
+  return (_skillCache[q.id] = cands.filter(function(x){ return x.cajon; })[0] || cands[cands.length - 1]);
+}
+function skillByKey(k){ return SAT_SKILLS.filter(function(x){ return x.k === k; })[0] || null; }
+
+/* Banco por destreza oficial. Se calcula una vez: recorrer 1.000 preguntas en
+   cada render es caro y esto se pinta en dos pestañas. */
+var _skillBank = null;
+function skillBank(){
+  if(_skillBank) return _skillBank;
+  var b = {};
+  SAT_SKILLS.forEach(function(x){ b[x.k] = []; });
+  SETS.forEach(function(st){
+    (st.questions || []).forEach(function(q){
+      var sk = skillOf(q);
+      if(sk && b[sk.k]) b[sk.k].push(q);
+    });
+  });
+  return (_skillBank = b);
+}
+/* Cuántas hay de una destreza en cada nivel. El nivel de una PREGUNTA es su
+   difficulty más la marca extreme, no el level del set: un set "Difícil" puede
+   traer alguna Media y el estudiante tiene que ver lo que de verdad hay. */
+function nivelDe(q){ return q.extreme ? 'Extreme' : (q.difficulty || 'Media'); }
+function skillConteo(k){
+  var c = { 'Fácil':0, 'Media':0, 'Difícil':0, 'Extreme':0, total:0 };
+  (skillBank()[k] || []).forEach(function(q){ c[nivelDe(q)]++; c.total++; });
+  return c;
+}
+/* Arma una práctica de UNA destreza, en el nivel pedido. Mismo orden pedagógico
+   que el plan: primero lo que falló, después lo que nunca vio, y al final lo que
+   ya le salió bien, solo para completar. */
+function skillBuildSet(k, nivel, n){
+  var sk = skillByKey(k); if(!sk) return null;
+  var pool = (skillBank()[k] || []).filter(function(q){
+    return nivel === 'todo' ? true : nivelDe(q) === nivel;
+  });
+  if(!pool.length) return null;
+  var latest = latestResults(), falladas = [], nuevas = [], acertadas = [];
+  pool.forEach(function(q){
+    var r = latest[q.id];
+    if(r && !r.ok) falladas.push(q); else if(!r) nuevas.push(q); else acertadas.push(q);
+  });
+  var orden = _shuffle(falladas).concat(_shuffle(nuevas), _shuffle(acertadas)).slice(0, n || 12);
+  return {
+    id: 'skill-' + k + '-' + (nivel || 'todo'),
+    title: sk.t + (nivel && nivel !== 'todo' ? ' — ' + nivelLabel(nivel) : ''),
+    section: sk.sec, level: nivel === 'todo' ? 'Media' : nivel,
+    description: sk.dom,
+    minutes: Math.max(5, Math.round(orden.length * 1.2)),
+    questions: orden
+  };
+}
+
+/* ══════════════ FAST PACE ══════════════
+   Antes esto eran tres botones —5, 10, 15 preguntas— y no había forma de saber
+   en qué se diferenciaban de un Drill normal. Eran un Drill más corto, y eso no
+   es una pestaña: es un parámetro.
+
+   Lo que de verdad pasa entre clase y clase no es "quiero practicar menos", es
+   "tengo ocho minutos, decime qué hago con ellos". Así que Fast Pace pregunta
+   UNA cosa —cuánto tiempo hay— y después DECIDE, con una prioridad que se
+   explica en pantalla: primero lo que se está olvidando, después lo que se
+   falló, y solo si no hay nada de eso, la destreza más floja.
+
+   Y agrega lo único que ningún otro modo entrena: el RITMO. En el examen real
+   hay 1:11 por pregunta de verbal y 1:35 por una de matemática. Saber la
+   respuesta y tardar tres minutos es un error que todavía no ocurrió, y no hay
+   forma de descubrirlo practicando sin reloj. */
+
+/* Segundos por pregunta en el examen real: 32 min / 27 preg y 35 min / 22 preg. */
+var PACE_SEG = { rw: 71, math: 95 };
+var FAST_MINS = [3, 5, 10, 20];
+function fastMin(){ var n = parseInt(store.get('satapp_fast_min', 10), 10); return FAST_MINS.indexOf(n) >= 0 ? n : 10; }
+function fastSetMin(n){ store.set('satapp_fast_min', n); }
+
+/* Las destrezas oficiales más flojas, medidas. Pide un mínimo de intentos: con
+   una sola respuesta el porcentaje es 0 % o 100 % y no significa nada. */
+function fastSkillsFlojas(){
+  var hist = getHistory(), acc = {};
+  hist.forEach(function(e){
+    (e.perQuestion || []).forEach(function(p){
+      var q = QINDEX[p.qid]; if(!q) return;
+      var sk = skillOf(q); if(!sk) return;
+      var a = acc[sk.k] = acc[sk.k] || { k: sk.k, sk: sk, n: 0, ok: 0 };
+      a.n++; if(p.ok) a.ok++;
+    });
+  });
+  return Object.keys(acc).map(function(k){ return acc[k]; })
+    .filter(function(a){ return a.n >= 4; })
+    .sort(function(a, b){ return (a.ok / a.n) - (b.ok / b.n); });
+}
+
+/* Las opciones de Fast Pace, en orden de prioridad. La primera que esté
+   DISPONIBLE es la recomendada; el resto quedan abajo como alternativas.
+   Cada una dice por qué está donde está: una recomendación sin motivo no se
+   distingue de un botón cualquiera. */
+function fastOpciones(min){
+  var ops = [];
+  var due = spacedQueue().due;
+  ops.push({
+    k: 'review', icon: '🔁', t: 'Review what is slipping',
+    sub: due.length + ' question' + (due.length === 1 ? '' : 's') + ' due today',
+    por: 'These are questions you got wrong and then got right. Today is the day they come back — ' +
+         'wait longer and the memory goes.',
+    hay: due.length > 0
+  });
+  var falladas = missedPool();
+  ops.push({
+    k: 'redo', icon: '↩️', t: 'Redo your mistakes',
+    sub: falladas.length + ' waiting',
+    por: 'Everything you missed, plus everything you got right by guessing. A lucky guess is not knowledge.',
+    hay: falladas.length > 0
+  });
+  var flojas = fastSkillsFlojas();
+  ops.push({
+    k: 'weak', icon: '🎯', t: flojas.length ? 'Drill: ' + flojas[0].sk.t : 'Drill your weakest skill',
+    sub: flojas.length ? Math.round(100 * flojas[0].ok / flojas[0].n) + '% right so far · ' + flojas[0].sk.dom : 'needs a few more answers',
+    por: flojas.length
+      ? 'Your lowest official skill out of the 30 the SAT reports. Same name College Board will use on your score report.'
+      : 'Answer around 20 questions and this turns into your real weakest skill.',
+    hay: flojas.length > 0, sk: flojas.length ? flojas[0] : null
+  });
+  ops.push({
+    k: 'pace', icon: '⏱️', t: 'Pace Trainer',
+    sub: 'real clock: ' + PACE_SEG.rw + 's verbal · ' + PACE_SEG.math + 's math',
+    por: 'The one thing no other mode here trains. You get exactly the seconds the real test gives you per ' +
+         'question, and a clock that turns red when you go over. Knowing it and being too slow score the same.',
+    hay: true
+  });
+  ops.push({
+    k: 'new', icon: '✨', t: 'Something new',
+    sub: 'questions you have never seen',
+    por: 'Nothing due and nothing missed is a good problem. Take fresh ground instead.',
+    hay: true
+  });
+  var reco = ops.filter(function(o){ return o.hay; })[0] || ops[ops.length - 1];
+  return { ops: ops, reco: reco, min: min };
+}
+
+/* Arma el set de la opción elegida. Devuelve null si se quedó sin preguntas,
+   y el que llama avisa: un botón que no hace nada es peor que uno que explica. */
+function fastBuild(k, min){
+  var n = Math.max(3, min);   // ~1 pregunta por minuto con explicación de por medio
+  if(k === 'review'){
+    var due = _shuffle(spacedQueue().due.slice()).slice(0, n);
+    if(!due.length) return null;
+    return { id: 'fast-review', title: 'Spaced review', section: 'mixed', level: 'Media',
+      description: 'Due today', minutes: min, questions: due };
+  }
+  if(k === 'redo'){
+    var mal = _shuffle(missedPool().slice()).slice(0, n);
+    if(!mal.length) return null;
+    return { id: 'fast-redo', title: 'Your mistakes', section: 'mixed', level: 'Media',
+      description: 'Missed or guessed', minutes: min, questions: mal };
+  }
+  if(k === 'weak'){
+    var f = fastSkillsFlojas()[0];
+    if(!f) return null;
+    var set = skillBuildSet(f.k, 'todo', n);
+    if(!set || !set.questions.length) return null;
+    set.id = 'fast-weak-' + f.k; set.minutes = min;
+    return set;
+  }
+  if(k === 'new'){
+    var vistas = latestResults(), frescas = [];
+    Object.keys(QINDEX).forEach(function(qid){ if(!vistas[qid]) frescas.push(QINDEX[qid]); });
+    frescas = _shuffle(frescas).slice(0, n);
+    if(!frescas.length) return null;
+    return { id: 'fast-new', title: 'Fresh questions', section: 'mixed', level: 'Media',
+      description: 'Never seen before', minutes: min, questions: frescas };
+  }
+  return null;
+}
+
+/* El Pace Trainer sí depende de la sección, porque el presupuesto por pregunta
+   es distinto. Se arma con lo más flojo de esa sección para que el ritmo se
+   entrene sobre contenido que importa, no sobre lo que ya se domina. */
+function fastBuildPace(sec, min){
+  var seg = PACE_SEG[sec] || 80;
+  var n = Math.max(3, Math.round(min * 60 / seg));
+  var pool = [];
+  Object.keys(QINDEX).forEach(function(qid){
+    var q = QINDEX[qid];
+    if((q._section || q.section) === sec) pool.push(q);
+  });
+  if(!pool.length) return null;
+  var latest = latestResults(), mal = [], resto = [];
+  pool.forEach(function(q){ var r = latest[q.id]; if(r && !r.ok) mal.push(q); else resto.push(q); });
+  var qs = _shuffle(mal).concat(_shuffle(resto)).slice(0, n);
+  return { id: 'fast-pace-' + sec, title: 'Pace Trainer — ' + (sec === 'math' ? 'Math' : 'Verbal'),
+    section: sec, level: 'Media', description: seg + 's per question',
+    minutes: Math.ceil(n * seg / 60), questions: qs, paceSeg: seg };
+}
+
+function fastHTML(){
+  var min = fastMin(), plan = fastOpciones(min), reco = plan.reco;
+  var chips = FAST_MINS.map(function(m){
+    return '<button type="button" class="f-chip fp-min' + (m === min ? ' on' : '') + '" data-fastmin="' + m + '">' +
+      m + ' min</button>';
+  }).join('');
+  function tarjeta(o, destacada){
+    var apagada = !o.hay;
+    var accion = o.k === 'pace'
+      ? '<div class="fp-two"><button type="button" class="btn-primary" data-fastpace="math">Math</button>' +
+        '<button type="button" class="btn-outline" data-fastpace="rw">Verbal</button></div>'
+      : '<button type="button" class="' + (destacada ? 'btn-primary' : 'btn-outline') + '"' +
+        (apagada ? ' disabled' : '') + ' data-fastgo="' + o.k + '">' +
+        (apagada ? 'Nothing here yet' : 'Start · ' + min + ' min') + '</button>';
+    return '<div class="fp-card' + (destacada ? ' fp-reco' : '') + (apagada ? ' fp-off' : '') + '">' +
+      (destacada ? '<div class="fp-kicker">Recommended right now</div>' : '') +
+      '<div class="fp-head"><span class="fp-icon" aria-hidden="true">' + o.icon + '</span>' +
+        '<div><div class="fp-t">' + escHtml(o.t) + '</div><div class="fp-sub">' + escHtml(o.sub) + '</div></div></div>' +
+      '<p class="fp-por">' + escHtml(o.por) + '</p>' + accion + '</div>';
+  }
+  var otras = plan.ops.filter(function(o){ return o !== reco; });
+  return '<div class="fp-wrap">' +
+    '<div class="fp-ask">How long do you have?</div>' +
+    '<div class="sb-chips">' + chips + '</div>' +
+    tarjeta(reco, true) +
+    '<div class="fp-or">or, if you would rather</div>' +
+    '<div class="fp-grid">' + otras.map(function(o){ return tarjeta(o, false); }).join('') + '</div>' +
+    '<p class="fast-note">Short and often beats long and rare. Ten minutes a day is worth more than one ' +
+      'two-hour session a week — the gap between sessions is what makes it stick.</p>' +
+  '</div>';
+}
+
 /* Los 28 temas del plan. `key` es lo que se guarda en las preferencias del
    estudiante, así que NO se renombra nunca; `m` es el regex que decide a qué
    tema pertenece una pregunta, y se aplica sobre su `skill`.
@@ -2225,207 +2718,380 @@ function planWire(){
 }
 
 /* ================= CLASSROOM =================
-   El tablón donde el profesor deja tareas y avisos. Lee cualquiera del mismo
-   dominio de correo; escribe solo teacher o admin, y eso lo decide la RPC
-   sat_class_post_save, no esta pantalla. */
-var CLASS_POSTS = null;
-function classLoad(forzar){
-  var caja = $('#class-list');
-  if(!caja) return;
-  if(CLASS_POSTS && !forzar){ classRender(); return; }
-  if(!authAvailable() || !currentUser){
-    caja.innerHTML = '<p class="empty-note">Sign in to see what your teacher posted.</p>';
-    return;
-  }
-  SB.rpc('sat_class_posts').then(function(r){
-    if(r.error){
-      caja.innerHTML = '<p class="empty-note">Could not load the board (' + escHtml(r.error.message || 'unknown error') + ').</p>';
-      return;
-    }
-    CLASS_POSTS = r.data || [];
-    classRender();
-  }).catch(function(){
-    caja.innerHTML = '<p class="empty-note">Could not load the board. Check your connection.</p>';
+   Clases de verdad, no un muro plano. El modelo es el de Google Classroom
+   porque funciona y porque un profesor ya lo conoce: la clase es un contenedor
+   con un CÓDIGO para unirse, así no depende de que un administrador le importe
+   la lista de su salón.
+
+   Lo que NO se copió es el muro social con comentarios. Acá el valor no es la
+   conversación: es que el profesor vea en qué falló el grupo. Por eso la
+   pantalla principal del profesor es el reporte, no el feed.
+
+   Cuatro tipos de trabajo, y el tipo decide cuántos intentos hay y si cuenta:
+     warmup      3-5 preguntas para abrir la clase · infinitos  · no cuenta
+     assignment  trabajo para practicar            · infinitos  · mejor intento
+     final       una parte del final               · UNO        · cuenta y se reporta
+     material    un ejemplo resuelto del profesor  · sin preguntas
+
+   Todos los límites están en las RPC, no acá: quién puede crear, quién puede
+   ver, y que una clase de un colegio no la encuentre nadie de otro. */
+
+var CLASE = { vista: 'lista', clases: null, actual: null, feed: null, reporte: null, cargando: false };
+
+function claseRPC(fn, args){
+  if(!authAvailable() || !currentUser) return Promise.reject(new Error('sign in first'));
+  return SB.rpc(fn, args || {}).then(function(r){
+    if(r.error) throw new Error(r.error.message || 'unknown error');
+    return r.data;
   });
 }
-function classRender(){
-  var caja = $('#class-list'); if(!caja) return;
-  var lista = CLASS_POSTS || [];
-  if(!lista.length){
-    caja.innerHTML = '<p class="empty-note">' +
-      (esProfe() ? 'Nothing posted yet. What you write above lands here.'
-                 : 'Your teacher has not posted anything yet.') + '</p>';
-    return;
-  }
-  var puedeEditar = esProfe();
-  caja.innerHTML = lista.map(function(p){
-    return '<article class="class-post' + (p.fijado ? ' pinned' : '') + '">' +
-      '<header class="cp-head">' +
-        (p.fijado ? '<span class="cp-pin">📌 Pinned</span>' : '') +
-        '<h4>' + escHtml(p.titulo) + '</h4>' +
-        '<p class="cp-meta">' + escHtml(p.autor || 'Teacher') + ' · ' + escHtml(p.fecha || '') + '</p>' +
-      '</header>' +
-      (p.cuerpo ? '<p class="cp-body">' + escHtml(p.cuerpo).replace(/\n/g, '<br>') + '</p>' : '') +
-      (p.tarea ? tareaHTML(p) : '') +
-      (puedeEditar
-        ? '<div class="cp-tools">' +
-            '<button type="button" class="mini" data-class-edit="' + escAttr(p.id) + '">Edit</button>' +
-            '<button type="button" class="mini danger" data-class-del="' + escAttr(p.id) + '">Delete</button>' +
-          '</div>'
-        : '') +
-    '</article>';
-  }).join('');
-  Array.prototype.forEach.call(caja.querySelectorAll('[data-class-edit]'), function(b){
-    b.addEventListener('click', function(){
-      var p = (CLASS_POSTS || []).filter(function(x){ return String(x.id) === b.getAttribute('data-class-edit'); })[0];
-      if(!p) return;
-      $('#class-id').value = p.id;
-      $('#class-title').value = p.titulo || '';
-      $('#class-body').value = p.cuerpo || '';
-      $('#class-pin').checked = !!p.fijado;
-      var t = p.tarea || null;
-      $('#class-istask').checked = !!t;
-      $('#class-task').classList.toggle('hidden', !t);
-      Array.prototype.forEach.call(document.querySelectorAll('#class-task [data-task-topic]'), function(chip){
-        chip.classList.toggle('on', !!t && (t.temas || []).indexOf(chip.getAttribute('data-task-topic')) >= 0);
-      });
-      if(t){
-        $('#class-min').value = String(t.minutos || 20);
-        $('#class-niv').value = t.nivel || 'examen';
-        $('#class-modo').value = t.modo || 'drill';
-        $('#class-due').value = t.vence || '';
-      }
-      $('#class-save').textContent = 'Save changes';
-      $('#class-cancel').classList.remove('hidden');
-      intenta(function(){ $('#class-title').focus(); }, 'focus');
-    });
-  });
-  Array.prototype.forEach.call(caja.querySelectorAll('[data-task-start]'), function(b){
-    b.addEventListener('click', function(){
-      var p = (CLASS_POSTS || []).filter(function(x){ return String(x.id) === b.getAttribute('data-task-start'); })[0];
-      if(p) empezarTarea(p);
-    });
-  });
-  Array.prototype.forEach.call(caja.querySelectorAll('[data-class-del]'), function(b){
-    b.addEventListener('click', function(){
-      // Borrar es lo único que no se deshace acá: se pregunta, siempre.
-      if(!window.confirm('Delete this post? Students will stop seeing it.')) return;
-      SB.rpc('sat_class_post_delete', { p_id: b.getAttribute('data-class-del') }).then(function(r){
-        if(r.error){ toast('Could not delete it: ' + (r.error.message || 'unknown error'), true); return; }
-        toast('Post deleted.');
-        classLoad(true);
-      }).catch(function(){ toast('Could not delete it. Check your connection.', true); });
-    });
-  });
-}
-/* La tarjeta de una tarea. Se puede repetir todas las veces que el estudiante
-   quiera y cada intento arma un test NUEVO desde los mismos temas: repetir es
-   practicar, no memorizar el orden de las respuestas. Se muestran los intentos y
-   el mejor resultado para que vea que mejora, que es lo que lo trae de vuelta. */
-function tareaHTML(p){
-  var t = p.tarea || {};
-  var nombres = (t.temas || []).map(function(k){
-    var x = PLAN_TOPICS.filter(function(y){ return y.key === k; })[0];
-    return x ? x.t : k;
-  });
-  var mios = getHistory().filter(function(e){ return e.setId === 'assign-' + p.id; });
-  var mejor = mios.reduce(function(a, e){
-    var pct = e.total ? e.score / e.total : 0;
-    return pct > a ? pct : a;
-  }, 0);
-  var vence = t.vence ? new Date(t.vence + 'T12:00:00') : null;
-  var dias = vence ? Math.ceil((vence - new Date()) / 86400000) : null;
-  return '<div class="cp-task">' +
-    '<div class="cp-task-top"><span class="cp-task-tag">Assignment</span>' +
-      (t.vence ? '<span class="cp-task-due' + (dias !== null && dias < 0 ? ' late' : '') + '">' +
-        (dias === null ? '' : dias > 1 ? 'due in ' + dias + ' days' : dias === 1 ? 'due tomorrow' :
-         dias === 0 ? 'due today' : 'was due ' + (-dias) + (dias === -1 ? ' day' : ' days') + ' ago') + '</span>' : '') +
-    '</div>' +
-    '<p class="cp-task-what"><b>' + escHtml(nombres.join(' · ')) + '</b></p>' +
-    '<p class="cp-task-how">' + (t.minutos || 20) + ' min · ' +
-      (t.modo === 'exam' ? 'timed, graded at the end' : 'no timer, explained as you go') + ' · ' +
-      (t.nivel === 'mas' ? 'hardest only' : t.nivel === 'donde' ? 'building up' : 'test level') + '</p>' +
-    '<div class="cp-task-go">' +
-      '<button type="button" class="btn-primary" data-task-start="' + escAttr(p.id) + '">' +
-        (mios.length ? 'Take it again' : 'Start') + '</button>' +
-      '<span class="cp-task-hist">' + (mios.length
-        ? mios.length + (mios.length === 1 ? ' attempt' : ' attempts') + ' · best ' + Math.round(mejor * 100) + '%' +
-          ' · new questions every time'
-        : 'You can take it as many times as you want.') + '</span>' +
-    '</div>' +
-  '</div>';
-}
-function empezarTarea(post){
-  var t = post.tarea || {};
-  if(!BANCO_LISTO) return conBanco(function(){ empezarTarea(post); });
-  var set = planBuildSet(t.temas || [], {
-    minutos: t.minutos || 20, modo: t.modo || 'drill', nivel: t.nivel || 'examen'
-  });
-  if(!set.questions.length){
-    toast('There are no questions left for the topics in this assignment. Tell your teacher.', true);
-    return;
-  }
-  // El id fija la tarea: así cada intento queda contado contra ELLA y el
-  // estudiante ve cuántas veces la hizo y cómo va mejorando.
-  set.id = 'assign-' + post.id;
-  set.title = post.titulo;
-  _beginSession(set, t.modo || 'drill');
+function claseCaja(){ return $('#class-body-zone'); }
+function clasePinta(html){ var c = claseCaja(); if(c) c.innerHTML = html; }
+function claseError(e){
+  clasePinta('<p class="empty-note">' + escHtml((e && e.message) || 'Something went wrong') + '</p>');
 }
 
-function classWire(){
-  var g = $('#class-save'); if(!g) return;
-  g.addEventListener('click', function(){
-    var t = ($('#class-title').value || '').trim();
-    if(!t){ toast('A post needs a title.', true); return; }
-    g.disabled = true;
-    var esTarea = !!($('#class-istask') && $('#class-istask').checked);
-    var temas = Array.prototype.map.call(
-      document.querySelectorAll('#class-task [data-task-topic].on'),
-      function(c){ return c.getAttribute('data-task-topic'); });
-    if(esTarea && !temas.length){
-      g.disabled = false;
-      toast('An assignment needs at least one topic. Pick them above.', true);
-      return;
-    }
-    SB.rpc('sat_class_post_save', {
-      p_id: $('#class-id').value || null,
-      p_titulo: t,
-      p_cuerpo: $('#class-body').value || '',
-      p_fijado: !!$('#class-pin').checked,
-      p_tarea: esTarea ? {
-        temas: temas,
-        nivel: $('#class-niv').value || 'examen',
-        minutos: parseInt($('#class-min').value, 10) || 20,
-        modo: $('#class-modo').value || 'drill',
-        vence: $('#class-due').value || null
-      } : null
-    }).then(function(r){
-      g.disabled = false;
-      if(r.error){ toast('Could not post it: ' + (r.error.message || 'unknown error'), true); return; }
-      classLimpiar();
-      toast('Posted. Your students see it now.');
-      classLoad(true);
-    }).catch(function(){ g.disabled = false; toast('Could not post it. Check your connection.', true); });
+function claseAbrir(forzar){
+  if(!claseCaja()) return;
+  if(!authAvailable() || !currentUser){
+    clasePinta('<p class="empty-note">Sign in to see your classes.</p>');
+    return;
+  }
+  if(CLASE.vista === 'reporte') return claseReporte(CLASE.cwId);
+  if(CLASE.vista === 'clase')   return claseFeed(CLASE.actual, forzar);
+  return claseLista(forzar);
+}
+
+/* ---------- la lista de clases ---------- */
+function claseLista(forzar){
+  CLASE.vista = 'lista';
+  if(CLASE.clases && !forzar) return pintarLista();
+  clasePinta('<p class="empty-note">Loading…</p>');
+  claseRPC('sat_class_mine').then(function(d){ CLASE.clases = d || []; pintarLista(); }).catch(claseError);
+}
+function pintarLista(){
+  var cs = CLASE.clases || [], profe = esProfe();
+  var html = '';
+  if(profe){
+    html += '<div class="cl-new">' +
+      '<p class="class-hint">A class gives you a roster, a code your students type once, and a report of ' +
+        'where the group is losing points.</p>' +
+      '<div class="cl-new-row">' +
+        '<input id="cl-nombre" class="auth-inp" type="text" maxlength="80" placeholder="Class name — e.g. SAT Prep 11.º">' +
+        '<input id="cl-periodo" class="auth-inp cl-per" type="text" maxlength="30" placeholder="Period (optional)">' +
+        '<button type="button" class="btn-primary" id="cl-crear">Create class</button>' +
+      '</div></div>';
+  }
+  html += '<div class="cl-join">' +
+    '<label class="auth-lbl" for="cl-codigo">Join a class with a code</label>' +
+    '<div class="cl-new-row">' +
+      '<input id="cl-codigo" class="auth-inp cl-cod" type="text" maxlength="6" placeholder="ABC123" autocapitalize="characters">' +
+      '<button type="button" class="btn-outline" id="cl-unirse">Join</button>' +
+    '</div></div>';
+
+  html += cs.length
+    ? '<div class="cl-grid">' + cs.map(function(c){
+        return '<button type="button" class="cl-card" data-clase="' + escAttr(c.id) + '">' +
+          '<span class="cl-card-t">' + escHtml(c.nombre) + '</span>' +
+          (c.periodo ? '<span class="cl-card-p">' + escHtml(c.periodo) + '</span>' : '') +
+          '<span class="cl-card-m">' + (c.mia ? 'You teach it' : escHtml(c.profe)) + ' · ' +
+            c.alumnos + (c.alumnos === 1 ? ' student' : ' students') + ' · ' +
+            c.trabajos + (c.trabajos === 1 ? ' item' : ' items') + '</span>' +
+          (c.codigo ? '<span class="cl-code">code <b>' + escHtml(c.codigo) + '</b></span>' : '') +
+        '</button>';
+      }).join('') + '</div>'
+    : '<p class="empty-note">' + (profe
+        ? 'No classes yet. Create one above and give your students the code.'
+        : 'You are not in a class yet. Ask your teacher for the code.') + '</p>';
+  clasePinta(html);
+
+  var cr = $('#cl-crear');
+  if(cr) cr.addEventListener('click', function(){
+    var n = ($('#cl-nombre').value || '').trim();
+    if(!n){ toast('The class needs a name.', true); return; }
+    cr.disabled = true;
+    claseRPC('sat_class_create', { p_nombre: n, p_periodo: $('#cl-periodo').value || null })
+      .then(function(d){ toast('Class created. The code is ' + d.codigo + '.'); claseLista(true); })
+      .catch(function(e){ cr.disabled = false; toast('Could not create it: ' + e.message, true); });
   });
-  var c = $('#class-cancel'); if(c) c.addEventListener('click', classLimpiar);
-  var it = $('#class-istask');
-  if(it) it.addEventListener('change', function(){ $('#class-task').classList.toggle('hidden', !this.checked); });
-  Array.prototype.forEach.call(document.querySelectorAll('#class-task [data-task-topic]'), function(chip){
-    chip.addEventListener('click', function(){ chip.classList.toggle('on'); });
+  var un = $('#cl-unirse');
+  if(un) un.addEventListener('click', function(){
+    var c = ($('#cl-codigo').value || '').trim().toUpperCase();
+    if(c.length !== 6){ toast('A class code is six characters.', true); return; }
+    un.disabled = true;
+    claseRPC('sat_class_join', { p_codigo: c })
+      .then(function(d){ toast('You are in ' + d.nombre + '.'); claseLista(true); })
+      .catch(function(e){ un.disabled = false; toast(e.message, true); });
+  });
+  Array.prototype.forEach.call(document.querySelectorAll('[data-clase]'), function(b){
+    b.addEventListener('click', function(){
+      CLASE.actual = b.getAttribute('data-clase');
+      CLASE.vista = 'clase';
+      claseFeed(CLASE.actual, true);
+    });
   });
 }
-function classLimpiar(){
-  if(!$('#class-save')) return;
-  $('#class-id').value = ''; $('#class-title').value = ''; $('#class-body').value = '';
-  $('#class-pin').checked = false;
-  if($('#class-istask')){
-    $('#class-istask').checked = false;
-    $('#class-task').classList.add('hidden');
-    Array.prototype.forEach.call(document.querySelectorAll('#class-task [data-task-topic].on'), function(c){ c.classList.remove('on'); });
-    $('#class-due').value = '';
-  }
-  $('#class-save').textContent = 'Post';
-  $('#class-cancel').classList.add('hidden');
+
+/* ---------- el feed de una clase ---------- */
+function claseFeed(id, forzar){
+  CLASE.vista = 'clase';
+  if(CLASE.feed && CLASE.feed.id === id && !forzar) return pintarFeed();
+  clasePinta('<p class="empty-note">Loading…</p>');
+  claseRPC('sat_class_feed', { p_class: id })
+    .then(function(d){ CLASE.feed = { id: id, items: d || [] }; pintarFeed(); })
+    .catch(claseError);
+}
+function claseActual(){
+  return (CLASE.clases || []).filter(function(c){ return String(c.id) === String(CLASE.actual); })[0] || {};
+}
+var CW_META = {
+  warmup:     { t:'Warm-up',    cls:'warm', nota:'A few questions to start the class. Take it as often as you like.' },
+  assignment: { t:'Assignment', cls:'asgn', nota:'Repeat it as many times as you want — new questions every time.' },
+  final:      { t:'Final',      cls:'fin',  nota:'One attempt. This one counts.' },
+  material:   { t:'Example',    cls:'mat',  nota:'' }
+};
+function pintarFeed(){
+  var c = claseActual(), items = (CLASE.feed || {}).items || [], profe = !!c.mia;
+  var html = '<div class="cl-head">' +
+    '<button type="button" class="mini" id="cl-volver">← All classes</button>' +
+    '<h4>' + escHtml(c.nombre || 'Class') + (c.periodo ? ' <span class="cl-card-p">' + escHtml(c.periodo) + '</span>' : '') + '</h4>' +
+    (c.codigo ? '<span class="cl-code">code <b>' + escHtml(c.codigo) + '</b></span>' : '') +
+  '</div>';
+
+  if(profe) html += cwCompositorHTML();
+
+  html += items.length
+    ? '<div class="cw-list">' + items.map(function(w){ return cwCardHTML(w, profe); }).join('') + '</div>'
+    : '<p class="empty-note">' + (profe
+        ? 'Nothing assigned yet. The composer above is where it starts.'
+        : 'Your teacher has not posted anything yet.') + '</p>';
+  clasePinta(html);
+  $('#cl-volver').addEventListener('click', function(){ CLASE.vista = 'lista'; claseLista(); });
+  if(profe) cwWire();
+  cwWireCards();
+}
+
+function cwCardHTML(w, profe){
+  var m = CW_META[w.kind] || CW_META.assignment;
+  var spec = w.spec || {};
+  var nombres = (spec.skills || []).map(function(k){ var x = skillByKey(k); return x ? x.t : k; });
+  var dias = w.vence ? Math.ceil((new Date(w.vence + 'T12:00:00') - new Date()) / 86400000) : null;
+  var hecho = (w.mis_intentos || 0) > 0;
+  var unico = w.kind === 'final';
+  return '<article class="cw-card cw-' + m.cls + '">' +
+    '<div class="cw-top"><span class="cw-tag">' + m.t + '</span>' +
+      (w.vence ? '<span class="cw-due' + (dias !== null && dias < 0 ? ' late' : '') + '">' +
+        (dias > 1 ? 'due in ' + dias + ' days' : dias === 1 ? 'due tomorrow' : dias === 0 ? 'due today'
+         : 'was due ' + (-dias) + (dias === -1 ? ' day' : ' days') + ' ago') + '</span>' : '') +
+      '<span class="cw-date">' + escHtml(w.fecha || '') + '</span></div>' +
+    '<h5>' + escHtml(w.titulo) + '</h5>' +
+    (w.cuerpo ? '<p class="cw-body">' + escHtml(w.cuerpo).replace(/\n/g, '<br>') + '</p>' : '') +
+    (w.kind === 'material'
+      ? (spec.latex && spec.latex.length
+          ? '<button type="button" class="mini" data-cw-desmos="' + escAttr((spec.latex || []).join('|||')) + '">📈 Open in Desmos</button>'
+          : '')
+      : '<div class="cw-go">' +
+          '<p class="cw-what"><b>' + escHtml(nombres.join(' · ')) + '</b> · ' +
+            (spec.n || 12) + ' questions · ' +
+            (spec.modo === 'exam' ? 'timed' : 'no timer, explained as you go') + '</p>' +
+          (unico && hecho
+            ? '<p class="cw-done">✓ Submitted · ' + (w.mi_mejor != null ? w.mi_mejor + '%' : '—') + '. One attempt only.</p>'
+            : '<button type="button" class="btn-primary" data-cw-start="' + escAttr(w.id) + '">' +
+                (hecho ? 'Take it again' : 'Start') + '</button>' +
+              '<span class="cw-hist">' + (hecho
+                ? w.mis_intentos + (w.mis_intentos === 1 ? ' attempt' : ' attempts') +
+                  (w.mi_mejor != null ? ' · best ' + w.mi_mejor + '%' : '') + ' · ' + m.nota
+                : m.nota) + '</span>') +
+        '</div>') +
+    (profe ? '<div class="cw-tools">' +
+        (w.kind !== 'material' ? '<button type="button" class="mini" data-cw-report="' + escAttr(w.id) + '">How did the class do?</button>' : '') +
+        '<button type="button" class="mini danger" data-cw-del="' + escAttr(w.id) + '">Delete</button>' +
+      '</div>' : '') +
+  '</article>';
+}
+
+function cwWireCards(){
+  Array.prototype.forEach.call(document.querySelectorAll('[data-cw-start]'), function(b){
+    b.addEventListener('click', function(){
+      var w = ((CLASE.feed || {}).items || []).filter(function(x){ return String(x.id) === b.getAttribute('data-cw-start'); })[0];
+      if(w) cwEmpezar(w);
+    });
+  });
+  Array.prototype.forEach.call(document.querySelectorAll('[data-cw-report]'), function(b){
+    b.addEventListener('click', function(){
+      CLASE.cwId = b.getAttribute('data-cw-report');
+      CLASE.vista = 'reporte';
+      claseReporte(CLASE.cwId);
+    });
+  });
+  Array.prototype.forEach.call(document.querySelectorAll('[data-cw-del]'), function(b){
+    b.addEventListener('click', function(){
+      if(!window.confirm('Delete this? Students will stop seeing it. Their attempts are kept.')) return;
+      claseRPC('sat_classwork_delete', { p_id: b.getAttribute('data-cw-del') })
+        .then(function(){ toast('Deleted.'); claseFeed(CLASE.actual, true); })
+        .catch(function(e){ toast('Could not delete it: ' + e.message, true); });
+    });
+  });
+  Array.prototype.forEach.call(document.querySelectorAll('[data-cw-desmos]'), function(b){
+    b.addEventListener('click', function(){
+      openDesmosWith((b.getAttribute('data-cw-desmos') || '').split('|||'));
+    });
+  });
+}
+
+/* Arranca el trabajo. Cada intento arma un test NUEVO desde las mismas
+   destrezas: repetir es practicar, no memorizar el orden de las respuestas. */
+function cwEmpezar(w){
+  if(!BANCO_LISTO) return conBanco(function(){ cwEmpezar(w); });
+  var spec = w.spec || {}, qs = [], vistos = {};
+  var n = spec.n || 12, porSkill = Math.max(1, Math.ceil(n / Math.max(1, (spec.skills || []).length)));
+  (spec.skills || []).forEach(function(k){
+    var set = skillBuildSet(k, spec.nivel || 'todo', porSkill);
+    if(set) set.questions.forEach(function(q){ if(!vistos[q.id]){ vistos[q.id] = 1; qs.push(q); } });
+  });
+  if(!qs.length){ toast('There are no questions for the skills in this one yet. Tell your teacher.', true); return; }
+  // intercalado: se alterna entre destrezas en vez de ir en bloques
+  qs = _shuffle(qs).slice(0, n);
+  _beginSession({
+    id: 'cw-' + w.id, title: w.titulo, section: 'mixed',
+    description: (CW_META[w.kind] || {}).t || '',
+    minutes: Math.max(4, Math.round(qs.length * 1.2)), questions: qs
+  }, spec.modo === 'exam' ? 'exam' : 'drill');
+}
+
+/* ---------- el compositor del profesor ---------- */
+function cwCompositorHTML(){
+  var porDom = {};
+  SAT_SKILLS.forEach(function(x){ (porDom[x.dom] = porDom[x.dom] || []).push(x); });
+  var chips = Object.keys(porDom).map(function(d){
+    return '<div class="cw-dom"><span class="cw-dom-t">' + escHtml(d) + '</span>' +
+      porDom[d].map(function(x){
+        var c = skillConteo(x.k);
+        return '<button type="button" class="f-chip' + (c.total ? '' : ' vacio') + '" data-cw-skill="' + escAttr(x.k) + '"' +
+          (c.total ? '' : ' disabled title="nothing in the bank yet"') + '>' +
+          escHtml(x.t) + ' <b>' + c.total + '</b></button>';
+      }).join('') + '</div>';
+  }).join('');
+  return '<div class="class-compose">' +
+    '<input type="hidden" id="cw-id" value="">' +
+    '<div class="cw-kinds">' +
+      ['warmup','assignment','final','material'].map(function(k, i){
+        return '<button type="button" class="cw-kind' + (i === 1 ? ' on' : '') + '" data-cw-kind="' + k + '">' +
+          CW_META[k].t + '</button>';
+      }).join('') +
+    '</div>' +
+    '<p class="class-hint" id="cw-kind-note">' + CW_META.assignment.nota + '</p>' +
+    '<label class="auth-lbl" for="cw-titulo">Title</label>' +
+    '<input id="cw-titulo" class="auth-inp" type="text" maxlength="120" placeholder="Circles — Friday">' +
+    '<label class="auth-lbl" for="cw-cuerpo">Message <span class="lbl-opt">— for an Example, this is where you teach it</span></label>' +
+    '<textarea id="cw-cuerpo" class="class-ta" rows="3" maxlength="4000" placeholder="What they need to know, and by when."></textarea>' +
+    '<div id="cw-latex-zone" class="hidden">' +
+      '<label class="auth-lbl" for="cw-latex">Desmos expressions <span class="lbl-opt">— one per line, they open in the calculator</span></label>' +
+      '<textarea id="cw-latex" class="class-ta" rows="2" placeholder="y=(x-3)^2+2"></textarea>' +
+    '</div>' +
+    '<div id="cw-skills-zone">' +
+      '<p class="class-hint">Pick the official skills. Every attempt builds a fresh test from them.</p>' +
+      '<div class="cw-chips">' + chips + '</div>' +
+      '<div class="ct-row">' +
+        '<label class="ct-lbl">Questions<select id="cw-n" class="ct-sel">' +
+          '<option value="5">5 — a warm-up</option><option value="12" selected>12</option>' +
+          '<option value="20">20</option><option value="27">27 — a full module</option></select></label>' +
+        '<label class="ct-lbl">Level<select id="cw-nivel" class="ct-sel">' +
+          '<option value="todo" selected>Any level</option>' +
+          '<option value="Fácil">Warm-up</option><option value="Media">Test level</option>' +
+          '<option value="Difícil">Hard · real M2</option><option value="Extreme">Brutal</option></select></label>' +
+        '<label class="ct-lbl">Mode<select id="cw-modo" class="ct-sel">' +
+          '<option value="drill" selected>No timer, explained as they go</option>' +
+          '<option value="exam">Timed, graded at the end</option></select></label>' +
+        '<label class="ct-lbl">Due <input type="date" id="cw-vence" class="ct-sel"></label>' +
+      '</div>' +
+    '</div>' +
+    '<div class="class-actions">' +
+      '<button type="button" class="btn-primary" id="cw-guardar">Assign it</button>' +
+      '<button type="button" class="btn-outline hidden" id="cw-cancelar">Cancel</button>' +
+    '</div></div>';
+}
+function cwKind(){ var b = document.querySelector('.cw-kind.on'); return b ? b.getAttribute('data-cw-kind') : 'assignment'; }
+function cwWire(){
+  Array.prototype.forEach.call(document.querySelectorAll('.cw-kind'), function(b){
+    b.addEventListener('click', function(){
+      Array.prototype.forEach.call(document.querySelectorAll('.cw-kind'), function(o){ o.classList.toggle('on', o === b); });
+      var k = b.getAttribute('data-cw-kind');
+      $('#cw-kind-note').textContent = CW_META[k].nota;
+      $('#cw-skills-zone').classList.toggle('hidden', k === 'material');
+      $('#cw-latex-zone').classList.toggle('hidden', k !== 'material');
+      $('#cw-guardar').textContent = k === 'material' ? 'Post the example' : 'Assign it';
+      if(k === 'warmup') $('#cw-n').value = '5';
+    });
+  });
+  Array.prototype.forEach.call(document.querySelectorAll('[data-cw-skill]'), function(c){
+    c.addEventListener('click', function(){ c.classList.toggle('on'); });
+  });
+  $('#cw-guardar').addEventListener('click', function(){
+    var k = cwKind(), t = ($('#cw-titulo').value || '').trim();
+    if(!t){ toast('It needs a title.', true); return; }
+    var skills = Array.prototype.map.call(document.querySelectorAll('[data-cw-skill].on'),
+      function(c){ return c.getAttribute('data-cw-skill'); });
+    if(k !== 'material' && !skills.length){ toast('Pick at least one skill.', true); return; }
+    var spec = k === 'material'
+      ? { latex: ($('#cw-latex').value || '').split('\n').map(function(x){ return x.trim(); }).filter(Boolean) }
+      : { skills: skills, nivel: $('#cw-nivel').value, n: parseInt($('#cw-n').value, 10) || 12, modo: $('#cw-modo').value };
+    var b = $('#cw-guardar'); b.disabled = true;
+    claseRPC('sat_classwork_save', {
+      p_id: $('#cw-id').value || null, p_class: CLASE.actual, p_kind: k,
+      p_titulo: t, p_cuerpo: $('#cw-cuerpo').value || '', p_spec: spec,
+      p_vence: $('#cw-vence').value || null
+    }).then(function(){
+      toast(k === 'material' ? 'Example posted.' : 'Assigned. Your students see it now.');
+      claseFeed(CLASE.actual, true);
+    }).catch(function(e){ b.disabled = false; toast('Could not save it: ' + e.message, true); });
+  });
+}
+
+/* ---------- el reporte: en qué falló la clase ---------- */
+function claseReporte(id){
+  CLASE.vista = 'reporte';
+  clasePinta('<p class="empty-note">Loading…</p>');
+  claseRPC('sat_classwork_report', { p_id: id }).then(function(d){
+    var al = d.alumnos || [], sk = d.skills || [];
+    var hechos = al.filter(function(a){ return a.intentos > 0; });
+    var prom = hechos.length
+      ? Math.round(hechos.reduce(function(a, x){ return a + (x.mejor || 0); }, 0) / hechos.length) : null;
+    var html = '<div class="cl-head">' +
+      '<button type="button" class="mini" id="cl-volver">← Back to the class</button>' +
+      '<h4>How did the class do?</h4></div>';
+    html += '<div class="akpi-row">' +
+      '<div class="akpi"><div class="k">Turned in</div><div class="v">' + hechos.length + '/' + al.length + '</div></div>' +
+      '<div class="akpi"><div class="k">Class average</div><div class="v">' + (prom != null ? prom + '%' : '—') + '</div>' +
+        '<div class="s">' + (prom != null ? 'of those who did it' : 'nobody yet') + '</div></div>' +
+    '</div>';
+
+    html += '<div class="atable-wrap"><h3>Where the class is losing points</h3>' +
+      (sk.length
+        ? sk.map(function(x){
+            var nom = (skillByKey(x.sk) || {}).t || x.sk;
+            var pct = x.total ? Math.round(100 * x.ok / x.total) : 0;
+            var cls = pct < 60 ? ' bad' : (pct < 80 ? ' mid' : '');
+            return '<div class="bar-row"><div class="lbl">' + escHtml(nom) + '</div>' +
+              '<div class="bar-track"><div class="bar-fill' + cls + '" style="width:' + Math.max(pct, 3) + '%"></div></div>' +
+              '<div class="pct">' + pct + '% · ' + x.total + '</div></div>';
+          }).join('')
+        : '<p class="empty-note">Nobody has answered a question yet.</p>') + '</div>';
+
+    html += '<div class="atable-wrap"><h3>Student by student</h3>' +
+      '<div class="prog-table-wrap"><table class="prog-table"><thead><tr>' +
+        '<th>Name</th><th class="num">Attempts</th><th class="num">Best</th><th>Last</th>' +
+      '</tr></thead><tbody>' +
+      (al.length ? al.map(function(a){
+        return '<tr' + (a.intentos ? '' : ' class="sin-entregar"') + '><td>' + escHtml(a.nombre) + '</td>' +
+          '<td class="num">' + a.intentos + '</td>' +
+          '<td class="num">' + (a.mejor != null ? a.mejor + '%' : '—') + '</td>' +
+          '<td>' + (a.ultimo || 'not yet') + '</td></tr>';
+      }).join('') : '<tr><td colspan="4" class="empty-note">No students in this class yet.</td></tr>') +
+      '</tbody></table></div></div>';
+    clasePinta(html);
+    $('#cl-volver').addEventListener('click', function(){ CLASE.vista = 'clase'; claseFeed(CLASE.actual); });
+  }).catch(claseError);
 }
 
 /* ================= HOME ================= */
@@ -2438,6 +3104,37 @@ function homeTab(){
   // dejar a nadie mirando una pestaña que ya no existe
   var VIEJAS = { hoy:'daily', entender:'math', practicar:'math', examen:'mocks' };
   return VIEJAS[t] || t;
+}
+
+/* Los handlers de Fast Pace, aparte, porque la caja se repinta sola al cambiar
+   los minutos y hay que volver a atarlos sin repintar el inicio entero. */
+function wireFast(){
+  Array.prototype.forEach.call(document.querySelectorAll('#set-sections [data-fastmin]'), function(b){
+    b.addEventListener('click', function(){
+      fastSetMin(parseInt(b.getAttribute('data-fastmin'), 10) || 10);
+      // se repinta SOLO la caja de Fast Pace: renderHome() entero pierde el scroll
+      var z = document.querySelector('.fp-wrap');
+      if(z){ z.outerHTML = fastHTML(); wireFast(); }
+    });
+  });
+  Array.prototype.forEach.call(document.querySelectorAll('#set-sections [data-fastgo]'), function(b){
+    b.addEventListener('click', function(){
+      conBanco(function(){
+        var set = fastBuild(b.getAttribute('data-fastgo'), fastMin());
+        if(!set){ toast('Nothing available for that right now — try another option.', true); return; }
+        _beginSession(set, 'drill');
+      });
+    });
+  });
+  Array.prototype.forEach.call(document.querySelectorAll('#set-sections [data-fastpace]'), function(b){
+    b.addEventListener('click', function(){
+      conBanco(function(){
+        var set = fastBuildPace(b.getAttribute('data-fastpace'), fastMin());
+        if(!set){ toast('No questions available for the Pace Trainer yet.', true); return; }
+        _beginSession(set, 'drill');
+      });
+    });
+  });
 }
 
 function renderHome(){
@@ -2559,6 +3256,43 @@ function renderHome(){
     'Craft and Structure':'Craft', 'Information and Ideas':'Ideas',
     'Standard English Conventions':'Grammar', 'Expression of Ideas':'Expression'
   };
+  /* ---- La taxonomía oficial como pantalla ----
+     Antes estas dos pestañas eran una lista de sets: para practicar círculos
+     había que adivinar en cuál de 43 sets había círculos. Ahora se ve el mapa
+     del examen —los cuatro dominios y sus destrezas, con el nombre que les pone
+     College Board— y se practica una destreza directamente, en el nivel que uno
+     quiera. Los sets siguen abajo para quien prefiera una tanda ya armada. */
+  function taxonomiaHTML(sec){
+    var doms = [];
+    SAT_SKILLS.forEach(function(x){ if(x.sec === sec && doms.indexOf(x.dom) < 0) doms.push(x.dom); });
+    var NIVELES = ['Fácil', 'Media', 'Difícil', 'Extreme'];
+    return doms.map(function(dom){
+      var skills = SAT_SKILLS.filter(function(x){ return x.sec === sec && x.dom === dom; });
+      var totalDom = skills.reduce(function(a, x){ return a + skillConteo(x.k).total; }, 0);
+      var filas = skills.map(function(x){
+        var c = skillConteo(x.k);
+        var chips = NIVELES.map(function(nv){
+          if(!c[nv]) return '<span class="tx-lv vacio" title="nothing at this level yet">' + nivelLabel(nv) + ' 0</span>';
+          return '<button type="button" class="tx-lv lv-' + (SAT_NIVEL_CLASE[nv] || 'med') + '" ' +
+            'data-skill="' + escAttr(x.k) + '" data-nivel="' + escAttr(nv) + '">' +
+            nivelLabel(nv) + ' <b>' + c[nv] + '</b></button>';
+        }).join('');
+        return '<div class="tx-row">' +
+          '<div class="tx-name"><button type="button" class="tx-go" data-skill="' + escAttr(x.k) + '" data-nivel="todo">' +
+            escHtml(x.t) + '</button>' +
+            '<span class="tx-n">' + c.total + (c.total === 1 ? ' question' : ' questions') + '</span></div>' +
+          '<div class="tx-lvs">' + chips + '</div>' +
+        '</div>';
+      }).join('');
+      var peso = skills.length ? skills[0].peso : null;
+      return '<section class="tx-dom">' +
+        '<h4 class="tx-dom-t">' + escHtml(dom) +
+          (peso ? ' <span class="tx-peso">' + peso + '% of the test</span>' : '') +
+          ' <span class="tx-tot">' + totalDom + '</span></h4>' +
+        filas + '</section>';
+    }).join('');
+  }
+
   function buscadorSets(lista, sec, vacio){
     if(!lista.length) return '<div class="empty-note">' + vacio + '</div>';
     var doms = [], nivs = [];
@@ -2605,17 +3339,42 @@ function renderHome(){
     var fw = fwPlanHTML();
     G.daily += homeSection('Final week — your day-by-day plan', fw.html, fw.badge, true);
   }
+  /* El camino de dominio se PARTE POR SECCIÓN, igual que las lecciones.
+     Entero vivía en Daily y era el motivo real de que Daily mostrara todo: una
+     tarjeta por cada tema de matemática, otra por cada uno de verbal y los dos
+     exámenes finales, en la pestaña que debería contestar "¿qué hago ahora?".
+     Un camino de semanas no es una respuesta a esa pregunta. Ahora los temas de
+     matemática viven en Math Topics, los de verbal en Verbal Topics, y en Daily
+     queda solo el siguiente paso, que sí es de hoy. */
+  var _stp = studyState();
+  var _masteredAll = STUDY_TOPICS.filter(function(t){ return _stp.topics[t.key].mastered; }).length;
+  var STUDY_REGLA = '<p class="study-hint">Topic-by-topic mastery. The rule: to master a topic you need a ' +
+    '<b>perfect 4/4 round</b> — one miss breaks it. The final demands <b>100%</b>: miss one and the topics ' +
+    'behind that question reopen.</p>';
+  function caminoHTML(sec){
+    var ts = STUDY_TOPICS.filter(function(t){ return t.sec === sec; });
+    return STUDY_REGLA + ts.map(function(t){ return studyTopicCard(t, _stp.topics[t.key]); }).join('') +
+      '<h4 class="study-h">Final · ' + (sec === 'math' ? 'Math' : 'English') + ' (100%)</h4>' + studyFinalCard(sec, _stp);
+  }
+  function caminoCuenta(sec){
+    var ts = STUDY_TOPICS.filter(function(t){ return t.sec === sec; });
+    return ts.filter(function(t){ return _stp.topics[t.key].mastered; }).length + '/' + ts.length;
+  }
   {
-    var stp = studyState();
-    var mT = STUDY_TOPICS.filter(function(t){ return t.sec === 'math'; });
-    var vT = STUDY_TOPICS.filter(function(t){ return t.sec === 'rw'; });
-    var masteredAll = STUDY_TOPICS.filter(function(t){ return stp.topics[t.key].mastered; }).length;
-    var spBody = '<p class="study-hint">Topic-by-topic mastery. The rule: to master a topic you need a <b>perfect 4/4 round</b> — one miss breaks it. Both finals demand <b>100%</b>: miss one and the topics behind that question reopen.</p>' +
-      '<h4 class="study-h">1 · Math</h4>' + mT.map(function(t){ return studyTopicCard(t, stp.topics[t.key]); }).join('') +
-      '<h4 class="study-h">2 · Verbal</h4>' + vT.map(function(t){ return studyTopicCard(t, stp.topics[t.key]); }).join('') +
-      '<h4 class="study-h">3 · Math Final (100%)</h4>' + studyFinalCard('math', stp) +
-      '<h4 class="study-h">4 · English Final (100%)</h4>' + studyFinalCard('rw', stp);
-    G.daily += homeSection('Mastery path', spBody, masteredAll + '/' + STUDY_TOPICS.length, true);
+    // En Daily, el puntero: dónde va, qué sigue y a qué pestaña ir. Nada más.
+    var sig = STUDY_TOPICS.filter(function(t){ return !_stp.topics[t.key].mastered; })[0];
+    var pct = Math.round(100 * _masteredAll / STUDY_TOPICS.length);
+    var cuerpo = '<div class="mp-mini">' +
+      '<div class="bar-row"><div class="bar"><div style="width:' + pct + '%"></div></div>' +
+        '<span class="bar-lbl">' + _masteredAll + ' of ' + STUDY_TOPICS.length + ' topics mastered</span></div>' +
+      (sig
+        ? '<p class="study-hint">Next up: <b>' + escHtml(sig.t) + '</b>. It lives under ' +
+          (sig.sec === 'math' ? 'Math Topics' : 'Verbal Topics') + '.</p>' +
+          '<button type="button" class="btn-primary" data-goto-tab="' + (sig.sec === 'math' ? 'math' : 'verbal') + '">' +
+          'Go to ' + (sig.sec === 'math' ? 'Math Topics' : 'Verbal Topics') + '</button>'
+        : '<p class="study-hint">Every topic mastered. Both finals are waiting in Math Topics and Verbal Topics.</p>') +
+      '</div>';
+    G.daily += homeSection('🪜 Mastery path', cuerpo, _masteredAll + '/' + STUDY_TOPICS.length, true);
   }
   var dm = dailyMiniHTML();
   G.daily += homeSection('🌅 Daily Mini Mocks', dm.html, (dm.streak > 0 ? '🔥 ' + dm.streak + ' · ' : '') + dm.done + '/2 today', true);
@@ -2753,95 +3512,33 @@ function renderHome(){
       '</div><div class="set-actions"><button class="btn-primary" data-start-fullmock="' + mi + '">' + (best != null ? 'Retake' : 'Start') + '</button></div></div>';
   }
   G.mocks += homeSection('Full Mocks', mockCards, N_MOCKS, true);
-  G.math += homeSection('All Math sets', buscadorSets(mathSets, 'math', 'No Math sets pending — see Completed under My Progress.'), mathSets.length, true);
-  G.verbal += homeSection('All Verbal sets', buscadorSets(verbalSets, 'rw', 'No Verbal sets pending — see Completed under My Progress.'), verbalSets.length, true);
+  /* Lo PRIMERO de cada pestaña de temas es la taxonomía oficial completa: los
+     cuatro dominios de esa sección, sus destrezas, cuántas preguntas hay de
+     cada una y en qué nivel. Math no la tenía —solo el buscador de sets— así
+     que entrar a Math no mostraba "todo lo de Math", mostraba las tandas que
+     alguien armó. Son 19 destrezas en matemática y 11 en verbal: las 30 que
+     College Board le va a nombrar al estudiante en su reporte. */
+  G.math   += homeSection('🎯 Practice by skill — the 19 official Math skills', taxonomiaHTML('math'), null, true);
+  G.verbal += homeSection('🎯 Practice by skill — the 11 official Reading & Writing skills', taxonomiaHTML('rw'), null, true);
+  G.math   += homeSection('🪜 Mastery path — Math', caminoHTML('math'), caminoCuenta('math'), false);
+  G.verbal += homeSection('🪜 Mastery path — Verbal', caminoHTML('rw'), caminoCuenta('rw'), false);
+  G.math += homeSection('All Math sets', buscadorSets(mathSets, 'math', 'No Math sets pending — see Completed under My Progress.'), mathSets.length, false);
+  G.verbal += homeSection('All Verbal sets', buscadorSets(verbalSets, 'rw', 'No Verbal sets pending — see Completed under My Progress.'), verbalSets.length, false);
   // Primero el buscador, después la clase, después el método. Lo que se busca
   // al entrar a una pestaña de temas es practicar, no leer.
   G.math   += _ccHtml + _lecMathHtml;
   G.verbal += _ptHtml + _lecRwHtml;
-  /* Fast Pace: lo que se puede hacer en cinco minutos. Existe porque el hueco
-     real de un estudiante de colegio no son 70 minutos seguidos, son los diez
-     entre clase y clase — y si en ese rato la app solo le ofrece un simulacro
-     de dos horas, no hace nada. Los tres botones arman el test en el momento con
-     los temas que el plan ya identificó como los más flojos. */
-  var _fastTemas = (planState().elegidos && planState().elegidos.length)
-    ? planState().elegidos : planRecomendados(planRanking());
-  var _fastNom = _fastTemas.map(function(k){
-    var t = PLAN_TOPICS.filter(function(x){ return x.key === k; })[0];
-    return t ? t.t : k;
-  });
-  var _fastHtml =
-    '<div class="fast-wrap">' +
-      '<p class="fast-lead">Built right now from your weakest topics: <b>' +
-        (_fastNom.length ? escHtml(_fastNom.slice(0, 3).join(', ')) : 'we need a few answers first') +
-      '</b>. No timer, explanation after every question.</p>' +
-      '<div class="fast-btns">' +
-        '<button type="button" class="btn-primary" data-fast="5">5 questions · ~5 min</button>' +
-        '<button type="button" class="btn-outline" data-fast="10">10 questions · ~10 min</button>' +
-        '<button type="button" class="btn-outline" data-fast="15">15 questions · ~15 min</button>' +
-      '</div>' +
-      '<p class="fast-note">Short and often beats long and rare. Ten minutes a day is worth more ' +
-        'than one two-hour session a week — the gap between sessions is what makes it stick.</p>' +
-    '</div>';
-  G.fast += homeSection('⚡ Quick drill', _fastHtml, null, true);
+  /* Fast Pace. El motor está arriba (bloque FAST PACE). Acá solo se pinta:
+     una pregunta —cuánto tiempo hay— y la app decide qué conviene hacer con él.
+     "Redo your mistakes" dejó de ser una sección aparte: ahora es una de las
+     opciones del selector, que es donde se compara con las otras. */
+  G.fast += homeSection('⚡ What can you do right now', fastHTML(), fastMin() + ' min', true);
   G.fast += _srHtml;
-  G.fast += homeSection('Redo your mistakes', redoCard('redo-math', 'Math', 'math') + redoCard('redo-verbal', 'Verbal', 'rw'), totalMissed || null, true);
-  /* ---- Classroom: el tablón del profesor ----
-     El grupo sale del dominio del correo, igual que en el panel de admin y en la
-     vista de profesor: nadie tiene que escribir a qué clase pertenece. Quien
-     escribe es teacher o admin, y el límite está puesto en la RPC, no acá. */
-  var _esProfe = esProfe();
+  /* ---- Classroom ---- Ver el bloque CLASSROOM más arriba: acá solo va el
+     contenedor; todo lo pinta claseAbrir() cuando la pestaña se abre, porque
+     hace falta ir al servidor y no tiene sentido pedirlo si nadie la mira. */
   G.clase += homeSection('🏫 Classroom',
-    '<div class="class-wrap">' +
-      (_esProfe
-        ? '<div class="class-compose">' +
-            '<p class="class-hint">Anything you post here shows up for every student with a ' +
-              '<b>' + escHtml((currentUser && currentUser.email ? currentUser.email.split('@')[1] : 'your school')) + '</b> account.</p>' +
-            '<input type="hidden" id="class-id" value="">' +
-            '<label class="auth-lbl" for="class-title">Title</label>' +
-            '<input id="class-title" class="auth-inp" type="text" maxlength="120" placeholder="Homework for Friday">' +
-            '<label class="auth-lbl" for="class-body">Message</label>' +
-            '<textarea id="class-body" class="class-ta" rows="4" maxlength="2000" placeholder="What they need to know, and by when."></textarea>' +
-            '<label class="class-pin class-istask"><input type="checkbox" id="class-istask"> ' +
-              'Make this an <b>assignment</b> — they can take it as many times as they want, ' +
-              'and it draws different questions each time</label>' +
-            '<div id="class-task" class="class-task hidden">' +
-              '<p class="class-hint">Pick the topics. The app builds a fresh test from them on every attempt, ' +
-                'so repeating it is practice, not memorising.</p>' +
-              '<div class="ct-chips">' + PLAN_TOPICS.map(function(t){
-                return '<button type="button" class="f-chip" data-task-topic="' + escAttr(t.key) + '">' +
-                  escHtml(t.t) + '</button>';
-              }).join('') + '</div>' +
-              '<div class="ct-row">' +
-                '<label class="ct-lbl">Length' +
-                  '<select id="class-min" class="ct-sel">' +
-                    '<option value="10">10 min · 6 questions</option>' +
-                    '<option value="20" selected>20 min · 12 questions</option>' +
-                    '<option value="40">40 min · 20 questions</option>' +
-                  '</select></label>' +
-                '<label class="ct-lbl">Level' +
-                  '<select id="class-niv" class="ct-sel">' +
-                    '<option value="examen" selected>Test level</option>' +
-                    '<option value="mas">Hardest only</option>' +
-                    '<option value="donde">Build up</option>' +
-                  '</select></label>' +
-                '<label class="ct-lbl">Mode' +
-                  '<select id="class-modo" class="ct-sel">' +
-                    '<option value="drill" selected>Drill — no timer, explains as they go</option>' +
-                    '<option value="exam">Exam — timed, graded at the end</option>' +
-                  '</select></label>' +
-                '<label class="ct-lbl">Due <input type="date" id="class-due" class="ct-sel"></label>' +
-              '</div>' +
-            '</div>' +
-            '<div class="class-actions">' +
-              '<label class="class-pin"><input type="checkbox" id="class-pin"> Pin to the top</label>' +
-              '<button type="button" class="btn-primary" id="class-save">Post</button>' +
-              '<button type="button" class="btn-outline hidden" id="class-cancel">Cancel edit</button>' +
-            '</div>' +
-          '</div>'
-        : '') +
-      '<div id="class-list" class="class-list"><p class="empty-note">Loading…</p></div>' +
-    '</div>', null, true);
+    '<div id="class-body-zone" class="class-wrap"><p class="empty-note">Loading…</p></div>', null, true);
 
   G.progreso += homeSection('Completed', completedSets.length ? completedSets.map(setCard).join('') : '<div class="empty-note">Nothing completed yet.</div>', completedSets.length, false);
   var GRUPOS = [
@@ -2880,6 +3577,16 @@ function renderHome(){
       intenta(function(){ $('#set-sections').scrollIntoView({ block: 'start' }); }, 'scroll a la pestaña');
     });
   });
+  /* Un botón que manda a otra pestaña (el puntero del camino de dominio en
+     Daily). Pasa por la misma llave que la navegación para que no queden dos
+     formas de cambiar de pestaña que se puedan desincronizar. */
+  Array.prototype.forEach.call(document.querySelectorAll('#set-sections [data-goto-tab]'), function(b){
+    b.addEventListener('click', function(){
+      store.set('satapp_home_tab', b.getAttribute('data-goto-tab'));
+      renderHome();
+      intenta(function(){ $('#set-sections').scrollIntoView({ block: 'start' }); }, 'scroll a la pestaña');
+    });
+  });
 
   /* Cada lanzador a su pestaña. Fuera de ella se esconde y se guarda al final del
      home, para que sus listeners (cableados una vez en init) sigan vivos. */
@@ -2890,7 +3597,7 @@ function renderHome(){
     else { el.classList.add('hidden'); $('#view-home .home-wrap').appendChild(el); }
   });
   planWire();
-  if(activa === 'clase'){ classWire(); classLoad(); }
+  if(activa === 'clase') claseAbrir();
 
   /* El buscador filtra EN EL DOM: nada se vuelve a pintar, así que no se pierde
      el scroll ni lo que el estudiante ya escribió. Con menos de TOPE resultados
@@ -2944,20 +3651,14 @@ function renderHome(){
     aplicar();
   });
 
-  Array.prototype.forEach.call(document.querySelectorAll('#set-sections [data-fast]'), function(b){
+  Array.prototype.forEach.call(document.querySelectorAll('#set-sections [data-skill]'), function(b){
     b.addEventListener('click', function(){
-      var n = parseInt(b.getAttribute('data-fast'), 10) || 5;
-      var temas = (planState().elegidos && planState().elegidos.length)
-        ? planState().elegidos : planRecomendados(planRanking());
-      if(!temas.length){ toast('Answer a few questions first so there is something to target.', true); return; }
-      // minutos ≈ una pregunta por minuto, que es el ritmo real del examen
-      var set = planBuildSet(temas, { minutos: n, modo: 'drill', nivel: 'examen' });
-      if(!set.questions.length){ toast('No questions left for those topics. Pick others in Daily → My improvement plan.', true); return; }
-      set.questions = set.questions.slice(0, n);
-      set.title = n + '-question quick drill';
+      var set = skillBuildSet(b.getAttribute('data-skill'), b.getAttribute('data-nivel'), 12);
+      if(!set || !set.questions.length){ toast('Nothing in the bank for that skill at that level yet.', true); return; }
       _beginSession(set, 'drill');
     });
   });
+  wireFast();
   Array.prototype.forEach.call(document.querySelectorAll('#set-sections [data-start-exam]'), function(b){
     b.addEventListener('click', function(){ if(!b.disabled) startSession(b.getAttribute('data-start-exam'), 'exam'); });
   });
@@ -4091,6 +4792,25 @@ function updateTimer(){
   var v = S.mode === 'exam' ? S.secondsLeft : S.elapsed;
   t.textContent = S.timerHidden ? '⏱' : fmt(v);
   if(S.mode === 'exam' && S.secondsLeft <= 300) t.classList.add('low'); else t.classList.remove('low');
+  pintarPace();
+}
+
+/* El reloj POR PREGUNTA del Pace Trainer. El reloj de arriba mide la sesión
+   entera y por eso no sirve para esto: se puede terminar a tiempo habiendo
+   gastado cuatro minutos en una y diez segundos en otra, que es exactamente el
+   patrón que hace perder puntos al final del módulo. */
+function pintarPace(){
+  var c = $('#pace-chip');
+  if(!c) return;
+  var seg = S && S.set && S.set.paceSeg;
+  if(!seg){ c.classList.add('hidden'); return; }
+  c.classList.remove('hidden');
+  var usados = Math.floor((Date.now() - (S.tqDesde || Date.now())) / 1000) +
+    Math.floor((S.tiempos[(S.set.questions[S.idx] || {}).id] || 0) / 1000);
+  var quedan = seg - usados;
+  c.textContent = quedan >= 0 ? quedan + 's left on this one' : Math.abs(quedan) + 's over';
+  c.classList.toggle('cerca', quedan >= 0 && quedan <= Math.round(seg * 0.25));
+  c.classList.toggle('pasado', quedan < 0);
 }
 
 /* ================= RENDER QUESTION ================= */
@@ -4406,7 +5126,11 @@ function finishSession(expired){
         return { qid: r.q.id, setId: r.q._setId || S.set.id, domain: r.q.domain, skill: r.q.skill,
                  difficulty: r.q.difficulty, ok: r.ok, user: r.user, correct: r.q.type === 'spr' ? r.q.answer : r.q.correct,
                  conf: S.conf[r.q.id] || null,
-                 ms: S.tiempos[r.q.id] || null };
+                 ms: S.tiempos[r.q.id] || null,
+                 // la destreza OFICIAL, no el título libre: es lo que el reporte
+                 // del profesor agrupa, y es el mismo idioma que el reporte de
+                 // puntaje que le va a llegar al estudiante de College Board
+                 sk: (skillOf(r.q) || {}).k || null };
       })
     });
   }
@@ -5761,7 +6485,7 @@ function mockFinish(){
     date: todayStr(), setId:'full-mock', setTitle:title, mode:'exam',
     score: correct, total: allR.length, timeUsed: MOCK.time||0, expired:false,
     mock: { kind:kind, hard:!!MOCK.hard, extreme:!!MOCK.extreme, real:!!MOCK.real, num:MOCK.num, max:max, total:total, rwScore:rwScore, mathScore:mathScore, rwPath:MOCK.paths.rw||null, mathPath:MOCK.paths.math||null },
-    perQuestion: allR.map(function(r){ return { qid:r.q.id, setId:r.q._setId, domain:r.q.domain, skill:r.q.skill, difficulty:r.q.difficulty, ok:r.ok, user:r.user, correct: r.q.type==='spr'?r.q.answer:r.q.correct }; })
+    perQuestion: allR.map(function(r){ return { qid:r.q.id, setId:r.q._setId, domain:r.q.domain, skill:r.q.skill, difficulty:r.q.difficulty, ok:r.ok, user:r.user, correct: r.q.type==='spr'?r.q.answer:r.q.correct, sk:(skillOf(r.q)||{}).k||null }; })
   });
   renderMockResults({ kind:kind, max:max, total:total, rwScore:rwScore, mathScore:mathScore, paths:MOCK.paths, rwAll:rwAll, mathAll:mathAll, meta:{ date:todayStr() } });
 }
@@ -6299,7 +7023,10 @@ window.SATAPP = {
   safeClearHistory: safeClearHistory, downloadHistory: downloadHistory, toast: toast,
   planRanking: planRanking, planBuildSet: planBuildSet, planState: planState, planSave: planSave,
   planBank: planBank, planStats: planStats, PLAN_TOPICS: PLAN_TOPICS,
-  toggleLineReader: toggleLineReader, toggleRef: toggleRef, SETS: function(){ return SETS; }, QINDEX: QINDEX
+  toggleLineReader: toggleLineReader, toggleRef: toggleRef, SETS: function(){ return SETS; }, QINDEX: QINDEX,
+  // taxonomía oficial y Fast Pace: los tests los miden desde acá, no del DOM
+  SAT_SKILLS: SAT_SKILLS, skillOf: skillOf, skillConteo: skillConteo,
+  fastOpciones: fastOpciones, fastBuild: fastBuild, fastBuildPace: fastBuildPace, fastMin: fastMin
 };
 </script>
 <div id="toast-wrap" role="status" aria-live="polite"></div>

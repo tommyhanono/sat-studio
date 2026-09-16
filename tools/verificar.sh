@@ -21,7 +21,11 @@ corre() {
   if "$@"; then :; else fallos=$((fallos + 1)); fi
 }
 
+# El shell va PRIMERO: si index.html está roto por estructura (una llave de CSS
+# sin cerrar, un </script> suelto), todo lo de abajo corre igual y miente.
+corre "Estructura de index.html"                    node tools/test-shell.js
 corre "Banco de preguntas (contenido e integridad)" node tools/auditar-banco.js
+corre "Las 30 destrezas oficiales"                  node tools/auditar-destrezas.js
 corre "Humo (la app se juega de verdad)"            node tools/test-humo.js
 corre "Integridad de datos del estudiante"          node tools/test-datos.js
 corre "Mi plan de mejora"                           node tools/test-plan.js
