@@ -292,7 +292,7 @@
         },
         tip:'To clear a single square root from a denominator, multiply the whole fraction by that root over itself. The bottom turns into a whole number and the root reappears on top.',
         desmos:'Type 8/sqrt(2) and 4sqrt(2) in Desmos: both display 5.65685…. Type 2sqrt(2) and it shows 2.8284, half as much.',
-        desmosLatex:['y=8/\sqrt{2}','y=4\sqrt{2}']
+        desmosLatex:['y=8/\\sqrt{2}','y=4\\sqrt{2}']
       },
       {
         id:'AEQ-19', type:'mc', domain:'Advanced Math', difficulty:'Media',
@@ -498,7 +498,7 @@
         },
         tip:'To clear a two-term radical denominator, multiply by its conjugate — same terms, opposite middle sign. The product is a² − b², and the radicals disappear.',
         desmos:'Type 10/(sqrt(7)-sqrt(2)) and 2sqrt(7)+2sqrt(2) in Desmos: both give 8.1199…. The version over 9 gives 4.51.',
-        desmosLatex:['y=10/(\sqrt{7}-\sqrt{2})','y=2\sqrt{7}+2\sqrt{2}']
+        desmosLatex:['y=10/(\\sqrt{7}-\\sqrt{2})','y=2\\sqrt{7}+2\\sqrt{2}']
       },
       {
         id:'AEQ-33', type:'mc', domain:'Advanced Math', difficulty:'Difícil', extreme:true,
