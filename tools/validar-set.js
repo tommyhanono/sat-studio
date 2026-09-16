@@ -33,7 +33,21 @@ const { esEspanol } = require('./detector-espanol');
 const { cargarBanco } = require('./lib-banco');
 const { medir: medirLargo } = require('./lib-largo');
 
+
 const RAIZ = path.resolve(__dirname, '..');
+/* ---------- la destreza oficial en la que cae cada pregunta ----------
+   Un set puede pasar todas las puertas de arriba y quedar MAL CLASIFICADO en
+   silencio. `skillOf()` decide mirando el campo `skill` más los primeros 160
+   caracteres del enunciado, y gana el PRIMER matcher del dominio, no el más
+   específico: escribir "Inferences (date the evidence to…)" manda la pregunta a
+   *Command of Evidence*, no a *Inferences*.
+   Eso no rompe nada visible — rompe los números que el estudiante ve en la
+   pestaña de temas y lo que el plan de mejora le recomienda practicar. Por eso
+   se reporta acá, en la puerta, y no cuando alguien lo note meses después. */
+const _html = fs.readFileSync(path.join(RAIZ, 'index.html'), 'utf8');
+const _trozo = (a, b) => { const i = _html.indexOf(a), j = _html.indexOf(b, i); return _html.slice(i, j); };
+const _evalGlobal = eval;   // indirecto: este archivo es 'use strict'
+_evalGlobal(_trozo('var SAT_SKILLS', 'function skillByKey'));
 /* Los ocho oficiales. El banco además usa dominios CRUZADOS ("Algebra + Functions",
    "Advanced Math + Data") para preguntas que tocan dos: el auditor las cuenta en
    los dos lados a propósito. Un set nuevo debería usar uno de los ocho, así que
@@ -235,6 +249,28 @@ for (const rel of archivos) {
       err(rel, `la correcta es visiblemente la más CORTA en ${L.corta} de ${L.n} ` +
         `(${L.pctC.toFixed(0)} %): "nunca marques la más larga" lo resuelve`);
     }
+  }
+
+  /* Dónde cayó cada pregunta, y si alguna la recogió el cajón de sastre. */
+  const porSkill = {};
+  let enCajon = 0, fueraDeDominio = 0;
+  qs.forEach(q => {
+    const sk = (typeof skillOf === 'function') ? skillOf(q) : null;
+    if (!sk) { fueraDeDominio++; return; }
+    porSkill[sk.t] = (porSkill[sk.t] || 0) + 1;
+    const texto = String(q.skill || '') + ' ' + String(q.stem || '').slice(0, 160);
+    if (!sk.m.test(texto)) enCajon++;
+  });
+  const destrezas = Object.keys(porSkill).sort((a, b) => porSkill[b] - porSkill[a]);
+  if (destrezas.length) {
+    console.log('  destrezas: ' + destrezas.map(t => `${t} ${porSkill[t]}`).join(' · '));
+  }
+  if (fueraDeDominio) {
+    err(rel, `${fueraDeDominio} pregunta(s) no caen en ninguna destreza oficial: revisá su "domain"`);
+  }
+  if (enCajon) {
+    avi(rel, `${enCajon} pregunta(s) las recogió el cajón de sastre de su dominio — ` +
+      `su texto de "skill" no coincide con ninguna regla, así que la destreza es una suposición`);
   }
 
   const mc = mcQs.length;
