@@ -1529,6 +1529,7 @@ var SAT_SET_FILES = [
   'sets/math-geo-pd-a.js',
   'sets/rw-central-b.js',
   'sets/rw-infer-b.js',
+  'sets/rw-evid-a.js',
 
   // Desmos how-to hints per Math question (merged into questions at load)
   'sets/desmos-a.js',
@@ -2058,7 +2059,7 @@ var SAT_SKILLS = [
   /* ---- Reading & Writing ---- */
   { k:'ii-central',  dom:'Information and Ideas', sec:'rw', peso:26,
     t:'Central Ideas and Details',
-    m:/central|main idea|details?\b|summar|gist|overall point|topic sentence/i },
+    m:/central|main idea|details?\b|summar|\bgist\b|overall point|topic sentence/i },
   { k:'ii-quant',    dom:'Information and Ideas', sec:'rw', peso:26,
     t:'Command of Evidence: Quantitative',
     m:/quantitative|graph|table|chart|figure|data in context|interpreting data|percent of the|bar\b|scatter/i },
@@ -2145,7 +2146,7 @@ var SAT_SKILLS = [
     m:/mean\b|median|mode\b|average|standard deviation|spread|range\b|box plot|histogram|dot plot|one-variable|distribution|outlier|weighted/i },
   { k:'pd-percent',  dom:'Problem-Solving & Data Analysis', sec:'math', peso:15,
     t:'Percentages',
-    m:/percent|discount|markup|interest|increase|decrease/i },
+    m:/percent|discount|markup|interest|\bincreased? by\b|\bdecreased? by\b|price|sale\b|tax\b|tip\b/i },
   { k:'pd-ratio',    dom:'Problem-Solving & Data Analysis', sec:'math', peso:15,
     t:'Ratios, rates and units', cajon:true,
     m:/ratio|\brate\b|unit|proportion|scale|convert|speed|density|per \w+|miles|kilograms|liters/i },
@@ -2484,7 +2485,7 @@ var PLAN_TOPICS = [
   { key:'crosstext',sec:'rw', dom:'Craft and Structure', dom2:'Information and Ideas', t:'Paired passages', m:/cross-?text|paired|both (?:texts|passages|authors)|passage a|perspective|compromise|across passages|agreement across|unstated disagreement/i },
   { key:'evidence', sec:'rw', dom:'Information and Ideas', t:'Evidence (text & data)', m:/evidence|quotation|\bquote|data in context|interpreting data|graph|table|figure|supports?\b|weakens?\b|undermine/i },
   { key:'infer',    sec:'rw', dom:'Information and Ideas', t:'Inference & reasoning', m:/inferen|infer\b|implicat|fallacy|conditional|contradictor|complementar|reasoning|claim|synthes|position|logic/i },
-  { key:'central',  sec:'rw', dom:'Information and Ideas', t:'Central ideas & details', m:/central|main idea|details?\b|summar|gist|overall point/i }
+  { key:'central',  sec:'rw', dom:'Information and Ideas', t:'Central ideas & details', m:/central|main idea|details?\b|summar|\bgist\b|overall point/i }
 ];
 function planTopicOf(q){
   var sec = (q._section === 'math') ? 'math' : 'rw';

@@ -22,7 +22,7 @@
         id:'EVA-01', type:'mc', domain:'Information and Ideas', difficulty:'Fácil',
         skill:'Command of Evidence: Textual — finding that supports a hypothesis',
         passage:"An agricultural entomologist planted a strip of wildflowers along one edge of a squash field. She hypothesizes that the strip raises the field’s own harvest by drawing in wild bees that then pollinate the squash flowers, not merely by giving bees a place to live.",
-        stem:'Which finding, if true, would most strongly support the entomologist’s hypothesis?',
+        stem:'Which finding, if true, would most strongly support the hypothesis about the wildflower strip?',
         choices:{
           A:"Squash rows within 20 meters of the wildflower strip set 31 percent more fruit than rows at the far end of the same field.",
           B:"The wildflower strip drew 14 species of wild bees, 5 more than were counted along the untouched edge of the field.",
@@ -102,7 +102,7 @@
         id:'EVA-05', type:'mc', domain:'Information and Ideas', difficulty:'Media',
         skill:'Command of Evidence: Textual — finding that supports a hypothesis',
         passage:"In a noisy port city, house sparrows sing at a higher pitch than sparrows of the same species in nearby farmland. An ornithologist proposes that the birds raise their pitch in response to low-frequency traffic noise, which would otherwise bury their songs, rather than city birds simply being born with higher voices.",
-        stem:'Which finding, if true, would most strongly support the ornithologist’s proposal?',
+        stem:'Which finding, if true, would most strongly support the proposal about the sparrows’ pitch?',
         choices:{
           A:"City sparrows weigh about 8 percent less than the farmland birds, and across songbirds a smaller body generally means a higher pitch.",
           B:"The same tagged city sparrows sing about 300 hertz higher during rush hour than they do on the same corner at 4 a.m., when traffic is light.",
@@ -122,7 +122,7 @@
         id:'EVA-06', type:'mc', domain:'Information and Ideas', difficulty:'Media',
         skill:'Command of Evidence: Textual — finding that supports a hypothesis',
         passage:"A duck-billed dinosaur carried a hollow, curved crest on its skull. One paleontologist argues that the crest worked as a resonating chamber for producing low calls, rather than as a visual signal for attracting mates.",
-        stem:'Which finding, if true, would most strongly support the paleontologist’s argument?',
+        stem:'Which finding, if true, would most strongly support the argument about the crest?',
         choices:{
           A:"CT scans show the crest’s tubes link the nostrils to the windpipe, and a printed model resonates at 30 hertz when air is pushed through.",
           B:"Males and females carried crests of noticeably different size and curve, a contrast that stayed visible from a distance across open ground.",
@@ -162,7 +162,7 @@
         id:'EVA-08', type:'mc', domain:'Information and Ideas', difficulty:'Media',
         skill:'Command of Evidence: Textual — finding that supports a hypothesis',
         passage:"A mountain glacier slides downhill faster each summer than it did a decade ago. One glaciologist attributes the speedup to meltwater draining through shafts to the glacier’s bed, where it lubricates the contact between ice and bedrock, rather than to warmer air thinning the ice from above.",
-        stem:'Which finding, if true, would most strongly support the glaciologist’s explanation?',
+        stem:'Which finding, if true, would most strongly support the meltwater explanation?',
         choices:{
           A:"Average summer air temperature at the glacier has risen about 1.4 °C since the first instruments were installed there in 1986.",
           B:"The glacier has lost roughly 18 meters of thickness at its midpoint across three decades of repeat survey flights over the valley.",
@@ -222,7 +222,7 @@
         id:'EVA-11', type:'mc', domain:'Information and Ideas', difficulty:'Difícil', extreme:true,
         skill:'Command of Evidence: Textual — finding that supports a hypothesis',
         passage:"A shallow lake’s plankton collapsed over one decade, and its perch fishery collapsed with it. Fertilizer use on the surrounding farms climbed during those same years, and an invasive filter-feeding mussel spread across the lake bottom during those same years as well. One limnologist argues that the mussels, not the fertilizer, drove the plankton down.",
-        stem:'Which finding, if true, would most strongly support the limnologist’s argument?',
+        stem:'Which finding, if true, would most strongly support the argument that the mussels emptied the water?',
         choices:{
           A:"Water clarity in the lake improved sharply over the decade, so that the bottom is now visible at 4 meters instead of at 1 meter.",
           B:"Across 30 lakes in the region, plankton fell only where mussels arrived, with no relation to how much fertilizer each lake’s farms applied.",
@@ -267,7 +267,7 @@
           A:"A coworking space with 200 desks opened next door the week the card launched, and most of the new sales are to its members.",
           B:"About 40 percent of the punch cards handed out in the first month were never brought back to the counter to be stamped again.",
           C:"Each free drink handed out on a completed card costs the café about 90 cents in milk, coffee beans and the paper cup.",
-          D:"Two other cafés within a kilometer began offering punch cards of their own after seeing hers on the counter by the register."
+          D:"Two other coffee shops within a kilometer began offering punch cards of their own after seeing hers by the register."
         },
         correct:'A',
         expCorrect:"Her conclusion is that the CARD produced the rise. A supplies a rival cause that starts in the very same week and is big enough to account for the increase: 200 people now working next door, and most of the new sales are theirs. With the timing identical and the size sufficient, the 18 percent no longer points at the card.",
@@ -322,10 +322,10 @@
         id:'EVA-16', type:'mc', domain:'Information and Ideas', difficulty:'Media',
         skill:'Command of Evidence: Textual — finding that weakens a hypothesis',
         passage:"At an upland site, a ring of standing stones has a gap through which the midsummer sun rises when the ring is viewed from its center. An archaeologist concludes that the builders, working around 2,500 BCE, laid the ring out deliberately to mark the solstice.",
-        stem:'Which finding, if true, would most seriously weaken the archaeologist’s conclusion?',
+        stem:'Which finding, if true, would most seriously weaken the conclusion about the solstice?',
         choices:{
           A:"Charcoal from a hearth at the circle’s center returns dates between 2,600 and 2,400 BCE, matching the proposed building period.",
-          B:"Photographs show the two stones framing the gap lay flat on the ground until a landowner had them re-erected, by guesswork, in 1887.",
+          B:"Photographs show the stones framing the gap lay flat until a landowner re-erected them, by guesswork, in 1887.",
           C:"Sixteen other stone rings stand within 40 kilometers, and the largest of them is nearly twice this circle’s diameter across.",
           D:"The site sits on a ridge from which the surrounding valleys are hidden by low cloud through much of the winter."
         },
@@ -405,7 +405,7 @@
         stem:'Which finding, if true, would most seriously weaken the developers’ conclusion?',
         choices:{
           A:"Volunteers’ scores on the game itself climbed steeply for about three weeks and then flattened out for the rest of the study.",
-          B:"The attention test uses the same matching-by-color rule as the game, and volunteers gained nothing on three unrelated attention tasks.",
+          B:"The test uses the game’s own matching-by-color rule, and volunteers gained nothing on three unrelated tasks.",
           C:"Volunteers who played the game for six weeks reported enjoying it and said that they felt sharper by the end of the study.",
           D:"A control group that played a word puzzle for six weeks improved on the word puzzle but not on the matching game."
         },
@@ -422,7 +422,7 @@
         id:'EVA-21', type:'mc', domain:'Information and Ideas', difficulty:'Difícil',
         skill:'Command of Evidence: Textual — finding that weakens a hypothesis',
         passage:"A valley town flooded in September, after loggers had cleared much of the forest on the slopes above it during the preceding two years. A hydrologist concludes that the clearing caused the flood by letting rain run off the bare hillsides instead of soaking into the ground.",
-        stem:'Which finding, if true, would most seriously weaken the hydrologist’s conclusion?',
+        stem:'Which finding, if true, would most seriously weaken the conclusion that the clearing caused the flood?',
         choices:{
           A:"The neighboring valley, still fully forested, flooded to the same depth that week under the heaviest rainfall recorded since 1901.",
           B:"Bare slopes in the cleared area shed about 30 percent more water per hour than forested slopes did in side-by-side test plots.",
@@ -477,6 +477,226 @@
           D:"Teams that kept the fifth day and saw no change are the control group behaving exactly as the director would predict: no schedule change, no output change."
         },
         tip:'Whenever a claim rests on a total — sales, output, cases — check whether the denominator moved. A per-person or per-hour figure is what separates real productivity from extra headcount.'
+      },
+      {
+        id:'EVA-24', type:'mc', domain:'Information and Ideas', difficulty:'Fácil',
+        skill:'Command of Evidence: Textual — quotation that illustrates a claim',
+        passage:"In the novel “The Glass Apiary,” the narrator grows up in a house surrounded by her father’s beehives. A student argues that the narrator marks the passing of the year by her father’s work with the bees rather than by the calendar.",
+        stem:'Which quotation from “The Glass Apiary” most effectively illustrates the student’s claim?',
+        choices:{
+          A:"“The hives stood in two rows behind the house, twelve of them, white as teeth in the long grass.”",
+          B:"“I did not know it was May until my father came in smelling of smoke and said the first frames were heavy.”",
+          C:"“My father had kept bees since before I was born, and he spoke of the queens as though they were relatives.”",
+          D:"“On Sundays the neighbors came to buy honey, and my mother wrote their names in a ledger by the door.”"
+        },
+        correct:'B',
+        expCorrect:"The claim is about how the narrator tells TIME. In B the month arrives through her father’s work — smoke on his clothes, heavy frames — and she says plainly that she had no other way of knowing it was May. The beekeeping is doing the calendar’s job.",
+        expWrong:{
+          A:"A vivid description of the hives themselves. It sets the scene and counts them, but there is no time in the sentence at all.",
+          C:"This establishes how long her father has kept bees and how he talks about them. It illustrates his devotion, not how she marks the seasons.",
+          D:"Sundays and the ledger do mark a rhythm, which makes this tempting, but it is the rhythm of the week and the neighbors rather than of her father’s work."
+        },
+        tip:'For "illustrates the claim," the quotation has to SHOW the specific behavior named. Scene-setting, background and a different kind of example all fail even though they come from the right book.'
+      },
+      {
+        id:'EVA-25', type:'mc', domain:'Information and Ideas', difficulty:'Fácil',
+        skill:'Command of Evidence: Textual — quotation that illustrates a claim',
+        passage:"“Tin Whistle Season” follows a small-town brass band through one summer. A student claims that the narrator, a young cornet player, cares more for the band’s Thursday rehearsals than for the concerts they spend the season preparing.",
+        stem:'Which quotation from “Tin Whistle Season” most effectively illustrates the student’s claim?',
+        choices:{
+          A:"“I liked Thursdays best, when we played the same eight bars wrong until the hall went warm and quiet.”",
+          B:"“At the summer concert the mayor spoke for nine minutes, and the crowd fanned itself with the programs.”",
+          C:"“Mr. Ledwidge kept the band going for thirty years on borrowed chairs and a whistle he had bought in Cork.”",
+          D:"“We had four trumpets, two clarinets, and a drum that had come down to us from the old brigade band.”"
+        },
+        correct:'A',
+        expCorrect:"A preference needs both halves stated: what is liked, and that it is liked more. A gives them — “liked Thursdays best” — and ties the liking to the rehearsal itself: the same wrong bars, the warm and quiet hall.",
+        expWrong:{
+          B:"The concert scene makes a performance look tedious, but the narrator never says what he prefers. A quotation that runs down the alternative is not the same as one that states the preference.",
+          C:"Praise for Mr. Ledwidge’s persistence. It illustrates devotion to the band as an institution, not a choice between practice and performance.",
+          D:"An inventory of the band’s instruments. Useful color, but there is no attitude anywhere in it."
+        },
+        tip:'If the claim is about a preference, the quotation must contain the liking AND the thing liked. Quotations that only make the other option look bad leave the preference unstated.'
+      },
+      {
+        id:'EVA-26', type:'mc', domain:'Information and Ideas', difficulty:'Fácil',
+        skill:'Command of Evidence: Textual — quotation that illustrates a claim',
+        passage:"In “The Quarry Road,” the narrator spends a summer in a village built around a limestone quarry. A student writes that the narrator describes the quarry as though it were a living creature.",
+        stem:'Which quotation from “The Quarry Road” most effectively illustrates the student’s claim?',
+        choices:{
+          A:"“Trucks left the gate at six, loaded to the sill, and came back empty a little before noon.”",
+          B:"“My uncle had worked the face for twenty years and could read the grain of the stone with his thumb.”",
+          C:"“At dusk the quarry breathed out its heat, and the whole grey throat of it sighed under the cooling air.”",
+          D:"“From the ridge you could see the road bending white between the pines toward the village below.”"
+        },
+        correct:'C',
+        expCorrect:"Personification needs a body and a body’s actions, and C has both: the quarry breathes, it has a throat, and it sighs. The pit is being written as a creature rather than as a hole in the ground.",
+        expWrong:{
+          A:"The trucks and their schedule describe the work going on at the quarry. Machinery in motion is not the same as the place being alive.",
+          B:"His uncle reads the stone with his thumb. The skill belongs to the man; the stone stays an object he handles.",
+          D:"A view of the road from the ridge. It is a fine image, but nothing in it acts, moves or breathes."
+        },
+        tip:'For "described as if alive," look for verbs and body parts that belong to creatures: breathed, throat, sighed, shoulders. Vivid description on its own is not personification.'
+      },
+      {
+        id:'EVA-27', type:'mc', domain:'Information and Ideas', difficulty:'Media',
+        skill:'Command of Evidence: Textual — quotation that illustrates a claim',
+        passage:"“Saltmarsh Summers” is narrated by a woman recalling the summers she spent with her grandmother on the coast. A critic argues that the narrator’s admiration for her grandmother cannot be separated from her frustration with her.",
+        stem:'Which quotation from “Saltmarsh Summers” most effectively illustrates the critic’s argument?',
+        choices:{
+          A:"“My grandmother could name every bird on the water without once lifting the glasses to her eyes.”",
+          B:"“She refused the second operation, and the doctor wrote her a letter that she never opened.”",
+          C:"“In August the marsh smelled of salt and cut grass, and the tide came up over the causeway twice every day.”",
+          D:"“No one was so certain, and I would have forgiven it if she had once been wrong on purpose.”"
+        },
+        correct:'D',
+        expCorrect:"The argument joins two feelings, so the quotation has to hold both. D does it inside one sentence: awe at the grandmother’s certainty, and the exasperation of wishing she would be wrong just once. The forgiveness that never happens is where admiration and grievance meet.",
+        expWrong:{
+          A:"Pure admiration: a skill praised with nothing held against it. Half the claim, and the easiest half to mistake for the whole.",
+          B:"Pure stubbornness: the refusal and the unopened letter, with no admiration anywhere in sight. The other half, alone.",
+          C:"The marsh in August. Atmosphere and setting, not a portrait of the grandmother at all."
+        },
+        tip:'When a claim joins TWO feelings, only a quotation holding both qualifies. The strongest distractors show one feeling cleanly, because each of them is genuinely true of the character.'
+      },
+      {
+        id:'EVA-28', type:'mc', domain:'Information and Ideas', difficulty:'Media',
+        skill:'Command of Evidence: Textual — quotation that illustrates a claim',
+        passage:"In the novel “A Room Above the Bakery,” Lenka takes a job in a bakery and tells everyone she is content there. A student argues that Lenka’s modesty is a performance that keeps her ambition out of sight.",
+        stem:'Which quotation from “A Room Above the Bakery” most effectively illustrates the student’s claim?',
+        choices:{
+          A:"“Lenka said the pastries were her aunt’s recipe and that she had only followed it exactly.”",
+          B:"“She told the neighbors she was content, then sat up counting what the shop would cost.”",
+          C:"“By March she had learned the accounts, the supplier’s prices, and the exact hours the bank manager kept his desk.”",
+          D:"“The bakery’s window faced east, and the light came in over the trays before anyone in the street was awake.”"
+        },
+        correct:'B',
+        expCorrect:"A claim about concealment needs the mask and the face behind it. B has both in one line: the modest disclaimer delivered to the neighbors, and then, the same night, the arithmetic of buying the shop. The gap between what she says and what she does is the performance.",
+        expWrong:{
+          A:"The modest half by itself, with credit handed to her aunt. Nothing here shows what Lenka actually wants, so there is no concealment to see.",
+          C:"The ambitious half by itself, and she pursues it openly. Learning the numbers of the trade is not a thing she is hiding.",
+          D:"The light in the bakery window. Setting, not character, and no one is claiming anything in it."
+        },
+        tip:'A claim about concealment needs BOTH layers in one quotation: what the character shows and what the character is really doing. Two quotations each carrying one layer are the classic traps.'
+      },
+      {
+        id:'EVA-29', type:'mc', domain:'Information and Ideas', difficulty:'Media',
+        skill:'Command of Evidence: Textual — quotation that illustrates a claim',
+        passage:"In “Nine Kinds of Rain,” a man returns to the town where he grew up after twenty years away. A student claims that the town the narrator remembers is more vivid to him than the one he actually walks through.",
+        stem:'Which quotation from “Nine Kinds of Rain” most effectively illustrates the student’s claim?',
+        choices:{
+          A:"“The square was smaller than the square I had carried with me, and its fountain was dry.”",
+          B:"“It rained for eleven days that June, and the gutters ran brown past the gate of the school.”",
+          C:"“My grandfather had sold the mill before I was born, and no one in the family spoke of the price.”",
+          D:"“I stayed four nights at the hotel by the station and walked out each morning before the heat.”"
+        },
+        correct:'A',
+        expCorrect:"The comparison is inside the sentence: the remembered square outsizes the real one, and the fountain his memory kept running is dry. Memory is measured against the place and comes out larger, which is exactly the claim.",
+        expWrong:{
+          B:"Rain and gutters: weather in the town, with no memory set beside it to compare.",
+          C:"A family fact from before he was born. That is inherited information, not his own recollection held up against the present.",
+          D:"His itinerary during the visit. It tells you he is there and what he did, not how the place compares with what he remembered."
+        },
+        tip:'For "memory against reality" claims, look for a comparison inside the quotation: smaller than, not as, used to be. A single vivid image of either one cannot show the gap between them.'
+      },
+      {
+        id:'EVA-30', type:'mc', domain:'Information and Ideas', difficulty:'Media',
+        skill:'Command of Evidence: Textual — quotation that illustrates a claim',
+        passage:"“The Understudy” is narrated by an actor who has spent two seasons waiting to replace the company’s leading actress. A critic argues that the narrator is an unreliable reporter of his own motives: his account of himself gives him away.",
+        stem:'Which quotation from “The Understudy” most effectively illustrates the critic’s argument?',
+        choices:{
+          A:"“I had understudied the part for two full seasons and knew every pause and breath in it.”",
+          B:"“Marguerite played it beautifully, and the reviews in the morning papers said so at some length.”",
+          C:"“I wished her well, and I confess I had learned the lines she forgets in act three.”",
+          D:"“The theatre was cold that winter, and we rehearsed in our coats until the boiler was mended.”"
+        },
+        correct:'C',
+        expCorrect:"Unreliability shows up when a statement undercuts itself. C announces goodwill and then admits, in the same breath, to memorizing precisely where she fails. Both halves cannot be innocent, and the narrator does not appear to notice that he has given himself away.",
+        expWrong:{
+          A:"A statement of his preparation. Understudies are supposed to know the part, so there is nothing self-contradictory in it.",
+          B:"Praise for Marguerite, reported straight and backed by the reviews. If anything it shows him being accurate about her.",
+          D:"The cold theatre and the broken boiler. Working conditions, with no motive in the sentence to be unreliable about."
+        },
+        tip:'Unreliability lives INSIDE a single statement: a denial followed by the evidence against it. Look for the quotation that undermines itself, not one that merely reports something unflattering.'
+      },
+      {
+        id:'EVA-31', type:'mc', domain:'Information and Ideas', difficulty:'Media',
+        skill:'Command of Evidence: Textual — quotation that illustrates a claim',
+        passage:"“Letters from the Interior” collects the letters a traveler sent home while crossing a mountain region by mule. A scholar notes that the traveler reckons distance in effort — days, weather, the state of the animals — rather than in units of length.",
+        stem:'Which quotation from “Letters from the Interior” most effectively illustrates the scholar’s point?',
+        choices:{
+          A:"“The river ran north for a week and then, without any warning at all, turned back on itself.”",
+          B:"“I carried a barometer, two notebooks, and a coat that was wrong for every hour of the day.”",
+          C:"“The map I had been given showed the entire range as a single thin line, which is a kind of lie.”",
+          D:"“It is two days to the pass with fresh mules and four without, and no one here speaks of kilometers.”"
+        },
+        correct:'D',
+        expCorrect:"The claim names a unit, and D uses it: the pass is two days away, or four, depending on the mules. The closing clause rules out the alternative explicitly — nobody there measures the way in kilometers.",
+        expWrong:{
+          A:"The river’s course describes direction and shape of the land, not how far anything is or how the traveler reckons it.",
+          B:"A packing list. It shows what the journey cost him in comfort, which is effort of a sort, but no distance is being measured.",
+          C:"This attacks the map for flattening the range, so it criticizes the conventional unit without offering the traveler’s own. Close, but the claim is about what he uses, not what he rejects."
+        },
+        tip:'When the claim names a unit or a yardstick, the quotation has to USE it. A quotation that only complains about the usual measure is the standard near miss.'
+      },
+      {
+        id:'EVA-32', type:'mc', domain:'Information and Ideas', difficulty:'Difícil',
+        skill:'Command of Evidence: Textual — quotation that illustrates a claim',
+        passage:"“The Copper Kettle” follows forty years in the life of a small-town diner. A scholar argues that the story registers the town’s decline through the diner’s objects rather than through anyone saying so.",
+        stem:'Which quotation from “The Copper Kettle” most effectively illustrates the scholar’s argument?',
+        choices:{
+          A:"“Everyone agreed that the town had seen better days, and they said so most mornings over their coffee.”",
+          B:"“Of the nine stools, two had been re-covered, and the rest wore the shape of men gone.”",
+          C:"“The mill had closed in the spring of 1974, and the union hall was sold off the following year.”",
+          D:"“Ada kept the radio tuned to the station out of Bellingham and turned it up for the weather.”"
+        },
+        correct:'B',
+        expCorrect:"The argument names a vehicle — objects — and a cargo: decline. B carries both. Nine stools, two patched, the rest still holding the shape of men who no longer come in. The town’s loss is recorded in worn upholstery, and nobody has to announce it.",
+        expWrong:{
+          A:"Here the decline is stated outright, in dialogue, which is precisely the method the scholar says the story avoids.",
+          C:"A dated summary of events: mill closed, hall sold. It reports the causes of the decline directly, again in statements rather than in things.",
+          D:"The radio is an object, which makes this tempting, but what it carries is habit and weather. The object has to register the loss."
+        },
+        tip:'"Shows X through Y" claims need BOTH halves. Check that the quotation uses the named vehicle (objects, weather, hands) and that what the vehicle carries is the named idea.'
+      },
+      {
+        id:'EVA-33', type:'mc', domain:'Information and Ideas', difficulty:'Difícil', extreme:true,
+        skill:'Command of Evidence: Textual — quotation that illustrates a claim',
+        passage:"In “Winter Tenants,” a landlord is admired along his row of houses for his easy way about rent. A critic argues that the landlord’s generosity is always financed by another tenant, so that his kindness never costs him anything.",
+        stem:'Which quotation from “Winter Tenants” most effectively illustrates the critic’s argument?',
+        choices:{
+          A:"“He forgave the Dunns their rent and took it, in March, from the Hetheringtons’ coal money.”",
+          B:"“He was known up and down the row for letting a week go by, and even two, before he asked.”",
+          C:"“The Hetheringtons had waited eleven months for the coal money and had long stopped asking about it.”",
+          D:"“He wore the same brown coat through four winters and kept his accounts in a child’s exercise book.”"
+        },
+        correct:'A',
+        expCorrect:"The critic describes a mechanism with two parties: a favor given to one tenant and paid for by another. A is the only quotation that connects them — the Dunns’ rent forgiven, then recovered in March out of money owed to the Hetheringtons. The generosity and its invoice sit in the same sentence.",
+        expWrong:{
+          B:"Patience about rent shows the generosity, which nobody disputes. What is missing is any sign of who ends up paying for it.",
+          C:"The Hetheringtons’ long wait shows that someone is out of pocket, but not that their money financed a kindness to anyone else. Half the mechanism.",
+          D:"An old coat and a homemade ledger suggest thrift or modesty. That is a different trait, and it argues he spends little on himself rather than that others fund his favors."
+        },
+        tip:'When the claim is a mechanism linking two parties, only a quotation that connects them qualifies. Each half is the trap precisely because each half is true in the book.'
+      },
+      {
+        id:'EVA-34', type:'mc', domain:'Information and Ideas', difficulty:'Difícil',
+        skill:'Command of Evidence: Textual — quotation that illustrates a claim',
+        passage:"“The Piano Tuner’s Notebook” is written as the working diary of a tuner in a provincial city. A student claims that when the tuner’s ear disagrees with his instruments, he treats the instruments as the thing at fault.",
+        stem:'Which quotation from “The Piano Tuner’s Notebook” most effectively illustrates the student’s claim?',
+        choices:{
+          A:"“The meter said the A was true, and I wrote the number down in the column as I always do.”",
+          B:"“Mrs. Achterberg insisted the piano had not been touched since her mother’s time, which was plainly not the case.”",
+          C:"“The meter held at 440 and the note was sour all the same, so I set it aside and trusted the beat I heard.”",
+          D:"“I have tuned in cold rooms and in hot ones, and I allow for the difference before I begin.”"
+        },
+        correct:'C',
+        expCorrect:"The claim describes a conflict and a verdict: ear against instrument, instrument overruled. C stages exactly that — the meter reads 440, the note sounds sour, and the meter is the thing he puts down. Both halves are present, in that order.",
+        expWrong:{
+          A:"Meter and ear agree here, so nothing is being overruled. The line shows routine record-keeping rather than a judgment.",
+          B:"He does override what someone tells him, which is close, but the opponent is a customer’s memory rather than an instrument. Wrong conflict.",
+          D:"Allowing for temperature shows experience and care. No device contradicts him, so there is no disagreement to resolve."
+        },
+        tip:'When a claim names a specific conflict, the quotation must stage that conflict AND show how it is resolved. A near-miss conflict with a different opponent is the likeliest trap.'
       }
     ]
   });
