@@ -1573,6 +1573,7 @@ var SAT_SET_FILES = [
   'sets/rw-coe-quant-deep.js',
   'sets/math-psda-prob-hard.js',
   'sets/math-alg-2var-ramp.js',
+  'sets/math-geo-lines-deep.js',
 
   // Desmos how-to hints per Math question (merged into questions at load)
   'sets/desmos-a.js',
@@ -2199,7 +2200,12 @@ var SAT_SKILLS = [
     m:/circle|circumference|\barc\b|\bsectors?\b|radius|radii|diameter|central angle|tangent line/i },
   { k:'gt-right',    dom:'Geometry & Trigonometry', sec:'math', peso:15,
     t:'Right triangles and trigonometry',
-    m:/right triangle|pythagor|sohcahtoa|sine|cosine|tangent|hypotenuse|30-60-90|45-45-90|complementary angle|leg\b/i },
+    /* `complementary angle` NO va aca: que dos angulos sumen 90 grados es un
+       hecho de Lines, angles and triangles, y esta destreza se prueba ANTES,
+       asi que se llevaba preguntas de geometria pura sin nada de trigonometria.
+       Lo que si faltaba es la NOTACION que usa el examen: escribe sin/cos/tan,
+       no "sine"/"cosine". Sin eso, sin(3x) = cos(x+10) no matcheaba nada. */
+    m:/right triangle|pythagor|sohcahtoa|sine|cosine|tangent|hypotenuse|30-60-90|45-45-90|\bsin\b|\bcos\b|\btan\b|leg\b/i },
   { k:'gt-volume',   dom:'Geometry & Trigonometry', sec:'math', peso:15,
     t:'Area and volume',
     m:/area|volume|solid|cylinder|cone|sphere|hemisphere|prism|pyramid|surface|scaling|dimension/i },

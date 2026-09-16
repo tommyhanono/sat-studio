@@ -89,6 +89,52 @@ if (huerfanas.length) {
   if (huerfanas.length > 20) console.error(`   …y ${huerfanas.length - 20} más`);
   process.exit(1);
 }
+/* ---------- La red POSITIVA: casos canonicos que tienen que caer donde caen ----------
+   S18 en test-shell.js vigila lo contrario — que ningun matcher muerda una palabra
+   inglesa que no le toca. Eso no alcanza: un matcher tambien falla cuando NO reconoce
+   algo suyo, y entonces la pregunta cae en el cajon de sastre del dominio sin que nada
+   se ponga en rojo, porque "todas clasificadas" sigue siendo verdad.
+
+   Cada caso de aqui salio de un error real encontrado en el banco. */
+const CANONICOS = [
+  // 16-sep-2026: el matcher buscaba "sine"/"cosine" y el examen escribe sin/cos/tan,
+  // asi que una identidad de cofuncion caia en Lines, angles and triangles.
+  { skill: 'Cofunction identity (sin = cos)', domain: 'Geometry & Trigonometry',
+    stem: 'In the equation sin(3x - 17) = cos(2x + 42), the measures are those of acute angles. What is x?',
+    espera: 'Right triangles and trigonometry' },
+  // Y al reves: que dos angulos sumen 90 grados es geometria pura, no trigonometria.
+  { skill: 'Complementary angles inside a figure', domain: 'Geometry & Trigonometry',
+    stem: 'In the figure, angle AOC is a right angle and ray OB lies inside it, splitting it into two angles.',
+    espera: 'Lines, angles and triangles' },
+  // 16-sep-2026: `counting` sin \b se comia "discounting", y Probabilidad se prueba
+  // antes que Percentages dentro de Problem-Solving.
+  { skill: 'Discounting a price twice', domain: 'Problem-Solving & Data Analysis',
+    stem: 'A store is discounting a jacket by 20 percent and then by another 10 percent.',
+    espera: 'Percentages' },
+  // `spread` sin \b se comia "spreadsheet", que sale en cualquier pregunta de datos.
+  { skill: 'Unit rate from a spreadsheet of deliveries', domain: 'Problem-Solving & Data Analysis',
+    stem: 'A spreadsheet lists the liters of fuel used per route.', espera: 'Ratios, rates and units' },
+  // `unit` suelto se comia "community".
+  { skill: 'Percent change in a community garden', domain: 'Problem-Solving & Data Analysis',
+    stem: 'A community garden increased its plots by 15 percent.', espera: 'Percentages' },
+  // La linea fina entre las dos destrezas de inferencia estadistica: "randomly selected"
+  // habilita generalizar (claims); estimar un total con su margen es la otra.
+  { skill: 'Margin of error around a sample proportion', domain: 'Problem-Solving & Data Analysis',
+    stem: 'A random sample of 200 residents was surveyed; the estimate was 38 percent with a margin of error of 3 percent.',
+    espera: 'Inference from samples and margin of error' },
+];
+const fallados = CANONICOS.filter(c => {
+  const sk = skillOf({ id: '__canon_' + c.skill, skill: c.skill, domain: c.domain, stem: c.stem });
+  c.cayo = sk ? sk.t : 'SIN CLASIFICAR';
+  return c.cayo !== c.espera;
+});
+if (fallados.length) {
+  console.error(`\n✗ ${fallados.length} caso(s) canonico(s) cayeron en la destreza equivocada:`);
+  fallados.forEach(c => console.error(`   "${c.skill}"\n     esperado: ${c.espera}\n     cayo en : ${c.cayo}`));
+  process.exit(1);
+}
+console.log(`· los ${CANONICOS.length} casos canonicos caen donde deben`);
+
 const enCajon = filas.reduce((a, f) => a + f.cajon, 0);
 console.log(`✓ las ${preguntas.length} preguntas están clasificadas en una destreza oficial`);
 console.log(`· ${preguntas.length - enCajon} entraron por su propia regla · ${enCajon} ` +
