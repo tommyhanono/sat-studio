@@ -102,11 +102,28 @@ console.log('al azar, cada una debería rondar el 25 %');
 /* El corte en 25 % y no en 15: al azar es 50, y con 12-27 preguntas por set el
    ruido es grande. 25 % está claramente por debajo del azar sin disparar por una
    racha. Medido sobre el banco de hoy, los sets de prosa van de 39 % a 95 %. */
-const flacos = prosa.filter(f => f.variables >= 12 && f.pctExtremo != null && f.pctExtremo < 25);
+const medibles = prosa.filter(f => f.variables >= 12 && f.pctExtremo != null);
+const flacos = medibles.filter(f => f.pctExtremo < 25);
 if (flacos.length) {
   console.log('\n⚠︎ la correcta evita los extremos de forma sospechosa (al azar sería ~50 %):');
   flacos.forEach(f => console.log(`   ${f.id}: en un extremo solo ${f.pctExtremo.toFixed(0)} % ` +
     `de las ${f.variables} preguntas donde el largo varía — "marca la del medio" acierta demasiado`));
+}
+/* Y la cola de ARRIBA, que faltaba. Equilibrar "más larga" y "más corta" en 25 %
+   cada una no cierra el agujero: si la correcta casi siempre está en UN extremo,
+   "descarta las dos del medio" pasa de 1 entre 4 a 1 entre 2. El estudiante
+   todavía tiene que elegir entre la más larga y la más corta, así que la ventaja
+   es la mitad de grande que la de "marca siempre la más larga" — pero existe.
+   Medido el 16-sep-2026 el banco promedia 64 %, con cinco sets por encima de 80. */
+const gordos = medibles.filter(f => f.pctExtremo > 80);
+if (gordos.length) {
+  console.log('\n⚠︎ la correcta vive en un extremo casi siempre (al azar sería ~50 %):');
+  gordos.forEach(f => console.log(`   ${f.id}: en un extremo el ${f.pctExtremo.toFixed(0)} % ` +
+    `de las ${f.variables} preguntas donde el largo varía — "descarta las dos del medio" acierta demasiado`));
+}
+if (medibles.length) {
+  const prom = medibles.reduce((a, f) => a + f.pctExtremo, 0) / medibles.length;
+  console.log(`\nla correcta en un extremo de largo: ${prom.toFixed(1)} % del banco (al azar, ~50 %)`);
 }
 if (!malos) { console.log(`✓ ningún set de prosa pasa del ${TOPE} % en ninguna de las dos direcciones`); process.exit(0); }
 console.error(`✗ ${malos} set(s) por encima del ${TOPE} %`);
