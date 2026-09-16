@@ -28,6 +28,7 @@
 const fs = require('fs');
 const path = require('path');
 const { archivosDeSets, RAIZ } = require('./lib-banco');
+const { medir } = require('./lib-largo');   // la misma medida que usa la puerta
 
 const TOPE = 45;   // por encima de esto, el largo delata la respuesta
 
@@ -58,29 +59,10 @@ for (const rel of archivos) {
   let s;
   try { s = leer(rel); } catch (e) { console.error(`✗ ${rel}: ${e.message}`); continue; }
   if (!s) continue;
-  const mc = (s.questions || []).filter(q => (q.type || 'mc') === 'mc' && q.choices && q.correct);
-  if (!mc.length) continue;
-
-  let larga = 0, corta = 0, sumaMax = 0;
-  const casos = [];
-  mc.forEach(q => {
-    const lc = String(q.choices[q.correct]).length;
-    const todas = Object.keys(q.choices).map(k => String(q.choices[k]).length);
-    const otras = Object.keys(q.choices).filter(k => k !== q.correct).map(k => String(q.choices[k]).length);
-    const max = Math.max.apply(null, otras);
-    const min = Math.min.apply(null, otras);
-    sumaMax += Math.max.apply(null, todas);
-    const m = MARGEN(lc);
-    if (lc - max >= m) { larga++; casos.push({ id: q.id, lc, max, min, ventaja: lc - max, tipo: 'larga' }); }
-    if (min - lc >= m) { corta++; casos.push({ id: q.id, lc, max, min, ventaja: min - lc, tipo: 'corta' }); }
-  });
-  const promMax = sumaMax / mc.length;
-  filas.push({
-    rel, id: s.id, sec: s.section, larga, corta, n: mc.length,
-    pctL: 100 * larga / mc.length, pctC: 100 * corta / mc.length,
-    // con opciones cortas el largo no transmite nada: no se juzga
-    prosa: promMax > 14, promMax: Math.round(promMax), casos,
-  });
+  const L = medir(s.questions);
+  if (!L.n) continue;
+  filas.push({ rel, id: s.id, sec: s.section, larga: L.larga, corta: L.corta, n: L.n,
+    pctL: L.pctL, pctC: L.pctC, prosa: L.prosa, promMax: L.promMax, casos: L.casos });
 }
 
 const peor = f => Math.max(f.pctL, f.pctC);

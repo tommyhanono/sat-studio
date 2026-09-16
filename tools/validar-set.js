@@ -31,6 +31,7 @@ const fs = require('fs');
 const path = require('path');
 const { esEspanol } = require('./detector-espanol');
 const { cargarBanco } = require('./lib-banco');
+const { medir: medirLargo } = require('./lib-largo');
 
 const RAIZ = path.resolve(__dirname, '..');
 /* Los ocho oficiales. El banco además usa dominios CRUZADOS ("Algebra + Functions",
@@ -216,15 +217,22 @@ for (const rel of archivos) {
     }
   }
 
-  /* Y el patrón del set entero: si la correcta es la más larga casi siempre, el
-     set se puede contestar midiendo con la vista. */
-  const conOpciones = mcQs.filter(q => q.choices && q.correct);
-  const masLarga = conOpciones.filter(q => {
-    const l = String(q.choices[q.correct] || '').length;
-    return ['A', 'B', 'C', 'D'].every(k => k === q.correct || String(q.choices[k] || '').length <= l);
-  }).length;
-  if (conOpciones.length >= 8 && masLarga > conOpciones.length * 0.6) {
-    err(rel, `la correcta es la opción más larga en ${masLarga} de ${conOpciones.length}: el set se contesta sin leerlo`);
+  /* Y el patrón del set entero: si la correcta se distingue por el largo, el set
+     se puede contestar midiendo con la vista.
+     La medida vive en `lib-largo.js`, compartida con `auditar-longitud.js`:
+     antes cada una contaba distinto y el mismo set salía "28 de 34" en una y
+     "3 %" en la otra. El tope acá es más bajo (35 % contra 45 %) porque esto es
+     la PUERTA: lo que no entra no hay que arreglarlo después. */
+  const L = medirLargo(mcQs);
+  if (L.prosa && L.n >= 8) {
+    if (L.pctL > 35) {
+      err(rel, `la correcta es visiblemente la más LARGA en ${L.larga} de ${L.n} ` +
+        `(${L.pctL.toFixed(0)} %): el set se contesta sin leerlo`);
+    }
+    if (L.pctC > 35) {
+      err(rel, `la correcta es visiblemente la más CORTA en ${L.corta} de ${L.n} ` +
+        `(${L.pctC.toFixed(0)} %): "nunca marques la más larga" lo resuelve`);
+    }
   }
 
   const mc = mcQs.length;
