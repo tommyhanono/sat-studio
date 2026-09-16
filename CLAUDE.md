@@ -164,9 +164,21 @@ sat.classwork      class_id · kind · titulo · cuerpo · spec · vence
   **Desmos** para la demo en vivo.
 - **v1 no se borró.** `sat.posts` y sus tres RPC siguen igual: hay datos de personas ahí.
 
-**Pendiente de operación:** la migración de `supabase/schema.sql` **todavía no está aplicada** en el proyecto
-de Supabase. Hasta que se corra, Classroom muestra un aviso claro ("Classroom is not switched on yet") en vez
-de un error de Postgres, y el resto de la app anda normal.
+**Aplicado y verificado el 15-sep-2026** contra el proyecto, de punta a punta: crear clase (código de 6
+caracteres), asignar, el material con `qid`/`pasos`/`latex` viajando entero, un alumno uniéndose con el código,
+y el reporte. También lo que tiene que **fallar**: una tarea sin destrezas se rechaza (22023) y un alumno que
+pide el reporte recibe 42501. La prueba corrió dentro de una transacción revertida — no dejó una sola fila.
+
+`supabase/schema.sql` está **volcado desde la base** con `pg_get_functiondef`, no escrito de memoria. Ya se
+desincronizó una vez, y una reconstrucción "parecida" es peor que no tener nada porque se lee como si fuera la
+verdad. Si se toca el SQL, volver a volcarlo.
+
+Dos cosas del esquema vivo que no son obvias y conviene no perder: **`sat_class_join` valida el colegio** (un
+código adivinado no cruza dominios de correo) y **el profesor queda como miembro de su propia clase**, para que
+vea el feed igual que sus estudiantes; por eso el reporte lo excluye a mano de la lista de alumnos.
+
+Queda el aviso "Classroom is not switched on yet" como red de seguridad si algún día la base y la app se
+separan, pero hoy no es el estado esperado.
 
 ## Lo que el porcentaje esconde
 
