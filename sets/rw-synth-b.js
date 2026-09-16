@@ -45,7 +45,7 @@
         passage:'While researching a topic, a student has taken the following notes:<ul><li>A survey looked for an endangered loach by testing river water for traces of its DNA.</li><li>Crews filtered water at 22 points along 60 kilometers of river.</li><li>The filters picked up loach DNA at 14 of the 22 points.</li><li>DNA drifts far downstream before it breaks down.</li><li>A single shed scale, or a dead fish upstream, leaves the same trace a living fish leaves.</li><li>Netting at three of the 14 points brought up live loaches.</li></ul>',
         stem:'The student wants to point out a limitation of the DNA survey as evidence that loaches live where the traces were found. Which choice most effectively uses relevant information from the notes to accomplish this goal?',
         choices:{
-          A:'Crews filtered river water at 22 points spread along 60 kilometers, and 14 of those points returned traces of the endangered loach’s DNA.',
+          A:'Crews filtered river water at 22 points spread along 60 kilometers of the river, and 14 of those 22 points returned traces of the endangered loach’s DNA.',
           B:'Since DNA drifts far downstream and a shed scale leaves the trace a living fish leaves, a positive filter need not mean loaches live at that point.',
           C:'Netting at three of the 14 points where the filters had found loach DNA brought up live fish, confirming that loaches were there.',
           D:'The survey covered 60 kilometers of river, and eight of the 22 points the crews sampled returned no trace of loach DNA at all.'
@@ -108,7 +108,7 @@
           A:'Across 30 weeks the machine’s Wednesday samples averaged 42 nanograms of the antibiotic per liter of the town’s wastewater.',
           B:'The town’s two clinics hand out most of their antibiotic prescriptions on Mondays, two days before each of the machine’s samples was drawn.',
           C:'With prescriptions falling on Mondays and the drug gone in about a day, Wednesday sampling misses the peak: daily sampling averaged 61, not 42.',
-          D:'A second test that drew a sample every day for two weeks averaged 61 nanograms per liter, well above the 42 of the 30-week Wednesday series.'
+          D:'A second test that drew a sample every day for two weeks averaged 61 nanograms per liter, well above the 42 of the 30-week series of Wednesday samples.'
         },
         correct:'C',
         expCorrect:'C ties the timing to the chemistry to the number: Monday prescriptions, a 24-hour half-life in the sewer, and a Wednesday-only machine, which is why the daily series came out at 61 against the Wednesday 42. A reports the headline figure, B leaves the timing unconnected, and D reports the gap without blaming the schedule for it.',
@@ -125,15 +125,15 @@
         passage:'While researching a topic, a student has taken the following notes:<ul><li>Chemists built an enzyme that cuts a common bottle plastic into its building blocks.</li><li>In the laboratory the enzyme broke down 88 percent of a ground sample in 10 hours.</li><li>The reaction runs at 55 degrees Celsius.</li><li>Bottle-sorting plants already heat their wash water to about 60 degrees.</li><li>The building blocks can be used to make new bottles.</li><li>The laboratory test used plastic ground into flakes about 2 millimeters wide.</li></ul>',
         stem:'The student wants to explain why the enzyme’s result matters outside the laboratory. Which choice most effectively uses relevant information from the notes to accomplish this goal?',
         choices:{
-          A:'In the laboratory the enzyme broke down 88 percent of a ground plastic sample in 10 hours at a temperature of 55 degrees Celsius.',
+          A:'In the laboratory the enzyme broke down 88 percent of a ground plastic sample in 10 hours, with the reaction running at 55 degrees Celsius.',
           B:'Sorting plants already heat wash water to about 60 degrees, so they could run the 55-degree reaction with the heat they have and recover material for new bottles.',
-          C:'The chemists ran their test on bottle plastic that had been ground into flakes about 2 millimeters wide before the enzyme was added.',
-          D:'The enzyme cuts a common bottle plastic into its building blocks, and those building blocks can be used to make new bottles.'
+          C:'The chemists ran their test on bottle plastic that had been ground into flakes about 2 millimeters wide before any enzyme was added to it.',
+          D:'The enzyme cuts a common bottle plastic into its building blocks, and those same building blocks can be used to make new bottles again.'
         },
         correct:'B',
         expCorrect:'Outside the laboratory means a real setting doing real work. B supplies one: sorting plants that already run at 60 degrees could host a 55-degree reaction without new heating, and the output feeds back into bottles. A and C stay on the bench, and D describes the chemistry without ever leaving it.',
         expWrong:{
-          A:'True, and 88 percent in 10 hours is the result worth exporting. The sentence keeps it indoors: nothing here names a place outside the laboratory where it would be used.',
+          A:'True, and 88 percent in 10 hours at 55 degrees is the result worth exporting. The sentence keeps it indoors: nothing here names a place outside the laboratory where it would be used.',
           C:'True, and flake size matters to the test. It is a detail of the procedure, which is the least exportable part of the notes.',
           D:'True, and a closed loop from bottle to bottle is genuinely promising. Still, it describes what the enzyme does, not what any existing plant could do with it.'
         },
@@ -145,8 +145,8 @@
         passage:'While researching a topic, a student has taken the following notes:<ul><li>Moth wings are covered in scales that absorb the ultrasonic calls bats hunt with.</li><li>A 2-millimeter layer of the scales absorbed up to 87 percent of the sound striking it.</li><li>Standard foam panels need about 40 millimeters to absorb as much.</li><li>Thin panels matter in aircraft cabins, where every kilogram counts.</li><li>Engineers printed the pattern of the scales into a plastic sheet.</li><li>The printed sheet absorbed 62 percent of the sound.</li></ul>',
         stem:'The student wants to explain why the moth-scale measurements matter beyond the laboratory bench. Which choice most effectively uses relevant information from the notes to accomplish this goal?',
         choices:{
-          A:'A 2-millimeter layer of moth scales absorbed up to 87 percent of the ultrasonic sound that struck it in the engineers’ tests.',
-          B:'The scales on a moth’s wing absorb the ultrasonic calls bats hunt with, and standard foam needs about 40 millimeters to absorb as much.',
+          A:'A 2-millimeter layer of moth scales absorbed up to 87 percent of the ultrasonic sound striking it, the same kind of call a bat hunts with.',
+          B:'The scales on a moth’s wing absorb the ultrasonic calls bats hunt with, and a 2-millimeter layer of them does what 40 millimeters of foam does.',
           C:'A printed copy of the scale pattern does in a thin sheet what foam needs 40 millimeters to do, which counts in aircraft cabins where weight is charged by the kilogram.',
           D:'Engineers printed the pattern of the moth scales into a plastic sheet, and that printed sheet absorbed 62 percent of the sound striking it.'
         },
@@ -185,8 +185,8 @@
         passage:'While researching a topic, a student has taken the following notes:<ul><li>A team tested car battery packs retired from vehicles at 74 percent of their original capacity.</li><li>The packs had spent about eight years in cars.</li><li>Wired into one stack, 60 retired packs stored 1.4 megawatt-hours.</li><li>Over a year of daily charging the stack lost 3 percent of that capacity.</li><li>A clinic in the same district loses power about 40 times a year, for 3 hours on average.</li><li>The stack holds enough to run the clinic for 9 hours.</li></ul>',
         stem:'The student wants to explain why the stack matters to the district rather than only as a test result. Which choice most effectively uses relevant information from the notes to accomplish this goal?',
         choices:{
-          A:'Sixty car battery packs retired at 74 percent of their original capacity, wired together into a single stack, stored 1.4 megawatt-hours.',
-          B:'Over a year of daily charging, the stack built from retired packs gave up only 3 percent of the capacity it had started the year with.',
+          A:'Sixty car battery packs retired at 74 percent of their original capacity, wired together into a single stack, stored a total of 1.4 megawatt-hours.',
+          B:'Over a year of daily charging, the stack built from the 60 retired packs gave up only 3 percent of the capacity it had started the year with.',
           C:'The stack holds enough for 9 hours, and the district clinic loses power about 40 times a year for roughly 3 hours at a time.',
           D:'The packs in the stack had spent about eight years in cars and were retired once they fell to 74 percent of the capacity they were built with.'
         },
@@ -225,10 +225,10 @@
         passage:'While researching a topic, a student has taken the following notes:<ul><li>Bakers keep a sourdough starter alive by feeding it flour and water.</li><li>A laboratory sequenced the microbes in 41 starters kept in home kitchens.</li><li>Every starter held lactic acid bacteria.</li><li>Thirty-eight also held a yeast of the genus Kazachstania.</li><li>Starters fed rye held on average 2.3 times more of that yeast than starters fed wheat.</li><li>The laboratory sampled each starter twice, four months apart.</li></ul>',
         stem:'The student wants to present the study’s finding about flour to an audience of bakers who already keep starters. Which choice most effectively uses relevant information from the notes to accomplish this goal?',
         choices:{
-          A:'A sourdough starter is flour and water that bakers keep alive by feeding it, and a laboratory sequenced the microbes in 41 of them.',
+          A:'A sourdough starter is flour and water that bakers keep alive by feeding it, and a laboratory has now sequenced the microbes in 41 home starters.',
           B:'Across 41 home starters, the ones fed rye carried on average 2.3 times more Kazachstania yeast than the ones fed wheat did.',
-          C:'The laboratory sampled each of the 41 home starters twice, four months apart, and sequenced the microbes living in every sample.',
-          D:'Every one of the 41 starters held lactic acid bacteria, and 38 of them also held a yeast of the genus Kazachstania.'
+          C:'The laboratory sampled each of the 41 home starters twice, four months apart, and sequenced the microbes living in all 82 of those samples.',
+          D:'Every one of the 41 home kitchen starters held lactic acid bacteria, and 38 of those 41 also held a yeast belonging to the genus Kazachstania.'
         },
         correct:'B',
         expCorrect:'Bakers who keep starters do not need to be told what a starter is; they need the result about flour. B gives it: rye against wheat, 2.3 times more yeast, across 41 starters. A spends its length on the definition, C describes the sampling, and D reports the census rather than the flour comparison.',
@@ -245,10 +245,10 @@
         passage:'While researching a topic, a student has taken the following notes:<ul><li>A lake in a glaciated valley lays down one pale-and-dark sediment couplet a year.</li><li>Thicker couplets form in years with more meltwater.</li><li>A 6.2-meter core from the lake bed holds 4,180 couplets.</li><li>The team counted the couplets under a microscope and photographed every meter.</li><li>Couplets from 1780 to 1830 are on average 0.4 millimeters thicker than those above and below.</li><li>Two counters working independently differed by 11 couplets over the whole core.</li></ul>',
         stem:'The student wants to present the finding to an audience of lake-sediment researchers who already know how these couplets form and are counted. Which choice most effectively uses relevant information from the notes to accomplish this goal?',
         choices:{
-          A:'A lake in a glaciated valley lays down one pale-and-dark couplet each year, and couplets come out thicker in years with more meltwater.',
+          A:'A lake in a glaciated valley lays down one pale-and-dark couplet each year, and those couplets come out thicker in the years with more meltwater.',
           B:'In a 4,180-couplet core, the layers laid down between 1780 and 1830 run 0.4 millimeters thicker than those above and below them.',
-          C:'The team counted the couplets in the 6.2-meter core under a microscope and photographed every meter of the core as it was counted.',
-          D:'Two counters who worked through the whole core independently of each other came out 11 couplets apart at the end of it.'
+          C:'Working under a microscope, the team counted the couplets through all 6.2 meters of the core and photographed every one of those meters as they went.',
+          D:'Two counters who worked through the whole 6.2-meter core independently of one another came out just 11 couplets apart out of the 4,180.'
         },
         correct:'B',
         expCorrect:'Researchers who read these cores want the anomaly and its size. B gives the interval, the thickness difference and the length of the record in one line. A explains how couplets form, which this audience teaches; C describes routine method; and D reports a quality check rather than the result.',
@@ -285,7 +285,7 @@
         passage:'While researching a topic, a student has taken the following notes:<ul><li>Peat bogs preserve pollen grains because they are acid and waterlogged.</li><li>A peat core from a blanket bog covers the last 3,000 years.</li><li>Pollen was counted every 2 centimeters down the core.</li><li>Below 78 centimeters, grass pollen holds near 20 percent of the count.</li><li>Above 78 centimeters, grass pollen climbs to 54 percent and tree pollen falls from 61 to 19.</li><li>Charcoal fragments appear at the 78-centimeter level, which radiocarbon puts at about 1,150 years ago.</li></ul>',
         stem:'The student wants to present the finding to an audience of palynologists who already read pollen diagrams. Which choice most effectively uses relevant information from the notes to accomplish this goal?',
         choices:{
-          A:'Peat bogs hold on to pollen grains because they are acid and waterlogged, which is what makes a core like this one countable at all.',
+          A:'Peat bogs hold on to pollen grains because they are acid and waterlogged, which is what makes a 3,000-year core like this one countable at all.',
           B:'At the level radiocarbon dates to about 1,150 years ago, tree pollen falls from 61 percent to 19, grass climbs to 54, and charcoal appears.',
           C:'Radiocarbon dating places the 78-centimeter level of the blanket-bog core at roughly 1,150 years before the present day.',
           D:'Below 78 centimeters, grass pollen holds near 20 percent of the total count through the lower part of the peat core.'
@@ -305,10 +305,10 @@
         passage:'While researching a topic, a student has taken the following notes:<ul><li>A mussel lays down one growth band a day, and the bands narrow while the water is cold.</li><li>Shells collected from a harbor wall in 2019 and shells from a 1954 museum lot were sectioned.</li><li>Both lots came from the same harbor wall.</li><li>In the 2019 shells the run of narrow winter bands lasts 71 days on average.</li><li>In the 1954 shells it lasts 103 days.</li><li>At the same band count the 1954 shells are 4 millimeters longer.</li></ul>',
         stem:'The student wants to present the finding to an audience of shellfish biologists who already know how growth bands are read. Which choice most effectively uses relevant information from the notes to accomplish this goal?',
         choices:{
-          A:'A mussel lays down one growth band every day, and those bands come out narrow during the months when the water is cold.',
-          B:'Shells taken from the harbor wall in 2019 and shells from a 1954 museum lot were sectioned so that their growth bands could be read.',
+          A:'A mussel lays down one growth band every day of its life, and those bands come out narrow through the months when the water around it is cold.',
+          B:'Shells taken from the harbor wall in 2019 and shells from a 1954 museum lot, both lots off that same wall, were sectioned so their bands could be read.',
           C:'In shells from one harbor wall, the run of narrow winter bands fell from 103 days in the 1954 lot to 71 days in the 2019 lot.',
-          D:'At the same band count, shells from the 1954 museum lot measure about 4 millimeters longer than the shells collected in 2019.'
+          D:'At the same band count, shells from the 1954 museum lot measure about 4 millimeters longer than the shells collected from that wall in 2019.'
         },
         correct:'C',
         expCorrect:'C is the finding the goal names: same wall, two lots, and a winter that shortened from 103 banded days to 71. A explains what a band is, which this audience reads professionally; B describes the sectioning; and D reports a separate result about shell length.',
@@ -325,10 +325,10 @@
         passage:'While researching a topic, a student has taken the following notes:<ul><li>Two methods measured how much ice a valley glacier lost in one year.</li><li>A field crew read 18 stakes drilled into the ice and calculated a loss of 0.94 meters of water equivalent.</li><li>A satellite pair weighed the same glacier from orbit and calculated 1.21 meters.</li><li>The stakes sit only on the lower half of the glacier.</li><li>The satellite averages over an area larger than the glacier itself.</li><li>Both figures cover the year from October to October.</li></ul>',
         stem:'The student wants to contrast what the two methods measured for the same year. Which choice most effectively uses relevant information from the notes to accomplish this goal?',
         choices:{
-          A:'A field crew read 18 stakes drilled into the lower half of the valley glacier and calculated a loss of 0.94 meters of water equivalent.',
-          B:'The 18 stakes sit only on the glacier’s lower half, while the satellite pair averages over an area larger than the glacier itself.',
+          A:'A field crew read 18 stakes drilled into the lower half of the valley glacier and calculated a loss of 0.94 meters of water equivalent for the year.',
+          B:'The 18 stakes sit only on the glacier’s lower half, while the satellite pair weighs from orbit an area that is larger than the glacier itself.',
           C:'For the same October-to-October year, the stakes gave a loss of 0.94 meters of water equivalent and the satellite pair gave 1.21.',
-          D:'A satellite pair weighed the glacier from orbit over the year from October to October and put its loss at 1.21 meters of water equivalent.'
+          D:'A satellite pair weighed the glacier from orbit over the year from October to October and put the glacier’s loss at 1.21 meters of water equivalent.'
         },
         correct:'C',
         expCorrect:'A contrast of measurements needs both numbers and a shared frame. C has all three: the same year, 0.94 from the stakes, 1.21 from orbit. A and D each give one side, and B contrasts how much ground each method covers rather than what each one measured.',
@@ -345,9 +345,9 @@
         passage:'While researching a topic, a student has taken the following notes:<ul><li>One storm was measured by a tipping-bucket gauge in a schoolyard and by weather radar overhead.</li><li>The gauge recorded 47 millimeters over the storm.</li><li>The radar estimate for the same square kilometer was 68 millimeters.</li><li>Radar reads the water held in the air, not the water that reaches the ground.</li><li>A gauge under-catches in strong wind.</li><li>Wind gusted to 60 kilometers an hour that night, and both figures cover 8 p.m. to 2 a.m.</li></ul>',
         stem:'The student wants to contrast the two measurements of the same storm. Which choice most effectively uses relevant information from the notes to accomplish this goal?',
         choices:{
-          A:'Radar reads the water held in the air rather than the water that reaches the ground, and a rain gauge under-catches in strong wind.',
-          B:'The tipping-bucket gauge standing in the schoolyard recorded 47 millimeters of rain between 8 p.m. and 2 a.m. that night.',
-          C:'Wind gusted to 60 kilometers an hour on the night of the storm, and a tipping-bucket gauge under-catches rain in strong wind.',
+          A:'Radar reads the water held in the air rather than the water that actually reaches the ground, while a tipping-bucket gauge under-catches in strong wind.',
+          B:'The tipping-bucket gauge standing in the schoolyard recorded 47 millimeters of rain over the six hours between 8 p.m. and 2 a.m. on the night of the storm.',
+          C:'Wind gusted to 60 kilometers an hour on the night of the storm, and a tipping-bucket gauge like the schoolyard’s under-catches rain in strong wind.',
           D:'For the same six hours, the schoolyard gauge recorded 47 millimeters of rain while the radar put the same square kilometer at 68.'
         },
         correct:'D',
@@ -365,10 +365,10 @@
         passage:'While researching a topic, a student has taken the following notes:<ul><li>A forestry class measured the same 24 trees twice in one afternoon.</li><li>With a handheld laser the mean height came out at 26.8 meters.</li><li>With a clinometer and tape the mean came out at 24.3 meters.</li><li>The laser needs a clear line to the treetop.</li><li>On 9 of the 24 trees the crown was hidden by neighboring branches.</li><li>The class measured every tree with both instruments.</li></ul>',
         stem:'The student wants to contrast the two sets of measurements of the same trees. Which choice most effectively uses relevant information from the notes to accomplish this goal?',
         choices:{
-          A:'The handheld laser gave the 24 trees a mean height of 26.8 meters when the forestry class measured them that afternoon.',
+          A:'The handheld laser gave the 24 trees a mean height of 26.8 meters on the afternoon when the forestry class went out and measured every one of them.',
           B:'Measuring the same 24 trees in one afternoon, the class got a mean of 26.8 meters with the laser and 24.3 with the clinometer.',
-          C:'The laser needs a clear line to the treetop, and on 9 of the 24 trees the crown was hidden behind neighboring branches.',
-          D:'The forestry class measured all 24 trees twice in a single afternoon, once with a handheld laser and once with a clinometer and tape.'
+          C:'The handheld laser needs a clear line to the treetop, and on 9 of the 24 trees the crown was hidden behind the branches of neighboring trees.',
+          D:'The forestry class measured all 24 trees twice over in a single afternoon, once with the handheld laser and once with a clinometer and a tape.'
         },
         correct:'B',
         expCorrect:'B gives one set of trees, one afternoon, and both means: 26.8 and 24.3. A reports the laser alone, C names a limitation that may explain the gap, and D describes the design of the comparison without ever saying how it came out.',
@@ -385,9 +385,9 @@
         passage:'While researching a topic, a student has taken the following notes:<ul><li>Two laboratory methods estimated the organic carbon in the same 40 soil samples.</li><li>Loss-on-ignition burns the whole sample at 550 degrees and weighs what has gone.</li><li>An elemental analyzer burns a small sub-sample and measures the carbon dioxide released.</li><li>Loss-on-ignition returned a mean of 4.7 percent carbon.</li><li>The elemental analyzer returned 3.9 percent for the same samples.</li><li>Clay minerals give up bound water at 550 degrees, and these soils are clay-rich.</li></ul>',
         stem:'The student wants to contrast the two estimates of carbon in the same samples. Which choice most effectively uses relevant information from the notes to accomplish this goal?',
         choices:{
-          A:'Clay minerals give up their bound water at 550 degrees, and the 40 soils in the study are all clay-rich ones.',
+          A:'Clay minerals give up their bound water at 550 degrees, which is the temperature loss-on-ignition burns at, and these 40 soils are clay-rich.',
           B:'Loss-on-ignition burns the whole sample at 550 degrees and weighs the loss, while the analyzer burns a sub-sample and measures carbon dioxide.',
-          C:'Across the 40 soil samples the elemental analyzer put the mean organic carbon content at 3.9 percent.',
+          C:'Across the 40 soil samples the elemental analyzer burned a small sub-sample of each and put the mean organic carbon content at 3.9 percent for the set.',
           D:'On the same 40 samples, loss-on-ignition returned a mean of 4.7 percent organic carbon and the elemental analyzer returned 3.9.'
         },
         correct:'D',
@@ -425,10 +425,10 @@
         passage:'While researching a topic, a student has taken the following notes:<ul><li>In 1974 the ecologist Inga Halvorsen proposed that mayfly larvae drift downstream mainly at night.</li><li>She counted larvae in nets set in one stream for six nights.</li><li>A 2021 team set nets in 30 streams across four countries for a full year.</li><li>The 2021 counts ran 6.8 times higher between dusk and dawn than in daylight.</li><li>The 2021 team found the pattern disappears in streams that hold no fish.</li><li>Halvorsen’s stream held brown trout.</li></ul>',
         stem:'The student wants to place the 2021 study in the line of research that began with Halvorsen. Which choice most effectively uses relevant information from the notes to accomplish this goal?',
         choices:{
-          A:'Across 30 streams in four countries, the 2021 counts ran 6.8 times higher between dusk and dawn than they did in daylight.',
-          B:'In 1974 Inga Halvorsen counted mayfly larvae in nets set for six nights in a single stream, one that held brown trout.',
+          A:'Across 30 streams in four countries netted for a year, the 2021 counts ran 6.8 times higher between dusk and dawn than in daylight.',
+          B:'In 1974 the ecologist Inga Halvorsen counted mayfly larvae in nets set for six nights in one stream, a stream that held brown trout.',
           C:'Halvorsen proposed in 1974, from six nights on one stream, that mayfly larvae drift at night; the 2021 team tested that across 30 streams for a year.',
-          D:'The 2021 team reported that the night-time drift of mayfly larvae disappears altogether in streams that hold no fish.'
+          D:'The 2021 team reported that the night-time drift of mayfly larvae disappears altogether in those of the 30 streams that hold no fish.'
         },
         correct:'C',
         expCorrect:'Placing a study in a line of research means naming the earlier claim and showing what the new work does with it. C has Halvorsen’s 1974 proposal, the thin evidence behind it, and the 2021 test at far greater scale. A and D report the new results, and B reports the old study with nothing after it.',
@@ -445,17 +445,17 @@
         passage:'While researching a topic, a student has taken the following notes:<ul><li>A 1998 paper by the botanist Paul Okeke argued that a heath shrub flowers earlier in warm springs.</li><li>Okeke worked from 40 years of records kept at one botanical garden.</li><li>A new study photographed 3,400 herbarium sheets of the same shrub collected between 1890 and 2020.</li><li>Every sheet carries the date and the place of collection.</li><li>Sheets from the warmest springs carry flowers open 9 days earlier on average.</li><li>The new study finds the shift is twice as large above 600 meters.</li></ul>',
         stem:'The student wants to place the new study in the line of work Okeke began. Which choice most effectively uses relevant information from the notes to accomplish this goal?',
         choices:{
-          A:'Sheets collected in the warmest springs carry flowers that had opened 9 days earlier on average than those from cooler springs.',
+          A:'Sheets collected in the warmest springs carry flowers that had opened 9 days earlier on average, and above 600 meters that shift comes out twice as large.',
           B:'Okeke argued in 1998 from one garden’s 40 years of records that the shrub flowers earlier in warm springs; the new study tests that on 3,400 sheets spanning 130 years.',
-          C:'A 1998 paper by the botanist Paul Okeke used 40 years of records from a single botanical garden to study the flowering of a heath shrub.',
-          D:'The new study photographed 3,400 herbarium sheets of the shrub, each of them carrying the date and the place where it was collected.'
+          C:'A 1998 paper by the botanist Paul Okeke used 40 years of records kept at a single botanical garden to argue that a heath shrub flowers earlier in warm springs.',
+          D:'The new study photographed 3,400 herbarium sheets of the shrub collected between 1890 and 2020, each one carrying its date and its place of collection.'
         },
         correct:'B',
         expCorrect:'B names the 1998 claim, the narrow base it rested on, and the far wider evidence the new study brings to the same question. A gives the new result, C stops at Okeke, and D describes the new method without saying what question it was aimed at.',
         expWrong:{
-          A:'True, and nine days is the new study’s answer. An answer with no question behind it does not show that anyone had asked before.',
-          C:'True, and it is a fair summary of the earlier paper. The line of research has to reach the present, and this sentence never leaves 1998.',
-          D:'True, and 3,400 sheets is a serious archive. Describing the material shows the scale of the new work but not its debt to the old.'
+          A:'True, and nine days — twice that above 600 meters — is the new study’s answer. An answer with no question behind it does not show that anyone had asked before.',
+          C:'True, and it states Okeke’s claim as well as the 40 years behind it. The line of research has to reach the present, and this sentence never leaves 1998.',
+          D:'True, and 3,400 sheets across 130 years is a serious archive. Describing the material shows the scale of the new work but not its debt to the old.'
         },
         tip:'The giveaway in this goal is the word "tests," "extends," or "revisits." Look for the choice where the new work does something to the old claim.'
       },
@@ -465,10 +465,10 @@
         passage:'While researching a topic, a student has taken the following notes:<ul><li>Ships’ logbooks record the force of the wind in port and at sea.</li><li>Historians of climate have used them for decades.</li><li>A 1988 project transcribed 2,000 Dutch logbooks from the 1700s by hand.</li><li>A new project used trained software to read 46,000 logbooks from seven navies.</li><li>The software agrees with a human transcriber on 94 percent of wind entries.</li><li>The new set shows westerly winds in the 1690s were weaker than in any decade since.</li></ul>',
         stem:'The student wants to place the new project in the line of research the 1988 transcription began. Which choice most effectively uses relevant information from the notes to accomplish this goal?',
         choices:{
-          A:'The new set of logbook readings shows that westerly winds in the 1690s were weaker than in any decade that has followed.',
-          B:'Trained software read 46,000 logbooks from seven navies and agreed with a human transcriber on 94 percent of the wind entries.',
+          A:'The new set of logbook readings shows that westerly winds in the 1690s were weaker than in any decade since, drawn from 46,000 books of entries made in port and at sea.',
+          B:'Trained software read 46,000 logbooks from seven navies, and on 94 percent of the wind entries it agreed with what a human transcriber had read.',
           C:'The 1988 project transcribed 2,000 Dutch logbooks by hand; the new one reads 46,000 from seven navies with software that matches a transcriber 94 percent of the time.',
-          D:'Ships’ logbooks record the force of the wind in port and at sea, which is why historians of climate have used them for decades.'
+          D:'Ships’ logbooks record the force of the wind in port and at sea, which is why historians of climate have been reading them for decades now.'
         },
         correct:'C',
         expCorrect:'C sets the two projects against each other on the same axis: 2,000 by hand in 1988, 46,000 by software now, with a figure for how far the software can be trusted. A reports the new finding, B describes the new method alone, and D explains why logbooks are used at all.',
@@ -485,16 +485,16 @@
         passage:'While researching a topic, a student has taken the following notes:<ul><li>A thin section of pottery shows the mineral grains in the clay, which point to where the clay was dug.</li><li>In 1969 the archaeologist Ruth Abbas sectioned 60 cooking pots from one hillfort.</li><li>Abbas sorted them into three clay groups but matched none of the groups to a source.</li><li>A new survey sectioned 480 pots from nine sites in the same valley.</li><li>The new survey matched Abbas’s group two to a clay bed 14 kilometers upriver.</li><li>The new survey also found a fourth group, absent at the hillfort.</li></ul>',
         stem:'The student wants to place the new survey in the line of work Abbas began. Which choice most effectively uses relevant information from the notes to accomplish this goal?',
         choices:{
-          A:'Sectioning 480 pots from nine sites across the valley, the new survey turned up a fourth clay group that the hillfort itself lacks.',
-          B:'A thin section of pottery shows the mineral grains in the clay, and those grains point back to the ground the clay was dug from.',
-          C:'In 1969 Ruth Abbas sectioned 60 cooking pots from a single hillfort and sorted them into three groups according to their clay.',
+          A:'Sectioning 480 pots from nine sites across the same valley, the new survey turned up a fourth clay group, one that is absent from the hillfort itself.',
+          B:'A thin section of pottery shows the mineral grains in the clay, and those grains point back to the particular ground it was dug from, in all 540 pots sectioned here.',
+          C:'In 1969 the archaeologist Ruth Abbas sectioned 60 cooking pots from a single hillfort and sorted them into three groups according to their clay.',
           D:'Abbas sorted 60 hillfort pots into three clay groups in 1969 without matching any to a source; the new survey traced her group two to a bed 14 kilometers upriver.'
         },
         correct:'D',
         expCorrect:'D shows the new survey finishing a job Abbas could not: her three groups, her failure to source them, and the bed that now accounts for one of them. A reports a new group, C stops in 1969, and B explains the technique both surveys used.',
         expWrong:{
           A:'True, and a fourth group is a genuine addition. It reports what the new survey found on its own, with no sign that it was answering an older question.',
-          B:'True, and it is the principle behind every thin section. Both surveys rest on it equally, so it cannot show how one follows from the other.',
+          B:'True, and it is the principle behind all 540 thin sections. Both surveys rest on it equally, so it cannot show how one follows from the other.',
           C:'True, and it is the starting point of the line. The sentence ends where Abbas ended, and the reader never learns that anyone returned to her groups.'
         },
         tip:'The clearest way to join two studies is to name what the first could not do and the second could. Look for that unfinished business in the notes.'
@@ -505,10 +505,10 @@
         passage:'While researching a topic, a student has taken the following notes:<ul><li>Muons from cosmic rays pass through rock, and denser rock stops more of them.</li><li>A 1995 experiment left one detector on a volcano’s flank for four months.</li><li>It produced a single shadow image of the summit cone.</li><li>The 1995 image could not distinguish a dense plug from a narrow one.</li><li>A new campaign ran nine detectors around the same cone for two years.</li><li>Combining nine angles, it resolved a dense plug 40 meters wide, 180 meters below the crater floor.</li></ul>',
         stem:'The student wants to place the new campaign in the line of work the 1995 experiment began. Which choice most effectively uses relevant information from the notes to accomplish this goal?',
         choices:{
-          A:'Nine detectors run around the cone for two years resolved a dense plug 40 meters wide, sitting 180 meters below the crater floor.',
+          A:'Nine detectors run around the same cone for two years resolved a dense plug 40 meters wide and sitting 180 meters below the crater floor.',
           B:'One detector in 1995 gave a single shadow of the cone that could not tell a dense plug from a narrow one; nine detectors have now resolved one 40 meters wide.',
-          C:'Muons from cosmic rays pass straight through rock, and rock that is denser stops more of them than rock that is less dense.',
-          D:'A 1995 experiment left a single detector on the volcano’s flank for four months and produced one shadow image of the summit cone.'
+          C:'Muons from cosmic rays pass straight through rock, and denser rock stops more of them, which is how a detector builds a shadow image.',
+          D:'A 1995 experiment left a single detector on the volcano’s flank for four months and produced one shadow image of the summit cone from it.'
         },
         correct:'B',
         expCorrect:'B names the 1995 limit and the new campaign that removes it: one angle could not separate a wide plug from a narrow one, and nine angles put a number on it. A gives the new result alone, D gives the old experiment alone, and C explains the physics shared by both.',
@@ -525,10 +525,10 @@
         passage:'While researching a topic, a student has taken the following notes:<ul><li>A whale carcass on the deep seabed feeds a community of animals for years.</li><li>A remote vehicle filmed one carcass six times over 11 years.</li><li>Fifty-one animal species were counted on it.</li><li>Nine of the 51 have never been recorded anywhere else.</li><li>Nobody knows how the larvae of those nine reach a new carcass.</li><li>Carcasses can lie hundreds of kilometers apart.</li></ul>',
         stem:'The student wants to emphasize what the study leaves unanswered. Which choice most effectively uses relevant information from the notes to accomplish this goal?',
         choices:{
-          A:'A remote vehicle filmed the same deep-sea carcass six times over 11 years and counted 51 animal species living on it.',
-          B:'Nine of the 51 species counted on the carcass have never been recorded anywhere else in the ocean.',
+          A:'A remote vehicle filmed the same whale carcass on the deep seabed six times over 11 years and counted 51 animal species living on it.',
+          B:'Nine of the 51 animal species counted on the deep-sea carcass have never been recorded anywhere else in the ocean.',
           C:'Nine of the 51 species live nowhere else, and how their larvae cross the hundreds of kilometers between carcasses is unknown.',
-          D:'A whale carcass lying on the deep seabed goes on feeding a community of animals for years after it arrives there.'
+          D:'A whale carcass that settles on the deep seabed goes on feeding a whole community of animals for years after it arrives.'
         },
         correct:'C',
         expCorrect:'An open question needs the puzzle and the admission. C supplies both: nine species found nowhere else, and no account of how their larvae cross the distance between carcasses. A reports the survey, B stops at the striking fact, and D gives background.',
@@ -545,10 +545,10 @@
         passage:'While researching a topic, a student has taken the following notes:<ul><li>A blind cave fish and a river fish of the same genus were compared.</li><li>The cave fish grows eye buds as an embryo, and then the eyes stop developing.</li><li>Twelve genes switched on in the river fish’s eye sit silent in the cave fish’s.</li><li>Raising cave-fish embryos in light does not restart the eyes.</li><li>Whether losing the eyes saves the fish any energy has never been measured.</li><li>The cave population has been isolated for about 20,000 years.</li></ul>',
         stem:'The student wants to emphasize the question this comparison leaves open. Which choice most effectively uses relevant information from the notes to accomplish this goal?',
         choices:{
-          A:'Twelve genes that are switched on in the river fish’s eye sit silent in the eye of the blind cave fish.',
+          A:'Twelve genes that are switched on in the eye of the river fish sit silent in the eye of the blind cave fish, isolated for about 20,000 years.',
           B:'Twelve eye genes fall silent in the cave fish, but whether losing the eyes actually saves it any energy has never been measured.',
-          C:'Raising cave-fish embryos in the light does not restart the development of the eyes that stopped growing.',
-          D:'The cave fish grows eye buds while it is still an embryo, and the eyes then stop developing before they are finished.'
+          C:'Raising cave-fish embryos in the light does not restart the development of the eye buds that stopped growing in the embryo.',
+          D:'The cave fish grows eye buds while it is still an embryo, and those eyes then stop developing before they are ever finished.'
         },
         correct:'B',
         expCorrect:'B pairs what the comparison established, twelve silent genes, with what it never tested, whether blindness pays for itself. A, C and D are all true results, and each one closes a question rather than opening one.',
@@ -565,10 +565,10 @@
         passage:'While researching a topic, a student has taken the following notes:<ul><li>Satellite images put the advance of a crescent dune field at 11 meters a year on average.</li><li>Between 2016 and 2019 the advance slowed to about 4 meters a year.</li><li>Wind records show no change in wind speed over those years.</li><li>The weather station is 90 kilometers from the dune field.</li><li>Rainfall over the dune field rose in the same years.</li><li>Damp sand is harder for wind to move, but nobody measured the moisture in the sand.</li></ul>',
         stem:'The student wants to emphasize what remains unexplained about the slowdown. Which choice most effectively uses relevant information from the notes to accomplish this goal?',
         choices:{
-          A:'Wind records from the station 90 kilometers away show no change in wind speed across the years when the dunes slowed down.',
+          A:'Wind records from the station 90 kilometers from the field show no change in wind speed across the years when the dunes slowed.',
           B:'Rain rose over the field while the advance fell to about 4 meters a year, but with no moisture ever measured in the sand the link stays unproven.',
-          C:'Satellite images put the long-term advance of the crescent dune field at an average of 11 meters a year.',
-          D:'Between 2016 and 2019 the advance of the dune field slowed from its long-term average to about 4 meters a year.'
+          C:'Satellite images put the long-term advance of the crescent dune field at an average of 11 meters a year, measured from orbit.',
+          D:'Between 2016 and 2019 the advance of the crescent dune field slowed from its long-term 11 meters a year to about 4 meters a year.'
         },
         correct:'B',
         expCorrect:'B names the candidate explanation, rain, and then the reason it cannot be confirmed: the sand’s moisture was never measured. A rules out a rival cause, C gives the baseline, and D gives the observation that needs explaining in the first place.',
@@ -585,10 +585,10 @@
         passage:'While researching a topic, a student has taken the following notes:<ul><li>Recorders in eight ponds logged the evening chorus of a tree frog for three summers.</li><li>Choruses in the two ponds beside a highway start about 40 minutes later than in the quiet ponds.</li><li>Highway traffic is heaviest until about an hour after sunset.</li><li>Once they begin, the late choruses last as long as the others.</li><li>Whether the late start costs the frogs any eggs was not measured.</li><li>The eight ponds hold similar numbers of frogs.</li></ul>',
         stem:'The student wants to emphasize what the recordings leave unresolved. Which choice most effectively uses relevant information from the notes to accomplish this goal?',
         choices:{
-          A:'Choruses in the two ponds beside the highway begin about 40 minutes later than the choruses in the six quiet ponds.',
+          A:'Choruses in the two ponds beside the highway begin about 40 minutes later than the choruses in the six quieter ponds do.',
           B:'Once they have begun, the late-starting choruses beside the highway go on for as long as the choruses at the quiet ponds do.',
           C:'The highway choruses start 40 minutes late, but whether that delay costs the frogs any eggs was never measured over the three summers.',
-          D:'Traffic on the highway stays heaviest until about an hour after sunset, which is when the frogs’ evening chorus would otherwise start.'
+          D:'Traffic on the highway stays heaviest until about an hour after sunset, which is around when the frogs’ evening chorus would otherwise be starting.'
         },
         correct:'C',
         expCorrect:'C states the effect the recorders captured and the consequence they could not: a 40-minute delay, and no measurement of whether it costs the frogs anything. A reports the delay, B reports a result that suggests no cost, and D supplies the likely cause.',
@@ -605,9 +605,9 @@
         passage:'While researching a topic, a student has taken the following notes:<ul><li>Soil from a drained fen was spread in greenhouse trays to see which buried seeds would sprout.</li><li>Over 18 months, 44 species sprouted from the trays.</li><li>Nineteen of the 44 no longer grow anywhere in the fen.</li><li>Seven species on the fen’s 1930s plant list did not sprout at all.</li><li>A seed that fails to sprout in a greenhouse may still be alive in the ground.</li><li>The trays were held at a steady 18 degrees; the fen itself swings from 2 to 26.</li></ul>',
         stem:'The student wants to emphasize what the trays leave unresolved about the seven missing species. Which choice most effectively uses relevant information from the notes to accomplish this goal?',
         choices:{
-          A:'Nineteen of the 44 species that sprouted from the greenhouse trays no longer grow anywhere in the drained fen today.',
-          B:'Seven species recorded on the fen’s plant list in the 1930s did not sprout from the trays at any point in the 18 months.',
-          C:'The greenhouse trays were held at a steady 18 degrees, while the fen itself swings between 2 degrees and 26.',
+          A:'Nineteen of the 44 species that sprouted from the trays over the 18 months no longer grow anywhere in the drained fen today.',
+          B:'Seven of the species recorded on the fen’s 1930s plant list never sprouted from the greenhouse trays across the whole 18 months.',
+          C:'The soil in the greenhouse trays was held at a steady 18 degrees, while the fen it came from swings between 2 degrees and 26.',
           D:'The seven species from the 1930s list never sprouted, yet a seed can be alive underground and still refuse a tray kept at a steady 18 degrees.'
         },
         correct:'D',
@@ -628,7 +628,7 @@
           A:'Ceilings under the painted half of the roof ran 3.4 degrees cooler at three in the afternoon than the ceilings under the bare half.',
           B:'The team painted one half of the school’s flat roof, left the other half bare, and logged ceiling temperatures under both every 10 minutes for a summer.',
           C:'Because cooler ceilings mean less work for the fans, the team painted half of a school’s flat roof white and left the other half bare.',
-          D:'Sensors logged the ceiling temperature under both halves every 10 minutes through one summer, and the painted half came out 3.4 degrees cooler.'
+          D:'Sensors logged the ceiling temperature under both halves of the roof every 10 minutes through one summer, and the painted half came out 3.4 degrees cooler at 3 p.m.'
         },
         correct:'B',
         expCorrect:'B is procedure and nothing else: what was painted, what was left alone, what was measured and how often. A reports the outcome, D reports the procedure and then the outcome, and C attaches a reason for the experiment that the measurements were supposed to test.',
@@ -645,17 +645,17 @@
         passage:'While researching a topic, a student has taken the following notes:<ul><li>A health department compared two mosquito traps in one neighborhood.</li><li>Twelve blocks were chosen, and each block got both traps.</li><li>A coin toss decided which trap stood in the front garden and which in the back.</li><li>The two traps swapped positions every week for eight weeks.</li><li>The catch was counted and identified every Monday.</li><li>The light trap caught 2.4 times as many mosquitoes as the sticky trap.</li></ul>',
         stem:'The student wants to describe the procedure the department followed, without reporting what it found. Which choice most effectively uses relevant information from the notes to accomplish this goal?',
         choices:{
-          A:'Over eight weeks in the neighborhood, the light trap caught 2.4 times as many mosquitoes as the sticky trap did.',
+          A:'Across eight weeks in the 12 blocks of the neighborhood, the light trap caught 2.4 times as many mosquitoes as the sticky trap standing on the same block.',
           B:'Each of the 12 blocks got both traps, a coin toss set which went in front and which in back, the two swapped weekly for eight weeks, and the catch was counted each Monday.',
-          C:'The two traps swapped positions every week for eight weeks, and by the end the light trap had caught 2.4 times as many mosquitoes.',
-          D:'A coin toss decided which of the two traps stood in each block’s front garden and which one stood in the back.'
+          C:'The two traps swapped positions every week for eight weeks, and by the end of that run the light trap had caught 2.4 times as many mosquitoes as the sticky one in the same blocks.',
+          D:'In each of the 12 blocks a coin toss decided which of the two traps stood in the front garden and which one stood in the garden at the back.'
         },
         correct:'B',
         expCorrect:'B walks the reader through the design without a single result: both traps on every block, positions assigned by coin toss, a weekly swap for eight weeks, and a Monday count. A gives the finding, C mixes a step with the finding, and D gives one step of four.',
         expWrong:{
           A:'True, and 2.4 times is what the department set out to learn. The goal explicitly excludes the finding, and this choice is nothing but the finding.',
           C:'True, and the weekly swap is a real part of the design. The clause after it delivers the result, which is what the goal rules out.',
-          D:'True, and randomizing position is the cleverest part of the setup. One step is not the procedure; the blocks, the swap and the count are all missing.'
+          D:'True, and randomizing position across all 12 blocks is the cleverest part of the setup. One step is not the procedure; the weekly swap and the Monday count are both missing.'
         },
         tip:'A procedure description should be reconstructable: a reader ought to be able to repeat the study from it. One step alone fails that test as surely as a result does.'
       },
@@ -665,10 +665,10 @@
         passage:'While researching a topic, a student has taken the following notes:<ul><li>A wind farm fitted microphones inside the root of every blade on six turbines.</li><li>The microphones recorded continuously for 14 months.</li><li>Software flagged any sound above a set threshold and saved the 30 seconds around it.</li><li>Engineers inspected every blade by rope at the end of the 14 months.</li><li>Four blades had cracks, and the software had flagged all four.</li><li>The software also flagged nine blades that turned out to be sound.</li></ul>',
         stem:'The student wants to describe the procedure the wind farm followed, without reporting how well it worked. Which choice most effectively uses relevant information from the notes to accomplish this goal?',
         choices:{
-          A:'The software flagged all four of the blades that turned out to be cracked, along with nine more blades that were sound.',
-          B:'Microphones in the blade roots of six turbines recorded for 14 months, software saved 30 seconds around every sound above a threshold, and crews then inspected each blade by rope.',
-          C:'Over 14 months the microphones in the blade roots recorded continuously, and by the end the software had flagged four cracked blades.',
-          D:'Engineers went down every blade by rope at the end of the 14 months and found cracks in four of the blades they checked.'
+          A:'The software flagged all four of the blades that the rope inspection found cracked, and it flagged nine more blades that turned out to be sound.',
+          B:'Microphones in the blade roots of six turbines recorded for 14 months, software saved 30 seconds around any sound above a threshold, and crews inspected each blade by rope.',
+          C:'Over 14 months the microphones fitted in the blade roots of all six turbines recorded continuously, and by the end the software had flagged the four blades that were cracked.',
+          D:'Engineers went down every blade on the six turbines by rope at the end of the 14 months and found cracks in four of the blades they checked that way.'
         },
         correct:'B',
         expCorrect:'B lays out the three steps in order — record, flag and save, then inspect — and stops there. A reports how the flags compared with the cracks, C ends on the four cracked blades, and D reports the inspection together with what it turned up.',
@@ -686,7 +686,7 @@
         stem:'The student wants to describe how the agency tested the gauges, without saying how well they performed. Which choice most effectively uses relevant information from the notes to accomplish this goal?',
         choices:{
           A:'Strain traces from the 24 gauges placed 96 percent of the 1,900 trucks within 8 percent of the load the weighbridge had measured.',
-          B:'A weighbridge 3 kilometers ahead of the bridge recorded the true axle loads of 1,900 trucks, each one matched to its strain trace by time stamp.',
+          B:'A weighbridge 3 kilometers ahead of the bridge recorded the true axle loads of 1,900 trucks, and each of those records was matched to its strain trace by time stamp.',
           C:'The agency bolted 24 gauges under one span, sampled every crossing 100 times a second, and matched each trace to the weighbridge record of 1,900 trucks.',
           D:'The gauges sample 100 times a second as a vehicle crosses, and the traces they produced missed by most on trucks that crossed beside another vehicle.'
         },
