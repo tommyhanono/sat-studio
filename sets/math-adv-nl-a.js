@@ -25,9 +25,10 @@
 
   /* ---- Gráfica de NLA-27: g(x) = (x − 3)² − 4.
          px(x) = 50 + 38x · py(y) = 210 − 16y. Vértice (3, −4) → (164, 274);
+         El viewBox arranca en y = 98 para no dejar una franja vacía arriba.
          cortes en (1, 0) y (5, 0); extremos dibujados en (0, 5) y (6, 5). ---- */
   var FIG_PARABOLA =
-    '<svg viewBox="0 0 330 320" xmlns="http://www.w3.org/2000/svg" role="img" ' +
+    '<svg viewBox="0 98 330 228" xmlns="http://www.w3.org/2000/svg" role="img" ' +
     'aria-label="The graph of the function g in the xy-plane. The horizontal axis is x, marked 1 through 6, and the vertical axis is y, marked negative 4, negative 2, 2, 4 and 6. The curve is a parabola that opens upward. It comes down from the point 0 comma 5, crosses the x-axis at 1 comma 0, bottoms out at the point 3 comma negative 4, crosses the x-axis again at 5 comma 0, and climbs back up to the point 6 comma 5. Nothing on the curve is lower than negative 4.">' +
     '<g fill="none" stroke="#e4e4e4" stroke-width="1">' +
     '<path d="M88 110V300M126 110V300M164 110V300M202 110V300M240 110V300M278 110V300"/>' +
