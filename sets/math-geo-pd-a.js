@@ -615,7 +615,7 @@
           D:'Both sets are evenly spaced, but the spacing is 2 in P and 6 in Q. Even spacing describes the pattern; the SIZE of the step is what decides the spread.'
         },
         tip:'You are never asked to calculate a standard deviation on this test — only to compare them. Look at how far the values sit from the center: wider spread means a bigger standard deviation, and the mean by itself tells you nothing about it.',
-        desmos:'In Desmos, type stdev([12,14,16,18,20]) and stdev([4,10,16,22,28]): about 2.83 and 6.32 for the sample version, or use stdevp for about 2.83 and 8.49. Either way Q is larger.',
+        desmos:'In Desmos, type stdevp([12,14,16,18,20]) and stdevp([4,10,16,22,28]): about 2.83 and 8.49. The sample version, stdev, gives about 3.16 and 9.49. Either way Q is three times P.',
         desmosLatex:['\\operatorname{stdevp}\\left(\\left[12,14,16,18,20\\right]\\right)','\\operatorname{stdevp}\\left(\\left[4,10,16,22,28\\right]\\right)']
       },
       {
