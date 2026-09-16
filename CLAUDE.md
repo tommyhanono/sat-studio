@@ -1,7 +1,7 @@
 # SAT Studio — CLAUDE.md
 
 Plataforma de práctica para el **Digital SAT** con interfaz estilo **Bluebook**. Se reparte por link, se
-instala en el teléfono como app, y la idea es que la use un colegio entero. **Toda la interfaz y las 1.200
+instala en el teléfono como app, y la idea es que la use un colegio entero. **Toda la interfaz y las 2.620
 preguntas están en inglés**, igual que el examen; el código, los comentarios y estas notas siguen en español.
 
 Para entrar hace falta **cuenta**, creada con el correo de la escuela. Al registrarse, el estudiante elige su
@@ -33,7 +33,7 @@ Corre las doce y sale con código 1 si algo falla:
 
 | Qué | Verifica | Casos |
 |---|---|---|
-| `test-shell.js` | la **estructura** de `index.html`: llaves del CSS, bloques que compilan, `</script>` sueltos, secciones repetidas | 13 |
+| `test-shell.js` | la **estructura** de `index.html`: llaves del CSS, bloques que compilan, `</script>` sueltos, secciones repetidas, y la salud de los 30 matchers de la taxonomía | 18 |
 | `auditar-destrezas.js` | que las 1.200 caigan en una de las **30 destrezas oficiales**, y cuántas las recoge el cajón | — |
 | `auditar-banco.js` | el contenido: dominios contra los pesos oficiales, dificultad, formato, integridad, duplicados | — |
 | `test-humo.js` | que la app **se juega**: los tres formatos de pregunta, la calificación, y que el backend quede vivo | 13 |
@@ -71,6 +71,47 @@ entre A, B, C y D cuando un set generado la deja cargada a una letra.
 - Para cambiar de pantalla, **`mostrarSolo(id)`**, nunca `classList.add('hidden')` a mano. Cada vista tenía su
   propia lista y ninguna las incluía a todas; el síntoma era scroll horizontal en móvil porque la tabla de la
   vista de abajo seguía midiendo.
+
+## Los simulacros salen del banco
+
+Eran seis constantes escritas a mano (`N_MOCKS = 8`, `N_ENG = 8`…). Ahora `cuantosExamenes()` las calcula desde
+el pozo de cada tier, así que **la oferta crece sola** cuando crece el banco. Con 2.620 preguntas son **100**
+simulacros; con 1.200 eran 48; con 786, 36.
+
+Dos cosas lo hacen seguro: cada simulacro numerado se siembra con **su número**, así que agregar más nunca
+cambia la composición de los que alguien ya hizo; y hay un **piso** en los que ya existían, porque una tarjeta
+que desaparece puede llevarse el resultado de alguien colgando, y una de más no le hace daño a nadie.
+
+`mockPool()` está **memoizado**: desde que las cuentas se calculan solas se llama una docena de veces por
+repintado del inicio, y eso recorre el banco entero.
+
+## Cuidado con los matchers de la taxonomía
+
+Un matcher es una lista de subcadenas, y **en inglés casi toda subcadena corta vive dentro de otra palabra**.
+En una sola noche se corrigieron siete que desviaban preguntas en silencio:
+
+| patrón | mordía | se iba a |
+|---|---|---|
+| `gist` | biolo**gist**, archaeolo**gist**, re**gist**ered | Central Ideas |
+| `sector` | bi**sector** | Circles |
+| `factor` | **factor**y | Equivalent expressions |
+| `radical` | **radical**ly | Equivalent expressions |
+| `interest` | **interest**ed | Percentages |
+| `ratio` | **ratio**nal | Ratios, rates and units |
+| `bar\b` · `graph` | sand**bar**, carto**graph**er, para**graph** | Command of Evidence: Quantitative |
+
+Y `possessive` estaba en *Boundaries* cuando College Board lo pone en *Form, Structure and Sense* — los
+posesivos son forma de palabra, no frontera de oración.
+
+**Entre todos, 45 preguntas estaban contadas bajo una destreza que no era la suya.** No rompe nada visible:
+rompe los números de la pestaña de temas y lo que el plan de mejora recomienda practicar.
+
+> [!warning] Y una que me costó a mí
+> Al acotar cinco de esos patrones escribí `\\b` en vez de `\b` — barra invertida **literal**. El regex
+> compila igual, no tira ningún error, y **deja de matchear absolutamente nada**. El auditor seguía diciendo
+> "todas clasificadas" porque el cajón de sastre las recogía. Lo detectó un agente, no una prueba.
+> De ahí salen **S14-S18** en `test-shell.js`: que ningún matcher lleve `\\b` literal, que cada destreza se
+> reconozca a sí misma por su nombre, y que ninguna muerda una palabra común que no le toca.
 
 ## La taxonomía oficial: las 30 destrezas
 
