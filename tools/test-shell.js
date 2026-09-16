@@ -107,6 +107,47 @@ const lineaDe = i => html.slice(0, i).split('\n').length;
   check('S11 ninguna pestaña pinta la misma sección dos veces', dobles.length === 0, [...new Set(dobles)].join(' · '));
 }
 
+/* ---------- 4b. los matchers de la taxonomía ----------
+   Un regex de SAT_SKILLS es una lista de subcadenas, y dos cosas lo rompen en
+   silencio:
+
+   · `\\b` en vez de `\b` — barra invertida LITERAL seguida de b. El patrón
+     compila igual, no tira ningún error, y deja de matchear absolutamente nada.
+     Pasó de verdad: acotar cinco patrones con la escapada mal los dejó mudos, y
+     lo detectó un agente al notar que sus preguntas ya no caían donde debían.
+   · una subcadena corta sin límite de palabra — `gist` vive dentro de
+     "biologist", `sector` dentro de "bisector", `factor` dentro de "factory".
+
+   Las dos fallan hacia el mismo lado: preguntas contadas bajo una destreza que
+   no es la suya, en la pantalla que el estudiante usa para decidir qué practicar. */
+{
+  const bloque = html.slice(html.indexOf('var SAT_SKILLS'), html.indexOf('function skillByKey'));
+  const literal = (bloque.match(/\\\\b/g) || []).length;
+  check('S14 ningún matcher lleva \\b literal (compila y no matchea nada)', literal === 0,
+    literal + ' ocurrencia(s)');
+
+  let SAT_SKILLS = null;
+  try { SAT_SKILLS = (0, eval)(bloque + '; SAT_SKILLS'); } catch (e) { /* lo reporta S15 */ }
+  check('S15 SAT_SKILLS se puede evaluar', !!SAT_SKILLS);
+  if (SAT_SKILLS) {
+    check(`S16 son las 30 destrezas oficiales (${SAT_SKILLS.length})`, SAT_SKILLS.length === 30);
+    /* Cada matcher tiene que reconocer su propio nombre. Si una destreza no se
+       reconoce a sí misma, nada la va a encontrar. */
+    const mudos = SAT_SKILLS.filter(x => !x.cajon && !x.m.test(x.t.toLowerCase()))
+      .map(x => x.t);
+    check('S17 cada destreza se reconoce a sí misma por su nombre', mudos.length === 0, mudos.join(' · '));
+    /* Y ninguna puede morder palabras inglesas que no tienen nada que ver. */
+    const TRAMPAS = ['biologist', 'archaeologist', 'registered', 'factory', 'radically',
+      'interested', 'rational argument', 'characteristic', 'meantime'];
+    /* Y algunas que SÍ tienen que caer donde caen: la trampa de "bisector" no era
+       que matcheara, era que matcheaba *Circles* por llevar "sector" adentro. */
+    const muerden = [];
+    SAT_SKILLS.forEach(x => TRAMPAS.forEach(t => { if (x.m.test(t)) muerden.push(`"${t}" → ${x.t}`); }));
+    check('S18 ningún matcher muerde una palabra común que no le toca',
+      muerden.length === 0, muerden.join(' · '));
+  }
+}
+
 /* ---------- 4. las claves internas que no se traducen ---------- */
 {
   /* `difficulty:'Extreme'` no existe: el motor compara contra tres cadenas y
