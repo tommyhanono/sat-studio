@@ -62,7 +62,8 @@ for (const rel of archivos) {
   const L = medir(s.questions);
   if (!L.n) continue;
   filas.push({ rel, id: s.id, sec: s.section, larga: L.larga, corta: L.corta, n: L.n,
-    pctL: L.pctL, pctC: L.pctC, prosa: L.prosa, promMax: L.promMax, casos: L.casos });
+    pctL: L.pctL, pctC: L.pctC, prosa: L.prosa, promMax: L.promMax, casos: L.casos,
+    variables: L.variables, pctExtremo: L.pctExtremo });
 }
 
 const peor = f => Math.max(f.pctL, f.pctC);
@@ -92,6 +93,21 @@ const tN = prosa.reduce((a, f) => a + f.n, 0) || 1;
 console.log(`\nsolo los de prosa: más larga ${tL}/${tN} (${(100 * tL / tN).toFixed(1)} %) · ` +
   `más corta ${tC}/${tN} (${(100 * tC / tN).toFixed(1)} %)`);
 console.log('al azar, cada una debería rondar el 25 %');
+
+/* La tercera pista: que la correcta viva SIEMPRE en el medio.
+   Cero por ciento arriba en las dos direcciones no es la meta — significa que la
+   correcta nunca es extrema, y entonces "marca la del largo intermedio" acierta
+   la mitad de las veces. Solo se juzgan las preguntas donde el largo de verdad
+   varía; donde las cuatro opciones pesan igual no hay extremo que evitar. */
+/* El corte en 25 % y no en 15: al azar es 50, y con 12-27 preguntas por set el
+   ruido es grande. 25 % está claramente por debajo del azar sin disparar por una
+   racha. Medido sobre el banco de hoy, los sets de prosa van de 39 % a 95 %. */
+const flacos = prosa.filter(f => f.variables >= 12 && f.pctExtremo != null && f.pctExtremo < 25);
+if (flacos.length) {
+  console.log('\n⚠︎ la correcta evita los extremos de forma sospechosa (al azar sería ~50 %):');
+  flacos.forEach(f => console.log(`   ${f.id}: en un extremo solo ${f.pctExtremo.toFixed(0)} % ` +
+    `de las ${f.variables} preguntas donde el largo varía — "marca la del medio" acierta demasiado`));
+}
 if (!malos) { console.log(`✓ ningún set de prosa pasa del ${TOPE} % en ninguna de las dos direcciones`); process.exit(0); }
 console.error(`✗ ${malos} set(s) por encima del ${TOPE} %`);
 process.exit(1);

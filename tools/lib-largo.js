@@ -51,10 +51,35 @@ function medir(questions){
   });
   const n = mc.length || 1;
   const promMax = mc.length ? sumaMax / mc.length : 0;
+
+  /* La tercera pista, la que no se ve mirando los dos porcentajes de arriba.
+     Si la correcta NUNCA es ni la más larga ni la más corta, entonces siempre es
+     una de las dos del medio — y "marca la del largo intermedio" pasa a acertar
+     el 50 %. Cero por ciento en las dos direcciones no es la meta: es el mismo
+     defecto girado noventa grados.
+
+     Solo cuenta donde el largo de verdad varía. Si las cuatro opciones miden
+     casi lo mismo —la puntuación, por ejemplo, donde son el mismo texto con
+     distinta coma— no hay extremo que evitar y "ninguna es extrema" es la
+     verdad, no una pista. Entre las que SÍ varían, al azar la correcta cae en un
+     extremo la mitad de las veces: hay cuatro posiciones y dos son extremas. */
+  let variables = 0, enExtremo = 0;
+  mc.forEach(q => {
+    const claves = Object.keys(q.choices);
+    const largos = claves.map(k => String(q.choices[k]).length);
+    const lc = String(q.choices[q.correct]).length;
+    const max = Math.max.apply(null, largos), min = Math.min.apply(null, largos);
+    if (max - min < margen(lc)) return;   // las cuatro pesan casi igual
+    variables++;
+    if (lc === max || lc === min) enExtremo++;
+  });
+  const pctExtremo = variables ? 100 * enExtremo / variables : null;
+
   return {
     n: mc.length, larga, corta,
     pctL: 100 * larga / n, pctC: 100 * corta / n,
     prosa: promMax > 14, promMax: Math.round(promMax), casos,
+    variables, enExtremo, pctExtremo,
   };
 }
 

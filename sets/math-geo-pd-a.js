@@ -30,7 +30,8 @@
   var FIG_TANGENTS =
     '<svg viewBox="0 0 250 205" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A circle with center O. Point P is outside the circle, to the right of O. Segment OP is dashed and labeled 15. Two segments are drawn from P to the circle: PT touches the circle at point T above segment OP, and PU touches the circle at point U below segment OP. Radius OT is labeled 9, and radius OU is drawn as well. A small square at T marks the right angle between OT and PT, and a small square at U marks the right angle between OU and PU. The four segments OT, TP, PU and UO form quadrilateral OTPU.">' +
     '<circle cx="95" cy="110" r="60" fill="none" stroke="#1e1e1e" stroke-width="2.5"/>' +
-    '<line x1="95" y1="110" x2="195" y2="110" stroke="#757575" stroke-width="2" stroke-dasharray="6 4"/>' +
+    '<line x1="95" y1="110" x2="160" y2="110" stroke="#757575" stroke-width="2" stroke-dasharray="6 4"/>' +
+    '<line x1="184" y1="110" x2="195" y2="110" stroke="#757575" stroke-width="2" stroke-dasharray="6 4"/>' +
     '<line x1="95" y1="110" x2="131" y2="62" stroke="#324DC7" stroke-width="2.5"/>' +
     '<line x1="95" y1="110" x2="131" y2="158" stroke="#324DC7" stroke-width="2.5"/>' +
     '<line x1="131" y1="62" x2="195" y2="110" stroke="#1e1e1e" stroke-width="2.5"/>' +
@@ -39,7 +40,7 @@
     '<polygon points="131,158 125,150 133,144 139,152" fill="none" stroke="#1e1e1e" stroke-width="1.6"/>' +
     '<circle cx="95" cy="110" r="3" fill="#1e1e1e"/><circle cx="195" cy="110" r="3" fill="#1e1e1e"/>' +
     '<text x="99" y="80" font-size="14" font-family="Georgia,serif" text-anchor="middle" fill="#324DC7">9</text>' +
-    '<text x="172" y="102" font-size="14" font-family="Georgia,serif" text-anchor="middle">15</text>' +
+    '<text x="172" y="118" font-size="14" font-family="Georgia,serif" text-anchor="middle">15</text>' +
     '<text x="83" y="108" font-size="13" font-family="Georgia,serif" text-anchor="end" font-style="italic">O</text>' +
     '<text x="203" y="114" font-size="13" font-family="Georgia,serif" font-style="italic">P</text>' +
     '<text x="137" y="52" font-size="13" font-family="Georgia,serif" font-style="italic">T</text>' +
@@ -53,8 +54,8 @@
     '<svg viewBox="0 0 290 205" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Right triangle DEF. Vertex D is at the lower left, vertex E is at the lower right, and vertex F is directly above E. A small square at E marks the right angle. The angle at D measures 30 degrees. Side EF, the vertical side opposite the 30 degree angle, is labeled 11. Side DE, along the bottom, and side DF, the slanted side from D up to F, are not labeled.">' +
     '<polygon points="40,170 250,170 250,50" fill="none" stroke="#1e1e1e" stroke-width="2.5"/>' +
     '<rect x="238" y="158" width="12" height="12" fill="none" stroke="#1e1e1e" stroke-width="1.6"/>' +
-    '<path d="M 74 170 A 34 34 0 0 0 69.5 153.1" fill="none" stroke="#324DC7" stroke-width="1.8"/>' +
-    '<text x="88" y="160" font-size="13" font-family="Georgia,serif" text-anchor="middle" fill="#324DC7">30°</text>' +
+    '<path d="M 86 170 A 46 46 0 0 0 79.9 147.2" fill="none" stroke="#324DC7" stroke-width="1.8"/>' +
+    '<text x="102" y="162" font-size="13" font-family="Georgia,serif" text-anchor="middle" fill="#324DC7">30°</text>' +
     '<text x="260" y="114" font-size="14" font-family="Georgia,serif">11</text>' +
     '<text x="30" y="180" font-size="13" font-family="Georgia,serif" font-style="italic">D</text>' +
     '<text x="256" y="186" font-size="13" font-family="Georgia,serif" font-style="italic">E</text>' +
