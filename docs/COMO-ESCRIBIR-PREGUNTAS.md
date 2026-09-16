@@ -153,6 +153,66 @@ Reglas que el validador exige:
 - El SAT real es ~25 % SPR en matemática. El banco venía en 21,7 %, así que los
   sets nuevos de matemática empujan hacia arriba ese porcentaje a propósito.
 
+## La trampa del clasificador: qué destreza se lleva tu pregunta
+
+Esta es la parte que más trabajo costó en la tanda a 3.250, y la que no se ve.
+
+Cada pregunta cae en **una** de las 30 destrezas oficiales, y quien lo decide no
+eres tú: es `skillOf()` en `index.html`, corriendo un regex contra el campo
+`skill` **más los primeros 160 caracteres de `stem`**. Dentro de un dominio las
+destrezas se prueban **en orden** —primero las que llevan `pri`, después el orden
+del arreglo— y **gana la primera que machea**. La última de cada dominio es el
+cajón de sastre.
+
+Así que una palabra de más manda tu pregunta a otra destreza **en silencio**. No
+falla nada: `auditar-destrezas.js` sigue diciendo "todas clasificadas", porque lo
+están — solo que en el casillero equivocado, y el número que el estudiante ve en
+su pestaña de temas queda mentiroso.
+
+**Antes de escribir un set, abre `SAT_SKILLS` en `index.html`** y mira, para tu
+destreza: qué palabras la disparan, y qué palabras disparan las que se prueban
+**antes** que ella. Esas segundas son tus prohibidas, en `skill` y en el arranque
+del `stem`. Más allá del carácter 160 puedes escribir lo que quieras.
+
+Las que de verdad mordieron, para que no vuelvan a morder:
+
+| escribes | se va a | escribe mejor |
+|---|---|---|
+| "200 residents **randomly selected**" | Evaluating statistical claims | "a **random sample of** 200 residents" |
+| "**correlation** between the two" | Evaluating statistical claims | "**association** between the two" |
+| "the **sample mean** of the 40 values" | Inference from samples | "the **mean of** the 40 values" |
+| "the **average** price rose 8 %" | One-variable data | "the price rose 8 %" |
+| "the **price** per liter" (en una de tasas) | Percentages | "the **cost** per liter" |
+| "**average speed**" (en una de tasas) | One-variable data | "**speed**" |
+| "**complementary angles** in the figure" | Right triangles and trig | "the two angles add to 90 degrees" |
+| "the **radius** of the cylinder" | Circles | "a cylinder 12 cm **across**" |
+| "**tangent line**" (en una de trigonometría) | Circles | "the **tangent of** angle A", "tan A" |
+| "**slope-intercept form**" | Linear equations in two variables | "**slope-intercept**", o solo "slope" |
+| "**at least** 12 tickets" (en una que no es de desigualdades) | Linear inequalities | "**exactly** 12 tickets" |
+| "**infinitely many solutions**" | Systems of two linear equations | "the two equations describe the same line" |
+| "**factor** the quadratic" | Equivalent expressions | "**solve**", "the **roots** of" |
+| "**radical equation**" | Equivalent expressions | "**square-root equation**" |
+| "which choice best **supports**" (en una de inferencia) | Command of Evidence: Textual | "which choice most **logically completes** the text" |
+| "the **meaning** of the disagreement" | Words in Context | "how Text 2 **responds to** Text 1" |
+| "the verb in the subordinate **clause**" | Boundaries | "the verb in the **inner phrase**" |
+
+Y dos que muerden por el otro lado, porque al matcher le faltaba algo:
+
+- El examen escribe **`sin` / `cos` / `tan`**, no "sine"/"cosine". El matcher no las
+  conocía y una identidad de cofunción caía en el cajón de sastre.
+- **`counting`, `range`, `spread` y `unit`** iban sin `\b` por delante y se comían
+  "discounting", "orange", "spreadsheet" y "community".
+
+Las dos redes que lo vigilan ahora: **S18** en `test-shell.js` (ningún matcher
+muerde una palabra inglesa ajena) y los **casos canónicos** en
+`auditar-destrezas.js` (cada caso sacado de un error real cae donde debe). S18
+sola no alcanzaba: un matcher también falla cuando **no reconoce lo suyo**, y ahí
+la pregunta se va al cajón sin que nada se ponga en rojo.
+
+**Después de agregar un set, corre siempre `node tools/auditar-destrezas.js`** y
+mira que tus preguntas hayan caído donde querías, y que no las haya recogido el
+cajón (la columna marcada con `~`).
+
 ## Qué hace buena a una explicación
 
 Esta es la parte que de verdad enseña, y es donde se nota si la pregunta la
