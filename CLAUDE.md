@@ -220,11 +220,28 @@ Los ~1,5 MB de preguntas **no** se cargan con `defer`: `defer` descarga en paral
   retirados traían el tag original en su comentario y partían el archivo en dos: la app cargaba con 0 preguntas.
 - `DOMContentLoaded`: **83 ms**.
 
+## Cuánto aguanta (medido, no supuesto)
+
+Probado con el banco clonado a **2.480 preguntas en 193 sets**:
+
+- **Rendimiento intacto**: `renderHome` 25 ms, `skillBank` 13 ms, `mockPool` doce veces por debajo de 1 ms
+  (memoizado). Las 79 comprobaciones de pantalla en verde en los siete aparatos.
+- **Peso**: 4,8 MB sin comprimir · **1,2 MB con gzip**, que es lo que sirven Vercel y Pages. En un wifi de
+  colegio a 2 Mbps la primera pantalla sale en medio segundo y el banco entra por detrás mientras el estudiante
+  escribe su contraseña.
+- **Por eso NO hay carga diferida por sección.** Era la cirugía más riesgosa que se evaluó y la medición dijo
+  que no hace falta. Lo que sí quedó es la barra de progreso: cinco segundos de cartel mudo no se distinguen de
+  una app colgada.
+
+**Ojo al medir esto de nuevo:** el service worker sirve el banco de caché y `http.server` de Python no
+comprime. La primera medición dio 117 ms en una red de 2 Mbps —imposible— porque la limitación no se estaba
+aplicando. Hay que usar navegador nuevo, incógnito, `setCacheEnabled(false)` y comparar contra gzip.
+
 ## Antes de abrirlo a una escuela (pendientes de operación)
 
-- **SMTP propio en Supabase** (Auth → SMTP Settings). El correo de recuperación de contraseña lo manda
-  Supabase, y su servicio por defecto está limitado a unos pocos envíos por hora: con 100 estudiantes, el
-  "olvidé mi contraseña" deja de funcionar el primer día. **Es el pendiente más urgente.**
+- ~~SMTP propio en Supabase~~ — **hecho** (Tommy, 15-sep-2026). Era el pendiente que bloqueaba abrirlo a una
+  escuela: el servicio por defecto de Supabase aguanta unos pocos envíos por hora y el "olvidé mi contraseña"
+  se caía el primer día con 100 estudiantes.
 - **Protección de contraseñas filtradas** (Auth → Passwords → HaveIBeenPwned). Está apagada y **no se puede
   encender en el plan actual**: la API devuelve HTTP 402, es una función de Pro.
 - **Quién puede registrarse.** Hoy cualquiera con el link crea cuenta con cualquier correo — decisión de Tommy,
