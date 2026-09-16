@@ -1532,6 +1532,7 @@ var SAT_SET_FILES = [
   'sets/rw-evid-a.js',
   'sets/rw-form-b.js',
   'sets/rw-bound-b.js',
+  'sets/math-geo-b.js',
 
   // Desmos how-to hints per Math question (merged into questions at load)
   'sets/desmos-a.js',
@@ -2115,7 +2116,7 @@ var SAT_SKILLS = [
 
   { k:'am-equiv',    dom:'Advanced Math', sec:'math', peso:35,
     t:'Equivalent expressions',
-    m:/equivalent|factor|expand|simplif|rational expression|radical|exponent rule|difference of squares|complex fraction|grouping|remainder|polynomial division/i },
+    m:/equivalent|\\bfactor(s|ing|ed|ization)?\\b|expand|simplif|rational expression|\\bradicals?\\b|exponent rule|difference of squares|complex fraction|grouping|remainder|polynomial division/i },
   { k:'am-nonlin-eq',dom:'Advanced Math', sec:'math', peso:35,
     t:'Nonlinear equations and systems',
     m:/quadratic|discriminant|completing the square|roots?\b|solutions?\b|vieta|radical equation|rational equation|extraneous|nonlinear system|intersect|tangen/i },
@@ -2148,14 +2149,14 @@ var SAT_SKILLS = [
     m:/mean\b|median|mode\b|average|standard deviation|spread|range\b|box plot|histogram|dot plot|one-variable|distribution|outlier|weighted/i },
   { k:'pd-percent',  dom:'Problem-Solving & Data Analysis', sec:'math', peso:15,
     t:'Percentages',
-    m:/percent|discount|markup|interest|\bincreased? by\b|\bdecreased? by\b|price|sale\b|tax\b|tip\b/i },
+    m:/percent|discount|markup|\\binterest\\b|\bincreased? by\b|\bdecreased? by\b|price|sale\b|tax\b|tip\b/i },
   { k:'pd-ratio',    dom:'Problem-Solving & Data Analysis', sec:'math', peso:15,
     t:'Ratios, rates and units', cajon:true,
-    m:/ratio|\brate\b|unit|proportion|scale|convert|speed|density|per \w+|miles|kilograms|liters/i },
+    m:/\\bratios?\\b|\brate\b|unit|proportion|scale|convert|speed|density|per \w+|miles|kilograms|liters/i },
 
   { k:'gt-circles',  dom:'Geometry & Trigonometry', sec:'math', peso:15,
     t:'Circles',
-    m:/circle|circumference|\barc\b|sector|radius|radii|diameter|central angle|tangent line/i },
+    m:/circle|circumference|\barc\b|\bsectors?\b|radius|radii|diameter|central angle|tangent line/i },
   { k:'gt-right',    dom:'Geometry & Trigonometry', sec:'math', peso:15,
     t:'Right triangles and trigonometry',
     m:/right triangle|pythagor|sohcahtoa|sine|cosine|tangent|hypotenuse|30-60-90|45-45-90|complementary angle|leg\b/i },
@@ -2467,13 +2468,13 @@ var PLAN_TOPICS = [
   { key:'expr',     sec:'math', dom:'Algebra', t:'Equivalent expressions & absolute value', m:/equivalent expression|absolute value|binomial|difference of squares|fraction or decimal|structural shortcut/i },
   { key:'quad',     sec:'math', dom:'Advanced Math', t:'Quadratics', m:/quadratic|parabola|discriminant|vertex|completing the square|roots?\b|real solutions?/i },
   { key:'expo',     sec:'math', dom:'Advanced Math', t:'Exponents & exponentials', m:/exponent|exponential|half-life|decay|growth|logarithm|power(s)? of/i },
-  { key:'poly',     sec:'math', dom:'Advanced Math', t:'Polynomials & rational functions', m:/polynomial|rational|factor|remainder|zeros?\b|multiplicity|asymptot|end behavior/i },
+  { key:'poly',     sec:'math', dom:'Advanced Math', t:'Polynomials & rational functions', m:/polynomial|rational|\\bfactor(s|ing|ed|ization)?\\b|remainder|zeros?\b|multiplicity|asymptot|end behavior/i },
   { key:'funcs',    sec:'math', dom:'Advanced Math', t:'Functions: notation & transformations', m:/function|composit|inverse|transformation|translation|piecewise|domain|range|constraint|modular|cubic|evaluating/i },
-  { key:'percent',  sec:'math', dom:'Problem-Solving & Data Analysis', t:'Percents', m:/percent|discount|interest|markup|increase|decrease/i },
+  { key:'percent',  sec:'math', dom:'Problem-Solving & Data Analysis', t:'Percents', m:/percent|discount|\\binterest\\b|markup|increase|decrease/i },
   { key:'prob',     sec:'math', dom:'Problem-Solving & Data Analysis', t:'Probability & two-way tables', m:/probabilit|two-way|expected value|mutually|independent|conditional|condition(ing)? on|permutat|combinator|counting|events?\b/i },
   { key:'stats',    sec:'math', dom:'Problem-Solving & Data Analysis', t:'Statistics & reading data', m:/mean\b|median|mode\b|average|standard deviation|spread|statistic|margin of error|sample|scatter|histogram|graph|plot|best fit|box plot|one-variable|two-variable|predict/i },
-  { key:'rates',    sec:'math', dom:'Problem-Solving & Data Analysis', t:'Ratios, proportions & units', m:/ratio|proportion|\brate|unit|density|scale factor|per hour|conversion/i },
-  { key:'circles',  sec:'math', dom:'Geometry & Trigonometry', t:'Circles', m:/circle|circumference|\barc\b|arc length|sector|tangent|radius|radii|diameter|central angle/i },
+  { key:'rates',    sec:'math', dom:'Problem-Solving & Data Analysis', t:'Ratios, proportions & units', m:/\\bratios?\\b|proportion|\brate|unit|density|scale factor|per hour|conversion/i },
+  { key:'circles',  sec:'math', dom:'Geometry & Trigonometry', t:'Circles', m:/circle|circumference|\barc\b|arc length|\bsectors?\b|tangent|radius|radii|diameter|central angle/i },
   { key:'trig',     sec:'math', dom:'Geometry & Trigonometry', t:'Triangles & trigonometry', m:/triangle|trigonometr|pythagor|sohcahtoa|similar|congruen|sine|cosine|tangent ratio|angle|distance|midpoint|height|hypotenuse|leg\b|30-60-90|45-45-90/i },
   { key:'solids',   sec:'math', dom:'Geometry & Trigonometry', t:'Volume & solids', m:/volume|solid|cylinder|cone|sphere|hemisphere|prism|pyramid|surface area|scaling|dimension/i },
   { key:'punct',    sec:'rw', dom:'Standard English Conventions', t:'Punctuation & sentence boundaries', m:/punctuat|comma|semicolon|colon|dash|boundar|clause|joining|coordination|parenthes|non-?essential|nonessential|restrictive|appositive|title/i },
@@ -4616,7 +4617,7 @@ function fwToggle(k, btn){
 }
 
 var LESSONS = [
-  { key:'l-circles', sec:'math', title:'Circles', match:/c[ií]rc|circunferencia|arco|sector|tangen/i,
+  { key:'l-circles', sec:'math', title:'Circles', match:/c[ií]rc|circunferencia|arco|\bsectors?\b|tangen/i,
     steps:['<b>Equation:</b> from x²+y²+Dx+Ey=F, complete the square → (x−h)²+(y−k)²=r². Center (−D/2, −E/2); r² = F + (D/2)² + (E/2)².',
            '<b>Signs flip:</b> (y+4)² means k = −4, not +4. Same for x.',
            '<b>Arc & sector — one proportion:</b> angle/360 = arc/circumference = sector/(whole area). (In radians: arc = rθ, sector = ½r²θ.)'],
@@ -4875,7 +4876,7 @@ function lessonCardHTML(L){
 /* ================= STUDY PLAN (mastery path — Tommy's admin account only) ================= */
 var STUDY_TOPICS = [
   // Math weak topics (order = pool-matching priority)
-  { key:'circles',  sec:'math', title:'Circles',                          why:'Mock 1: coordinate plane 0/1 · Zinkerz: 3/9',    match:/c[ií]rc|circunferencia|arco|sector|tangen/i },
+  { key:'circles',  sec:'math', title:'Circles',                          why:'Mock 1: coordinate plane 0/1 · Zinkerz: 3/9',    match:/c[ií]rc|circunferencia|arco|\bsectors?\b|tangen/i },
   { key:'poly',     sec:'math', title:'Polynomials & Rational Functions', why:'Mock 1: 0/2 · Zinkerz: 1/5',                     match:/polin[óo]m|polinomi|racional|teorema del (factor|residuo)|ceros|end behavior|comportamiento en los extremos/i },
   { key:'probstat', sec:'math', title:'Probability & Statistics',         why:'Mock 1: Probability 0/2, Scatterplots 0/1',      match:/probabilidad|estad[íi]stic|desviaci[óo]n|dispersi[óo]n|mediana|media \(|promedio/i },
   { key:'expo',     sec:'math', title:'Exponents & Exponentials',         why:'Mock 1: 0/3 — the whole cluster missed',         match:/exponente|exponencial|semivida/i },

@@ -24,7 +24,7 @@
     '<circle cx="130" cy="120" r="3" fill="#1e1e1e"/>' +
     '<g font-family="Georgia,serif" font-size="15">' +
     '<text x="130" y="152" text-anchor="middle">110°</text>' +
-    '<text x="130" y="60" text-anchor="middle" fill="#324DC7" font-style="italic">x°</text></g>' +
+    '<text x="130" y="68" text-anchor="middle" font-size="14" fill="#324DC7" font-style="italic">x°</text></g>' +
     '<g font-family="Georgia,serif" font-size="13" font-style="italic">' +
     '<text x="42" y="184">A</text><text x="212" y="182">B</text>' +
     '<text x="130" y="22" text-anchor="middle">C</text><text x="138" y="114">O</text></g>' +
@@ -53,11 +53,11 @@
     '<circle cx="131" cy="70.7" r="3" fill="#1e1e1e"/>' +
     '<g font-family="Georgia,serif" font-size="14">' +
     '<text x="104" y="88" text-anchor="middle">6</text><text x="167" y="88" text-anchor="middle">8</text>' +
-    '<text x="96" y="62" text-anchor="end" fill="#324DC7" font-style="italic">x</text>' +
+    '<text x="137" y="52" fill="#324DC7" font-style="italic">x</text>' +
     '<text x="182" y="130" fill="#324DC7" font-style="italic">x + 13</text></g>' +
     '<g font-family="Georgia,serif" font-size="13" font-style="italic">' +
-    '<text x="64" y="68">A</text><text x="209" y="68">C</text><text x="104" y="44">B</text>' +
-    '<text x="216" y="198">D</text><text x="140" y="64">E</text></g>' +
+    '<text x="58" y="66">A</text><text x="211" y="66">C</text><text x="98" y="40">B</text>' +
+    '<text x="220" y="202">D</text><text x="140" y="64">E</text></g>' +
     NOTA.replace('YY', '244') + '</svg>';
 
   var FIG_SQUARE_CIRCLE =
@@ -101,12 +101,13 @@
   var FIG_RAMP =
     '<svg viewBox="0 0 300 210" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="A ramp shown as a right triangle sitting on level ground. The ramp surface slopes up from a point on the ground on the left to a doorway on the right. At the left end, the angle between the ground and the ramp surface measures 12 degrees. At the right end, a vertical segment labeled 3 ft joins the top of the ramp down to the ground, and a small square marks the right angle there. The length of the ramp surface is unknown.">' +
     '<line x1="20" y1="170" x2="280" y2="170" stroke="#1e1e1e" stroke-width="2.5"/>' +
-    '<line x1="40" y1="170" x2="209.4" y2="134" stroke="#324DC7" stroke-width="2.5"/>' +
-    '<line x1="209.4" y1="134" x2="209.4" y2="170" stroke="#1e1e1e" stroke-width="2.5"/>' +
+    '<line x1="40" y1="170" x2="209.4" y2="108" stroke="#324DC7" stroke-width="2.5"/>' +
+    '<line x1="209.4" y1="108" x2="209.4" y2="170" stroke="#1e1e1e" stroke-width="2.5"/>' +
+    '<path d="M78,170 A38,38 0 0 0 75.7,156.9" fill="none" stroke="#1e1e1e" stroke-width="1.5"/>' +
     '<rect x="197.4" y="158" width="12" height="12" fill="none" stroke="#1e1e1e" stroke-width="1.5"/>' +
     '<g font-family="Georgia,serif" font-size="14">' +
-    '<text x="218" y="156">3 ft</text><text x="68" y="165" font-size="13">12°</text>' +
-    '<text x="118" y="146" fill="#324DC7">?</text></g>' +
+    '<text x="218" y="142">3 ft</text><text x="84" y="166" font-size="12">12°</text>' +
+    '<text x="116" y="132" fill="#324DC7">?</text></g>' +
     NOTA.replace('YY', '204') + '</svg>';
 
   var FIG_ALTITUDE =
@@ -142,7 +143,7 @@
     '<polygon points="40,40 145,40 145,85 220,85 220,160 40,160" fill="none" stroke="#1e1e1e" stroke-width="2.5"/>' +
     '<g font-family="Georgia,serif" font-size="14">' +
     '<text x="92" y="32" text-anchor="middle">7</text>' +
-    '<text x="154" y="68">3</text>' +
+    '<text x="153" y="64">3</text>' +
     '<text x="182" y="78" text-anchor="middle">5</text>' +
     '<text x="228" y="128">5</text>' +
     '<text x="130" y="178" text-anchor="middle">12</text>' +
@@ -211,7 +212,7 @@
     '<g font-family="Georgia,serif" font-size="14">' +
     '<text x="70" y="170">39°</text>' +
     '<text x="140" y="120" text-anchor="middle" font-size="13">84°</text>' +
-    '<text x="228" y="160" fill="#324DC7">?</text></g>' +
+    '<text x="218" y="162" fill="#324DC7">?</text></g>' +
     '<g font-family="Georgia,serif" font-size="13" font-style="italic">' +
     '<text x="30" y="194">R</text><text x="196" y="196">S</text>' +
     '<text x="139" y="86">T</text><text x="304" y="196">W</text></g>' +
