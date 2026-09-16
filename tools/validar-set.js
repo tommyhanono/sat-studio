@@ -65,8 +65,10 @@ const archivos = process.argv.slice(2);
 if (!archivos.length) { console.error('Uso: node tools/validar-set.js sets/archivo.js [...]'); process.exit(1); }
 
 /* ---------- el banco que ya está vivo, para detectar choques ---------- */
-function bancoVivo() {
-  const g = cargarBanco(RAIZ);
+function bancoVivo(excluir) {
+  // se excluyen los archivos que se están validando: si uno ya está enchufado,
+  // compararlo contra el banco lo hace chocar CONSIGO MISMO
+  const g = cargarBanco(RAIZ, excluir);
   const ids = new Set(), setIds = new Set(), enunciados = new Map();
   g.SAT_SETS.forEach(s => {
     setIds.add(s.id);
@@ -80,7 +82,7 @@ function bancoVivo() {
 }
 const norm = t => String(t || '').replace(/<[^>]+>/g, ' ').replace(/\s+/g, ' ').trim().toLowerCase();
 
-const VIVO = bancoVivo();
+const VIVO = bancoVivo(archivos);
 let errores = 0, avisos = 0, totalQ = 0;
 const err = (f, m) => { console.error(`  ✗ ${f}: ${m}`); errores++; };
 const avi = (f, m) => { console.warn(`  ⚠︎ ${f}: ${m}`); avisos++; };

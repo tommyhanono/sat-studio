@@ -105,7 +105,7 @@
         expCorrect:'Multiply the WHOLE second equation by 3 so the y terms cancel: 6x − 3y = 15. Add it to the first: 10x = 40, so x = 4. Then 2(4) − y = 5 gives y = 3. (Check: 4(4) + 3(3) = 16 + 9 = 25 ✓.)',
         expWrong:{
           A:'4 is the value of x. It is the number you find first, which is exactly why it is the most common wrong answer here.',
-          B:'1 comes from scaling only one side: writing 6x − 3y = 5 instead of 6x − 3y = 15. Multiplying an equation by 3 multiplies EVERY term, the constant included.',
+          B:'1 comes from scaling only one side: writing 6x − 3y = 5 instead of 6x − 3y = 15. That gives 10x = 30 and x = 3, and then 2(3) − y = 5 hands you y = 1. Multiplying an equation by 3 multiplies EVERY term, the constant included.',
           D:'−3 is a sign slip when isolating y: 2x − y = 5 gives y = 2x − 5, not y = 5 − 2x.'
         },
         tip:'Before adding, ask what one equation must be multiplied by so a variable cancels. Then multiply every single term, both sides. Scaling half an equation is the single most expensive mistake in elimination.',

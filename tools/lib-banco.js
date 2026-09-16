@@ -58,12 +58,24 @@ function archivosDeSets(raiz) {
  * Falla fuerte si un archivo no existe o no parsea: un banco a medias que no
  * avisa es peor que uno que no carga.
  */
-function cargarBanco(raiz) {
+/**
+ * Carga el banco vivo.
+ * `excluir` es una lista de rutas que NO se cargan, y existe por un motivo
+ * concreto: `validar-set.js` compara un archivo contra el banco para detectar
+ * ids y enunciados repetidos. Si ese archivo YA está en `SAT_SET_FILES`, se
+ * compara contra sí mismo y reporta un choque por pregunta — 69 errores que no
+ * son errores. Tres agentes distintos perdieron tiempo con eso antes de que se
+ * arreglara acá. La herramienta tiene que dar el mismo veredicto esté el set
+ * enchufado o no.
+ */
+function cargarBanco(raiz, excluir) {
   raiz = raiz || RAIZ;
+  const fuera = new Set((excluir || []).map(r => path.resolve(raiz, r)));
   const g = { SAT_SETS: [], SAT_DESMOS: {} };
   global.window = g;
   for (const rel of archivosDeSets(raiz)) {
     const abs = path.join(raiz, rel);
+    if (fuera.has(path.resolve(abs))) continue;
     if (!fs.existsSync(abs)) throw new Error('Falta ' + rel + ', pero index.html lo carga.');
     try { eval(fs.readFileSync(abs, 'utf8')); }
     catch (e) { throw new Error(rel + ': ' + e.message); }
