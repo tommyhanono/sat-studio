@@ -1,7 +1,7 @@
 # SAT Studio — CLAUDE.md
 
 Plataforma de práctica para el **Digital SAT** con interfaz estilo **Bluebook**. Se reparte por link, se
-instala en el teléfono como app, y la idea es que la use un colegio entero. **Toda la interfaz y las 1.002
+instala en el teléfono como app, y la idea es que la use un colegio entero. **Toda la interfaz y las 1.200
 preguntas están en inglés**, igual que el examen; el código, los comentarios y estas notas siguen en español.
 
 Para entrar hace falta **cuenta**, creada con el correo de la escuela. Al registrarse, el estudiante elige su
@@ -15,7 +15,7 @@ Para entrar hace falta **cuenta**, creada con el correo de la escuela. Al regist
 las utilidades en `tools/`, la documentación en `docs/` y el SQL en `supabase/`.
 
 Backend: **Supabase** reusando el proyecto compartido de tres-leches, en un **schema `sat` propio** que NO
-está expuesto a la API: todo pasa por seis funciones RPC en `public` que filtran por `auth.uid()`.
+está expuesto a la API: todo pasa por funciones RPC en `public` que filtran por `auth.uid()`.
 
 - Live: <https://sat-studio.vercel.app> · espejo en <https://tommyhanono.github.io/sat-studio/>
 
@@ -29,16 +29,18 @@ Abrir `index.html` en el navegador, o cualquier server estático. No hay `npm ru
 tools/verificar.sh
 ```
 
-Corre las ocho y sale con código 1 si algo falla:
+Corre las once y sale con código 1 si algo falla:
 
 | Qué | Verifica | Casos |
 |---|---|---|
+| `test-shell.js` | la **estructura** de `index.html`: llaves del CSS, bloques que compilan, `</script>` sueltos, secciones repetidas | 13 |
+| `auditar-destrezas.js` | que las 1.200 caigan en una de las **30 destrezas oficiales**, y cuántas las recoge el cajón | — |
 | `auditar-banco.js` | el contenido: dominios contra los pesos oficiales, dificultad, formato, integridad, duplicados | — |
 | `test-humo.js` | que la app **se juega**: los tres formatos de pregunta, la calificación, y que el backend quede vivo | 13 |
 | `test-datos.js` | que **una sesión jugada no se pierde**, con un Supabase falso al que se le corta la red | 48 |
 | `test-plan.js` | que "Mi plan de mejora" recomienda desde los datos del estudiante y arma el test que prometió | 30 |
 | `test-idioma.js` | que los 9.000+ campos que lee un estudiante en el banco están en inglés | — |
-| `test-pantallas.js` | **lo que se ve**: recorre las ocho pestañas y todas las pantallas en Chrome leyendo el texto renderizado, más los botones sin acción, el XSS del panel y del tablón, las barras vacías, el scroll horizontal a 320/375/414, la pregunta de confianza y la tarea repetible | 33 |
+| `test-pantallas.js` | **lo que se ve**: recorre las ocho pestañas y todas las pantallas en Chrome, más los botones sin acción, el XSS, las barras vacías, Classroom entero, Fast Pace, la confianza, y **siete aparatos** (celular, iPad en las dos orientaciones, computadora) midiendo desborde y tamaño táctil | 66 |
 | `test-pwa.js` | que se **instale** en el teléfono y **abra sin internet** (corta la red de verdad) | 20 |
 | `auditar-longitud.js` | que la correcta no sea sistemáticamente la opción más larga (se contesta sin leer) | — |
 | `huella-banco.js` | la huella estructural del banco (ids, respuestas, dominios, dificultades) | — |
@@ -69,6 +71,30 @@ entre A, B, C y D cuando un set generado la deja cargada a una letra.
   propia lista y ninguna las incluía a todas; el síntoma era scroll horizontal en móvil porque la tabla de la
   vista de abajo seguía midiendo.
 
+## La taxonomía oficial: las 30 destrezas
+
+`domain` (los ocho dominios) alcanza para armar un examen con los pesos oficiales. **No** alcanza para lo otro:
+el reporte que College Board le manda al estudiante habla de **destrezas con nombre propio**, y si la app no
+habla ese idioma, "practicá lo que fallaste" no se puede contestar.
+
+`SAT_SKILLS` en `index.html` son las 30 (11 de R&W, 19 de matemática) con su dominio, su peso y un matcher.
+`skillOf(q)` clasifica cada pregunta en **exactamente una**, y `tools/auditar-destrezas.js` falla si alguna
+queda afuera.
+
+Dos cosas que hay que saber antes de tocar los matchers:
+
+- **Se prueban por `pri` (menor primero), no por el orden del arreglo.** Ese orden es el oficial y es el que se
+  *muestra*. Cuando dos destrezas se pisan gana la más específica, no la que quedó más arriba. El caso que lo
+  motivó: `pd-margin` llevaba `/sample|survey|population/` suelto y se comía las preguntas de diseño de estudio
+  antes de que `pd-claims` llegara a probarse — 18 contra 4, cuando la verdad es al revés.
+- **Cada dominio tiene UN cajón de sastre, marcado `cajon:true`.** Antes era implícito ("el que quedó último"),
+  y así el 30 % de las preguntas se clasificaba solo por dominio sin que nada lo dijera. Hoy los ocho tienen
+  regla propia y el auditor reporta cuántas entran por el cajón: **6,3 %**.
+
+Al escribir un set nuevo, **el texto de `skill` decide la destreza**. Una palabra de más (`system`, `factor`,
+`at least`, `randomly selected`) manda la pregunta a otra destreza en silencio. Después de agregar un set:
+`node tools/auditar-destrezas.js`.
+
 ## Las dos claves internas que NO se traducen
 
 - En el **set**: `level: 'Fácil' | 'Media' | 'Difícil' | 'Extreme'` — es la etiqueta que se muestra
@@ -91,14 +117,56 @@ encima. Decidir entre 21 acordeones es la forma más rápida de que alguien no h
 - Los sets de las dos pestañas de temas pasan por `buscadorSets()`: búsqueda, filtro por tema y por nivel,
   ocho visibles y "Show the rest". **Filtra en el DOM**, sin repintar el inicio — repintar pierde el scroll y
   lo que el estudiante ya escribió.
-- `Fast Pace` arma el test en el momento con los temas que el plan marcó como los más flojos. Existe porque
-  el hueco real de un estudiante no son 70 minutos seguidos, son los diez entre clase y clase.
-- `Classroom` es el tablón del profesor: tabla `sat.posts` + tres RPC, el grupo sale del dominio del correo.
-  Un post con `tarea` distinto de `null` es una **asignación repetible**: el estudiante la puede hacer las veces
-  que quiera y cada intento arma un test **nuevo** con `planBuildSet()` desde los mismos temas, así que repetir
-  es practicar y no memorizar el orden de las respuestas. Los intentos se cuentan solos porque la sesión se
-  guarda con `setId = 'assign-<id>'`. Los `temas` guardados son claves de `PLAN_TOPICS`, que **por esto** no se
-  renombran nunca.
+- Las dos pestañas de temas abren con **la taxonomía oficial completa** (19 destrezas en matemática, 11 en
+  verbal), con cuántas preguntas hay de cada una y en qué nivel. Antes Math solo tenía el buscador de sets, así
+  que entrar a Math no mostraba "todo lo de Math", mostraba las tandas que alguien armó.
+- El **camino de dominio** se parte por sección: los temas de matemática viven en Math Topics y los de verbal en
+  Verbal Topics. Entero vivía en Daily, y era el motivo real de que Daily mostrara todo; ahí queda solo el
+  siguiente paso, que sí es de hoy.
+- `Fast Pace` **pregunta cuánto tiempo hay** y decide. Eran tres botones (5, 10, 15 preguntas) que no se
+  distinguían de un Drill más corto, porque eso es lo que eran: un parámetro, no una pestaña. La prioridad se
+  muestra: primero lo que se está olvidando, después lo que se falló, y solo si no hay nada de eso, la destreza
+  más floja. El **Pace Trainer** entrena lo único que ningún otro modo entrena — los 71 s por pregunta de verbal
+  y los 95 de matemática (`PACE_SEG`), con el reloj de ESA pregunta al lado del de la sesión.
+
+## Classroom — clases de verdad
+
+v1 era un tablón plano: todos los que compartían dominio de correo veían lo mismo. Eso alcanza para un
+profesor y se rompe con dos — en un colegio todos son `@iae.edu`, así que la de matemática de 11.º le
+publicaba a la escuela entera. **Una clase tiene que ser una lista, no un dominio.**
+
+```
+sat.classes        teacher_id · escuela · nombre · periodo · codigo (6 car, sin 0/O ni 1/I/L) · archivada
+sat.class_members  class_id · user_id
+sat.classwork      class_id · kind · titulo · cuerpo · spec · vence
+```
+
+`kind` son cuatro y cada uno significa algo distinto:
+
+| kind | qué es | intentos | cuenta |
+|---|---|---|---|
+| `warmup` | 3-5 preguntas para abrir la clase | ilimitados | no |
+| `assignment` | trabajo para practicar | ilimitados | el mejor |
+| `final` | una parte del final | **uno** | sí, y se reporta |
+| `material` | un ejemplo resuelto que arma el profesor | — | no |
+
+- **No hay tabla de entregas.** El resultado de cada intento vive en `sat.sessions` con `set_id = 'cw-<id>'`.
+  Tener una segunda tabla obligaría a mantener dos verdades sobre el mismo hecho, y se contradicen.
+- **Cada intento arma un test NUEVO** desde las mismas destrezas, así que repetir es practicar y no memorizar
+  el orden de las respuestas. Las `skills` guardadas son claves de `SAT_SKILLS`, que **por esto** no se
+  renombran nunca (igual que `PLAN_TOPICS` en v1).
+- **El reporte contesta una sola pregunta**: en qué está fallando la clase, por destreza **oficial** — el mismo
+  idioma que usa el reporte de College Board. Lista a **todos** los inscritos, incluidos los que no entregaron:
+  un reporte que solo muestra a quien hizo la tarea esconde justo lo que hay que mirar.
+- **`material` es como enseña la profesora.** Puede llevar tres cosas, las tres opcionales: una **pregunta real
+  del banco** (la clase la ve, la intenta, y la respuesta con su explicación oficial llega **tapada** hasta que
+  ella la descubre), **sus pasos** (salen de a uno: mostrar el final de golpe no enseña nada), y expresiones de
+  **Desmos** para la demo en vivo.
+- **v1 no se borró.** `sat.posts` y sus tres RPC siguen igual: hay datos de personas ahí.
+
+**Pendiente de operación:** la migración de `supabase/schema.sql` **todavía no está aplicada** en el proyecto
+de Supabase. Hasta que se corra, Classroom muestra un aviso claro ("Classroom is not switched on yet") en vez
+de un error de Postgres, y el resto de la app anda normal.
 
 ## Lo que el porcentaje esconde
 
@@ -157,7 +225,8 @@ Este sitio es **público**: pasa `90_Sistema/TOMMY-WEB-LAUNCH.md` completo (vaul
 ~/.claude/scripts/web-launch-audit/run.sh . --out report.md
 ```
 
-Estado al 15-sep-2026, contra el sitio EN VIVO: **34 PASS · 0 FAIL · 2 WARN**. Contra el repo local salta
+Estado al 15-sep-2026, contra el sitio EN VIVO: **34 PASS · 0 FAIL · 2 WARN** (medido antes de este cambio;
+hay que volver a correrlo después de publicar). Contra el repo local salta
 un FAIL extra, `B1-12`, que apunta a un `console.log` de `tools/huella-banco.js` — un script de línea de
 comandos, donde el estado de éxito es lo que imprime y su código de salida. Falso positivo por construcción.
 

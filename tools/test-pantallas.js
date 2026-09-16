@@ -129,8 +129,14 @@ const FAKE = function () {
             { id: 'w3', kind: 'final', titulo: 'Unit 2 final — part A', cuerpo: 'One attempt.',
               spec: { skills: ['am-nonlin-eq'], nivel: 'Difícil', n: 20, modo: 'exam' },
               vence: '2027-02-10', fecha: '2026-09-13', mis_intentos: 0, mi_mejor: null },
+            /* El Example completo: pregunta del banco + pasos + Desmos. `qid` se
+               resuelve contra el banco REAL en el navegador, así que esto también
+               comprueba que una pregunta de verdad se puede pintar acá. */
             { id: 'w4', kind: 'material', titulo: 'How I want you to set up a system', cuerpo: 'Write both equations first.',
-              spec: { latex: ['y=2x+1', 'y=-x+7'] }, vence: null, fecha: '2026-09-12', mis_intentos: 0, mi_mejor: null },
+              spec: { latex: ['y=2x+1', 'y=-x+7'],
+                      pasos: ['Name the two unknowns', 'Write one equation per sentence', 'Now solve'],
+                      qid: (window.__QID_EJEMPLO || null) },
+              vence: null, fecha: '2026-09-12', mis_intentos: 0, mi_mejor: null },
           ], error: null });
           if (name === 'sat_classwork_save') return Promise.resolve({ data: 'w5', error: null });
           if (name === 'sat_classwork_delete') return Promise.resolve({ data: null, error: null });
@@ -411,6 +417,14 @@ const BOTONES_MUERTOS = function () {
       check('P8 se llega a la pantalla de resultados', terminó);
     }
 
+    // se elige una pregunta REAL del banco para el ejemplo de la profesora
+    await page.evaluate(() => {
+      const q = Object.keys(window.SATAPP.QINDEX)
+        .map(k => window.SATAPP.QINDEX[k])
+        .filter(q => q.choices && q.expCorrect)[0];
+      window.__QID_EJEMPLO = q ? q.id : null;
+    });
+
     /* --- P13. Classroom: clases, trabajo tipado y el reporte --- */
     const aula = await page.evaluate(async () => {
       const esperar = ms => new Promise(r => setTimeout(r, ms));
@@ -462,6 +476,49 @@ const BOTONES_MUERTOS = function () {
     check('P13f un material con Desmos trae su botón', aula.materialConDesmos, aula);
     check('P13g arrancar un trabajo queda atado a él (cw-…)',
       aula.arranca && /^cw-/.test(aula.setId || '') && aula.n > 0, aula);
+
+    /* --- P13h-k. lo que la profesora usa para ENSEÑAR --- */
+    const ensena = await page.evaluate(async () => {
+      const esperar = ms => new Promise(r => setTimeout(r, ms));
+      document.querySelector('#set-sections .hnav-a[data-tab="clase"]').click();
+      await esperar(600);
+      // Classroom recuerda dónde estabas: si ya quedó DENTRO de la clase, la
+      // lista no se repinta y no hay tarjeta que tocar. Se entra solo si hace falta.
+      const tarjeta = document.querySelector('[data-clase]');
+      if (tarjeta) { tarjeta.click(); await esperar(700); }
+      const r = {
+        hayPregunta: !!document.querySelector('.cw-ej-stem'),
+        opciones: document.querySelectorAll('.cw-ej-ch li').length,
+        // la respuesta NO puede verse antes de que la descubran
+        tapada: (document.querySelector('.cw-ej-hide') || {}).hidden === true,
+        pasos: document.querySelectorAll('.cw-pasos li').length,
+        pasosVisibles: [...document.querySelectorAll('.cw-pasos li')].filter(x => !x.hidden).length,
+      };
+      const rev = document.querySelector('[data-cw-reveal]');
+      if (rev) rev.click();
+      await esperar(200);
+      r.destapada = (document.querySelector('.cw-ej-hide') || {}).hidden === false;
+      r.dice = ((document.querySelector('.cw-ej-key') || {}).textContent || '').trim();
+      const bp = document.querySelector('[data-cw-paso]');
+      if (bp) bp.click();
+      await esperar(200);
+      r.pasosTrasUnClic = [...document.querySelectorAll('.cw-pasos li')].filter(x => !x.hidden).length;
+      r.botonCuenta = bp ? bp.textContent : '';
+      // y el compositor le deja elegir la pregunta y escribir los pasos
+      r.picker = !!document.getElementById('cw-ej-skill') && !!document.getElementById('cw-ej-q');
+      r.cajaPasos = !!document.getElementById('cw-pasos');
+      goHome();
+      await esperar(300);
+      return r;
+    });
+    check('P13h un Example pone una pregunta de verdad en el tablero',
+      ensena.hayPregunta && ensena.opciones === 4, ensena);
+    check('P13i la respuesta llega TAPADA y se descubre al pedirla',
+      ensena.tapada && ensena.destapada && /Answer:/.test(ensena.dice), ensena);
+    check('P13j los pasos salen de a uno, no todos de golpe',
+      ensena.pasos === 3 && ensena.pasosVisibles === 1 && ensena.pasosTrasUnClic === 2, ensena);
+    check('P13k y el compositor le deja elegir la pregunta y escribir los pasos',
+      ensena.picker && ensena.cajaPasos, ensena);
 
     /* --- P15. el reporte: en qué falló la clase --- */
     const reporte = await page.evaluate(async () => {

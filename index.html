@@ -564,6 +564,20 @@
   .cw-tools{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
   .sin-entregar td{color:var(--gray-mid)}
   @media(max-width:560px){ .cl-new-row .auth-inp,.cl-per,.cl-cod{flex:1 1 100%} .cw-date{margin-left:0} }
+  /* El ejemplo resuelto de la profesora: la pregunta en papel, como en el
+     examen, para que la clase la vea igual que la va a ver el día del SAT. */
+  .cw-ej{border:1px solid var(--gray-line);border-radius:12px;padding:14px 16px;background:#fff;margin:10px 0}
+  .cw-ej-pass{font-size:.9rem;line-height:1.65;color:#333;border-left:3px solid var(--gray-strip);padding-left:12px;margin-bottom:10px}
+  .cw-ej-stem{font-size:.95rem;line-height:1.6;margin-bottom:10px}
+  .cw-ej-ch{list-style:none;padding:0;margin:0 0 10px}
+  .cw-ej-ch li{padding:6px 0;font-size:.92rem;line-height:1.5}
+  .cw-ej-hide{border-top:1px solid var(--gray-strip);margin-top:10px;padding-top:10px;font-size:.9rem;line-height:1.6}
+  .cw-ej-key{color:var(--navy);font-weight:700;margin:0 0 6px}
+  .cw-ej-tip{color:var(--gray-mid);font-size:.86rem;margin-top:8px}
+  /* Los pasos: numerados y de a uno. El borde dorado marca por dónde va. */
+  .cw-pasos{margin:10px 0;padding-left:26px;font-size:.92rem;line-height:1.7}
+  .cw-pasos li{margin:5px 0;padding-left:4px}
+  .cw-pasos li::marker{color:var(--gold);font-weight:800}
   .class-list{display:flex;flex-direction:column;gap:12px}
   .class-post{background:#fff;border:1px solid #e3e6ef;border-radius:12px;padding:16px 18px;box-shadow:var(--sombra)}
   .class-post.pinned{border-left:4px solid var(--gold)}
@@ -2747,8 +2761,24 @@ function claseRPC(fn, args){
 }
 function claseCaja(){ return $('#class-body-zone'); }
 function clasePinta(html){ var c = claseCaja(); if(c) c.innerHTML = html; }
+/* Un error del servidor no se le tira crudo a un profesor.
+   El caso que importa es el primero: mientras la migración de Classroom no esté
+   aplicada, PostgREST contesta "Could not find the function public.sat_class_mine
+   in the schema cache". Eso es exacto y es inútil — quien lo lee entiende que la
+   app está rota, no que falta correr un SQL. */
 function claseError(e){
-  clasePinta('<p class="empty-note">' + escHtml((e && e.message) || 'Something went wrong') + '</p>');
+  var m = (e && e.message) || 'Something went wrong';
+  if(/Could not find the function|schema cache|does not exist/i.test(m)){
+    clasePinta('<div class="empty-note"><b>Classroom is not switched on yet.</b><br>' +
+      'The database still needs the Classroom tables. Everything else in SAT Studio works normally.' +
+      '<br><small>For whoever runs this: apply <code>supabase/schema.sql</code>.</small></div>');
+    return;
+  }
+  if(/not authorized|42501|only a teacher/i.test(m)){
+    clasePinta('<p class="empty-note">' + escHtml(m) + '</p>');
+    return;
+  }
+  clasePinta('<p class="empty-note">' + escHtml(m) + '</p>');
 }
 
 function claseAbrir(forzar){
@@ -2871,6 +2901,51 @@ function pintarFeed(){
   cwWireCards();
 }
 
+/* Un Example de la profesora. Las tres piezas son opcionales y cada una hace
+   algo distinto:
+     · la PREGUNTA sale del banco, con su explicación oficial ya escrita. La
+       clase la ve, la intenta, y recién después se descubre — no se muestra
+       resuelta de entrada, porque leer una solución no es resolverla.
+     · los PASOS son de ella, y salen DE A UNO por la misma razón.
+     · Desmos abre la demo en vivo.
+   Si no hay ninguna, queda el mensaje que escribió, que ya era v1. */
+function cwEjemploHTML(spec, wid){
+  var h = '';
+  var q = spec.qid ? QINDEX[spec.qid] : null;
+  if(spec.qid && !q){
+    h += '<p class="class-hint">The question attached to this example is not in the bank anymore.</p>';
+  } else if(q){
+    h += '<div class="cw-ej">' +
+      (q.passage ? '<div class="cw-ej-pass">' + renderContent(q.passage) + '</div>' : '') +
+      (q.figure ? '<div class="figure-wrap">' + q.figure + '</div>' : '') +
+      '<div class="cw-ej-stem">' + renderContent(q.stem || '') + '</div>' +
+      (q.choices
+        ? '<ol class="cw-ej-ch">' + ['A','B','C','D'].filter(function(l){ return q.choices[l] != null; })
+            .map(function(l){ return '<li><b>' + l + '.</b> ' + renderContent(String(q.choices[l])) + '</li>'; }).join('') + '</ol>'
+        : '<p class="class-hint">Student-produced response — type the number.</p>') +
+      '<div class="cw-ej-hide" data-cw-sol="' + escAttr(wid) + '" hidden>' +
+        '<p class="cw-ej-key">Answer: <b>' + escHtml(q.correct || q.answer || '') + '</b></p>' +
+        '<p>' + renderContent(q.expCorrect || '') + '</p>' +
+        (q.tip ? '<p class="cw-ej-tip">' + renderContent(q.tip) + '</p>' : '') +
+      '</div>' +
+      '<button type="button" class="mini" data-cw-reveal="' + escAttr(wid) + '">Reveal the answer</button>' +
+    '</div>';
+  }
+  if(spec.pasos && spec.pasos.length){
+    h += '<ol class="cw-pasos" data-cw-pasos="' + escAttr(wid) + '">' +
+      spec.pasos.map(function(p, i){
+        return '<li' + (i === 0 ? '' : ' hidden') + '>' + escHtml(p) + '</li>';
+      }).join('') + '</ol>' +
+      (spec.pasos.length > 1
+        ? '<button type="button" class="mini" data-cw-paso="' + escAttr(wid) + '">Next step (1/' + spec.pasos.length + ')</button>'
+        : '');
+  }
+  if(spec.latex && spec.latex.length){
+    h += '<button type="button" class="mini" data-cw-desmos="' + escAttr(spec.latex.join('|||')) + '">📈 Open in Desmos</button>';
+  }
+  return h;
+}
+
 function cwCardHTML(w, profe){
   var m = CW_META[w.kind] || CW_META.assignment;
   var spec = w.spec || {};
@@ -2887,9 +2962,7 @@ function cwCardHTML(w, profe){
     '<h5>' + escHtml(w.titulo) + '</h5>' +
     (w.cuerpo ? '<p class="cw-body">' + escHtml(w.cuerpo).replace(/\n/g, '<br>') + '</p>' : '') +
     (w.kind === 'material'
-      ? (spec.latex && spec.latex.length
-          ? '<button type="button" class="mini" data-cw-desmos="' + escAttr((spec.latex || []).join('|||')) + '">📈 Open in Desmos</button>'
-          : '')
+      ? cwEjemploHTML(spec, w.id)
       : '<div class="cw-go">' +
           '<p class="cw-what"><b>' + escHtml(nombres.join(' · ')) + '</b> · ' +
             (spec.n || 12) + ' questions · ' +
@@ -2930,6 +3003,52 @@ function cwWireCards(){
       claseRPC('sat_classwork_delete', { p_id: b.getAttribute('data-cw-del') })
         .then(function(){ toast('Deleted.'); claseFeed(CLASE.actual, true); })
         .catch(function(e){ toast('Could not delete it: ' + e.message, true); });
+    });
+  });
+  // Descubrir la respuesta de la pregunta del ejemplo. Una vez y no se vuelve a
+  // esconder: esconderla otra vez no le sirve a nadie y confunde al que llegó tarde.
+  /* El selector de la pregunta del ejemplo. Se llena desde el banco al elegir
+     la destreza, y muestra un pedazo del enunciado para que la profesora
+     reconozca cuál es sin tener que abrirla. */
+  (function(){
+    var sSk = $('#cw-ej-skill'), sQ = $('#cw-ej-q'), prev = $('#cw-ej-prev');
+    if(!sSk || !sQ) return;
+    sSk.addEventListener('change', function(){
+      conBanco(function(){
+        var k = sSk.value;
+        sQ.innerHTML = '<option value="">— then the question —</option>';
+        if(prev) prev.textContent = '';
+        if(!k) return;
+        (skillBank()[k] || []).slice(0, 120).forEach(function(q){
+          var o = document.createElement('option');
+          o.value = q.id;
+          o.textContent = nivelLabel(nivelDe(q)) + ' · ' + String(q.stem || '').replace(/<[^>]*>/g, '').slice(0, 70);
+          sQ.appendChild(o);
+        });
+      });
+    });
+    sQ.addEventListener('change', function(){
+      var q = QINDEX[sQ.value];
+      if(prev) prev.textContent = q ? String(q.stem || '').replace(/<[^>]*>/g, '').slice(0, 170) : '';
+    });
+  })();
+  Array.prototype.forEach.call(document.querySelectorAll('[data-cw-reveal]'), function(b){
+    b.addEventListener('click', function(){
+      var z = document.querySelector('[data-cw-sol="' + b.getAttribute('data-cw-reveal') + '"]');
+      if(z){ z.hidden = false; b.remove(); }
+    });
+  });
+  // Los pasos salen de a uno. El botón dice en cuál va, para que la clase sepa
+  // cuánto falta y la profesora no tenga que contarlos en voz alta.
+  Array.prototype.forEach.call(document.querySelectorAll('[data-cw-paso]'), function(b){
+    b.addEventListener('click', function(){
+      var ol = document.querySelector('[data-cw-pasos="' + b.getAttribute('data-cw-paso') + '"]');
+      if(!ol) return;
+      var oculto = ol.querySelector('li[hidden]');
+      if(oculto) oculto.hidden = false;
+      var quedan = ol.querySelectorAll('li[hidden]').length;
+      var total = ol.children.length;
+      if(quedan === 0) b.remove(); else b.textContent = 'Next step (' + (total - quedan) + '/' + total + ')';
     });
   });
   Array.prototype.forEach.call(document.querySelectorAll('[data-cw-desmos]'), function(b){
@@ -2985,7 +3104,26 @@ function cwCompositorHTML(){
     '<input id="cw-titulo" class="auth-inp" type="text" maxlength="120" placeholder="Circles — Friday">' +
     '<label class="auth-lbl" for="cw-cuerpo">Message <span class="lbl-opt">— for an Example, this is where you teach it</span></label>' +
     '<textarea id="cw-cuerpo" class="class-ta" rows="3" maxlength="4000" placeholder="What they need to know, and by when."></textarea>' +
+    /* Enseñar es más que escribir un párrafo. Un Example puede llevar tres cosas
+       y las tres son opcionales: una PREGUNTA de verdad del banco (con su
+       explicación oficial ya escrita, que la clase ve cuando la profesora la
+       descubre), los PASOS con que ella la resuelve —que salen de a uno, porque
+       mostrar el final de una vez no enseña nada— y las expresiones de Desmos
+       para la demo en vivo. */
     '<div id="cw-latex-zone" class="hidden">' +
+      '<label class="auth-lbl" for="cw-ej-skill">Put a real question on the board <span class="lbl-opt">— optional</span></label>' +
+      '<div class="ct-row">' +
+        '<select id="cw-ej-skill" class="ct-sel"><option value="">— pick a skill —</option>' +
+          SAT_SKILLS.map(function(x){
+            var c = skillConteo(x.k);
+            return c.total ? '<option value="' + escAttr(x.k) + '">' + escHtml(x.t) + ' (' + c.total + ')</option>' : '';
+          }).join('') +
+        '</select>' +
+        '<select id="cw-ej-q" class="ct-sel"><option value="">— then the question —</option></select>' +
+      '</div>' +
+      '<p class="class-hint" id="cw-ej-prev"></p>' +
+      '<label class="auth-lbl" for="cw-pasos">Your steps <span class="lbl-opt">— one per line. The class sees them one at a time.</span></label>' +
+      '<textarea id="cw-pasos" class="class-ta" rows="4" placeholder="Draw the radius to the point of tangency&#10;A tangent meets the radius at 90°&#10;Now it is a right triangle — use Pythagoras"></textarea>' +
       '<label class="auth-lbl" for="cw-latex">Desmos expressions <span class="lbl-opt">— one per line, they open in the calculator</span></label>' +
       '<textarea id="cw-latex" class="class-ta" rows="2" placeholder="y=(x-3)^2+2"></textarea>' +
     '</div>' +
@@ -3033,8 +3171,11 @@ function cwWire(){
     var skills = Array.prototype.map.call(document.querySelectorAll('[data-cw-skill].on'),
       function(c){ return c.getAttribute('data-cw-skill'); });
     if(k !== 'material' && !skills.length){ toast('Pick at least one skill.', true); return; }
+    var lineas = function(id){
+      return ($(id).value || '').split('\n').map(function(x){ return x.trim(); }).filter(Boolean);
+    };
     var spec = k === 'material'
-      ? { latex: ($('#cw-latex').value || '').split('\n').map(function(x){ return x.trim(); }).filter(Boolean) }
+      ? { latex: lineas('#cw-latex'), pasos: lineas('#cw-pasos'), qid: $('#cw-ej-q').value || null }
       : { skills: skills, nivel: $('#cw-nivel').value, n: parseInt($('#cw-n').value, 10) || 12, modo: $('#cw-modo').value };
     var b = $('#cw-guardar'); b.disabled = true;
     claseRPC('sat_classwork_save', {

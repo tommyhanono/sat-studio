@@ -46,8 +46,12 @@ La sección con la que arranca el home. Lee **tu** historial y te arma un test a
 3. **Arma el test**: dentro de cada tema van primero las preguntas que ya fallaste y después las que nunca
    has visto.
 
-Son 28 temas que cubren 783 de las 786 preguntas del banco. La prioridad sale del peso oficial de cada dominio
-en el examen multiplicado por lo mal que vas. **La app propone; la decisión final es tuya.**
+Son 28 temas que cubren casi todo el banco. La prioridad sale del peso oficial de cada dominio en el examen
+multiplicado por lo mal que vas. **La app propone; la decisión final es tuya.**
+
+Y desde el 15-sep-2026 hay una segunda entrada, más fina: las **30 destrezas oficiales** de College Board (19
+de matemática, 11 de verbal), con cuántas preguntas hay de cada una y en qué nivel. Son los mismos nombres que
+vas a ver en tu reporte oficial, así que "practicá lo que fallaste" se puede contestar sin traducir nada.
 
 ## Qué incluye
 
@@ -103,9 +107,16 @@ caiga siempre en la misma letra. Recién cuando sale en verde se agrega la líne
 
 ## Contenido actual
 
-- **Banco:** 71 sets · 870 preguntas originales, sin ids ni enunciados repetidos, Verbal y Math, en cuatro
-  niveles (Warm-up · Test Level · Hard · real M2 · Brutal). El reparto por dominio y el estado contra los
-  pesos oficiales de College Board sale de `node tools/auditar-banco.js`.
+- **Banco:** 99 sets · **1.200 preguntas originales**, sin ids ni enunciados repetidos, Verbal y Math, en
+  cuatro niveles (Warm-up · Test Level · Hard · real M2 · Brutal). El reparto por dominio queda dentro de
+  1.00x–1.14x de los pesos oficiales de College Board, y ninguna de las 30 destrezas baja de 12 preguntas.
+  Sale de `node tools/auditar-banco.js` y `node tools/auditar-destrezas.js`.
+- **Classroom:** el profesor abre una clase, reparte un código de 6 caracteres, y asigna cuatro tipos de
+  trabajo: *warm-up*, *assignment*, *final* (un solo intento) y *example* — un ejemplo resuelto con una
+  pregunta real del banco, sus propios pasos y una demo de Desmos. El reporte le dice en qué destrezas está
+  fallando la clase y quién no entregó.
+- **Fast Pace:** le dices cuánto tiempo tienes y la app decide qué conviene hacer con él. Incluye el **Pace
+  Trainer**, que corre al ritmo real del examen (71 s por pregunta de verbal, 95 s por una de matemática).
 - **Mocks adaptativos** con la lógica del SAT real (Módulo 1 → rutea Módulo 2; score escalado): **Full Mocks** (8, /1600), **Hard Mocks** (6, todo difícil), **English Mocks** (8, /800) y **Math Mocks** (6, /800) — numerados, estables y re-tomables, con Review completo de cada intento.
 - **📋 Exam-Day Playbook:** estrategia investigada (pacing con checkpoints, Módulo 1 adaptativo, jugadas de Desmos, plan de semana final, protocolo del día del examen). Fuentes en `docs/final-week-playbook.md`.
 - **📖 Cheat sheet adaptativo** de Grammar & Punctuation: en cualquier Drill, el botón "Rules" abre un panel que resalta la regla exacta que evalúa la pregunta actual.
