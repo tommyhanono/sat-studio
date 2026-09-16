@@ -468,7 +468,7 @@ window.SAT_SETS.push({
     {
       id:'BND-31', type:'mc', domain:'Standard English Conventions', difficulty:'Difícil',
       skill:'Boundaries: no punctuation between a reporting verb and its clause',
-      passage:'Three separate audits have now shown %BLANK% that the countertop pails, not the larger bins, are what change the habits of a household.',
+      passage:'Three separate audits have now %BLANK% that the countertop pails, not the larger bins, are what change the habits of a household.',
       stem:'Which choice completes the text so that it conforms to the conventions of Standard English?',
       choices:{A:'shown', B:'shown,', C:'shown;', D:'shown:'},
       correct:'A',

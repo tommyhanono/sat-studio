@@ -251,6 +251,31 @@ for (const rel of archivos) {
     }
   }
 
+  /* La palabra pegada al blanco, repetida dentro de la opción.
+     Si el pasaje dice "…Kumasi, Ghana %BLANK% the dam…" y una opción es
+     "Ghana; the", el estudiante lee "Kumasi, Ghana Ghana; the". No lo atrapaba
+     nada: el JavaScript es válido, los conteos cuadran, la respuesta es correcta
+     — solo está impresa dos veces. Lo encontró un agente imprimiendo cada pasaje
+     con su respuesta sustituida, que es algo que ninguna herramienta hacía. */
+  const pegadas = [];
+  qs.forEach(q => {
+    const pas = String(q.passage || '');
+    const i = pas.indexOf('%BLANK%');
+    if (i < 0) return;
+    const antes = (pas.slice(0, i).trim().match(/([A-Za-z][\w'-]*)\s*$/) || [])[1];
+    if (!antes) return;
+    Object.keys(q.choices || {}).forEach(k => {
+      const primera = (String(q.choices[k]).trim().match(/^([A-Za-z][\w'-]*)/) || [])[1];
+      if (primera && primera.toLowerCase() === antes.toLowerCase()) {
+        pegadas.push(`${q.id}/${k}: "${antes} ${primera}…"`);
+      }
+    });
+  });
+  if (pegadas.length) {
+    err(rel, `la palabra anterior al blanco se repite dentro de la opción ` +
+      `(se lee dos veces): ${pegadas.slice(0, 4).join(' · ')}`);
+  }
+
   /* Dónde cayó cada pregunta, y si alguna la recogió el cajón de sastre. */
   const porSkill = {};
   let enCajon = 0, fueraDeDominio = 0;
