@@ -110,7 +110,7 @@
         stem:'Which choice most effectively uses data from the graph to complete the statement?',
         choices:{
           A:'its average wingspan of 71 mm is wider than the Emberling’s 38 mm.',
-          B:'its average wingspan of 71 mm is the widest of the three species.',
+          B:'its 71 mm average wingspan is the widest of the three.',
           C:'its average wingspan of 38 mm is the narrowest of the three species.',
           D:'the Ashwing’s average wingspan of 54 mm falls between the other two.'
         },
@@ -294,7 +294,7 @@
           A:'East Shore let 22 percent of orders run past 7 days, the highest share in the table.',
           B:'West Gate let only 9 percent of orders run past 7 days, close to North Basin’s 8 percent.',
           C:'North Basin’s median delivery time of 2 days is the fastest in the table.',
-          D:'North Basin posted a median of 2 days and let only 8 percent of orders run past 7 days, the best figure in each column.'
+          D:'North Basin posted a median of 2 days and let only 8 percent of orders run late, the best in each column.'
         },
         correct:'D',
         expCorrect:'The report makes a claim about two measures at once, so the evidence has to cover both columns. North Basin is lowest on median time (2 days, against 3, 4 and 5) and lowest on late orders (8 percent, against 9, 19 and 22). Best in both columns is precisely "strongest on both promises".',
@@ -331,3 +331,527 @@
         },
         tip:'When a passage sorts the cases into two groups, the answer almost always names every member of both groups. A choice that cites one bar, or two bars from the same group, is doing less work than the claim requires.'
       },
+
+      {
+        id:'QNT-11', type:'mc', domain:'Information and Ideas', difficulty:'Fácil',
+        skill:'Command of Evidence: Quantitative — picking the top value in a table column',
+        figure: dataTable({
+          caption:'Honey harvested in 2025, four rooftop hives',
+          cols:['Hive','Honey harvested (kg)'], align:['left','center'],
+          rows:[['Lantern Court','18'],['Gasworks','31'],['Rivet Hall','12'],['Stonepier','24']]
+        }),
+        passage:'A beekeeping collective in Dunmore keeps one hive on each of four rooftops and weighs the honey it takes from every hive at the end of the season. The collective has money for one more hive and wants to put it on the roof that produced the most honey, so it voted to add a second hive at Gasworks.',
+        stem:'Which choice most effectively uses data from the table to support the collective’s decision?',
+        choices:{
+          A:'The Gasworks hive produced 31 kg, the most of the four hives.',
+          B:'The Rivet Hall hive produced 12 kg of honey, the least of the four hives.',
+          C:'The Stonepier hive produced 24 kg of honey, more than Lantern Court’s 18 kg.',
+          D:'The Gasworks hive produced 31 kg of honey, more than Rivet Hall’s 12 kg.'
+        },
+        correct:'A',
+        expCorrect:'The vote rests on one roof beating the other three, so the evidence has to be the top of the column. Gasworks reads 31 kg, above Stonepier (24), Lantern Court (18) and Rivet Hall (12): one number, three rivals cleared.',
+        expWrong:{
+          B:'The reading is right, and 12 kg really is the bottom of the column, but that identifies the roof to give up on. The vote was about which roof earns a second hive.',
+          C:'Both weights are accurate, yet neither hive is the one the collective chose. Stonepier is in fact the runner-up, which is exactly why it cannot stand in as evidence for Gasworks.',
+          D:'Right hive, but the comparison is with the weakest rival. Stonepier at 24 kg is the hive that comes closest to Gasworks, and until it is cleared "the most" is unproven.'
+        },
+        tip:'A "the most" or "the best" claim needs the whole column, not one comparison. Find the largest number first, then check that the choice names the row the passage is defending.'
+      },
+
+      {
+        id:'QNT-12', type:'mc', domain:'Information and Ideas', difficulty:'Fácil',
+        skill:'Command of Evidence: Quantitative — completing a statement from a bar graph',
+        figure: barChart({
+          what:'Ochre sea stars counted per 100 square meters',
+          axis:'Sea stars per 100 m²', unitWord:'sea stars per 100 square meters', vmax:50, steps:5,
+          rows:[{label:'Gull Point',value:14},{label:'Basalt Cove',value:39},{label:'Weir Beach',value:26}]
+        }),
+        passage:'Ochre sea stars along this coast were nearly wiped out by a wasting disease a decade ago. Marine ecologist Hollis Nakagawa counted the survivors at three shorelines to find out where the population is bouncing back fastest. Of the three shorelines she surveyed, the recovery has gone furthest at Basalt Cove, because',
+        stem:'Which choice most effectively uses data from the graph to complete the statement?',
+        choices:{
+          A:'it holds 39 sea stars per 100 square meters, more than Gull Point’s 14.',
+          B:'it holds 39 sea stars per 100 square meters, the highest count of the three shorelines.',
+          C:'it holds 26 sea stars per 100 square meters, the highest count of the three shorelines.',
+          D:'Weir Beach holds 26 sea stars per 100 square meters, more than Gull Point’s 14.'
+        },
+        correct:'B',
+        expCorrect:'The sentence needs the shoreline where recovery has gone furthest, which means the largest count on the graph. The Basalt Cove bar reaches 39 sea stars per 100 square meters, above Weir Beach at 26 and Gull Point at 14.',
+        expWrong:{
+          A:'Both numbers come straight off the graph, but clearing the lowest bar is the easiest test there is. Weir Beach at 26 sits between them and is never accounted for.',
+          C:'26 is the Weir Beach bar, not the Basalt Cove bar. The ranking in the sentence is right; the value attached to it belongs to a different shoreline.',
+          D:'Accurate, and it even ranks two shorelines correctly, but the sentence is about Basalt Cove. Evidence about the runner-up cannot finish a sentence about the leader.'
+        },
+        tip:'Before you compare anything, put your finger on the bar the sentence names. Half of the wrong answers in graph questions are true statements about a neighboring bar.'
+      },
+
+      {
+        id:'QNT-13', type:'mc', domain:'Information and Ideas', difficulty:'Fácil',
+        skill:'Command of Evidence: Quantitative — a table where the winning value is the smallest',
+        figure: dataTable({
+          caption:'Water used to make one tonne of recycled paper',
+          cols:['Mill','Water used (liters per tonne)'], align:['left','center'],
+          rows:[['Ashgrove','26,000'],['Bellweir','9,500'],['Carrow','17,200'],['Dunlin','31,400']]
+        }),
+        passage:'Four mills in the Lower Ainsley valley all make paper from recycled fiber, and all four report how much water they draw for every tonne they produce. A regional trade group gives an annual efficiency award to the mill that uses the least water per tonne, and this year it named Bellweir.',
+        stem:'Which choice most effectively uses data from the table to support the trade group’s choice?',
+        choices:{
+          A:'Dunlin used 31,400 liters per tonne, the most of the four mills.',
+          B:'Bellweir used 9,500 liters per tonne, far below Dunlin’s 31,400.',
+          C:'Carrow used 17,200 liters per tonne, less than Ashgrove’s 26,000.',
+          D:'Bellweir used 9,500 liters per tonne, the least of the four mills.'
+        },
+        correct:'D',
+        expCorrect:'The award goes to the smallest number in the water column, so that is what the evidence has to establish. Bellweir reads 9,500 liters per tonne, under Carrow (17,200), Ashgrove (26,000) and Dunlin (31,400).',
+        expWrong:{
+          A:'31,400 is read correctly and Dunlin really is the heaviest water user, but an award for efficiency is decided at the other end of the column.',
+          B:'The right mill, and the gap is real, yet Dunlin is the easiest mill to beat. Carrow at 17,200 is the nearest competitor and is left untouched.',
+          C:'Both figures are accurate, and Carrow does use less water than Ashgrove, but neither mill won. Ranking two also-rans settles nothing about the winner.'
+        },
+        tip:'When lower is better, the claim still needs a full-column check, only upside down. Read the whole column, find the minimum, and make sure that row is the one the passage names.'
+      },
+
+      {
+        id:'QNT-14', type:'mc', domain:'Information and Ideas', difficulty:'Fácil',
+        skill:'Command of Evidence: Quantitative — checking an overstated ratio against the bars',
+        figure: barChart({
+          what:'Average listeners per weekday show, school radio',
+          axis:'Listeners', unitWord:'listeners', vmax:500, steps:5,
+          rows:[{label:'Morning Drive',value:210},{label:'Lunch Mix',value:465},{label:'After Bell',value:330}]
+        }),
+        passage:'The student radio station at Aurora Valley High runs three weekday shows and logs how many people are tuned in to each one. The principal asked where the daily announcements should go so that they reach as many students as possible, and station adviser Bev Quintero recommended Lunch Mix.',
+        stem:'Which choice most effectively uses data from the graph to support Quintero’s recommendation?',
+        choices:{
+          A:'Lunch Mix averages 465 listeners, above After Bell’s 330 and Morning Drive’s 210.',
+          B:'After Bell averages 330 listeners, more than Morning Drive’s 210 listeners.',
+          C:'Morning Drive averages 210 listeners, the fewest of the three weekday shows.',
+          D:'Lunch Mix averages 465 listeners, more than twice what After Bell averages.'
+        },
+        correct:'A',
+        expCorrect:'The recommendation is that Lunch Mix reaches the most students, so the evidence has to put its bar above both of the others. Lunch Mix reads 465 listeners, After Bell 330 and Morning Drive 210: all three bars, in the order the recommendation needs.',
+        expWrong:{
+          B:'Accurate, but it ranks the two shows that were not recommended. Nothing here touches Lunch Mix, so the announcements have no reason to move.',
+          C:'210 is the shortest bar, so this names the show with the smallest audience. The principal asked where to put the announcements, not where to avoid putting them.',
+          D:'Right show, wrong arithmetic: twice After Bell’s 330 listeners would be 660, and the Lunch Mix bar stops at 465. Overstating a bar is not reading it.'
+        },
+        tip:'Check any "twice", "half" or "three times" claim by doing the multiplication on the spot. A ratio the bars do not actually reach turns a true-sounding choice into a false one.'
+      },
+
+      {
+        id:'QNT-15', type:'mc', domain:'Information and Ideas', difficulty:'Media',
+        skill:'Command of Evidence: Quantitative — largest rise versus largest total in a table',
+        figure: dataTable({
+          caption:'Downloads of four episodes of the Low Tide podcast',
+          cols:['Episode','Downloads, first week','Downloads, eighth week'], align:['left','center','center'],
+          rows:[['Salt Kilns','4,100','4,600'],['Ferry Bells','1,200','5,400'],['The Long Pier','6,800','7,300'],['Night Herons','2,500','3,900']]
+        }),
+        passage:'Most podcast episodes are downloaded heavily in their first week and then forgotten. Producer Odile Sarrazin went looking for the exception: an episode that kept finding new listeners long after it was posted. She compared first-week downloads with eighth-week downloads for four episodes and singled out Ferry Bells.',
+        stem:'Which choice most effectively uses data from the table to support Sarrazin’s choice?',
+        choices:{
+          A:'The Long Pier drew 7,300 downloads in its eighth week, more than any other episode did.',
+          B:'Ferry Bells went from 1,200 downloads in its first week to 5,400 in its eighth, a bigger climb than any other episode made.',
+          C:'Night Herons went from 2,500 downloads in its first week to 3,900 in its eighth, a bigger climb than The Long Pier made.',
+          D:'Ferry Bells drew 5,400 downloads in its eighth week, fewer than The Long Pier’s 7,300.'
+        },
+        correct:'B',
+        expCorrect:'Sarrazin is looking at the distance between the two columns, not at either column by itself. Ferry Bells goes 1,200 to 5,400, a climb of 4,200. The other three climb 500 (Salt Kilns), 500 (The Long Pier) and 1,400 (Night Herons), so nothing comes close.',
+        expWrong:{
+          A:'7,300 is the largest number in the eighth-week column, which makes The Long Pier the most downloaded episode, not the one that grew. It gained 500 downloads between the two weeks, the smallest climb in the table.',
+          C:'The arithmetic is right: Night Herons climbed 1,400 and The Long Pier only 500. But the episode Sarrazin singled out was Ferry Bells, and its climb of 4,200 dwarfs both of them.',
+          D:'True, and that is the point of the trap. An episode can finish behind the leaders and still have traveled the farthest, which is exactly the claim being made.'
+        },
+        tip:'Two columns of the same quantity are almost always an invitation to subtract. Do the subtraction for every row before you read the options, and the level-versus-change trap disappears.'
+      },
+
+      {
+        id:'QNT-16', type:'mc', domain:'Information and Ideas', difficulty:'Media',
+        skill:'Command of Evidence: Quantitative — a floor claim settled by the shortest bar',
+        figure: barChart({
+          what:'Lowest reservoir storage reached, summer 2025',
+          axis:'Storage (% of capacity)', unitWord:'percent of capacity', vmax:80, steps:4,
+          rows:[{label:'Beck Hollow',value:58},{label:'Marrow Dam',value:44},{label:'Tinsley',value:71},{label:'Glebe Pond',value:49}]
+        }),
+        passage:'The Wexhill water authority imposes restrictions on any reservoir whose storage drops below 30 percent of capacity. After an unusually dry summer, residents assumed restrictions were coming, but authority engineer Dara Molyneux told them that not one of the four reservoirs had come anywhere near the limit, even at its lowest point.',
+        stem:'Which choice most effectively uses data from the graph to support Molyneux’s statement?',
+        choices:{
+          A:'Marrow Dam bottomed out at 44 percent of capacity, the lowest of the four and still well above the limit.',
+          B:'Tinsley bottomed out at 71 percent of capacity, the highest of the four reservoirs.',
+          C:'Marrow Dam bottomed out at 44 percent of capacity, below Glebe Pond’s 49 percent.',
+          D:'Beck Hollow bottomed out at 58 percent, above Glebe Pond’s 49 and Marrow Dam’s 44.'
+        },
+        correct:'A',
+        expCorrect:'A claim that nobody crossed a floor is settled by the worst case. Marrow Dam is the shortest bar at 44 percent, and 44 is comfortably above the 30 percent limit. If the lowest reservoir cleared the line, all four did.',
+        expWrong:{
+          B:'71 percent is the tallest bar, and the fullest reservoir is the one least at risk. Restrictions depend on the emptiest reservoir, which this choice never names.',
+          C:'Both readings are correct, but ranking Marrow Dam against Glebe Pond only shows which of the two fell further. Neither is measured against the 30 percent limit the statement is about.',
+          D:'Accurate, and it clears two bars at once, yet Beck Hollow is not the reservoir in danger. Showing that a middling reservoir beat two others leaves the worst case unexamined.'
+        },
+        tip:'For "none fell below" claims look only at the minimum; for "none rose above" claims, only at the maximum. One extreme bar decides the whole set, and every choice about a different bar is noise.'
+      },
+
+      {
+        id:'QNT-17', type:'mc', domain:'Information and Ideas', difficulty:'Media',
+        skill:'Command of Evidence: Quantitative — weighing two table columns at once',
+        figure: dataTable({
+          caption:'Field trial of four rice varieties, 2025 season',
+          cols:['Variety','Grain yield (t per hectare)','Irrigation water used (mm)'], align:['left','center','center'],
+          rows:[['Mirador','6.2','980'],['Sarrow','7.1','1,340'],['Pelan','6.9','870'],['Kitu','5.4','1,120']]
+        }),
+        passage:'Irrigation water in the Anselm district is rationed, so the research station is not simply looking for the biggest harvest: it wants a variety that yields near the top of the field while drawing less water than the alternatives. After a season of side-by-side plots, the station recommended Pelan to local growers.',
+        stem:'Which choice most effectively uses data from the table to support the station’s recommendation?',
+        choices:{
+          A:'Sarrow yielded 7.1 tonnes per hectare and used 1,340 mm of water, the highest figure in each column.',
+          B:'Pelan yielded 6.9 tonnes per hectare, behind only Sarrow’s 7.1, and used 870 mm of water, the least of the four.',
+          C:'Kitu used 1,120 mm of water and yielded 5.4 tonnes per hectare, the lowest yield of the four varieties.',
+          D:'Mirador used 980 mm of water, less than Sarrow’s 1,340 mm and Kitu’s 1,120 mm.'
+        },
+        correct:'B',
+        expCorrect:'The recommendation has two halves, so the evidence needs both columns. Pelan is second on yield at 6.9, a tenth behind Sarrow’s 7.1 and ahead of Mirador (6.2) and Kitu (5.4), and it is first on water at 870 mm, under Mirador (980), Kitu (1,120) and Sarrow (1,340). Near the top on yield, lowest on water.',
+        expWrong:{
+          A:'Every reading is right, and that is what makes it tempting: Sarrow does top the yield column. It also tops the water column, which in a rationed district is the worst place to be, and it is not the variety recommended.',
+          C:'Accurate on both counts, but 5.4 is the bottom of the yield column. A variety that saves water by producing less grain fails the first half of the recommendation.',
+          D:'True, and water is the right column to be reading, but Pelan at 870 mm uses less than Mirador does. The choice makes the case for the runner-up.'
+        },
+        tip:'Underline every requirement in the recommendation before reading the options. With two requirements, a choice covering one column is at best half an answer, no matter how accurate it is.'
+      },
+
+      {
+        id:'QNT-18', type:'mc', domain:'Information and Ideas', difficulty:'Media',
+        skill:'Command of Evidence: Quantitative — where growth stalled in a bar graph',
+        figure: barChart({
+          what:'New rooftop solar capacity installed, Calder co-op',
+          axis:'Capacity added (kW)', unitWord:'kilowatts', vmax:300, steps:3,
+          rows:[{label:'2021',value:120},{label:'2022',value:185},{label:'2023',value:240},{label:'2024',value:248}]
+        }),
+        passage:'The Calder co-op installs rooftop solar for its members and had been adding more capacity every year. Then two of its three installation crews left for a commercial contractor at the start of 2024. Coordinator Wes Ferreiro argues that the co-op never ran out of customers; it ran out of crews, and the graph shows growth flattening exactly when the crews went.',
+        stem:'Which choice most effectively uses data from the graph to support Ferreiro’s argument?',
+        choices:{
+          A:'The co-op added 248 kW in 2024, more capacity than in any other year shown.',
+          B:'The co-op added 120 kW in 2021, then 185 kW and 240 kW, but only 248 kW in 2024.',
+          C:'The co-op added 120 kW in 2021 and 185 kW in 2022, its first two years on the graph.',
+          D:'The co-op added more capacity in each of the four years shown, from 120 kW to 248 kW.'
+        },
+        correct:'B',
+        expCorrect:'Ferreiro’s claim is about the shape of the series, not its height. The first three bars step up by 65 and then 55 kilowatts; the last step, in the year the crews left, runs 240 to 248, a move of 8. Laying all four bars side by side is what makes the flattening visible.',
+        expWrong:{
+          A:'248 kW is the tallest bar, and in a series that never falls the last year is always the tallest. Being the highest total says nothing about how much the total grew.',
+          C:'Both readings are right, and the 120-to-185 step is real growth, but it stops before the year the argument is about. The crews left at the start of 2024.',
+          D:'True: every year added more than the year before. That is the version of the story Ferreiro is arguing against, since uninterrupted growth would mean the crews made no difference.'
+        },
+        tip:'"Growth stalled" is a statement about the gaps between bars, not the bars. Write the step sizes in the margin and the year that breaks the pattern usually names itself.'
+      },
+
+      {
+        id:'QNT-19', type:'mc', domain:'Information and Ideas', difficulty:'Media',
+        skill:'Command of Evidence: Quantitative — units sold versus money earned in a table',
+        figure: dataTable({
+          caption:'Museum shop sales, spring quarter',
+          cols:['Item','Units sold','Revenue (dollars)'], align:['left','center','center'],
+          rows:[['Postcard set','2,840','4,260'],['Enamel pin','1,150','9,200'],['Tote bag','620','11,160'],['Bookmark','3,900','2,730']]
+        }),
+        passage:'Shelf space in the Havelock Museum shop is tight enough that one of its four best-known items has to go. Manager Peggy Oduya decided the shop should keep whichever item brings in the most money, not whichever one moves the most pieces, and on that basis she kept the tote bag.',
+        stem:'Which choice most effectively uses data from the table to support Oduya’s decision?',
+        choices:{
+          A:'The bookmark sold 3,900 units, more than any other item in the shop.',
+          B:'The enamel pin brought in 9,200 dollars on only 1,150 units sold.',
+          C:'The tote bag brought in 11,160 dollars, the most of the four.',
+          D:'The bookmark brought in 2,730 dollars, the least of the four items.'
+        },
+        correct:'C',
+        expCorrect:'Oduya said money, not pieces, so the evidence belongs in the revenue column. The tote bag reads 11,160 dollars, above the enamel pin (9,200), the postcard set (4,260) and the bookmark (2,730). It does this on 620 units, the fewest in the table, which is precisely why the units column would have pointed the wrong way.',
+        expWrong:{
+          A:'3,900 is the largest number in the units column, and the bookmark is the item Oduya was explicitly not choosing by. It earned 2,730 dollars, the least of the four.',
+          B:'Both figures are accurate and the reasoning is the right kind, since the pin earns a lot on few units. But the pin is the runner-up at 9,200 dollars, and the decision was about the tote bag.',
+          D:'True, and it correctly identifies the weakest earner. Naming what to drop is not the same as showing which item to keep, and the tote bag is never mentioned.'
+        },
+        tip:'When a table offers two ways to rank the same rows, the passage will say which one counts. Rank by that column alone; the other column is there to make a wrong answer look reasonable.'
+      },
+
+      {
+        id:'QNT-20', type:'mc', domain:'Information and Ideas', difficulty:'Media',
+        skill:'Command of Evidence: Quantitative — one bar against the sum of the others',
+        figure: barChart({
+          what:'Emergency calls answered in 2025, by station',
+          axis:'Calls answered', unitWord:'calls', vmax:1200, steps:4,
+          rows:[{label:'Quarry Rd',value:410},{label:'Mill Bend',value:1180},{label:'Oak Tier',value:265},{label:'Pennywell',value:305}]
+        }),
+        passage:'The Havenport fire department runs four stations, and after last year’s budget cut one of them is down to a single engine. Chief Malia Terrell is asking the council for a replacement engine at Mill Bend, arguing that the station handles more calls on its own than the department’s other three stations handle put together.',
+        stem:'Which choice most effectively uses data from the graph to support Terrell’s argument?',
+        choices:{
+          A:'Mill Bend answered 1,180 calls, more than any other station in the department by a wide margin.',
+          B:'Mill Bend answered 1,180 calls, nearly three times as many as Quarry Road’s 410 calls.',
+          C:'Oak Tier answered 265 calls, the fewest of the four stations in the department.',
+          D:'Mill Bend’s 1,180 calls exceed Quarry Road’s 410, Oak Tier’s 265 and Pennywell’s 305 combined.'
+        },
+        correct:'D',
+        expCorrect:'The argument is not that Mill Bend is busiest but that it outworks the rest of the department combined, so the evidence has to add the other three. Quarry Road 410, Oak Tier 265 and Pennywell 305 come to 980, and Mill Bend alone answered 1,180. The sum is the only version of the comparison that matches the claim.',
+        expWrong:{
+          A:'Every reading is right and Mill Bend is indeed the busiest station, but "busiest" is a weaker claim than the one Terrell made. The tallest bar can still be smaller than the other three added together.',
+          B:'Three times 410 is 1,230, so "nearly three times" fairly describes the 1,180 bar. It is still a comparison with one station, and Oak Tier and Pennywell add another 570 calls between them.',
+          C:'265 is the shortest bar, so this names the quietest station. Terrell is asking for an engine at the busiest one, and this choice never mentions it.'
+        },
+        tip:'"More than the others combined" means you have to add. It is a stronger claim than "the most", and a choice that only proves "the most" leaves the harder half of the sentence unsupported.'
+      },
+
+      {
+        id:'QNT-21', type:'mc', domain:'Information and Ideas', difficulty:'Media',
+        skill:'Command of Evidence: Quantitative — relative growth versus added amount in a table',
+        figure: dataTable({
+          caption:'Households connected to the village water main',
+          cols:['Village','Connected in 2015','Connected in 2025'], align:['left','center','center'],
+          rows:[['Tamsden','40','160'],['Orrey','600','900'],['Fiskby','210','380'],['Culvane','95','230']]
+        }),
+        passage:'A rural water program measures its progress by how far a village has come relative to where it started, not by how many households it added, since a large village will always add more than a small one. Program engineer Hasna Berglund reported that on that measure the program went furthest in Tamsden over the past decade.',
+        stem:'Which choice most effectively uses data from the table to support Berglund’s report?',
+        choices:{
+          A:'Tamsden went from 40 connected households to 160, four times as many, while Orrey went from 600 to 900.',
+          B:'Orrey added the most households of any village, going from 600 connected in 2015 to 900 in 2025.',
+          C:'Tamsden had 160 connected households in 2025, the fewest of the four villages.',
+          D:'Culvane went from 95 connected households to 230, more than doubling over the decade.'
+        },
+        correct:'A',
+        expCorrect:'Relative growth means dividing, not subtracting. Tamsden multiplied its connections by four, 40 to 160; Orrey by 1.5, 600 to 900; Fiskby by about 1.8; Culvane by about 2.4. Four is the largest multiple in the table, and pairing Tamsden with Orrey shows exactly why the added-households ranking says the opposite.',
+        expWrong:{
+          B:'The reading is right, and Orrey did add 300 households, more than any other village. Berglund said in so many words that she was not counting added households, because the biggest village wins that comparison automatically.',
+          C:'True: 160 is the smallest number in the 2025 column. Where a village finishes is not the measure in question, and Tamsden manages to be both the smallest village and the fastest-growing one.',
+          D:'Culvane really did more than double, 95 to 230, and doubling is the right kind of evidence. It is simply the wrong village, since Tamsden quadrupled.'
+        },
+        tip:'"Relative to where it started" means divide the new number by the old one. Absolute gains and multiples routinely rank the rows in opposite orders, and the passage tells you which order it wants.'
+      },
+
+      {
+        id:'QNT-22', type:'mc', domain:'Information and Ideas', difficulty:'Media',
+        skill:'Command of Evidence: Quantitative — matching a stated ratio to the right pair of bars',
+        figure: barChart({
+          what:'Cordless drill run time on one full charge',
+          axis:'Run time (minutes)', unitWord:'minutes', vmax:120, steps:4,
+          rows:[{label:'2009',value:48},{label:'2014',value:63},{label:'2019',value:88},{label:'2024',value:96}]
+        }),
+        passage:'The Wrexbury repair cafe tests every donated drill on a full charge before reselling it. Volunteers routinely steer buyers away from the oldest model, and some tell them it will not last a quarter as long as a new one. Coordinator Niall Osgood thinks that is unfair: refurbished, the 2009 drill runs half as long as the brand-new 2024 model, which is plenty for occasional jobs.',
+        stem:'Which choice most effectively uses data from the graph to support Osgood’s position?',
+        choices:{
+          A:'The 2009 model ran 48 minutes on a charge, the shortest run time of the four.',
+          B:'The 2009 model ran 48 minutes, exactly half of the 2024 model’s 96.',
+          C:'The 2014 model ran 63 minutes on a charge, about two thirds of the 2024 model’s 96.',
+          D:'The 2019 model ran 88 minutes on a charge, close to the 2024 model’s 96 minutes.'
+        },
+        correct:'B',
+        expCorrect:'Osgood put a number on the comparison: half. Half of the 2024 model’s 96 minutes is 48, and the 2009 bar sits at exactly 48. The pair of bars named in the claim is the pair the evidence has to cite.',
+        expWrong:{
+          A:'True, and it is the volunteers’ complaint restated. Osgood is not denying that the 2009 drill is the weakest; he is disputing how weak, and "shortest" carries no ratio at all.',
+          C:'The arithmetic checks out, since two thirds of 96 is 64 and the 2014 bar reads 63. The claim, though, was about the 2009 model, and the 2014 model is a different drill.',
+          D:'Accurate: 88 and 96 are close. But showing that the second-newest drill nearly matches the newest says nothing about the oldest one, which is the drill buyers are being steered away from.'
+        },
+        tip:'When a claim contains a ratio, test the ratio on the two bars the claim names. A choice that gets a ratio right on the wrong pair of bars is the most convincing wrong answer there is.'
+      },
+
+      {
+        id:'QNT-23', type:'mc', domain:'Information and Ideas', difficulty:'Difícil',
+        skill:'Command of Evidence: Quantitative — every member of one group above every member of another',
+        figure: dataTable({
+          caption:'Oyster density at six reefs in the Marrow Estuary, 2025',
+          cols:['Reef','Reef type','Oysters per square meter'], align:['left','left','center'],
+          rows:[['Bell Shoal','Seeded','212'],['Cradle Bar','Seeded','178'],['Dover Flats','Seeded','195'],['Eel Point','Natural','141'],['Fanning Hole','Natural','166'],['Gorse Bank','Natural','158']]
+        }),
+        passage:'Four years ago the Marrow Estuary trust seeded three bare reefs with hatchery oysters and left three naturally occurring reefs alone for comparison. Biologist Tomas Wrenfield now claims something stronger than an average difference: every seeded reef, he says, is denser than every one of the natural reefs in the estuary.',
+        stem:'Which choice most effectively uses data from the table to support Wrenfield’s claim?',
+        choices:{
+          A:'Bell Shoal, a seeded reef, holds 212 oysters per square meter, the highest density in the table.',
+          B:'Eel Point, a natural reef, holds 141 oysters per square meter, the lowest density in the table.',
+          C:'The thinnest seeded reef, Cradle Bar at 178, still holds more oysters than the densest natural reef, Fanning Hole at 166.',
+          D:'Dover Flats, a seeded reef, holds 195 oysters per square meter, more than Gorse Bank’s 158 and Eel Point’s 141.'
+        },
+        correct:'C',
+        expCorrect:'"Every one above every one" is settled by the two reefs closest to each other across the divide: the weakest seeded reef and the strongest natural one. Cradle Bar at 178 is the lowest of the seeded three, Fanning Hole at 166 the highest of the natural three, and 178 beats 166. Once that pair falls the right way, all nine pairings do.',
+        expWrong:{
+          A:'212 is the largest number in the table and it does belong to a seeded reef. The strongest seeded reef beating everyone leaves Cradle Bar at 178 untested, and Cradle Bar is where the claim could have failed.',
+          B:'141 is the smallest number in the table, so the weakest natural reef loses to everything. That is the easy end of the comparison; the hard end is Fanning Hole at 166.',
+          D:'All three readings are accurate, and Dover Flats does beat two of the natural reefs. It is compared with the two weakest ones, and Fanning Hole at 166 never appears.'
+        },
+        tip:'For a claim that every member of one group beats every member of another, exactly one comparison matters: the worst of the winning group against the best of the losing group. Find those two rows and ignore the rest.'
+      },
+
+      {
+        id:'QNT-24', type:'mc', domain:'Information and Ideas', difficulty:'Difícil',
+        skill:'Command of Evidence: Quantitative — locating the one-year window a claim names',
+        figure: barChart({
+          what:'Share of ferry crossings that arrived on time',
+          axis:'On-time arrivals (%)', unitWord:'percent', vmax:100, steps:5,
+          rows:[{label:'2022',value:62},{label:'2023',value:68},{label:'2024',value:79},{label:'2025',value:84}]
+        }),
+        passage:'The Kilmore ferry operator switched to new scheduling software partway through 2023, so 2024 was the first full year it was in use. The operator’s annual report credits the software with the largest single-year jump in punctuality the route has seen, and insists the jump arrived in that first full year rather than spreading itself out.',
+        stem:'Which choice most effectively uses data from the graph to support the report’s claim?',
+        choices:{
+          A:'Punctuality rose from 68 percent in 2023 to 79 in 2024, a bigger one-year jump than either other step.',
+          B:'Punctuality reached 84 percent in 2025, the highest share anywhere on the graph.',
+          C:'Punctuality rose from 62 percent in 2022 to 84 percent in 2025, a gain across every year shown.',
+          D:'Punctuality rose from 62 percent in 2022 to 68 percent in 2023, the year the software was installed.'
+        },
+        correct:'A',
+        expCorrect:'The claim names a specific year and a specific kind of number: the biggest one-year jump, landing in 2024. The three steps are 62 to 68, 68 to 79, and 79 to 84 — six points, then eleven, then five. The middle step, the first full year of the software, is the largest of the three.',
+        expWrong:{
+          B:'84 percent is the tallest bar, and in a series that rises every year the last one always is. The report is about a jump, and 2025 delivered the smallest of the three.',
+          C:'The reading is right and punctuality really did improve over the period. Spreading the gain across all three steps is the gradual story the report is arguing against.',
+          D:'The software arrived partway through 2023, which is why the report speaks of 2024 as the first full year. This cites the partial year, and its six-point step is not the biggest anyway.'
+        },
+        tip:'Circle the exact window the claim names before comparing anything. "Installed during 2023" and "first full year" point at different bars, and the trap answer is the one that takes the earlier date literally.'
+      },
+
+      {
+        id:'QNT-25', type:'mc', domain:'Information and Ideas', difficulty:'Difícil',
+        skill:'Command of Evidence: Quantitative — a two-column pattern across four rows',
+        figure: dataTable({
+          caption:'Average morning commute, minutes, before and after the bus lane',
+          cols:['Corridor','Before (min)','After (min)'], align:['left','center','center'],
+          rows:[['Vellum Road','34','27'],['Sparrow Hill','41','39'],['Tanner Cross','28','19'],['Ironbridge','52','51']]
+        }),
+        passage:'The Brackwater transport board expected its new bus lane to do the most good on the corridors that were already the worst. Analyst Dov Halperin reported the opposite pattern: the two corridors that were quickest to begin with gained several minutes each, while the two slowest barely moved at all.',
+        stem:'Which choice most effectively uses data from the table to support Halperin’s report?',
+        choices:{
+          A:'Ironbridge fell from 52 minutes to 51, leaving it the longest commute in the table both before and after the lane.',
+          B:'Tanner Cross fell from 28 minutes to 19, leaving it the shortest commute in the table both before and after.',
+          C:'Tanner Cross fell 28 to 19 and Vellum Road 34 to 27, while Sparrow Hill fell 41 to 39 and Ironbridge 52 to 51.',
+          D:'Vellum Road fell from 34 minutes to 27, a bigger saving than Sparrow Hill managed in dropping from 41 to 39.'
+        },
+        correct:'C',
+        expCorrect:'The report is a pattern across all four rows, so the evidence has to show all four. The quick pair saves 9 minutes (28 to 19) and 7 minutes (34 to 27); the slow pair saves 2 minutes (41 to 39) and 1 minute (52 to 51). Ranked by starting time, the savings run 9, 7, 2, 1 — the reverse of what the board expected.',
+        expWrong:{
+          A:'Both numbers are right, and Ironbridge is indeed the corridor that barely moved. One row cannot establish a pattern, and nothing here shows that the quick corridors did any better.',
+          B:'Accurate, and Tanner Cross is the corridor that gained the most. This is the other single row, and on its own it fits the board’s expectation just as comfortably as Halperin’s.',
+          D:'A real comparison pointing the right way, and the closest of the three wrong answers. It covers one corridor from each pair and leaves out Tanner Cross, the biggest gain, and Ironbridge, the smallest.'
+        },
+        tip:'A claim about a pattern needs every row, not the two rows that show it best. If the passage sorts the rows into groups, check that the choice reports both groups in full.'
+      },
+
+      {
+        id:'QNT-26', type:'mc', domain:'Information and Ideas', difficulty:'Difícil',
+        skill:'Command of Evidence: Quantitative — dating a turning point on a bar graph',
+        figure: barChart({
+          what:'Seabird pairs counted at the Stennis Head colony',
+          axis:'Breeding pairs', unitWord:'breeding pairs', vmax:1200, steps:4,
+          rows:[{label:'1995',value:820},{label:'2005',value:1140},{label:'2015',value:1060},{label:'2025',value:640}]
+        }),
+        passage:'The offshore wind farm at Stennis Head began turning in 2018, and campaigners blame it for the collapse of the seabird colony on the headland. Warden Bram Okonkwo is not defending the turbines, but he insists the colony was already shrinking before they arrived, so any account that starts in 2018 is incomplete.',
+        stem:'Which choice most effectively uses data from the graph to support Okonkwo’s position?',
+        choices:{
+          A:'The colony held 640 pairs in 2025, the smallest count on the graph.',
+          B:'The colony grew from 820 pairs in 1995 to 1,140 pairs in 2005.',
+          C:'The colony fell from 1,060 pairs in 2015 to 640 in 2025, the steepest fall on the graph.',
+          D:'The colony held 1,140 pairs in 2005 but 1,060 in 2015, three years before the turbines started.'
+        },
+        correct:'D',
+        expCorrect:'Okonkwo needs a decline that predates 2018, and only one pair of bars can give him one. The colony peaked at 1,140 pairs in 2005 and was already down to 1,060 by 2015, three years before the turbines turned. The drop is small, but it sits on the wrong side of 2018 for the campaigners’ account.',
+        expWrong:{
+          A:'True, and it measures the damage, but the newest count is the one furthest inside the wind farm era. It can say nothing about what was happening before 2018.',
+          B:'Accurate, and it covers the years before the turbines, which is the right stretch of time. It shows the colony growing, which is the opposite of the trend Okonkwo says was already under way.',
+          C:'The largest change on the graph, and the temptation is to reach for it. That window runs from 2015 to 2025 and contains 2018, so it is the very period the campaigners already claim; it cannot show the decline started earlier.'
+        },
+        tip:'When an argument is about whether a trend started before a date, sort the intervals by when they happened and ignore how big they are. The biggest change is usually in the wrong window, which is why it is offered.'
+      },
+
+      {
+        id:'QNT-27', type:'mc', domain:'Information and Ideas', difficulty:'Difícil', extreme:true,
+        skill:'Command of Evidence: Quantitative — a treatment that works for one group and not the other',
+        figure: dataTable({
+          caption:'Germination after five years of storage',
+          cols:['Species','Seed type','Frozen at −18 °C (%)','Chilled at 4 °C (%)'], align:['left','left','center','center'],
+          rows:[['Hazel vetch','Oily','86','54'],['Marsh flax','Oily','79','41'],['Pale millet','Starchy','62','64'],['Rock barley','Starchy','58','57']]
+        }),
+        passage:'Running a seed bank at freezer temperature costs far more than chilling it, so curator Ottoline Reyes wanted to know which seeds actually need the freezer. She stored four species at both temperatures for five years. Two of them, Hazel vetch and Marsh flax, have oily seeds; the other two are starchy. Reyes concluded that the freezer earns its electricity for the oily species and makes almost no difference for the starchy ones.',
+        stem:'Which choice most effectively uses data from the table to support the conclusion Reyes reached?',
+        choices:{
+          A:'Hazel vetch germinated at 86 percent when frozen, the highest figure anywhere in the table.',
+          B:'Pale millet germinated at 64 percent when chilled and 62 percent when frozen, a difference of two points.',
+          C:'Hazel vetch fell from 86 percent frozen to 54 percent chilled, and Marsh flax fell from 79 percent to 41 percent.',
+          D:'The oily pair fell from 86 and 79 percent frozen to 54 and 41 chilled; the starchy pair moved only 62 to 64 and 58 to 57.'
+        },
+        correct:'D',
+        expCorrect:'The conclusion has two halves and four rows, and only this choice reports all of them. Freezing gains the oily species 32 points (86 against 54) and 38 points (79 against 41). For the starchy pair it gains nothing: Pale millet is 2 points worse frozen and Rock barley 1 point better. Large for the oily seeds, negligible for the starchy ones.',
+        expWrong:{
+          A:'The reading is right and 86 percent is the best result in the table, but a single cell cannot compare two temperatures, let alone two seed types. Nothing here says what Hazel vetch did in the chiller.',
+          B:'Accurate, and it makes the starchy half of the case: for Pale millet the freezer is not worth paying for. The oily half is untouched, and that is where the expensive decision actually lies.',
+          C:'Both rows are read correctly, and this is the strongest of the wrong answers, since it proves the freezer helps the oily species. It never mentions the starchy species, so the half of the conclusion that saves money has no support at all.'
+        },
+        tip:'When a conclusion says a treatment works for one group but not another, it is two claims wearing one sentence. The answer has to show the effect in one group and its absence in the other; either half alone is half an answer.'
+      },
+
+      {
+        id:'QNT-28', type:'mc', domain:'Information and Ideas', difficulty:'Difícil', extreme:true,
+        skill:'Command of Evidence: Quantitative — comparing a sum of bars with a single bar',
+        figure: barChart({
+          what:'Campus emissions by source, 2025',
+          axis:'Emissions (tonnes)', unitWord:'tonnes', vmax:5000, steps:5,
+          rows:[{label:'Heating',value:4180},{label:'Electricity',value:2640},{label:'Commuting',value:1950},{label:'Waste',value:410}]
+        }),
+        passage:'The sustainability office at Corvan University keeps being asked to run campaigns about carpooling and recycling. Director Yusra Almeida says the arithmetic does not work: even if the campus eliminated its commuting and waste emissions entirely, it would still cut less than it would by replacing the heating plant alone.',
+        stem:'Which choice most effectively uses data from the graph to support the statement Almeida made?',
+        choices:{
+          A:'Commuting and waste account for 1,950 and 410 tonnes, while heating alone accounts for 4,180 tonnes.',
+          B:'Heating accounts for 4,180 tonnes, more of the campus total than any other source on the graph.',
+          C:'Waste accounts for 410 tonnes, the smallest source of emissions on the graph.',
+          D:'Electricity accounts for 2,640 tonnes, more than commuting’s 1,950 and waste’s 410 taken together.'
+        },
+        correct:'A',
+        expCorrect:'The statement compares a sum with a single bar, so the evidence has to name all three sources. Commuting and waste come to 2,360 tonnes together, and the heating bar alone is 4,180. Wiping out both of the targeted sources would cut barely half of what the heating plant emits.',
+        expWrong:{
+          B:'Accurate, and heating is the largest source, but the largest source is not automatically larger than two others combined. The comparison Almeida made requires the addition, and this choice never does it.',
+          C:'410 tonnes is the shortest bar, so this shows that waste is small. Commuting at 1,950 tonnes is nearly five times as large, and it is the other half of what the campaigns target.',
+          D:'The arithmetic is right: 1,950 and 410 come to 2,360, under electricity’s 2,640. It compares the two small sources with the wrong bar, since the statement was about the heating plant at 4,180.'
+        },
+        tip:'A claim shaped like "even all of X and Y together is less than Z" is an addition problem. Add the small bars first, then compare the total with the bar the claim actually names.'
+      },
+
+      {
+        id:'QNT-29', type:'mc', domain:'Information and Ideas', difficulty:'Difícil', extreme:true,
+        skill:'Command of Evidence: Quantitative — raw counts versus the rate in the next column',
+        figure: dataTable({
+          caption:'Applications and offers at four conservatory programs, 2025',
+          cols:['Program','Applications','Offers made','Offer rate (%)'], align:['left','center','center','center'],
+          rows:[['Cello','480','72','15'],['Percussion','150','45','30'],['Voice','920','92','10'],['Harp','60','27','45']]
+        }),
+        passage:'Applicants to the Bellhurst Conservatory often assume that a program handing out plenty of offers must be easier to get into. Admissions officer Tarek Djebbar tells them the reverse can be true, and points at his own numbers: the program that made the most offers last year was the hardest to enter, and the one that made the fewest was the easiest.',
+        stem:'Which choice most effectively uses data from the table to support the point Djebbar makes?',
+        choices:{
+          A:'Voice received 920 applications, more than any other program at the conservatory.',
+          B:'Harp made 27 offers at a rate of 45 percent, the highest offer rate of the four programs.',
+          C:'Voice made the most offers, 92, at a rate of 10 percent; Harp made the fewest, 27, at a rate of 45 percent.',
+          D:'Percussion made 45 offers at a rate of 30 percent, while Cello made 72 offers at a rate of 15 percent.'
+        },
+        correct:'C',
+        expCorrect:'The point pairs the two extremes of the offers column with the two extremes of the rate column, and only this choice reports both ends. Voice tops the offers column with 92 and sits at the bottom of the rate column with 10 percent; Harp is last in offers with 27 and first in rate with 45 percent. Count and rate rank the programs in opposite orders, which is the whole argument.',
+        expWrong:{
+          A:'920 is the largest number in the applications column, and it does explain how Voice can make many offers and stay selective. Applications by themselves say nothing about how hard a program is to enter, and the argument is about offers.',
+          B:'Both figures are accurate and Harp is genuinely the easiest program to enter. That is one end of the argument; the program making the most offers is never mentioned, and without it the reversal is not shown.',
+          D:'Every number is correct, and the two programs do line up as described: more offers, lower rate. Djebbar named the extremes, the most offers and the fewest, and neither Percussion nor Cello is either one.'
+        },
+        tip:'When a claim names "the most" and "the fewest" of something, the answer has to cite those exact rows. A middle pair that happens to show the same pattern is the classic near-miss.'
+      },
+
+      {
+        id:'QNT-30', type:'mc', domain:'Information and Ideas', difficulty:'Difícil', extreme:true,
+        skill:'Command of Evidence: Quantitative — adding every bar to test an annual cap',
+        figure: barChart({
+          what:'Overnight permit requests at Sablewood Park, 2025',
+          axis:'Permit requests', unitWord:'requests', vmax:5000, steps:5,
+          rows:[{label:'Q1',value:980},{label:'Q2',value:2640},{label:'Q3',value:4510},{label:'Q4',value:1320}]
+        }),
+        passage:'Sablewood National Park issues 9,000 overnight permits a year and has always handed them out first-come, first-served. Ranger Imogen Baptiste is proposing a lottery instead, on the grounds that requests in 2025 finally passed the annual ceiling, so the old system now turns hikers away with no fair way of choosing among them.',
+        stem:'Which choice most effectively uses data from the graph to support the proposal Baptiste makes?',
+        choices:{
+          A:'Requests peaked at 4,510 in the third quarter, more than in any other quarter of the year.',
+          B:'Requests ran 980, 2,640, 4,510 and 1,320, more than 9,000 in all.',
+          C:'Requests in the second and third quarters, 2,640 and 4,510, came to more than 7,000 on their own.',
+          D:'Requests fell from 4,510 in the third quarter to 1,320 in the fourth, the sharpest move of the year.'
+        },
+        correct:'B',
+        expCorrect:'The proposal rests on the year’s total crossing 9,000, so every quarter has to be counted. 980 plus 2,640 plus 4,510 plus 1,320 is 9,450, which is 450 above the ceiling. No single quarter and no pair of quarters can show this; only the full year does.',
+        expWrong:{
+          A:'4,510 is the tallest bar and the busiest quarter, but one quarter reaches only half the ceiling. A peak says when demand arrives, not whether the year as a whole ran out of permits.',
+          C:'The addition is right: 2,640 and 4,510 come to 7,150. That is still 1,850 short of the 9,000 ceiling, so the two busiest quarters together do not make the case.',
+          D:'Both readings are accurate and that drop of 3,190 is the largest change on the graph. A seasonal swing has no bearing on an annual ceiling, which is about the sum and not the shape.'
+        },
+        tip:'A claim measured against an annual limit needs the annual total. Add every bar before you compare, and treat "the biggest quarter" or "the two biggest quarters" as an invitation to stop counting too early.'
+      }
+
+    ]
+  });
+})();
