@@ -609,6 +609,13 @@
   .tx-lv.lv-hard{border-color:#e8b8b8}   .tx-lv.lv-hard:hover{background:#fdeeee}
   .tx-lv.lv-extreme{border-color:#c9a2d6} .tx-lv.lv-extreme:hover{background:#f7eefb}
   .tx-lv.vacio{opacity:.38;cursor:default;border-style:dashed}
+  /* Practicar el dominio entero. Va debajo del título y encima de las destrezas
+     porque es la opción más parecida al examen: el que estudia de a una destreza
+     nunca entrena el salto entre ellas. */
+  .tx-dom-go{display:flex;gap:7px;flex-wrap:wrap;margin:2px 0 12px}
+  .tx-dom-lv{font-weight:700}
+  .tx-lv.lv-all{border-color:var(--navy);color:var(--navy)}
+  .tx-lv.lv-all:hover{background:var(--navy);color:#fff}
   @media(max-width:620px){ .tx-row{gap:8px} .tx-name{flex:1 1 100%} .tx-lvs{flex:1 1 100%} }
   .sbuscador{padding:2px 0 2px}
   .sb-input{width:100%;min-height:44px;border:1px solid var(--gray-line);border-radius:10px;padding:11px 14px;font-size:16px;font-family:var(--sans);box-sizing:border-box;margin-bottom:10px}
@@ -623,6 +630,11 @@
   .fast-btns{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:12px}
   .fast-note{font-size:.82rem;color:var(--gray-mid);line-height:1.6}
   /* Fast Pace: la pregunta primero, la recomendación destacada, el resto abajo. */
+  /* La barra del banco. Con 2.500 preguntas la descarga se siente, y un cartel
+     mudo que dice "cargando" no se distingue de uno colgado. */
+  .banco-bar{display:block;height:6px;border-radius:3px;background:var(--gray-strip);overflow:hidden;margin:10px 0 6px;max-width:260px}
+  .banco-bar > div{display:block;height:100%;background:var(--navy);transition:width .25s linear}
+  #banco-pct{font-size:.8rem;color:var(--gray-mid);font-weight:700}
   .fp-wrap{padding:2px 0 4px}
   .fp-ask{font-family:var(--serif);font-size:1.12rem;color:var(--navy);font-weight:700;margin-bottom:10px}
   .fp-card{border:1px solid var(--gray-line);border-radius:14px;padding:16px 18px;background:#fff;margin-bottom:12px}
@@ -958,6 +970,26 @@
   .toast.err{background:#8d1f2f}
   @keyframes toast-in{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
   @media (prefers-reduced-motion:reduce){ .toast{animation:none} }
+  /* ─────────── AL FINAL A PROPÓSITO: anulaciones por aparato ───────────
+     44 px SOLO donde se toca con el dedo.
+     Estos son los botones de práctica principales, y en el teléfono medían 32 y
+     18 px: el dedo falla y el estudiante no piensa "erré", piensa "no sirve".
+     Pero subirlos a 44 en escritorio estiraría treinta destrezas por cuatro
+     niveles sin motivo — con un cursor, 32 px se aciertan siempre. `pointer:
+     coarse` es exactamente esa distinción: el dedo, no la pantalla chica. Un
+     iPad con teclado sigue siendo dedo, y ahí sí hace falta.
+
+     Va al FINAL del bloque y no junto a cada regla porque una media query no
+     suma especificidad: puesta antes, la regla base que viene después le gana y
+     el override no hace nada. Así ya pasó una vez. Todo override por aparato
+     que se agregue va acá abajo. */
+  @media (pointer: coarse){
+    .tx-lv{min-height:44px;padding:8px 14px;font-size:.8rem}
+    .tx-go{min-height:44px;display:inline-flex;align-items:center;padding:0 2px;margin:0 -2px}
+    .f-chip{min-height:44px;padding:9px 15px}
+    .mini{min-height:44px}
+    .sb-more{min-height:44px}
+  }
 </style>
     <!-- SEO y social — generado por web-launch-audit -->
     <link rel="canonical" href="https://sat-studio.vercel.app/" />
@@ -1476,6 +1508,17 @@ var SAT_SET_FILES = [
   'sets/math-poly-rational1.js',
   'sets/math-margin1.js',
 
+  /* Verbal a fondo (16-sep-2026). El examen es 55 % verbal y el banco estaba al
+     revés, así que esta tanda es casi toda de Reading & Writing. Sets de 34 en
+     vez de 12: una destreza con 34 preguntas seguidas obliga a cubrirla entera
+     en vez de quedarse en los tres ángulos más obvios. */
+  'sets/rw-words-a.js',
+  'sets/rw-words-b.js',
+  'sets/rw-form-a.js',
+  'sets/rw-central-a.js',
+  'sets/rw-infer-a.js',
+  'sets/rw-cross-a.js',
+
   // Desmos how-to hints per Math question (merged into questions at load)
   'sets/desmos-a.js',
   'sets/desmos-b.js',
@@ -1572,6 +1615,7 @@ var SETS = [];
    los sets es el orden en que salen listados en el inicio. */
 var BANCO_LISTO = false;
 var _bancoPromesa = null;
+var BANCO_PCT = 0;
 function cargarBanco(){
   if(_bancoPromesa) return _bancoPromesa;
   _bancoPromesa = new Promise(function(resolve){
@@ -1579,6 +1623,14 @@ function cargarBanco(){
     var faltan = lista.length, fallidos = [];
     if(!faltan){ BANCO_LISTO = true; return resolve(fallidos); }
     function uno(){
+      // Progreso de verdad, no un "cargando" mudo. Con 2.500 preguntas esto son
+      // más de un megabyte, y en el wifi de un colegio se siente. Un número que
+      // avanza es la diferencia entre esperar y pensar que se colgó.
+      BANCO_PCT = Math.round(100 * (lista.length - faltan + 1) / lista.length);
+      var barra = document.getElementById('banco-barra');
+      if(barra){ barra.style.width = BANCO_PCT + '%'; }
+      var pct = document.getElementById('banco-pct');
+      if(pct){ pct.textContent = BANCO_PCT + '%'; }
       if(--faltan > 0) return;
       BANCO_LISTO = true;
       // Si indexSets() falla, la app no tiene banco: no es un detalle que se
@@ -1609,7 +1661,14 @@ function cargarBanco(){
 function conBanco(fn){
   if(BANCO_LISTO) return fn();
   var cap = $('#banco-cargando');
-  if(cap) cap.classList.remove('hidden');
+  if(cap){
+    cap.classList.remove('hidden');
+    if(!document.getElementById('banco-barra')){
+      cap.insertAdjacentHTML('beforeend',
+        '<div class="banco-bar"><div id="banco-barra" style="width:' + BANCO_PCT + '%"></div></div>' +
+        '<span id="banco-pct">' + BANCO_PCT + '%</span>');
+    }
+  }
   return cargarBanco().then(function(fallidos){
     if(cap) cap.classList.add('hidden');
     var archivos = fallidos.filter(function(f){ return f !== 'indexSets'; });
@@ -1622,6 +1681,8 @@ function conBanco(fn){
 }
 
 function indexSets(){
+  // el banco cambió: toda cuenta derivada de él queda vieja
+  _mockPool = {}; _porTier = {}; _skillBank = null; _skillCache = {};
   SETS = window.SAT_SETS.slice();
   var hints = window.SAT_DESMOS || {};
   SETS.forEach(function(s){
@@ -2166,6 +2227,37 @@ function skillBuildSet(k, nivel, n){
     description: sk.dom,
     minutes: Math.max(5, Math.round(orden.length * 1.2)),
     questions: orden
+  };
+}
+
+/* Practicar un DOMINIO entero, no una destreza sola.
+   La taxonomía deja practicar "Circles" o "Right triangles", que es lo fino.
+   Pero el examen no pregunta por destreza: pregunta Geometría, y saltar entre
+   destrezas dentro del mismo dominio es justo lo que el estudiante no entrena
+   cuando practica de a una. Se reparte parejo entre las destrezas del dominio
+   para que no salgan 20 preguntas de la que más preguntas tiene. */
+function domainBuildSet(dom, nivel, n){
+  var skills = SAT_SKILLS.filter(function(x){ return x.dom === dom; });
+  if(!skills.length) return null;
+  n = n || 20;
+  var porSkill = Math.max(1, Math.ceil(n / skills.length));
+  var qs = [], vistos = {};
+  skills.forEach(function(x){
+    var set = skillBuildSet(x.k, nivel, porSkill);
+    if(!set) return;
+    set.questions.forEach(function(q){ if(!vistos[q.id]){ vistos[q.id] = 1; qs.push(q); } });
+  });
+  if(!qs.length) return null;
+  // se baraja para que no salgan agrupadas por destreza: adivinar el tema por la
+  // posición es exactamente la muleta que el examen real no te da
+  qs = _shuffle(qs).slice(0, n);
+  return {
+    id: 'dom-' + dom.replace(/\W+/g, '-').toLowerCase() + '-' + (nivel || 'todo'),
+    title: dom + (nivel && nivel !== 'todo' ? ' — ' + nivelLabel(nivel) : ' — all levels'),
+    section: skills[0].sec, level: nivel === 'todo' ? 'Media' : nivel,
+    description: skills.length + ' skills mixed',
+    minutes: Math.max(5, Math.round(qs.length * 1.2)),
+    questions: qs
   };
 }
 
@@ -3426,11 +3518,23 @@ function renderHome(){
         '</div>';
       }).join('');
       var peso = skills.length ? skills[0].peso : null;
+      /* Practicar el dominio entero, mezclando sus destrezas. Es lo que el
+         examen hace de verdad: no avisa de qué destreza es la que sigue. */
+      var domBtns = totalDom
+        ? '<div class="tx-dom-go">' +
+            ['todo', 'Media', 'Difícil', 'Extreme'].map(function(nv){
+              return '<button type="button" class="tx-lv tx-dom-lv lv-' +
+                (nv === 'todo' ? 'all' : (SAT_NIVEL_CLASE[nv] || 'med')) + '" ' +
+                'data-dom="' + escAttr(dom) + '" data-nivel="' + escAttr(nv) + '">' +
+                (nv === 'todo' ? 'Mix all 20' : nivelLabel(nv) + ' 20') + '</button>';
+            }).join('') +
+          '</div>'
+        : '';
       return '<section class="tx-dom">' +
         '<h4 class="tx-dom-t">' + escHtml(dom) +
           (peso ? ' <span class="tx-peso">' + peso + '% of the test</span>' : '') +
           ' <span class="tx-tot">' + totalDom + '</span></h4>' +
-        filas + '</section>';
+        domBtns + filas + '</section>';
     }).join('');
   }
 
@@ -3559,7 +3663,8 @@ function renderHome(){
     G.progreso += homeSection('Your Practice Tests', mockRows, mocks.length, true);
   }
   // ===== English Mocks category (Reading & Writing only, adaptive, /800) =====
-  var N_ENG = 8;
+  // 54 preguntas por examen de solo verbal
+  var N_ENG = cuantosExamenes(mockPool('rw').length, 54, 8, 30);
   var engBest = {};
   h.forEach(function(e){ if(e.mock && e.mock.kind === 'rw' && typeof e.mock.num === 'number'){ var n = e.mock.num; if(engBest[n] == null || (e.mock.total||0) > engBest[n]) engBest[n] = e.mock.total; } });
   var engCards = '';
@@ -3575,7 +3680,8 @@ function renderHome(){
   G.tests += homeSection('English Mocks', engCards, N_ENG, true);
 
   // ===== Math Mocks category (Math only, adaptive, /800) =====
-  var N_MATH = 6;
+  // 44 por examen de solo matemática
+  var N_MATH = cuantosExamenes(mockPool('math').length, 44, 6, 30);
   var mmBest = {};
   h.forEach(function(e){ if(e.mock && e.mock.kind === 'math' && typeof e.mock.num === 'number'){ var n = e.mock.num; if(mmBest[n] == null || (e.mock.total||0) > mmBest[n]) mmBest[n] = e.mock.total; } });
   var mmCards = '';
@@ -3591,7 +3697,10 @@ function renderHome(){
   G.tests += homeSection('Math Mocks', mmCards, N_MATH, true);
 
   // ===== Realistic Hard Mocks (true-to-test difficult form: tough M1, EARNED hard M2 with real composition) =====
-  var N_REAL = 4;
+  /* El Módulo 2 de un examen difícil real es ~30 % brutal, así que estos los
+     limita el banco de preguntas `extreme`, no el banco entero. */
+  var N_REAL = cuantosExamenes(
+    Math.min(poolPorTier('rw', _ES_BRU) / 0.30, poolPorTier('math', _ES_BRU) / 0.30), 98, 4, 20);
   var realBest = {};
   h.forEach(function(e){ if(e.mock && e.mock.kind === 'full' && e.mock.real && typeof e.mock.num === 'number'){ var n = e.mock.num; if(realBest[n] == null || (e.mock.total||0) > realBest[n]) realBest[n] = e.mock.total; } });
   var realCards = '';
@@ -3607,7 +3716,9 @@ function renderHome(){
   G.mocks += homeSection('Realistic Hard Mocks · true to test', realCards, N_REAL, true);
 
   // ===== Extreme Mocks category (only extreme-flagged questions — real hard-Module-2 level) =====
-  var N_EXTREME = 4;
+  // los brutales salen ENTEROS del tier extreme: los limita ese pozo
+  var N_EXTREME = cuantosExamenes(
+    Math.min(poolPorTier('rw', _ES_BRU), poolPorTier('math', _ES_BRU)), 49, 4, 20);
   var exBest = {};
   h.forEach(function(e){ if(e.mock && e.mock.kind === 'full' && e.mock.extreme && typeof e.mock.num === 'number'){ var n = e.mock.num; if(exBest[n] == null || (e.mock.total||0) > exBest[n]) exBest[n] = e.mock.total; } });
   var exCards = '';
@@ -3623,7 +3734,9 @@ function renderHome(){
   G.mocks += homeSection('Extreme Mocks · brutal tier', exCards, N_EXTREME, true);
 
   // ===== Hard Mocks category (all questions difficult, no easy routing) =====
-  var N_HARD = 6;
+  // los difíciles salen de las 'Difícil' (que incluyen las brutales)
+  var N_HARD = cuantosExamenes(
+    Math.min(poolPorTier('rw', _ES_DIF), poolPorTier('math', _ES_DIF)), 49, 6, 24);
   var hardBest = {};
   h.forEach(function(e){ if(e.mock && e.mock.kind === 'full' && e.mock.hard && !e.mock.extreme && typeof e.mock.num === 'number'){ var n = e.mock.num; if(hardBest[n] == null || (e.mock.total||0) > hardBest[n]) hardBest[n] = e.mock.total; } });
   var hardCards = '';
@@ -3639,7 +3752,9 @@ function renderHome(){
   G.mocks += homeSection('Hard Mocks · all difficult', hardCards, N_HARD, true);
 
   // ===== Full Mocks category (numbered, stable full-length adaptive tests) =====
-  var N_MOCKS = 8;
+  // un examen completo usa ~54 de verbal y ~44 de matemática
+  var N_MOCKS = cuantosExamenes(
+    Math.min(mockPool('rw').length / 54, mockPool('math').length / 44), 1, 8, 30);
   var mockBest = {};
   h.forEach(function(e){ if(e.mock && e.mock.kind === 'full' && !e.mock.hard && !e.mock.real && !e.mock.extreme && typeof e.mock.num === 'number'){ var n = e.mock.num; if(mockBest[n] == null || (e.mock.total||0) > mockBest[n]) mockBest[n] = e.mock.total; } });
   var mockCards = '';
@@ -3797,6 +3912,16 @@ function renderHome(){
       var set = skillBuildSet(b.getAttribute('data-skill'), b.getAttribute('data-nivel'), 12);
       if(!set || !set.questions.length){ toast('Nothing in the bank for that skill at that level yet.', true); return; }
       _beginSession(set, 'drill');
+    });
+  });
+  // practicar el dominio entero, con sus destrezas mezcladas
+  Array.prototype.forEach.call(document.querySelectorAll('#set-sections [data-dom]'), function(b){
+    b.addEventListener('click', function(){
+      conBanco(function(){
+        var set = domainBuildSet(b.getAttribute('data-dom'), b.getAttribute('data-nivel'), 20);
+        if(!set || !set.questions.length){ toast('Nothing in the bank for that domain at that level yet.', true); return; }
+        _beginSession(set, 'drill');
+      });
     });
   });
   wireFast();
@@ -6253,7 +6378,15 @@ var MOCK = null;
 var MOCK_RW = 27, MOCK_MATH = 22;
 var RW_HARD_MIN = 17, MATH_HARD_MIN = 16;   // correct answers in Module 1 needed to route to the HARD Module 2
 
+/* El pozo de preguntas de una sección, MEMOIZADO.
+   Recorre el banco entero, y desde que la cantidad de simulacros se calcula sola
+   se llama una docena de veces por repintado del inicio. Con 2.500 preguntas eso
+   son treinta mil vueltas para contestar algo que no cambió entre llamada y
+   llamada. La caché se tira en `indexSets()`, que es el único momento en que el
+   banco puede cambiar. */
+var _mockPool = {};
 function mockPool(section){
+  if(_mockPool[section]) return _mockPool[section];
   var seen = {}, arr = [];
   SETS.forEach(function(s){
     (s.questions || []).forEach(function(q){
@@ -6262,8 +6395,36 @@ function mockPool(section){
       if(want && q.difficulty && !seen[q.id]){ seen[q.id] = 1; arr.push(q); }
     });
   });
-  return arr;
+  return (_mockPool[section] = arr);
 }
+/* Lo mismo para las cuentas por tier: `poolPorTier` filtra el pozo entero y
+   también se llama varias veces por repintado. */
+var _porTier = {};
+/* ¿Cuántos simulacros distintos ofrecer?
+   Sale del TAMAÑO DEL BANCO, no de un número escrito a mano. Dos razones:
+   cada simulacro numerado se siembra con su número, así que agregar más nunca
+   cambia la composición de los que alguien ya hizo; y cuando el banco crece, la
+   oferta crece sola en vez de quedarse en el número que alguien tecleó un día.
+
+   El PISO son los que ya existían. Una tarjeta de más no le hace daño a nadie;
+   una que desaparece sí, porque puede tener el resultado de alguien colgando.
+
+   `porExamen` es cuántas preguntas consume un examen de ese tipo. Con un banco
+   de n preguntas salen n/porExamen formas bien distintas: dos simulacros de 54
+   preguntas sacadas de 1.300 comparten dos o tres, que es ruido. */
+function cuantosExamenes(disponibles, porExamen, piso, techo){
+  return Math.max(piso, Math.min(techo, Math.floor(disponibles / porExamen)));
+}
+/* Cuántas hay de cada tier, para no ofrecer un simulacro brutal que el banco no
+   puede llenar y que terminaría repitiendo las mismas preguntas una y otra vez. */
+function poolPorTier(sec, f){
+  var k = sec + '|' + (f.nombre || f.toString().slice(0, 40));
+  if(_porTier[k] != null) return _porTier[k];
+  return (_porTier[k] = mockPool(sec).filter(f).length);
+}
+var _ES_DIF = function(q){ return q.difficulty === 'Difícil'; };
+var _ES_BRU = function(q){ return !!q.extreme; };
+
 function mulberry32(a){ return function(){ a|=0; a = a + 0x6D2B79F5 | 0; var t = Math.imul(a ^ a>>>15, 1 | a); t = t + Math.imul(t ^ t>>>7, 61 | t) ^ t; return ((t ^ t>>>14) >>> 0) / 4294967296; }; }
 function _shuffle(a, rnd){ rnd = rnd || Math.random; a = a.slice(); for(var i=a.length-1;i>0;i--){ var j=Math.floor(rnd()*(i+1)); var t=a[i];a[i]=a[j];a[j]=t; } return a; }
 function assembleModule(section, tier, count, used, rnd){

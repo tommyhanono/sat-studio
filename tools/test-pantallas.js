@@ -783,7 +783,12 @@ const BOTONES_MUERTOS = function () {
       [1180, 820, 'iPad Pro'], [1440, 950, 'computadora'],
     ];
     for (const [w, h, nombre] of APARATOS) {
-      await page.setViewport({ width: w, height: h });
+      /* `hasTouch` no es cosmético: el CSS sube los blancos táctiles a 44 px
+         bajo `@media (pointer: coarse)`, y sin emular dedo Chrome reporta
+         `pointer: fine` y esa regla no aplica. Sin esto la prueba mediría una
+         pantalla que ningún estudiante ve. En escritorio se deja en falso. */
+      const dedo = w < 1200;
+      await page.setViewport({ width: w, height: h, hasTouch: dedo, isMobile: dedo });
       await page.evaluate(() => { if (typeof showHome === 'function') showHome(); });
       await sleep(500);
       const vista = await page.evaluate(() => {
@@ -791,6 +796,11 @@ const BOTONES_MUERTOS = function () {
           const r = e.getBoundingClientRect();
           return r.width > 0 && r.height > 0 && !e.closest('.hidden');
         };
+        /* Se abren TODAS las secciones plegables antes de medir. Sin esto la
+           prueba solo veía lo que estaba desplegado en la pestaña activa, y los
+           botones de la taxonomía —los principales para practicar— nunca se
+           midieron: estaban dentro de un <details> cerrado, con altura cero. */
+        document.querySelectorAll('#set-sections details').forEach(d => { d.open = true; });
         const chicos = [...document.querySelectorAll('#set-sections button, #set-sections a[href], #set-sections input')]
           .filter(visible)
           .filter(e => { const r = e.getBoundingClientRect(); return r.height < 30 || (r.width < 30 && r.height < 44); })
@@ -810,8 +820,41 @@ const BOTONES_MUERTOS = function () {
       check(`P10 ${nombre} (${w}×${h}): nada se sale de la pantalla`,
         vista.scroll <= vista.ancho + 1, vista);
       check(`P10b ${nombre}: las ocho pestañas siguen alcanzables`, vista.nav === 8, vista);
-      check(`P10c ${nombre}: nada que tocar es más chico que el dedo`,
-        vista.chicos.length === 0, vista);
+
+      /* Las OCHO pestañas, no solo la que quedó abierta. Cada una tiene sus
+         propios controles y es donde se escondían los de la taxonomía. */
+      const porTab = await page.evaluate(async (dedo) => {
+        const esperar = ms => new Promise(r => setTimeout(r, ms));
+        const malos = {}, desborde = {};
+        const tabs = [...document.querySelectorAll('#set-sections .hnav-a')].map(b => b.getAttribute('data-tab'));
+        for (const t of tabs) {
+          document.querySelector(`#set-sections .hnav-a[data-tab="${t}"]`).click();
+          await esperar(320);
+          document.querySelectorAll('#set-sections details').forEach(d => { d.open = true; });
+          await esperar(120);
+          const vis = e => { const r = e.getBoundingClientRect(); return r.width > 0 && r.height > 0 && !e.closest('.hidden'); };
+          /* El mínimo depende del APARATO, no del gusto. 44 px es el estándar
+             de Apple y Google para el dedo; con un cursor de un pixel ese número
+             no significa nada y estirar todo a 44 en escritorio solo alarga la
+             página. En escritorio se pide lo que sí importa: que se pueda
+             apuntar y que no sea una franja de un par de pixeles. */
+          const minAlto = dedo ? 44 : 16;
+          const c = [...document.querySelectorAll('#set-sections button, #set-sections a[href], #set-sections input')]
+            .filter(vis)
+            .filter(e => { const r = e.getBoundingClientRect(); return r.height < minAlto || r.width < 16; })
+            .slice(0, 3).map(e => { const r = e.getBoundingClientRect();
+              return (e.textContent || e.getAttribute('aria-label') || e.tagName).trim().slice(0, 18) +
+                ' [' + Math.round(r.height) + 'px .' + (e.className || '').toString().split(' ')[0] + ']'; });
+          if (c.length) malos[t] = c;
+          if (document.documentElement.scrollWidth > window.innerWidth + 1) desborde[t] = document.documentElement.scrollWidth;
+        }
+        return { malos, desborde, minAlto: dedo ? 44 : 16 };
+      }, dedo);
+      check(`P10c ${nombre}: en las 8 pestañas, nada que tocar baja de ${porTab.minAlto}px` +
+        (dedo ? ' (dedo)' : ' (cursor)'),
+        Object.keys(porTab.malos).length === 0, porTab.malos);
+      check(`P10d ${nombre}: ninguna pestaña desborda con todo desplegado`,
+        Object.keys(porTab.desborde).length === 0, porTab.desborde);
     }
     /* --- 8b. la pantalla donde se CONTESTA, en los mismos aparatos ---
        El inicio se mira unos segundos; la pantalla de la pregunta es donde el

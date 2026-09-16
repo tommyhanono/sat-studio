@@ -29,7 +29,7 @@ Abrir `index.html` en el navegador, o cualquier server estático. No hay `npm ru
 tools/verificar.sh
 ```
 
-Corre las once y sale con código 1 si algo falla:
+Corre las doce y sale con código 1 si algo falla:
 
 | Qué | Verifica | Casos |
 |---|---|---|
@@ -42,6 +42,7 @@ Corre las once y sale con código 1 si algo falla:
 | `test-idioma.js` | que los 9.000+ campos que lee un estudiante en el banco están en inglés | — |
 | `test-pantallas.js` | **lo que se ve**: recorre las ocho pestañas y todas las pantallas en Chrome, más los botones sin acción, el XSS, las barras vacías, Classroom entero, Fast Pace, la confianza, y **siete aparatos** (celular, iPad en las dos orientaciones, computadora) midiendo desborde y tamaño táctil — en el inicio **y en la pantalla donde se contesta**, que es donde el estudiante pasa el 90 % del tiempo | 72 |
 | `test-pwa.js` | que se **instale** en el teléfono y **abra sin internet** (corta la red de verdad) | 20 |
+| `test-rendimiento.js` | que **crecer el banco no vuelva lenta la app**: cronometra las 7 operaciones que lo recorren entero y falla si alguna pasa su tope | 7 |
 | `auditar-longitud.js` | que la correcta no sea sistemáticamente la opción más larga (se contesta sin leer) | — |
 | `huella-banco.js` | la huella estructural del banco (ids, respuestas, dominios, dificultades) | — |
 
