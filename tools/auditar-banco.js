@@ -91,11 +91,26 @@ function dominios(q) {
 const pct = (n, d) => d ? (n / d * 100) : 0;
 const fmt = (n) => n.toFixed(1).padStart(5) + ' %';
 
+/* OJO con leer esta tabla como un defecto.
+   Hasta el 16-sep-2026 la proporcion del BANCO era la proporcion del EXAMEN,
+   porque `assembleModule` barajaba sin mirar el dominio. Ya no: reparte por
+   CUOTA OFICIAL, asi que el plano lo fija el examen y el banco quedo libre.
+
+   Entonces esta tabla mide otra cosa: PROFUNDIDAD DE PRACTICA, no fidelidad al
+   examen. Y ahi el peso oficial es mala vara, porque no dice cuantas DESTREZAS
+   se reparten ese peso: Problem-Solving parte su 15 % entre SIETE destrezas y
+   Conventions su 26 % entre DOS. Llevar las siete a un piso decente deja a
+   Problem-Solving en 2x de su peso, y eso esta BIEN — un estudiante que
+   practica "Evaluating statistical claims" no necesita que sea el 2 % del
+   examen, necesita que haya preguntas.
+
+   Quien mide la fidelidad del examen es `tools/test-plano.js`, sobre los
+   modulos que la app arma de verdad. Esa es la que tiene que estar en verde. */
 function tabla(titulo, cuentas, total, oficial) {
   console.log(`\n${titulo}`);
   for (const dom of Object.keys(oficial)) {
     const n = cuentas[dom] || 0, p = pct(n, total), rel = p / oficial[dom];
-    const señal = rel < 0.8 ? ' ← corto' : rel > 1.3 ? ' ← de más' : '';
+    const señal = rel < 0.8 ? ' ← poca práctica' : rel > 1.3 ? ' ← mucha práctica' : '';
     console.log(`  ${dom.padEnd(34)}${String(n).padStart(4)}  ${fmt(p)}   oficial ${String(oficial[dom]).padStart(2)} %   ${rel.toFixed(2)}x${señal}`);
   }
 }
@@ -114,6 +129,8 @@ if (rotos.length) console.log('  ⚠️  ARCHIVOS QUE NO CARGAN:', rotos);
 
 const accM = {};
 for (const q of M) for (const d of dominios(q)) accM[d] = (accM[d] || 0) + 1;
+console.log('\nPROFUNDIDAD POR DOMINIO — cuánto hay para PRACTICAR, no cómo sale el examen');
+console.log('(la fidelidad del simulacro la mide test-plano.js; acá el peso oficial es solo referencia)');
 tabla('MATEMÁTICA  (las preguntas cruzadas cuentan en cada dominio que tocan)', accM, M.length, OFICIAL_MATH);
 
 const accR = R.reduce((a, q) => { a[q.domain] = (a[q.domain] || 0) + 1; return a; }, {});
