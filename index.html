@@ -5274,7 +5274,7 @@ function drillCardHTML(q){
   var isMath = q._section === 'math';
   var body = '<div class="drill-card' + (ok ? '' : ' bad') + '">' +
     '<div class="verdict ' + (ok ? 'ok' : 'bad') + '">' + (ok ? '✓ Correct!' : '✗ Incorrect') + '</div>' +
-    '<div class="drill-tags"><span class="res-diff">' + q.difficulty + '</span><span class="res-skill">' + q.domain + ' · ' + q.skill + '</span></div>';
+    '<div class="drill-tags"><span class="res-diff">' + nivelLabel(q.difficulty) + '</span><span class="res-skill">' + q.domain + ' · ' + q.skill + '</span></div>';
   if(q.type === 'spr'){
     body += '<div class="res-answers">Your answer: <b class="' + (ok?'ok':'bad') + '">' + (user || '(blank)') + '</b> · Correct answer: <b class="ok">' + q.answer + '</b></div>';
     body += '<h4>Explanation</h4><p>' + fmtExp(q.expCorrect, isMath) + '</p>';

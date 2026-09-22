@@ -639,6 +639,13 @@ const BOTONES_MUERTOS = function () {
       document.querySelector('[data-conf="guess"]').click();
       await new Promise(x => setTimeout(x, 200));
       r.explicacionTrasElegir = !!document.querySelector('.drill-card');
+      /* La etiqueta de nivel de la tarjeta. Hasta el 22-sep-2026 imprimía
+         `q.difficulty` crudo y el estudiante leía "FÁCIL" / "DIFÍCIL" — la clave
+         interna, en español, en una app que es toda en inglés. El recorrido de
+         idioma pasaba por esta misma pantalla y no lo veía: una palabra suelta
+         en mayúsculas no alcanza para que el detector la marque como español. */
+      const tagNivel = document.querySelector('.drill-card .res-diff');
+      r.nivelEnTarjeta = tagNivel ? tagNivel.textContent.trim() : '(sin etiqueta)';
       const st = window.SATAPP.getS();
       const q0 = st.set.questions[0];
       r.confGuardada = st.conf[q0.id];
@@ -681,6 +688,9 @@ const BOTONES_MUERTOS = function () {
       conf.tiraAntesDeRevelar && conf.explicacionTodaviaNo && conf.botonBloqueado, conf);
     check('P14b al elegirla aparece la explicación', conf.explicacionTrasElegir && conf.confGuardada === 'guess', conf);
     check('P14c se mide el tiempo de la pregunta', conf.tiempoMedido, conf);
+    check(`P14h la tarjeta dice el nivel en inglés, no la clave interna ("${conf.nivelEnTarjeta}")`,
+      !!conf.nivelEnTarjeta && !/^(fácil|media|difícil|extreme)$/i.test(conf.nivelEnTarjeta) && conf.nivelEnTarjeta !== '(sin etiqueta)',
+      conf.nivelEnTarjeta);
     check('P14d confianza y tiempo quedan en el historial',
       conf.confEnHistorial === 'guess' && conf.msEnHistorial, conf);
     check('P14e una acertada por adivinanza VUELVE a la bolsa de repaso',
