@@ -49,6 +49,18 @@ const res = [];
 const check = (n, c, extra) => { res.push([n, !!c, c ? '' : (extra === undefined ? '' : ' → ' + JSON.stringify(extra).slice(0, 400))]); };
 const sleep = ms => new Promise(r => setTimeout(r, ms));
 
+/* Desde que Classroom es un MODO y no una pestaña, cualquier bloque que entre
+   al salón deja la app ahí. Las pestañas de Self Practice no existen en ese
+   modo, así que un `querySelector(...).click()` posterior revienta con un null.
+   Este ayudante vuelve, y se llama antes de cada bloque que use pestañas. */
+async function aModoSolo(page) {
+  await page.evaluate(() => {
+    const b = document.querySelector('#set-sections [data-modo="solo"]');
+    if (b && !b.classList.contains('on')) b.click();
+  });
+  await sleep(500);
+}
+
 /* El banco ya no se carga con `defer`: se inyecta después del primer pintado, así
    que estar "cargado" no basta. Y la bandera tampoco alcanza sola: el cargador la
    pone ANTES de que conBanco() llame a renderHome(), así que había una ventana en
@@ -132,12 +144,35 @@ const FAKE = function () {
             /* El Example completo: pregunta del banco + pasos + Desmos. `qid` se
                resuelve contra el banco REAL en el navegador, así que esto también
                comprueba que una pregunta de verdad se puede pintar acá. */
+            /* El tipo NUEVO: un simulacro asignado. La semilla sale del id, así que
+               toda la clase recibe el mismo examen. */
+            { id: 'w5', kind: 'mock', titulo: 'Entry mock — the whole thing', cuerpo: 'Do it in one sitting.',
+              spec: { mock: 'full', dificultad: '' },
+              vence: '2027-02-20', fecha: '2026-09-16', mis_intentos: 1, mi_mejor: 61, mi_escala: 1290 },
             { id: 'w4', kind: 'material', titulo: 'How I want you to set up a system', cuerpo: 'Write both equations first.',
               spec: { latex: ['y=2x+1', 'y=-x+7'],
                       pasos: ['Name the two unknowns', 'Write one equation per sentence', 'Now solve'],
                       qid: (window.__QID_EJEMPLO || null) },
               vence: null, fecha: '2026-09-12', mis_intentos: 0, mi_mejor: null },
           ], error: null });
+          if (name === 'sat_class_progreso') return Promise.resolve({ data: {
+            soyProfe: true,
+            resumen: { alumnos: 3, activos: 2, asignados: 3, precision: 68, mejora: 12, mejoraEscala: 90 },
+            alumnos: [
+              { nombre: 'Cami', email: 'cami@iae.edu', intentos: 0, entregados: 0, preguntas: 0, precision: null,
+                primera: null, ultima: null, mejora: null, mejorEscala: null, ultimo: null, propiaSesiones: 0, propiaPrecision: null },
+              { nombre: 'Ana', email: 'ana@iae.edu', intentos: 4, entregados: 3, preguntas: 48, precision: 72,
+                primera: 55, ultima: 79, mejora: 24, primeraEscala: 1150, ultimaEscala: 1290, mejoraEscala: 140,
+                mejorEscala: 1290, ultimo: '2026-09-21', propiaSesiones: 9, propiaPrecision: 70 },
+              { nombre: 'Beto', email: 'beto@iae.edu', intentos: 2, entregados: 1, preguntas: 20, precision: 51,
+                primera: 60, ultima: 48, mejora: -12, mejorEscala: null, ultimo: '2026-09-19', propiaSesiones: 1, propiaPrecision: 44 },
+            ],
+            porDestreza: [{ sk: 'gt-circles', total: 24, ok: 9 }, { sk: 'al-sys', total: 30, ok: 24 }],
+            porSemana: [{ semana: '2026-09-07', total: 40, ok: 22 }, { semana: '2026-09-14', total: 50, ok: 33 },
+                        { semana: '2026-09-21', total: 30, ok: 24 }],
+            trabajos: [{ id: 'w2', kind: 'assignment', titulo: 'Linear systems', entregados: 2, promedio: 75, promedioEscala: null },
+                       { id: 'w5', kind: 'mock', titulo: 'Entry mock', entregados: 1, promedio: 61, promedioEscala: 1290 }],
+          }, error: null });
           if (name === 'sat_classwork_save') return Promise.resolve({ data: 'w5', error: null });
           if (name === 'sat_classwork_delete') return Promise.resolve({ data: null, error: null });
           if (name === 'sat_classwork_report') return Promise.resolve({ data: {
@@ -236,6 +271,7 @@ const BOTONES_MUERTOS = function () {
       b.getAttribute('data-plan-set') || b.getAttribute('data-hl') ||
       b.getAttribute('data-desmos') || b.getAttribute('data-set') ||
       b.getAttribute('data-act') || b.getAttribute('data-go') || b.getAttribute('data-tab') ||
+      b.getAttribute('data-modo') || b.getAttribute('data-cl-sub') || b.getAttribute('data-goto-tab') ||
       b.className.split(/\s+/).some(c => /^(btn-|mini|plan-op|an-|hist-review|set-|hnav-a|hs-)/.test(c));
     if (!tiene) malos.push((b.textContent || '').trim().slice(0, 40) + ' · ' + b.className);
   });
@@ -428,7 +464,7 @@ const BOTONES_MUERTOS = function () {
     /* --- P13. Classroom: clases, trabajo tipado y el reporte --- */
     const aula = await page.evaluate(async () => {
       const esperar = ms => new Promise(r => setTimeout(r, ms));
-      const b = document.querySelector('#set-sections .hnav-a[data-tab="clase"]');
+      const b = document.querySelector('#set-sections [data-modo="clase"]');
       if (!b) return { sinPestana: true };
       b.click();
       await esperar(700);
@@ -448,6 +484,16 @@ const BOTONES_MUERTOS = function () {
       r.hayCompositor = !!document.getElementById('cw-guardar');
       r.chipsDeDestreza = document.querySelectorAll('[data-cw-skill]').length;
       r.cuatroTipos = document.querySelectorAll('.cw-kind').length;
+      // el compositor del Mock: se abre al elegir el tipo y trae los tres exámenes
+      const bm = document.querySelector('[data-cw-kind="mock"]');
+      if (bm) { bm.click(); await esperar(200); }
+      r.hayZonaMock = !!(document.getElementById('cw-mock-zone') &&
+                         !document.getElementById('cw-mock-zone').classList.contains('hidden'));
+      r.tiposDeMock = document.querySelectorAll('#cw-mock-tipo option').length;
+      r.mockEscondeDestrezas = !!(document.getElementById('cw-skills-zone') &&
+                                  document.getElementById('cw-skills-zone').classList.contains('hidden'));
+      const ba = document.querySelector('[data-cw-kind="assignment"]');
+      if (ba) { ba.click(); await esperar(150); }
 
       // el final que no se ha hecho ofrece Start; el ya hecho diría "one attempt"
       r.botonesStart = document.querySelectorAll('[data-cw-start]').length;
@@ -469,10 +515,12 @@ const BOTONES_MUERTOS = function () {
     check('P13 Classroom: la lista de clases se pinta', !aula.sinPestana && aula.tarjetas > 0, aula);
     check('P13b el profesor ve crear y todos ven unirse', aula.hayCrear && aula.hayUnirse, aula);
     check('P13c la clase del profesor muestra su código', aula.muestraCodigo, aula);
-    check(`P13d el feed trae los cuatro tipos de trabajo (${aula.trabajos})`,
-      aula.trabajos === 4 && ['Warm-up', 'Assignment', 'Final', 'Example'].every(t => (aula.tipos || []).indexOf(t) >= 0), aula);
-    check('P13e el compositor ofrece los 4 tipos y las 30 destrezas oficiales',
-      aula.cuatroTipos === 4 && aula.chipsDeDestreza === 30, aula);
+    check(`P13d el feed trae los cinco tipos de trabajo (${aula.trabajos})`,
+      aula.trabajos === 5 && ['Warm-up', 'Assignment', 'Final', 'Mock', 'Example'].every(t => (aula.tipos || []).indexOf(t) >= 0), aula);
+    check('P13e el compositor ofrece los 5 tipos y las 30 destrezas oficiales',
+      aula.cuatroTipos === 5 && aula.chipsDeDestreza === 30, aula);
+    check('P13m el quinto tipo es Mock, con su pantalla propia para elegir el examen',
+      aula.tipos.indexOf('Mock') >= 0 && aula.hayZonaMock && aula.tiposDeMock >= 3 && aula.mockEscondeDestrezas, aula);
     check('P13f un material con Desmos trae su botón', aula.materialConDesmos, aula);
     check('P13g arrancar un trabajo queda atado a él (cw-…)',
       aula.arranca && /^cw-/.test(aula.setId || '') && aula.n > 0, aula);
@@ -480,7 +528,7 @@ const BOTONES_MUERTOS = function () {
     /* --- P13h-k. lo que la profesora usa para ENSEÑAR --- */
     const ensena = await page.evaluate(async () => {
       const esperar = ms => new Promise(r => setTimeout(r, ms));
-      document.querySelector('#set-sections .hnav-a[data-tab="clase"]').click();
+      document.querySelector('#set-sections [data-modo="clase"]').click();
       await esperar(600);
       // Classroom recuerda dónde estabas: si ya quedó DENTRO de la clase, la
       // lista no se repinta y no hay tarjeta que tocar. Se entra solo si hace falta.
@@ -523,7 +571,7 @@ const BOTONES_MUERTOS = function () {
     /* --- P15. el reporte: en qué falló la clase --- */
     const reporte = await page.evaluate(async () => {
       const esperar = ms => new Promise(r => setTimeout(r, ms));
-      const b = document.querySelector('#set-sections .hnav-a[data-tab="clase"]');
+      const b = document.querySelector('#set-sections [data-modo="clase"]');
       if (b) { b.click(); await esperar(600); }
       const c = document.querySelector('[data-clase]');
       if (c) { c.click(); await esperar(700); }
@@ -552,6 +600,111 @@ const BOTONES_MUERTOS = function () {
     check('P15c lista a los estudiantes, incluidos los que NO entregaron',
       reporte.filas === 3 && reporte.sinEntregar === 1, reporte);
     check('P15d cuenta bien cuántos entregaron', reporte.entregados, reporte);
+
+    /* --- P19. LOS DOS MODOS ---
+       Classroom dejó de ser la séptima pestaña. Se comprueba lo que de verdad
+       importa: que el interruptor cambie de mundo y que se pueda volver, porque
+       un modo del que no se sale deja al estudiante encerrado. */
+    await aModoSolo(page);
+    const modos = await page.evaluate(async () => {
+      const esperar = ms => new Promise(r => setTimeout(r, ms));
+      const r = {};
+      r.hayInterruptor = document.querySelectorAll('#set-sections [data-modo]').length === 2;
+      r.soloTienePestanas = document.querySelectorAll('#set-sections .hnav-a').length === 7;
+      r.soloNoTieneSalon = !document.getElementById('class-body-zone');
+
+      document.querySelector('#set-sections [data-modo="clase"]').click();
+      await esperar(900);
+      r.claseTieneSalon = !!document.getElementById('class-body-zone');
+      r.claseEscondePestanas = document.querySelectorAll('#set-sections .hnav-a').length === 0;
+      r.marcaElModo = !!document.querySelector('#set-sections [data-modo="clase"].on');
+      r.recuerda = window.SATAPP.store.get('satapp_modo', '') === 'clase';
+
+      document.querySelector('#set-sections [data-modo="solo"]').click();
+      await esperar(700);
+      r.seVuelve = document.querySelectorAll('#set-sections .hnav-a').length === 7 &&
+                   !document.getElementById('class-body-zone');
+      return r;
+    });
+    check('P19 el interruptor de modo existe y Self Practice conserva sus 7 pestañas',
+      modos.hayInterruptor && modos.soloTienePestanas && modos.soloNoTieneSalon, modos);
+    check('P19b Classroom abre su propio mundo y esconde las pestañas de práctica',
+      modos.claseTieneSalon && modos.claseEscondePestanas && modos.marcaElModo, modos);
+    check('P19c el modo se recuerda, y se puede volver', modos.recuerda && modos.seVuelve, modos);
+
+    /* --- P20. dentro de la clase: Work y Progress ---
+       La pregunta que el profesor no podía contestar. Se mira que el progreso
+       traiga las dos escalas SEPARADAS (práctica en puntos de acierto,
+       simulacros en puntaje escalado) porque mezclarlas da un número falso. */
+    const prog = await page.evaluate(async () => {
+      const esperar = ms => new Promise(r => setTimeout(r, ms));
+      const r = {};
+      document.querySelector('#set-sections [data-modo="clase"]').click();
+      await esperar(900);
+      /* Se puede caer adentro de la clase (el modo retoma donde estabas) o en la
+         lista. Las dos son válidas: lo que importa es terminar dentro. */
+      const tarjeta = document.querySelector('[data-clase]');
+      if (tarjeta) { tarjeta.click(); await esperar(900); }
+      if (!document.querySelector('[data-cl-sub]')) return { sinClase: true };
+      r.subPestanas = [...document.querySelectorAll('[data-cl-sub]')].map(b => b.textContent.trim());
+
+      document.querySelector('[data-cl-sub="progreso"]').click();
+      await esperar(900);
+      const z = document.getElementById('class-body-zone');
+      const txt = z ? z.textContent : '';
+      r.kpis = z ? z.querySelectorAll('.pg-kpi').length : 0;
+      r.semanas = z ? z.querySelectorAll('.pg-sem i').length : 0;
+      r.barrasDestreza = z ? z.querySelectorAll('.bar-row').length : 0;
+      r.filas = z ? z.querySelectorAll('.prog-table tbody tr').length : 0;
+      r.sinEntregar = z ? z.querySelectorAll('tr.sin-entregar').length : 0;
+      r.mejoraSube = z ? z.querySelectorAll('.mejora.sube').length : 0;
+      r.mejoraBaja = z ? z.querySelectorAll('.mejora.baja').length : 0;
+      r.dosEscalas = /Practice trend/.test(txt) && /Mock trend/.test(txt);
+      r.nombraDestreza = /Circles/.test(txt);
+      r.mejorMock = /1290/.test(txt);
+      // y se puede volver a Work
+      document.querySelector('[data-cl-sub="work"]').click();
+      await esperar(700);
+      r.vuelveAWork = !!document.getElementById('cw-guardar');
+      return r;
+    });
+    check('P20 dentro de la clase hay dos sub-vistas: Work y Progress',
+      !prog.sinClase && (prog.subPestanas || []).length === 2, prog);
+    check('P20b Progress trae los cinco números, la tendencia semanal y las destrezas flojas',
+      prog.kpis === 5 && prog.semanas === 3 && prog.barrasDestreza === 2 && prog.nombraDestreza, prog);
+    check('P20c la práctica y los simulacros se miden en escalas SEPARADAS',
+      prog.dosEscalas && prog.mejorMock, prog);
+    check('P20d la tabla marca quién no entregó y quién subió o bajó',
+      prog.filas === 3 && prog.sinEntregar === 1 && prog.mejoraSube === 1 && prog.mejoraBaja === 1, prog);
+    check('P20e se puede volver a Work', prog.vuelveAWork, prog);
+
+    /* --- P21. lo que NO debe verse en el salón ---
+       El historial personal vive fuera de #set-sections y por eso se colaba
+       debajo del progreso de la clase. Si quien mira es el profesor, lo que
+       aparecía ahí abajo era SU práctica, no la del grupo. */
+    const fuera = await page.evaluate(async () => {
+      const esperar = ms => new Promise(r => setTimeout(r, ms));
+      const oculto = el => !el || el.classList.contains('hidden') ||
+        !(el.getBoundingClientRect().width > 0);
+      const r = {};
+      document.querySelector('#set-sections [data-modo="clase"]').click();
+      await esperar(800);
+      r.enClaseSeEsconde = oculto(document.getElementById('hist-sec'));
+      document.querySelector('#set-sections [data-modo="solo"]').click();
+      await esperar(700);
+      r.enSoloVuelve = !oculto(document.getElementById('hist-sec'));
+      // y los tres enlaces del pie llevan a alguna parte de verdad
+      r.pie = [...document.querySelectorAll('.foot-a')].map(b => b.getAttribute('data-goto-tab'));
+      const destino = r.pie[0];
+      document.querySelector('.foot-a').click();
+      await esperar(700);
+      r.pieNavega = !!document.getElementById('g-' + destino);
+      return r;
+    });
+    check('P21 el historial personal se esconde en Classroom y vuelve en Self Practice',
+      fuera.enClaseSeEsconde && fuera.enSoloVuelve, fuera);
+    check('P21b los tres enlaces del pie llevan a una pestaña que existe',
+      (fuera.pie || []).length === 3 && fuera.pieNavega, fuera);
 
     // --- P11. un nombre con HTML no puede ejecutarse en el panel del profesor ---
     // El nombre lo escribe el estudiante al registrarse. Si el panel lo mete
@@ -617,6 +770,7 @@ const BOTONES_MUERTOS = function () {
     }
     check(`P12 ninguna barra de progreso se pinta vacía (${barras.length})`, barras.length === 0, barras.slice(0, 4));
 
+    await aModoSolo(page);
     /* --- P14. la pregunta de confianza ---
        Cuatro promesas: se pregunta ANTES de revelar, solo en Drill, se guarda en
        el historial, y una acertada por adivinanza vuelve a la bolsa de repaso.
@@ -699,6 +853,7 @@ const BOTONES_MUERTOS = function () {
     check('P14g en Examen NO se pregunta (no rompe la simulación)', conf.examenNoPregunta, conf);
 
     /* --- P16. Fast Pace: la pregunta es cuánto tiempo hay, no cuántas preguntas --- */
+    await aModoSolo(page);
     const fp = await page.evaluate(async () => {
       const esperar = ms => new Promise(r => setTimeout(r, ms));
       const b = document.querySelector('#set-sections .hnav-a[data-tab="fast"]');
@@ -747,6 +902,7 @@ const BOTONES_MUERTOS = function () {
     check('P16e y muestra el reloj de ESA pregunta', fp.chipVisible && /left on this one|over/.test(fp.chipDice || ''), fp);
 
     /* --- P17. cada pestaña muestra lo suyo, ni de más ni de menos --- */
+    await aModoSolo(page);
     const tabs = await page.evaluate(async () => {
       const esperar = ms => new Promise(r => setTimeout(r, ms));
       const ir = async t => {
@@ -825,13 +981,18 @@ const BOTONES_MUERTOS = function () {
             .slice(0, 4).map(e => e.tagName + '.' + (e.className || '').toString().split(' ')[0]),
           chicos,
           nav: document.querySelectorAll('#set-sections .hnav-a').length,
+          modos: document.querySelectorAll('#set-sections [data-modo]').length,
         };
       });
       check(`P10 ${nombre} (${w}×${h}): nada se sale de la pantalla`,
         vista.scroll <= vista.ancho + 1, vista);
-      check(`P10b ${nombre}: las ocho pestañas siguen alcanzables`, vista.nav === 8, vista);
+      /* Siete, no ocho: Classroom salió de la barra el 22-sep-2026 y pasó a ser
+         un MODO entero. Que el interruptor exista también se mira acá, porque
+         si se pierde en un teléfono el salón queda inalcanzable. */
+      check(`P10b ${nombre}: las siete pestañas y el interruptor de modo siguen alcanzables`,
+        vista.nav === 7 && vista.modos === 2, vista);
 
-      /* Las OCHO pestañas, no solo la que quedó abierta. Cada una tiene sus
+      /* Las SIETE pestañas, no solo la que quedó abierta. Cada una tiene sus
          propios controles y es donde se escondían los de la taxonomía. */
       const porTab = await page.evaluate(async (dedo) => {
         const esperar = ms => new Promise(r => setTimeout(r, ms));

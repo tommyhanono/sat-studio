@@ -42,7 +42,7 @@ Corre las catorce y sale con código 1 si algo falla:
 | `test-datos.js` | que **una sesión jugada no se pierde**, con un Supabase falso al que se le corta la red | 48 |
 | `test-plan.js` | que "Mi plan de mejora" recomienda desde los datos del estudiante y arma el test que prometió | 30 |
 | `test-idioma.js` | que los 9.000+ campos que lee un estudiante en el banco están en inglés | — |
-| `test-pantallas.js` | **lo que se ve**: recorre las ocho pestañas y todas las pantallas en Chrome, más los botones sin acción, el XSS, las barras vacías, Classroom entero, Fast Pace, la confianza, y **siete aparatos** (celular, iPad en las dos orientaciones, computadora) midiendo desborde y tamaño táctil — en el inicio **y en la pantalla donde se contesta**, que es donde el estudiante pasa el 90 % del tiempo | 79 |
+| `test-pantallas.js` | **lo que se ve**: recorre los dos modos, las siete pestañas y todas las pantallas en Chrome, más los botones sin acción, el XSS, las barras vacías, Classroom entero, Fast Pace, la confianza, y **siete aparatos** (celular, iPad en las dos orientaciones, computadora) midiendo desborde y tamaño táctil — en el inicio **y en la pantalla donde se contesta**, que es donde el estudiante pasa el 90 % del tiempo | 91 |
 | `test-pwa.js` | que se **instale** en el teléfono y **abra sin internet** (corta la red de verdad) | 20 |
 | `test-rendimiento.js` | que **crecer el banco no vuelva lenta la app**: cronometra las 7 operaciones que lo recorren entero y falla si alguna pasa su tope | 7 |
 | `auditar-longitud.js` | que la correcta no sea sistemáticamente la más larga **ni la más corta**, y que tampoco viva siempre en un extremo (ahí "descarta las dos del medio" acierta demasiado) | — |
@@ -170,11 +170,28 @@ caer donde deben. Es la red positiva que le faltaba a S18.
 `LVLORD`, `DIFFS`) compara contra esas tres cadenas, así que una pregunta marcada así cae al rango 0 y el mock
 adaptativo **la manda al módulo fácil**. `validar-set.js` lo rechaza e `indexSets()` lo normaliza al cargar.
 
-## Las ocho pestañas del inicio
+## Dos modos, y siete pestañas dentro de uno
 
-`Daily` · `Math Topics` · `Verbal Topics` · `Fast Pace` · `Practice Tests` · `Full Mocks` · `Classroom` ·
-`My Progress`. Se ve **una a la vez** (la clave está en `store` bajo `satapp_home_tab`, y `homeTab()` traduce
-los nombres viejos para que una preferencia guardada no deje a nadie en una pestaña que ya no existe).
+Arriba de todo se elige **modo**, que es la primera decisión de la pantalla:
+
+| modo | qué es | clave en `store` |
+|---|---|---|
+| `solo` | **Self Practice** — practicar por mi cuenta. Las siete pestañas de siempre. | `satapp_modo` |
+| `clase` | **Classroom** — mis clases, lo que me asignaron y, si soy profesor, cómo va el grupo. | `satapp_modo` |
+
+Hasta el 22-sep-2026 Classroom era **una pestaña entre ocho**, y eso la escondía de las dos personas que la
+necesitan: un estudiante no entra a "la séptima pestaña" a ver qué le mandaron, y un profesor que viene a mirar
+a su grupo no viene a practicar. `modoActual()` / `irAModo()` mandan; en modo `clase` no se pintan pestañas y
+la navegación la maneja `claseAbrir()`.
+
+**Ojo con lo que vive FUERA de `#set-sections`:** el historial personal (`#hist-sec`) y el pie de página no se
+repintan con el inicio. El historial se esconde a mano en modo `clase` —debajo del progreso de una clase no
+pinta nada, y si quien mira es el profesor lo que aparecía ahí era SU práctica— y los botones del pie se
+cablean **una sola vez** (marca `data-cableado`), porque si no se les apila un listener por cada render.
+
+Las siete pestañas de Self Practice: `Daily` · `Math Topics` · `Verbal Topics` · `Fast Pace` · `Practice Tests`
+· `Full Mocks` · `My Progress`. Se ve **una a la vez** (clave `satapp_home_tab`, y `homeTab()` traduce los
+nombres viejos para que una preferencia guardada no deje a nadie en una pestaña que ya no existe).
 
 Antes eran cinco grupos apilados en una sola página: 21 secciones plegables y cinco bloques de cabecera
 encima. Decidir entre 21 acordeones es la forma más rápida de que alguien no haga nada.
@@ -206,14 +223,22 @@ sat.class_members  class_id · user_id
 sat.classwork      class_id · kind · titulo · cuerpo · spec · vence
 ```
 
-`kind` son cuatro y cada uno significa algo distinto:
+`kind` son **cinco** y cada uno significa algo distinto:
 
 | kind | qué es | intentos | cuenta |
 |---|---|---|---|
 | `warmup` | 3-5 preguntas para abrir la clase | ilimitados | no |
 | `assignment` | trabajo para practicar | ilimitados | el mejor |
 | `final` | una parte del final | **uno** | sí, y se reporta |
+| `mock` | **un simulacro asignado** — el mismo examen para toda la clase | ilimitados | el mejor, en puntaje escalado |
 | `material` | un ejemplo resuelto que arma el profesor | — | no |
+
+**El `mock` es el que hace comparables los puntajes.** Su semilla sale del id del trabajo (`seedDeId()`), así
+que a los 24 de la clase les toca exactamente el mismo examen; si cada uno recibiera uno distinto, poner dos
+puntajes lado a lado no significaría nada. Por dentro arranca el motor de simulacros de siempre —mismo armado,
+mismo enrutamiento adaptativo, mismo puntaje escalado— y lo único que cambia es **dónde se guarda la sesión**:
+`startMock(..., cwId)` pone `MOCK.cw` y `mockFinish()` la escribe en `cw-<id>` en vez de `full-mock`. Por eso
+el reporte de la clase la ve.
 
 - **No hay tabla de entregas.** El resultado de cada intento vive en `sat.sessions` con `set_id = 'cw-<id>'`.
   Tener una segunda tabla obligaría a mantener dos verdades sobre el mismo hecho, y se contradicen.
@@ -228,6 +253,22 @@ sat.classwork      class_id · kind · titulo · cuerpo · spec · vence
   ella la descubre), **sus pasos** (salen de a uno: mostrar el final de golpe no enseña nada), y expresiones de
   **Desmos** para la demo en vivo.
 - **v1 no se borró.** `sat.posts` y sus tres RPC siguen igual: hay datos de personas ahí.
+
+### ¿Está mejorando el grupo? (`sat_class_progreso`)
+
+Dentro de una clase hay dos sub-vistas: **Work** (el feed y el compositor) y **Progress**. El reporte de un
+trabajo dice cómo salió ESE trabajo; Progress dice si la clase se está moviendo, y quién no.
+
+- **Las dos escalas NO se mezclan.** La práctica se mide en puntos de acierto (`mejora`) y los simulacros en
+  puntaje escalado (`mejoraEscala`). El primer borrador las sumaba y daba un número bonito y falso: el 61 % de
+  aciertos crudos de un simulacro y el 80 % de una práctica no son lo mismo.
+- **El profesor ve la lista entera; un estudiante se ve solo a sí mismo.** El filtro está en la RPC
+  (`where v_profe or p.user_id = auth.uid()`), no en la interfaz. Los agregados del grupo —tendencia semanal,
+  destrezas flojas, promedio— sí los ve todo el mundo, porque le sirven para ubicarse.
+- **Quien no ha empezado va arriba**, a propósito: `order by (intentos = 0) desc`. Un tablero que esconde a
+  quien no entregó esconde justo lo que hay que mirar.
+- `propiaSesiones` cuenta la práctica **fuera** de la clase. Es lo que dice quién le está metiendo horas por su
+  cuenta, y es agregado: nunca una respuesta suelta.
 
 **Aplicado y verificado el 15-sep-2026** contra el proyecto, de punta a punta: crear clase (código de 6
 caracteres), asignar, el material con `qid`/`pasos`/`latex` viajando entero, un alumno uniéndose con el código,

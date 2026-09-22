@@ -389,6 +389,10 @@ create table if not exists sat.class_members (
 --   assignment  trabajo para practicar            · ilimitados · cuenta el mejor
 --   final       una parte del final               · UNO SOLO   · cuenta y se reporta
 --   material    un ejemplo resuelto del profesor  · sin intentos
+--   mock        un SIMULACRO asignado a la clase  · el mismo examen para todos
+-- `spec` de mock: { mock: 'full'|'rw'|'math', dificultad: ''|'real'|'hard'|'extreme' }
+-- La semilla del simulacro sale del id del trabajo (ver seedDeId en index.html),
+-- que es lo unico que hace comparables dos puntajes de dos estudiantes.
 -- `spec` de los tres primeros: { skills:[claves de SAT_SKILLS], nivel, n, modo }
 -- `spec` de material:          { qid, pasos:[...], latex:[...] }
 -- Las claves de `skills` son las de SAT_SKILLS en index.html, que por esto
@@ -396,7 +400,7 @@ create table if not exists sat.class_members (
 create table if not exists sat.classwork (
   id          uuid primary key default gen_random_uuid(),
   class_id    uuid not null references sat.classes(id) on delete cascade,
-  kind        text not null check (kind in ('warmup','assignment','final','material')),
+  kind        text not null check (kind in ('warmup','assignment','final','material','mock')),
   titulo      text not null,
   cuerpo      text not null default '',
   spec        jsonb,
@@ -515,11 +519,13 @@ begin
     select w.id, w.kind, w.titulo, w.cuerpo, w.spec, w.vence, w.created_at,
            to_char(w.created_at,'YYYY-MM-DD') as fecha,
            coalesce(mi.intentos, 0)::int as mis_intentos,
-           mi.mejor as mi_mejor
+           mi.mejor as mi_mejor,
+           mi.escala as mi_escala          -- el /1600 o /800 de un mock
     from sat.classwork w
     left join lateral (
       select count(*)::int as intentos,
-             max(case when s.total > 0 then round(100.0 * s.score / s.total) else null end) as mejor
+             max(case when s.total > 0 then round(100.0 * s.score / s.total) else null end) as mejor,
+             max(nullif(s.data->'mock'->>'total','')::int) as escala
       from sat.sessions s
       where s.user_id = (select auth.uid()) and s.set_id = 'cw-' || w.id::text
     ) mi on true
@@ -535,14 +541,18 @@ create or replace function public.sat_classwork_save(
 declare v_id uuid;
 begin
   if not sat.mi_clase(p_class) then raise exception 'not your class' using errcode = '42501'; end if;
-  if p_kind not in ('warmup','assignment','final','material') then
+  if p_kind not in ('warmup','assignment','final','material','mock') then
     raise exception 'unknown kind' using errcode = '22023';
   end if;
   if coalesce(btrim(p_titulo), '') = '' then raise exception 'it needs a title' using errcode = '22023'; end if;
-  -- Todo lo que no es `material` arma un test, y sin destrezas no puede armarlo.
-  -- Se rechaza acá y no cuando el estudiante aprieta Start y no pasa nada.
-  if p_kind <> 'material' and coalesce(jsonb_array_length(p_spec -> 'skills'), 0) = 0 then
+  -- warmup / assignment / final arman un test desde destrezas: sin destrezas no hay test.
+  if p_kind in ('warmup','assignment','final')
+     and coalesce(jsonb_array_length(p_spec -> 'skills'), 0) = 0 then
     raise exception 'pick at least one skill' using errcode = '22023';
+  end if;
+  -- un mock tiene que decir CUÁL: la sección completa o el examen entero.
+  if p_kind = 'mock' and coalesce(p_spec ->> 'mock', '') not in ('full','rw','math') then
+    raise exception 'pick which test to assign' using errcode = '22023';
   end if;
 
   if p_id is null then
@@ -588,22 +598,20 @@ begin
         select coalesce(u.raw_user_meta_data->>'name', split_part(u.email,'@',1)) as nombre,
                u.email,
                coalesce(x.intentos, 0)::int as intentos,
-               x.mejor, x.ultimo
+               x.mejor, x.ultimo, x.escala
         from sat.class_members m
         join auth.users u on u.id = m.user_id
         join sat.classes c on c.id = m.class_id
         left join lateral (
           select count(*)::int as intentos,
                  max(case when s.total > 0 then round(100.0 * s.score / s.total) else null end) as mejor,
-                 to_char(max(s.played_at),'YYYY-MM-DD') as ultimo
+                 to_char(max(s.played_at),'YYYY-MM-DD') as ultimo,
+                 max(nullif(s.data->'mock'->>'total','')::int) as escala
           from sat.sessions s
           where s.user_id = m.user_id and s.set_id = 'cw-' || p_id::text
         ) x on true
-        -- el profesor no es un alumno de su propia lista
         where m.class_id = v_class and m.user_id <> c.teacher_id
       ) a), '[]'::jsonb),
-    -- y la única pregunta que de verdad importa: en qué falló el grupo.
-    -- `sk` es la destreza OFICIAL, el mismo idioma del reporte de College Board.
     'skills', coalesce((
       select jsonb_agg(jsonb_build_object('sk', sk, 'total', t, 'ok', c) order by (c::numeric / t))
       from (
@@ -632,3 +640,124 @@ grant execute on function public.sat_class_feed(uuid)                           
 grant execute on function public.sat_classwork_save(uuid, uuid, text, text, text, jsonb, date) to authenticated;
 grant execute on function public.sat_classwork_delete(uuid)                                 to authenticated;
 grant execute on function public.sat_classwork_report(uuid)                                 to authenticated;
+
+-- ---- ¿esta mejorando el grupo? -------------------------------------------
+-- La pregunta que el profesor no podía contestar. Devuelve SOLO agregados por
+-- estudiante (cuánto hizo, cuánto acierta, cuánto mejoró); nunca una respuesta
+-- suelta. El PROFESOR ve la lista entera de su clase; un ESTUDIANTE se ve solo
+-- a sí mismo, y los agregados del grupo (tendencia, destrezas flojas, promedio)
+-- porque le sirven para ubicarse.
+--
+-- Y las dos escalas NO se mezclan: la práctica se mide en puntos de acierto y
+-- los simulacros en puntaje escalado. Sumarlas daría un número bonito y falso.
+create or replace function public.sat_class_progreso(p_class uuid)
+returns jsonb language plpgsql security definer set search_path = '' as $$
+declare res jsonb; v_profe boolean;
+begin
+  v_profe := sat.mi_clase(p_class);
+  if not (v_profe or sat.en_clase(p_class)) then
+    raise exception 'not authorized' using errcode = '42501';
+  end if;
+
+  with alumnos as (
+    select m.user_id,
+           coalesce(u.raw_user_meta_data->>'name', split_part(u.email,'@',1)) as nombre,
+           u.email
+      from sat.class_members m
+      join auth.users u   on u.id = m.user_id
+      join sat.classes c  on c.id = m.class_id
+     where m.class_id = p_class and m.user_id <> c.teacher_id
+  ),
+  trabajos as (
+    select id, kind, titulo, vence, created_at
+      from sat.classwork where class_id = p_class
+  ),
+  ses as (
+    select s.user_id, s.played_at, s.score, s.total, s.data, w.id as cw_id, w.kind,
+           case when s.total > 0 then 100.0 * s.score / s.total end as pct,
+           nullif(s.data->'mock'->>'total','')::int as escala
+      from sat.sessions s
+      join trabajos w on s.set_id = 'cw-' || w.id::text
+      join alumnos a  on a.user_id = s.user_id
+  ),
+  por_alumno as (
+    select a.user_id, a.nombre, a.email,
+           count(s.user_id)::int                                          as intentos,
+           count(s.user_id) filter (where s.kind <> 'mock')::int           as intentos_practica,
+           count(s.escala)::int                                            as intentos_mock,
+           count(distinct s.cw_id)::int                                    as entregados,
+           coalesce(sum(s.total), 0)::int                  as preguntas,
+           case when sum(s.total) > 0 then round(100.0 * sum(s.score) / sum(s.total)) end as precision,
+           round((array_agg(s.pct order by s.played_at)
+                  filter (where s.pct is not null and s.kind <> 'mock'))[1])      as primera,
+           round((array_agg(s.pct order by s.played_at desc)
+                  filter (where s.pct is not null and s.kind <> 'mock'))[1])      as ultima,
+           (array_agg(s.escala order by s.played_at)
+            filter (where s.escala is not null))[1]                              as primera_escala,
+           (array_agg(s.escala order by s.played_at desc)
+            filter (where s.escala is not null))[1]                              as ultima_escala,
+           to_char(max(s.played_at), 'YYYY-MM-DD')         as ultimo,
+           max(s.escala)                                   as mejor_escala
+      from alumnos a
+      left join ses s on s.user_id = a.user_id
+     group by 1, 2, 3
+  ),
+  -- lo que practica por su cuenta, en agregado: dice quién le está metiendo
+  propia as (
+    select s.user_id, count(*)::int as sesiones, coalesce(sum(s.total),0)::int as preguntas,
+           case when sum(s.total) > 0 then round(100.0 * sum(s.score) / sum(s.total)) end as precision
+      from sat.sessions s
+      join alumnos a on a.user_id = s.user_id
+     where s.set_id not like 'cw-%'
+     group by 1
+  )
+  select jsonb_build_object(
+    'soyProfe', v_profe,
+    'alumnos', coalesce((
+      select jsonb_agg(jsonb_build_object(
+               'nombre', p.nombre, 'email', p.email,
+               'intentos', p.intentos, 'entregados', p.entregados, 'preguntas', p.preguntas,
+               'precision', p.precision, 'primera', p.primera, 'ultima', p.ultima,
+               'mejora', case when p.intentos_practica >= 2 then p.ultima - p.primera end,
+               'primeraEscala', p.primera_escala, 'ultimaEscala', p.ultima_escala,
+               'mejoraEscala', case when p.intentos_mock >= 2 then p.ultima_escala - p.primera_escala end,
+               'ultimo', p.ultimo, 'mejorEscala', p.mejor_escala,
+               'propiaSesiones', coalesce(pr.sesiones, 0), 'propiaPrecision', pr.precision)
+             order by (p.intentos = 0) desc, p.precision nulls last, p.nombre)
+        from por_alumno p left join propia pr on pr.user_id = p.user_id
+        -- el profesor ve la lista entera; un alumno se ve SOLO a si mismo
+       where v_profe or p.user_id = (select auth.uid())), '[]'::jsonb),
+    'porDestreza', coalesce((
+      select jsonb_agg(jsonb_build_object('sk', sk, 'total', t, 'ok', c) order by (c::numeric / t))
+        from (select pq->>'sk' sk, count(*) t, count(*) filter (where (pq->>'ok')::boolean) c
+                from ses, lateral jsonb_array_elements(coalesce(ses.data->'perQuestion','[]'::jsonb)) pq
+               where pq->>'sk' is not null group by 1) z), '[]'::jsonb),
+    'porSemana', coalesce((
+      select jsonb_agg(jsonb_build_object('semana', semana, 'total', t, 'ok', c) order by semana)
+        from (select to_char(date_trunc('week', played_at), 'YYYY-MM-DD') semana,
+                     sum(total)::int t, sum(score)::int c
+                from ses group by 1 order by 1 desc limit 10) w), '[]'::jsonb),
+    'trabajos', coalesce((
+      select jsonb_agg(jsonb_build_object(
+               'id', t.id, 'kind', t.kind, 'titulo', t.titulo, 'vence', t.vence,
+               'entregados', (select count(distinct s.user_id) from ses s where s.cw_id = t.id),
+               'promedio',   (select round(avg(x.m)) from (select max(s.pct) m from ses s where s.cw_id = t.id group by s.user_id) x),
+               'promedioEscala', (select round(avg(x.m)) from (select max(s.escala) m from ses s where s.cw_id = t.id group by s.user_id) x))
+             order by t.created_at desc)
+        from trabajos t where t.kind <> 'material'), '[]'::jsonb),
+    'resumen', (
+      select jsonb_build_object(
+        'alumnos',  (select count(*) from alumnos),
+        'activos',  (select count(*) from por_alumno where intentos > 0),
+        'asignados',(select count(*) from trabajos where kind <> 'material'),
+        'precision',(select round(avg(precision)) from por_alumno where precision is not null),
+        'mejora',   (select round(avg(ultima - primera)) from por_alumno where intentos_practica >= 2),
+        'mejoraEscala', (select round(avg(ultima_escala - primera_escala)) from por_alumno where intentos_mock >= 2))
+    )
+  ) into res;
+  return res;
+end $$;
+
+revoke all on function public.sat_class_progreso(uuid) from public, anon;
+grant execute on function public.sat_class_progreso(uuid) to authenticated;
+

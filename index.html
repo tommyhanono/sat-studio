@@ -69,8 +69,9 @@
   .home-sub{color:var(--gray-mid);margin-bottom:26px}
   .home-foot{margin-top:44px;padding-top:22px;border-top:1px solid var(--gray-line);color:var(--gray-mid);font-size:.82rem;line-height:1.6}
   .home-foot p{margin-bottom:7px}
-  .foot-links a{color:var(--blue-dark);text-decoration:none;display:inline-block;padding:6px 2px}
-  .foot-links a:hover{text-decoration:underline}
+  .foot-links a,.foot-a{color:var(--blue-dark);text-decoration:none;display:inline-block;padding:6px 2px}
+  .foot-a{background:none;border:0;font:inherit;cursor:pointer;min-height:44px}
+  .foot-links a:hover,.foot-a:hover{text-decoration:underline}
   .foot-c{font-size:.78rem}
   /* La tira del inicio: tres números en una fila. Reemplazó a la barra de fecha
      + cuatro tarjetas + el banner del simulacro, que eran cinco bloques antes de
@@ -504,6 +505,39 @@
   .mock-launch .btn-primary{background:#fff;color:var(--blue);border:0;white-space:nowrap;font-weight:700}
   .mock-launch .btn-primary:hover{background:#eef1ff}
   .mock-launch-btns{display:flex;gap:10px;flex-wrap:wrap}
+  /* ─── Los dos modos ───
+     Classroom dejó de ser una pestaña entre ocho: son dos mundos y la pestaña
+     los escondía. El interruptor va ARRIBA de todo, antes de la navegación,
+     porque elegir modo es la primera decisión, no la novena. */
+  .modo-sw{display:flex;gap:6px;background:var(--paper-2);border:1px solid var(--gray-line);border-radius:999px;padding:5px;margin:0 0 16px;max-width:520px}
+  .modo-b{flex:1;min-height:44px;border:0;background:none;border-radius:999px;padding:7px 14px;cursor:pointer;
+    font-family:var(--sans);font-size:.9rem;font-weight:600;color:var(--gray-mid);text-align:center;line-height:1.25}
+  .modo-b small{display:block;font-size:.72rem;font-weight:500;opacity:.85}
+  .modo-b:hover{color:var(--navy)}
+  .modo-b.on{background:var(--navy);color:#fff;font-family:var(--serif);font-weight:700;box-shadow:var(--sombra)}
+  .modo-b.on small{font-family:var(--sans);opacity:.8}
+  /* sub-pestañas dentro de una clase */
+  .cl-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:4px 0 18px}
+  .cl-tab{min-height:44px;padding:8px 16px;border:1px solid var(--gray-line);border-radius:999px;background:#fff;
+    color:var(--ink);font-size:.86rem;font-weight:600;cursor:pointer}
+  .cl-tab:hover{border-color:var(--blue);background:var(--blue-soft)}
+  .cl-tab.on{background:var(--navy);border-color:var(--navy);color:#fff;font-family:var(--serif);font-weight:700}
+  /* el progreso de la clase */
+  .pg-kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));gap:10px;margin-bottom:18px}
+  .pg-kpi{background:#fff;border:1px solid var(--gray-line);border-radius:12px;padding:12px 14px;box-shadow:var(--sombra)}
+  .pg-kpi b{display:block;font-family:var(--serif);font-size:1.7rem;color:var(--navy);line-height:1.1}
+  .pg-kpi span{display:block;font-size:.76rem;color:var(--gray-mid);text-transform:uppercase;letter-spacing:.04em;margin-top:3px}
+  .pg-kpi .pg-sub{font-size:.72rem;text-transform:none;letter-spacing:0;color:var(--gray-mid);opacity:.9;margin-top:1px}
+  .pg-kpi.sube b{color:var(--green)} .pg-kpi.baja b{color:var(--red)}
+  .pg-sem{display:flex;align-items:flex-end;gap:6px;height:96px;margin:6px 0 4px}
+  .pg-sem i{flex:1;background:var(--blue);border-radius:4px 4px 0 0;min-height:3px;display:block}
+  .pg-sem i.ult{background:var(--gold)}
+  .pg-semx{display:flex;gap:6px;font-size:.68rem;color:var(--gray-mid)}
+  .pg-semx span{flex:1;text-align:center}
+  .pg-semx b{display:block;font-size:.82rem;color:var(--navy);font-variant-numeric:tabular-nums}
+  .mejora{font-weight:700;font-variant-numeric:tabular-nums}
+  .mejora.sube{color:var(--green)} .mejora.baja{color:var(--red)} .mejora.igual{color:var(--gray-mid)}
+  .pg-nota{font-size:.82rem;color:var(--gray-mid);margin:2px 0 14px}
   .class-wrap{padding:2px 0 4px}
   .class-compose{background:var(--gold-soft);border:1px solid #e6d3a8;border-radius:12px;padding:16px 18px;margin-bottom:18px}
   .class-hint{font-size:.85rem;color:#5c4212;line-height:1.6;margin-bottom:12px}
@@ -1115,15 +1149,18 @@
       <p><b>SAT Studio</b> — free Digital SAT practice. All questions are original;
         College Board does not sponsor or endorse this tool.</p>
       <p class="foot-links">
-        <a href="#g-hoy">Today</a> ·
-        <a href="#g-practicar">Practice</a> ·
-        <a href="#g-examen">Full test</a> ·
+        <!-- Eran anclas a #g-hoy / #g-practicar / #g-examen, ids que dejaron de
+             existir cuando las pestañas se renombraron: tres enlaces que no
+             hacían nada. Ahora usan el mismo camino que el resto de la app. -->
+        <button type="button" class="foot-a" data-goto-tab="daily">Today</button> ·
+        <button type="button" class="foot-a" data-goto-tab="math">Practice</button> ·
+        <button type="button" class="foot-a" data-goto-tab="mocks">Full test</button> ·
         <a href="https://github.com/tommyhanono/sat-studio" rel="noopener">Source</a>
       </p>
       <p class="foot-c">© <span id="foot-year"></span> SAT Studio</p>
     </footer>
 
-    <details class="home-sec" open>
+    <details class="home-sec" id="hist-sec" open>
       <summary>Session History</summary>
       <div class="home-sec-body">
         <div class="panel">
@@ -2914,7 +2951,7 @@ function planWire(){
    Todos los límites están en las RPC, no acá: quién puede crear, quién puede
    ver, y que una clase de un colegio no la encuentre nadie de otro. */
 
-var CLASE = { vista: 'lista', clases: null, actual: null, feed: null, reporte: null, cargando: false };
+var CLASE = { vista: 'lista', sub: 'work', clases: null, actual: null, feed: null, reporte: null, progreso: null, cargando: false };
 
 function claseRPC(fn, args){
   if(!authAvailable() || !currentUser) return Promise.reject(new Error('sign in first'));
@@ -2952,7 +2989,9 @@ function claseAbrir(forzar){
     return;
   }
   if(CLASE.vista === 'reporte') return claseReporte(CLASE.cwId);
-  if(CLASE.vista === 'clase')   return claseFeed(CLASE.actual, forzar);
+  if(CLASE.vista === 'clase'){
+    return CLASE.sub === 'progreso' ? claseProgreso(CLASE.actual, forzar) : claseFeed(CLASE.actual, forzar);
+  }
   return claseLista(forzar);
 }
 
@@ -3042,15 +3081,58 @@ var CW_META = {
   warmup:     { t:'Warm-up',    cls:'warm', nota:'A few questions to start the class. Take it as often as you like.' },
   assignment: { t:'Assignment', cls:'asgn', nota:'Repeat it as many times as you want — new questions every time.' },
   final:      { t:'Final',      cls:'fin',  nota:'One attempt. This one counts.' },
+  mock:       { t:'Mock',       cls:'mock', nota:'The same test for everyone in the class, so the scores can be compared.' },
   material:   { t:'Example',    cls:'mat',  nota:'' }
 };
-function pintarFeed(){
-  var c = claseActual(), items = (CLASE.feed || {}).items || [], profe = !!c.mia;
-  var html = '<div class="cl-head">' +
+/* Los tres simulacros que un profesor puede asignar. */
+var MOCK_TIPOS = {
+  full: { t:'Full practice test', max:1600, nota:'Both sections, adaptive · ~98 questions · ~2h 14m' },
+  rw:   { t:'Reading & Writing',  max:800,  nota:'One section, adaptive · ~54 questions · ~1h 6m' },
+  math: { t:'Math',               max:800,  nota:'One section, adaptive · ~44 questions · ~1h 10m' }
+};
+var MOCK_DIFS = {
+  '':        'Standard form',
+  'real':    'Realistic hard — true to a difficult real form',
+  'hard':    'Hard — every module difficult',
+  'extreme': 'Brutal — only the hardest tier'
+};
+/* La semilla sale del id del trabajo, así que TODOS los de la clase reciben el
+   mismo examen. Sin esto, comparar dos puntajes no significaría nada. */
+function seedDeId(id){
+  var h = 2166136261;
+  String(id).split('').forEach(function(c){ h = Math.imul(h ^ c.charCodeAt(0), 16777619) >>> 0; });
+  return h % 100000;
+}
+/* La cabecera de una clase, con sus dos sub-vistas. Es la misma en Work y en
+   Progress: si cada una pintara la suya, se desincronizarían al primer cambio. */
+function claseHeadHTML(c, sub, n){
+  var tabs = [['work', 'Work', n != null ? n : ''], ['progreso', 'Progress', '']];
+  return '<div class="cl-head">' +
     '<button type="button" class="mini" id="cl-volver">← All classes</button>' +
     '<h4>' + escHtml(c.nombre || 'Class') + (c.periodo ? ' <span class="cl-card-p">' + escHtml(c.periodo) + '</span>' : '') + '</h4>' +
     (c.codigo ? '<span class="cl-code">code <b>' + escHtml(c.codigo) + '</b></span>' : '') +
-  '</div>';
+  '</div>' +
+  '<div class="cl-tabs" role="tablist">' + tabs.map(function(t){
+    var on = t[0] === sub;
+    return '<button type="button" class="cl-tab' + (on ? ' on' : '') + '" data-cl-sub="' + t[0] + '"' +
+      ' role="tab" aria-selected="' + on + '">' + t[1] + (t[2] !== '' ? ' (' + t[2] + ')' : '') + '</button>';
+  }).join('') + '</div>';
+}
+/* Los botones que cambian de sub-vista y el de volver. Se cablean en las dos
+   vistas, así que viven en una sola función. */
+function claseHeadWire(){
+  var v = $('#cl-volver');
+  if(v) v.addEventListener('click', function(){ CLASE.vista = 'lista'; CLASE.sub = 'work'; claseLista(); });
+  Array.prototype.forEach.call(document.querySelectorAll('[data-cl-sub]'), function(b){
+    b.addEventListener('click', function(){
+      CLASE.sub = b.getAttribute('data-cl-sub');
+      claseAbrir();
+    });
+  });
+}
+function pintarFeed(){
+  var c = claseActual(), items = (CLASE.feed || {}).items || [], profe = !!c.mia;
+  var html = claseHeadHTML(c, 'work', items.length);
 
   if(profe) html += cwCompositorHTML();
 
@@ -3060,7 +3142,7 @@ function pintarFeed(){
         ? 'Nothing assigned yet. The composer above is where it starts.'
         : 'Your teacher has not posted anything yet.') + '</p>';
   clasePinta(html);
-  $('#cl-volver').addEventListener('click', function(){ CLASE.vista = 'lista'; claseLista(); });
+  claseHeadWire();
   if(profe) cwWire();
   cwWireCards();
 }
@@ -3128,16 +3210,24 @@ function cwCardHTML(w, profe){
     (w.kind === 'material'
       ? cwEjemploHTML(spec, w.id)
       : '<div class="cw-go">' +
-          '<p class="cw-what"><b>' + escHtml(nombres.join(' · ')) + '</b> · ' +
-            (spec.n || 12) + ' questions · ' +
-            (spec.modo === 'exam' ? 'timed' : 'no timer, explained as you go') + '</p>' +
+          '<p class="cw-what">' + (w.kind === 'mock'
+            ? '<b>' + escHtml((MOCK_TIPOS[spec.mock] || MOCK_TIPOS.full).t) + ' · /' +
+                (MOCK_TIPOS[spec.mock] || MOCK_TIPOS.full).max + '</b> · ' +
+                escHtml((MOCK_TIPOS[spec.mock] || MOCK_TIPOS.full).nota) +
+                (spec.dificultad ? ' · ' + escHtml(MOCK_DIFS[spec.dificultad] || '') : '')
+            : '<b>' + escHtml(nombres.join(' · ')) + '</b> · ' +
+                (spec.n || 12) + ' questions · ' +
+                (spec.modo === 'exam' ? 'timed' : 'no timer, explained as you go')) + '</p>' +
           (unico && hecho
             ? '<p class="cw-done">✓ Submitted · ' + (w.mi_mejor != null ? w.mi_mejor + '%' : '—') + '. One attempt only.</p>'
             : '<button type="button" class="btn-primary" data-cw-start="' + escAttr(w.id) + '">' +
                 (hecho ? 'Take it again' : 'Start') + '</button>' +
               '<span class="cw-hist">' + (hecho
                 ? w.mis_intentos + (w.mis_intentos === 1 ? ' attempt' : ' attempts') +
-                  (w.mi_mejor != null ? ' · best ' + w.mi_mejor + '%' : '') + ' · ' + m.nota
+                  /* un simulacro se mide en su puntaje escalado, no en aciertos crudos */
+                  (w.kind === 'mock'
+                    ? (w.mi_escala != null ? ' · best ' + w.mi_escala + '/' + (MOCK_TIPOS[spec.mock] || MOCK_TIPOS.full).max : '')
+                    : (w.mi_mejor != null ? ' · best ' + w.mi_mejor + '%' : '')) + ' · ' + m.nota
                 : m.nota) + '</span>') +
         '</div>') +
     (profe ? '<div class="cw-tools">' +
@@ -3227,6 +3317,12 @@ function cwWireCards(){
 function cwEmpezar(w){
   if(!BANCO_LISTO) return conBanco(function(){ cwEmpezar(w); });
   var spec = w.spec || {}, qs = [], vistos = {};
+  /* Un Mock no arma un test desde destrezas: arranca el simulacro de verdad,
+     con la semilla del trabajo para que a toda la clase le toque el mismo. */
+  if(w.kind === 'mock'){
+    startMock(spec.mock || 'full', null, seedDeId(w.id), spec.dificultad || false, w.id);
+    return;
+  }
   var n = spec.n || 12, porSkill = Math.max(1, Math.ceil(n / Math.max(1, (spec.skills || []).length)));
   (spec.skills || []).forEach(function(k){
     var set = skillBuildSet(k, spec.nivel || 'todo', porSkill);
@@ -3258,7 +3354,7 @@ function cwCompositorHTML(){
   return '<div class="class-compose">' +
     '<input type="hidden" id="cw-id" value="">' +
     '<div class="cw-kinds">' +
-      ['warmup','assignment','final','material'].map(function(k, i){
+      ['warmup','assignment','final','mock','material'].map(function(k, i){
         return '<button type="button" class="cw-kind' + (i === 1 ? ' on' : '') + '" data-cw-kind="' + k + '">' +
           CW_META[k].t + '</button>';
       }).join('') +
@@ -3291,6 +3387,23 @@ function cwCompositorHTML(){
       '<label class="auth-lbl" for="cw-latex">Desmos expressions <span class="lbl-opt">— one per line, they open in the calculator</span></label>' +
       '<textarea id="cw-latex" class="class-ta" rows="2" placeholder="y=(x-3)^2+2"></textarea>' +
     '</div>' +
+    /* Un Mock no se arma con destrezas: se elige CUÁL examen. Toda la clase
+       recibe el mismo, porque dos puntajes de dos exámenes distintos no se
+       pueden comparar y comparar es justamente para lo que sirve. */
+    '<div id="cw-mock-zone" class="hidden">' +
+      '<div class="ct-row">' +
+        '<label class="ct-lbl">Which test<select id="cw-mock-tipo" class="ct-sel">' +
+          Object.keys(MOCK_TIPOS).map(function(k){
+            return '<option value="' + k + '">' + escHtml(MOCK_TIPOS[k].t) + ' · /' + MOCK_TIPOS[k].max + '</option>';
+          }).join('') + '</select></label>' +
+        '<label class="ct-lbl">Difficulty<select id="cw-mock-dif" class="ct-sel">' +
+          Object.keys(MOCK_DIFS).map(function(k){
+            return '<option value="' + k + '">' + escHtml(MOCK_DIFS[k]) + '</option>';
+          }).join('') + '</select></label>' +
+        '<label class="ct-lbl">Due <input type="date" id="cw-mock-vence" class="ct-sel"></label>' +
+      '</div>' +
+      '<p class="class-hint">Everyone in the class gets the <b>same</b> test, so the scores mean something next to each other. It is scored the way the real SAT does it.</p>' +
+    '</div>' +
     '<div id="cw-skills-zone">' +
       '<p class="class-hint">Pick the official skills. Every attempt builds a fresh test from them.</p>' +
       '<div class="cw-chips">' + chips + '</div>' +
@@ -3320,8 +3433,9 @@ function cwWire(){
       Array.prototype.forEach.call(document.querySelectorAll('.cw-kind'), function(o){ o.classList.toggle('on', o === b); });
       var k = b.getAttribute('data-cw-kind');
       $('#cw-kind-note').textContent = CW_META[k].nota;
-      $('#cw-skills-zone').classList.toggle('hidden', k === 'material');
+      $('#cw-skills-zone').classList.toggle('hidden', k === 'material' || k === 'mock');
       $('#cw-latex-zone').classList.toggle('hidden', k !== 'material');
+      $('#cw-mock-zone').classList.toggle('hidden', k !== 'mock');
       $('#cw-guardar').textContent = k === 'material' ? 'Post the example' : 'Assign it';
       if(k === 'warmup') $('#cw-n').value = '5';
     });
@@ -3334,23 +3448,130 @@ function cwWire(){
     if(!t){ toast('It needs a title.', true); return; }
     var skills = Array.prototype.map.call(document.querySelectorAll('[data-cw-skill].on'),
       function(c){ return c.getAttribute('data-cw-skill'); });
-    if(k !== 'material' && !skills.length){ toast('Pick at least one skill.', true); return; }
+    if(k !== 'material' && k !== 'mock' && !skills.length){ toast('Pick at least one skill.', true); return; }
     var lineas = function(id){
       return ($(id).value || '').split('\n').map(function(x){ return x.trim(); }).filter(Boolean);
     };
     var spec = k === 'material'
       ? { latex: lineas('#cw-latex'), pasos: lineas('#cw-pasos'), qid: $('#cw-ej-q').value || null }
+      : k === 'mock'
+      ? { mock: $('#cw-mock-tipo').value || 'full', dificultad: $('#cw-mock-dif').value || '' }
       : { skills: skills, nivel: $('#cw-nivel').value, n: parseInt($('#cw-n').value, 10) || 12, modo: $('#cw-modo').value };
     var b = $('#cw-guardar'); b.disabled = true;
     claseRPC('sat_classwork_save', {
       p_id: $('#cw-id').value || null, p_class: CLASE.actual, p_kind: k,
       p_titulo: t, p_cuerpo: $('#cw-cuerpo').value || '', p_spec: spec,
-      p_vence: $('#cw-vence').value || null
+      p_vence: (k === 'mock' ? $('#cw-mock-vence').value : $('#cw-vence').value) || null
     }).then(function(){
       toast(k === 'material' ? 'Example posted.' : 'Assigned. Your students see it now.');
       claseFeed(CLASE.actual, true);
     }).catch(function(e){ b.disabled = false; toast('Could not save it: ' + e.message, true); });
   });
+}
+
+/* ---------- ¿está mejorando el grupo? ----------
+   La pregunta que antes no se podía contestar. El reporte de un trabajo dice
+   cómo salió ESE trabajo; esto dice si la clase se está moviendo, y quién no.
+
+   Dos escalas que NO se mezclan: la práctica se mide en porcentaje de aciertos
+   y los simulacros en puntaje escalado (/1600 o /800). Sumar las dos daría un
+   número bonito y falso. */
+function claseProgreso(id, forzar){
+  CLASE.vista = 'clase'; CLASE.sub = 'progreso';
+  if(CLASE.progreso && CLASE.progreso.id === id && !forzar) return pintarProgreso();
+  clasePinta('<p class="empty-note">Loading…</p>');
+  claseRPC('sat_class_progreso', { p_class: id })
+    .then(function(d){ CLASE.progreso = { id: id, d: d || {} }; pintarProgreso(); })
+    .catch(claseError);
+}
+function signo(n){ return n > 0 ? '+' + n : String(n); }
+function claseKPI(valor, etiqueta, sub, clase){
+  return '<div class="pg-kpi' + (clase || '') + '"><b>' + valor + '</b><span>' + etiqueta + '</span>' +
+    (sub ? '<span class="pg-sub">' + sub + '</span>' : '') + '</div>';
+}
+function pintarProgreso(){
+  var c = claseActual(), d = (CLASE.progreso || {}).d || {};
+  var r = d.resumen || {}, al = d.alumnos || [], sk = d.porDestreza || [], sem = d.porSemana || [];
+  var profe = !!d.soyProfe;
+  var html = claseHeadHTML(c, 'progreso', ((CLASE.feed || {}).items || []).length);
+
+  if(!r.asignados){
+    clasePinta(html + '<p class="empty-note">' + (profe
+      ? 'Nothing assigned yet, so there is nothing to measure. Assign a warm-up or a mock under <b>Work</b> and this fills in on its own.'
+      : 'Your teacher has not assigned anything yet.') + '</p>');
+    claseHeadWire();
+    return;
+  }
+
+  /* Los cinco números que un profesor mira primero. La mejora va con su signo y
+     su color: un grupo que baja tiene que verse que baja. */
+  html += '<div class="pg-kpis">' +
+    claseKPI((r.activos || 0) + '/' + (r.alumnos || 0), 'Working on it', 'of the class') +
+    claseKPI(r.asignados || 0, 'Assigned', 'not counting examples') +
+    claseKPI(r.precision != null ? r.precision + '%' : '—', 'Class accuracy', 'on assigned work') +
+    claseKPI(r.mejora != null ? signo(r.mejora) + ' pts' : '—', 'Practice trend', 'first vs latest attempt',
+      r.mejora == null ? '' : (r.mejora > 0 ? ' sube' : r.mejora < 0 ? ' baja' : '')) +
+    claseKPI(r.mejoraEscala != null ? signo(r.mejoraEscala) : '—', 'Mock trend', 'scaled points',
+      r.mejoraEscala == null ? '' : (r.mejoraEscala > 0 ? ' sube' : r.mejoraEscala < 0 ? ' baja' : '')) +
+  '</div>';
+
+  if(sem.length > 1){
+    var maxPct = Math.max.apply(null, sem.map(function(w){ return w.total ? 100 * w.ok / w.total : 0; }).concat([1]));
+    html += '<div class="atable-wrap"><h3>Week by week</h3>' +
+      '<div class="pg-sem" role="img" aria-label="' + sem.map(function(w){
+        return escAttr(w.semana + ': ' + (w.total ? Math.round(100 * w.ok / w.total) : 0) + ' per cent');
+      }).join(', ') + '">' +
+      sem.map(function(w, i){
+        var pct = w.total ? 100 * w.ok / w.total : 0;
+        return '<i class="' + (i === sem.length - 1 ? 'ult' : '') + '" style="height:' +
+          Math.max(3, Math.round(96 * pct / maxPct)) + 'px"></i>';
+      }).join('') + '</div>' +
+      /* La barra sola no se lee: dos semanas de 70 y 78 se ven casi iguales.
+         El número va debajo, que es lo que el profesor de verdad compara. */
+      '<div class="pg-semx">' + sem.map(function(w){
+        return '<span><b>' + (w.total ? Math.round(100 * w.ok / w.total) : 0) + '%</b>' +
+          escHtml(w.semana.slice(5).replace('-', '/')) + '</span>';
+      }).join('') + '</div>' +
+      '<p class="pg-nota">Accuracy on class work, by the week it was done.</p></div>';
+  }
+
+  html += '<div class="atable-wrap"><h3>Where the class is losing points</h3>' +
+    (sk.length
+      ? sk.slice(0, 8).map(function(x){
+          var nom = (skillByKey(x.sk) || {}).t || x.sk;
+          var pct = x.total ? Math.round(100 * x.ok / x.total) : 0;
+          var cls = pct < 60 ? ' bad' : (pct < 80 ? ' mid' : '');
+          return '<div class="bar-row"><div class="lbl">' + escHtml(nom) + '</div>' +
+            '<div class="bar-track"><div class="bar-fill' + cls + '" style="width:' + Math.max(pct, 3) + '%"></div></div>' +
+            '<div class="pct">' + pct + '% · ' + x.total + '</div></div>';
+        }).join('')
+      : '<p class="empty-note">Nobody has answered a question yet.</p>') + '</div>';
+
+  html += '<div class="atable-wrap"><h3>' + (profe ? 'Student by student' : 'You') + '</h3>' +
+    (profe ? '<p class="pg-nota">Whoever has not started is at the top on purpose.</p>' : '') +
+    '<div class="prog-table-wrap"><table class="prog-table"><thead><tr>' +
+      '<th>Name</th><th class="num">Turned in</th><th class="num">Accuracy</th>' +
+      '<th class="num">Practice</th><th class="num">Best mock</th><th class="num">On their own</th><th>Last</th>' +
+    '</tr></thead><tbody>' +
+    (al.length ? al.map(function(a){
+      var m = a.mejora;
+      return '<tr' + (a.intentos ? '' : ' class="sin-entregar"') + '>' +
+        '<td>' + escHtml(a.nombre) + '</td>' +
+        '<td class="num">' + a.entregados + '/' + (r.asignados || 0) + '</td>' +
+        '<td class="num">' + (a.precision != null ? a.precision + '%' : '—') + '</td>' +
+        '<td class="num">' + (m != null
+          ? '<span class="mejora ' + (m > 0 ? 'sube' : m < 0 ? 'baja' : 'igual') + '">' + signo(m) + '</span>'
+          : '<span class="mejora igual">—</span>') + '</td>' +
+        '<td class="num">' + (a.mejorEscala != null ? a.mejorEscala : '—') + '</td>' +
+        '<td class="num">' + (a.propiaSesiones || 0) + '</td>' +
+        '<td>' + (a.ultimo || 'not yet') + '</td></tr>';
+    }).join('') : '<tr><td colspan="7" class="empty-note">No students in this class yet.</td></tr>') +
+    '</tbody></table></div>' +
+    '<p class="pg-nota">«Practice» is the change from the first attempt to the latest, in points of accuracy. ' +
+      '«On their own» counts sessions outside class work — it says who is putting in the hours.</p></div>';
+
+  clasePinta(html);
+  claseHeadWire();
 }
 
 /* ---------- el reporte: en qué falló la clase ---------- */
@@ -3385,12 +3606,14 @@ function claseReporte(id){
 
     html += '<div class="atable-wrap"><h3>Student by student</h3>' +
       '<div class="prog-table-wrap"><table class="prog-table"><thead><tr>' +
-        '<th>Name</th><th class="num">Attempts</th><th class="num">Best</th><th>Last</th>' +
+        '<th>Name</th><th class="num">Attempts</th><th class="num">' + (d.kind === 'mock' ? 'Best score' : 'Best') + '</th><th>Last</th>' +
       '</tr></thead><tbody>' +
       (al.length ? al.map(function(a){
         return '<tr' + (a.intentos ? '' : ' class="sin-entregar"') + '><td>' + escHtml(a.nombre) + '</td>' +
           '<td class="num">' + a.intentos + '</td>' +
-          '<td class="num">' + (a.mejor != null ? a.mejor + '%' : '—') + '</td>' +
+          '<td class="num">' + (d.kind === 'mock'
+            ? (a.escala != null ? a.escala : '—')
+            : (a.mejor != null ? a.mejor + '%' : '—')) + '</td>' +
           '<td>' + (a.ultimo || 'not yet') + '</td></tr>';
       }).join('') : '<tr><td colspan="4" class="empty-note">No students in this class yet.</td></tr>') +
       '</tbody></table></div></div>';
@@ -3402,6 +3625,27 @@ function claseReporte(id){
 /* ================= HOME ================= */
 /* Qué pestaña del inicio está abierta. Se recuerda entre visitas, pero arranca
    en 'hoy': lo que el estudiante necesita al abrir es qué hacer AHORA. */
+/* ================= LOS DOS MODOS =================
+   Hasta el 22-sep-2026 Classroom era una pestaña entre ocho, y eso la escondía
+   de las dos personas que la necesitan: el estudiante no entra a "la pestaña 7"
+   a ver qué le mandaron, y el profesor que viene a mirar a su grupo no viene a
+   practicar. Son dos mundos y ahora se eligen arriba de todo.
+
+   `solo`  = practicar por mi cuenta (las siete pestañas de siempre)
+   `clase` = el salón: mis clases, lo que me asignaron, y —si soy profesor—
+             cómo va el grupo. */
+var MODO_DEF = 'solo';
+function modoActual(){ return store.get('satapp_modo', MODO_DEF) === 'clase' ? 'clase' : 'solo'; }
+function irAModo(m){
+  store.set('satapp_modo', m === 'clase' ? 'clase' : 'solo');
+  /* Volver al salón devuelve a la clase donde estabas, que es lo que uno
+     espera. Lo único que NO se retoma es el reporte de un trabajo: es una
+     pantalla de paso, y si ese trabajo ya no existe se entra a un error. */
+  if(m === 'clase' && CLASE.vista === 'reporte') CLASE.vista = 'clase';
+  renderHome();
+  intenta(function(){ $('#set-sections').scrollIntoView({ block: 'start' }); }, 'scroll al cambiar de modo');
+}
+
 var HOME_TAB_DEF = 'daily';
 function homeTab(){
   var t = store.get('satapp_home_tab', HOME_TAB_DEF) || HOME_TAB_DEF;
@@ -3858,11 +4102,10 @@ function renderHome(){
      opciones del selector, que es donde se compara con las otras. */
   G.fast += homeSection('⚡ What can you do right now', fastHTML(), fastMin() + ' min', true);
   G.fast += _srHtml;
-  /* ---- Classroom ---- Ver el bloque CLASSROOM más arriba: acá solo va el
-     contenedor; todo lo pinta claseAbrir() cuando la pestaña se abre, porque
-     hace falta ir al servidor y no tiene sentido pedirlo si nadie la mira. */
-  G.clase += homeSection('🏫 Classroom',
-    '<div id="class-body-zone" class="class-wrap"><p class="empty-note">Loading…</p></div>', null, true);
+  /* ---- Classroom ---- Ya no vive en G: es un MODO entero, no una pestaña.
+     Acá solo se declara su contenedor más abajo; todo lo pinta claseAbrir()
+     cuando el modo se abre, porque hace falta ir al servidor y no tiene
+     sentido pedirlo si nadie lo está mirando. */
 
   G.progreso += homeSection('Completed', completedSets.length ? completedSets.map(setCard).join('') : '<div class="empty-note">Nothing completed yet.</div>', completedSets.length, false);
   var GRUPOS = [
@@ -3872,7 +4115,6 @@ function renderHome(){
     ['fast',     'Fast Pace',      'Short bursts. Five minutes still counts'],
     ['tests',    'Practice Tests', 'One section, timed, scored out of 800'],
     ['mocks',    'Full Mocks',     'The whole test, adaptive, scored out of 1600'],
-    ['clase',    'Classroom',      'From your teacher'],
     ['progreso', 'My Progress',    'Everything your answers say about you']
   ];
   /* PESTAÑAS, no una página larga.
@@ -3880,20 +4122,48 @@ function renderHome(){
      plegables en una sola pantalla. El estudiante tenía que decidir qué hacer
      entre veintiún acordeones, que es la manera más rápida de que no haga nada.
      Ahora se ve UN grupo a la vez y se arranca en "Today". */
+  /* EL INTERRUPTOR DE MODO va antes que todo lo demás: es la primera decisión. */
+  var modo = modoActual();
+  var swHTML = '<div class="modo-sw" role="tablist" aria-label="Mode">' +
+    [['solo', 'Self Practice', 'You, at your own pace'],
+     ['clase', 'Classroom', 'Your class and your teacher']].map(function(m){
+      var on = m[0] === modo;
+      return '<button type="button" class="modo-b' + (on ? ' on' : '') + '" data-modo="' + m[0] + '"' +
+        ' role="tab" aria-selected="' + on + '">' + m[1] + '<small>' + m[2] + '</small></button>';
+    }).join('') + '</div>';
+
   var activa = homeTab();
   if(!G[activa]) activa = HOME_TAB_DEF;
-  var nav = '', cuerpo = '';
-  GRUPOS.forEach(function(g){
-    if(!G[g[0]]) return;
-    var n = (G[g[0]].match(/<details class="home-sec"/g) || []).length;
-    var on = g[0] === activa;
-    nav += '<button type="button" class="hnav-a' + (on ? ' on' : '') + '" data-tab="' + g[0] + '"' +
-      ' aria-current="' + (on ? 'page' : 'false') + '">' + g[1] + ' <span>' + n + '</span></button>';
-    if(!on) return;
-    cuerpo = '<section class="home-group" id="g-' + g[0] + '">' +
-      '<p class="hg-s">' + g[2] + '</p>' + G[g[0]] + '</section>';
+  if(modo === 'clase'){
+    /* El modo salón no tiene pestañas propias acá: su navegación (mis clases →
+       una clase → Work / Progress) la maneja claseAbrir(), que sabe en qué
+       vista está. */
+    $('#set-sections').innerHTML = swHTML +
+      '<section class="home-group" id="g-clase">' +
+        '<div id="class-body-zone" class="class-wrap"><p class="empty-note">Loading…</p></div>' +
+      '</section>';
+  } else {
+    var nav = '', cuerpo = '';
+    GRUPOS.forEach(function(g){
+      if(!G[g[0]]) return;
+      var n = (G[g[0]].match(/<details class="home-sec"/g) || []).length;
+      var on = g[0] === activa;
+      nav += '<button type="button" class="hnav-a' + (on ? ' on' : '') + '" data-tab="' + g[0] + '"' +
+        ' aria-current="' + (on ? 'page' : 'false') + '">' + g[1] + ' <span>' + n + '</span></button>';
+      if(!on) return;
+      cuerpo = '<section class="home-group" id="g-' + g[0] + '">' +
+        '<p class="hg-s">' + g[2] + '</p>' + G[g[0]] + '</section>';
+    });
+    $('#set-sections').innerHTML = swHTML + '<nav class="home-nav" aria-label="Sections">' + nav + '</nav>' + cuerpo;
+  }
+  Array.prototype.forEach.call(document.querySelectorAll('#set-sections [data-modo]'), function(b){
+    b.addEventListener('click', function(){ irAModo(b.getAttribute('data-modo')); });
   });
-  $('#set-sections').innerHTML = '<nav class="home-nav" aria-label="Sections">' + nav + '</nav>' + cuerpo;
+  /* El historial personal vive fuera de #set-sections, así que se esconde a
+     mano: debajo del progreso de una clase no pinta nada, y si quien mira es el
+     profesor, lo que aparece ahí abajo es SU práctica, no la del grupo. */
+  var _hist = document.getElementById('hist-sec');
+  if(_hist) _hist.classList.toggle('hidden', modo === 'clase');
   Array.prototype.forEach.call(document.querySelectorAll('#set-sections .hnav-a'), function(b){
     b.addEventListener('click', function(){
       store.set('satapp_home_tab', b.getAttribute('data-tab'));
@@ -3904,8 +4174,13 @@ function renderHome(){
   /* Un botón que manda a otra pestaña (el puntero del camino de dominio en
      Daily). Pasa por la misma llave que la navegación para que no queden dos
      formas de cambiar de pestaña que se puedan desincronizar. */
-  Array.prototype.forEach.call(document.querySelectorAll('#set-sections [data-goto-tab]'), function(b){
+  Array.prototype.forEach.call(document.querySelectorAll('[data-goto-tab]'), function(b){
+    /* Los del pie NO se repintan en cada render, así que sin esta marca se les
+       apilaría un listener nuevo por render. */
+    if(b.dataset.cableado) return;
+    b.dataset.cableado = '1';
     b.addEventListener('click', function(){
+      store.set('satapp_modo', 'solo');
       store.set('satapp_home_tab', b.getAttribute('data-goto-tab'));
       renderHome();
       intenta(function(){ $('#set-sections').scrollIntoView({ block: 'start' }); }, 'scroll a la pestaña');
@@ -3921,7 +4196,7 @@ function renderHome(){
     else { el.classList.add('hidden'); $('#view-home .home-wrap').appendChild(el); }
   });
   planWire();
-  if(activa === 'clase') claseAbrir();
+  if(modo === 'clase') claseAbrir();
 
   /* El buscador filtra EN EL DOM: nada se vuelve a pintar, así que no se pierde
      el scroll ni lo que el estudiante ya escribió. Con menos de TOPE resultados
@@ -6830,7 +7105,11 @@ function mockScreen(html){
   mostrarSolo('view-mock');
 }
 function mockRnd(code){ return (MOCK && MOCK.seed != null) ? mulberry32(MOCK.seed * 97 + code) : null; }
-function startMock(kind, num, seedArg, hardMode){
+/* `cwId` está cuando el simulacro lo ASIGNÓ un profesor. Cambia una sola cosa
+   —dónde se guarda la sesión— y eso es lo que hace que el reporte de la clase
+   lo vea. Todo lo demás del simulacro es idéntico al que el estudiante arranca
+   por su cuenta: mismo armado, mismo enrutamiento, mismo puntaje escalado. */
+function startMock(kind, num, seedArg, hardMode, cwId){
   kind = kind || 'full';
   var seed = (typeof seedArg === 'number') ? seedArg : ((typeof num === 'number') ? num : null);
   var used = {};
@@ -6843,7 +7122,7 @@ function startMock(kind, num, seedArg, hardMode){
   var m1tier = extreme ? 'extreme' : real ? 'tough' : (hardMode ? 'hard' : 'mixed');
   var first = assembleModule(section, m1tier, count, used, rnd);
   if(first.length < 12){ toast('Not enough questions loaded for this test.', true); return; }
-  MOCK = { active:true, kind:kind, hard:hardMode === true, extreme:extreme, real:real, num:(typeof num === 'number' ? num : null), seed:seed, stage:firstKey, used:used, results:{}, paths:{}, time:0, mods:{} };
+  MOCK = { active:true, kind:kind, hard:hardMode === true, extreme:extreme, real:real, num:(typeof num === 'number' ? num : null), seed:seed, stage:firstKey, used:used, results:{}, paths:{}, time:0, mods:{}, cw:cwId || null };
   MOCK.mods[firstKey] = makeModuleSet(section, first, 'Module 1');
   mockScreen(mockIntroHTML(kind, first.length));
   $('#mock-next').addEventListener('click', function(){ _beginSession(MOCK.mods[firstKey], 'exam'); });
@@ -6941,7 +7220,7 @@ function mockFinish(){
   var correct = allR.filter(function(r){ return r.ok; }).length;
   MOCK.active = false;
   saveSession({
-    date: todayStr(), setId:'full-mock', setTitle:title, mode:'exam',
+    date: todayStr(), setId: MOCK.cw ? 'cw-' + MOCK.cw : 'full-mock', setTitle:title, mode:'exam',
     score: correct, total: allR.length, timeUsed: MOCK.time||0, expired:false,
     mock: { kind:kind, hard:!!MOCK.hard, extreme:!!MOCK.extreme, real:!!MOCK.real, num:MOCK.num, max:max, total:total, rwScore:rwScore, mathScore:mathScore, rwPath:MOCK.paths.rw||null, mathPath:MOCK.paths.math||null },
     perQuestion: allR.map(function(r){ return { qid:r.q.id, setId:r.q._setId, domain:r.q.domain, skill:r.q.skill, difficulty:r.q.difficulty, ok:r.ok, user:r.user, correct: r.q.type==='spr'?r.q.answer:r.q.correct, sk:(skillOf(r.q)||{}).k||null }; })
@@ -6949,7 +7228,9 @@ function mockFinish(){
   renderMockResults({ kind:kind, max:max, total:total, rwScore:rwScore, mathScore:mathScore, paths:MOCK.paths, rwAll:rwAll, mathAll:mathAll, meta:{ date:todayStr() } });
 }
 function pastMocks(){
-  return getHistory().filter(function(e){ return e.setId === 'full-mock' && e.mock; });
+  /* También los que asignó un profesor: para el estudiante es su simulacro
+     igual, y su historial no se parte en dos según quién se lo mandó. */
+  return getHistory().filter(function(e){ return e.mock && (e.setId === 'full-mock' || String(e.setId).indexOf('cw-') === 0); });
 }
 function mockBreakdown(results, label){
   var by = {};

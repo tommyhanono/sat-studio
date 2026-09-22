@@ -112,10 +112,16 @@ caiga siempre en la misma letra. Recién cuando sale en verde se agrega la líne
   **30 destrezas oficiales** de College Board, y **ninguna destreza baja de 70 preguntas** (12 warm / 22 test /
   22 hard / 14 brutal), que es el piso para practicar cualquiera dos veces sin repetir. Sale de
   `node tools/auditar-banco.js` y `node tools/auditar-destrezas.js`.
-- **Classroom:** el profesor abre una clase, reparte un código de 6 caracteres, y asigna cuatro tipos de
-  trabajo: *warm-up*, *assignment*, *final* (un solo intento) y *example* — un ejemplo resuelto con una
-  pregunta real del banco, sus propios pasos y una demo de Desmos. El reporte le dice en qué destrezas está
-  fallando la clase y quién no entregó.
+- **Dos modos.** Arriba de todo se elige: **Self Practice** (practicar por tu cuenta, con sus siete pestañas)
+  o **Classroom** (tu clase). Classroom era una pestaña entre ocho y así no la encontraba nadie.
+- **Classroom:** el profesor abre una clase, reparte un código de 6 caracteres, y asigna **cinco** tipos de
+  trabajo: *warm-up*, *assignment*, *final* (un solo intento), ***mock*** —un simulacro completo, el mismo
+  examen para toda la clase para que los puntajes se puedan comparar— y *example*, un ejemplo resuelto con una
+  pregunta real del banco, sus propios pasos y una demo de Desmos.
+- **Progress de la clase:** cuántos están trabajando, la precisión del grupo, la tendencia semana a semana, en
+  qué destrezas oficiales está perdiendo puntos, y estudiante por estudiante cuánto **mejoró** —la práctica en
+  puntos de acierto y los simulacros en puntaje escalado, que no se mezclan—. Quien no ha empezado sale arriba.
+  El profesor ve la lista entera; un estudiante se ve solo a sí mismo.
 - **Fast Pace:** le dices cuánto tiempo tienes y la app decide qué conviene hacer con él. Incluye el **Pace
   Trainer**, que corre al ritmo real del examen (71 s por pregunta de verbal, 95 s por una de matemática).
 - **142 simulacros adaptativos** con la lógica del SAT real (Módulo 1 → rutea Módulo 2; score escalado):
