@@ -761,3 +761,82 @@ end $$;
 revoke all on function public.sat_class_progreso(uuid) from public, anon;
 grant execute on function public.sat_class_progreso(uuid) to authenticated;
 
+-- ---- ver lo que tuvieron mal, pregunta por pregunta ------------------------
+-- El resumen por destreza sirve para preparar la clase del jueves; esto sirve
+-- para sentarse con un estudiante. Solo el PROFESOR, y solo el ULTIMO intento
+-- de cada uno en cada pregunta: si repitio la tarea tres veces, lo que importa
+-- es donde quedo.
+create or replace function public.sat_classwork_preguntas(p_id uuid)
+returns jsonb language plpgsql security definer set search_path = '' as $$
+declare v_class uuid; res jsonb;
+begin
+  select class_id into v_class from sat.classwork where id = p_id;
+  if v_class is null then raise exception 'not found' using errcode = 'P0002'; end if;
+  if not sat.mi_clase(v_class) then raise exception 'not your class' using errcode = '42501'; end if;
+
+  with resp as (
+    select s.user_id, s.played_at,
+           coalesce(u.raw_user_meta_data->>'name', split_part(u.email,'@',1)) as nombre,
+           pq->>'qid'                as qid,
+           pq->>'sk'                 as sk,
+           (pq->>'ok')::boolean      as ok,
+           nullif(pq->>'user','')    as marco,
+           nullif(pq->>'correct','') as correcta
+      from sat.sessions s
+      join auth.users u          on u.id = s.user_id
+      join sat.class_members m   on m.user_id = s.user_id and m.class_id = v_class
+      join sat.classes c         on c.id = v_class
+      , lateral jsonb_array_elements(coalesce(s.data->'perQuestion','[]'::jsonb)) pq
+     where s.set_id = 'cw-' || p_id::text
+       and pq->>'qid' is not null
+       and s.user_id <> c.teacher_id
+  ),
+  ult as (
+    select distinct on (user_id, qid) *
+      from resp order by user_id, qid, played_at desc
+  ),
+  porq as (
+    select qid,
+           min(sk)                                   as sk,
+           min(correcta)                             as correcta,
+           count(*)::int                             as total,
+           count(*) filter (where ok)::int           as ok,
+           round(100.0 * count(*) filter (where ok) / count(*))::int as pct,
+           jsonb_agg(jsonb_build_object('nombre', nombre, 'marco', marco, 'ok', ok)
+                     order by ok, nombre)            as alumnos
+      from ult group by qid
+  )
+  select coalesce(jsonb_agg(to_jsonb(p) order by p.pct, p.total desc), '[]'::jsonb) into res
+    from (select * from porq order by pct, total desc limit 40) p;
+  return res;
+end $$;
+
+-- ---- lo que un estudiante tiene sin entregar, en TODAS sus clases ----------
+-- De una sola llamada, porque el inicio se repinta a cada rato. El profesor no
+-- aparece con "pendientes" de su propia clase: es miembro para ver el feed,
+-- pero la tarea no es suya.
+create or replace function public.sat_pendientes()
+returns jsonb language sql stable security definer set search_path = '' as $$
+  select coalesce(jsonb_agg(to_jsonb(t) order by t.vence nulls last, t.creado desc), '[]'::jsonb)
+    from (
+      select w.id, w.titulo, w.kind, w.vence, w.created_at as creado,
+             c.nombre as clase, c.id as class_id
+        from sat.classwork w
+        join sat.classes c       on c.id = w.class_id
+        join sat.class_members m on m.class_id = c.id and m.user_id = (select auth.uid())
+       where w.publicado
+         and w.kind <> 'material'
+         and c.archivada = false
+         and c.teacher_id <> (select auth.uid())
+         and not exists (
+           select 1 from sat.sessions s
+            where s.user_id = (select auth.uid()) and s.set_id = 'cw-' || w.id::text)
+       order by w.vence nulls last, w.created_at desc
+       limit 20
+    ) t;
+$$;
+
+revoke all on function public.sat_classwork_preguntas(uuid) from public, anon;
+revoke all on function public.sat_pendientes()            from public, anon;
+grant execute on function public.sat_classwork_preguntas(uuid) to authenticated;
+grant execute on function public.sat_pendientes()              to authenticated;

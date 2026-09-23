@@ -509,6 +509,19 @@
      Classroom dejó de ser una pestaña entre ocho: son dos mundos y la pestaña
      los escondía. El interruptor va ARRIBA de todo, antes de la navegación,
      porque elegir modo es la primera decisión, no la novena. */
+  /* El aviso de lo pendiente. Va ARRIBA del interruptor: es lo primero que un
+     estudiante tiene que ver al entrar, no algo que encuentre si busca. */
+  .demo-bar{display:flex;gap:14px;align-items:center;flex-wrap:wrap;background:var(--gold-soft);border:1px solid #e3cfa6;
+    border-radius:10px;padding:11px 14px;margin-bottom:14px;color:#5a3f0e;font-size:.88rem;line-height:1.45}
+  .demo-bar span{flex:1;min-width:220px}
+  .cl-demo-p{margin-bottom:14px}
+  .link-btn{background:none;border:0;padding:0;color:var(--blue);font:inherit;cursor:pointer;text-decoration:underline;text-underline-offset:2px;min-height:44px}
+  .pend{display:flex;align-items:center;gap:14px;flex-wrap:wrap;background:var(--gold-soft);border:1px solid #e3cfa6;
+    border-radius:12px;padding:12px 16px;margin:0 0 14px;box-shadow:var(--sombra)}
+  .pend-t{flex:1;min-width:200px;color:#5a3f0e;font-size:.95rem}
+  .pend-t b{font-family:var(--serif);font-size:1.05rem;display:block;margin-bottom:2px}
+  .pend-l{font-size:.85rem;color:#6b4c12}
+  .pend .btn-primary{min-height:44px}
   .modo-sw{display:flex;gap:6px;background:var(--paper-2);border:1px solid var(--gray-line);border-radius:999px;padding:5px;margin:0 0 16px;max-width:520px}
   .modo-b{flex:1;min-height:44px;border:0;background:none;border-radius:999px;padding:7px 14px;cursor:pointer;
     font-family:var(--sans);font-size:.9rem;font-weight:600;color:var(--gray-mid);text-align:center;line-height:1.25}
@@ -538,6 +551,25 @@
   .mejora{font-weight:700;font-variant-numeric:tabular-nums}
   .mejora.sube{color:var(--green)} .mejora.baja{color:var(--red)} .mejora.igual{color:var(--gray-mid)}
   .pg-nota{font-size:.82rem;color:var(--gray-mid);margin:2px 0 14px}
+  /* El detalle pregunta por pregunta: lo que el profesor abre para sentarse
+     con un estudiante. La peor primero, y quién marcó qué. */
+  .qq{border:1px solid var(--gray-line);border-radius:12px;background:#fff;margin:10px 0;overflow:hidden}
+  .qq>summary{list-style:none;cursor:pointer;padding:12px 14px;display:flex;gap:12px;align-items:flex-start;min-height:44px}
+  .qq>summary::-webkit-details-marker{display:none}
+  .qq-pct{flex:none;min-width:54px;text-align:center;font-weight:700;font-size:.9rem;border-radius:999px;padding:4px 8px;
+    background:var(--gray-strip);color:var(--gray-mid);font-variant-numeric:tabular-nums}
+  .qq-pct.mal{background:#fbe9ec;color:var(--red)} .qq-pct.medio{background:var(--gold-soft);color:var(--amber)}
+  .qq-tx{flex:1;min-width:0}
+  .qq-tx b{display:block;font-size:.78rem;color:var(--navy);text-transform:uppercase;letter-spacing:.04em;margin-bottom:3px}
+  .qq-tx span{display:block;font-size:.92rem;color:var(--ink);line-height:1.4}
+  .qq-body{padding:0 14px 14px;border-top:1px dashed var(--gray-line)}
+  .qq-quien{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+  .qq-al{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--gray-line);border-radius:999px;padding:4px 10px;font-size:.82rem}
+  .qq-al.mal{border-color:#e7b6be;background:#fdf3f5}
+  .qq-al b{font-variant-numeric:tabular-nums;color:var(--gray-mid)}
+  .qq-al.mal b{color:var(--red)}
+  .qq-resp{font-size:.86rem;color:var(--gray-mid);margin-top:8px}
+  .qq-resp b{color:var(--green)}
   .class-wrap{padding:2px 0 4px}
   .class-compose{background:var(--gold-soft);border:1px solid #e6d3a8;border-radius:12px;padding:16px 18px;margin-bottom:18px}
   .class-hint{font-size:.85rem;color:#5c4212;line-height:1.6;margin-bottom:12px}
@@ -1178,7 +1210,7 @@
       </div>
     </details>
 
-    <details class="home-sec">
+    <details class="home-sec" id="stats-sec">
       <summary>Your Stats</summary>
       <div class="home-sec-body">
         <div class="panel" id="domain-panel"><div class="empty-note">Complete your first set to see stats by domain.</div></div>
@@ -2006,6 +2038,10 @@ function getHistory(){ var h = store.get(histKey(), []); return Array.isArray(h)
    3) se intenta subir; si falla, la cola reintenta sola y se ve en pantalla. */
 function saveSession(entry){
   if(!entry.sid) entry.sid = genSid();
+  /* Si lo que se acaba de guardar era un trabajo de la clase, el aviso de
+     pendientes quedó viejo: se tira para que el próximo repintado lo vuelva a
+     pedir. Si no, el estudiante entrega y le sigue diciendo que debe. */
+  if(String(entry.setId || '').indexOf('cw-') === 0) PENDIENTES = null;
   if(!entry.savedAt) entry.savedAt = new Date().toISOString();
   var h = getHistory(), i = -1;
   for(var j = 0; j < h.length; j++){ if(h[j].sid === entry.sid){ i = j; break; } }
@@ -2951,9 +2987,188 @@ function planWire(){
    Todos los límites están en las RPC, no acá: quién puede crear, quién puede
    ver, y que una clase de un colegio no la encuentre nadie de otro. */
 
-var CLASE = { vista: 'lista', sub: 'work', clases: null, actual: null, feed: null, reporte: null, progreso: null, cargando: false };
+/* ================= LA CLASE DE EJEMPLO =================
+   Para mostrar Classroom hay que tener una clase con un mes de uso encima, y
+   una clase real recién creada está vacía: no se entiende nada.
+
+   Se resolvió con datos inventados DENTRO de la app, no con estudiantes falsos
+   en la base. Tres razones y las tres pesan: la base tiene datos de personas
+   reales y meterle alumnos de mentira los mezcla para siempre (acá no se borra
+   nada, así que no habría vuelta atrás); un colegio con el wifi caído igual
+   puede ver la demo; y las pantallas son EXACTAMENTE las mismas, porque lo
+   único que cambia es de dónde salen los datos — `claseRPC` se desvía a
+   `demoRPC` y nada más abajo se entera.
+
+   Los enunciados sí son de verdad: salen del banco, para que lo que se ve en
+   "Question by question" sea una pregunta del SAT y no un relleno. */
+var DEMO = {
+  alumnos: ['Ana Bermúdez','Beto Him','Camila Arosemena','Daniel Vallarino','Elena Chen',
+            'Fabio Tejeira','Gabriela Icaza','Hugo Mendoza','Isabel Quintero','Javier Sáez',
+            'Karla Motta','Luis Fábrega','María Jaén','Nicolás Robles','Olivia Cedeño',
+            'Pablo Guardia','Raquel Endara','Samuel Ortega'],
+  clases: [
+    { id:'demo-math', nombre:'SAT Math · 11th grade', periodo:'Period 3', codigo:'MTH4K2',
+      profe:'Isaac Eitan', seccion:'math',
+      skills:['al-sys','al-func','gt-circles','am-nonlin-eq','pd-percent'],
+      items:[
+        { id:'dm1', kind:'mock',       titulo:'Diagnostic — full practice test', dias:21,
+          cuerpo:'One sitting. This is where we start from.', spec:{ mock:'full', dificultad:'' } },
+        { id:'dm2', kind:'assignment', titulo:'Systems of equations — repeat until 80%', dias:12,
+          cuerpo:'New questions every attempt.', spec:{ skills:['al-sys'], nivel:'todo', n:12, modo:'drill' } },
+        { id:'dm3', kind:'warmup',     titulo:'Circles — Monday opener', dias:5,
+          cuerpo:'Five to start the class.', spec:{ skills:['gt-circles'], nivel:'Media', n:5, modo:'drill' } },
+        { id:'dm4', kind:'final',      titulo:'Unit 2 final — part A', dias:2,
+          cuerpo:'One attempt. This one counts.', spec:{ skills:['am-nonlin-eq'], nivel:'Difícil', n:20, modo:'exam' } },
+        { id:'dm5', kind:'material',   titulo:'How I want you to set up a system', dias:14,
+          cuerpo:'Write both equations before touching anything.',
+          spec:{ skills:['al-sys'], pasos:['Name the two unknowns','One equation per sentence','Now solve'],
+                 latex:['y=2x+1','y=-x+7'] } },
+      ] },
+    { id:'demo-verbal', nombre:'SAT Verbal · 11th grade', periodo:'Period 5', codigo:'VRB7Q9',
+      profe:'Michelle Fallas', seccion:'rw',
+      skills:['cs-words','ei-trans','ii-infer','ec-bound','ei-synth'],
+      items:[
+        { id:'dv1', kind:'mock',       titulo:'Reading & Writing section test', dias:19,
+          cuerpo:'Two adaptive modules, scored out of 800.', spec:{ mock:'rw', dificultad:'' } },
+        { id:'dv2', kind:'assignment', titulo:'Transitions — 12 questions', dias:9,
+          cuerpo:'The ones that look alike are the point.', spec:{ skills:['ei-trans'], nivel:'todo', n:12, modo:'drill' } },
+        { id:'dv3', kind:'warmup',     titulo:'Words in Context — Monday opener', dias:4,
+          cuerpo:'Five to start the class.', spec:{ skills:['cs-words'], nivel:'Media', n:5, modo:'drill' } },
+        { id:'dv4', kind:'final',      titulo:'Inferences — unit check', dias:1,
+          cuerpo:'One attempt.', spec:{ skills:['ii-infer'], nivel:'Difícil', n:20, modo:'exam' } },
+        { id:'dv5', kind:'material',   titulo:'The trap in a synthesis question', dias:11,
+          cuerpo:'Three of the four are true. Only one meets the goal.',
+          spec:{ skills:['ei-synth'], pasos:['Read the GOAL first, not the notes','Now the bullets','Cross out the true-but-off ones'], latex:[] } },
+      ] },
+  ],
+};
+/* Números que se ven reales sin serlo: siempre los mismos para el mismo nombre,
+   para que la demo no cambie entre una corrida y otra delante de la gente. */
+function demoNum(semilla, min, max){
+  var h = 2166136261;
+  String(semilla).split('').forEach(function(c){ h = Math.imul(h ^ c.charCodeAt(0), 16777619) >>> 0; });
+  return min + (h % (max - min + 1));
+}
+function demoClase(id){
+  return DEMO.clases.filter(function(c){ return c.id === id; })[0] || DEMO.clases[0];
+}
+function demoFecha(dias){
+  return new Date(Date.now() - dias * 86400000).toISOString().slice(0, 10);
+}
+function demoAlumnos(c){
+  return DEMO.alumnos.map(function(n, i){
+    var base = demoNum(c.id + n, 38, 92);
+    /* Tres no han empezado: un tablero donde todos entregaron no se parece a
+       ninguna clase de verdad, y justamente esos tres son a quienes hay que
+       mirar. */
+    var quieto = i % 7 === 3;
+    var intentos = quieto ? 0 : demoNum(n + 'i', 2, 9);
+    var primera = Math.max(30, base - demoNum(n + 'p', 6, 26));
+    return {
+      nombre: n, email: n.toLowerCase().normalize('NFD').replace(/[^a-z]/g, '').slice(0, 9) + '@iae.edu',
+      intentos: intentos, entregados: quieto ? 0 : demoNum(n + 'e', 2, 4), preguntas: quieto ? 0 : intentos * 11,
+      precision: quieto ? null : base,
+      primera: quieto ? null : primera, ultima: quieto ? null : base,
+      mejora: quieto ? null : base - primera,
+      mejorEscala: quieto ? null : (c.seccion === 'math' ? demoNum(n + 'm', 480, 760) : demoNum(n + 'm', 470, 750)),
+      ultimo: quieto ? null : demoFecha(demoNum(n + 'u', 1, 9)),
+      propiaSesiones: quieto ? demoNum(n + 's', 0, 1) : demoNum(n + 's', 1, 22),
+      propiaPrecision: quieto ? null : demoNum(n + 'pp', 45, 88),
+    };
+  });
+}
+/* El desvío: en demo, `claseRPC` no sale a la red. Todo lo de abajo —el feed,
+   el compositor, el reporte, el progreso— corre exactamente igual. */
+function demoRPC(fn, args){
+  args = args || {};
+  var c = demoClase(args.p_class || CLASE.actual);
+  if(fn === 'sat_class_mine'){
+    return DEMO.clases.map(function(x){
+      return { id:x.id, nombre:x.nombre, periodo:x.periodo, archivada:false, codigo:x.codigo,
+               mia:true, profe:x.profe, alumnos:DEMO.alumnos.length, trabajos:x.items.length };
+    });
+  }
+  if(fn === 'sat_class_feed'){
+    return c.items.map(function(w){
+      var hechos = w.kind === 'material' ? 0 : demoNum(w.id + 'h', 1, 3);
+      return { id:w.id, kind:w.kind, titulo:w.titulo, cuerpo:w.cuerpo, spec:w.spec,
+               vence:w.kind === 'material' ? null : demoFecha(-demoNum(w.id + 'v', 1, 9)),
+               fecha:demoFecha(w.dias), mis_intentos:hechos, mi_mejor:hechos ? demoNum(w.id + 'b', 55, 95) : null,
+               mi_escala:(w.kind === 'mock' && hechos) ? demoNum(w.id + 's', 1100, 1420) : null };
+    });
+  }
+  if(fn === 'sat_class_progreso'){
+    var al = demoAlumnos(c), act = al.filter(function(a){ return a.intentos > 0; });
+    var sem = [6, 5, 4, 3, 2, 1, 0].map(function(k){
+      var t = demoNum(c.id + 'w' + k, 90, 170);
+      return { semana: demoFecha(k * 7 + 3), total: t, ok: Math.round(t * (0.54 + (6 - k) * 0.032)) };
+    });
+    return {
+      soyProfe: true,
+      alumnos: al,
+      resumen: { alumnos: al.length, activos: act.length, asignados: c.items.length - 1,
+        precision: Math.round(act.reduce(function(a, x){ return a + x.precision; }, 0) / act.length),
+        mejora: Math.round(act.reduce(function(a, x){ return a + x.mejora; }, 0) / act.length),
+        mejoraEscala: c.seccion === 'math' ? 70 : 60 },
+      porDestreza: c.skills.map(function(k){
+        var t = demoNum(c.id + k, 34, 96);
+        return { sk: k, total: t, ok: Math.round(t * demoNum(k, 32, 88) / 100) };
+      }).sort(function(a, b){ return (a.ok / a.total) - (b.ok / b.total); }),
+      porSemana: sem,
+      trabajos: c.items.filter(function(w){ return w.kind !== 'material'; }).map(function(w){
+        return { id:w.id, kind:w.kind, titulo:w.titulo, vence:null,
+                 entregados: demoNum(w.id + 'E', 9, 17),
+                 promedio: demoNum(w.id + 'P', 52, 88),
+                 promedioEscala: w.kind === 'mock' ? demoNum(w.id + 'S', 1080, 1380) : null };
+      }),
+    };
+  }
+  if(fn === 'sat_classwork_report'){
+    var w = c.items.filter(function(x){ return x.id === args.p_id; })[0] || c.items[1];
+    var als = demoAlumnos(c).map(function(a){
+      return { nombre:a.nombre, email:a.email, intentos:a.intentos ? demoNum(a.nombre + w.id, 1, 3) : 0,
+               mejor:a.intentos ? demoNum(a.nombre + w.id + 'b', 40, 100) : null,
+               escala:(w.kind === 'mock' && a.intentos) ? a.mejorEscala : null,
+               ultimo:a.intentos ? demoFecha(demoNum(a.nombre + w.id + 'u', 1, 8)) : null };
+    });
+    return { kind:w.kind, alumnos:als,
+             skills:(w.spec.skills || c.skills).map(function(k){
+               var t = demoNum(w.id + k, 24, 80);
+               return { sk:k, total:t, ok:Math.round(t * demoNum(k + w.id, 30, 85) / 100) };
+             }).sort(function(a, b){ return (a.ok / a.total) - (b.ok / b.total); }) };
+  }
+  if(fn === 'sat_classwork_preguntas'){
+    var w2 = c.items.filter(function(x){ return x.id === args.p_id; })[0] || c.items[1];
+    var banco = skillBank(), qs = [];
+    (w2.spec.skills || c.skills).forEach(function(k){
+      (banco[k] || []).slice(0, 4).forEach(function(q){ qs.push(q); });
+    });
+    var als2 = demoAlumnos(c).filter(function(a){ return a.intentos > 0; }).slice(0, 12);
+    return qs.slice(0, 10).map(function(q){
+      var letras = ['A', 'B', 'C', 'D'];
+      var quienes = als2.map(function(a){
+        var ok = demoNum(a.nombre + q.id, 0, 100) < a.precision;
+        var mal = letras.filter(function(L){ return L !== q.correct; });
+        return { nombre:a.nombre, ok:ok, marco: ok ? q.correct : mal[demoNum(a.nombre + q.id + 'x', 0, 2)] };
+      });
+      var ok2 = quienes.filter(function(x){ return x.ok; }).length;
+      return { qid:q.id, sk:(skillOf(q) || {}).k || null, correcta:q.correct,
+               total:quienes.length, ok:ok2, pct:Math.round(100 * ok2 / quienes.length),
+               alumnos:quienes.sort(function(a, b){ return a.ok - b.ok; }) };
+    }).sort(function(a, b){ return a.pct - b.pct; });
+  }
+  return null;
+}
+
+var CLASE = { vista: 'lista', sub: 'work', clases: null, actual: null, feed: null, reporte: null, progreso: null, cargando: false, demo: false };
 
 function claseRPC(fn, args){
+  /* En la clase de ejemplo no se sale a la red: los datos salen de DEMO. Es el
+     ÚNICO punto donde se bifurca; todo lo de abajo no se entera. */
+  if(CLASE.demo){
+    try { return Promise.resolve(demoRPC(fn, args)); }
+    catch(e){ return Promise.reject(e); }
+  }
   if(!authAvailable() || !currentUser) return Promise.reject(new Error('sign in first'));
   return SB.rpc(fn, args || {}).then(function(r){
     if(r.error) throw new Error(r.error.message || 'unknown error');
@@ -3022,6 +3237,15 @@ function pintarLista(){
       '<button type="button" class="btn-outline" id="cl-unirse">Join</button>' +
     '</div></div>';
 
+  /* El botón de la demo va ARRIBA de la lista y siempre visible: es lo que se
+     abre en una presentación, y buscarlo delante de la gente no es opción. */
+  html += CLASE.demo
+    ? '<div class="demo-bar"><span><b>Example class.</b> Made-up students and results, so you can see ' +
+        'what it looks like after a month of use. Nothing here is real and nothing is saved.</span>' +
+        '<button type="button" class="mini" id="cl-demo-salir">Leave the example</button></div>'
+    : '<p class="class-hint cl-demo-p">Want to see what this looks like with a class already running? ' +
+        '<button type="button" class="link-btn" id="cl-demo">Open an example class →</button></p>';
+
   html += cs.length
     ? '<div class="cl-grid">' + cs.map(function(c){
         return '<button type="button" class="cl-card" data-clase="' + escAttr(c.id) + '">' +
@@ -3062,6 +3286,16 @@ function pintarLista(){
       CLASE.vista = 'clase';
       claseFeed(CLASE.actual, true);
     });
+  });
+  var dm = $('#cl-demo');
+  if(dm) dm.addEventListener('click', function(){
+    CLASE.demo = true; CLASE.clases = null; CLASE.feed = null; CLASE.progreso = null;
+    conBanco(function(){ claseLista(true); });   // el detalle por pregunta necesita el banco
+  });
+  var dms = $('#cl-demo-salir');
+  if(dms) dms.addEventListener('click', function(){
+    CLASE.demo = false; CLASE.clases = null; CLASE.feed = null; CLASE.progreso = null;
+    CLASE.vista = 'lista'; claseLista(true);
   });
 }
 
@@ -3320,7 +3554,9 @@ function cwEmpezar(w){
   /* Un Mock no arma un test desde destrezas: arranca el simulacro de verdad,
      con la semilla del trabajo para que a toda la clase le toque el mismo. */
   if(w.kind === 'mock'){
-    startMock(spec.mock || 'full', null, seedDeId(w.id), spec.dificultad || false, w.id);
+    /* En la demo NO se pasa el id del trabajo: si se pasara, la sesión se
+       guardaría como entrega de una clase que no existe. */
+    startMock(spec.mock || 'full', null, seedDeId(w.id), spec.dificultad || false, CLASE.demo ? null : w.id);
     return;
   }
   var n = spec.n || 12, porSkill = Math.max(1, Math.ceil(n / Math.max(1, (spec.skills || []).length)));
@@ -3332,7 +3568,7 @@ function cwEmpezar(w){
   // intercalado: se alterna entre destrezas en vez de ir en bloques
   qs = _shuffle(qs).slice(0, n);
   _beginSession({
-    id: 'cw-' + w.id, title: w.titulo, section: 'mixed',
+    id: (CLASE.demo ? 'demo-' : 'cw-') + w.id, title: w.titulo, section: 'mixed',
     description: (CW_META[w.kind] || {}).t || '',
     minutes: Math.max(4, Math.round(qs.length * 1.2)), questions: qs
   }, spec.modo === 'exam' ? 'exam' : 'drill');
@@ -3458,6 +3694,11 @@ function cwWire(){
       ? { mock: $('#cw-mock-tipo').value || 'full', dificultad: $('#cw-mock-dif').value || '' }
       : { skills: skills, nivel: $('#cw-nivel').value, n: parseInt($('#cw-n').value, 10) || 12, modo: $('#cw-modo').value };
     var b = $('#cw-guardar'); b.disabled = true;
+    if(CLASE.demo){
+      b.disabled = false;
+      toast('This is the example class — nothing is saved here. In a real class it would appear right away.');
+      return;
+    }
     claseRPC('sat_classwork_save', {
       p_id: $('#cw-id').value || null, p_class: CLASE.actual, p_kind: k,
       p_titulo: t, p_cuerpo: $('#cw-cuerpo').value || '', p_spec: spec,
@@ -3585,7 +3826,8 @@ function claseReporte(id){
       ? Math.round(hechos.reduce(function(a, x){ return a + (x.mejor || 0); }, 0) / hechos.length) : null;
     var html = '<div class="cl-head">' +
       '<button type="button" class="mini" id="cl-volver">← Back to the class</button>' +
-      '<h4>How did the class do?</h4></div>';
+      '<h4>How did the class do?</h4>' +
+      '<button type="button" class="mini" id="cl-csv">Download for the gradebook (.csv)</button></div>';
     html += '<div class="akpi-row">' +
       '<div class="akpi"><div class="k">Turned in</div><div class="v">' + hechos.length + '/' + al.length + '</div></div>' +
       '<div class="akpi"><div class="k">Class average</div><div class="v">' + (prom != null ? prom + '%' : '—') + '</div>' +
@@ -3617,9 +3859,108 @@ function claseReporte(id){
           '<td>' + (a.ultimo || 'not yet') + '</td></tr>';
       }).join('') : '<tr><td colspan="4" class="empty-note">No students in this class yet.</td></tr>') +
       '</tbody></table></div></div>';
+    /* El detalle pregunta por pregunta. Va DESPUÉS y se pide aparte: el resumen
+       por destreza sirve para preparar la clase, esto sirve para sentarse con
+       un estudiante, y no siempre se necesitan los dos. */
+    html += '<div class="atable-wrap" id="qq-zone"><h3>Question by question</h3>' +
+      '<p class="pg-nota">The ones the class missed most come first. Open one to see who picked what. ' +
+      'Only the latest attempt of each student counts.</p>' +
+      '<p class="empty-note" id="qq-cargando">Loading…</p></div>';
+
     clasePinta(html);
     $('#cl-volver').addEventListener('click', function(){ CLASE.vista = 'clase'; claseFeed(CLASE.actual); });
+    claseDescargaWire(d, id);
+    cwPreguntas(id);
   }).catch(claseError);
+}
+
+/* El CSV para pasar al libro de notas. Se arma en el navegador con lo que ya
+   está en pantalla: nada nuevo viaja por la red, y lo que se descarga es
+   exactamente lo que el profesor está viendo.
+   Ojo con Excel: separa por ';' y abre con BOM, porque con ',' y sin BOM el
+   Excel en español mete todo en una columna y se come los acentos. */
+function aCSV(filas){
+  var esc = function(v){
+    var t = v == null ? '' : String(v);
+    return /[";\n]/.test(t) ? '"' + t.replace(/"/g, '""') + '"' : t;
+  };
+  return '\ufeff' + filas.map(function(f){ return f.map(esc).join(';'); }).join('\r\n');
+}
+function bajarCSV(nombre, filas){
+  try {
+    var blob = new Blob([aCSV(filas)], { type: 'text/csv;charset=utf-8' });
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = nombre;
+    document.body.appendChild(a); a.click();
+    setTimeout(function(){ URL.revokeObjectURL(a.href); a.remove(); }, 1000);
+    return true;
+  } catch(e){ toast('Could not build the file: ' + e.message, true); return false; }
+}
+function claseDescargaWire(d, id){
+  var b = $('#cl-csv');
+  if(!b) return;
+  b.addEventListener('click', function(){
+    var esMock = d.kind === 'mock';
+    var filas = [['Name', 'Email', 'Attempts', esMock ? 'Best score' : 'Best %', 'Last attempt']];
+    (d.alumnos || []).forEach(function(a){
+      filas.push([a.nombre, a.email, a.intentos,
+        esMock ? (a.escala != null ? a.escala : '') : (a.mejor != null ? a.mejor : ''),
+        a.ultimo || '']);
+    });
+    var c = claseActual();
+    var nombre = 'sat-studio-' + String(c.nombre || 'class').toLowerCase().replace(/[^a-z0-9]+/g, '-') +
+      '-' + todayStr() + '.csv';
+    if(bajarCSV(nombre, filas)) toast('Downloaded — open it in Excel or Sheets.');
+  });
+}
+
+/* ---------- pregunta por pregunta ---------- */
+function cwPreguntas(id){
+  claseRPC('sat_classwork_preguntas', { p_id: id }).then(function(qs){
+    conBanco(function(){ pintarPreguntas(qs || []); });
+  }).catch(function(e){
+    var z = $('#qq-cargando');
+    if(z) z.textContent = 'Could not load the question detail (' + e.message + ').';
+  });
+}
+function pintarPreguntas(qs){
+  var z = $('#qq-zone');
+  if(!z) return;
+  var cargando = $('#qq-cargando');
+  if(cargando) cargando.remove();
+  if(!qs.length){
+    z.insertAdjacentHTML('beforeend', '<p class="empty-note">Nobody has answered a question yet.</p>');
+    return;
+  }
+  z.insertAdjacentHTML('beforeend', qs.map(function(q){
+    /* El enunciado NO viaja en la base: se resuelve contra el banco, que es la
+       única copia. Si la pregunta salió del banco después, se dice y ya. */
+    var pregunta = QINDEX[q.qid] || null;
+    /* Quitar las etiquetas SIN dejar un espacio pega las palabras: un <br> entre
+       dos frases daba "no solution.y = 5x". Se cambia por espacio y se colapsa. */
+    var texto = pregunta
+      ? String(pregunta.stem || '').replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim()
+      : '(this question is no longer in the bank)';
+    var destreza = (skillByKey(q.sk) || {}).t || q.sk || '';
+    var cls = q.pct < 50 ? ' mal' : q.pct < 80 ? ' medio' : '';
+    var fallaron = (q.alumnos || []).filter(function(a){ return !a.ok; }).length;
+    return '<details class="qq">' +
+      '<summary><span class="qq-pct' + cls + '">' + q.pct + '%</span>' +
+      '<span class="qq-tx"><b>' + escHtml(destreza) + ' · ' +
+        (fallaron === 1 ? '1 student missed it' : fallaron + ' students missed it') + '</b>' +
+      '<span>' + escHtml(texto.slice(0, 190)) + (texto.length > 190 ? '…' : '') + '</span></span></summary>' +
+      '<div class="qq-body">' +
+        (pregunta && pregunta.choices
+          ? '<p class="qq-resp">Correct answer: <b>' + escHtml(q.correcta || pregunta.correct || '') + ') ' +
+              escHtml(String(pregunta.choices[q.correcta || pregunta.correct] || '').slice(0, 120)) + '</b></p>'
+          : (q.correcta ? '<p class="qq-resp">Correct answer: <b>' + escHtml(q.correcta) + '</b></p>' : '')) +
+        '<div class="qq-quien">' + (q.alumnos || []).map(function(a){
+          return '<span class="qq-al' + (a.ok ? '' : ' mal') + '">' + escHtml(a.nombre) +
+            ' <b>' + escHtml(a.marco || '—') + '</b></span>';
+        }).join('') + '</div>' +
+      '</div></details>';
+  }).join(''));
 }
 
 /* ================= HOME ================= */
@@ -3635,6 +3976,20 @@ function claseReporte(id){
    `clase` = el salón: mis clases, lo que me asignaron, y —si soy profesor—
              cómo va el grupo. */
 var MODO_DEF = 'solo';
+/* Lo que el estudiante tiene sin entregar. Se pide UNA vez por sesión y se
+   guarda acá: el inicio se repinta a cada rato y no puede ir al servidor cada
+   vez. `null` = todavía no se preguntó; `[]` = se preguntó y no hay nada. */
+var PENDIENTES = null;
+function pendientesCargar(){
+  if(PENDIENTES !== null) return;
+  if(!authAvailable() || !currentUser) { PENDIENTES = []; return; }
+  PENDIENTES = [];                       // para no pedirlo dos veces mientras llega
+  SB.rpc('sat_pendientes').then(function(r){
+    if(r.error) return;                  // Classroom sin aplicar: el aviso simplemente no sale
+    PENDIENTES = r.data || [];
+    if(PENDIENTES.length) renderHome();
+  }).catch(function(){});
+}
 function modoActual(){ return store.get('satapp_modo', MODO_DEF) === 'clase' ? 'clase' : 'solo'; }
 function irAModo(m){
   store.set('satapp_modo', m === 'clase' ? 'clase' : 'solo');
@@ -4124,6 +4479,16 @@ function renderHome(){
      Ahora se ve UN grupo a la vez y se arranca en "Today". */
   /* EL INTERRUPTOR DE MODO va antes que todo lo demás: es la primera decisión. */
   var modo = modoActual();
+  pendientesCargar();
+  var pend = PENDIENTES || [];
+  var pendHTML = (modo === 'solo' && pend.length)
+    ? '<div class="pend"><div class="pend-t"><b>' + pend.length +
+        (pend.length === 1 ? ' item from your teacher' : ' items from your teacher') + '</b>' +
+        '<span class="pend-l">' + escHtml(pend.slice(0, 3).map(function(x){
+          return x.titulo + (x.vence ? ' (due ' + x.vence + ')' : '');
+        }).join(' · ')) + (pend.length > 3 ? ' …' : '') + '</span></div>' +
+      '<button type="button" class="btn-primary" data-modo="clase">Open Classroom</button></div>'
+    : '';
   var swHTML = '<div class="modo-sw" role="tablist" aria-label="Mode">' +
     [['solo', 'Self Practice', 'You, at your own pace'],
      ['clase', 'Classroom', 'Your class and your teacher']].map(function(m){
@@ -4138,7 +4503,7 @@ function renderHome(){
     /* El modo salón no tiene pestañas propias acá: su navegación (mis clases →
        una clase → Work / Progress) la maneja claseAbrir(), que sabe en qué
        vista está. */
-    $('#set-sections').innerHTML = swHTML +
+    $('#set-sections').innerHTML = pendHTML + swHTML +
       '<section class="home-group" id="g-clase">' +
         '<div id="class-body-zone" class="class-wrap"><p class="empty-note">Loading…</p></div>' +
       '</section>';
@@ -4154,7 +4519,7 @@ function renderHome(){
       cuerpo = '<section class="home-group" id="g-' + g[0] + '">' +
         '<p class="hg-s">' + g[2] + '</p>' + G[g[0]] + '</section>';
     });
-    $('#set-sections').innerHTML = swHTML + '<nav class="home-nav" aria-label="Sections">' + nav + '</nav>' + cuerpo;
+    $('#set-sections').innerHTML = pendHTML + swHTML + '<nav class="home-nav" aria-label="Sections">' + nav + '</nav>' + cuerpo;
   }
   Array.prototype.forEach.call(document.querySelectorAll('#set-sections [data-modo]'), function(b){
     b.addEventListener('click', function(){ irAModo(b.getAttribute('data-modo')); });
@@ -4162,8 +4527,12 @@ function renderHome(){
   /* El historial personal vive fuera de #set-sections, así que se esconde a
      mano: debajo del progreso de una clase no pinta nada, y si quien mira es el
      profesor, lo que aparece ahí abajo es SU práctica, no la del grupo. */
-  var _hist = document.getElementById('hist-sec');
-  if(_hist) _hist.classList.toggle('hidden', modo === 'clase');
+  /* Las dos secciones personales que viven fuera de #set-sections. En el salón
+     estorban, y si quien mira es el profesor lo que aparece ahí es SU práctica. */
+  ['hist-sec', 'stats-sec'].forEach(function(id){
+    var el = document.getElementById(id);
+    if(el) el.classList.toggle('hidden', modo === 'clase');
+  });
   Array.prototype.forEach.call(document.querySelectorAll('#set-sections .hnav-a'), function(b){
     b.addEventListener('click', function(){
       store.set('satapp_home_tab', b.getAttribute('data-tab'));

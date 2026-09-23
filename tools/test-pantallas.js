@@ -155,6 +155,16 @@ const FAKE = function () {
                       qid: (window.__QID_EJEMPLO || null) },
               vence: null, fecha: '2026-09-12', mis_intentos: 0, mi_mejor: null },
           ], error: null });
+          if (name === 'sat_pendientes') return Promise.resolve({ data: [
+            { id: 'w2', titulo: 'Linear systems — repeat until 80%', kind: 'assignment', vence: '2027-01-30', clase: 'SAT Prep 11.º', class_id: 'c1' },
+            { id: 'w3', titulo: 'Unit 2 final — part A', kind: 'final', vence: '2027-02-10', clase: 'SAT Prep 11.º', class_id: 'c1' },
+          ], error: null });
+          if (name === 'sat_classwork_preguntas') return Promise.resolve({ data: [
+            { qid: (window.__QID_EJEMPLO || 'M-003'), sk: 'al-sys', correcta: 'B', total: 3, ok: 1, pct: 33,
+              alumnos: [{ nombre: 'Ana', marco: 'C', ok: false }, { nombre: 'Beto', marco: 'D', ok: false }, { nombre: 'Cami', marco: 'B', ok: true }] },
+            { qid: 'NO-EXISTE-EN-EL-BANCO', sk: 'al-func', correcta: 'A', total: 3, ok: 2, pct: 67,
+              alumnos: [{ nombre: 'Ana', marco: 'B', ok: false }, { nombre: 'Beto', marco: 'A', ok: true }, { nombre: 'Cami', marco: 'A', ok: true }] },
+          ], error: null });
           if (name === 'sat_class_progreso') return Promise.resolve({ data: {
             soyProfe: true,
             resumen: { alumnos: 3, activos: 2, asignados: 3, precision: 68, mejora: 12, mejoraEscala: 90 },
@@ -609,7 +619,9 @@ const BOTONES_MUERTOS = function () {
     const modos = await page.evaluate(async () => {
       const esperar = ms => new Promise(r => setTimeout(r, ms));
       const r = {};
-      r.hayInterruptor = document.querySelectorAll('#set-sections [data-modo]').length === 2;
+      /* Se cuentan los .modo-b y no [data-modo]: el botón del aviso de pendientes
+         también lleva data-modo, porque lleva al mismo lugar. */
+      r.hayInterruptor = document.querySelectorAll('#set-sections .modo-b').length === 2;
       r.soloTienePestanas = document.querySelectorAll('#set-sections .hnav-a').length === 7;
       r.soloNoTieneSalon = !document.getElementById('class-body-zone');
 
@@ -705,6 +717,102 @@ const BOTONES_MUERTOS = function () {
       fuera.enClaseSeEsconde && fuera.enSoloVuelve, fuera);
     check('P21b los tres enlaces del pie llevan a una pestaña que existe',
       (fuera.pie || []).length === 3 && fuera.pieNavega, fuera);
+
+    /* --- P22. pregunta por pregunta ---
+       Lo que el profesor pidió para poder sentarse con un estudiante. El
+       enunciado NO viaja en la base: se resuelve contra el banco, así que se
+       comprueba también qué pasa con una pregunta que ya no existe. */
+    const qq = await page.evaluate(async () => {
+      const esperar = ms => new Promise(r => setTimeout(r, ms));
+      const r = {};
+      document.querySelector('#set-sections [data-modo="clase"]').click();
+      await esperar(800);
+      if (!document.querySelector('[data-cl-sub]')) {
+        const t = document.querySelector('[data-clase]');
+        if (t) { t.click(); await esperar(800); }
+      }
+      document.querySelector('[data-cl-sub="work"]').click();
+      await esperar(700);
+      const rep = document.querySelector('[data-cw-report]');
+      if (!rep) return { sinReporte: true };
+      rep.click();
+      await esperar(1400);
+      const z = document.getElementById('qq-zone');
+      if (!z) return { sinZona: true };
+      r.tarjetas = z.querySelectorAll('.qq').length;
+      r.enunciadoReal = /\w{6,}/.test((z.querySelector('.qq-tx span') || {}).textContent || '');
+      r.avisaSiNoEsta = /no longer in the bank/.test(z.textContent);
+      const d = z.querySelector('.qq');
+      if (d) { d.open = true; await esperar(300); }
+      r.quienMarcoQue = z.querySelectorAll('.qq-al').length;
+      r.marcaLosMalos = z.querySelectorAll('.qq-al.mal').length;
+      r.diceLaCorrecta = /Correct answer/.test(z.textContent);
+      r.hayCSV = !!document.getElementById('cl-csv');
+      return r;
+    });
+    check('P22 el reporte trae el detalle pregunta por pregunta',
+      !qq.sinReporte && !qq.sinZona && qq.tarjetas === 2 && qq.enunciadoReal, qq);
+    check('P22b se ve quién marcó qué, y los que fallaron van marcados',
+      qq.quienMarcoQue === 6 && qq.marcaLosMalos === 3 && qq.diceLaCorrecta, qq);
+    check('P22c una pregunta que ya no está en el banco se dice, no se rompe', qq.avisaSiNoEsta, qq);
+    check('P22d el reporte se puede bajar para el libro de notas', qq.hayCSV, qq);
+
+    /* --- P23. la clase de EJEMPLO ---
+       Para mostrar Classroom hace falta una clase con un mes encima. Se hace
+       con datos inventados dentro de la app: ni un estudiante falso en la base. */
+    const demo = await page.evaluate(async () => {
+      const esperar = ms => new Promise(r => setTimeout(r, ms));
+      const r = {};
+      const volver = document.getElementById('cl-volver');
+      if (volver) { volver.click(); await esperar(600); }
+      const atras = document.getElementById('cl-volver');
+      if (atras) { atras.click(); await esperar(600); }
+      const b = document.getElementById('cl-demo');
+      if (!b) return { sinBoton: true };
+      b.click();
+      await esperar(1500);
+      r.avisaQueEsEjemplo = !!document.querySelector('.demo-bar');
+      r.clases = [...document.querySelectorAll('[data-clase]')].map(x => x.textContent.trim().slice(0, 30));
+      const math = document.querySelector('[data-clase="demo-math"]');
+      if (!math) return Object.assign(r, { sinMath: true });
+      math.click();
+      await esperar(900);
+      r.trabajos = document.querySelectorAll('.cw-card').length;
+      r.tipos = [...document.querySelectorAll('.cw-tag')].map(x => x.textContent);
+      document.querySelector('[data-cl-sub="progreso"]').click();
+      await esperar(1000);
+      const z = document.getElementById('class-body-zone');
+      r.kpis = z.querySelectorAll('.pg-kpi').length;
+      r.filas = z.querySelectorAll('.prog-table tbody tr').length;
+      r.sinEntregar = z.querySelectorAll('tr.sin-entregar').length;
+      // salir deja todo como estaba
+      document.querySelector('[data-cl-sub="work"]').click();
+      await esperar(500);
+      document.getElementById('cl-volver').click();
+      await esperar(700);
+      const salir = document.getElementById('cl-demo-salir');
+      if (salir) { salir.click(); await esperar(900); }
+      r.seSale = !document.querySelector('.demo-bar');
+      return r;
+    });
+    check('P23 hay una clase de ejemplo, y dice que es de mentira',
+      !demo.sinBoton && demo.avisaQueEsEjemplo && (demo.clases || []).length === 2, demo);
+    check('P23b trae las dos clases (Math y Verbal) con sus cinco tipos de trabajo',
+      demo.trabajos === 5 && ['Warm-up', 'Assignment', 'Final', 'Mock', 'Example'].every(t => (demo.tipos || []).indexOf(t) >= 0), demo);
+    check('P23c el progreso de la demo se ve lleno, con quien no entregó arriba',
+      demo.kpis === 5 && demo.filas === 18 && demo.sinEntregar >= 2, demo);
+    check('P23d se puede salir de la demo', demo.seSale, demo);
+
+    /* --- P24. el aviso de lo pendiente ---
+       Si hay que entrar a buscar el salón para enterarse, no se entera nadie. */
+    await aModoSolo(page);
+    const pnd = await page.evaluate(() => {
+      const el = document.querySelector('#set-sections .pend');
+      return { hay: !!el, texto: el ? el.textContent : '', botones: el ? el.querySelectorAll('[data-modo="clase"]').length : 0 };
+    });
+    check('P24 en Self Practice se avisa lo que falta entregar, con el número',
+      pnd.hay && /2 items from your teacher/.test(pnd.texto) && pnd.botones === 1, pnd);
+    check('P24b y nombra los trabajos', /Linear systems/.test(pnd.texto), pnd);
 
     // --- P11. un nombre con HTML no puede ejecutarse en el panel del profesor ---
     // El nombre lo escribe el estudiante al registrarse. Si el panel lo mete
@@ -981,7 +1089,7 @@ const BOTONES_MUERTOS = function () {
             .slice(0, 4).map(e => e.tagName + '.' + (e.className || '').toString().split(' ')[0]),
           chicos,
           nav: document.querySelectorAll('#set-sections .hnav-a').length,
-          modos: document.querySelectorAll('#set-sections [data-modo]').length,
+          modos: document.querySelectorAll('#set-sections .modo-b').length,
         };
       });
       check(`P10 ${nombre} (${w}×${h}): nada se sale de la pantalla`,
