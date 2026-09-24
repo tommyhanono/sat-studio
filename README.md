@@ -92,7 +92,10 @@ vas a ver en tu reporte oficial, así que "practicá lo que fallaste" se puede c
 
 El contrato completo está en **[`docs/COMO-ESCRIBIR-PREGUNTAS.md`](docs/COMO-ESCRIBIR-PREGUNTAS.md)**: qué campos
 lleva una pregunta, qué hace buena a una explicación, qué hace difícil a una pregunta de verdad, y la regla cero
-(las preguntas son **originales**, nunca copiadas de College Board).
+(las preguntas son **originales**, nunca copiadas de College Board). Que lo sean no se afirma, se comprueba:
+[`docs/ORIGEN-DE-LAS-PREGUNTAS.md`](docs/ORIGEN-DE-LAS-PREGUNTAS.md) es el informe de evidencia —qué se tomó del
+material oficial y qué no— y `tools/auditar-originalidad.js` es la herramienta que lo vuelve a comprobar contra
+los PDF públicos de College Board.
 
 ```bash
 node tools/validar-set.js sets/mi-set-nuevo.js   # la puerta de entrada

@@ -25,6 +25,17 @@ Los pasajes de Reading se escriben desde cero. Si uno cita a una persona real,
 la cita tiene que ser inventada y el texto tiene que dejar claro que el escenario
 es ilustrativo, o mejor: usar nombres inventados.
 
+Y esto no se afirma, se comprueba: `tools/auditar-originalidad.js` compara el
+banco entero contra el material que College Board publica, buscando cadenas de N
+palabras seguidas que estén en los dos lados. Lo compartido que sí es legítimo
+—las consignas del examen, las definiciones de matemática— se reconoce solo
+porque se repite en muchas preguntas nuestras; un pasaje copiado aparecería en
+una sola, así que lo que hay que mirar a mano son las coincidencias **únicas**.
+La corrida del 24-sep-2026 contra los dos PDF oficiales (el Assessment Framework
+de 227 pp. y las Sample Questions) dio **1 coincidencia única a 15 palabras**, y
+es la consigna oficial de las preguntas de síntesis. El informe para el colegio
+está en `docs/ORIGEN-DE-LAS-PREGUNTAS.md`.
+
 ## El archivo
 
 Un archivo = un set = un `window.SAT_SETS.push({...})`. Nada más.
