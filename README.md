@@ -55,6 +55,8 @@ vas a ver en tu reporte oficial, así que "practicá lo que fallaste" se puede c
 
 ## Qué incluye
 
+- **📈 Regressions Lab** (Math Topics, primera sección): una clase de 6 partes para correr regresiones en Desmos (lineal, exponencial, parábola, residuales, r²) y una escalera de 4 niveles sobre 94 preguntas (24 nuevas del set `math-regresiones`), más el *Regression Gauntlet* cronometrado.
+- **Sharp Math Mocks** (Practice Tests): solo matemática con la forma de un examen difícil real — Módulo 1 duro y el Módulo 2 difícil se gana con 16/22.
 - **2 modos**: Exam (cronometrado, se califica al final, con Check Your Work) y Drill (sin timer, feedback + explicación inmediata en cada pregunta).
 - **Herramientas Bluebook**: timer con Hide y alerta roja, Mark for Review, eliminador ABC, menú de preguntas, calculadora Desmos, Reference Sheet (Math), Highlights & Notes (selecciona texto con el mouse), Line Reader, Zoom, Layout split/vertical.
 - **Math real**: multiple choice centrado + preguntas SPR (respuesta escrita) con las reglas de entrada oficiales (5 caracteres, 6 con negativo, fracciones equivalentes, decimales con precisión completa).

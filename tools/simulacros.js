@@ -53,7 +53,7 @@ const LLAMADAS = [...html.matchAll(
   /var\s+(N_[A-Z]+)\s*=\s*cuantosExamenes\(formasQueLlena\(\s*'([^']+)'\s*,\s*([^,]+),\s*(\{[^}]*\})\s*\)\s*,\s*1\s*,\s*(\d+)\s*,\s*(\d+)\s*\)/g)];
 if (!LLAMADAS.length) { console.error('✗ no se encontró ninguna llamada a cuantosExamenes(formasQueLlena(...)) en index.html'); process.exit(1); }
 
-const NOMBRES = { N_ENG: 'English Mocks', N_MATH: 'Math Mocks', N_REAL: 'Realistic Hard',
+const NOMBRES = { N_ENG: 'English Mocks', N_MATH: 'Math Mocks', N_SHARP: 'Sharp Math', N_REAL: 'Realistic Hard',
   N_EXTREME: 'Extreme Mocks', N_HARD: 'Hard Mocks', N_MOCKS: 'Full Mocks' };
 
 console.log('SIMULACROS: LO QUE LA APP OFRECE CONTRA LO QUE EL BANCO LLENA\n');

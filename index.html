@@ -860,6 +860,21 @@
   .cc-traptable td{border-top:1px solid var(--gray-line);padding:8px 6px;vertical-align:top;line-height:1.55}
   .cc-traptable td:first-child{color:var(--red);font-weight:700;white-space:nowrap;padding-right:14px}
   .cc-cta{position:sticky;bottom:12px;display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:24px;padding:10px;background:linear-gradient(to top,#fff 60%,transparent)}
+  /* Regressions Lab */
+  .rg-stat{font-size:.9rem;color:var(--gray-mid);margin:2px 0 12px}
+  .rg-stat b{color:var(--ink)}
+  .rg-ladder{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-bottom:12px}
+  .rg-step{display:flex;flex-direction:column;align-items:flex-start;gap:2px;min-height:76px;padding:11px 13px;border:1.5px solid var(--gray-line);border-radius:12px;background:#fff;font-family:var(--sans);text-align:left;cursor:pointer}
+  .rg-step:hover:not([disabled]){border-color:var(--blue);background:var(--blue-soft)}
+  .rg-step:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+  .rg-step[disabled]{opacity:.45;cursor:default}
+  .rg-step.lv-hard{border-color:#e8b8b8} .rg-step.lv-extreme{border-color:#c9a2d6}
+  .rg-k{font-size:.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--gray-mid)}
+  .rg-l{font-size:1rem;font-weight:700;color:var(--ink)}
+  .rg-c{font-size:.8rem;color:var(--gray-mid)}
+  .rg-row{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:10px}
+  .rg-row button,.rg-open{min-height:44px}
+  @media (max-width:560px){ .rg-ladder{grid-template-columns:repeat(2,minmax(0,1fr))} .rg-row button{flex:1 1 100%} }
   /* Punctuation Rule Trainer */
   .pt-prog{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0 4px}
   .pt-dot{width:13px;height:13px;border-radius:50%;background:#e3e6ef;border:1px solid var(--gray-line)}
@@ -1654,6 +1669,9 @@ var SAT_SET_FILES = [
   'sets/rw-brutal-mix-f.js',
   'sets/math-brutal-alg-g.js',
   'sets/math-brutal-adv-g.js',
+
+  // Regressions Lab (17-nov-2026): 24 preguntas para la sección de regresiones de Math Topics
+  'sets/math-regresiones.js',
 
   // Desmos how-to hints per Math question (merged into questions at load)
   'sets/desmos-a.js',
@@ -4354,7 +4372,7 @@ function renderHome(){
   // 44 por examen de solo matemática
   var N_MATH = cuantosExamenes(formasQueLlena('mat', null, {math:2}), 1, 30, 40);
   var mmBest = {};
-  h.forEach(function(e){ if(e.mock && e.mock.kind === 'math' && typeof e.mock.num === 'number'){ var n = e.mock.num; if(mmBest[n] == null || (e.mock.total||0) > mmBest[n]) mmBest[n] = e.mock.total; } });
+  h.forEach(function(e){ if(e.mock && e.mock.kind === 'math' && !e.mock.real && typeof e.mock.num === 'number'){ var n = e.mock.num; if(mmBest[n] == null || (e.mock.total||0) > mmBest[n]) mmBest[n] = e.mock.total; } });
   var mmCards = '';
   for(var mmi = 1; mmi <= N_MATH; mmi++){
     var mb = mmBest[mmi];
@@ -4366,6 +4384,26 @@ function renderHome(){
       '</div><div class="set-actions"><button class="btn-primary" data-start-mathmock="' + mmi + '">' + (mb != null ? 'Retake' : 'Start') + '</button></div></div>';
   }
   G.tests += homeSection('Math Mocks', mmCards, N_MATH, true);
+
+  // ===== Sharp Math Mocks (17-nov-2026): solo matemática, con la forma de un examen DIFÍCIL real =====
+  /* Es el Realistic Hard Mock recortado a la sección de matemática: Módulo 1 duro
+     (tier 'tough') y el Módulo 2 difícil hay que GANÁRSELO con 16/22, con la
+     composición real (~30 % brutal). Lo limita el pozo de brutales de matemática.
+     Semillas 600+n: no chocan con 100..500+N ni con los Daily (9000+). */
+  var N_SHARP = cuantosExamenes(formasQueLlena('matreal', _ES_BRU, {math:0.30}), 1, 1, 20);
+  var shBest = {};
+  h.forEach(function(e){ if(e.mock && e.mock.kind === 'math' && e.mock.real && typeof e.mock.num === 'number'){ var n = e.mock.num; if(shBest[n] == null || (e.mock.total||0) > shBest[n]) shBest[n] = e.mock.total; } });
+  var shCards = '';
+  for(var shi = 1; shi <= N_SHARP; shi++){
+    var shb = shBest[shi];
+    shCards += '<div class="set-card"><div class="set-info"><span class="lvl-badge lvl-hard">Math · real difficulty</span>' +
+      '<h3>Sharp Math Mock ' + shi + '</h3>' +
+      '<div class="set-desc">Math only, built like a HARD real form: a tough Module 1, and the hard Module 2 has to be earned with 16/22 — then it is about half hard with a brutal back third. Miss the cut and you get the easier Module 2, exactly like test day.</div>' +
+      '<div class="set-meta">~44 questions · ~1h 10m' + (shb != null ? ' · <b>best ' + shb + '/800</b>' : '') + '</div>' +
+      (shb != null ? '<div class="set-done">✓ completed</div>' : '') +
+      '</div><div class="set-actions"><button class="btn-primary" data-start-sharpmock="' + shi + '">' + (shb != null ? 'Retake' : 'Start') + '</button></div></div>';
+  }
+  G.tests += homeSection('Sharp Math Mocks · hard, math only', shCards, N_SHARP, true);
 
   // ===== Realistic Hard Mocks (true-to-test difficult form: tough M1, EARNED hard M2 with real composition) =====
   /* El Módulo 2 de un examen difícil real es ~30 % brutal, así que estos los
@@ -4441,6 +4479,9 @@ function renderHome(){
      que entrar a Math no mostraba "todo lo de Math", mostraba las tandas que
      alguien armó. Son 19 destrezas en matemática y 11 en verbal: las 30 que
      College Board le va a nombrar al estudiante en su reporte. */
+  /* Regressions Lab: va PRIMERO en Math Topics. Es una destreza de calculadora que
+     resuelve una familia entera de preguntas, y se pidió como sección propia. */
+  G.math   += homeSection('📈 Regressions Lab — master Desmos regressions', regrTeaserHTML(), regrConteo().total, true);
   G.math   += homeSection('🎯 Practice by skill — the 19 official Math skills', taxonomiaHTML('math'), null, true);
   G.verbal += homeSection('🎯 Practice by skill — the 11 official Reading & Writing skills', taxonomiaHTML('rw'), null, true);
   G.math   += homeSection('🪜 Mastery path — Math', caminoHTML('math'), caminoCuenta('math'), false);
@@ -4670,6 +4711,15 @@ function renderHome(){
   Array.prototype.forEach.call(document.querySelectorAll('#set-sections [data-open-class="circles"]'), function(b){
     b.addEventListener('click', openCircleClass);
   });
+  Array.prototype.forEach.call(document.querySelectorAll('#set-sections [data-open-class="regr"]'), function(b){
+    b.addEventListener('click', openRegrClass);
+  });
+  Array.prototype.forEach.call(document.querySelectorAll('#set-sections [data-regr]'), function(b){
+    b.addEventListener('click', function(){ startRegr(b.getAttribute('data-regr')); });
+  });
+  Array.prototype.forEach.call(document.querySelectorAll('#set-sections [data-start-sharpmock]'), function(b){
+    b.addEventListener('click', function(){ var n = parseInt(b.getAttribute('data-start-sharpmock'), 10); startMock('math', n, 600 + n, 'real'); });
+  });
   Array.prototype.forEach.call(document.querySelectorAll('#set-sections [data-pt]'), function(b){
     b.addEventListener('click', function(){ var m = b.getAttribute('data-pt'); if(m === 'read') openPunctRules(); else startPunctTrainer(m); });
   });
@@ -4859,6 +4909,9 @@ function showClass(html){
   Array.prototype.forEach.call(v.querySelectorAll('.cc-back,[data-go-home]'), function(b){ b.addEventListener('click', goHome); });
   Array.prototype.forEach.call(v.querySelectorAll('[data-lesson]'), function(b){
     b.addEventListener('click', function(){ v.classList.add('hidden'); startLessonDrill(b.getAttribute('data-lesson')); });
+  });
+  Array.prototype.forEach.call(v.querySelectorAll('[data-regr]'), function(b){
+    b.addEventListener('click', function(){ startRegr(b.getAttribute('data-regr')); });
   });
   Array.prototype.forEach.call(v.querySelectorAll('[data-desmos]'), function(b){
     b.addEventListener('click', function(){
@@ -5424,6 +5477,186 @@ function lessonPool(key){
   });
   return a;
 }
+/* ================= REGRESSIONS LAB (17-nov-2026) =================
+   Una sección entera para UNA destreza de calculadora: correr una regresión en
+   Desmos y leer lo que devuelve. El pozo junta tres cosas:
+   - las 24 del set math-regresiones (llevan `regresion:true`),
+   - todo lo que la taxonomía oficial pone en "Two-variable data and scatterplots",
+   - y cualquier pregunta de matemática cuya pista de Desmos ya usa una regresión (~).
+   El orden es el mismo de skillBuildSet: primero lo que fallaste, después lo
+   nuevo (las del laboratorio antes que el resto), al final lo que ya acertaste. */
+var _regrPool = null, _regrPoolN = -1;
+function regrPool(){
+  // memo por tamaño del banco: el inicio se pinta antes de que termine de cargar
+  if(_regrPool && _regrPoolN === SETS.length) return _regrPool;
+  _regrPoolN = SETS.length;
+  var seen = {}, arr = [];
+  SETS.forEach(function(s){
+    (s.questions || []).forEach(function(q){
+      var isMath = (q._section === 'math') || (s.section === 'math');
+      if(!isMath || seen[q.id]) return;
+      var sk = skillOf(q);
+      var usaRegresion = (q.desmosLatex || []).some(function(l){ return /\\sim|~/.test(l); });
+      if(q.regresion || usaRegresion || (sk && sk.k === 'pd-2var') ||
+         /regression|line of best fit|scatterplot/i.test(q.stem || '')){
+        seen[q.id] = 1; arr.push(q);
+      }
+    });
+  });
+  return (_regrPool = arr);
+}
+function regrConteo(){
+  var c = { 'Fácil':0, 'Media':0, 'Difícil':0, 'Extreme':0, total:0, hechas:0, bien:0 };
+  var latest = latestResults();
+  regrPool().forEach(function(q){
+    c[nivelDe(q)]++; c.total++;
+    var r = latest[q.id]; if(r){ c.hechas++; if(r.ok) c.bien++; }
+  });
+  return c;
+}
+function regrBuildSet(nivel, n, examen){
+  var pool = regrPool().filter(function(q){
+    if(nivel === 'todo') return true;
+    if(nivel === 'gauntlet') return nivelDe(q) === 'Difícil' || nivelDe(q) === 'Extreme';
+    return nivelDe(q) === nivel;
+  });
+  if(!pool.length) return null;
+  var latest = latestResults(), falladas = [], nuevasLab = [], nuevas = [], acertadas = [];
+  pool.forEach(function(q){
+    var r = latest[q.id];
+    if(r && !r.ok) falladas.push(q);
+    else if(!r) (q.regresion ? nuevasLab : nuevas).push(q);
+    else acertadas.push(q);
+  });
+  var orden = _shuffle(falladas).concat(_shuffle(nuevasLab), _shuffle(nuevas), _shuffle(acertadas)).slice(0, n || 12);
+  if(examen) orden = _shuffle(orden);   // en examen no se agrupan por estado
+  var nom = nivel === 'gauntlet' ? 'Regression Gauntlet (timed)' : nivel === 'todo' ? 'Regressions — mixed' : 'Regressions — ' + nivelLabel(nivel);
+  return {
+    id: 'regr-' + nivel, title: nom, section: 'math', level: nivel === 'gauntlet' ? 'Difícil' : (nivel === 'todo' ? 'Media' : nivel),
+    description: 'Problem-Solving & Data Analysis',
+    minutes: examen ? Math.max(8, Math.round(orden.length * 1.6)) : Math.max(5, Math.round(orden.length * 1.5)),
+    questions: orden
+  };
+}
+function startRegr(nivel){
+  conBanco(function(){
+    var examen = nivel === 'gauntlet';
+    var set = regrBuildSet(nivel, examen ? 12 : 10, examen);
+    if(!set || !set.questions.length){ toast('Nothing in the bank at that level yet.', true); return; }
+    _beginSession(set, examen ? 'exam' : 'drill');
+  });
+}
+/* Los botones del laboratorio: los pinta el inicio Y la clase, así que salen de una sola función. */
+function regrBotonesHTML(){
+  var c = regrConteo();
+  var nivs = ['Fácil', 'Media', 'Difícil', 'Extreme'];
+  return '<div class="rg-ladder">' + nivs.map(function(nv, i){
+      return '<button type="button" class="rg-step lv-' + SAT_NIVEL_CLASE[nv] + '" data-regr="' + escAttr(nv) + '"' + (c[nv] ? '' : ' disabled') + '>' +
+        '<span class="rg-k">Step ' + (i + 1) + '</span><span class="rg-l">' + nivelLabel(nv) + '</span><span class="rg-c">' + c[nv] + ' questions</span></button>';
+    }).join('') + '</div>' +
+    '<div class="rg-row"><button type="button" class="btn-outline" data-regr="todo">Mixed drill · 10</button>' +
+    '<button type="button" class="btn-primary" data-regr="gauntlet">Regression Gauntlet · 12 timed</button></div>';
+}
+function regrTeaserHTML(){
+  var c = regrConteo();
+  var mio = c.hechas
+    ? '<div class="rg-stat"><b>' + c.bien + '/' + c.hechas + '</b> right on the regression questions you have tried · ' + (c.total - c.hechas) + ' still new</div>'
+    : '<div class="rg-stat">' + c.total + ' regression questions ready · none tried yet</div>';
+  return '<p class="study-hint">One calculator move solves a whole family of SAT questions: type the data into Desmos and run a <b>regression</b>. Line of best fit, residuals, exponential models, a parabola through three points — all of it. Read the class once, then climb the four steps. Each drill serves what you missed first.</p>' +
+    mio + regrBotonesHTML() +
+    '<button type="button" class="btn-outline rg-open" data-open-class="regr">Open the Regressions class</button>';
+}
+var REGR_CLASS_HTML =
+'<button class="cc-back">← Back to home</button>' +
+'<h2 class="cc-title">Regressions — The Full Class</h2>' +
+'<p class="cc-sub">Whenever the SAT hands you <b>data</b> (a table, a scatterplot, two or three points of a function), Desmos can find the model for you in 20 seconds. Five moves cover every version of the question.</p>' +
+'<div class="cc-intro"><b>How to use this class:</b> read one section, tap its <b>Try it</b> button and do the regression yourself in the calculator. Then climb the four steps at the bottom: Warm-up → Test Level → Hard → Brutal.' +
+'<ol class="cc-toc">' +
+'<li><a href="#rg1">The setup — table, then tilde</a></li>' +
+'<li><a href="#rg2">Linear — y₁ ~ mx₁ + b</a></li>' +
+'<li><a href="#rg3">Residuals — actual minus predicted</a></li>' +
+'<li><a href="#rg4">Exponential — y₁ ~ ab^x₁</a></li>' +
+'<li><a href="#rg5">Parabola — y₁ ~ ax₁² + bx₁ + c</a></li>' +
+'<li><a href="#rg6">Reading the output — r², the mean point, outliers</a></li>' +
+'</ol></div>' +
+
+'<section class="cc-sec" id="rg1"><h3><span class="cc-n">1</span>The setup — table, then tilde</h3>' +
+'<p>Two ways to enter the data: a Desmos <b>table</b> (type <span class="cc-math">table</span> or tap + → table), or two <b>lists</b> on their own lines. Lists are faster on the test:</p>' +
+'<div class="cc-form">x₁ = [1, 2, 3, 4, 5] &nbsp;&nbsp; y₁ = [11, 12, 18, 24, 25]</div>' +
+'<p>Then, on a new line, the model with a <b>tilde ~</b> instead of an equals sign. The tilde means “find the best constants”; Desmos prints them under the line.</p>' +
+'<div class="cc-key"><b>When to regress:</b> the question says “line of best fit”, “model”, gives a table of values, or gives two or three points of an exponential or a parabola. If you see data, think regression.</div>' +
+'<div class="cc-trap"><b>Trap:</b> typing <span class="cc-math">y = mx + b</span> with plain x and y. That just makes sliders. The subscripts must match the data: <span class="cc-math">y₁ ~ mx₁ + b</span>.</div>' +
+'<div class="cc-desmos">📈 <b>Desmos play:</b> load a data set and its regression. <button class="btn-outline" style="padding:4px 14px;font-size:.85rem" data-desmos="x_1=[1,2,3,4,5]||y_1=[11,12,18,24,25]||y_1\\sim mx_1+b">Try it</button></div>' +
+'</section>' +
+
+'<section class="cc-sec" id="rg2"><h3><span class="cc-n">2</span>Linear — y₁ ~ mx₁ + b</h3>' +
+'<p>Desmos returns <b>m</b> (the slope: predicted change in y per one unit of x) and <b>b</b> (the predicted y when x = 0). From there, a prediction is just substitution.</p>' +
+'<div class="cc-eg"><span class="cc-eglab">Worked example</span><br>x: 1, 2, 3, 4, 5 · y: 11, 12, 18, 24, 25. Predicted y at x = 7?' +
+'<ol><li>Run y₁ ~ mx₁ + b → <b>m = 4, b = 6</b>.</li><li>y = 4(7) + 6 = <b>34</b>.</li></ol>' +
+'Asked the other way (“when is the prediction 50?”), graph <span class="cc-math">y = 50</span> too and tap where it crosses the line.</div>' +
+'<div class="cc-trap"><b>Trap:</b> drawing a line through two dots “that look right”. The first and last points here give slope 3.5 and the prediction 32 — wrong. The regression uses every point.</div>' +
+'</section>' +
+
+'<section class="cc-sec" id="rg3"><h3><span class="cc-n">3</span>Residuals — actual minus predicted</h3>' +
+'<div class="cc-form">residual = actual − predicted</div>' +
+'<p>Positive → the point is <b>above</b> the line. Negative → below. Zero → exactly on it. After a regression, Desmos stores every residual in <b>e₁</b>: tap <b>plot</b> next to it and a residual column appears.</p>' +
+'<div class="cc-eg"><span class="cc-eglab">Worked example</span><br>Line y = 2.5x + 12. A student studied 8 hours and scored 35. Residual?' +
+'<ol><li>Predicted: 2.5(8) + 12 = 32.</li><li>35 − 32 = <b>3</b> (above the line).</li></ol></div>' +
+'<div class="cc-trap"><b>Trap:</b> predicted − actual. The SAT always means actual − predicted; −3 is sitting in the choices.</div>' +
+'<div class="cc-desmos">📈 <b>Desmos play:</b> count the points above the line. <button class="btn-outline" style="padding:4px 14px;font-size:.85rem" data-desmos="x_1=[1,2,3,4,5,6]||y_1=[50,44,43,42,41,38]||y_1\\sim mx_1+b">Try it</button></div>' +
+'</section>' +
+
+'<section class="cc-sec" id="rg4"><h3><span class="cc-n">4</span>Exponential — y₁ ~ ab^x₁</h3>' +
+'<p>Use it when y is <b>multiplied</b> by the same factor each step (constant ratio). <b>a</b> is the value at x = 0; <b>b</b> is the multiplier per step.</p>' +
+'<div class="cc-form">b = 1 + r (growth) &nbsp;·&nbsp; b = 1 − r (decay) &nbsp;·&nbsp; b = 0.85 → losing 15% per step</div>' +
+'<div class="cc-eg"><span class="cc-eglab">Worked example</span><br>f(x) = a·b^x, f(1) = 12, f(3) = 27. f(5)?' +
+'<ol><li>Two points are enough: x₁ = [1, 3], y₁ = [12, 27], y₁ ~ ab^x₁ → <b>a = 8, b = 1.5</b>.</li><li>8(1.5)⁵ = <b>60.75</b>.</li></ol>' +
+'Shifted exponential (outputs do not have a constant ratio, but their differences do)? Use <span class="cc-math">y₁ ~ ab^x₁ + c</span>.</div>' +
+'<div class="cc-trap"><b>Trap:</b> reading b as the rate. b = 0.88 is the fraction KEPT; the decay rate is 12%.</div>' +
+'<div class="cc-desmos">📈 <b>Desmos play:</b> fit an exponential to two points. <button class="btn-outline" style="padding:4px 14px;font-size:.85rem" data-desmos="x_1=[1,3]||y_1=[12,27]||y_1\\sim ab^{x_1}">Try it</button></div>' +
+'</section>' +
+
+'<section class="cc-sec" id="rg5"><h3><span class="cc-n">5</span>Parabola — y₁ ~ ax₁² + bx₁ + c</h3>' +
+'<p>Three points determine a parabola. Instead of solving a 3×3 system by hand, enter the points and regress: r² = 1 tells you the fit is exact. Then graph it and tap the vertex.</p>' +
+'<div class="cc-eg"><span class="cc-eglab">Worked example</span><br>f(−1) = 10, f(1) = 2, f(4) = 5. Minimum value of f?' +
+'<ol><li>x₁ = [−1, 1, 4], y₁ = [10, 2, 5], y₁ ~ ax₁² + bx₁ + c → <b>a = 1, b = −4, c = 5</b>.</li><li>Graph y = x² − 4x + 5 and tap the vertex (2, 1). Minimum value = <b>1</b>.</li></ol></div>' +
+'<div class="cc-key"><b>Symmetry shortcut:</b> two points with the same y are mirror images, so the axis is halfway between them. (1, 4) and (3, 4) → axis x = 2.</div>' +
+'<div class="cc-trap"><b>Trap:</b> “minimum value” is the y of the vertex; “where” is the x. Read which one before you grid.</div>' +
+'<div class="cc-desmos">📈 <b>Desmos play:</b> a parabola through three points. <button class="btn-outline" style="padding:4px 14px;font-size:.85rem" data-desmos="x_1=[-1,1,4]||y_1=[10,2,5]||y_1\\sim ax_1^2+bx_1+c">Try it</button></div>' +
+'</section>' +
+
+'<section class="cc-sec" id="rg6"><h3><span class="cc-n">6</span>Reading the output — r², the mean point, outliers</h3>' +
+'<p><b>r²</b> (between 0 and 1) says how well the model fits: 1 means every point is on the curve; near 0 means x barely predicts y. A linear regression also shows <b>r</b>, whose sign is the direction of the trend.</p>' +
+'<p><b>The mean point:</b> a least-squares line always passes through (mean of x, mean of y). Mean x = 12, mean y = 40, slope 2.5 → at x = 20 the prediction is 40 + 2.5(8) = <b>60</b>.</p>' +
+'<p><b>Outliers:</b> a point far from the trend, at the edge of the data, pulls the slope hard. Run the regression with and without it and compare m.</p>' +
+'<p><b>Shifted x:</b> changing “years since 2015” to “actual year” keeps the slope and changes only the intercept: y = m(x − 2015) + b.</p>' +
+'</section>' +
+
+'<section class="cc-sec"><h3><span class="cc-n">★</span>The traps that cost regression points</h3>' +
+'<table class="cc-traptable">' +
+'<tr><td>= vs ~</td><td>An equals sign graphs; only the tilde fits the data.</td></tr>' +
+'<tr><td>Two dots</td><td>A line through two points is not the line of best fit. Regress on all of them.</td></tr>' +
+'<tr><td>Residual sign</td><td>Actual − predicted. Above the line is positive.</td></tr>' +
+'<tr><td>Dot vs line</td><td>Predictions come from the line, never from the nearest point.</td></tr>' +
+'<tr><td>b vs rate</td><td>b = 0.85 keeps 85%; the rate is 15%.</td></tr>' +
+'<tr><td>x vs y</td><td>“When” asks for x; “what value / how many” asks for y.</td></tr>' +
+'</table></section>' +
+'<section class="cc-sec" id="rg-practice"><h3><span class="cc-n">→</span>Now climb</h3>' +
+'<div id="rg-class-btns"></div></section>' +
+'<div class="cc-cta"><button class="btn-primary" data-regr="Fácil">Start at Step 1 →</button><button class="btn-outline" data-go-home>Back to home</button></div>';
+function openRegrClass(){
+  conBanco(function(){
+    showClass(REGR_CLASS_HTML);
+    var box = $('#rg-class-btns');
+    if(box){
+      box.innerHTML = regrBotonesHTML();
+      Array.prototype.forEach.call(box.querySelectorAll('[data-regr]'), function(b){
+        b.addEventListener('click', function(){ startRegr(b.getAttribute('data-regr')); });
+      });
+    }
+  });
+}
+
 function startLessonDrill(key){
   var L = LESSONS.filter(function(x){ return x.key === key; })[0];
   var pool = lessonPool(key);
@@ -7512,12 +7745,16 @@ function mockIntroHTML(kind, n1){
   }
   var name = kind === 'math' ? 'Math' : 'Reading & Writing';
   var mins = kind === 'math' ? 35 : 32;
-  return '<div class="mock-card"><div class="mock-kicker">'+name+' Section Test · /800</div>'+
-    '<h1>'+name+' — Adaptive Section Test</h1>'+
+  var sharp = !!(MOCK && MOCK.real && kind === 'math');
+  return '<div class="mock-card"><div class="mock-kicker">'+(sharp ? 'Sharp Math Mock' : name+' Section Test')+' · /800</div>'+
+    '<h1>'+name+' — '+(sharp ? 'Hard Real Form' : 'Adaptive Section Test')+'</h1>'+
     '<p>Just this one section, scored the way the real SAT does it: two adaptive modules → a scaled <strong>200–800</strong> estimate. Perfect when you don\'t have 2 hours.</p>'+
     '<ol class="mock-steps">'+
-      '<li><strong>Module 1</strong> ('+n1+' q · '+mins+' min) — mixed difficulty.</li>'+
-      '<li><strong>Module 2</strong> — easier or harder depending on how Module 1 goes.</li>'+
+      (MOCK && MOCK.real
+        ? '<li><strong>Module 1</strong> ('+n1+' q · '+mins+' min) — a tough first module, like a hard real form.</li>'+
+          '<li><strong>Module 2</strong> — score '+(kind==='math'?'16/22':'17/27')+' or better and you earn the real hard module (about half hard, back third brutal). Otherwise, the easier one.</li>'
+        : '<li><strong>Module 1</strong> ('+n1+' q · '+mins+' min) — mixed difficulty.</li>'+
+          '<li><strong>Module 2</strong> — easier or harder depending on how Module 1 goes.</li>')+
     '</ol>'+
     '<p class="mock-note">Timed like Bluebook. '+(kind==='math'?'Reference Sheet &amp; Desmos are in the toolbar.':'')+'</p>'+
     '<div class="mock-btns"><button class="btn-ghost" id="mock-cancel">Cancel</button><button class="btn-primary" id="mock-next">Begin '+name+'</button></div></div>';
@@ -7584,6 +7821,7 @@ function mockFinish(){
               : MOCK.hard ? (MOCK.num != null ? 'Hard Mock ' + MOCK.num : 'Hard Full Mock')
               : (MOCK.num != null ? 'Practice Test ' + MOCK.num : 'Full Practice Test'))
             : kind === 'rw' ? (MOCK.num != null ? 'English Mock ' + MOCK.num : 'Reading & Writing Test')
+            : MOCK.real ? (MOCK.num != null ? 'Sharp Math Mock ' + MOCK.num : 'Sharp Math Mock')
             : (MOCK.num != null ? 'Math Mock ' + MOCK.num : 'Math Test');
   var allR = rwAll.concat(mathAll);
   var correct = allR.filter(function(r){ return r.ok; }).length;
